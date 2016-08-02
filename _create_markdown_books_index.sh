@@ -33,7 +33,7 @@ h2 {
 }
 
 #p1 {background-color:rgba(`jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 1 1`);}
-#t1 {color:rgba(`jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 1 1`);}
+#t1 {color:#FF0066;}
 
 </style>
 </head>
@@ -57,7 +57,7 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
     filemd=`echo $file | cut -d "." -f 1`   ## Getting the MarkDown Filename without extension, from the HTML file.
     filemd+=".md"; ## Appending the .md extension at the end of the extracted filename.
 
-    echo "    <LI id='t1'><a href=\"$HTTP/$path/$file\">$file</a> ( `wc -w $filepath/$filemd | awk 'BEGIN{FS=" "} {printf("%.0f %s\n", ($1/200), "minutes reading")}'` )</LI>" >> $OUTPUT
+    echo "    <LI id='t1'><a href=\"$HTTP/$path/$file\">$file</a> | <a href=\"$HTTP/$path/$filemd\">Source MarkDown</a><br>( `wc -w $filepath/$filemd | awk 'BEGIN{FS=" "} {printf("%.0f %s\n", ($1/200), "minutes reading")}'` )</LI>" >> $OUTPUT
   done
   echo "  </OL>" >> $OUTPUT
 done
