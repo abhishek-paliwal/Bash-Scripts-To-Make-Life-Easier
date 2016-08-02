@@ -73,7 +73,8 @@ hr {clear:both;}
 </style>" >> $filenamex
 
 echo "</head><body>" >> $filenamex
-echo "<h1>$titlename<br>(Total Image Files= $totalfiles)</h1>" >> $filenamex
+
+echo "<h1>$titlename<br>(Total Image Files In This Folder (NON-RECURSIVE) = $totalfiles)</h1>" >> $filenamex
 
 for x in `ls *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber`
 	do
@@ -81,12 +82,24 @@ for x in `ls *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber`
 	done;
 
 
+#### OPTIONAL SECTION: Finding and listing all Image files Recursively. ####
+totalimagefiles="`find . -type f | egrep -i '\.(jpg|png|PNG|JPG)$' | wc -l | tr -d '[[:space:]]'`"
+
+echo "<hr><br><h1>Total Image Files In This Folder (RECURSIVE) = $totalimagefiles)</h1>" >> $filenamex
+
+for x in `find . -type f | egrep -i '\.(jpg|png|PNG|JPG)$' | sort -n -k1.$sortnumber`
+  do
+  	echo "<div><a href='$x'><img src='$x' width='100%' align='top'></img><br><br>$x</a></div>" >> $filenamex
+  done;
+##### OPTIONAL SECTION ENDS #####
+
+
 #### OPTIONAL SECTION: Findind and listing Photoshop files ####
-totalcustomfiles="`find . -type f | egrep -i '\.(psd|ai|svg|eps)$' | wc -l | tr -d '[[:space:]]'`"
+totalcustomfiles="`find . -type f | egrep -i '\.(psd|ai|svg|eps|key|pages|numbers)$' | wc -l | tr -d '[[:space:]]'`"
 
-echo "<hr><br><h1>DOWNLOADS: Total PSD, AI, SVG, EPS files = $totalcustomfiles)</h1>" >> $filenamex
+echo "<hr><br><h1>Downloadable Psd, Ai, Svg, Eps, Pages, Numbers, Keynote Files (RECURSIVE) = $totalcustomfiles</h1>" >> $filenamex
 
-for y in `find . -type f | egrep -i '\.(psd|ai|svg|eps)$'`
+for y in `find . -type f | egrep -i '\.(psd|ai|svg|eps|key|pages|numbers)$'`
   do
   	echo "<div class='colored'><a href='$y'>DOWNLOAD<br>$y</a></div>" >> $filenamex
 
