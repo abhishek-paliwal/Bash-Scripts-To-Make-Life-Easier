@@ -29,7 +29,7 @@ h1 {
 h2 {
   font-family: 'Montserrat', sans-serif;
   color: #c0c0c0;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 #p1 {background-color:rgba(`jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 1 1`);}
@@ -42,6 +42,7 @@ EOM
 
 echo "<h1>Index of Books Created by Markdown // by Abhishek Paliwal</h1>" >> $OUTPUT
 echo "<h2>Page last updated: "`date`"</h2>" >> $OUTPUT
+echo "<h2>Reading times are approximated at 200 words per minute.</h2>" >> $OUTPUT
 
 #### Calculations begin ####
 i=0
@@ -52,7 +53,11 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
   echo "  <OL>" >> $OUTPUT
   for i in `find "$filepath" -maxdepth 1 -mindepth 1 -type f| sort | grep -i '.html'`; do
     file=`basename "$i"`
-    echo "    <LI id='t1'><a href=\"$HTTP/$path/$file\">$file</a> ( `wc -w $filepath/$file | awk 'BEGIN{FS=" "} {printf("%.0f %s\n", ($1/200),"minutes reading )")}'`</LI>" >> $OUTPUT
+
+    filemd=`echo $file | cut -d "." -f 1`   ## Getting the MarkDown Filename without extension, from the HTML file.
+    filemd+=".md"; ## Appending the .md extension at the end of the extracted filename.
+
+    echo "    <LI id='t1'><a href=\"$HTTP/$path/$file\">$file</a> ( `wc -w $filepath/$filemd | awk 'BEGIN{FS=" "} {printf("%.0f %s\n", ($1/200), "minutes reading")}'` )</LI>" >> $OUTPUT
   done
   echo "  </OL>" >> $OUTPUT
 done
