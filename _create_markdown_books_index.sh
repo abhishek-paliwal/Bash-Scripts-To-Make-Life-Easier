@@ -52,7 +52,7 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
   echo "  <OL>" >> $OUTPUT
   for i in `find "$filepath" -maxdepth 1 -mindepth 1 -type f| sort | grep -i '.html'`; do
     file=`basename "$i"`
-    echo "    <LI id='t1'><a href=\"$HTTP/$path/$file\">$file</a></LI>" >> $OUTPUT
+    echo "    <LI id='t1'><a href=\"$HTTP/$path/$file\">$file</a> ( `wc -w $filepath/$file | awk 'BEGIN{FS=" "} {printf("%.0f %s\n", ($1/200),"minutes reading )")}'`</LI>" >> $OUTPUT
   done
   echo "  </OL>" >> $OUTPUT
 done
