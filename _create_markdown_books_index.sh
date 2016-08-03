@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ROOT=/Users/abhishek/Dropbox/Public/0000-WORDS-OF-WISDOM-WITH-MARKDOWN
-HTTP="https://dl.dropboxusercontent.com/u/6378027/0000-WORDS-OF-WISDOM-WITH-MARKDOWN/"
+HTTP="https://dl.dropboxusercontent.com/u/6378027/0000-WORDS-OF-WISDOM-WITH-MARKDOWN"
 OUTPUT="$ROOT/Index-Of-All-Markdown-Books.html"
 
 cat > $OUTPUT <<- EOM
