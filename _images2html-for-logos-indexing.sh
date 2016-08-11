@@ -1,41 +1,20 @@
-#!/bin/bash;
+#!/bin/bash
 ## THIS SCRIPT CREATES AN HTML FILE WITH...
 ## ...ALL THE IMAGES IN WORKING DIRECTORY
-echo #Blank line
-pwd ##check the present working directory
-echo #Blank line
+echo "#################" #Blank line
+# ROOT=`pwd`
+ROOT="/Users/abhishek/Dropbox/Public/logos"
+echo "CURRENT WORKING DIRECTORY: " $ROOT ##check the present working directory
+echo "#################" #Blank line
 
-echo '======== Current filename order ========'
-ls -1 *.{jpg,png,PNG,JPG} | nl ##sort output as 1 column
-
-echo '==================='
-echo `ls -1 *.{jpg,png,PNG,JPG} | head -1 | wc -m`
-echo "= Character length including file extension (jpg/JPG or png/PNG)"
-echo "So sort number to be used below could be this number minus 5 (or 6)."
-echo '==================='
-
-echo -n "Sort filenames at which character number (Enter '1' if you're not sure) [ENTER]:"
-read sortnumber
-
-echo '========== So this is the filename order that you want: ========='
-ls *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber | nl
-
-echo -n "[REQUIRED FIELD] Enter the title for the HTML page; Spaces will be converted to hyphens; [ENTER]: "
-read titlename
-
-#ASSIGN FILENAME. AND NO SPACES BETWEEN VARNAME and '=' SIGN; else Bash throws error.
-totalfiles="`ls -l *.{jpg,png,PNG,JPG} | wc -l | tr -d '[[:space:]]'`"
-totalfiles+=" Images"
-echo "$totalfiles"
-echo "$titlename-$totalfiles.html" ##this output shows leading spaces, donno why. So SED is used below.
-
-filenamex=`echo "$titlename-$totalfiles.html" | sed -e 's/ /-/g'`
+OUTPUT="all-logos-index.html" ##Output filename
 
 echo -n "Enter the size of the DIV to use (300 works best) [ENTER]: "
 read imagesize
 imagesize+="px"; #Concatenating px at the end of the number
 
-echo "<html><head><title>$filenamex</title>" > $filenamex
+echo "<html><head><title>$OUTPUT</title>" > $OUTPUT
+
 
 echo "<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet'>
 <style>
@@ -54,7 +33,7 @@ div {
 }
 
 .colored {
-  background-color:#00FF00;
+  background-color:#00FFFF;
   color:white;
   padding: 20px;
   font-weight:700;
@@ -63,54 +42,65 @@ div {
 h1 {
   font-family: 'Raleway', sans-serif;
 	text-align: center;
-	font-size: 20px;
+	font-size: 25px;
   font-weight:700;
 	line-height:1;
 	text-transform: capitalize;
 }
 
+h2, h3 {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  color: #000000;
+  font-size: 15px;
+}
+
+#p1 {background-color:rgba(`jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 1 1`); color:#fff}
+
 hr {clear:both;}
-</style>" >> $filenamex
+</style>" >> $OUTPUT
 
-echo "</head><body>" >> $filenamex
-
-echo "<h1>$titlename<br>(Total Image Files In This Folder (NON-RECURSIVE) = $totalfiles)</h1>" >> $filenamex
-
-for x in `ls *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber`
-	do
-		echo "<div><a href='$x'><img src='$x' width='100%' align='top'></img><br><br>$x</a></div>" >> $filenamex
-	done;
-
+echo "</head><body bgcolor='#e0e0e0'>" >> $OUTPUT
 
 #### OPTIONAL SECTION: Finding and listing all Image files Recursively. ####
-totalimagefiles="`find . -type f | egrep -i '\.(jpg|png|PNG|JPG)$' | wc -l | tr -d '[[:space:]]'`"
+totalimagefiles="`find $ROOT -type f | egrep -i '\.(jpg|png|PNG|JPG|gif|GIF)$' | wc -l | tr -d '[[:space:]]'`"
 
-echo "<hr><br><h1>Total Image Files In This Folder (RECURSIVE) = $totalimagefiles)</h1>" >> $filenamex
-
-for x in `find . -type f | egrep -i '\.(jpg|png|PNG|JPG)$' | sort -n -k1.$sortnumber`
-  do
-    imagedimen = `identify $x | awk '{FS=" "; print $1,"=WxH: ",$3;}'`;
-  	echo "<div><a href='$x'><img src='$x' width='100%' align='top'></img><br><br>$x</a> // $imagedimen</div>" >> $filenamex
-  done;
-##### OPTIONAL SECTION ENDS #####
+echo "<h1>Index of All Our Logos // by Abhishek Paliwal</h1>" >> $OUTPUT
+echo "<h1>Total Image Files In This Folder (Recursive) = $totalimagefiles</h1>" >> $OUTPUT
+echo "<h2>Page last updated: "`date`"</h2>" >> $OUTPUT
 
 
-#### OPTIONAL SECTION: Findind and listing Photoshop + Other Design files ####
-totalcustomfiles="`find . -type f | egrep -i '\.(psd|ai|svg|eps|key|pages|numbers)$' | wc -l | tr -d '[[:space:]]'`"
+#### Calculations begin ####
+x=0
+for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
+  path=`basename "$filepath"`
+  echo " <hr> <h1 id='p1'> $path</h1>" >> $OUTPUT
 
-echo "<hr><br><h1>Downloadable Psd, Ai, Svg, Eps, Pages, Numbers, Keynote Files (RECURSIVE) = $totalcustomfiles</h1>" >> $filenamex
+  for x in `find "$filepath" -type f| sort | egrep -i '\.(jpg|png|PNG|JPG|gif|GIF)$'`; do
+    file=`basename "$x"`
 
-for y in `find . -type f | egrep -i '\.(psd|ai|svg|eps|key|pages|numbers)$'`
-  do
-  	echo "<div class='colored'><a href='$y'>DOWNLOAD<br>$y</a></div>" >> $filenamex
+    ## Finding the image dimensions using ImageMagick's identify command.
+    imagedimen="`identify $path/$file | awk '{FS=" "; print "WxH (px)= " $3;}'`";
 
-  done;
+    ## Finding the FileType for the current file.
+    filetype="`file $path/$file | awk '{FS=" "; print $2}'`";
+    echo $filetype " - " $path/$file "............DONE!";
 
-##### OPTIONAL SECTION ENDS #####
-echo "<hr>" >> $filenamex
+## Printing the image dimensions for everything, except GIFs because they produce LOOOOONG outputs for all GIF frames. ##
+    if [ "$filetype" != 'GIF' ]; then
+      echo "<div><a href='$path/$file'><img src='$path/$file' width='100%' align='top'></img><br><br>$file</a><br> $imagedimen </div>" >> $OUTPUT
+    else
+      echo "<div><a href='$path/$file'><img src='$path/$file' width='100%' align='top'></img><br><br>$file</a></div>" >> $OUTPUT
+    fi
 
-echo "</body></html>" >> $filenamex
+  done
+done
 
-#Open the newly created file in browser
-echo "DONE! File will now be opened in FIREFOX."
-open -a firefox $filenamex
+#### Calculations end ####
+echo "<hr>" >> $OUTPUT
+echo "</body>" >> $OUTPUT
+echo "</html>" >> $OUTPUT
+
+echo "######## LOGOS Index Successfully created. ######### ";
+echo "####### DONE! File will now be opened in FIREFOX. ########"
+open -a firefox $OUTPUT
