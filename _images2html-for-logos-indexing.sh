@@ -89,12 +89,13 @@ echo "<hr><br><h1>Total Image Files In This Folder (RECURSIVE) = $totalimagefile
 
 for x in `find . -type f | egrep -i '\.(jpg|png|PNG|JPG)$' | sort -n -k1.$sortnumber`
   do
-  	echo "<div><a href='$x'><img src='$x' width='100%' align='top'></img><br><br>$x</a></div>" >> $filenamex
+    imagedimen = `identify $x | awk '{FS=" "; print $1,"=WxH: ",$3;}'`;
+  	echo "<div><a href='$x'><img src='$x' width='100%' align='top'></img><br><br>$x</a> // $imagedimen</div>" >> $filenamex
   done;
 ##### OPTIONAL SECTION ENDS #####
 
 
-#### OPTIONAL SECTION: Findind and listing Photoshop files ####
+#### OPTIONAL SECTION: Findind and listing Photoshop + Other Design files ####
 totalcustomfiles="`find . -type f | egrep -i '\.(psd|ai|svg|eps|key|pages|numbers)$' | wc -l | tr -d '[[:space:]]'`"
 
 echo "<hr><br><h1>Downloadable Psd, Ai, Svg, Eps, Pages, Numbers, Keynote Files (RECURSIVE) = $totalcustomfiles</h1>" >> $filenamex
