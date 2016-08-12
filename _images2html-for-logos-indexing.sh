@@ -7,7 +7,7 @@ ROOT="/Users/abhishek/Dropbox/Public/logos"
 echo "CURRENT WORKING DIRECTORY: " $ROOT ##check the present working directory
 echo "#################" #Blank line
 
-OUTPUT="all-logos-index.html" ##Output filename
+OUTPUT="$ROOT/all-logos-index.html" ##Output filename
 
 echo -n "Enter the size of the DIV to use (300 works best) [ENTER]: "
 read imagesize
@@ -16,7 +16,7 @@ imagesize+="px"; #Concatenating px at the end of the number
 echo "<html><head><title>$OUTPUT</title>" > $OUTPUT
 
 
-echo "<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet'>
+echo "<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
 <style>
 div {
     float:left;
@@ -25,10 +25,10 @@ div {
     padding: 5px;
     margin: 5px;
     color: black;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Oswald', sans-serif;
     text-align: center;
     font-size: 15px;
-    line-height:1;
+    line-height:1.5;
     /* text-transform: lowercase; */
 }
 
@@ -40,7 +40,7 @@ div {
 }
 
 h1 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Oswald', sans-serif;
 	text-align: center;
 	font-size: 25px;
   font-weight:700;
@@ -49,13 +49,13 @@ h1 {
 }
 
 h2, h3 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Oswald', sans-serif;
   text-align: center;
   color: #000000;
   font-size: 15px;
 }
 
-#p1 {background-color:rgba(`jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 1 1`); color:#fff}
+#p1 {background-color:rgba(`jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 1 1`); color:#fff; text-transform: uppercase;}
 
 hr {clear:both;}
 </style>" >> $OUTPUT
@@ -80,11 +80,11 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
     file=`basename "$x"`
 
     ## Finding the image dimensions using ImageMagick's identify command.
-    imagedimen="`identify $path/$file | awk '{FS=" "; print "WxH (px)= " $3;}'`";
+    imagedimen="`identify $ROOT/$path/$file | awk '{FS=" "; print "WxH= " $3 " - " $7 ;}'`";
 
     ## Finding the FileType for the current file.
-    filetype="`file $path/$file | awk '{FS=" "; print $2}'`";
-    echo $filetype " - " $path/$file "............DONE!";
+    filetype="`file $ROOT/$path/$file | awk '{FS=" "; print $2}'`";
+    echo $filetype " - " $ROOT/$path/$file "............DONE!";
 
 ## Printing the image dimensions for everything, except GIFs because they produce LOOOOONG outputs for all GIF frames. ##
     if [ "$filetype" != 'GIF' ]; then
