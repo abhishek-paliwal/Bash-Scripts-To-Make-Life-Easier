@@ -9,9 +9,10 @@ echo "#################" #Blank line
 
 OUTPUT="$ROOT/all-logos-index.html" ##Output filename
 
-echo -n "Enter the size of the DIV to use (300 works best) [ENTER]: "
-read imagesize
-imagesize+="px"; #Concatenating px at the end of the number
+##### UNCOMMENT the following three lines for custom image size #######
+# echo -n "Enter the size of the DIV to use (300 works best) [ENTER]: "
+# read imagesize
+# imagesize+="px"; #Concatenating px at the end of the number
 
 echo "<html><head><title>$OUTPUT</title>" > $OUTPUT
 
@@ -20,8 +21,9 @@ echo "<link href='https://fonts.googleapis.com/css?family=Oswald' rel='styleshee
 <style>
 div {
     float:left;
-    width: $imagesize;
+    /* width: $imagesize; */
     /* height: $imagesize; */
+    width: 300px;
     padding: 5px;
     margin: 5px;
     color: black;
