@@ -55,7 +55,7 @@ h2, h3 {
   font-size: 15px;
 }
 
-#p1 {background-color:rgba(`jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 1 1`); color:#fff; text-transform: uppercase;}
+#p1 {background-color:rgba(`jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 1 1`); color:#fff; text-transform: uppercase; padding:10px;}
 
 hr {clear:both;}
 </style>" >> $OUTPUT
