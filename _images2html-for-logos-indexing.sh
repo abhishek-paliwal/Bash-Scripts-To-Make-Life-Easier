@@ -106,3 +106,4 @@ echo "</html>" >> $OUTPUT
 echo "######## LOGOS Index Successfully created. ######### ";
 echo "####### DONE! File will now be opened in FIREFOX. ########"
 open -a firefox $OUTPUT
+open -a firefox https://dl.dropboxusercontent.com/u/6378027/logos/all-logos-index.html
