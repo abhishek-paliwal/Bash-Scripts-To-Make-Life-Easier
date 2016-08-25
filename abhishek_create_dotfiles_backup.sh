@@ -1,4 +1,5 @@
 #!/bin/bash
+## This bash script creates the backups of all the important DOTFILEs kinda files on our Macs. ##
 USERNAME="abhishek"
 ROOT="/Users/$USERNAME";
 BACKUP_DIR="$ROOT/OneDrive/Apps2Sync/dotfiles_backups/$USERNAME";
@@ -19,13 +20,14 @@ echo "$ROOT/Dropbox/TextExpander ....................... ZIPPING and COPYING DON
 zip -rq $BACKUP_DIR/$today-My-Github-Files.zip $ROOT/Github
 echo "$ROOT/Github ....................... ZIPPING and COPYING DONE!"
 
+## nvALT files backup ##
+zip -rq $BACKUP_DIR/$today-nvALT_Notes_All.zip $ROOT/Dropbox/_by_ABHISHEK/_NVnotes
+echo "$ROOT/Dropbox/_by_ABHISHEK/_NVnotes ....................... ZIPPING and COPYING DONE!"
 
 
 
 
-
-
-
+#######################################################
 ########### do not edit anything below this ###########
 echo "" ;
 echo "############### ALL DONE #################" ;
