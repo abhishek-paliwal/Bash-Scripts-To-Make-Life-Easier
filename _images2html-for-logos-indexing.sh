@@ -3,7 +3,7 @@
 ## ...ALL THE IMAGES IN WORKING DIRECTORY
 echo "#################" #Blank line
 # ROOT=`pwd`
-ROOT="/Users/abhishek/Dropbox/Public/logos"
+ROOT="/Users/abhishek/Dropbox/Public/__To_Synchonize-With-Webserver/logos"
 echo "CURRENT WORKING DIRECTORY: " $ROOT ##check the present working directory
 echo "#################" #Blank line
 
@@ -106,4 +106,4 @@ echo "</html>" >> $OUTPUT
 echo "######## LOGOS Index Successfully created. ######### ";
 echo "####### DONE! File will now be opened in FIREFOX. ########"
 open -a firefox $OUTPUT
-open -a firefox https://dl.dropboxusercontent.com/u/6378027/logos/all-logos-index.html
+open -a firefox http://downloads.concepro.com/dropbox-public-files/logos/all-logos-index.html
