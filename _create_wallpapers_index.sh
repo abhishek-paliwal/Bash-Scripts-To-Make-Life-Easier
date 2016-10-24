@@ -32,8 +32,11 @@ h2 {
   font-size: 15px;
 }
 
-#p1 {background-color:rgba(`jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 1 1`);}
-#t1 {color:#FF0066;}
+#p1 {background-color:rgba(180,180,180,1);}
+#t1 {color: rgba(180,180,180,1);}
+#mggk {color: rgba(255,0,80,1);}
+#concepro {color: #3498db;}
+
 
 </style>
 </head>
@@ -50,13 +53,20 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
   path=`basename "$filepath"`
   echo "  <div id='p1'><i class='fa fa-book fa-1x'></i> $path</div>" >> $OUTPUT
   echo "  <OL>" >> $OUTPUT
-  for i in `find "$filepath" -maxdepth 1 -mindepth 1 -type f| sort | grep -i '.html'`; do
+  for i in `find "$filepath" -maxdepth 1 -mindepth 1 -type f | egrep -i '.html|.HTML' | sort -n`; do
     file=`basename "$i"`
 
-    filemd=`echo $file | cut -d "." -f 1`   ## Getting the MarkDown Filename without extension, from the HTML file.
-    filemd+=".md"; ## Appending the .md extension at the end of the extracted filename.
+    ## Finding out the proper CSS STYLE variable
+    if [[ $file == *"MGGK"* ]] ;
+        then id="mggk" ;
+    elif [[ $file == *"CONCEPRO"* ]] ;
+        then id="concepro" ;
+    else id="t1" ;
+    fi
 
-    echo "    <LI id='t1'><a href=\"$HTTP/$path/$file\">$file</a></LI>" >> $OUTPUT
+    fontawesomeiconhtml="<i class='fa fa-html5 fa-2x'></i>  "
+
+    echo "    <LI id='$id'>$fontawesomeiconhtml<a href=\"$HTTP/$path/$file\">$file</a></LI>" >> $OUTPUT
   done
   echo "  </OL>" >> $OUTPUT
 done
