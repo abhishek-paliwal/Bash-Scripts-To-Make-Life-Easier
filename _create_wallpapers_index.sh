@@ -66,7 +66,10 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
 
     fontawesomeiconhtml="<i class='fa fa-html5 fa-2x'></i>  "
 
-    echo "    <LI id='$id'>$fontawesomeiconhtml<a href=\"$HTTP/$path/$file\">$file</a></LI>" >> $OUTPUT
+## Inserting the images for the sample screenshots
+    IFS='-' read -r wallpaperNumber RestOftheName <<< "$file"
+
+    echo "    <LI id='$id'>$fontawesomeiconhtml<a href=\"$HTTP/$path/$file\">$file</a><br><img src=\"./sample-screenshots-of-wallpapers/$wallpaperNumber-sample-wallpaper-300px-long.jpg\"></LI>" >> $OUTPUT
   done
   echo "  </OL>" >> $OUTPUT
 done
