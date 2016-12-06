@@ -57,7 +57,7 @@ h2, h3 {
   font-size: 15px;
 }
 
-#p1 {background-color:rgba(`jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 1 1`); color:#fff; text-transform: uppercase; padding:10px;}
+.p1 {background-color:rgba(`jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 0 255`, `jot -r 1 1 1`); color:#fff; text-transform: uppercase; padding:10px;}
 
 hr {clear:both;}
 </style>" >> $OUTPUT
@@ -71,12 +71,21 @@ echo "<h1>Index of All Our Logos // by Abhishek Paliwal</h1>" >> $OUTPUT
 echo "<h1>Total Image Files In This Folder (Recursive) = $totalimagefiles</h1>" >> $OUTPUT
 echo "<h2>Page last updated: "`date`"</h2>" >> $OUTPUT
 
+##### CREATING THE HREF-NAME LINKS FOR ALL THE FOLDERS #####
+echo "<hr>" >> $OUTPUT
+echo "<h1>- Table of Contents -</h1>" >> $OUTPUT
+
+for foldername in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
+  folder=`basename "$foldername"`
+  echo "<h2 style='font-family: Times, Serif; text-transform: uppercase; letter-spacing: 2px;'><a href='#$folder'> $folder</a><h2> " >> $OUTPUT
+done
+#### Link Creation Ends #####
 
 #### Calculations begin ####
 x=0
 for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
   path=`basename "$filepath"`
-  echo " <hr> <h1 id='p1'> $path</h1>" >> $OUTPUT
+  echo " <hr> <h1 class='p1'> <a name='$path'>$path</a> <a href='#'>(>Back to top)</a></h1>" >> $OUTPUT
 
   for x in `find "$filepath" -type f| sort | egrep -i '\.(jpg|png|PNG|JPG|gif|GIF)$'`; do
     file=`basename "$x"`
@@ -87,6 +96,7 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
     ## Finding the FileType for the current file.
     filetype="`file $ROOT/$path/$file | awk '{FS=" "; print $2}'`";
     echo $filetype " - " $ROOT/$path/$file "............DONE!";
+    echo "IMAGE-DIMENSIONS - " $imagedimen "\n";
 
 ## Printing the image dimensions for everything, except GIFs because they produce LOOOOONG outputs for all GIF frames. ##
     if [ "$filetype" != 'GIF' ]; then
@@ -105,5 +115,5 @@ echo "</html>" >> $OUTPUT
 
 echo "######## LOGOS Index Successfully created. ######### ";
 echo "####### DONE! File will now be opened in FIREFOX. ########"
-open -a firefox $OUTPUT
-open -a firefox http://downloads.concepro.com/dropbox-public-files/logos/all-logos-index.html
+open -a Safari $OUTPUT
+open -a Safari http://downloads.concepro.com/dropbox-public-files/logos/all-logos-index.html
