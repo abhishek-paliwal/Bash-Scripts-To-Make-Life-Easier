@@ -11,6 +11,9 @@ sh $BASEPATH/_create_wallpapers_index.sh
 echo "creating logos index in dropbox......"
 sh $BASEPATH/_images2html-for-logos-indexing.sh
 
+echo "creating LOW POLY backgrounds index in dropbox......"
+sh $BASEPATH/_images2html-for-lowpoly-backgrounds-indexing.sh
+
 #### BACKUPS ####
 echo "creating DOTfiles backups in Onedrive......"
 sh $BASEPATH/abhishek_create_dotfiles_backup.sh
