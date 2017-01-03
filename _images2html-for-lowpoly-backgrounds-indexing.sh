@@ -3,7 +3,7 @@
 ## ...ALL THE IMAGES IN WORKING DIRECTORY
 echo "#################" #Blank line
 # ROOT=`pwd`
-ROOT="/Users/abhishek/Dropbox/Public/__To_Synchonize-With-Webserver/all-polygonal-backgrounds"
+ROOT="/Users/abhishek/Dropbox/Public/_TO_SYNC_downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds"
 echo "CURRENT WORKING DIRECTORY: " $ROOT ##check the present working directory
 echo "#################" #Blank line
 
