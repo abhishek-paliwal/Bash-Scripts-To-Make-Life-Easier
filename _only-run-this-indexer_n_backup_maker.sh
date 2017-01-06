@@ -3,17 +3,17 @@
 BASEPATH="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier";
 
 echo "creating markdown books index in dropbox......"
-sh $BASEPATH/_create_markdown_books_index.sh
+sh $BASEPATH/1_create_markdown_books_index.sh
 
 echo "creating wallpapers index in github......"
-sh $BASEPATH/_create_wallpapers_index.sh
+sh $BASEPATH/2_create_wallpapers_index.sh
 
 echo "creating logos index in dropbox......"
-sh $BASEPATH/_images2html-for-logos-indexing.sh
+sh $BASEPATH/3_images2html-for-logos-indexing.sh
 
 echo "creating LOW POLY backgrounds index in dropbox......"
-sh $BASEPATH/_images2html-for-lowpoly-backgrounds-indexing.sh
+sh $BASEPATH/4_images2html-for-lowpoly-backgrounds-indexing.sh
 
-#### BACKUPS ####
-echo "creating DOTfiles backups in Onedrive......"
-sh $BASEPATH/abhishek_create_dotfiles_backup.sh
+#### MAC BACKUPS ####
+echo "creating MACFILES backups in Onedrive......"
+sh $BASEPATH/5-abhishek_create_MACFILES_backup.sh
