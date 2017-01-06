@@ -2,12 +2,13 @@
 ## THIS SCRIPT CREATES AN HTML FILE WITH...
 ## ...ALL THE IMAGES IN WORKING DIRECTORY
 echo "#################" #Blank line
-# ROOT=`pwd`
-ROOT="/Users/abhishek/Dropbox/Public/_TO_SYNC_downloads.concepro.com/dropbox-public-files/logos"
+ROOT="$HOME/Dropbox/Public/_TO_SYNC_downloads.concepro.com/dropbox-public-files/logos"
 echo "CURRENT WORKING DIRECTORY: " $ROOT ##check the present working directory
 echo "#################" #Blank line
 
-OUTPUT="$ROOT/all-logos-index.html" ##Output filename
+FINALFILENAME="all-logos-index.html"
+OUTPUT="$ROOT/$FINALFILENAME" ##Output filename
+SITEURL="http://downloads.concepro.com/dropbox-public-files/logos/$FINALFILENAME"
 
 ##### UNCOMMENT the following three lines for custom image size #######
 # echo -n "Enter the size of the DIV to use (300 works best) [ENTER]: "
@@ -116,4 +117,4 @@ echo "</html>" >> $OUTPUT
 echo "######## LOGOS Index Successfully created. ######### ";
 echo "####### DONE! File will now be opened in FIREFOX. ########"
 open -a Safari $OUTPUT
-open -a Safari http://downloads.concepro.com/dropbox-public-files/logos/all-logos-index.html
+open -a Safari $SITEURL

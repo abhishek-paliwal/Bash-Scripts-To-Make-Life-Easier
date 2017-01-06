@@ -1,6 +1,6 @@
 #!bin/bash
-####### only run this bash script to make ALL the indexes and backups on abhishek's Macbook #########
-BASEPATH="/Users/abhishek/GitHub/Bash-Scripts-To-Make-Life-Easier";
+####### only run this bash script to make ALL the indexes and backups on PALI's Macbook #########
+BASEPATH="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier";
 
 echo "creating markdown books index in dropbox......"
 sh $BASEPATH/_create_markdown_books_index.sh

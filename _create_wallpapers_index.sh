@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ROOT=/Users/abhishek/GitHub/abhishek-paliwal.github.io
+ROOT="$HOME/GitHub/abhishek-paliwal.github.io"
 HTTP="https://abhishek-paliwal.github.io"
 OUTPUT="$ROOT/wallpapers-index.html"
 
