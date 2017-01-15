@@ -53,6 +53,15 @@ if [ "$borderColor" = "" ] ; then
 fi
 echo "Chosen BORDER COLOR is : $borderColor";
 
+echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>> ===== <<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
+echo "What is the BORDER COLOR WIDTH you want [in pixels]? [ default = 10, press ENTER to use default ...]"
+read borderColorWidth
+## setting defaults
+if [ "$borderColorWidth" = "" ] ; then
+  borderColorWidth="10" ;
+fi
+echo "Chosen BORDER COLOR WIDTH is : $borderColorWidth";
+
 
 #######################################
 echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
@@ -63,13 +72,14 @@ ResizeDir="$BaseConvertDir/2-just-resized-to-$imageWidth-x-$imageHeight"
 BaseConvertDirDensity="$BaseConvertDir/3-notResized-but-DENSITY-changed-to-$outputPPI-dpi-at-Quality-$outputImageQuality"
 BaseConvertDirResample="$BaseConvertDir/4-reSized-and-RESAMPLED-to-$outputPPI-ppi-at-Quality-$outputImageQuality"
 BorderDir="$BaseConvertDir/5-border-colored-$borderColor"
+BorderDirTriple="$BaseConvertDir/6-border-with-fancy-triple-colors"
 
 ## Creating logFile
 logfile="$BaseConvertDir/_imageMagick-Logfile.txt"
 rm $logfile ## if already exists, then remove.
 touch $logfile ;
 
-mkdir $BaseConvertDir $BaseConvertDirFormat $ResizeDir $BaseConvertDirDensity $BaseConvertDirResample $BorderDir
+mkdir $BaseConvertDir $BaseConvertDirFormat $ResizeDir $BaseConvertDirDensity $BaseConvertDirResample $BorderDir $BorderDirTriple
 echo "+++++++++++++++ Directories and File creation done. Disregard any 'File Exists' errors. ++++++++++++++++++ "
 
 echo "" ## Blank line
@@ -100,9 +110,24 @@ mogrify -units PixelsPerInch -resample $outputPPI -path $BaseConvertDirResample 
 echo "4. All Images Resampled with quality = $outputImageQuality and Resampled at = $outputPPI PPI " >> $logfile
 
 ## BORDER-COLOR APPLYING
-mogrify -path $BorderDir -border 10x10 -bordercolor "$borderColor " *jpg ## all jpgs
-mogrify -path $BorderDir -border 10x10 -bordercolor "$borderColor " *png ## all pngs
-echo "5. All Images have been applied 10x10 BORDER with COLOR = $borderColor " >> $logfile
+mogrify -path $BorderDir -border "$borderColorWidth"x"$borderColorWidth" -bordercolor "$borderColor " *jpg ## all jpgs
+mogrify -path $BorderDir -border "$borderColorWidth"x"$borderColorWidth" -bordercolor "$borderColor " *png ## all pngs
+echo "5. All Images have been applied $borderColorWidth x $borderColorWidth BORDER with COLOR = $borderColor " >> $logfile
+
+## TRIPLE FANCY BORDER-COLOR APPLYING - ONLY JPGs ARE TAKEN FOR THIS FOR EASE.
+## JPGs
+mogrify -path $BorderDirTriple -border 5x5 -bordercolor "#444444 " *jpg ## all jpgs
+mogrify -path $BorderDirTriple -border 70x70 -bordercolor "#FFFFFF " $BorderDirTriple/*jpg ## all jpgs
+mogrify -path $BorderDirTriple -border 25x25 -bordercolor "#000000 " $BorderDirTriple/*jpg ## all jpgs
+mogrify -path $BorderDirTriple -border 5x5 -bordercolor "#444444 " $BorderDirTriple/*jpg ## all jpgs
+echo "6A. All JPGs have been applied TRIPLE FANCY BORDERS with shades of BLACKS AND WHITE. " >> $logfile
+## PNGs
+mogrify -path $BorderDirTriple -border 5x5 -bordercolor "#444444 " *png ## all jpgs
+mogrify -path $BorderDirTriple -border 70x70 -bordercolor "#FFFFFF " $BorderDirTriple/*png ## all PNGs
+mogrify -path $BorderDirTriple -border 25x25 -bordercolor "#000000 " $BorderDirTriple/*png ## all PNGs
+mogrify -path $BorderDirTriple -border 5x5 -bordercolor "#444444 " $BorderDirTriple/*png ## all PNGs
+echo "6B. All PNGs have been applied TRIPLE FANCY BORDERS with shades of BLACKS AND WHITE. " >> $logfile
+
 
 #############################################
 echo "...........................All Done!"
