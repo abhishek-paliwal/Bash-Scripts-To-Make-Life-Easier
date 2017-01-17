@@ -69,6 +69,7 @@ echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
 BaseConvertDir="imagemagick_Output-At-Quality-$outputImageQuality";
 BaseConvertDirFormat="$BaseConvertDir/1-changed-from-PNGs-to-JPGs";
 ResizeDir="$BaseConvertDir/2-just-resized-to-$imageWidth-x-$imageHeight"
+ResizeDirForced="$ResizeDir/forced-resized"
 BaseConvertDirDensity="$BaseConvertDir/3-notResized-but-DENSITY-changed-to-$outputPPI-dpi-at-Quality-$outputImageQuality"
 BaseConvertDirResample="$BaseConvertDir/4-reSized-and-RESAMPLED-to-$outputPPI-ppi-at-Quality-$outputImageQuality"
 BorderDir="$BaseConvertDir/5-border-colored-$borderColor"
@@ -79,7 +80,7 @@ logfile="$BaseConvertDir/_imageMagick-Logfile.txt"
 rm $logfile ## if already exists, then remove.
 touch $logfile ;
 
-mkdir $BaseConvertDir $BaseConvertDirFormat $ResizeDir $BaseConvertDirDensity $BaseConvertDirResample $BorderDir $BorderDirTriple
+mkdir $BaseConvertDir $BaseConvertDirFormat $ResizeDir $ResizeDirForced $BaseConvertDirDensity $BaseConvertDirResample $BorderDir $BorderDirTriple
 echo "+++++++++++++++ Directories and File creation done. Disregard any 'File Exists' errors. ++++++++++++++++++ "
 
 echo "" ## Blank line
@@ -91,28 +92,33 @@ echo "ImageMagick Working......................"
 
 ## FORMAT CHANGE: This quickly converts all PNGs to JPGs
 mogrify -path $BaseConvertDirFormat -quality $outputImageQuality -format jpg *.png
-echo "1. All PNGs converted to JPGs, with quality = $outputImageQuality " >> $logfile
+echo "1. DONE. All PNGs converted to JPGs, with quality = $outputImageQuality " >> $logfile
 
-## Resizing to the desired width x height
+## Resizing to the desired width x height (only to larger dimension of both)
 mogrify -path $ResizeDir -resize $imageWidthx$imageHeight *.jpg
 mogrify -path $ResizeDir -resize $imageWidthx$imageHeight *.png
-echo "2. All Images resized to = $imageWidth-x-$imageHeight " >> $logfile
+echo "2A. DONE. ASPECT RATIO PRESERVED: All Images resized to larger of the two dimensions = $imageWidth-x-$imageHeight " >> $logfile
+
+## Resizing to the desired width x height (forced resize to both given height and width)
+mogrify -path $ResizeDirForced -resize $imageWidth\!x$imageHeight\! *.jpg
+mogrify -path $ResizeDirForced -resize $imageWidth\!x$imageHeight\! *.png
+echo "2B. DONE. NO ASPECT RATIO PRESERVED: All Images FORCE RESIZED to = $imageWidth-x-$imageHeight " >> $logfile
 
 ## DENSITY CHANGE ONLY: This changes the density only (dpi), keeping the same size.
 mogrify -units PixelsPerInch -density $outputPPI -path $BaseConvertDirDensity -quality $outputImageQuality -format jpg *.jpg ## all jpgs to jpgs
 mogrify -units PixelsPerInch -density $outputPPI -path $BaseConvertDirDensity -quality $outputImageQuality -format png *.png ## all pngs to pngs
-echo "3. All Images converted with quality = $outputImageQuality and Density = $outputPPI DPI " >> $logfile
+echo "3. DONE. All Images converted with quality = $outputImageQuality and Density = $outputPPI DPI " >> $logfile
 
 ## RESAMPLING: This changes the size of the image by desired resampling.
-## Eg, doubling the size from 150dpi to 300dpi
-mogrify -units PixelsPerInch -resample $outputPPI -path $BaseConvertDirResample -quality $outputImageQuality -format jpg *.jpg ## all jpgs to jpgs
-mogrify -units PixelsPerInch -resample $outputPPI -path $BaseConvertDirResample -quality $outputImageQuality -format png *.png ## all pngs to pngs
-echo "4. All Images Resampled with quality = $outputImageQuality and Resampled at = $outputPPI PPI " >> $logfile
+## Eg, doubling the size from 150dpi to 300dpi. UNCOMMENT THE FOLLOWING 2 LINES TO MAKE IT WORK.
+# mogrify -units PixelsPerInch -resample $outputPPI -path $BaseConvertDirResample -quality $outputImageQuality -format jpg *.jpg ## all jpgs to jpgs
+# mogrify -units PixelsPerInch -resample $outputPPI -path $BaseConvertDirResample -quality $outputImageQuality -format png *.png ## all pngs to pngs
+echo "4. -----> NOT DONE. BCOZ CODE COMMENTED // All Images Resampled with quality = $outputImageQuality and Resampled at = $outputPPI PPI " >> $logfile
 
 ## BORDER-COLOR APPLYING
 mogrify -path $BorderDir -border "$borderColorWidth"x"$borderColorWidth" -bordercolor "$borderColor " *jpg ## all jpgs
 mogrify -path $BorderDir -border "$borderColorWidth"x"$borderColorWidth" -bordercolor "$borderColor " *png ## all pngs
-echo "5. All Images have been applied $borderColorWidth x $borderColorWidth BORDER with COLOR = $borderColor " >> $logfile
+echo "5. DONE. All Images have been applied $borderColorWidth x $borderColorWidth BORDER with COLOR = $borderColor " >> $logfile
 
 ## TRIPLE FANCY BORDER-COLOR APPLYING - ONLY JPGs ARE TAKEN FOR THIS FOR EASE.
 ## JPGs
@@ -120,13 +126,13 @@ mogrify -path $BorderDirTriple -border 5x5 -bordercolor "#444444 " *jpg ## all j
 mogrify -path $BorderDirTriple -border 70x70 -bordercolor "#FFFFFF " $BorderDirTriple/*jpg ## all jpgs
 mogrify -path $BorderDirTriple -border 25x25 -bordercolor "#000000 " $BorderDirTriple/*jpg ## all jpgs
 mogrify -path $BorderDirTriple -border 5x5 -bordercolor "#444444 " $BorderDirTriple/*jpg ## all jpgs
-echo "6A. All JPGs have been applied TRIPLE FANCY BORDERS with shades of BLACKS AND WHITE. " >> $logfile
+echo "6A. DONE. All JPGs have been applied TRIPLE FANCY BORDERS with shades of BLACKS AND WHITE. " >> $logfile
 ## PNGs
 mogrify -path $BorderDirTriple -border 5x5 -bordercolor "#444444 " *png ## all jpgs
 mogrify -path $BorderDirTriple -border 70x70 -bordercolor "#FFFFFF " $BorderDirTriple/*png ## all PNGs
 mogrify -path $BorderDirTriple -border 25x25 -bordercolor "#000000 " $BorderDirTriple/*png ## all PNGs
 mogrify -path $BorderDirTriple -border 5x5 -bordercolor "#444444 " $BorderDirTriple/*png ## all PNGs
-echo "6B. All PNGs have been applied TRIPLE FANCY BORDERS with shades of BLACKS AND WHITE. " >> $logfile
+echo "6B. DONE. All PNGs have been applied TRIPLE FANCY BORDERS with shades of BLACKS AND WHITE. " >> $logfile
 
 
 #############################################
