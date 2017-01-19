@@ -126,12 +126,14 @@ mogrify -path $BorderDirTriple -border 5x5 -bordercolor "#444444 " *jpg ## all j
 mogrify -path $BorderDirTriple -border 70x70 -bordercolor "#FFFFFF " $BorderDirTriple/*jpg ## all jpgs
 mogrify -path $BorderDirTriple -border 25x25 -bordercolor "#000000 " $BorderDirTriple/*jpg ## all jpgs
 mogrify -path $BorderDirTriple -border 5x5 -bordercolor "#444444 " $BorderDirTriple/*jpg ## all jpgs
+mogrify -path $BorderDirTriple -border 25x25 -bordercolor "#FFFFFF " $BorderDirTriple/*jpg ## all jpgs
 echo "6A. DONE. All JPGs have been applied TRIPLE FANCY BORDERS with shades of BLACKS AND WHITE. " >> $logfile
 ## PNGs
 mogrify -path $BorderDirTriple -border 5x5 -bordercolor "#444444 " *png ## all jpgs
 mogrify -path $BorderDirTriple -border 70x70 -bordercolor "#FFFFFF " $BorderDirTriple/*png ## all PNGs
 mogrify -path $BorderDirTriple -border 25x25 -bordercolor "#000000 " $BorderDirTriple/*png ## all PNGs
 mogrify -path $BorderDirTriple -border 5x5 -bordercolor "#444444 " $BorderDirTriple/*png ## all PNGs
+mogrify -path $BorderDirTriple -border 25x25 -bordercolor "#FFFFFF " $BorderDirTriple/*png ## all jpgs
 echo "6B. DONE. All PNGs have been applied TRIPLE FANCY BORDERS with shades of BLACKS AND WHITE. " >> $logfile
 
 
