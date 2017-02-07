@@ -29,7 +29,7 @@ totalfiles+=" Images"
 echo "$totalfiles"
 echo "$titlename-$totalfiles.html" ##this output shows leading spaces, donno why. So SED is used below.
 
-filenamex=`echo "$titlename-$totalfiles.html" | sed -e 's/ /-/g'` 
+filenamex=`echo "$titlename-$totalfiles.html" | sed -e 's/ /-/g'`
 
 echo -n "Enter the % size of images to use (99 works best) [ENTER]: "
 read imagesize
@@ -44,5 +44,5 @@ for x in `ls *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber`
 echo "</body></html>" >> $filenamex
 
 #Open the newly created file in browser
-echo "DONE! File will now be opened in FIREFOX."
-open -a firefox $filenamex
+echo "DONE! File will now be opened in SAFARI."
+open -a Safari $filenamex

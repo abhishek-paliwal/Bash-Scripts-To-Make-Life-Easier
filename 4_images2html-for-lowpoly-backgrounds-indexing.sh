@@ -115,6 +115,6 @@ echo "</body>" >> $OUTPUT
 echo "</html>" >> $OUTPUT
 
 echo "######## LOGOS Index Successfully created. ######### ";
-echo "####### DONE! File will now be opened in FIREFOX. ########"
+echo "####### DONE! File will now be opened in SAFARI. ########"
 open -a Safari $OUTPUT
 open -a Safari $SITEURL

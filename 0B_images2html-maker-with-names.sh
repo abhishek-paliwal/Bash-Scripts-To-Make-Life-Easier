@@ -111,5 +111,5 @@ echo "<hr>" >> $filenamex
 echo "</body></html>" >> $filenamex
 
 #Open the newly created file in browser
-echo "DONE! File will now be opened in FIREFOX."
-open -a firefox $filenamex
+echo "DONE! File will now be opened in SAFARI."
+open -a Safari $filenamex
