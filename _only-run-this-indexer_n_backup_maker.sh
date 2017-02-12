@@ -28,3 +28,7 @@ backup_to_dreamcompute_server
 echo "     >>>>>>>> Backup [TO] DreamCompute DONE. <<<<<<<"
 backup_from_dreamcompute_server
 echo "     >>>>>>>> Backup [FROM] DreamCompute DONE. <<<<<<<"
+echo " = = = = > Opening the DreamCompute Backup directory..."
+open $HOME/OneDrive/Apps2Sync/DreamCompute-VPS-Backup
+
+###
