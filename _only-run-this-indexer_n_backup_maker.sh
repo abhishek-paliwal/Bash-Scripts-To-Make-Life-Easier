@@ -29,6 +29,6 @@ echo "     >>>>>>>> Backup [TO] DreamCompute DONE. <<<<<<<"
 backup_from_dreamcompute_server
 echo "     >>>>>>>> Backup [FROM] DreamCompute DONE. <<<<<<<"
 echo " = = = = > Opening the DreamCompute Backup directory..."
-open $HOME/OneDrive/Apps2Sync/DreamCompute-VPS-Backup
+open $HOME/OneDrive/Apps2Sync/DreamCompute-VPS-Backup ; ## Don't forget to add semicolon at the end.
 
 ###
