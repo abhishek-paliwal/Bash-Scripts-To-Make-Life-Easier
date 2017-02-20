@@ -24,9 +24,9 @@ shopt -s expand_aliases ## This has to be done, else, aliases are not expanded i
 source $HOME/.bash_profile ## Then, this also has to be done to use aliases in this script.
 #### Actual backup command aliases below ##
 echo "     >>>>>>>> Creating backups to-and-from DREAMCOMPUTE Server......"
-backup_to_dreamcompute_server
+1_backup_to_dreamcompute_server
 echo "     >>>>>>>> Backup [TO] DreamCompute DONE. <<<<<<<"
-backup_from_dreamcompute_server
+1_backup_from_dreamcompute_server
 echo "     >>>>>>>> Backup [FROM] DreamCompute DONE. <<<<<<<"
 echo " = = = = > Opening the DreamCompute Backup directory..."
 open $HOME/OneDrive/Apps2Sync/DreamCompute-VPS-Backup ; ## Don't forget to add semicolon at the end.
