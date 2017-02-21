@@ -36,11 +36,11 @@ fi
 echo "Chosen WIDTH is : $imageWidth";
 
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>> ===== <<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
-echo "What is the new Image HEIGHT you want? [ default = 1200, press ENTER to use default ...]"
+echo "What is the new Image HEIGHT you want? [ default = 800, press ENTER to use default ...]"
 read imageHeight
 ## setting defaults
 if [ "$imageHeight" = "" ] ; then
-  imageHeight="1200" ;
+  imageHeight="800" ;
 fi
 echo "Chosen HEIGHT is : $imageHeight";
 
