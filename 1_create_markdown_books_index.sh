@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ROOT="$HOME/Dropbox/Public/_TO_SYNC_downloads.concepro.com/dropbox-public-files/0000-WORDS-OF-WISDOM-WITH-MARKDOWN"
-HTTP="http://downloads.concepro.com/dropbox-public-files/0000-WORDS-OF-WISDOM-WITH-MARKDOWN"
+HTTP="https://downloads.concepro.com/dropbox-public-files/0000-WORDS-OF-WISDOM-WITH-MARKDOWN"
 OUTPUT="$ROOT/Index-Of-All-Markdown-Books.html"
 
 cat > $OUTPUT <<- EOM

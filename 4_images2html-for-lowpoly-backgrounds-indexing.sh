@@ -8,7 +8,7 @@ echo "#################" #Blank line
 
 FINALFILENAME="all-lowpoly-backgrounds-index.html"
 OUTPUT="$ROOT/$FINALFILENAME" ##Output filename
-SITEURL="http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/$FINALFILENAME"
+SITEURL="https://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/$FINALFILENAME"
 
 ##### UNCOMMENT the following three lines for custom image size #######
 # echo -n "Enter the size of the DIV to use (300 works best) [ENTER]: "
