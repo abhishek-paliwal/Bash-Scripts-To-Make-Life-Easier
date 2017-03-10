@@ -1,4 +1,4 @@
-#!/bin/bash;
+#!/bin/bash
 ## THIS SCRIPT CREATES AN HTML FILE WITH...
 ## ...ALL THE IMAGES IN WORKING DIRECTORY
 echo #Blank line
