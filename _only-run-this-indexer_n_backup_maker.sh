@@ -23,12 +23,22 @@ sh $BASEPATH/5-abhishek_create_MACFILES_backup.sh
 shopt -s expand_aliases ## This has to be done, else, aliases are not expanded in scripts.
 source $HOME/.bash_profile ## Then, this also has to be done to use aliases in this script.
 #### Actual backup command aliases below ##
-echo "     >>>>>>>> Creating backups to-and-from DREAMCOMPUTE Server......"
-1_backup_to_dreamcompute_server
-echo "     >>>>>>>> Backup [TO] DreamCompute DONE. <<<<<<<"
+echo "     ++++++++ Getting backups to-and-from DREAMCOMPUTE Server......"
+echo "     >>>>>>>> BEGINNING: Backup [FROM] DreamCompute DONE. <<<<<<<"
 1_backup_from_dreamcompute_server
-echo "     >>>>>>>> Backup [FROM] DreamCompute DONE. <<<<<<<"
+echo "     >>>>>>>> DONE: Backup [FROM] DreamCompute DONE. <<<<<<<"
+
 echo " = = = = > Opening the DreamCompute Backup directory..."
 open $HOME/OneDrive/Apps2Sync/DreamCompute-VPS-Backup ; ## Don't forget to add semicolon at the end.
 
-###
+echo "     ++++++++ BACKUPS TO CDN: Creating backups to CDNs @ Dreamhost Hosted Sites......"
+## BACKUPS TO CDN
+echo "     >>>>>>>> BEGINNING: Backup [TO] downloads.concepro.com <<<<<<<"
+1_backup_to_dreamcompute_server
+echo "     >>>>>>>> DONE: Backup [TO] downloads.concepro.com <<<<<<<"
+####
+echo "     >>>>>>>> BEGINNING: Backup [TO] cdn.mygingergarlickitchen.com <<<<<<<"
+1_backup_to_cdn_mggk
+echo "     >>>>>>>> DONE: Backup [TO] cdn.mygingergarlickitchen.com <<<<<<<"
+
+#########################################################
