@@ -39,6 +39,10 @@ echo "<html><head><title>$filenamex</title>" > $filenamex
 
 echo "<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet'>
 <style>
+
+body {
+  background: rgba(245,245,245,1) ;
+}
 div {
     float:left;
     width: $imagesize;
@@ -67,6 +71,10 @@ h1 {
   font-weight:700;
 	line-height:1;
 	text-transform: capitalize;
+}
+
+img {
+  border : 10px solid white ;
 }
 
 hr {clear:both;}
