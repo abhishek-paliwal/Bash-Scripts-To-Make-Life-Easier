@@ -14,9 +14,13 @@ sh $BASEPATH/3_images2html-for-logos-indexing.sh
 echo "creating LOW POLY backgrounds index in dropbox......"
 sh $BASEPATH/4_images2html-for-lowpoly-backgrounds-indexing.sh
 
+echo "creating JSON Wallpaper Templates index file in dropbox......"
+sh $BASEPATH/10_create_JSON_plus_image_indexes.sh
+
 #### BACKUPS of our MACs ####
 echo "creating backup of MACFILES in Onedrive......"
 sh $BASEPATH/5-abhishek_create_MACFILES_backup.sh
+
 
 #### BACKUP TO-AND-FROM DREAMCOMPUTE SERVER ####
 ## Running system commands (as Aliases from .bash_profile)
