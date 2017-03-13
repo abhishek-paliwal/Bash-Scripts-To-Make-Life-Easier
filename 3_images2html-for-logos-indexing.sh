@@ -24,7 +24,7 @@ div {
     float:left;
     /* width: $imagesize; */
     /* height: $imagesize; */
-    width: 300px;
+    width: 200px;
     padding: 5px;
     margin: 5px;
     color: black;
