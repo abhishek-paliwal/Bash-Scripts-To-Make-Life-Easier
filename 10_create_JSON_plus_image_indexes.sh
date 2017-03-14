@@ -1,6 +1,10 @@
 #!/bin/bash
 ## THIS SCRIPT CREATES AN HTML FILE WITH...
 ## ...ALL THE IMAGES + JSON FILES IN WORKING DIRECTORY, RECUSRSIVELY.
+ROOT="$HOME/GitHub/abhishek-paliwal.github.io/wallpaper_creators/JSON-templates-for-design"
+OUTPUT="$ROOT/Index-of-all-JSON-files.html"
+cd $ROOT ;
+
 echo #Blank line
 pwd ##check the present working directory
 echo #Blank line
@@ -19,29 +23,27 @@ echo '==================='
 
 sortnumber="1" # This will be used somewhere below, as a FAILSAFE.
 
-#echo '========== So this is the filename order that you want: ========='
-#ls *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber | nl
+echo '========== So this is the filename order that you want: ========='
+ls -r *.{jpg,png,PNG,JPG} | nl
 
-#echo -n "[REQUIRED FIELD] Enter the title for the HTML page; Spaces will be converted to hyphens; [ENTER]: "
-#read titlename
-
-titlename="json-file-index"
+titlename=$OUTPUT ;
 
 #ASSIGN FILENAME. AND NO SPACES BETWEEN VARNAME and '=' SIGN; else Bash throws error.
-totalfiles="`ls -l *.{jpg,png,PNG,JPG} | wc -l | tr -d '[[:space:]]'`"
+totalfiles="`ls -rl *.{jpg,png,PNG,JPG} | wc -l | tr -d '[[:space:]]'`"
 totalfiles+=" Images"
 echo "$totalfiles"
-echo "$titlename-$totalfiles.html" ##this output shows leading spaces, donno why. So SED is used below.
+#echo "$titlename-$totalfiles.html" ##this output shows leading spaces, donno why. So SED is used below.
 
-filenamex=`echo "$titlename.html" | sed -e 's/ /-/g'`
+filenamex=`echo "$titlename" | sed -e 's/ /-/g'`
 
 #echo -n "Enter the size of the DIV to use (300 works best) [ENTER]: "
 #read imagesize
 #imagesize+="px"; #Concatenating px at the end of the number
 
-echo "<html><head><title>$filenamex</title>" > $filenamex
+echo "<html><head><title>Index - JSON files</title>" > $filenamex
 
-echo "<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet'>
+echo "<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,900' rel='stylesheet'>
+
 <style>
 
 body {
@@ -55,7 +57,7 @@ div {
     margin: 5px;
     color: black;
     background-color : white ;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
     font-size: 15px;
     line-height:1;
@@ -82,7 +84,7 @@ h1 , h2 {
   padding : 10px ;
   background : linear-gradient(-45deg, hsla(300,100%, 50%, 1), hsla(10,100%, 50%, 1) ) ;
   color : white ;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
 	text-align: center;
 	font-size: 20px;
   font-weight:700;
@@ -95,7 +97,7 @@ h3 {
   padding : 10px ;
   background-color : rgb(50,50,50) ;
   color : #c0c0c0 ;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
 	text-align: center;
 	font-size: 16px;
   font-weight:700;
@@ -108,11 +110,13 @@ hr {clear:both;}
 
 echo "</head><body>" >> $filenamex
 
-echo "<h1>$titlename<br>(Total Image Files In This Folder (NON-RECURSIVE) = $totalfiles)</h1>" >> $filenamex
+echo "<h1>Index of all JSON files<br>// Total Image Files In This Folder (Non-Recursive) = $totalfiles //</h1>" >> $filenamex
 
 echo "<h3>Only JPG / jpg / PNG / png files are included below.<br>If you don't see your desired file below, try changing its extension to these.</h3>" >> $filenamex
 
-for x in `ls *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber`
+#for x in `ls -r *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber`
+for x in `ls -r *.{jpg,png,PNG,JPG}` # ls reverse sorting
+
 	do
     # Getting substring from the end without the file extension
     file_without_extension=`echo ${x%.*}`
@@ -127,25 +131,10 @@ for x in `ls *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber`
 
 #echo "<hr><br><h1>Total Image Files In This Folder + SubFolders (RECURSIVE) = $totalimagefiles)</h1>" >> $filenamex
 
-#for x in `find . -type f | egrep -i '\.(jpg|png|PNG|JPG)$' | sort -n -k1.$sortnumber`
+#for x in `find . -type f | egrep -i '\.(jpg|png|PNG|JPG)$'`
 #  do
 #  	echo "<div><a href='$x'><img src='$x' width='100%' align='top'></img><br><br>$x</a></div>" >> $filenamex
 #  done;
-##### OPTIONAL SECTION ENDS #####
-############################################################
-
-
-############################################################
-#### OPTIONAL SECTION: Findind and listing Photoshop files ####
-#totalcustomfiles="`find . -type f | egrep -i '\.(psd|ai|svg|eps|key|pages|numbers)$' | wc -l | tr -d '[[:space:]]'`"
-
-#echo "<hr><br><h1>Downloadable Psd, Ai, Svg, Eps, Pages, Numbers, Keynote Files (RECURSIVE) = $totalcustomfiles</h1>" >> $filenamex
-
-#for y in `find . -type f | egrep -i '\.(psd|ai|svg|eps|key|pages|numbers)$'`
-#  do
-#  	echo "<div class='colored'><a href='$y'>DOWNLOAD<br>$y</a></div>" >> $filenamex
-#  done;
-
 ##### OPTIONAL SECTION ENDS #####
 ############################################################
 
