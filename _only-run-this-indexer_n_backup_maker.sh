@@ -21,7 +21,13 @@ sh $BASEPATH/10_create_JSON_plus_image_indexes.sh
 echo "creating backup of MACFILES in Onedrive......"
 sh $BASEPATH/5-abhishek_create_MACFILES_backup.sh
 
+#######################################################
+#### CREATING SITEMAPS ####
+echo "CREATING SITEMAPS..."
+sh $BASEPATH/11-sitemap-for-website-generator.sh
+#######################################################
 
+########## KEEP THIS BLOCK AT THE END TO BACKUP ALL FILES TO SERVERS ############
 #### BACKUP TO-AND-FROM DREAMCOMPUTE SERVER ####
 ## Running system commands (as Aliases from .bash_profile)
 shopt -s expand_aliases ## This has to be done, else, aliases are not expanded in scripts.
@@ -45,4 +51,6 @@ echo "     >>>>>>>> BEGINNING: Backup [TO] cdn.mygingergarlickitchen.com <<<<<<<
 1_backup_to_cdn_mggk
 echo "     >>>>>>>> DONE: Backup [TO] cdn.mygingergarlickitchen.com <<<<<<<"
 
-#########################################################
+
+
+########################## SCRIPT ENDS ########################
