@@ -95,7 +95,7 @@ echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min
 echo "</head><body>" >> $filenamex
 
 ######### GRID ELEMENTS WITH EQUAL WIDTH ######
-echo "<h2>Grid Elements With Equal Width</h2>"  >> $filenamex
+echo "<h2>1. Grid Elements With Equal Width</h2>"  >> $filenamex
 echo "<div class='grid'> <!-- PACKERY MASONRY - equal width GRID BEGINS -->"  >> $filenamex
 for x in `ls *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber`
 	do
@@ -105,7 +105,7 @@ echo "</div> <!-- PACKERY MASONRY GRID ENDS --><hr>" >> $filenamex
 ###############################################
 
 ######### GRID ELEMENTS WITH EQUAL HEIGHT ######
-echo "<h2>Grid Elements With Equal Height</h2>"  >> $filenamex
+echo "<h2>2. Grid Elements With Equal Height</h2>"  >> $filenamex
 echo "<div class='grid'> <!-- PACKERY MASONRY - equal height GRID BEGINS -->"  >> $filenamex
 for x in `ls *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber`
 	do
@@ -115,7 +115,7 @@ echo "</div> <!-- PACKERY MASONRY GRID ENDS --><hr>" >> $filenamex
 ###############################################
 
 ######### GRID ELEMENTS WITH EQUAL WIDTH AND DROP SHADOW ######
-echo "<h2>Grid Elements With Equal Width And Drop Shadow</h2>"  >> $filenamex
+echo "<h2>3. Grid Elements With Equal Width And Drop Shadow</h2>"  >> $filenamex
 echo "<div class='grid'> <!-- PACKERY MASONRY - equal width drop shadow GRID BEGINS -->"  >> $filenamex
 for x in `ls *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber`
 	do
