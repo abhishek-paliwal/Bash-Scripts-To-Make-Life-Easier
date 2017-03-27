@@ -44,13 +44,38 @@ echo "<html><head><title>Index - JSON files</title>" > $filenamex
 
 echo "<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,900' rel='stylesheet'>
 
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://abhishek-paliwal.github.io/wallpaper_creators/js/PACKERY.pkgd.js'></script>
+<script src='https://abhishek-paliwal.github.io/wallpaper_creators/js/IMAGESLOADED.pkgd.min.js'></script>
+
+
+<script>
+  \$(document).ready(function(){
+
+        // init Packery
+        var \$grid = \$('.grid').packery({
+          // options...
+            itemSelector: '.grid-item',
+            gutter: 10
+        });
+
+        // layout Packery after each image loads
+        \$grid.imagesLoaded().progress( function() {
+          \$grid.packery();
+        });
+
+  });
+</script>
+
 <style>
 
-body {
-  background: rgba(245,245,245,1) ;
-}
-div {
-    float:left;
+/* PACKERY: 1 column layout*/
+.grid-item--width1 { width: 95%; border: 1px solid red ;}
+/* PACKERY: 2 columns layout*/
+.grid-item--width2 { width: 45%; border: 1px solid green ;}
+
+.grid-item {
+    /* float:left; */
     width: 220px ;
     /* height: 220px ;  */
     /* padding: 5px; */
@@ -67,10 +92,9 @@ div {
     border-radius : 2px ;
 }
 
-    /*** for 2 adjacent divs ***/
-    div + div{
-    margin-left : 10px;
-    }
+body {
+  background: rgba(245,245,245,1) ;
+}
 
 .colored {
   background-color:#00FF00;
@@ -114,6 +138,8 @@ echo "<h1>Index of all JSON files<br>// Total Image Files In This Folder (Non-Re
 
 echo "<h3>Only JPG / jpg / PNG / png files are included below.<br>If you don't see your desired file below, try changing its extension to these.</h3>" >> $filenamex
 
+echo "<div class='grid'> <!-- PACKERY MASONRY DIV BEGINS -->" >> $filenamex
+
 #for x in `ls -r *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber`
 for x in `ls -r *.{jpg,png,PNG,JPG}` # ls reverse sorting
 
@@ -122,8 +148,10 @@ for x in `ls -r *.{jpg,png,PNG,JPG}` # ls reverse sorting
     file_without_extension=`echo ${x%.*}`
     file_without_extension+=".json"
 
-		echo "<div><a href='$x'><img src='$x' width='100%' align='top'></img><br><br>$x</a><br><br><strong><a href='$file_without_extension'>Get JSON</a></strong></div>" >> $filenamex
+		echo "<div class='grid-item'><a href='$x'><img src='$x' width='100%' align='top'></img><br><br>$x</a><br><br><strong><a href='$file_without_extension'>Get JSON</a></strong></div>" >> $filenamex
 	done;
+
+echo "</div> <!-- PACKERY MASONRY DIV ENDS -->" >> $filenamex
 
 ############################################################
 #### OPTIONAL SECTION: Finding and listing all Image files Recursively. ####
@@ -137,6 +165,7 @@ for x in `ls -r *.{jpg,png,PNG,JPG}` # ls reverse sorting
 #  done;
 ##### OPTIONAL SECTION ENDS #####
 ############################################################
+
 
 echo "<hr>" >> $filenamex
 

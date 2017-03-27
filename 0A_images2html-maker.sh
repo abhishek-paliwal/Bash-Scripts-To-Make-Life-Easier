@@ -31,15 +31,98 @@ echo "$titlename-$totalfiles.html" ##this output shows leading spaces, donno why
 
 filenamex=`echo "$titlename-$totalfiles.html" | sed -e 's/ /-/g'`
 
-echo -n "Enter the % size of images to use (99 works best) [ENTER]: "
-read imagesize
+echo -n "Enter WIDTH in %, without % sign : (e.g., 33 = one-third of screen) [ENTER]: "
+read imageWidth
 
-echo "<html><head><title>$filenamex</title></head><body>" > $filenamex
+echo -n "Enter HEIGHT in PIXELS, without 'px' suffix : (e.g., 400) [ENTER]: "
+read imageHeight
 
+echo -n "Enter MARGIN in PIXELS, without 'px' suffix: (0 [zero] means No Margin) [ENTER]: "
+read imageMargin
+
+echo "<html><head><title>$filenamex</title>" > $filenamex
+
+echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://abhishek-paliwal.github.io/wallpaper_creators/js/PACKERY.pkgd.js'></script>
+<script src='https://abhishek-paliwal.github.io/wallpaper_creators/js/IMAGESLOADED.pkgd.min.js'></script>
+
+<script>
+  \$(document).ready(function(){
+
+        // init Packery
+        var \$grid = \$('.grid').packery({
+            itemSelector: '.grid-item',
+            gutter: 0
+        });
+
+        // layout Packery after each image loads
+        \$grid.imagesLoaded().progress( function() {
+          \$grid.packery();
+        });
+
+  });
+</script>
+
+<!-- STYLE ENDS -->
+<style>
+
+/* PACKERY MASONRY GRID STYLES BEGIN */
+
+.grid-item {
+    width: $imageWidth% ;
+    margin: `echo $imageMargin`px;
+}
+
+.grid-item-equal-height {
+    height: `echo $imageHeight`px ;
+		width: auto ;
+    margin: `echo $imageMargin`px;
+}
+
+.grid-item-drop-shadow {
+		width: $imageWidth% ;
+		margin: `echo $imageMargin`px;
+		border : 10px solid white ;
+		box-shadow: 0px 0px 5px #aaa ;
+		border-radius : 2px ;
+}
+
+/* PACKERY MASONRY GRID STYLES END */
+
+<!-- STYLE ENDS -->
+</style>" >> $filenamex
+
+echo "</head><body>" >> $filenamex
+
+######### GRID ELEMENTS WITH EQUAL WIDTH ######
+echo "<h2>Grid Elements With Equal Width</h2>"  >> $filenamex
+echo "<div class='grid'> <!-- PACKERY MASONRY - equal width GRID BEGINS -->"  >> $filenamex
 for x in `ls *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber`
 	do
-		echo "<img src='$x' width='$imagesize%' align='top'></img>" >> $filenamex
+		echo "<img class='grid-item' src='$x' align='top'></img>" >> $filenamex
 	done;
+echo "</div> <!-- PACKERY MASONRY GRID ENDS --><hr>" >> $filenamex
+###############################################
+
+######### GRID ELEMENTS WITH EQUAL HEIGHT ######
+echo "<h2>Grid Elements With Equal Height</h2>"  >> $filenamex
+echo "<div class='grid'> <!-- PACKERY MASONRY - equal height GRID BEGINS -->"  >> $filenamex
+for x in `ls *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber`
+	do
+		echo "<img class='grid-item grid-item-equal-height' src='$x' align='top'></img>" >> $filenamex
+	done;
+echo "</div> <!-- PACKERY MASONRY GRID ENDS --><hr>" >> $filenamex
+###############################################
+
+######### GRID ELEMENTS WITH EQUAL WIDTH AND DROP SHADOW ######
+echo "<h2>Grid Elements With Equal Width And Drop Shadow</h2>"  >> $filenamex
+echo "<div class='grid'> <!-- PACKERY MASONRY - equal width drop shadow GRID BEGINS -->"  >> $filenamex
+for x in `ls *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber`
+	do
+		echo "<img class='grid-item grid-item-drop-shadow' src='$x' align='top'></img>" >> $filenamex
+	done;
+echo "</div> <!-- PACKERY MASONRY GRID ENDS --><hr>" >> $filenamex
+###############################################
 
 echo "</body></html>" >> $filenamex
 
