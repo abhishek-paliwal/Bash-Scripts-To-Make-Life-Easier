@@ -40,6 +40,16 @@ read imageHeight
 echo -n "Enter MARGIN in PIXELS, without 'px' suffix: (0 [zero] means No Margin) [ENTER]: "
 read imageMargin
 
+echo -n "Enter DROP-SHADOW in PIXELS, without 'px' suffix: (0 [zero] means No Shadow) [ENTER]: "
+read dropShadow
+## Some calculation through bash shell.
+eachSideShadow=`echo "scale=2 ; $dropShadow/3" | bc` ;
+
+echo -n "Enter BACKGROUND COLOR in hex / rgb / rgba : {e.g., #3498db OR rgba(255,0,120,1) } [ENTER]: "
+read backgroundColor
+
+
+
 echo "<html><head><title>$filenamex</title>" > $filenamex
 
 echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
@@ -71,12 +81,14 @@ echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min
 .grid-item {
     width: $imageWidth% ;
     margin: `echo $imageMargin`px;
+    box-shadow: -`echo $eachSideShadow`px `echo $eachSideShadow`px `echo $dropShadow`px rgba(0,0,0,0.7) ;
 }
 
 .grid-item-equal-height {
     height: `echo $imageHeight`px ;
 		width: auto ;
     margin: `echo $imageMargin`px;
+    box-shadow: -`echo $eachSideShadow`px `echo $eachSideShadow`px `echo $dropShadow`px rgba(0,0,0,0.7) ;
 }
 
 .grid-item-drop-shadow {
@@ -92,7 +104,7 @@ echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min
 <!-- STYLE ENDS -->
 </style>" >> $filenamex
 
-echo "</head><body>" >> $filenamex
+echo "</head><body style='background : $backgroundColor ;' >" >> $filenamex
 
 ######### GRID ELEMENTS WITH EQUAL WIDTH ######
 echo "<h2>1. Grid Elements With Equal Width</h2>"  >> $filenamex
