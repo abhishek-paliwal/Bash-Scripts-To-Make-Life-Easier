@@ -31,11 +31,8 @@ echo "$titlename-$totalfiles.html" ##this output shows leading spaces, donno why
 
 filenamex=`echo "$titlename-$totalfiles.html" | sed -e 's/ /-/g'`
 
-echo -n "Enter WIDTH in %, without % sign : (e.g., 33 = one-third of screen) [ENTER]: "
+echo -n "Enter WIDTH (= HEIGHT) in PIXELS, without 'px' sign : (e.g., 300 ) [ENTER]: "
 read imageWidth
-
-echo -n "Enter HEIGHT in PIXELS, without 'px' suffix : (e.g., 400) [ENTER]: "
-read imageHeight
 
 echo -n "Enter MARGIN in PIXELS, without 'px' suffix: (0 [zero] means No Margin) [ENTER]: "
 read imageMargin
@@ -73,26 +70,26 @@ echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min
   });
 </script>
 
-<!-- STYLE ENDS -->
+<!-- STYLE BEGINS -->
 <style>
 
 /* PACKERY MASONRY GRID STYLES BEGIN */
 
 .grid-item {
-    width: $imageWidth% ;
+    width: `echo $imageWidth`px ;
     margin: `echo $imageMargin`px;
     box-shadow: -`echo $eachSideShadow`px `echo $eachSideShadow`px `echo $dropShadow`px rgba(0,0,0,0.7) ;
 }
 
 .grid-item-equal-height {
-    height: `echo $imageHeight`px ;
+    height: `echo $imageWidth`px ;
 		width: auto ;
     margin: `echo $imageMargin`px;
     box-shadow: -`echo $eachSideShadow`px `echo $eachSideShadow`px `echo $dropShadow`px rgba(0,0,0,0.7) ;
 }
 
 .grid-item-drop-shadow {
-		width: $imageWidth% ;
+		width: `echo $imageWidth`px ;
 		margin: `echo $imageMargin`px;
 		border : 10px solid white ;
 		box-shadow: 0px 0px 5px #aaa ;
@@ -104,14 +101,16 @@ echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min
 <!-- STYLE ENDS -->
 </style>" >> $filenamex
 
-echo "</head><body style='background : $backgroundColor ;' >" >> $filenamex
+echo "</head><body style='background-color : $backgroundColor ;' >" >> $filenamex
+
+echo "<h1>Images with Packery Masonry...</h1>" >> $filenamex
 
 ######### GRID ELEMENTS WITH EQUAL WIDTH ######
 echo "<h2>1. Grid Elements With Equal Width</h2>"  >> $filenamex
 echo "<div class='grid'> <!-- PACKERY MASONRY - equal width GRID BEGINS -->"  >> $filenamex
 for x in `ls *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber`
 	do
-		echo "<img class='grid-item' src='$x' align='top'></img>" >> $filenamex
+		echo "<a href='$x'><img class='grid-item' src='$x' align='top'></img></a>" >> $filenamex
 	done;
 echo "</div> <!-- PACKERY MASONRY GRID ENDS --><hr>" >> $filenamex
 ###############################################
