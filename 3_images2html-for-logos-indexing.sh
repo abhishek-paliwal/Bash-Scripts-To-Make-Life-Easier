@@ -19,6 +19,21 @@ echo "<html><head><title>$OUTPUT</title>" > $OUTPUT
 
 
 echo "<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+<!-- LAZY-LOADER OF IMAGES -  JQUERY Plugin -->
+<script type='text/javascript' src='https://abhishek-paliwal.github.io/wallpaper_creators/js/JQUERY.LAZY.MIN.js'></script>
+
+<script>
+
+  \$(document).ready(function(){
+        // ENABLING LAZY LOADING
+        \$('.lazy').Lazy();
+  });
+
+</script>
+
 <style>
 div {
     float:left;
@@ -33,6 +48,10 @@ div {
     font-size: 15px;
     line-height:1.5;
     /* text-transform: lowercase; */
+    background-color: rgb(245,245,245) ;
+    border : 2px solid white ;
+		box-shadow: 0px 0px 5px #999 ;
+		border-radius : 2px ;
 }
 
 .colored {
@@ -63,7 +82,7 @@ h2, h3 {
 hr {clear:both;}
 </style>" >> $OUTPUT
 
-echo "</head><body bgcolor='#e0e0e0'>" >> $OUTPUT
+echo "</head><body  style='background-color: rgb(220,220,220) ;'>" >> $OUTPUT
 
 #### OPTIONAL SECTION: Finding and listing all Image files Recursively. ####
 totalimagefiles="`find $ROOT -type f | egrep -i '\.(jpg|png|PNG|JPG|gif|GIF)$' | wc -l | tr -d '[[:space:]]'`"
@@ -101,9 +120,9 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
 
 ## Printing the image dimensions for everything, except GIFs because they produce LOOOOONG outputs for all GIF frames. ##
     if [ "$filetype" != 'GIF' ]; then
-      echo "<div><a href='$path/$file'><img src='$path/$file' width='100%' align='top'></img><br><br>$file</a><br> $imagedimen </div>" >> $OUTPUT
+      echo "<div><a href='$path/$file'><img class='lazy' data-src='$path/$file' width='100%' align='top'></img><br><br>$file</a><br> $imagedimen </div>" >> $OUTPUT
     else
-      echo "<div><a href='$path/$file'><img src='$path/$file' width='100%' align='top'></img><br><br>$file</a></div>" >> $OUTPUT
+      echo "<div><a href='$path/$file'><img class='lazy' data-src='$path/$file' width='100%' align='top'></img><br><br>$file</a></div>" >> $OUTPUT
     fi
 
   done
