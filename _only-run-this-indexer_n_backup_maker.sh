@@ -17,6 +17,9 @@ sh $BASEPATH/4_images2html-for-lowpoly-backgrounds-indexing.sh
 echo "creating JSON Wallpaper Templates index file in dropbox......"
 sh $BASEPATH/10A_create_JSON_plus_image_indexes.sh
 
+echo "creating SOCIAL MEDIA images index file in dropbox......"
+sh $BASEPATH/10B_create_SOCIAL_MEDIA_image_indexes.sh
+
 #### BACKUPS of our MACs ####
 echo "creating backup of MACFILES in Onedrive......"
 sh $BASEPATH/5-abhishek_create_MACFILES_backup.sh
