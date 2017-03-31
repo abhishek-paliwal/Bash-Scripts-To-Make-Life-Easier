@@ -15,7 +15,7 @@ SITEURL="https://downloads.concepro.com/dropbox-public-files/logos/$FINALFILENAM
 # read imagesize
 # imagesize+="px"; #Concatenating px at the end of the number
 
-echo "<html><head><title>$OUTPUT</title>" > $OUTPUT
+echo "<html><head><title>$FINALFILENAME</title>" > $OUTPUT
 
 
 echo "<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
