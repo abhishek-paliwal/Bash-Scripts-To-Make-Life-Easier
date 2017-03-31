@@ -60,7 +60,7 @@ echo "<link href='https://fonts.googleapis.com/css?family=Oswald' rel='styleshee
 
   \$(document).ready(function(){
         // ENABLING LAZY LOADING
-        \$('.lazy').lazy();
+        \$('.lazy').lazy();  // More info at : http://jquery.eisbehr.de/lazy/
   });
 
 </script>
