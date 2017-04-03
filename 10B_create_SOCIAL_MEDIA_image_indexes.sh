@@ -73,6 +73,16 @@ h1.heading {
    text-transform: uppercase ;
 }
 
+/* Using Media Queries for h1.heading Display on Mobiles */
+      @media (max-width: 567px) {
+          h1.heading {
+              font-size: 60px;
+              letter-spacing: 2px ;
+              line-height: 1.0 ;
+              text-transform: capitalize ;
+          }
+      }
+
 h2.heading {
   font-weight: 100;
   font-size: 40px;
@@ -115,18 +125,16 @@ echo "</head><body>" >> $OUTPUT
 
 echo "<nav class='navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top'>
   <a class='navbar-brand' href='http://www.concepro.com'><span style='font-weight: 700; color: #3498db;'>concepro</span> | a digital marketing agency</a>
-</nav>
-
-<div class='container' style='width: 100% ;'>" >> $OUTPUT
+</nav>" >> $OUTPUT
 
 #### OPTIONAL SECTION: Finding and listing all Image files Recursively. ####
 totalimagefiles="`find $ROOT -type f | egrep -i '\.(jpg|png|PNG|JPG|gif|GIF)$' | wc -l | tr -d '[[:space:]]'`"
 
-echo "<div class='container' style='width: 100% ;'>" >> $OUTPUT
+echo "<div class='container-fluid'>" >> $OUTPUT
 
 echo "<!-- HEADING DIV STARTS --> <div class='heading'>
 <!-- TOP LOGO --> <img src='https://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/Concepro-Shadow.png' style='width: 300px; '>
-<h1 class='heading'>Full Library Of All Social Media Images</h1>
+<h1 class='heading'>Full Library Of All Social Media Images<br>&bull;&bull;&bull;&bull;&bull;</h1>
 
 <h2 class='heading'>Designed by <a href='http://www.AbhishekPaliwal.com'>Abhishek Paliwal</a> for <a href='http://www.concepro.com'>Concepro Digital Marketing Agency</a></h2>
 <!-- HEADING DIV ENDS --> </div>"  >> $OUTPUT
@@ -165,11 +173,11 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
 
 ## Printing the image dimensions for everything, except GIFs because they produce LOOOOONG outputs for all GIF frames. ##
     if [ "$filetype" != 'GIF' ]; then
-      echo "<div class='col-md-4 col-lg-2 col-sm-6'>" >> $OUTPUT
+      echo "<div class='col-6 col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-2'>" >> $OUTPUT
       echo "<div class='pali'><a href='$path/$file'><img class='lazy' data-src='$path/$file' width='100%'></img><span class='thin'>$file</a></span><br><span class='thin'>$imagedimen</span></div>" >> $OUTPUT
       echo "</div>" >> $OUTPUT
     else
-      echo "<div class='col-md-4 col-lg-2 col-sm-6'>" >> $OUTPUT
+      echo "<div class='col-6 col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-2'>" >> $OUTPUT
       echo "<div class='pali'><a href='$path/$file'><img class='lazy' data-src='$path/$file' width='100%'></img><span class='thin'>$file</span></a></div>" >> $OUTPUT
       echo "</div>" >> $OUTPUT
     fi
