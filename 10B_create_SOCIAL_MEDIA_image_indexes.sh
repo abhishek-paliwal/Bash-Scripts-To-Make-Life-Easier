@@ -20,7 +20,7 @@ echo "<!DOCTYPE html>" > $OUTPUT ## FIRST OUTPUT LINE TO HTML FILE
 echo "<html lang='en'><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-    <link rel='icon' href='https://v4-alpha.getbootstrap.com/favicon.ico'>
+    <link rel='icon' href='https://downloads.concepro.com/favicon.ico'>
 
     <title>Library of Social Media Images // Concepro Agency</title>
 
