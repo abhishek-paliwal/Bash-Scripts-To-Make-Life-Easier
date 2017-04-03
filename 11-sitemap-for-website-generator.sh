@@ -15,8 +15,8 @@ create_sitemap_in_this_directory () {
   echo "  <head>"  >> sitemap.html
   echo "<title>SITEMAP for $WebsiteName</title>" >> sitemap.html
 
-  echo "    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.0/moment.js'></script>"  >> sitemap.html
-  echo "<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700,900|Roboto:100,300,400,500,700,900' rel='stylesheet'>"
+  echo "<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.0/moment.js'></script>"  >> sitemap.html
+  echo "<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700,900|Roboto:100,300,400,500,700,900' rel='stylesheet'>" >> sitemap.html
 
   echo "<style type='text/css'>" >> sitemap.html
   echo "h1 { line-height: 0.8 ; font-weight: 900; font-size: 3em; font-family: 'Roboto' ; color : $headingColor ; }" >> sitemap.html
