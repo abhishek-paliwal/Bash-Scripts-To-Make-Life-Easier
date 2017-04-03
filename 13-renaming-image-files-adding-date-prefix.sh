@@ -3,6 +3,8 @@
 ## Created By: Abhishek
 ## Creation Date: Monday April 3, 2017
 #################################
+cd `pwd`
+echo "CURRENT WORKING DIRECTORY: "`pwd`
 ORIGINAL_DIR="_ORIGINAL" ;
 mkdir $ORIGINAL_DIR
 #################################
@@ -31,3 +33,7 @@ do
     mv -n "$f" "$(date -r "$f" +"%Y%m%d-$filename").gif" ; ## finally renaming the original file after copying the original
 done
 #################################
+#################################
+
+## Opening Folder in Finder
+open . ##This is a Mac OS specific command
