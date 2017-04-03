@@ -125,7 +125,7 @@ totalimagefiles="`find $ROOT -type f | egrep -i '\.(jpg|png|PNG|JPG|gif|GIF)$' |
 echo "<div class='container' style='width: 100% ;'>" >> $OUTPUT
 
 echo "<!-- HEADING DIV STARTS --> <div class='heading'>
-<!-- TOP LOGO --> <img src='http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/Concepro-Shadow.png' style='width: 300px; '>
+<!-- TOP LOGO --> <img src='https://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/Concepro-Shadow.png' style='width: 300px; '>
 <h1 class='heading'>Full Library Of All Social Media Images</h1>
 
 <h2 class='heading'>Designed by <a href='http://www.AbhishekPaliwal.com'>Abhishek Paliwal</a> for <a href='http://www.concepro.com'>Concepro Digital Marketing Agency</a></h2>
