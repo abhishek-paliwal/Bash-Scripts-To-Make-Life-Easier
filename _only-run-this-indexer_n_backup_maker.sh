@@ -9,10 +9,10 @@ echo "creating wallpapers index in github......"
 sh $BASEPATH/2_create_wallpapers_index.sh
 
 echo "creating logos index in dropbox......"
-sh $BASEPATH/3_images2html-for-logos-indexing.sh
+sh $BASEPATH/10D_create_OUR_LOGOS_indexes.sh
 
 echo "creating LOW POLY backgrounds index in dropbox......"
-sh $BASEPATH/4_images2html-for-lowpoly-backgrounds-indexing.sh
+sh $BASEPATH/10C_create_LOWPOLY_indexes.sh
 
 echo "creating JSON Wallpaper Templates index file in dropbox......"
 sh $BASEPATH/10A_create_JSON_plus_image_indexes.sh
