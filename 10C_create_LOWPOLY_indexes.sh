@@ -134,7 +134,7 @@ echo "<div class='container-fluid'>" >> $OUTPUT
 
 echo "<!-- HEADING DIV STARTS --> <div class='heading'>
 <!-- TOP LOGO --> <img src='https://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/Concepro-Shadow.png' style='width: 300px; '>
-<h1 class='heading'>Index of All LowPoly Backgrounds<br>&bull;&bull;&bull;&bull;&bull;</h1>
+<h1 class='heading'>Index of All LowPoly Covers<br>&bull;&bull;&bull;&bull;&bull;</h1>
 
 <h2 class='heading'>Designed by <a href='http://www.AbhishekPaliwal.com'>Abhishek Paliwal</a> for <a href='http://www.concepro.com'>Concepro Digital Marketing Agency</a></h2>
 <!-- HEADING DIV ENDS --> </div>"  >> $OUTPUT
