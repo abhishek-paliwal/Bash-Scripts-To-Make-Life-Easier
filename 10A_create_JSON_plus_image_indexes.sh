@@ -41,10 +41,10 @@ echo "<html lang='en'><head><meta http-equiv='Content-Type' content='text/html; 
 
     .grid-item {
         /* float:left; */
-        width: 220px ;
+        width: 24% ;
         /* height: 220px ;  */
         /* padding: 5px; */
-        margin: 5px;
+        /* margin: 0px; */
         color: black;
         background-color : white ;
         font-family: 'Roboto', sans-serif;
@@ -56,6 +56,24 @@ echo "<html lang='en'><head><meta http-equiv='Content-Type' content='text/html; 
         box-shadow: 0px 0px 5px #aaa ;
         border-radius : 2px ;
     }
+
+    .grid {
+      width: 96%; /* Can be anything, but has to be less than 100% */
+      margin: 0 auto; /* Centers everything */
+  }
+
+  /* Pali: Using Media Queries for Display on Mobiles */
+      @media (max-width: 567px) {
+          .grid-item {
+              width: 48% ;
+          }
+      }
+
+      @media (min-width:568px) and (max-width:1199px) {
+          .grid-item {
+              width: 32% ;
+          }
+      }
 
 /* PACKERY STYLES END */
 
