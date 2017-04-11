@@ -148,6 +148,10 @@ hr {
   text-align: center ;
 }
 
+a.span {
+    color: white ;
+}
+
 .p1 {background : linear-gradient(45deg, hsla(300,100%, 50%, 1), hsla(10,100%, 50%, 1) ) ; color: white ; text-transform: uppercase ; padding : 10px ; }
 
 hr {clear:both;}
@@ -204,14 +208,14 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
     echo "IMAGE-DIMENSIONS - " $imagedimen "\n";
 
 
-    file_without_extension=`echo ${x%.*}`
+    file_without_extension=`echo ${file%.*}`
     file_without_extension+=".json"
 
 ## Printing the image dimensions for everything, except GIFs because they produce LOOOOONG outputs for all GIF frames. ##
     if [ "$filetype" != 'GIF' ]; then
-      echo "<div class='grid-item'><a href='$path/$file'><img src='$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><span class='thin'>$imagedimen</span><br><br><strong><a href='$file_without_extension'>Get JSON</a></strong></div>" >> $OUTPUT
+      echo "<div class='grid-item'><a href='$path/$file'><img src='$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: #222; padding: 5px ; '><a style='color: white ;' href='$path/$file_without_extension'>Get JSON</a></strong></div>" >> $OUTPUT
     else
-      echo "<div class='grid-item'><a href='$path/$file'><img src='$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong><a href='$file_without_extension'>Get JSON</a></strong></div>" >> $OUTPUT
+      echo "<div class='grid-item'><a href='$path/$file'><img src='$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: #222 ; padding: 5px ; '><a style='color: white ;' href='$path/$file_without_extension'>Get JSON</a></strong></div>" >> $OUTPUT
     fi
 
   done
