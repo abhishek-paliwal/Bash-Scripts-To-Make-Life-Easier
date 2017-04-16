@@ -47,11 +47,11 @@ open $HOME/OneDrive/Apps2Sync/DreamCompute-VPS-Backup ; ## Don't forget to add s
 echo "     ++++++++ BACKUPS TO CDN: Creating backups to CDNs @ Dreamhost Hosted Sites......"
 ## BACKUPS TO CDN
 echo "     >>>>>>>> BEGINNING: Backup [TO] downloads.concepro.com <<<<<<<"
-1_backup_to_dreamcompute_server
+1_backup_to_concepro_cdn
 echo "     >>>>>>>> DONE: Backup [TO] downloads.concepro.com <<<<<<<"
 ####
 echo "     >>>>>>>> BEGINNING: Backup [TO] cdn.mygingergarlickitchen.com <<<<<<<"
-1_backup_to_cdn_mggk
+1_backup_to_mggk_cdn
 echo "     >>>>>>>> DONE: Backup [TO] cdn.mygingergarlickitchen.com <<<<<<<"
 
 
