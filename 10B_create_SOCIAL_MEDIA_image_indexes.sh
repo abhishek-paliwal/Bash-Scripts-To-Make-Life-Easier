@@ -26,6 +26,7 @@ echo "<html lang='en'><head><meta http-equiv='Content-Type' content='text/html; 
 
     <!-- Bootstrap core CSS -->
     <link href='https://abhishek-paliwal.github.io/wallpaper_creators/bootstrap-alpha6-js-css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://abhishek-paliwal.github.io/wallpaper_creators/bootstrap-alpha6-js-css/bootstrap-fullpage-cover.css' rel='stylesheet'>
 
     <!-- Custom styles for this template -->
     <link href='https://abhishek-paliwal.github.io/wallpaper_creators/bootstrap-alpha6-js-css/starter-template.css' rel='stylesheet'>
@@ -130,14 +131,21 @@ echo "<nav class='navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-to
 #### OPTIONAL SECTION: Finding and listing all Image files Recursively. ####
 totalimagefiles="`find $ROOT -type f | egrep -i '\.(jpg|png|PNG|JPG|gif|GIF)$' | wc -l | tr -d '[[:space:]]'`"
 
-echo "<div class='container-fluid'>" >> $OUTPUT
+echo "<div class='site-wrapper'>
+<div class='site-wrapper-inner'>
 
-echo "<!-- HEADING DIV STARTS --> <div class='heading'>
+<!-- HEADING DIV STARTS --> <div class='heading'>
 <!-- TOP LOGO --> <img src='https://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/Concepro-Shadow.png' style='width: 300px; '>
 <h1 class='heading'>Full Library Of All Social Media Images<br>&bull;&bull;&bull;&bull;&bull;</h1>
 
 <h2 class='heading'>Designed by <a href='http://www.AbhishekPaliwal.com'>Abhishek Paliwal</a> for <a href='http://www.concepro.com'>Concepro Digital Marketing Agency</a></h2>
-<!-- HEADING DIV ENDS --> </div>"  >> $OUTPUT
+<!-- HEADING DIV ENDS --> </div>
+
+</div></div> <!-- site wrapper ends -->"  >> $OUTPUT
+
+
+echo "<div class='container-fluid'>" >> $OUTPUT
+
 
 echo "<h3 class='thin'>Total Images On This Page (Recursive) = $totalimagefiles</h3>" >> $OUTPUT
 echo "<h3 class='thin'>Page last updated: "`date`"</h3>" >> $OUTPUT
