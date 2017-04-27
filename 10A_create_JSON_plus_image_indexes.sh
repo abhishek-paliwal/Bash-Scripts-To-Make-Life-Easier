@@ -46,16 +46,6 @@ echo "<html lang='en'><head><meta http-equiv='Content-Type' content='text/html; 
         /* height: 220px ;  */
         /* padding: 5px; */
         /* margin: 0px; */
-        color: black;
-        background-color : white ;
-        font-family: 'Roboto', sans-serif;
-        text-align: center;
-        font-size: 15px;
-        line-height:1;
-        /* text-transform: lowercase; */
-        border : 10px solid white ;
-        box-shadow: 0px 0px 5px #aaa ;
-        border-radius : 2px ;
     }
 
     .grid {
@@ -75,6 +65,20 @@ echo "<html lang='en'><head><meta http-equiv='Content-Type' content='text/html; 
               width: 32% ;
           }
       }
+
+.pali {
+  margin: 15px;
+  color: black;
+  background-color : white ;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 15px;
+  line-height:1;
+  /* text-transform: lowercase; */
+  border : 10px solid white ;
+  box-shadow: 0px 0px 5px #aaa ;
+  border-radius : 2px ;
+}
 
 /* PACKERY STYLES END */
 
@@ -220,9 +224,9 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
 
 ## Printing the image dimensions for everything, except GIFs because they produce LOOOOONG outputs for all GIF frames. ##
     if [ "$filetype" != 'GIF' ]; then
-      echo "<div class='grid-item'><a href='$path/$file'><img src='$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: #222; padding: 5px ; '><a style='color: white ;' href='$path/$file_without_extension'>Get JSON</a></strong></div>" >> $OUTPUT
+      echo "<div class='grid-item'><div class='pali'><a href='$path/$file'><img src='$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: #222; padding: 5px ; '><a style='color: white ;' href='$path/$file_without_extension'>Get JSON</a></strong></div></div>" >> $OUTPUT
     else
-      echo "<div class='grid-item'><a href='$path/$file'><img src='$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: #222 ; padding: 5px ; '><a style='color: white ;' href='$path/$file_without_extension'>Get JSON</a></strong></div>" >> $OUTPUT
+      echo "<div class='grid-item'><div class='pali'><a href='$path/$file'><img src='$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: #222 ; padding: 5px ; '><a style='color: white ;' href='$path/$file_without_extension'>Get JSON</a></strong></div></div>" >> $OUTPUT
     fi
 
   done
@@ -254,7 +258,7 @@ echo "<!-- Bootstrap core JavaScript ================================ -->
         var \$grid = \$('.grid').packery({
           // options...
             itemSelector: '.grid-item',
-            gutter: 10
+            gutter: 0
         });
 
         // layout Packery after each image loads
