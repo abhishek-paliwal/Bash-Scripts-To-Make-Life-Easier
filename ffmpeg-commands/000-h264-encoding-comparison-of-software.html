@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>
+FFMPEG command line examples
+</title>
+
+<style type="text/css">
+	table.tableizer-table {
+		font-size: 12px;
+		border: 1px solid #CCC;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	.tableizer-table td {
+		padding: 4px;
+		margin: 3px;
+		border: 1px solid #CCC;
+	}
+	.tableizer-table th {
+		background-color: #3498db;
+		color: #FFF;
+		font-weight: bold;
+	}
+</style>
+</head>
+<body>
+
+	<h1 id="toc_0">A Comparison Table: H.264 Video Encoding Using Various Software Programs</h1>
+
+	<hr>
+
+	<h3 id="toc_1">Input Video File Specs</h3>
+
+	<p>Length: 4 min 57 seconds<br>
+	Resolution: 1920x1080px<br>
+	File size: 744 Mb           </p>
+
+	<hr>
+
+
+<table class="tableizer-table">
+<thead><tr class="tableizer-firstrow"><th>Encoding Program</th><th>Encoding CRF (17-24 is best)</th><th>Encoding Speed-Preset for compression</th><th>Encoding Preset Output Quality BitRate (Mbps)</th><th>Output File Size (Mb)</th><th>Output File Size (% of original)</th><th>Time Taken to Encode (MIN.SEC)</th><th>Input Format</th><th>Output Format</th><th>Encoding Shell Command (if any)</th></tr></thead><tbody>
+ <tr><td>FFMPEG CLI</td><td>default = 23</td><td>veryfast</td><td>NA</td><td>160</td><td>21.5</td><td>1.52</td><td>mp4</td><td>mp4</td><td>ffmpeg -i input.mp4 -c:v libx264 -preset veryfast -c:a copy output.mp4</td></tr>
+ <tr><td>FFMPEG CLI</td><td>default = 23</td><td>superfast</td><td>NA</td><td>233</td><td>31.3</td><td>1.09</td><td>mp4</td><td>mp4</td><td>ffmpeg -i input.mp4 -c:v libx264 -preset superfast -c:a copy output.mp4</td></tr>
+ <tr><td>FFMPEG CLI</td><td>default = 23</td><td>faster</td><td>NA</td><td>177</td><td>23.8</td><td>2.53</td><td>mp4</td><td>mp4</td><td>ffmpeg -i input.mp4 -c:v libx264 -preset faster -c:a copy output.mp4</td></tr>
+ <tr><td>FFMPEG CLI</td><td>default = 23</td><td>ultrafast</td><td>NA</td><td>402</td><td>54.0</td><td>3.37</td><td>mp4</td><td>mp4</td><td>ffmpeg -i input.mp4 -c:v libx264 -preset ultrafast -c:a copy output.mp4</td></tr>
+ <tr><td>FFMPEG CLI</td><td>default = 23</td><td>medium</td><td>NA</td><td>209</td><td>28.1</td><td>5.05</td><td>mp4</td><td>mp4</td><td>ffmpeg -i input.mp4 -c:v libx264 -preset medium -c:a copy output.mp4</td></tr>
+ <tr><td>FFMPEG CLI</td><td>default = 23</td><td>default</td><td>NA</td><td>181</td><td>24.3</td><td>5.11</td><td>mp4</td><td>mp4</td><td>ffmpeg -i input.mp4 -c:v libx264 -c:a copy output.mp4</td></tr>
+ <tr><td>FFMPEG CLI</td><td>default = 23</td><td>slower</td><td>NA</td><td>177</td><td>23.8</td><td>12.36</td><td>mp4</td><td>mp4</td><td>ffmpeg -i input.mp4 -c:v libx264 -preset slower -c:a copy output.mp4</td></tr>
+ <tr><td>FFMPEG CLI</td><td>default = 23</td><td>veryslow</td><td>NA</td><td>164</td><td>22.0</td><td>27.15</td><td>mp4</td><td>mp4</td><td>ffmpeg -i input.mp4 -c:v libx264 -preset veryslow -c:a copy output.mp4</td></tr>
+ <tr><td>FFMPEG CLI</td><td>22</td><td>default</td><td>NA</td><td>218</td><td>29.3</td><td>5.32</td><td>mp4</td><td>mp4</td><td>time ffmpeg -i input.mp4 -c:v libx264 -crf 22 -c:a copy output.mp4</td></tr>
+ <tr><td>FFMPEG CLI</td><td>22</td><td>medium</td><td>NA</td><td>218</td><td>29.3</td><td>5.31</td><td>mp4</td><td>mp4</td><td>&nbsp;</td></tr>
+ <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+ <tr><td>Adobe Encoder</td><td>NA</td><td>Facebook HD</td><td>12 Mbps</td><td>447</td><td>60.1</td><td>1.15</td><td>mp4</td><td>mp4</td><td>NA</td></tr>
+ <tr><td>Adobe Encoder</td><td>NA</td><td>Full HD</td><td>20 Mbps</td><td>745</td><td>100.1</td><td>1.09</td><td>mp4</td><td>mp4</td><td>NA</td></tr>
+ <tr><td>Adobe Encoder</td><td>NA</td><td>Mobile HD</td><td>8 Mbps</td><td>298</td><td>40.1</td><td>1.10</td><td>mp4</td><td>mp4</td><td>NA</td></tr>
+ <tr><td>Adobe Encoder</td><td>NA</td><td>Pali Mobile HD</td><td>5 Mbps</td><td>188</td><td>25.3</td><td>1.18</td><td>mp4</td><td>mp4</td><td>NA</td></tr>
+ <tr><td>Adobe Encoder</td><td>NA</td><td>Vimeo HD</td><td>16 Mbps</td><td>598</td><td>80.4</td><td>1.08</td><td>mp4</td><td>mp4</td><td>NA</td></tr>
+ <tr><td>Adobe Encoder</td><td>NA</td><td>YouTube HD</td><td>16 Mbps</td><td>598</td><td>80.4</td><td>1.05</td><td>mp4</td><td>mp4</td><td>NA</td></tr>
+ <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>mp4</td><td>NA</td></tr>
+ <tr><td>HandBrake on Mac</td><td>22</td><td>default</td><td>NA</td><td>213</td><td>28.6</td><td>3.45</td><td>mp4</td><td>mp4</td><td>NA</td></tr>
+</tbody></table>
+
+</body>
+</html>
