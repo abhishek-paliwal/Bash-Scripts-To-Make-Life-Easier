@@ -4,13 +4,21 @@
 PWD=`pwd`;
 cd $PWD ; ## CD to present working directory
 
-TIME_PER_IMAGE=3.5 ##TIME IN SECONDS PER SLIDE
-AUDIOFADE_DURATION=10 ##TIME IN SECONDS FOR AUDIOFADE DURATION AT END
+## Change the following directory to choose your own songs, per project basis
+MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE+ROYALTY_FREE_MUSIC"
+
+## THIS FILE HAS TO BE PRESENT FOR FIRST TMP VIDEO
+DEMO_AUDIO_FILE="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/00_ffmpeg_demo_audio.mp3"
+
+################################################
+## Change these durations below as desired
+TIME_PER_IMAGE=2.5 ##TIME IN SECONDS PER SLIDE
+AUDIOFADE_DURATION=15 ##TIME IN SECONDS FOR AUDIO-FADE DURATION AT END
+################################################
 
 OUTPUT_DIR="_delete_this_folder"
 mkdir $OUTPUT_DIR
 
-AUDIO_FILE="$HOME/Desktop/audio.mp3"
 TMP_OUTPUT_VIDEO="video_slideshow.mp4"
 OUTPUT_VIDEO_FINAL="video_slideshow_with_audiofade.mp4"
 
@@ -34,21 +42,30 @@ echo "ImageMagick resizing done ...."
 
 ## FFMPEG command to convert images to slideshow video with audio (-r 1/3 means 3 seconds per image)
 echo "First FFMPEG encoding work begins ...."
-ffmpeg -f image2 -framerate 24 -r 1/$TIME_PER_IMAGE -i image%03d.jpg -i $AUDIO_FILE -shortest -video_size 1920x1080 -c:v libx264 $TMP_OUTPUT_VIDEO
+ffmpeg -f image2 -framerate 24 -r 1/$TIME_PER_IMAGE -i image%03d.jpg -i $DEMO_AUDIO_FILE -shortest -video_size 1920x1080 -c:v libx264 -pix_fmt yuv420p $TMP_OUTPUT_VIDEO
 echo "First FFMPEG work ends ...."
 
 ## PROBING the length of the audio and video file in seconds
-ffprobe -i $TMP_OUTPUT_VIDEO -show_entries stream=codec_type,duration -of compact=p=0:nk=1 | grep -i 'audio|' | sed 's/audio|//g' > _tmp.txt
+ffprobe -i $TMP_OUTPUT_VIDEO -show_entries stream=codec_type,duration -of compact=p=0:nk=1 | grep -i 'video|' | sed 's/video|//g' > _tmp.txt
 
 AUDIO_LENGTH=`cut -d '.' -f 1 _tmp.txt` ## Extracting the first part before dot
 AUDIO_LENGTH_INTEGER=`printf '%d\n' "$AUDIO_LENGTH"` ## Converting to Integer
-AUDIO_LENGTH_MINUS_FADE=$(($AUDIO_LENGTH_INTEGER-10)) ## Reducing 10 seconds from full length
+AUDIO_LENGTH_MINUS_FADE=$(($AUDIO_LENGTH_INTEGER-$AUDIOFADE_DURATION)) ## Reducing FADE seconds from full length
 
 FINAL_VIDEO_FILENAME="$AUDIO_LENGTH_INTEGER""-sec-""$OUTPUT_VIDEO_FINAL"
 
+#############################################################################
+## Choose a random audio file which has a duration longer than the video itself
+## First, run the script to sort the audio files based on duration
+## this will create a tmp txt file. That file will be used below with gshuf
+sh $HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/201_sorting_mp3_files_by_duration.sh "$AUDIO_LENGTH_INTEGER" "$MY_SONG_DIR"
+AUDIO_FILE=`gshuf -n 1 $MY_SONG_DIR/_tmp_chosen_sorted.txt`
+echo; echo "(REAL) Chosen random file: "$AUDIO_FILE ; echo ;
+#############################################################################
+
 ## RE-ENCODING USING FFMPEG WITH AUDIO FADE
 echo "RE-ENCODING WITH AUDIO FADE: FFMPEG work begins ...."
-ffmpeg -f image2 -framerate 24 -r 1/$TIME_PER_IMAGE -i image%03d.jpg -i $AUDIO_FILE -shortest -video_size 1920x1080 -af "afade=t=out:st=$AUDIO_LENGTH_MINUS_FADE:d=$AUDIOFADE_DURATION" -c:v libx264 $FINAL_VIDEO_FILENAME
+ffmpeg -f image2 -framerate 24 -r 1/$TIME_PER_IMAGE -i image%03d.jpg -i $MY_SONG_DIR/$AUDIO_FILE -shortest -video_size 1920x1080 -af "afade=t=out:st=$AUDIO_LENGTH_MINUS_FADE:d=$AUDIOFADE_DURATION" -c:v libx264 -pix_fmt yuv420p $FINAL_VIDEO_FILENAME
 echo "RE-ENCODING WITH AUDIO FADE: FFMPEG work ends ...."
 
 ## Moving VIDEO file to parent directory
@@ -73,7 +90,14 @@ echo "
 " > _tmp_variables.txt
 
 ## CLEANING UP AND REMOVING UNNECESSARY FILES
-rm $TMP_OUTPUT_VIDEO
+#rm $TMP_OUTPUT_VIDEO
+
+## ECHO if there's blank video at the ends
+echo "=====================================================" ;
+echo "=====================================================" ;
+echo "IMPORTANT NOTE: If the resulting video is blank slides (meaning all black) with music, try compressing the image files using IMAGEOPTIM, and also optionally change the image file permissions to chmod 777." ;
+echo "=====================================================" ;
+echo "=====================================================" ;
 
 ## Opening PWD
 open $PWD
