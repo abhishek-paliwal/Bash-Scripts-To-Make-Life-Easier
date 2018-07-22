@@ -11,6 +11,7 @@ cd $PWD ; ## CD to present working directory
 
 ## RENAME ALL FILE NAMES TO LOWERCASE, BY RUNNING the following COMMAND
 for f in * ; do mv -- "$f" "$(tr "[:upper:]" "[:lower:]" <<< "$f")" ; done ;
+echo "=======> ALL FILENAMES + EXTENSIONS RENAMED TO LOWERCASE. <========== " ; echo ;
 
 ## Change the following directory to choose your own songs, per project basis
 MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE+ROYALTY_FREE_MUSIC"
