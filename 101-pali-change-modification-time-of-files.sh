@@ -24,7 +24,7 @@ do
               ## Now modifying the creation time
               touch -t $new_time"1234" $filename
           else
-              echo "COMMENT: FILENAME NOT OK. Does not start with a number. So CREATION TIME NOT changed." ;
+              echo "COMMENT: FILENAME NOT OK. Does not start with a number. So CREATION TIME NOT changed. <============= " ;
       fi
 
 done
