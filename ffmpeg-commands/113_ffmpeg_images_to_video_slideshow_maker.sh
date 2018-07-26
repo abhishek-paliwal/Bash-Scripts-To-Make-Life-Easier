@@ -32,6 +32,41 @@ TMP_OUTPUT_VIDEO="video_slideshow.mp4"
 OUTPUT_VIDEO_FINAL="video_slideshow_with_audiofade.mp4"
 
 ###########################################
+## NOW, WE'LL DUPLICATE THE FIRST IMAGE, AND THEN CREATE A COVER IMAGE FROM IT
+## DUPLICATION (COPYING ONLY THE FIRST FILE, THEN BREAK THE LOOP):
+COVER_IMAGE="__cover_tmp.jpg" ;
+NEW_COVER_IMAGE="__cover_final.jpg" ;
+
+for f in *.jpg ; do cp "$f" $COVER_IMAGE ; break ; done
+
+# resizing the cover image to full HD
+mogrify -resize 1920x1080 -background black -gravity center -extent 1920x1080 $COVER_IMAGE ;
+
+## CREATING COVER IMAGE FROM THAT DUPLICATED IMAGE:
+## first, finding the width of the image for text writing
+width=`identify -format %w $COVER_IMAGE`;
+
+## finding the number of jpg files in PWD
+NUM_FILES=`ls -1 *.jpg | wc -l | sed 's/ //g'` ;
+LENGTH_OF_SLIDESHOW=`echo "scale=2 ; ($TIME_PER_IMAGE * $NUM_FILES / 60)" | bc -l ` ; ## scale=2 means how many digits after decimal, for bc -l calculations
+
+echo "LENGTH_OF_SLIDESHOW : $LENGTH_OF_SLIDESHOW " ;
+
+tmp_varname=${PWD##*/} ;
+BASENAME_FOLDER=`echo $tmp_varname | sed 's/\ /-/g' | sed 's/-/ /g' | sed 's/_/ /g' ` ;
+
+## collecting all variables to a final caption
+FULL_COVER_TEXT="$BASENAME_FOLDER\n$NUM_FILES photos // $LENGTH_OF_SLIDESHOW mins" ;
+echo "FULL COVER TEXT: $FULL_COVER_TEXT" ;
+
+## now writing text onto the image using imagemagick composite
+## get list of font names by running: convert -list font | grep "Font:"
+convert -background '#00000040' -font Century-Gothic -fill white -gravity center -size ${width}x400 caption:"$FULL_COVER_TEXT" $COVER_IMAGE +swap -gravity south -composite $NEW_COVER_IMAGE ;
+
+echo "========> DONE: TEXT WRITTEN TO COVER IMAGE." ;
+rm $COVER_IMAGE ; #delete old and unnecessary cover image tmp file#
+
+###############################################################
 ## THIS BLOCK CREATES TEMPORARY SYMLINKS TO ALL IMAGES AND
 ## ADDS COUNTERS TO THEIR NAMES
 x=1;
@@ -44,7 +79,7 @@ for i in *jpg;
         cp "$i" $OUTPUT_DIR/image"$counter".jpg;
         x=$(($x+1));
     done
-###########################################
+################################################################
 
 cd $OUTPUT_DIR
 ## Using IMAGEMAGICK to resize ALL images to Full-HD with padding to keep FULL-HD aspect ratio
@@ -57,6 +92,7 @@ echo "=======> ImageMagick resizing done ...."
 echo "=======> Conversion from JPGs to PNGs begins ... " ;
 mogrify -format png *.jpg ;
 
+##################################################
 ## SOME PNG transitions behave odd with ffmpeg (from grayscale frame to color frame and vice-versa).
 ## Hence, we are forcing all PNGs to be made up only of RGB pixes, and not grayscale pixels (so that it does not skip those frames in the final video)
 for pic in *.png ;
@@ -64,12 +100,18 @@ for pic in *.png ;
     ## By default, imagemagick makes PNGs with reduced sizes from grayscale JPGs
     ## Hence, we are converting all PNGs (grayscale or not) to intend that each pixel is made up of R,G,B colors, and not grayscale
     ## See more here: http://www.libpng.org/pub/png/spec/1.1/PNG-Chunks.html
+
+    ## Writing filename to the bottom-right of each PNG image
+    PICNAME=`echo "$pic" | cut -d '.' -f1` ; ## removing file extension
+
+    convert $pic -fill white -undercolor '#111111' -pointsize 16 -gravity Southeast -annotate +0+5 "\  $PICNAME " $pic
+
     convert $pic -define png:color-type=2 $pic ;
     echo "Image converted to profile 2; $pic" ;
     done
 
 echo "=======> Conversion from JPGs to PNGs ends ... " ;
-
+#################################################
 
 ## FFMPEG command to convert images to slideshow video with audio (-r 1/3 means 3 seconds per image)
 echo "=======> First FFMPEG encoding work begins ...."
@@ -126,6 +168,7 @@ echo "
 \n AUDIOFADE_DURATION=: $AUDIOFADE_DURATION
 \n AUDIO_LENGTH_MINUS_FADE: $AUDIO_LENGTH_MINUS_FADE
 \n FINAL_VIDEO_FILENAME: $FINAL_VIDEO_FILENAME
+\n FULL_COVER_TEXT: $FULL_COVER_TEXT
 " > _tmp_variables.txt
 
 ## CLEANING UP AND REMOVING UNNECESSARY FILES
