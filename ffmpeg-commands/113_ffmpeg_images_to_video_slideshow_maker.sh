@@ -34,8 +34,8 @@ OUTPUT_VIDEO_FINAL="video_slideshow_with_audiofade.mp4"
 ###########################################
 ## NOW, WE'LL DUPLICATE THE FIRST IMAGE, AND THEN CREATE A COVER IMAGE FROM IT
 ## DUPLICATION (COPYING ONLY THE FIRST FILE, THEN BREAK THE LOOP):
-COVER_IMAGE="__cover_tmp.jpg" ;
-NEW_COVER_IMAGE="__cover_final.jpg" ;
+COVER_IMAGE="0_cover_tmp.jpg" ;
+NEW_COVER_IMAGE="0_cover_final.jpg" ;
 
 for f in *.jpg ; do cp "$f" $COVER_IMAGE ; break ; done
 
@@ -48,20 +48,25 @@ width=`identify -format %w $COVER_IMAGE`;
 
 ## finding the number of jpg files in PWD
 NUM_FILES=`ls -1 *.jpg | wc -l | sed 's/ //g'` ;
-LENGTH_OF_SLIDESHOW=`echo "scale=2 ; ($TIME_PER_IMAGE * $NUM_FILES / 60)" | bc -l ` ; ## scale=2 means how many digits after decimal, for bc -l calculations
+LENGTH_OF_SLIDESHOW=`echo "scale=0; ($TIME_PER_IMAGE * $NUM_FILES)/1" | bc -l` ; ## scale=2 means how many digits after decimal, for bc -l calculations
+
+## Converting to Integer, then to minutes and seconds
+LENGTH_OF_SLIDESHOW=`printf '%d\n' "$LENGTH_OF_SLIDESHOW"` ;
+LENGTH_OF_SLIDESHOW_IN_MINUTES=`printf '%02dm-%02ds\n' $(($LENGTH_OF_SLIDESHOW/60)) $(($LENGTH_OF_SLIDESHOW%60))`
 
 echo "LENGTH_OF_SLIDESHOW : $LENGTH_OF_SLIDESHOW " ;
 
 tmp_varname=${PWD##*/} ;
 BASENAME_FOLDER=`echo $tmp_varname | sed 's/\ /-/g' | sed 's/-/ /g' | sed 's/_/ /g' ` ;
 
+
 ## collecting all variables to a final caption
-FULL_COVER_TEXT="$BASENAME_FOLDER\n$NUM_FILES photos // $LENGTH_OF_SLIDESHOW mins" ;
+FULL_COVER_TEXT="$BASENAME_FOLDER\n$NUM_FILES photos // $LENGTH_OF_SLIDESHOW_IN_MINUTES " ;
 echo "FULL COVER TEXT: $FULL_COVER_TEXT" ;
 
 ## now writing text onto the image using imagemagick composite
 ## get list of font names by running: convert -list font | grep "Font:"
-convert -background '#00000040' -font Century-Gothic -fill white -gravity center -size ${width}x400 caption:"$FULL_COVER_TEXT" $COVER_IMAGE +swap -gravity south -composite $NEW_COVER_IMAGE ;
+convert -background '#00000060' -font Century-Gothic -fill white -gravity center -size ${width}x400 caption:"$FULL_COVER_TEXT" $COVER_IMAGE +swap -gravity south -composite $NEW_COVER_IMAGE ;
 
 echo "========> DONE: TEXT WRITTEN TO COVER IMAGE." ;
 rm $COVER_IMAGE ; #delete old and unnecessary cover image tmp file#
@@ -129,7 +134,7 @@ AUDIO_LENGTH=`cut -d '.' -f 1 _tmp.txt` ## Extracting the first part before dot
 AUDIO_LENGTH_INTEGER=`printf '%d\n' "$AUDIO_LENGTH"` ## Converting to Integer
 AUDIO_LENGTH_MINUS_FADE=$(($AUDIO_LENGTH_INTEGER-$AUDIOFADE_DURATION)) ## Reducing FADE seconds from full length
 
-FINAL_VIDEO_FILENAME="$AUDIO_LENGTH_INTEGER""-sec-""$OUTPUT_VIDEO_FINAL"
+FINAL_VIDEO_FILENAME="$AUDIO_LENGTH_INTEGER""-sec-""$OUTPUT_VIDEO_FINAL" ;
 
 #############################################################################
 ## Choose a random audio file which has a duration longer than the video itself
@@ -150,8 +155,13 @@ ffmpeg -thread_queue_size 512 -framerate 1/$TIME_PER_IMAGE -i image%03d.png -i $
 echo "=======> RE-ENCODING WITH AUDIO FADE: FFMPEG work ends ...."
 
 ## Moving VIDEO file to parent directory
-mv $FINAL_VIDEO_FILENAME ../
-echo "=======> DONE: Moving FINAL VIDEO file to original parent directory ...."
+BASENAME_FOLDER_NEW=`echo $tmp_varname | sed 's/\ /-/g' | sed 's/_/-/g' ` ;
+
+FINAL_VIDEO_FILENAME_NEW="$BASENAME_FOLDER_NEW-$NUM_FILES-photos-$LENGTH_OF_SLIDESHOW_IN_MINUTES.mp4" ;
+echo "FINAL_VIDEO_FILENAME_NEW: $FINAL_VIDEO_FILENAME_NEW" ;
+
+cp $FINAL_VIDEO_FILENAME ../$FINAL_VIDEO_FILENAME_NEW ;
+echo "=======> DONE: Moving FINAL VIDEO file to original parent directory ...." ;
 
 ## WRITING IMPORTANT VARIABLES TO TMP TEXT FILES
 touch _tmp_variables.txt ## Create an empty tmp file
@@ -169,6 +179,7 @@ echo "
 \n AUDIO_LENGTH_MINUS_FADE: $AUDIO_LENGTH_MINUS_FADE
 \n FINAL_VIDEO_FILENAME: $FINAL_VIDEO_FILENAME
 \n FULL_COVER_TEXT: $FULL_COVER_TEXT
+\n FINAL_VIDEO_FILENAME_NEW: $FINAL_VIDEO_FILENAME_NEW
 " > _tmp_variables.txt
 
 ## CLEANING UP AND REMOVING UNNECESSARY FILES
