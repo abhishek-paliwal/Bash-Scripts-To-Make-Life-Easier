@@ -58,10 +58,8 @@ touch _tmp_song_lengths_in_minutes.txt
 RENAMED_DIR="$SONG_DIR/_tmp_renamed_songs"
 mkdir $RENAMED_DIR
 
-##Remove if exists
-rm _tmp_song_lengths.txt
-rm _tmp_chosen.txt
-rm _tmp_song_lengths_in_minutes.txt
+##Removing all TMP txt files if exists
+rm _tmp_*.txt ;
 
 for x in *mp3;
     do
@@ -86,10 +84,14 @@ for x in *mp3;
                 echo "$x" >> _tmp_chosen.txt ;
         fi
 
-        ## Rename and Copy the song files to a tmp directory
-        cp $x $RENAMED_DIR/$SONG_LENGTH_INTEGER_IN_MINUTES+$x ;
-        echo "... f i l e  r e n a m e d  a n d  c o p i e d ... : $x";
-        echo ;
+        ## Rename and copy files only if NO ARGUMENTS are supplied. Else, it would rename songs unnecessarily every time.
+        if [ $# -eq 0 ] ; then
+            ## Rename and Copy the song files to a tmp directory
+            cp $x $RENAMED_DIR/$SONG_LENGTH_INTEGER_IN_MINUTES+$x ;
+            echo "... f i l e  r e n a m e d  a n d  c o p i e d ... : $x";
+            echo ;
+        fi
+
 
     done
 
