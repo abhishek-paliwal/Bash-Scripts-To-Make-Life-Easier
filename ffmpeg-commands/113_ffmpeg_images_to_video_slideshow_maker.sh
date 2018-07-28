@@ -23,6 +23,7 @@ DEMO_AUDIO_FILE="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/0
 ## Change these durations below as desired
 TIME_PER_IMAGE=2.5 ##TIME IN SECONDS PER SLIDE
 AUDIOFADE_DURATION=15 ##TIME IN SECONDS FOR AUDIO-FADE DURATION AT END
+VIDEO_RES="1280x720" ; ## Change Video resolution here
 ################################################
 
 OUTPUT_DIR="_delete_this_folder"
@@ -40,7 +41,7 @@ NEW_COVER_IMAGE="0_cover_final.jpg" ;
 for f in *.jpg ; do cp "$f" $COVER_IMAGE ; break ; done
 
 # resizing the cover image to full HD
-mogrify -resize 1920x1080 -background black -gravity center -extent 1920x1080 $COVER_IMAGE ;
+mogrify -resize $VIDEO_RES -background black -gravity center -extent $VIDEO_RES $COVER_IMAGE ;
 
 ## CREATING COVER IMAGE FROM THAT DUPLICATED IMAGE:
 ## first, finding the width of the image for text writing
@@ -88,14 +89,15 @@ for i in *jpg;
 
 cd $OUTPUT_DIR
 ## Using IMAGEMAGICK to resize ALL images to Full-HD with padding to keep FULL-HD aspect ratio
-echo "=======> ImageMagick resizing to HD working ...."
-mogrify -resize 1920x1080 -background black -gravity center -extent 1920x1080 *
+echo "=======> ImageMagick resizing to $VIDEO_RES working ...."
+mogrify -resize $VIDEO_RES -background black -gravity center -extent $VIDEO_RES *
 echo "=======> ImageMagick resizing done ...."
 
 
 ## FORMAT CHANGE: This quickly converts all JPGs to PNGs, which then will be used by FFMPEG
 echo "=======> Conversion from JPGs to PNGs begins ... " ;
 mogrify -format png *.jpg ;
+echo "=======> Conversion from JPGs to PNGs ends ... " ;
 
 ##################################################
 ## SOME PNG transitions behave odd with ffmpeg (from grayscale frame to color frame and vice-versa).
@@ -110,9 +112,10 @@ for pic in *.png ;
     PICNAME=`echo "$pic" | cut -d '.' -f1` ; ## removing file extension
 
     convert $pic -fill white -undercolor '#111111' -pointsize 16 -gravity Southeast -annotate +0+5 "\  $PICNAME " $pic
+    echo "PNG Image file stamped with file-name-number: $pic" ;
 
     convert $pic -define png:color-type=2 $pic ;
-    echo "Image converted to profile 2; $pic" ;
+    echo "PNG Image converted to profile 2: $pic" ;
     done
 
 echo "=======> Conversion from JPGs to PNGs ends ... " ;
@@ -121,9 +124,9 @@ echo "=======> Conversion from JPGs to PNGs ends ... " ;
 ## FFMPEG command to convert images to slideshow video with audio (-r 1/3 means 3 seconds per image)
 echo "=======> First FFMPEG encoding work begins ...."
 ## OLD COMMAND
-#ffmpeg -f image2 -framerate 24 -r 1/$TIME_PER_IMAGE -i image%03d.jpg -i $DEMO_AUDIO_FILE -shortest -video_size 1920x1080 -c:v libx264 -pix_fmt yuv420p $TMP_OUTPUT_VIDEO
+#ffmpeg -f image2 -framerate 24 -r 1/$TIME_PER_IMAGE -i image%03d.jpg -i $DEMO_AUDIO_FILE -shortest -video_size $VIDEO_RES -c:v libx264 -pix_fmt yuv420p $TMP_OUTPUT_VIDEO
 ## NEW COMMAND
-ffmpeg -thread_queue_size 512 -framerate 1/$TIME_PER_IMAGE -i image%03d.png -s:v 1920x1080 -c:v libx264 -vf "fps=25,format=yuv420p" $TMP_OUTPUT_VIDEO
+ffmpeg -thread_queue_size 512 -framerate 1/$TIME_PER_IMAGE -i image%03d.png -s:v $VIDEO_RES -c:v libx264 -vf "fps=25,format=yuv420p" $TMP_OUTPUT_VIDEO
 
 echo "=======> First FFMPEG work ends ...."
 
@@ -148,9 +151,9 @@ echo; echo "(REAL) Chosen random file: "$AUDIO_FILE ; echo ;
 ## RE-ENCODING USING FFMPEG WITH AUDIO FADE
 echo "=======> RE-ENCODING WITH AUDIO FADE: FFMPEG work begins ...."
 ## OLD COMMAND
-#ffmpeg -f image2 -framerate 24 -r 1/$TIME_PER_IMAGE -i image%03d.jpg -i $MY_SONG_DIR/$AUDIO_FILE -shortest -video_size 1920x1080 -af "afade=t=out:st=$AUDIO_LENGTH_MINUS_FADE:d=$AUDIOFADE_DURATION" -c:v libx264 -pix_fmt yuv420p $FINAL_VIDEO_FILENAME
+#ffmpeg -f image2 -framerate 24 -r 1/$TIME_PER_IMAGE -i image%03d.jpg -i $MY_SONG_DIR/$AUDIO_FILE -shortest -video_size $VIDEO_RES -af "afade=t=out:st=$AUDIO_LENGTH_MINUS_FADE:d=$AUDIOFADE_DURATION" -c:v libx264 -pix_fmt yuv420p $FINAL_VIDEO_FILENAME
 ## NEW COMMAND
-ffmpeg -thread_queue_size 512 -framerate 1/$TIME_PER_IMAGE -i image%03d.png -i $MY_SONG_DIR/$AUDIO_FILE -shortest -s:v 1920x1080 -af "afade=t=out:st=$AUDIO_LENGTH_MINUS_FADE:d=$AUDIOFADE_DURATION" -c:v libx264 -vf "fps=25,format=yuv420p" $FINAL_VIDEO_FILENAME
+ffmpeg -thread_queue_size 512 -framerate 1/$TIME_PER_IMAGE -i image%03d.png -i $MY_SONG_DIR/$AUDIO_FILE -shortest -s:v $VIDEO_RES -af "afade=t=out:st=$AUDIO_LENGTH_MINUS_FADE:d=$AUDIOFADE_DURATION" -c:v libx264 -vf "fps=25,format=yuv420p" $FINAL_VIDEO_FILENAME
 
 echo "=======> RE-ENCODING WITH AUDIO FADE: FFMPEG work ends ...."
 
