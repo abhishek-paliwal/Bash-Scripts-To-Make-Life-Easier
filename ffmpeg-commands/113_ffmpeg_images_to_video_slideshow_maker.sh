@@ -14,7 +14,9 @@ for f in * ; do mv -- "$f" "$(tr "[:upper:]" "[:lower:]" <<< "$f")" ; done ;
 echo "=======> ALL FILENAMES + EXTENSIONS RENAMED TO LOWERCASE. <========== " ; echo ;
 
 ## Change the following directory to choose your own songs, per project basis
-MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE+ROYALTY_FREE_MUSIC"
+
+#MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE+ROYALTY_FREE_MUSIC"
+MY_SONG_DIR="$HOME/Desktop/_TMP_SONGS_" ;
 
 ## THIS FILE HAS TO BE PRESENT FOR FIRST TMP VIDEO
 DEMO_AUDIO_FILE="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/00_ffmpeg_demo_audio.mp3"
@@ -67,7 +69,7 @@ echo "FULL COVER TEXT: $FULL_COVER_TEXT" ;
 
 ## now writing text onto the image using imagemagick composite
 ## get list of font names by running: convert -list font | grep "Font:"
-convert -background '#00000060' -font Century-Gothic -fill white -gravity center -size ${width}x400 caption:"$FULL_COVER_TEXT" $COVER_IMAGE +swap -gravity south -composite $NEW_COVER_IMAGE ;
+convert -background '#00000060' -font Century-Gothic -fill white -gravity center -size ${width}x300 caption:"$FULL_COVER_TEXT" $COVER_IMAGE +swap -gravity south -composite $NEW_COVER_IMAGE ;
 
 echo "========> DONE: TEXT WRITTEN TO COVER IMAGE." ;
 rm $COVER_IMAGE ; #delete old and unnecessary cover image tmp file#
@@ -123,18 +125,18 @@ echo "=======> Conversion from JPGs to PNGs ends ... " ;
 
 ## FFMPEG command to convert images to slideshow video with audio (-r 1/3 means 3 seconds per image)
 echo "=======> First FFMPEG encoding work begins ...."
-## OLD COMMAND
-#ffmpeg -f image2 -framerate 24 -r 1/$TIME_PER_IMAGE -i image%03d.jpg -i $DEMO_AUDIO_FILE -shortest -video_size $VIDEO_RES -c:v libx264 -pix_fmt yuv420p $TMP_OUTPUT_VIDEO
 ## NEW COMMAND
-ffmpeg -thread_queue_size 512 -framerate 1/$TIME_PER_IMAGE -i image%03d.png -s:v $VIDEO_RES -c:v libx264 -vf "fps=25,format=yuv420p" $TMP_OUTPUT_VIDEO
+#ffmpeg -thread_queue_size 512 -framerate 1/$TIME_PER_IMAGE -i image%03d.png -s:v $VIDEO_RES -c:v libx264 -vf "fps=25,format=yuv420p" $TMP_OUTPUT_VIDEO
 
 echo "=======> First FFMPEG work ends ...."
 
 ## PROBING the length of the audio and video file in seconds
-ffprobe -i $TMP_OUTPUT_VIDEO -show_entries stream=codec_type,duration -of compact=p=0:nk=1 | grep -i 'video|' | sed 's/video|//g' > _tmp.txt
+#ffprobe -i $TMP_OUTPUT_VIDEO -show_entries stream=codec_type,duration -of compact=p=0:nk=1 | grep -i 'video|' | sed 's/video|//g' > _tmp.txt
 
-AUDIO_LENGTH=`cut -d '.' -f 1 _tmp.txt` ## Extracting the first part before dot
+#AUDIO_LENGTH=`cut -d '.' -f 1 _tmp.txt` ## Extracting the first part before dot
+AUDIO_LENGTH=$LENGTH_OF_SLIDESHOW ;
 AUDIO_LENGTH_INTEGER=`printf '%d\n' "$AUDIO_LENGTH"` ## Converting to Integer
+
 AUDIO_LENGTH_MINUS_FADE=$(($AUDIO_LENGTH_INTEGER-$AUDIOFADE_DURATION)) ## Reducing FADE seconds from full length
 
 FINAL_VIDEO_FILENAME="$AUDIO_LENGTH_INTEGER""-sec-""$OUTPUT_VIDEO_FINAL" ;
