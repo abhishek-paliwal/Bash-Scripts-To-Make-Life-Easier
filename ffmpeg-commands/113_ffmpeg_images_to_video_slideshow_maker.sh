@@ -25,7 +25,7 @@ DEMO_AUDIO_FILE="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/0
 ## Change these durations below as desired
 TIME_PER_IMAGE=2.5 ##TIME IN SECONDS PER SLIDE
 AUDIOFADE_DURATION=15 ##TIME IN SECONDS FOR AUDIO-FADE DURATION AT END
-VIDEO_RES="1280x720" ; ## Change Video resolution here
+VIDEO_RES="1920x1080" ; ## Change Video resolution here
 ################################################
 
 OUTPUT_DIR="_delete_this_folder"
@@ -69,7 +69,7 @@ echo "FULL COVER TEXT: $FULL_COVER_TEXT" ;
 
 ## now writing text onto the image using imagemagick composite
 ## get list of font names by running: convert -list font | grep "Font:"
-convert -background '#00000060' -font Century-Gothic -fill white -gravity center -size ${width}x300 caption:"$FULL_COVER_TEXT" $COVER_IMAGE +swap -gravity south -composite $NEW_COVER_IMAGE ;
+convert -background '#00000085' -font /Users/abhishek/Library/Fonts/BebasNeue\ Book.ttf -fill black -gravity center -size ${width}x300 caption:"$FULL_COVER_TEXT" $COVER_IMAGE +swap -gravity south -composite $NEW_COVER_IMAGE ;
 
 echo "========> DONE: TEXT WRITTEN TO COVER IMAGE." ;
 rm $COVER_IMAGE ; #delete old and unnecessary cover image tmp file#
