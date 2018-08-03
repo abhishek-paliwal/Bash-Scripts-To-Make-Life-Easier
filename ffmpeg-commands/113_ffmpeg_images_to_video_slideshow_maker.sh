@@ -15,8 +15,8 @@ echo "=======> ALL FILENAMES + EXTENSIONS RENAMED TO LOWERCASE. <========== " ; 
 
 ## Change the following directory to choose your own songs, per project basis
 
-#MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE+ROYALTY_FREE_MUSIC"
-MY_SONG_DIR="$HOME/Desktop/_TMP_SONGS_" ;
+MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE+ROYALTY_FREE_MUSIC"
+#MY_SONG_DIR="$HOME/Desktop/_TMP_SONGS_" ;
 
 ## THIS FILE HAS TO BE PRESENT FOR FIRST TMP VIDEO
 DEMO_AUDIO_FILE="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/00_ffmpeg_demo_audio.mp3"
@@ -69,7 +69,7 @@ echo "FULL COVER TEXT: $FULL_COVER_TEXT" ;
 
 ## now writing text onto the image using imagemagick composite
 ## get list of font names by running: convert -list font | grep "Font:"
-convert -background '#00000085' -fill white -font /Users/abhishek/Library/Fonts/BebasNeue\ Book.ttf -gravity center -size ${width}x300 caption:"$FULL_COVER_TEXT" $COVER_IMAGE +swap -gravity south -composite $NEW_COVER_IMAGE ;
+convert -background '#00000085' -fill white -font /Users/abhishek/Library/Fonts/BebasNeue\ Regular.ttf -gravity center -size ${width}x300 caption:"$FULL_COVER_TEXT" $COVER_IMAGE +swap -gravity south -composite $NEW_COVER_IMAGE ;
 
 echo "========> DONE: TEXT WRITTEN TO COVER IMAGE." ;
 rm $COVER_IMAGE ; #delete old and unnecessary cover image tmp file#
