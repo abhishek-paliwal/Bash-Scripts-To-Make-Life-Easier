@@ -6,8 +6,23 @@
 # CREATED ON: Thursday August 2, 2018
 ########################################################################################
 
+PWD=`pwd`;
+echo "Current parent directory: $PWD" ;
+
+## CREATING TMP DIRECTORY TO DO ALL MAGIC, AND TO SAVE ORIGINAL FILES AS SUCH
+mkdir _TMP_COLLAGE_DIR;
+cp *.* _TMP_COLLAGE_DIR/ ;
+cd _TMP_COLLAGE_DIR ;
+
+NEW_PWD=`pwd` ;
+echo "CURRENT COLLAGE WORKING DIRECTORY: $NEW_PWD" ;
+
+## PRINTING ALL IMAGES DIMENSIONS OF FINAL FILE
+echo; echo "Printing all image sizes (sorted from small to big):";
+identify -format "%wx%h : %f\n" *.* | sort -r ;
+
 NEW_LINE_VAR="\\\\\\\\n" ; ## THIS WILL PRINT OUT \\n
-echo "USE THIS FOR NEW LINES: $NEW_LINE_VAR" ;
+echo; echo "USE THIS FOR NEW LINES: $NEW_LINE_VAR" ;
 
 echo "ENTER THE TITLE OF THE COLLAGE [ use $NEW_LINE_VAR for new-lines ]: " ;
 echo ;
@@ -53,7 +68,11 @@ montage *.*g -geometry $collage_dimensions+5+5 _my_collage.jpg
 FINAL_FILENAME=`echo $collage_title | sed 's/\\\\n/-/g' | sed 's/ /-/g'` ;
 cp _my_collage.jpg $FINAL_FILENAME.jpg ;
 
-echo "Collage has been made. Now opening working directory"; echo ;
+## PRINTING ALL IMAGES DIMENSIONS OF FINAL FILE
+echo; echo "==========> DIMENSIONS OF THE PRODUCED COLLAGE: ";
+identify -format "%wx%h : %f\n" $FINAL_FILENAME.jpg ;
+
+echo; echo "Collage has been made. Now opening working directory"; echo ;
 open .
 
 ########################################################################################
