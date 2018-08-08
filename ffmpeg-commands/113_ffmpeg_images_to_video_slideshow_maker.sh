@@ -25,7 +25,10 @@ DEMO_AUDIO_FILE="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/0
 ## Change these durations below as desired
 TIME_PER_IMAGE=2.5 ##TIME IN SECONDS PER SLIDE
 AUDIOFADE_DURATION=15 ##TIME IN SECONDS FOR AUDIO-FADE DURATION AT END
+#VIDEO_RES="3840x2160" ; ## Change Video resolution here
 VIDEO_RES="1920x1080" ; ## Change Video resolution here
+#VIDEO_RES="1280x720" ; ## Change Video resolution here
+#VIDEO_RES="640x480" ; ## Change Video resolution here
 ################################################
 
 OUTPUT_DIR="_delete_this_folder"
