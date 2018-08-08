@@ -65,7 +65,7 @@ echo ; echo "Now creating collage ....."
 montage *.*g -geometry $collage_dimensions+5+5 _my_collage.jpg
 
 ## RENAMING COLLAGE FILE BASED UPON title
-FINAL_FILENAME=`echo $collage_title | sed 's/\\\\n/-/g' | sed 's/ /-/g'` ;
+FINAL_FILENAME=`echo "$collage_title-collage" | sed 's/\\\\n/-/g' | sed 's/ /-/g'` ;
 cp _my_collage.jpg $FINAL_FILENAME.jpg ;
 
 ## PRINTING ALL IMAGES DIMENSIONS OF FINAL FILE
