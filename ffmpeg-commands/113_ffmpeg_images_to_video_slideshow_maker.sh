@@ -160,7 +160,10 @@ echo "=======> RE-ENCODING WITH AUDIO FADE: FFMPEG work begins ...."
 ## NEW COMMAND
 ffmpeg -thread_queue_size 512 -framerate 1/$TIME_PER_IMAGE -i image%03d.png -i $MY_SONG_DIR/$AUDIO_FILE -shortest -s:v $VIDEO_RES -af "afade=t=out:st=$AUDIO_LENGTH_MINUS_FADE:d=$AUDIOFADE_DURATION" -c:v libx264 -vf "fps=25,format=yuv420p" $FINAL_VIDEO_FILENAME
 
-echo "=======> RE-ENCODING WITH AUDIO FADE: FFMPEG work ends ...."
+echo; echo "FOLLOWING COMMAND IS USED FOR FFMPED ENCODING:" ; echo; 
+echo "ffmpeg -thread_queue_size 512 -framerate 1/$TIME_PER_IMAGE -i image%03d.png -i $MY_SONG_DIR/$AUDIO_FILE -shortest -s:v $VIDEO_RES -af \"afade=t=out:st=$AUDIO_LENGTH_MINUS_FADE:d=$AUDIOFADE_DURATION\" -c:v libx264 -vf \"fps=25,format=yuv420p\" $FINAL_VIDEO_FILENAME " ;
+
+echo ; echo "=======> RE-ENCODING WITH AUDIO FADE: FFMPEG work ends ...."
 
 ## Moving VIDEO file to parent directory
 BASENAME_FOLDER_NEW=`echo $tmp_varname | sed 's/\ /-/g' | sed 's/_/-/g' ` ;
