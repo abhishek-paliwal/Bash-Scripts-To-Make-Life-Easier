@@ -29,7 +29,7 @@ do
     echo "CURRENT FILE NAME: $x " ;
     echo "-------------------" ;
 
-    # Converting original filename to title case and removing all the strange characters, and replacing them with hyphens, then spaces
+    # Converting original filename to title case and removing all the strange characters, and replacing them with hyphens
     NEW_FILENAME=`echo "$x" | awk '{for (i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)} 1' | sed -e 's/[{}\,! ()\-\+]/_/g' | sed -e 's/__*/-/g' ` ;
     printf '%s' "======> NEW_FILENAME: $NEW_FILENAME " ;
 
