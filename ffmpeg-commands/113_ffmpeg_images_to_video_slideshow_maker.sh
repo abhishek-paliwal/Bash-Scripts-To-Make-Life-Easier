@@ -15,20 +15,26 @@ echo "=======> ALL FILENAMES + EXTENSIONS RENAMED TO LOWERCASE. <========== " ; 
 
 ## Change the following directory to choose your own songs, per project basis
 
-MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE+ROYALTY_FREE_MUSIC"
 #MY_SONG_DIR="$HOME/Desktop/_TMP_SONGS_" ;
+#MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/bollywood-music"
+MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/royalty-free-music"
+
 
 ## THIS FILE HAS TO BE PRESENT FOR FIRST TMP VIDEO
 DEMO_AUDIO_FILE="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/00_ffmpeg_demo_audio.mp3"
 
 ################################################
 ## Change these durations below as desired
-TIME_PER_IMAGE=2.5 ##TIME IN SECONDS PER SLIDE
+TIME_PER_IMAGE=2 ##TIME IN SECONDS PER SLIDE
 AUDIOFADE_DURATION=15 ##TIME IN SECONDS FOR AUDIO-FADE DURATION AT END
-#VIDEO_RES="3840x2160" ; ## Change Video resolution here
-VIDEO_RES="1920x1080" ; ## Change Video resolution here
-#VIDEO_RES="1280x720" ; ## Change Video resolution here
-#VIDEO_RES="640x480" ; ## Change Video resolution here
+## Uncomment the desired Video resolution below
+#VIDEO_RES="3840x2160" ; ## 16:9
+#VIDEO_RES="2560x1440" ; ## 16:9
+#VIDEO_RES="1920x1200" ; ## 16:10
+#VIDEO_RES="1920x1080" ; ## 16:9 Full HD
+#VIDEO_RES="1280x720" ; ## 16:9 HD
+#VIDEO_RES="800x600" ; ## 4:3
+VIDEO_RES="640x480" ; ## 4:3 VGA
 ################################################
 
 OUTPUT_DIR="_delete_this_folder"
@@ -67,7 +73,7 @@ BASENAME_FOLDER=`echo $tmp_varname | sed 's/\ /-/g' | sed 's/-/ /g' | sed 's/_/ 
 
 
 ## collecting all variables to a final caption
-FULL_COVER_TEXT="$BASENAME_FOLDER\n$NUM_FILES photos // $LENGTH_OF_SLIDESHOW_IN_MINUTES " ;
+FULL_COVER_TEXT="$BASENAME_FOLDER\n$NUM_FILES photos // $LENGTH_OF_SLIDESHOW_IN_MINUTES // $VIDEO_RES" ;
 echo "FULL COVER TEXT: $FULL_COVER_TEXT" ;
 
 ## now writing text onto the image using imagemagick composite
@@ -160,7 +166,7 @@ echo "=======> RE-ENCODING WITH AUDIO FADE: FFMPEG work begins ...."
 ## NEW COMMAND
 ffmpeg -thread_queue_size 512 -framerate 1/$TIME_PER_IMAGE -i image%03d.png -i $MY_SONG_DIR/$AUDIO_FILE -shortest -s:v $VIDEO_RES -af "afade=t=out:st=$AUDIO_LENGTH_MINUS_FADE:d=$AUDIOFADE_DURATION" -c:v libx264 -vf "fps=25,format=yuv420p" $FINAL_VIDEO_FILENAME
 
-echo; echo "FOLLOWING COMMAND IS USED FOR FFMPED ENCODING:" ; echo; 
+echo; echo "FOLLOWING COMMAND IS USED FOR FFMPED ENCODING:" ; echo;
 echo "ffmpeg -thread_queue_size 512 -framerate 1/$TIME_PER_IMAGE -i image%03d.png -i $MY_SONG_DIR/$AUDIO_FILE -shortest -s:v $VIDEO_RES -af \"afade=t=out:st=$AUDIO_LENGTH_MINUS_FADE:d=$AUDIOFADE_DURATION\" -c:v libx264 -vf \"fps=25,format=yuv420p\" $FINAL_VIDEO_FILENAME " ;
 
 echo ; echo "=======> RE-ENCODING WITH AUDIO FADE: FFMPEG work ends ...."
