@@ -39,7 +39,8 @@ echo ;
 
 ## Now generating random HEX colors for title
 random_color_background=`echo "#$(openssl rand -hex 3)"` ;
-random_color_text=`echo "#$(openssl rand -hex 3)"`  ;
+#random_color_text=`echo "#$(openssl rand -hex 3)"`  ;
+random_color_text="#ffffff" ;
 
 echo "Chosen random_color_background=$random_color_background" ;
 echo "Chosen random_color_text=$random_color_text" ;
@@ -47,8 +48,17 @@ echo "Chosen random_color_text=$random_color_text" ;
 ## LABELING ALL IMAGES, ONE BY ONE
 for f in *.*g ; ## this will only take jpg, and png
     do
-        convert $f -fill "$random_color_text" -undercolor "$random_color_background" -pointsize $label_fontsize -gravity Southwest -annotate +5+5 "\ $label_text " _labeled_$f ;
-        echo "=======> DONE: Labeling completed for $f ...."
+        ## LABELING DEPENDING UPON IF TITLE VARIABLE TEXT IS NOT EMPTY.
+        if [ -z "$label_text" ]
+        then
+              echo "\$label_text is empty. So filename will be used for Label." ;
+              convert $f -fill "$random_color_text" -undercolor "$random_color_background" -pointsize $label_fontsize -gravity Northwest -annotate +5+5 "\ $f " _labeled_$f ;
+              echo "=======> DONE: Labeling completed for $f ...." ;
+        else
+              echo "\$label_text is NOT empty. So provided text will be used for Label." ;
+              convert $f -fill "$random_color_text" -undercolor "$random_color_background" -pointsize $label_fontsize -gravity Northwest -annotate +5+5 "\ $label_text " _labeled_$f ;
+              echo "=======> DONE: Labeling completed for $f ...." ;
+        fi
     done
 
 
