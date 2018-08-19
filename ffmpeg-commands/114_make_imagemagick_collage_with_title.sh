@@ -21,10 +21,17 @@ echo "CURRENT COLLAGE WORKING DIRECTORY: $NEW_PWD" ;
 echo; echo "Printing all image sizes (sorted from small to big):";
 identify -format "%wx%h : %f\n" *.* | sort -r ;
 
+## NOW PRINTING THE DIMENSIONS OF ALL IMAGES WITH HOW MANY IMAGES THEY CORRESPOND
+echo; echo "Now printing the dimensions of all images with how many images they correspond to: ";
+identify -format "%wx%h\n" *.* | sort -nr > _TMP_LIST.TXT ;
+cat _TMP_LIST.TXT | sort -n | uniq -c | sort -k2nr ;
+
+
 NEW_LINE_VAR="\\\\\\\\n" ; ## THIS WILL PRINT OUT \\n
 echo; echo "USE THIS FOR NEW LINES: $NEW_LINE_VAR" ;
 
 echo "ENTER THE TITLE OF THE COLLAGE [ use $NEW_LINE_VAR for new-lines ]: " ;
+echo ; echo "(NOTE: KEEP IT EMPTY IF YOU DON'T WANT ANY TITLE SLIDE) " ;
 echo ;
 read collage_title ;
 
@@ -49,8 +56,14 @@ echo "Chosen random_color_text=$random_color_text" ;
 touch _my_collage*
 rm _my_collage*
 
-## STEP 1: MAKING TITLE
-convert -background "$random_color_background" -fill "$random_color_text" -font /Users/abhishek/Library/Fonts/BebasNeue\ Book.ttf -size "$collage_dimensions" -gravity east label:"$collage_title" _my_collage_title.jpg
+## STEP 1: MAKING TITLE IF TITLE VARIABLE TEXT IS NOT EMPTY.
+if [ -z "$collage_title" ]
+then
+      echo "\$collage_title is empty." ;
+else
+      echo "\$collage_title is NOT empty.";
+      convert -background "$random_color_background" -fill "$random_color_text" -font /Users/abhishek/Library/Fonts/BebasNeue\ Book.ttf -size "$collage_dimensions" -gravity east label:"$collage_title" _my_collage_title.jpg ;
+fi
 
 echo ; echo "CURRENT FILES IN DIRECTORY: "
 ls -1 *.*g | nl ## chooses all the png/jpg images
