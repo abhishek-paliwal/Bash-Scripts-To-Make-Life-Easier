@@ -17,24 +17,67 @@ echo "=======> ALL FILENAMES + EXTENSIONS RENAMED TO LOWERCASE. <========== " ; 
 
 #MY_SONG_DIR="$HOME/Desktop/_TMP_SONGS_" ;
 #MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/bollywood-music"
-MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/royalty-free-music"
+#MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/royalty-free-music"
 
+echo "Select the Song directory =======>
+a) Desktop/_TMP_SONGS_
+b) bollywood-music
+c) royalty-free-music
+" ;
+
+echo "Enter your choice (a/b/c): " ;
+read song_dir
+
+case $song_dir in
+    a) MY_SONG_DIR="$HOME/Desktop/_TMP_SONGS_" ;;
+    b) MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/bollywood-music" ;;
+    c) MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/royalty-free-music" ;;
+    *) echo "Invalid option $song_dir" ;;
+esac
+
+echo "Chosen MY_SONG_DIR is: $MY_SONG_DIR " ; echo;
 
 ## THIS FILE HAS TO BE PRESENT FOR FIRST TMP VIDEO
 DEMO_AUDIO_FILE="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/00_ffmpeg_demo_audio.mp3"
 
+## NOW PRINTING THE DIMENSIONS OF ALL IMAGES WITH HOW MANY IMAGES THEY CORRESPOND
+echo; echo "Now printing the dimensions of all images with how many images they correspond to: ";
+identify -format "%wx%h\n" *.* | sort -n > _TMP_LIST.TXT ;
+cat _TMP_LIST.TXT | sort -n | uniq -c | sort -k2nr ;
+
 ################################################
 ## Change these durations below as desired
-TIME_PER_IMAGE=2 ##TIME IN SECONDS PER SLIDE
+TIME_PER_IMAGE=2.5 ##TIME IN SECONDS PER SLIDE
 AUDIOFADE_DURATION=15 ##TIME IN SECONDS FOR AUDIO-FADE DURATION AT END
-## Uncomment the desired Video resolution below
-#VIDEO_RES="3840x2160" ; ## 16:9
-#VIDEO_RES="2560x1440" ; ## 16:9
-#VIDEO_RES="1920x1200" ; ## 16:10
-#VIDEO_RES="1920x1080" ; ## 16:9 Full HD
-#VIDEO_RES="1280x720" ; ## 16:9 HD
-#VIDEO_RES="800x600" ; ## 4:3
-VIDEO_RES="640x480" ; ## 4:3 VGA
+################################################
+
+################################################
+## CHOOSING THE VIDEO RESOLUTION FROM OPTIONS
+echo "Select the Video Resolution =======>
+1) 3840x2160
+2) 2560x1440
+3) 1920x1200
+4) 1920x1080
+5) 1280x720
+6) 800x600
+7) 640x480
+" ;
+
+echo "Enter your VIDEO RESOLUTION choice (as option number): " ;
+read v_resolution
+
+case $v_resolution in
+    1) VIDEO_RES="3840x2160" ;; ## 16:9
+    2) VIDEO_RES="2560x1440" ;; ## 16:9
+    3) VIDEO_RES="1920x1200" ;; ## 16:10
+    4) VIDEO_RES="1920x1080" ;; ## 16:9 Full HD
+    5) VIDEO_RES="1280x720" ;; ## 16:9 HD
+    6) VIDEO_RES="800x600" ;; ## 4:3
+    7) VIDEO_RES="640x480" ;; ## 4:3 VGA
+    *) echo "Invalid option $v_resolution" ;;
+esac
+
+echo "Chosen VIDEO_RES is: $VIDEO_RES " ; echo;
 ################################################
 
 OUTPUT_DIR="_delete_this_folder"
