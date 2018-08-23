@@ -24,18 +24,13 @@ identify -format "%wx%h : %f\n" *.* | sort -r ;
 NEW_LINE_VAR="\\\\\\\\n" ; ## THIS WILL PRINT OUT \\n
 echo; echo "USE THIS FOR NEW LINES: $NEW_LINE_VAR" ;
 
-echo "ENTER THE LABEL TEXT TO PRINT ONTO EACH IMAGE: " ;
-echo ;
-read label_text ;
+echo "ENTER THE LABEL TEXT TO PRINT ONTO EACH IMAGE (leave empty to use filename as label, just press Enter key): " ;
+echo ; read label_text ;
 
-echo "ENTER THE FONT-SIZE OF THE LABEL [ as an integer > 16 ]: " ;
-echo ;
-read label_fontsize ;
+# echo "ENTER THE FONT-SIZE OF THE LABEL [ as an integer > 16 ]: " ;
+# echo ; read label_fontsize ;
 
-echo ;
-echo "label_text: $label_text" ;
-echo "label_fontsize: $label_fontsize" ;
-echo ;
+echo ; echo "label_text: $label_text" ; echo ;
 
 ## Now generating random HEX colors for title
 random_color_background=`echo "#$(openssl rand -hex 3)"` ;
@@ -48,6 +43,13 @@ echo "Chosen random_color_text=$random_color_text" ;
 ## LABELING ALL IMAGES, ONE BY ONE
 for f in *.*g ; ## this will only take jpg, and png
     do
+        ## FIRST, FINDING THE IMGAE HEIGHT, THEN CALCULATING THE FONTSIZE
+        ## THIS IS A GOOD STRATEGY TO KEEP THE LOOK UNIFORM ACROSS IMAGES OF VARIOUS HEIGHTS
+        height=`identify -format %h $f`;
+        label_fontsize=`echo ${height}/45 | bc` ; ##Fontsize if factored down
+
+        echo; echo "Image Height is: $height and label_fontsize is $label_fontsize " ;
+
         ## LABELING DEPENDING UPON IF TITLE VARIABLE TEXT IS NOT EMPTY.
         if [ -z "$label_text" ]
         then
