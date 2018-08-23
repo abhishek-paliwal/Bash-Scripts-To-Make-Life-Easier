@@ -11,6 +11,16 @@ MAIN_DIR=`pwd` ;
 echo ; echo "Working directory: $MAIN_DIR" ;
 cd $MAIN_DIR ;
 
+######################################################################
+## Check if PWD is not $HOME . Only then, it will run.
+PWD=`pwd` ;
+if [ "$PWD" == "$HOME" ];
+then
+    echo "PWD is $PWD . Thus, this script will not run in this directory. " ;
+    exit 1 ;
+fi
+######################################################################
+
 ## Creating a new tmp directory to store renamed files
 rm _TMP_RENAME_DIR_ ## remove dir if exists already
 mkdir _TMP_RENAME_DIR_ ;
