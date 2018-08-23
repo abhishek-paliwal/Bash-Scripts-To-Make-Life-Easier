@@ -9,6 +9,15 @@
 PWD=`pwd`;
 cd $PWD ; ## CD to present working directory
 
+######################################################################
+## Check if PWD is not $HOME . Only then, it will run.
+if [ "$PWD" == "$HOME" ];
+then
+    echo "PWD is $PWD . Thus, this script will not run in this directory. " ;
+    exit 1 ;
+fi
+######################################################################
+
 ## RENAME ALL FILE NAMES TO LOWERCASE, BY RUNNING the following COMMAND
 for f in * ; do mv -- "$f" "$(tr "[:upper:]" "[:lower:]" <<< "$f")" ; done ;
 echo "=======> ALL FILENAMES + EXTENSIONS RENAMED TO LOWERCASE. <========== " ; echo ;
@@ -254,3 +263,4 @@ echo "=====================================================" ;
 
 ## Opening PWD
 open -j $PWD
+say 'Video is done.' ;
