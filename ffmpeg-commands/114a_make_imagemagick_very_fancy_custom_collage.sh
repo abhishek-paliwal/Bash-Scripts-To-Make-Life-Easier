@@ -3,21 +3,38 @@
 ## THIS PROGRAM MAKES A COLLAGE BY MAKING ROWS OF SUBCOLLAGES ...
 ## USING IMAGES PRESENT IN A FOLDER
 ######################################
-width="1920" ;
-height="1080";
-padding="0" ;
+padding="5" ;
 collagebackground="white" ;
 subcollagebackground="black" ;
-collage_title="THIS IS THE TITLE THAT I WANT ( $width x $height )" ;
 
-## COLLAGE FORMAT STRING
-string="20:6x1+100
-40:1x1+50:2x2+50
-20:2x1+33:1x1+33:1x1+34
-20:1x1+50:2x2+50";
+## COLLAGE FORMAT STRING (edit as needed)
+string="50:3x3+50:3x3+50
+50:3x3+50:3x3+50" ;
+#######################################
 
-#string="100:8x5+100" ;
+echo "Enter the WIDTH in pixels for the collage: " ;
+read width ;
 
+echo "Enter the HEIGHT in pixels for the collage: " ;
+read height ;
+
+echo "Enter the TITLE for the collage: " ;
+read title ;
+
+## CHECKING IF VALUSES ARE ENTERED OR NOT
+if [ -z "$width" ] && [ -z "$height" ] && [ -z "$title" ]
+    then
+    echo "No values supplied. So default values will be used." ;
+    width="4000" ;
+    height="3000" ;
+    title="MY COLLAGE" ;
+    echo "THE DEFAULT VALUES CHOSEN ARE: $width // $height // $title " ;
+fi
+
+## CREATING FINAL COLLAGE TITLE
+collage_title="$title ($width x $height px)" ;
+
+########################################
 ########################################
 
 PWD=`pwd`;
@@ -46,7 +63,9 @@ filename="_TMP.TXT" ;
 echo "$string" > $filename ;
 
 ## READING FROM COLLAGE FORMAT FILE
+let total_images=0;
 let lineNumber=0 ;
+
 while read -r line
 do
 
@@ -98,25 +117,32 @@ do
             #padding_right=`echo "$padding/$tile_columns" | bc` ;
 
 
-            ls -1 *.*g | head -$num_images > $TMP_FILELIST ;
             ls -1 *.*g | head -$num_images ; ## Printing to Command prompt
+            ls -1 *.*g | head -$num_images > $TMP_FILELIST ;
+
+        ## Executing the Resize and Crop script
+        sh $HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/116_imagemagick_crop_images_to_any_custom_dimensions.sh $subitem_width_in_px $subitem_height_in_px $TMP_FILELIST
 
             echo "=======> Creating subcollage..." ;
             sep="x";
-                  montage @$TMP_FILELIST -mode concatenate -tile $subitem1 -geometry $subitem_width_in_px$sep$subitem_height_in_px+$padding+$padding -background $subcollagebackground -gravity center subcollage-$lineNumber-$index-$subitem1.jpg ;
+                  pwd ;
+                  montage @0_$TMP_FILELIST -mode concatenate -tile $subitem1 -geometry $subitem_width_in_px$sep$subitem_height_in_px+$padding+$padding -background $subcollagebackground -gravity center zz_subcollage-$lineNumber-$index-$subitem1.jpg ;
 
             echo ; echo "Collage command used:" ;
-            echo "montage @$TMP_FILELIST -mode concatenate -tile $subitem1 -geometry $subitem_width_in_px$sep$subitem_height_in_px+$padding+$padding -background $subcollagebackground -gravity center subcollage-$lineNumber-$index-$subitem1.jpg ;" ;
+            echo "montage @$TMP_FILELIST -mode concatenate -tile $subitem1 -geometry $subitem_width_in_px$sep$subitem_height_in_px+$padding+$padding -background $subcollagebackground -gravity center zz_subcollage-$lineNumber-$index-$subitem1.jpg ;" ;
             echo ;
 
             ## FINALLY MOVING ALL FILES WHICH HAVE BEEN USED SO FAR
             mv `ls *.*g | head -$num_images` ./_done_processing/ ;
+
+            total_images=`echo "$total_images+$num_images" | bc`  ;
+            echo "PRESENT NUMBER OF TOTAL IMAGES: $total_images" ;
         fi
 
     done
 
     ## Creating Sub-collage for each row
-    montage subcollage-$lineNumber-* -geometry +$padding+0 -background $collagebackground -gravity center collage-$lineNumber.jpg
+    montage zz_subcollage-$lineNumber-* -geometry +$padding+0 -background $collagebackground -gravity center zz_collage-$lineNumber.jpg
     sleep 3 ; ## Pause for 1 seconds
 
     ## Printing index with values
@@ -128,14 +154,17 @@ do
 done < "$filename"
 
 ## Creating Final Collage using all the subcollages
-montage collage-* -title "$collage_title" -tile 1x$lineNumber -geometry +$padding+$padding -background $collagebackground -gravity center _FINAL_COLLAGE.jpg
+ECHO "========> Creating Final Collage using all the subcollages <======== " ;
+montage zz_collage-* -title "$collage_title [ $total_images images ]" -tile 1x$lineNumber -geometry +$padding+$padding -background $collagebackground -gravity center _FINAL_COLLAGE.jpg
 
 ## IN CASE OF ERRORS
+echo ;
+echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ;
 echo "IN CASE OF ERRORS, CHECK THESE: " ;
 echo "1. All original filenames should be in lowercase, including extensions." ;
 echo "2. Make sure that the collage format has been entered in the right notation, with no spaces anywhere." ;
 echo "3. Also, see to it that the number of images are more than or equal to the total images used in the collage." ;
-
+echo "4. Make sure that the images names do not start with 'z' character, such as zoo-1.jpg, etc. " ;
 
 ## OPENING FINAL DIRECTORY
 open $PWD ;
