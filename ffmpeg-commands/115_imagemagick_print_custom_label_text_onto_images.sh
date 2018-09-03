@@ -46,7 +46,7 @@ for f in *.*g ; ## this will only take jpg, and png
         ## FIRST, FINDING THE IMGAE HEIGHT, THEN CALCULATING THE FONTSIZE
         ## THIS IS A GOOD STRATEGY TO KEEP THE LOOK UNIFORM ACROSS IMAGES OF VARIOUS HEIGHTS
         height=`identify -format %h $f`;
-        label_fontsize=`echo ${height}/45 | bc` ; ##Fontsize if factored down
+        label_fontsize=`echo ${height}/40 | bc` ; ##Fontsize if factored down
 
         echo; echo "Image Height is: $height and label_fontsize is $label_fontsize " ;
 
