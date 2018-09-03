@@ -39,6 +39,10 @@ echo "ENTER THE DIMENSIONS OF THE TITLE AND EACH IMAGE IN COLLAGE AS WxH [eg., 1
 echo ;
 read collage_dimensions ;
 
+echo "ENTER THE TILE VALUE AS ROWSxCOLUMNS [eg., 4x5]: " ;
+echo ;
+read tile_value ;
+
 echo ;
 echo "collage_title: $collage_title" ;
 echo "collage_dimensions: $collage_dimensions" ;
@@ -53,8 +57,8 @@ echo "Chosen random_color_text=$random_color_text" ;
 
 
 ## Checking if files exists, and removing if exists:
-touch _my_collage*
-rm _my_collage*
+touch 0_my_collage*
+rm 0_my_collage*
 
 ## STEP 1: MAKING TITLE IF TITLE VARIABLE TEXT IS NOT EMPTY.
 if [ -z "$collage_title" ]
@@ -62,7 +66,7 @@ then
       echo "\$collage_title is empty." ;
 else
       echo "\$collage_title is NOT empty.";
-      convert -background "$random_color_background" -fill "$random_color_text" -font /Users/abhishek/Library/Fonts/BebasNeue\ Book.ttf -size "$collage_dimensions" -gravity east label:"$collage_title" _my_collage_title.jpg ;
+      convert -background "$random_color_background" -fill "$random_color_text" -font /Users/abhishek/Library/Fonts/BebasNeue\ Book.ttf -size "$collage_dimensions" -gravity east label:"$collage_title" 0_my_collage_title.jpg ;
 fi
 
 echo ; echo "CURRENT FILES IN DIRECTORY: "
@@ -75,11 +79,11 @@ echo "=======> ImageMagick resizing done ...."
 
 ## STEP 3: MAKING COLLAGE USING ALL IMAGES IN PWD
 echo ; echo "Now creating collage ....."
-montage *.*g -geometry $collage_dimensions+5+5 _my_collage.jpg
+montage *.*g -tile $tile_value -geometry $collage_dimensions+5+5 0_my_collage.jpg
 
 ## RENAMING COLLAGE FILE BASED UPON title
 FINAL_FILENAME=`echo "$collage_title-collage" | sed 's/\\\\n/-/g' | sed 's/ /-/g'` ;
-cp _my_collage.jpg $FINAL_FILENAME.jpg ;
+cp 0_my_collage.jpg $FINAL_FILENAME.jpg ;
 
 ## PRINTING ALL IMAGES DIMENSIONS OF FINAL FILE
 echo; echo "==========> DIMENSIONS OF THE PRODUCED COLLAGE: ";
