@@ -5,11 +5,24 @@
 ######################################
 padding="5" ;
 collagebackground="white" ;
-subcollagebackground="black" ;
+subcollagebackground="white" ;
 
 ## COLLAGE FORMAT STRING (edit as needed)
 string="50:3x3+50:3x3+50
 50:3x3+50:3x3+50" ;
+
+## ASSIGNS AND CHECKS FOR COLLAGE FORMAT TEXT FILE
+collageformat_file="_collageformat.txt" ;
+
+if [ -e "$collageformat_file" ]; then
+    echo "===> File exists : $collageformat_file " ;
+    string=`cat $collageformat_file | sed '/^$/d' ` ;
+else
+    echo "===> File does not exist : $collageformat_file" ;
+    echo "NO COLLAGE FORMAT FILE FOUND. THUS, DEFAULT COLLAGE FORMAT WILL BE USED. THIS ==> $string " ;
+fi
+
+
 #######################################
 
 echo "Enter the WIDTH in pixels for the collage: " ;
