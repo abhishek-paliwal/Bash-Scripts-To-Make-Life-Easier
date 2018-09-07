@@ -19,7 +19,7 @@ echo "CURRENT COLLAGE WORKING DIRECTORY: $NEW_PWD" ;
 
 ## PRINTING ALL IMAGES DIMENSIONS OF FINAL FILE
 echo; echo "Printing all image sizes (sorted from small to big):";
-identify -format "%wx%h : %f\n" *.* | sort -r ;
+identify -format "%wx%h : %f\n" *.* | sort -r | nl ;
 
 ## NOW PRINTING THE DIMENSIONS OF ALL IMAGES WITH HOW MANY IMAGES THEY CORRESPOND
 echo; echo "Now printing the dimensions of all images with how many images they correspond to: ";
