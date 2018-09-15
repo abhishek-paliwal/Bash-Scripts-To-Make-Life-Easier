@@ -36,12 +36,16 @@ sh $BASEPATH/11-sitemap-for-website-generator.sh
 shopt -s expand_aliases ## This has to be done, else, aliases are not expanded in scripts.
 source $HOME/.bash_profile ## Then, this also has to be done to use aliases in this script.
 #### Actual backup command aliases below ##
-echo "     ++++++++ Getting backups to-and-from DREAMCOMPUTE Server......"
+echo "     ++++++++ Getting backups to-and-from DREAMCOMPUTE and KVM ARCH Server......"
 echo "     >>>>>>>> BEGINNING: Backup [FROM] DreamCompute DONE. <<<<<<<"
 1_backup_from_dreamcompute_server
 echo "     >>>>>>>> DONE: Backup [FROM] DreamCompute DONE. <<<<<<<"
 
-echo " = = = = > Opening the DreamCompute Backup directory..."
+echo "     >>>>>>>> BEGINNING: Backup [FROM] KVM ARCH Server DONE. <<<<<<<"
+1_backup_from_kvmarch_server
+echo "     >>>>>>>> DONE: Backup [FROM] KVM ARCH Server DONE. <<<<<<<"
+
+echo " = = = = > Now opening the DreamCompute + KVM ARCH VPS Backup directory..."
 open $HOME/OneDrive/Apps2Sync/DreamCompute-VPS-Backup ; ## Don't forget to add semicolon at the end.
 
 echo "     ++++++++ BACKUPS TO CDN: Creating backups to CDNs @ Dreamhost Hosted Sites......"
