@@ -56,7 +56,7 @@ cat _TMP_LIST.TXT | sort -n | uniq -c | sort -k2nr ;
 
 ################################################
 ## Change these durations below as desired
-TIME_PER_IMAGE=2.0 ##TIME IN SECONDS PER SLIDE
+TIME_PER_IMAGE=2.5 ##TIME IN SECONDS PER SLIDE
 AUDIOFADE_DURATION=15 ##TIME IN SECONDS FOR AUDIO-FADE DURATION AT END
 ################################################
 
