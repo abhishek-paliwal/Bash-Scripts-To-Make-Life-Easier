@@ -3,7 +3,7 @@
 ## THIS PROGRAM MAKES A COLLAGE BY MAKING ROWS OF SUBCOLLAGES ...
 ## USING IMAGES PRESENT IN A FOLDER
 ######################################
-padding="5" ;
+padding="10" ;
 collagebackground="white" ;
 subcollagebackground="white" ;
 
@@ -34,14 +34,15 @@ read height ;
 echo "Enter the TITLE for the collage: " ;
 read title ;
 
+
 ## CHECKING IF VALUSES ARE ENTERED OR NOT
 if [ -z "$width" ] && [ -z "$height" ] && [ -z "$title" ]
     then
-    echo "No values supplied. So default values will be used." ;
-    width="4000" ;
-    height="3000" ;
+    echo "No values supplied. So default values will be used. (5400x3600: Best for printing at 12x18 ratio)" ;
+    width="5400" ;
+    height="3600" ;
     title="MY COLLAGE" ;
-    echo "THE DEFAULT VALUES CHOSEN ARE: $width // $height // $title " ;
+    echo "THE DEFAULT VALUES CHOSEN ARE: $width px // $height px // TITLE: $title " ;
 fi
 
 ## CREATING FINAL COLLAGE TITLE
@@ -178,6 +179,7 @@ echo "1. All original filenames should be in lowercase, including extensions." ;
 echo "2. Make sure that the collage format has been entered in the right notation, with no spaces anywhere." ;
 echo "3. Also, see to it that the number of images are more than or equal to the total images used in the collage." ;
 echo "4. Make sure that the images names do not start with 'z' character, such as zoo-1.jpg, etc. " ;
+echo "5. Make sure that there are no SPACES in any of the foldernames in the whole PATH. In such case, replace spaces with hyphens." ;
 
 ## OPENING FINAL DIRECTORY
 open $PWD ;
