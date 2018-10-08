@@ -46,6 +46,10 @@ echo "ENTER THE TILE VALUE AS ROWSxCOLUMNS [eg., 4x5] [OR leave empty for automa
 echo ;
 read tile_value ;
 
+echo "ENTER THE PADDING VALUE IN PIXELS [eg., 5] [OR leave empty for automatic choice]: " ;
+echo ;
+read padding_pixels ;
+
 ########################################################
 total_num_images=`cat _TMP_LIST.TXT | wc -l | sed 's/ //g' ` ;
 echo "======> TOTAL NUMBER OF IMAGES: $total_num_images " ;
@@ -75,6 +79,7 @@ echo ;
 echo "collage_title: $collage_title" ;
 echo "collage_dimensions: $collage_dimensions" ;
 echo "tile_value: $tile_value" ;
+echo "padding_pixels: $padding_pixels" ;
 echo ;
 
 ################################################################
@@ -91,13 +96,23 @@ echo "Chosen random_color_text=$random_color_text" ;
 touch 0_my_collage*
 rm 0_my_collage*
 
-## STEP 1: MAKING TITLE IF TITLE VARIABLE TEXT IS NOT EMPTY.
+## STEP 1A: MAKING TITLE IF TITLE VARIABLE TEXT IS NOT EMPTY.
 if [ -z "$collage_title" ]
 then
       echo "\$collage_title is empty." ;
 else
       echo "\$collage_title is NOT empty.";
       convert -background "$random_color_background" -fill "$random_color_text" -font /Users/abhishek/Library/Fonts/BebasNeue\ Book.ttf -size "$collage_dimensions" -gravity east label:"$collage_title" 0_my_collage_title.jpg ;
+fi
+
+
+## STEP 1B: CHECKING IF PADDING_PIXELS VARIABLE TEXT IS NOT EMPTY.
+if [ -z "$padding_pixels" ]
+then
+      echo "\$padding_pixels is empty." ;
+      padding_pixels="5" ;
+else
+      echo "\$padding_pixels is NOT empty. Provided value will be used.";
 fi
 
 
@@ -112,10 +127,10 @@ echo ; echo "Now creating collage ....." ;
 if [ -z "$tile_value" ]
 then
       echo "\$tile_value is empty. Collage will be made automatically." ;
-      montage *.*g -geometry $collage_dimensions+5+5 0_my_collage.jpg ;
+      montage *.*g -geometry $collage_dimensions+$padding_pixels+$padding_pixels 0_my_collage.jpg ;
 else
       echo "\$tile_value is NOT empty. Collage will be made using tile value = $tile_value " ;
-      montage *.*g -tile $tile_value -geometry $collage_dimensions+5+5 0_my_collage.jpg ;
+      montage *.*g -tile $tile_value -geometry $collage_dimensions+$padding_pixels+$padding_pixels 0_my_collage.jpg ;
 fi
 
 #######################################################################################
