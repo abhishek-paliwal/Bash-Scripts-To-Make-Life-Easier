@@ -38,7 +38,8 @@ source $HOME/.bash_profile ## Then, this also has to be done to use aliases in t
 #### Actual backup command aliases below ##
 echo "     ++++++++ Getting backups to-and-from DREAMCOMPUTE and KVM ARCH Server......"
 echo "     >>>>>>>> BEGINNING: Backup [FROM] DreamCompute DONE. <<<<<<<"
-1_backup_from_dreamcompute_server
+# 1_backup_from_dreamcompute_server
+echo "          Dreamcompute server has been discontinued. HENCE, NO BACKUP IS DONE. "
 echo "     >>>>>>>> DONE: Backup [FROM] DreamCompute DONE. <<<<<<<"
 
 echo "     >>>>>>>> BEGINNING: Backup [FROM] KVM ARCH Server DONE. <<<<<<<"
