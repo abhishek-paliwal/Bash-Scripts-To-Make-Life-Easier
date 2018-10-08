@@ -43,6 +43,11 @@ while read line; do
 
 done <<< "$titles"
 
+echo; echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>< <<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ;
+echo "IN CASE OF ANY ERRORS, MAKE SURE THAT:" ;
+echo "      1. All folder names have no spaces, and the words are separated by hyphens." ;
+echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>< <<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ; echo ;
+
 ######################################################
 echo "Now opening $PWD" ;
 open $PWD ;
