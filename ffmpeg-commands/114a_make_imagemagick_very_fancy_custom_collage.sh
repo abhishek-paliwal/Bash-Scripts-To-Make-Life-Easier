@@ -4,18 +4,17 @@
 ## USING IMAGES PRESENT IN A FOLDER
 ######################################
 padding="10" ;
-collagebackground="white" ;
-subcollagebackground="white" ;
 
 ## COLLAGE FORMAT STRING (edit as needed)
-string="50:3x3+50:3x3+50
-50:3x3+50:3x3+50" ;
+string="50:1x2+50:2x1+50
+50:3x3+50:2x2+50" ;
 
 ## ASSIGNS AND CHECKS FOR COLLAGE FORMAT TEXT FILE
 collageformat_file="_collageformat.txt" ;
 
 if [ -e "$collageformat_file" ]; then
     echo "===> File exists : $collageformat_file " ;
+    ## Removing empty lines
     string=`cat $collageformat_file | sed '/^$/d' ` ;
 else
     echo "===> File does not exist : $collageformat_file" ;
@@ -25,19 +24,26 @@ fi
 
 #######################################
 
-echo "Enter the WIDTH in pixels for the collage: " ;
+echo "Enter the WIDTH in pixels for the collage [KEEP EMPTY TO USE DEFAULTS]: " ;
 read width ;
 
-echo "Enter the HEIGHT in pixels for the collage: " ;
+echo "Enter the HEIGHT in pixels for the collage [KEEP EMPTY TO USE DEFAULTS]: " ;
 read height ;
 
-echo "Enter the TITLE for the collage: " ;
+echo "Enter the TITLE for the collage [KEEP EMPTY TO USE DEFAULTS]: " ;
 read title ;
 
+echo "Enter the COLLAGE BACKGROUND COLOR for the collage (eg., white, black, pink, etc.) [KEEP EMPTY TO USE DEFAULTS]: " ;
+read collagebackground ;
 
-## CHECKING IF VALUSES ARE ENTERED OR NOT
+echo "Enter the SUB-COLLAGE BACKGROUND COLOR for the collage (eg., white, black, pink, etc.) [KEEP EMPTY TO USE DEFAULTS]: " ;
+read subcollagebackground ;
+
+
+## CHECKING IF IMPORTANT VALUES ARE ENTERED OR NOT
 if [ -z "$width" ] && [ -z "$height" ] && [ -z "$title" ]
     then
+    echo ;
     echo "No values supplied. So default values will be used. (5400x3600: Best for printing at 12x18 ratio)" ;
     width="5400" ;
     height="3600" ;
@@ -45,6 +51,15 @@ if [ -z "$width" ] && [ -z "$height" ] && [ -z "$title" ]
     echo "THE DEFAULT VALUES CHOSEN ARE: $width px // $height px // TITLE: $title " ;
 fi
 
+## CHECKING IF COLOR VALUES ARE ENTERED OR NOT
+if [ -z "$collagebackground" ] && [ -z "$subcollagebackground" ]
+    then
+        collagebackground="white" ;
+        subcollagebackground="white" ;
+        echo "THE DEFAULT COLORS CHOSEN ARE: collagebackground: $collagebackground // subcollagebackground: $subcollagebackground " ;
+fi
+
+########################################
 ## CREATING FINAL COLLAGE TITLE
 collage_title="$title ($width x $height px)" ;
 
