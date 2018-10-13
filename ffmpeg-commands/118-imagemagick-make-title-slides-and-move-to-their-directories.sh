@@ -1,9 +1,7 @@
 #!/bin/bash
 ######################################################
 ## THIS PROGRAM LISTS ALL FOLDERS IN PWD, AND THEN
-## BASED UPON THEIR NAMES, CREATES A TITLE SLIDE USING
-## IMAGEMAGICK AND THEN MOVES THEM TO THEIR RESPECTIVE
-## FOLDERS
+## BASED UPON THEIR NAMES, CREATES A TITLE SLIDE USING IMAGEMAGICK
 ## MADE BY: PALI
 ## CRAFTED ON: Saturday September 15, 2018
 ######################################################
