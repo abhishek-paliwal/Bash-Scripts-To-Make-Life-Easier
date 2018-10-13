@@ -1,0 +1,109 @@
+#!/bin/bash
+##############################################################################
+## THIS PROGRAM USES IMAGEMAGICK TO CREATE A SLIDESHOW TITLE SLIDE FROM
+## IMAGES IN PRESENT WORKING DIRECTORY, USING TWO LINES OF TEXT AND
+## SPECIFIED NUMBER OF IMAGES PRESENT IN THAT FOLDER
+## MADE BY: PALI
+## CRAFTED ON: Sunday October 14, 2018
+##############################################################################
+
+PWD=`pwd` ;
+echo "Present working directory: $pwd" ; echo ;
+
+cd $PWD ;
+
+######################################################
+
+# LISTING ALL IMAGES, ONE PER LINE
+allimages=`ls -1 *.*g | sort -n ` ;
+
+echo "All valid images in $PWD: " ;
+echo -e "$allimages" ; echo ;
+
+echo "#################################################" ;
+
+##############################################################################
+echo "ENTER TEXT FOR LINE 1 (WILL APPEAR AT TOP) [Enter hyphens where you want line breaks to appear]: " ;
+read textline1 ;
+
+echo "ENTER TEXT FOR LINE 2 (WILL APPEAR AT BOTTOM) [Enter hyphens where you want line breaks to appear]: " ;
+read textline2 ;
+
+echo "Enter WIDTH for title slide in px (eg. 1920, 1280, 3840, etc.): " ;
+read width ;
+
+echo "Enter HEIGHT for title slide in px (eg. 1080, 720, 2160, etc.): " ;
+read height ;
+
+############################################
+## SOME CALCULATIONS FOR TEXT PORTIONS HEIGHTS
+percentageheightline1="15" ; ## 15% width for top text
+percentageheightline2="20" ; ## 20% width for bottom text
+percentageheightcollage="65" ; ## 65% width of collage (altogether 100% total)
+
+heightline1=$(echo "$height*$percentageheightline1/100 " | bc -l ) ;
+heightline2=$(echo "$height*$percentageheightline2/100 " | bc -l ) ;
+
+heightcollage=$(echo "$height*$percentageheightcollage/100 " | bc -l ) ;
+##############################################################################
+
+## Now generating random HEX colors for title
+random_color_background=`echo "#$(openssl rand -hex 3)"` ;
+#random_color_text="white" ;
+random_color_text=`echo "#$(openssl rand -hex 3)"` ;
+
+echo "  Chosen random_color_background=$random_color_background" ;
+echo "  Chosen random_color_text=$random_color_text" ;
+##############################################################################
+##############################################################################
+
+## REAL MAGIC HAPPENS BELOW
+sep="x" ;
+
+############################################
+## OPERATING ON LINE 1
+echo ;
+echo "======> LINE 1 = $textline1" ;
+textline1_new=`echo $textline1 | sed -e 's/-/\\\\n/g' ` ; ##Imagemagick needs '\\\\n' to enter \n
+echo "TEXTLINE1_NEW: $textline1_new " ;
+
+convert -background $random_color_background -fill $random_color_text -font "$HOME/Library/Fonts/Sortdecai Brush Script.otf" -size $width$sep$heightline1 -gravity center label:"$textline1_new" __TITLE_line1.jpg
+
+echo "======>   IMAGEMAGICK: TITLE SLIDE PORTION CREATED for LINE 1 " ;
+############################################
+
+## OPERATING ON LINE 2
+echo ;
+echo "======> LINE 2 = $textline2" ;
+textline2_new=`echo $textline2 | sed -e 's/-/\\\\n/g' ` ; ##Imagemagick needs '\\\\n' to enter \n
+echo "TEXTLINE2_NEW: $textline2_new " ;
+
+convert -background $random_color_background -fill $random_color_text -font "$HOME/Library/Fonts/RobotoSlab-Thin.ttf" -size $width$sep$heightline2 -gravity center label:"$textline2_new" __TITLE_line2.jpg
+
+echo "======>   IMAGEMAGICK: TITLE SLIDE PORTION CREATED for LINE 2 " ;
+############################################
+
+## CREATING COLLAGE USING FIRST 6 IMAGES
+echo;
+widthcollageblock=$(echo "$width/3" | bc -l ) ;
+heightcollageblock=$(echo "$heightcollage/2" | bc -l ) ;
+
+images4collage=$(ls -1 a*.*g | head -6) ;
+
+montage $images4collage -background white -tile 3x2 -geometry $widthcollageblock$sep$heightcollageblock+5+5 __TITLE_collage.jpg
+
+echo "======>  IMAGEMAGICK: TITLE SLIDE COLLAGE CREATED" ;
+############################################
+
+## CREATING FINAL MONTAGE USING ALL THE PORTIONS
+montage __TITLE_line1.jpg __TITLE_collage.jpg __TITLE_line2.jpg -background $random_color_background -tile 1x3 -mode concatenate -gravity center __FINAL_COLLAGE.jpg
+##############################################################################
+
+echo; echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>< <<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ;
+echo "IN CASE OF ANY ERRORS, MAKE SURE THAT:" ;
+echo "      1. All folder names have no spaces, and the words are separated by hyphens." ;
+echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>< <<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ; echo ;
+
+######################################################
+echo "Now opening $PWD" ;
+open $PWD ;
