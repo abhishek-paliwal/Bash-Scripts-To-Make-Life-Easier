@@ -12,6 +12,11 @@ echo "Present working directory: $pwd" ; echo ;
 
 cd $PWD ;
 
+## CREATING TMP DIRECTORY TO DO ALL MAGIC, AND TO SAVE ORIGINAL FILES AS SUCH
+mkdir _TMP_COLLAGECOVER_DIR;
+cp *.* _TMP_COLLAGECOVER_DIR/;
+cd _TMP_COLLAGECOVER_DIR ;
+
 ######################################################
 
 # LISTING ALL IMAGES, ONE PER LINE
@@ -37,9 +42,9 @@ read height ;
 
 ############################################
 ## SOME CALCULATIONS FOR TEXT PORTIONS HEIGHTS
-percentageheightline1="15" ; ## 15% width for top text
-percentageheightline2="20" ; ## 20% width for bottom text
-percentageheightcollage="65" ; ## 65% width of collage (altogether 100% total)
+percentageheightline1="20" ; ## 15% width for top text
+percentageheightline2="25" ; ## 20% width for bottom text
+percentageheightcollage="55" ; ## 65% width of collage (altogether 100% total)
 
 heightline1=$(echo "$height*$percentageheightline1/100 " | bc -l ) ;
 heightline2=$(echo "$height*$percentageheightline2/100 " | bc -l ) ;
@@ -48,7 +53,8 @@ heightcollage=$(echo "$height*$percentageheightcollage/100 " | bc -l ) ;
 ##############################################################################
 
 ## Now generating random HEX colors for title
-random_color_background=`echo "#$(openssl rand -hex 3)"` ;
+#random_color_background=`echo "#$(openssl rand -hex 3)"` ;
+random_color_background="white" ;
 #random_color_text="white" ;
 random_color_text=`echo "#$(openssl rand -hex 3)"` ;
 
@@ -67,7 +73,7 @@ echo "======> LINE 1 = $textline1" ;
 textline1_new=`echo $textline1 | sed -e 's/-/\\\\n/g' ` ; ##Imagemagick needs '\\\\n' to enter \n
 echo "TEXTLINE1_NEW: $textline1_new " ;
 
-convert -background $random_color_background -fill $random_color_text -font "$HOME/Library/Fonts/Sortdecai Brush Script.otf" -size $width$sep$heightline1 -gravity center label:"$textline1_new" __TITLE_line1.jpg
+convert -background $random_color_background -fill $random_color_text -font "$HOME/Library/Fonts/SketchRockwell-Bold.ttf" -size $width$sep$heightline1 -gravity center label:"$textline1_new" __TITLE_line1.jpg
 
 echo "======>   IMAGEMAGICK: TITLE SLIDE PORTION CREATED for LINE 1 " ;
 ############################################
@@ -78,19 +84,19 @@ echo "======> LINE 2 = $textline2" ;
 textline2_new=`echo $textline2 | sed -e 's/-/\\\\n/g' ` ; ##Imagemagick needs '\\\\n' to enter \n
 echo "TEXTLINE2_NEW: $textline2_new " ;
 
-convert -background $random_color_background -fill $random_color_text -font "$HOME/Library/Fonts/RobotoSlab-Thin.ttf" -size $width$sep$heightline2 -gravity center label:"$textline2_new" __TITLE_line2.jpg
+convert -background $random_color_background -fill \#c0c0c0 -font "$HOME/Library/Fonts/ambroise-francois-regular.otf" -size $width$sep$heightline2 -gravity center label:"$textline2_new" __TITLE_line2.jpg
 
 echo "======>   IMAGEMAGICK: TITLE SLIDE PORTION CREATED for LINE 2 " ;
 ############################################
 
-## CREATING COLLAGE USING FIRST 6 IMAGES
+## CREATING COLLAGE USING FIRST 8 IMAGES
 echo;
-widthcollageblock=$(echo "$width/3" | bc -l ) ;
+widthcollageblock=$(echo "$width/4" | bc -l ) ;
 heightcollageblock=$(echo "$heightcollage/2" | bc -l ) ;
 
-images4collage=$(ls -1 a*.*g | head -6) ;
+images4collage=$(ls -1 a*.*g | head -8) ;
 
-montage $images4collage -background white -tile 3x2 -geometry $widthcollageblock$sep$heightcollageblock+5+5 __TITLE_collage.jpg
+montage $images4collage -background white -tile 4x2 -geometry $widthcollageblock$sep$heightcollageblock+5+5 __TITLE_collage.jpg
 
 echo "======>  IMAGEMAGICK: TITLE SLIDE COLLAGE CREATED" ;
 ############################################
@@ -101,7 +107,7 @@ montage __TITLE_line1.jpg __TITLE_collage.jpg __TITLE_line2.jpg -background $ran
 
 echo; echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>< <<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ;
 echo "IN CASE OF ANY ERRORS, MAKE SURE THAT:" ;
-echo "      1. All folder names have no spaces, and the words are separated by hyphens." ;
+echo "      1. All the image names should start with lowercase 'a', such as a101.jpg, a102.jpg, etc." ;
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>< <<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ; echo ;
 
 ######################################################
