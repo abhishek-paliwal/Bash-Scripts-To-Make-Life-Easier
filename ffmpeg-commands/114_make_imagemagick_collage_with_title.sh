@@ -50,6 +50,11 @@ echo "ENTER THE PADDING VALUE IN PIXELS [eg., 5] [OR leave empty for automatic c
 echo ;
 read padding_pixels ;
 
+echo "ENTER THE BACKGROUND COLOR NAME OR HEX-CODE [eg., pink, #3498db] [OR leave empty for automatic choice]: " ;
+echo ;
+read background_color ;
+
+
 ########################################################
 total_num_images=`cat _TMP_LIST.TXT | wc -l | sed 's/ //g' ` ;
 echo "======> TOTAL NUMBER OF IMAGES: $total_num_images " ;
@@ -127,10 +132,10 @@ echo ; echo "Now creating collage ....." ;
 if [ -z "$tile_value" ]
 then
       echo "\$tile_value is empty. Collage will be made automatically." ;
-      montage *.*g -geometry $collage_dimensions+$padding_pixels+$padding_pixels 0_my_collage.jpg ;
+      montage *.*g -background $background_color -geometry $collage_dimensions+$padding_pixels+$padding_pixels 0_my_collage.jpg ;
 else
       echo "\$tile_value is NOT empty. Collage will be made using tile value = $tile_value " ;
-      montage *.*g -tile $tile_value -geometry $collage_dimensions+$padding_pixels+$padding_pixels 0_my_collage.jpg ;
+      montage *.*g -background $background_color -tile $tile_value -geometry $collage_dimensions+$padding_pixels+$padding_pixels 0_my_collage.jpg ;
 fi
 
 #######################################################################################
