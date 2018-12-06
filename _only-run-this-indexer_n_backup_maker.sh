@@ -37,28 +37,39 @@ shopt -s expand_aliases ## This has to be done, else, aliases are not expanded i
 source $HOME/.bash_profile ## Then, this also has to be done to use aliases in this script.
 #### Actual backup command aliases below ##
 echo "     ++++++++ Getting backups to-and-from DREAMCOMPUTE and KVM ARCH Server......"
-echo "     >>>>>>>> BEGINNING: Backup [FROM] DreamCompute DONE. <<<<<<<"
+#echo "     >>>>>>>> BEGINNING: Backup [FROM] DreamCompute DONE. <<<<<<<"
+#echo
 # 1_backup_from_dreamcompute_server
-echo "          Dreamcompute server has been discontinued. HENCE, NO BACKUP IS DONE. "
-echo "     >>>>>>>> DONE: Backup [FROM] DreamCompute DONE. <<<<<<<"
+#echo "          Dreamcompute server has been discontinued. HENCE, NO BACKUP IS DONE. "
+#echo "     >>>>>>>> DONE: Backup [FROM] DreamCompute DONE. <<<<<<<"
+#echo
 
+# 1_backup_from_kvmarch_server
 echo "     >>>>>>>> BEGINNING: Backup [FROM] KVM ARCH Server DONE. <<<<<<<"
 1_backup_from_kvmarch_server
 echo "     >>>>>>>> DONE: Backup [FROM] KVM ARCH Server DONE. <<<<<<<"
+echo
 
 echo " = = = = > Now opening the DreamCompute + KVM ARCH VPS Backup directory..."
 open $HOME/OneDrive/Apps2Sync/DreamCompute-VPS-Backup ; ## Don't forget to add semicolon at the end.
 
 echo "     ++++++++ BACKUPS TO CDN: Creating backups to CDNs @ Dreamhost Hosted Sites......"
+echo
+
 ## BACKUPS TO CDN
 echo "     >>>>>>>> BEGINNING: Backup [TO] downloads.concepro.com <<<<<<<"
+echo
+
 1_backup_to_concepro_cdn
-echo "     >>>>>>>> DONE: Backup [TO] downloads.concepro.com <<<<<<<"
+echo "     >>>>>>>> DONE: Backup [TO] downloads.concepro.com <<<<<<<"echo
+
 ####
 echo "     >>>>>>>> BEGINNING: Backup [TO] cdn.mygingergarlickitchen.com <<<<<<<"
+echo
+
 1_backup_to_mggk_cdn
 echo "     >>>>>>>> DONE: Backup [TO] cdn.mygingergarlickitchen.com <<<<<<<"
-
+echo
 
 
 ########################## SCRIPT ENDS ########################
