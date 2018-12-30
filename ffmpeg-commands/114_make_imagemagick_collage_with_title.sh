@@ -126,7 +126,16 @@ echo "=======> ImageMagick currently resizing all images to $collage_dimensions 
 mogrify -resize $collage_dimensions -background black -gravity center -extent $collage_dimensions *
 echo "=======> ImageMagick resizing done ...."
 
-## STEP 3: MAKING COLLAGE USING ALL IMAGES IN PWD (ALSO CHECKS IF TILE VAR IS EMPTY)
+## STEP 3A: CHECKING IF BACKGROUND_COLOR VARIABLE IS NOT EMPTY.
+if [ -z "$background_color" ]
+then
+      echo "\$background_color is empty." ;
+      background_color="white" ;
+else
+      echo "\$background_color is NOT empty. Provided value will be used.";
+fi
+
+## STEP 3B: MAKING COLLAGE USING ALL IMAGES IN PWD (ALSO CHECKS IF TILE VAR IS EMPTY)
 echo ; echo "Now creating collage ....." ;
 
 if [ -z "$tile_value" ]
