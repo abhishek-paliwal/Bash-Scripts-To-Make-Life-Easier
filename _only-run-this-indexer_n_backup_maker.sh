@@ -20,6 +20,9 @@ sh $BASEPATH/10A_create_JSON_plus_image_indexes.sh
 echo "creating SOCIAL MEDIA images index file in dropbox......"
 sh $BASEPATH/10B_create_SOCIAL_MEDIA_image_indexes.sh
 
+echo "creating ADORIA.ME portfolio index file in dropbox......"
+sh $BASEPATH/10E_create_adoria_me_portfolio_index_page.sh
+
 #### BACKUPS of our MACs ####
 echo "creating backup of MACFILES in Onedrive......"
 sh $BASEPATH/5-abhishek_create_MACFILES_backup.sh
@@ -69,6 +72,10 @@ echo
 
 1_backup_to_mggk_cdn
 echo "     >>>>>>>> DONE: Backup [TO] cdn.mygingergarlickitchen.com <<<<<<<"
+echo
+
+1_backup_to_adoria_me
+echo "     >>>>>>>> DONE: Backup [TO] https://adoria.me <<<<<<<"
 echo
 
 
