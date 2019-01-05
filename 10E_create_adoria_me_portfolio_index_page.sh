@@ -169,7 +169,10 @@ hr {clear:both;}
 echo "</head><body>" >> $OUTPUT
 
 echo "<nav class='navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top'>
-  <a class='navbar-brand' href='https://adoria.me'><span style='font-weight: 700; color: #F81894;'>adoria</span> | a personal portfolio</a>
+  <a class='navbar-brand' href='https://adoria.me'>
+  <img src='./drawings/0-logos/site-logo-transparent-1000px-lowres.png' style='width: 30px; '>
+  <span style='font-weight: 700; color: #F81894;'>adoria</span> | a personal portfolio
+  </a>
 </nav>" >> $OUTPUT
 
 #### OPTIONAL SECTION: Finding and listing all Image files Recursively. ####
@@ -197,7 +200,7 @@ echo "<h3 class='thin'>Page last updated: "`date`"</h3>" >> $OUTPUT
 echo "<hr>" >> $OUTPUT
 echo "<div class='toc'>&bull; Table of Contents &bull;</div>" >> $OUTPUT
 
-for foldername in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
+for foldername in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort -nr`; do
   folder=`basename "$foldername"`
   echo "<div class='toc'><a href='#$folder'> $folder</a></div> " >> $OUTPUT
 done
@@ -205,13 +208,13 @@ done
 
 #### Calculations begin ####
 x=0
-for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
+for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort -nr`; do
   path=`basename "$filepath"`
   echo " <hr> <h2 class='p1'> <a name='$path'>$path</a> <a href='#'>( &uarr; Back to top )</a></h2>" >> $OUTPUT
 
   echo "<div class='grid'> <!-- PACKERY MASONRY DIV BEGINS -->" >> $OUTPUT
 
-  for x in `find "$filepath" -type f| sort | egrep -i '\.(jpg|png|PNG|JPG|gif|GIF)$'`; do
+  for x in `find "$filepath" -type f| sort -nr | egrep -i '\.(jpg|png|PNG|JPG|gif|GIF)$'`; do
     file=`basename "$x"`
 
     ## Finding the image dimensions using ImageMagick's identify command.
@@ -228,9 +231,9 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
 
 ## Printing the image dimensions for everything, except GIFs because they produce LOOOOONG outputs for all GIF frames. ##
     if [ "$filetype" != 'GIF' ]; then
-      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: #222; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Click to Enlarge</a></strong></div></div>" >> $OUTPUT
+      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: #222; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
     else
-      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: #222 ; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Click to Enlarge</a></strong></div></div>" >> $OUTPUT
+      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: #222 ; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
     fi
 
   done
