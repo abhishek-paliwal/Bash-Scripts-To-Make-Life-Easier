@@ -46,15 +46,29 @@ echo "<html lang='en'><head><meta http-equiv='Content-Type' content='text/html; 
 
     .grid-item {
         /* float:left; */
-        width: 24% ;
+        width: 25% ;
         /* height: 220px ;  */
         /* padding: 5px; */
         /* margin: 0px; */
     }
 
     .grid {
-      width: 96%; /* Can be anything, but has to be less than 100% */
+      width: 99%; /* Can be anything, but has to be less than 100% */
       margin: 0 auto; /* Centers everything */
+  }
+
+  .pali {
+    margin: 10px;
+    color: black;
+    background-color : white ;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 15px;
+    line-height:1;
+    /* text-transform: lowercase; */
+    border : 10px solid white ;
+    box-shadow: 0px 0px 5px #aaa ;
+    border-radius : 2px ;
   }
 
   /* Pali: Using Media Queries for Display on Mobiles */
@@ -62,27 +76,23 @@ echo "<html lang='en'><head><meta http-equiv='Content-Type' content='text/html; 
           .grid-item {
               width: 48% ;
           }
+          .pali {
+            margin: 5px ;
+            border : 5px solid white ;
+          }
       }
 
       @media (min-width:568px) and (max-width:1199px) {
           .grid-item {
               width: 32% ;
           }
+          .pali {
+            margin: 7px ;
+            border : 7px solid white ;
+          }
       }
 
-.pali {
-  margin: 15px;
-  color: black;
-  background-color : white ;
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
-  font-size: 15px;
-  line-height:1;
-  /* text-transform: lowercase; */
-  border : 10px solid white ;
-  box-shadow: 0px 0px 5px #aaa ;
-  border-radius : 2px ;
-}
+
 
 /* PACKERY STYLES END */
 
@@ -210,7 +220,7 @@ done
 x=0
 for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort -nr`; do
   path=`basename "$filepath"`
-  echo " <hr> <h2 class='p1'> <a name='$path'>$path</a> <a href='#'>( &uarr; Back to top )</a></h2>" >> $OUTPUT
+  echo " <hr> <h2 class='p1'> <a name='$path'>$path</a> <a href='#'>( &uarr; Go to top )</a></h2>" >> $OUTPUT
 
   echo "<div class='grid'> <!-- PACKERY MASONRY DIV BEGINS -->" >> $OUTPUT
 
@@ -231,9 +241,9 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort -nr`; do
 
 ## Printing the image dimensions for everything, except GIFs because they produce LOOOOONG outputs for all GIF frames. ##
     if [ "$filetype" != 'GIF' ]; then
-      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: #222; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
+      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: deeppink; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
     else
-      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: #222 ; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
+      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: deeppink ; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
     fi
 
   done
