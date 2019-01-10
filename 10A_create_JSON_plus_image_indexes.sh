@@ -17,7 +17,21 @@ OUTPUT="$ROOT/$FINALFILENAME" ##Output filename
 
 echo "<!DOCTYPE html>" > $OUTPUT ## FIRST OUTPUT LINE TO HTML FILE
 
-echo "<html lang='en'><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+echo "<html lang='en'>
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src='https://www.googletagmanager.com/gtag/js?id=UA-48712319-6'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-48712319-6');
+</script>
+
+
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <link rel='icon' href='https://downloads.concepro.com/favicon.ico'>
