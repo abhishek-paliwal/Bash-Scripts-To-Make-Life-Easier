@@ -6,6 +6,9 @@ DIRPATH="$HOME/Dropbox/Public/_TO_SYNC_adoria.me"
 MAIN_IMAGES_FOLDER="drawings"
 ROOT="$DIRPATH/$MAIN_IMAGES_FOLDER"
 
+GTRACK_URL1="?utm_source=homepage&utm_medium=image_clicked"
+GTRACK_URL2="?utm_source=homepage&utm_medium=enlarge_button_clicked"
+
 cd $ROOT
 echo "CURRENT WORKING DIRECTORY: " $ROOT ##check the present working directory
 echo "#################" #Blank line
@@ -254,9 +257,9 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort -nr`; do
 
 ## Printing the image dimensions for everything, except GIFs because they produce LOOOOONG outputs for all GIF frames. ##
     if [ "$filetype" != 'GIF' ]; then
-      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: deeppink; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
+      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file$GTRACK_URL1'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: deeppink; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file$GTRACK_URL2'>Enlarge</a></strong></div></div>" >> $OUTPUT
     else
-      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: deeppink ; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
+      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file$GTRACK_URL1'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: deeppink ; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file$GTRACK_URL2'>Enlarge</a></strong></div></div>" >> $OUTPUT
     fi
 
   done
