@@ -21,10 +21,12 @@ BACKUP_SUBDIR="$BACKUP_HOMEDIR/latest-rsync-MAC-backups" ;
 rsync -avzP --delete $HOME/.bash_profile $BACKUP_SUBDIR/1_backup_bash_profile/
 rsync -avzP --delete $HOME/.bash_aliases $BACKUP_SUBDIR/1_backup_bash_profile/
 rsync -avzP --delete $HOME/.zshrc $BACKUP_SUBDIR/1_backup_bash_profile/
+rsync -avzP --delete $HOME/.oh-my-zsh $BACKUP_SUBDIR/1_backup_bash_profile/
 ## Renaming the file with Dot Name to see easily.
 mv $BACKUP_SUBDIR/1_backup_bash_profile/.bash_profile $BACKUP_SUBDIR/1_backup_bash_profile/bash_profile.txt
 mv $BACKUP_SUBDIR/1_backup_bash_profile/.bash_aliases $BACKUP_SUBDIR/1_backup_bash_profile/bash_aliases.txt
 mv $BACKUP_SUBDIR/1_backup_bash_profile/.zshrc $BACKUP_SUBDIR/1_backup_bash_profile/zshrc.txt
+mv $BACKUP_SUBDIR/1_backup_bash_profile/.oh-my-zsh $BACKUP_SUBDIR/1_backup_bash_profile/oh-my-zsh
 echo "BASH + ZSH Profiles ....................... BACKUP DONE!"
 
 ## TextExpander backup ##
