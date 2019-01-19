@@ -67,8 +67,11 @@ while read line; do
     echo "LINE: $counter" >> $OUTPUT_FILE
     echo "$line"  >> $OUTPUT_FILE ## printing URL
 
+    ## Getting the last part of the URL
+    URL_TEXT=$(basename "$line") ;
+
     ## Saving a local copy of the webpage URL
-    NEWFILE="$HTML_FOLDER/$DATE_VAR-$counter.html"
+    NEWFILE="$HTML_FOLDER/$DATE_VAR-$counter-$URL_TEXT.html"
     wget -q -O - "$line" > "$NEWFILE"
 
     echo ">>>> $NEWFILE : HTML file saved."
@@ -90,7 +93,6 @@ done < _tmp_merged_urls1.csv
 ## using PERL ONE-LINER (converting from rows to columns)
 ## More info: <https://stackoverflow.com/questions/25317736/convert-rows-to-columns-with-bash>
 perl -00 -lpe 's/\n/,/g' $OUTPUT_FILE > $OUTPUT_FILE-FINAL.csv
-
 
 ############################################################################
 ################################# END ######################################
