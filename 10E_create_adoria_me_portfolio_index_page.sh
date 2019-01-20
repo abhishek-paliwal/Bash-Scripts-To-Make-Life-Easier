@@ -126,7 +126,7 @@ div.heading {
     text-align: center;
     color : white;
     /* This website Colored Background Gradient */
-    background : linear-gradient(-45deg, #D2AA00, #F81894 ) ;
+    background : linear-gradient(235deg, rgba(255,255,100,0.7), rgba(255,0,0,0.7), rgba(0,0,255,0.7), rgba(100,255,255,0.7) ) ;
     border : 0px solid white ;
 		box-shadow: 0px 0px 0px #999 ;
 		border-radius : 0px ;
@@ -187,7 +187,7 @@ a.span {
     color: white ;
 }
 
-.p1 {background : linear-gradient(45deg, #D2AA00, #F81894 ) ; color: white ; text-transform: uppercase ; padding : 10px ; }
+.p1 { background : linear-gradient(235deg, rgba(255,255,100,0.7), rgba(255,0,0,0.7), rgba(0,0,255,0.7), rgba(100,255,255,0.7) ) ; color: white ; text-transform: uppercase ; padding : 10px ; }
 
 hr {clear:both;}
 </style>" >> $OUTPUT
@@ -236,7 +236,7 @@ done
 x=0
 for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort -nr`; do
   path=`basename "$filepath"`
-  echo " <hr> <h2 class='p1'> <a name='$path'>$path</a> <a href='#'>( &uarr; Go to top )</a></h2>" >> $OUTPUT
+  echo " <hr> <h2 class='p1'> <a name='$path'>$path</a> <a href='#' style='color: lime ;'>( &uarr; Go to top )</a></h2>" >> $OUTPUT
 
   echo "<div class='grid'> <!-- PACKERY MASONRY DIV BEGINS -->" >> $OUTPUT
 
