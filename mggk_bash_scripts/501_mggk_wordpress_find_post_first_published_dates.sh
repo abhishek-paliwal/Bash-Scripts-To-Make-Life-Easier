@@ -76,13 +76,22 @@ while read line; do
 
     echo ">>>> $NEWFILE : HTML file saved."
 
+    ## FINDING THE META DESCRIPTION (FOR EXISTING SEO thru YOAST plugin on WP)
+    ## (Getting it from the locally downloaded copy)
+        grep -h "^<meta property=\"og:description\" content=\".*\" />" $NEWFILE >> $OUTPUT_FILE
+
     ## USING curl with regex for the format = yyyy-mm-ddThh:MM (dddd-dd-ddTdd:dd -> d = digit)
-    #curl -s "$NEWFILE" | egrep -oi '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9][0-9]:[0-9][0-9]' | sort -nu >> $OUTPUT_FILE
-    cat "$NEWFILE" | egrep -oi '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9][0-9]:[0-9][0-9]' | sort -nu >> $OUTPUT_FILE
+    ## (CURL = Getting it from the online copy )
+        #curl -s "$NEWFILE" | egrep -oi '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9][0-9]:[0-9][0-9]' | sort -nu >> $OUTPUT_FILE
+    ## (Getting it from the locally downloaded copy)
+        cat "$NEWFILE" | egrep -oi '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9][0-9]:[0-9][0-9]' | sort -nu >> $OUTPUT_FILE
 
     ## Finding the popularity of the post, by finding the number of comments on each post
-    #curl -s "$NEWFILE" | egrep -oi '[0-9]+.comments' | sort -nu  >> $OUTPUT_FILE
-    cat "$NEWFILE" | egrep -oi '[0-9]+.comments' | sort -nu  >> $OUTPUT_FILE
+    ## (CURL = Getting it from the online copy )
+        #curl -s "$NEWFILE" | egrep -oi '[0-9]+.comments' | sort -nu  >> $OUTPUT_FILE
+    ## (Getting it from the locally downloaded copy)
+        cat "$NEWFILE" | egrep -oi '[0-9]+.comments' | sort -nu  >> $OUTPUT_FILE
+
 
     ((counter++))
 
