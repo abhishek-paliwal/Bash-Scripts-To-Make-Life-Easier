@@ -26,12 +26,12 @@ rsync -avzP --delete $HOME/.oh-my-zsh $BACKUP_SUBDIR/1_backup_bash_profile/
 mv $BACKUP_SUBDIR/1_backup_bash_profile/.bash_profile $BACKUP_SUBDIR/1_backup_bash_profile/bash_profile.txt
 mv $BACKUP_SUBDIR/1_backup_bash_profile/.bash_aliases $BACKUP_SUBDIR/1_backup_bash_profile/bash_aliases.txt
 mv $BACKUP_SUBDIR/1_backup_bash_profile/.zshrc $BACKUP_SUBDIR/1_backup_bash_profile/zshrc.txt
-mv $BACKUP_SUBDIR/1_backup_bash_profile/.oh-my-zsh $BACKUP_SUBDIR/1_backup_bash_profile/oh-my-zsh
+mv $BACKUP_SUBDIR/1_backup_bash_profile/.oh-my-zsh/ $BACKUP_SUBDIR/1_backup_bash_profile/oh-my-zsh/
 echo "BASH + ZSH Profiles ....................... BACKUP DONE!"
 
 ## TextExpander backup ##
-rsync -avzP --delete $HOME/Dropbox/TextExpander $BACKUP_SUBDIR/2_backup_TextExpander/
-echo "$HOME/Dropbox/TextExpander ....................... BACKUP DONE!"
+#rsync -avzP --delete $HOME/Dropbox/TextExpander $BACKUP_SUBDIR/2_backup_TextExpander/
+#echo "$HOME/Dropbox/TextExpander ....................... BACKUP DONE!"
 
 ## ALL GitHub Files backup ##
 rsync -avzP --delete $HOME/Github $BACKUP_SUBDIR/3_backup_All_My_Github-Files/
