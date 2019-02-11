@@ -35,13 +35,14 @@ sh $BASEPATH/11-sitemap-for-website-generator.sh
 
 ########## KEEP THIS BLOCK AT THE END TO BACKUP ALL FILES TO SERVERS ############
 ########## ONLY RUN THE SSH SCP BACKUP BLOCK WHEN $USER = "abhishek"
-if [ $USER="abhishek" ]
+if [[ $USER = "abhishek" ]]
 then
 
     #### BACKUP TO-AND-FROM DREAMCOMPUTE SERVER ####
     ## Running system commands (as Aliases from .bash_profile)
     shopt -s expand_aliases ## This has to be done, else, aliases are not expanded in scripts.
     source $HOME/.bash_profile ## Then, this also has to be done to use aliases in this script.
+
     #### Actual backup command aliases below ##
     echo "     ++++++++ Getting backups to-and-from DREAMCOMPUTE and KVM ARCH Server......"
     #echo "     >>>>>>>> BEGINNING: Backup [FROM] DreamCompute DONE. <<<<<<<"
@@ -82,11 +83,9 @@ then
     echo "     >>>>>>>> DONE: Backup [TO] https://adoria.me <<<<<<<"
     echo
 
-elif
-    echo ">>>> 1. The USER is $USER, which is not 'abhishek'. Hence, no SSH/SCP backups are performed."
-    echo ">>>> 2. NOTE: IF you want to execute the SSH/SCP backup block, then run this script as USER 'abhishek' on MBP15. "
+else
+    echo ">>>> 1. The USER is $USER, which is not 'abhishek'. Hence, no SSH/SCP backups are performed." ;
+    echo ">>>> 2. NOTE: IF you want to execute the SSH/SCP backup block, then run this script as USER 'abhishek' on MBP15. " ;
 fi
-
-
 
 ########################## SCRIPT ENDS ########################
