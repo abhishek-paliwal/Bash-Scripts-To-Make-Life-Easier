@@ -1,4 +1,13 @@
 #!bin/bash
+##############################################################################
+############ EXPANDING ALIASES ON NON-INTERATIVE SHELL SCRIPTS ###############
+## For Running system commands (as Aliases from .bash_profile)
+shopt -s expand_aliases ## for BASH: This has to be done, else, aliases are not expanded in scripts.
+source $HOME/.bash_profile ## Then, this also has to be done to use aliases in this script.
+source $HOME/.bash_aliases ## Then, this also has to be done to use aliases in this script.
+##############################################################################
+##############################################################################
+
 ####### only run this bash script to make ALL the indexes and backups on PALI's Macbook #########
 BASEPATH="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier";
 
@@ -31,60 +40,59 @@ sh $BASEPATH/5-abhishek_create_MACFILES_backup.sh
 #### CREATING SITEMAPS ####
 echo "CREATING SITEMAPS..."
 sh $BASEPATH/11-sitemap-for-website-generator.sh
+echo ;
 #######################################################
 
 ########## KEEP THIS BLOCK AT THE END TO BACKUP ALL FILES TO SERVERS ############
 ########## ONLY RUN THE SSH SCP BACKUP BLOCK WHEN $USER = "abhishek"
-if [[ $USER = "abhishek" ]]
+
+echo ;
+echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" ;
+echo ">> Checking if the user is 'abhishek'. If not, then nothing would run after this line." ;
+echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ;
+echo;
+
+if [[ "$USER" == "abhishek" ]] ;
 then
 
     #### BACKUP TO-AND-FROM DREAMCOMPUTE SERVER ####
-    ## Running system commands (as Aliases from .bash_profile)
-    shopt -s expand_aliases ## This has to be done, else, aliases are not expanded in scripts.
-    source $HOME/.bash_profile ## Then, this also has to be done to use aliases in this script.
-
     #### Actual backup command aliases below ##
-    echo "     ++++++++ Getting backups to-and-from DREAMCOMPUTE and KVM ARCH Server......"
-    #echo "     >>>>>>>> BEGINNING: Backup [FROM] DreamCompute DONE. <<<<<<<"
-    #echo
-    # 1_backup_from_dreamcompute_server
-    #echo "          Dreamcompute server has been discontinued. HENCE, NO BACKUP IS DONE. "
-    #echo "     >>>>>>>> DONE: Backup [FROM] DreamCompute DONE. <<<<<<<"
-    #echo
+    echo ;
+    echo "     ++++++++ Getting backups to-and-from DREAMCOMPUTE and KVM ARCH Server......" ;
 
     # 1_backup_from_kvmarch_server
-    echo "     >>>>>>>> BEGINNING: Backup [FROM] KVM ARCH Server DONE. <<<<<<<"
-    1_backup_from_kvmarch_server
-    echo "     >>>>>>>> DONE: Backup [FROM] KVM ARCH Server DONE. <<<<<<<"
-    echo
+    echo ;
+    echo "     >>>>>>>> BEGINNING: Backup [FROM] KVM ARCH Server DONE. <<<<<<<" ;
+    1_backup_from_kvmarch_server ;
+    echo "     >>>>>>>> DONE: Backup [FROM] KVM ARCH Server DONE. <<<<<<<" ;
+    echo ;
 
-    echo " = = = = > Now opening the DreamCompute + KVM ARCH VPS Backup directory..."
+    echo " = = = = > Now opening the DreamCompute + KVM ARCH VPS Backup directory..." ;
     open $HOME/OneDrive/Apps2Sync/DreamCompute-VPS-Backup ; ## Don't forget to add semicolon at the end.
 
-    echo "     ++++++++ BACKUPS TO CDN: Creating backups to CDNs @ Dreamhost Hosted Sites......"
-    echo
-
-    ## BACKUPS TO CDN
-    echo "     >>>>>>>> BEGINNING: Backup [TO] downloads.concepro.com <<<<<<<"
-    echo
-
-    1_backup_to_concepro_cdn
-    echo "     >>>>>>>> DONE: Backup [TO] downloads.concepro.com <<<<<<<"echo
+    ######################## BACKUPS TO CDN ###################################
+    echo ;
+    echo "     >>>>>>>> BEGINNING: Backup [TO] downloads.concepro.com <<<<<<<" ;
+    1_backup_to_concepro_cdn ;
+    echo "     >>>>>>>> DONE: Backup [TO] downloads.concepro.com <<<<<<<" ;
+    echo ;
 
     ####
-    echo "     >>>>>>>> BEGINNING: Backup [TO] cdn.mygingergarlickitchen.com <<<<<<<"
-    echo
+    echo ;
+    echo "     >>>>>>>> BEGINNING: Backup [TO] cdn.mygingergarlickitchen.com <<<<<<<" ;
+    1_backup_to_mggk_cdn ;
+    echo "     >>>>>>>> DONE: Backup [TO] cdn.mygingergarlickitchen.com <<<<<<<" ;
+    echo ;
 
-    1_backup_to_mggk_cdn
-    echo "     >>>>>>>> DONE: Backup [TO] cdn.mygingergarlickitchen.com <<<<<<<"
-    echo
-
-    1_backup_to_adoria_me
-    echo "     >>>>>>>> DONE: Backup [TO] https://adoria.me <<<<<<<"
-    echo
+    ####
+    echo ;
+    echo "     >>>>>>>> BEGINNING: Backup [TO] https://adoria.me <<<<<<<" ;
+    1_backup_to_adoria_me ;
+    echo "     >>>>>>>> DONE: Backup [TO] https://adoria.me <<<<<<<" ;
+    echo ;
 
 else
-    echo ">>>> 1. The USER is $USER, which is not 'abhishek'. Hence, no SSH/SCP backups are performed." ;
+    echo ">>>> 1. The USER is >>> $USER <<< , which is not 'abhishek'. Hence, no SSH/SCP backups are performed." ;
     echo ">>>> 2. NOTE: IF you want to execute the SSH/SCP backup block, then run this script as USER 'abhishek' on MBP15. " ;
 fi
 
