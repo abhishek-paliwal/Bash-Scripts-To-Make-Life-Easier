@@ -62,6 +62,15 @@ else
 	echo "So, DAILY backup is created."
 fi
 
+## If the date of the month is 01 (first day of month), then make monthly backup:
+if [ "$(date +%d)" = "01" ] ; then
+	# CREATING MONTHLY BACKUP
+	zip -r $BACKUP_HOMEDIR/`date +%Y%m%d`_MONTHLY_Full_backup_for_user_$USER.zip $BACKUP_SUBDIR
+	echo " >> Last monthly backup created on, `date`" ;
+else
+    echo " >> Today is not first of month, so NO monthly backup created on, `date`" ;
+fi
+
 #######################################################
 ########### Do not edit anything below this ###########
 echo "" ;
