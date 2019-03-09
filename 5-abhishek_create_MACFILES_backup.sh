@@ -34,12 +34,10 @@ echo "BASH + ZSH Profiles ....................... BACKUP DONE!"
 #echo "$HOME/Dropbox/TextExpander ....................... BACKUP DONE!"
 
 ## ALL GitHub Files backup ##
-## Uncomment the following line to resume GitHub files' backup
-#rsync -avzP --delete $HOME/Github $BACKUP_SUBDIR/3_backup_All_My_Github-Files/
-echo "File last updated: $(date)" > $BACKUP_SUBDIR/3_backup_All_My_Github-Files/_README.txt
-echo "No backup of Github directory is made after March 09 2019." >> $BACKUP_SUBDIR/3_backup_All_My_Github-Files/_README.txt
-echo ">> To resume backups, uncomment the rsync Github line in file 5-abhishek_create_MACFILES_backup.sh ." >> $BACKUP_SUBDIR/3_backup_All_My_Github-Files/_README.txt
-echo "$HOME/Github ....................... BACKUP DONE!"
+RSYNC_EXCLUDE_FILE="$HOME/Github/Bash-Scripts-To-Make-Life-Easier/0000-pali-rsync-exclude-file-list.txt"
+rsync -avzP --exclude-from "$RSYNC_EXCLUDE_FILE" --delete $HOME/Github $BACKUP_SUBDIR/3_backup_All_My_Github-Files/
+echo ">> PS: Backup of HUGO-MGGK-OFFICIAL-WEBSITE/static/wp-content/uploads/ directory is not done. Modify the RSYNC_EXCLUDE_FILE = $RSYNC_EXCLUDE_FILE to include that directory too." ;
+echo "$HOME/Github ....................... BACKUP DONE!" ;
 
 ## nvALT files backup ##
 rsync -avzP --delete $HOME/Dropbox/_by_ABHISHEK/_NVnotes $BACKUP_SUBDIR/4_backup_All_nvALT_Notes/
