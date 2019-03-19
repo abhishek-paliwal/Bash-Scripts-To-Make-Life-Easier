@@ -59,8 +59,8 @@ echo "<!--BEGIN: row-->"  > $OUTPUT_HTML_FILE ; ## Initializing the html file
 echo "<div class='row'>"  >> $OUTPUT_HTML_FILE ;
 
 echo ""  >> $OUTPUT_HTML_FILE;
-echo "  <div class='col-12' style='background: rgba(205,30,100,0.1) ;'>"  >> $OUTPUT_HTML_FILE ;
-echo "  <h2>ANY SECTION NAME</h2>"  >> $OUTPUT_HTML_FILE ;
+echo "  <div class='col-12' align='center' style='background: rgba(205,30,100,0.1) ;'>"  >> $OUTPUT_HTML_FILE ;
+echo "  <h2>&bull; ANY SECTION NAME &bull;</h2>"  >> $OUTPUT_HTML_FILE ;
 echo "  </div>"  >> $OUTPUT_HTML_FILE ;
 echo ""  >> $OUTPUT_HTML_FILE;
 
@@ -90,7 +90,7 @@ echo ""  >> $OUTPUT_HTML_FILE;
         echo "  <article class=\"blog-post\" style=\"border: 0px solid #c0c0c0 ;\" >"  >> $OUTPUT_HTML_FILE;
         echo "  <header>"  >> $OUTPUT_HTML_FILE;
 
-            echo "  <p><a href='$URL'><img src='$IMAGE' width='100%' \></a></p>" >> $OUTPUT_HTML_FILE ;
+            echo "  <p><a href='$URL'><img class='lazy' src='$IMAGE' data-src='$IMAGE' alt='$TITLE' width='100%' \></a></p>" >> $OUTPUT_HTML_FILE ;
             echo "  <p style=\"font-family: 'Playfair Display', serif ; font-size: 0.8rem ; \"><a href='$URL'>$COUNT : $TITLE</a></p>" >> $OUTPUT_HTML_FILE;
 
         echo "  </header>" >> $OUTPUT_HTML_FILE;
