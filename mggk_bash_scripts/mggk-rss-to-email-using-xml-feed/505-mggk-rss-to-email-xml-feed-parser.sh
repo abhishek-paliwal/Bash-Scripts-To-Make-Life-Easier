@@ -26,7 +26,7 @@ echo ;
 ## this particular rss feed file contains only 8 entries)
 echo "Initializing the HTML file : $OUTPUT_HTML_FILE " ;
 
-echo "<p>Hello [Name,fallback=], please find the latest food posts below from the blog:</p><p>Simply click the buttons below to watch the how-to videos and to download recipes.</p>" > $OUTPUT_HTML_FILE ; ## WRITING THE FIRST EMPTY LINE, THEN APPENDING LATER
+echo "<p>Hello [Name,fallback=]</p><p>Please find the latest food posts below from the blog:</p><p>Simply click the buttons below to watch the how-to videos and to download recipes.</p>" > $OUTPUT_HTML_FILE ; ## WRITING THE FIRST EMPTY LINE, THEN APPENDING LATER
 
 echo "<center>" >> $OUTPUT_HTML_FILE ;
 
