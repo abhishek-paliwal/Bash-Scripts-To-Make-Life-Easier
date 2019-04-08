@@ -16,6 +16,7 @@ import io
 import os
 from os.path import basename, splitext
 import glob
+import sys
 
 ##############################################################################
 ## WHERE ARE THE FILES TO MODIFY
@@ -80,7 +81,7 @@ finalTagsUniq = list(sorted(set(finalTags)))
 
 print("\n>>>>>> PRINTING ALL FINAL TAGS FOUND IN FILES")
 for t in finalTagsUniq:
-    print("- " + t)
+    print(" - " + t)
 
 ###############################################################################
 ########################### FOR CATEGORIES
@@ -93,22 +94,50 @@ finalCategoriesUniq = list(sorted(set(finalCategories)))
 
 print("\n>>>>>> PRINTING ALL FINAL CATEGORIES FOUND IN FILES")
 for t in finalCategoriesUniq:
-    print("- " + t)
+    print(" - " + t)
 
 ###############################################################################
 #################### FINDING THE SEARCH WORDS IN ALL THE TAGS THUS FOUND
 ###############################################################################
 print("\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-print("\nYOU NOW NEED TO ENTER YOUR SEARCH TERM BELOW. THE PROGRAM WILL THEN SEARCH FOR THAT WORD IN ALL THE TAGS AND CATEGORIES IN ALL YOUR MARKDOWN POSTS.") ;
+print("\nYOU NOW NEED TO ENTER YOUR MULTIPLE SEARCH TERMS BELOW. THE PROGRAM WILL THEN SEARCH FOR THAT WORD IN ALL THE TAGS AND CATEGORIES IN ALL YOUR MARKDOWN POSTS.") ;
 print("\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
-seachTerm = input("\nENTER YOUR SEARCH TERM [Case Independent]: \n")
+print("\n >>>>[Case Independent] ENTER YOUR SEARCH TERMS :") ;
+print(" >>>> Press ENTER after every line // Finally press CTRL+D after entering your last line. Program will begin its SEARCH then.): \n") ;
 
-print("\n>>>>>> NOW PRINTING ALL TAGS CONTAINING YOUR SEARCH TERM  >>>>>> ")
-print("\n".join(s for s in finalTagsUniq if seachTerm.lower() in s.lower()) )
+## PROMPTING USER FOR SINGLE LINE INPUT
+## searchTerm = input("\n >>>> ENTER YOUR SEARCH TERM [Case Independent]: \n") ;
+##
+## PROMPTING USER FOR MULTILINE INPUT
+searchTermListInput = sys.stdin.readlines() ## NOTE: this will insert \n after every line
 
-print("\n>>>>>> NOW PRINTING ALL CATEGORIES CONTAINING YOUR SEARCH TERM  >>>>>> ")
-print("\n".join(s for s in finalCategoriesUniq if seachTerm.lower() in s.lower()) )
+print("\n\n####################################################################") ;
+print("Entered SEARCH TERMS ARRAY LIST as it is = ") ;
+print(searchTermListInput) ;
+
+##
+## Stripping newlines characters (\n) inserted automatically. Else, the program
+## does not find the entered search Terms because they all have these extra characters.
+##
+searchTermList = list( map(lambda each:each.strip("\n"), searchTermListInput) ) ;
+print("\nEntered SEARCH TERMS ARRAY LIST after stripping \\n = ") ;
+print(searchTermList) ;
+print("####################################################################\n") ;
+
+joinString="\n - " ;
+
+## FOR LOOP FOR TAGS
+print("\n>>>>>> NOW PRINTING ALL TAGS CONTAINING YOUR SEARCH TERMS = ") ;
+for searchTerm in searchTermList:
+    #print(">>>>>>>>>>>>>>>>>>>>>> " + searchTerm + " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<") ;
+    print( '{1}{0}{1}'.format(joinString.join( s for s in finalTagsUniq if searchTerm.lower() in s.lower() ) , joinString) ) ;
+
+## FOR LOOP FOR CATEGORIES
+print("\n>>>>>> NOW PRINTING ALL CATEGORIES CONTAINING YOUR SEARCH TERMS = ") ;
+for searchTerm in searchTermList:
+    #print(">>>>>>>>>>>>>>>>>>>>>> " + searchTerm + " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<") ;
+    print( '{1}{0}{1}'.format(joinString.join( s for s in finalCategoriesUniq if searchTerm.lower() in s.lower() ) , joinString) ) ;
 
 ###############################################################################
 ############################# PROGRAM ENDS ####################################
