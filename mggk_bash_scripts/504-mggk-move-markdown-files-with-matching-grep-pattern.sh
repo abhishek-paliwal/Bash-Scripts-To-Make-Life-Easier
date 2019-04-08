@@ -35,11 +35,6 @@ echo ;
 ######################### REAL MAGIC BELOW ############################
 #######################################################################
 
-## Before doing anything, it makes a full TMP backup of INPUT_FOLDER
-DIRNAME=$(basename $INPUT_FOLDER) ;
-##  MAKING A complete BACKUP ZIP of INPUT_FOLDER
-zip -r $OUTPUT_FOLDER/_TMP_BACKUP-$DATE_VAR-$DIRNAME.zip *.md ;
-
 echo ;
 echo ">>>>>>>>> Listing all *.md files: "
 ls -1 *.md ;
@@ -62,6 +57,12 @@ echo "==================================================== " ;
 ############### USER CONFIRMATION to continue further ...
 read -p ">>>> IF everything's OKAY, press ENTER key to continue ... (else press CTRL+C to stop this script): " ;
 
+## Before doing anything, it makes a full TMP backup of INPUT_FOLDER
+DIRNAME=$(basename $INPUT_FOLDER) ;
+##  MAKING A complete BACKUP ZIP of INPUT_FOLDER
+zip -r $OUTPUT_FOLDER/_TMP_BACKUP-$DATE_VAR-$DIRNAME.zip *.md ;
+echo ">>>> DONE!!! TMP ZIP FILE CREATED AT $OUTPUT_FOLDER " ;
+
 echo "#########################################################" > $TMP_FILELIST ; ## writing first line
 echo "#### LIST OF md FILES CONTAINING PHRASE: $SEARCH_TERM " >> $TMP_FILELIST ; ## appending
 echo "#########################################################" >> $TMP_FILELIST ; ## appending
@@ -78,3 +79,10 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
     cp $INPUT_FOLDER/$line $OUTPUT_FOLDER/ ;
     echo "File copied: $line" ;
 done < "$TMP_FILELIST"
+
+#######################################################################
+## Opening pwd (NOTE: following command only works on MAC OS)
+open $INPUT_FOLDER
+
+#######################################################################
+################################ PROGRAM ENDS #########################
