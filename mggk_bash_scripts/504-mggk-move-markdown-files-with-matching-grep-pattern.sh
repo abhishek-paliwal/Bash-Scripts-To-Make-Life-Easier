@@ -59,6 +59,9 @@ echo "==================================================== " ;
 echo "TOTAL GREP FILES FOUND =" $(grep -il "$SEARCH_TERM" *.md | sort -rn | wc -l) ;
 echo "==================================================== " ;
 
+############### USER CONFIRMATION to continue further ...
+read -p ">>>> IF everything's OKAY, press ENTER key to continue ... (else press CTRL+C to stop this script): " ;
+
 echo "#########################################################" > $TMP_FILELIST ; ## writing first line
 echo "#### LIST OF md FILES CONTAINING PHRASE: $SEARCH_TERM " >> $TMP_FILELIST ; ## appending
 echo "#########################################################" >> $TMP_FILELIST ; ## appending
