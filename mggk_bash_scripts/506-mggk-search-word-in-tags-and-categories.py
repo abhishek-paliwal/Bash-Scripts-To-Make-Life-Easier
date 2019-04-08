@@ -104,7 +104,7 @@ print("\nYOU NOW NEED TO ENTER YOUR MULTIPLE SEARCH TERMS BELOW. THE PROGRAM WIL
 print("\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
 print("\n >>>>[Case Independent] ENTER YOUR SEARCH TERMS :") ;
-print(" >>>> Press ENTER after every line // Finally press CTRL+D after entering your last line. Program will begin its SEARCH then.): \n") ;
+print(" >>>> Press ENTER after every line, including last line // Finally press CTRL+D after entering your last line. Program will begin its SEARCH then.): \n") ;
 
 ## PROMPTING USER FOR SINGLE LINE INPUT
 ## searchTerm = input("\n >>>> ENTER YOUR SEARCH TERM [Case Independent]: \n") ;
