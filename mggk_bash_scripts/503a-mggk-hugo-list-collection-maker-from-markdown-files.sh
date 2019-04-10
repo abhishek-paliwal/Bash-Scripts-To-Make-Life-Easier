@@ -1,17 +1,19 @@
 #!/bin/bash
-#####################################################################
-## THIS PROGRAM FINDS OUT THE URL, FEATURED IMAGE AND TITLE FROM ALL THE *.MD (MARKDOWN)
-## FILES PRESENT IN THE PRESENT WORKING DIRECTORY AND CREATES A NUMBERED LIST WITH
-## TITLES WITH LINK AND IMAGES AND SAVES THEM TO AN HTML FILE.
-## FILENAME: 503a-mggk-hugo-list-collection-maker-from-markdown-files.sh
-## DATE: 9 FEB 2019
-## BY: PALI
-#####################################################################
-### Change the following variables only, if you have to #############
-SITE_PREFIX="https://www.mygingergarlickitchen.com"
-FILENAME='_delete_this_after_taking_results/0-FINAL.html'
-STARTCOUNT=1 ## RESET THE STARTCOUNT TO 1 FOR NORMAL USE
-#####################################################################
+cat << EOF
+    #####################################################################
+    ## THIS PROGRAM FINDS OUT THE URL, FEATURED IMAGE AND TITLE FROM ALL THE *.MD (MARKDOWN)
+    ## FILES PRESENT IN THE PRESENT WORKING DIRECTORY AND CREATES A NUMBERED LIST WITH
+    ## TITLES WITH LINK AND IMAGES AND SAVES THEM TO AN HTML FILE.
+    ## FILENAME: 503a-mggk-hugo-list-collection-maker-from-markdown-files.sh
+    ## DATE: 9 FEB 2019
+    ## BY: PALI
+    #####################################################################
+    ### Change the following variables only, if you have to #############
+    SITE_PREFIX="https://www.mygingergarlickitchen.com"
+    FILENAME='_delete_this_after_taking_results/0-FINAL.html'
+    STARTCOUNT=1 ## RESET THE STARTCOUNT TO 1 FOR NORMAL USE
+    #####################################################################
+EOF
 
 ############ Do not change anything below this line #################
 #####################################################################

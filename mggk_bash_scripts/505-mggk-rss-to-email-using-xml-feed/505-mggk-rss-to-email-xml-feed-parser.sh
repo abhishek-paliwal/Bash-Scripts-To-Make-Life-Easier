@@ -1,12 +1,15 @@
 #!/bin/bash
-###############################################################################
-## THIS PROGRAM PARSES THE INDEX.XML RSS FEED FILE FROM MGGK URL, AND CREATES
-## AN HTML FILE READY TO BE SENT THRU EMAIL TO EMAIL SUBSCRIBERS, AFTER COPYING
-## AND PASTING ITS SOURCE CODE INTO ANY EMAIL PROGRAM (SENDY, MAILCHIMP
-## OR SENDGRID)
-## MADE BY: PALI
-## DATE: MARCH 17 2019
-###############################################################################
+cat << EOF
+	###############################################################################
+	## THIS PROGRAM PARSES THE INDEX.XML RSS FEED FILE FROM MGGK URL, AND CREATES
+	## AN HTML FILE READY TO BE SENT THRU EMAIL TO EMAIL SUBSCRIBERS, AFTER COPYING
+	## AND PASTING ITS SOURCE CODE INTO ANY EMAIL PROGRAM (SENDY, MAILCHIMP
+	## OR SENDGRID)
+	##############################################################################
+	## MADE BY: PALI
+	## DATE: MARCH 17 2019
+	###############################################################################
+EOF
 
 ## CD to temporary directory on desktop
 PWD="$HOME/Desktop/_TMP_Automator_results_"

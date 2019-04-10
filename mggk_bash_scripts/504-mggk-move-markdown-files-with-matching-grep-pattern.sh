@@ -1,16 +1,18 @@
 #!/bin/bash
-######################################################################
-## THIS BASH PROGRAM TAKES AN INPUT DIRECTORY AND SEARCHES FOR A GREP
-## PATTERN IN THE CONTENT OF ALL THE MARKDOWN FILES. THEN COPIES ALL THE
-## MATCHING FILES FROM THE INPUT DIRECTORY TO THE OUTPUT DIRECTORY.
-######################################################################
-## DATE: FEB 15 2019
-## MADE BY: PALI
-######################################################################
-## USAGE: sh 504-mggk-move-markdown-files-with-matching-grep-pattern $1
-## where, $1 is the search term, such as 'tips and tricks'
-######################################################################
-######################################################################
+cat << EOF
+    ######################################################################
+    ## THIS BASH PROGRAM TAKES AN INPUT DIRECTORY AND SEARCHES FOR A GREP
+    ## PATTERN IN THE CONTENT OF ALL THE MARKDOWN FILES. THEN COPIES ALL THE
+    ## MATCHING FILES FROM THE INPUT DIRECTORY TO THE OUTPUT DIRECTORY.
+    ######################################################################
+    ## DATE: FEB 15 2019
+    ## MADE BY: PALI
+    ######################################################################
+    ## USAGE: sh 504-mggk-move-markdown-files-with-matching-grep-pattern $1
+    ## where, $1 is the search term, such as 'tips and tricks'
+    ######################################################################
+    ######################################################################
+EOF
 
 ## FILES WILL BE MOVED FROM INPUT FOLDER TO OUTPUT FOLDER
 DATE_VAR=$(date "+%Y%m%d_%H%M%S") ;

@@ -1,11 +1,13 @@
 #!/bin/bash
-###############################################################################
-## THIS BASH SCRIPT RENAMES AND COPIES THE MGGK HUGO MARKDOWN FILES BASED UPON
-## THE DATE VALUE FOUND IN THE YAML FRONTMATTER
-###############################################################################
-## CODED ON: Thursday April 4, 2019
-## BY: PALI
-###############################################################################
+cat << EOF
+    ###############################################################################
+    ## THIS BASH SCRIPT RENAMES AND COPIES THE MGGK HUGO MARKDOWN FILES BASED UPON
+    ## THE DATE VALUE FOUND IN THE YAML FRONTMATTER
+    ###############################################################################
+    ## CODED ON: Thursday April 4, 2019
+    ## BY: PALI
+    ###############################################################################
+EOF
 
 echo "Present working directory: $(pwd) " ;
 echo ;

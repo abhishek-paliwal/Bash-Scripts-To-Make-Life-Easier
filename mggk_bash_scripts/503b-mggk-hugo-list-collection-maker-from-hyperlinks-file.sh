@@ -1,13 +1,15 @@
 #!/bin/bash
-###############################################################################
-## THIS SCRIPT CREATES AN HTML FILE FROM A TEXT FILE CONTAINING A LIST OF
-## MGGK URLs, TO MAKE A FINAL COLLECTION
-## USAGE:
-#### sh 503b-mggk-hugo-list-collection-maker-from-hyperlinks-file.sh
-## DATE: March 18 2019
-## MADE BY: PALI
-###############################################################################
-###############################################################################
+cat << EOF
+    ###############################################################################
+    ## THIS SCRIPT CREATES AN HTML FILE FROM A TEXT FILE CONTAINING A LIST OF
+    ## MGGK URLs, TO MAKE A FINAL COLLECTION
+    ## USAGE:
+    #### sh 503b-mggk-hugo-list-collection-maker-from-hyperlinks-file.sh
+    ## DATE: March 18 2019
+    ## MADE BY: PALI
+    ###############################################################################
+    ###############################################################################
+EOF
 
 ## CD to temporary directory on desktop
 myPWD="$HOME/Desktop/_TMP_Automator_results_" ;

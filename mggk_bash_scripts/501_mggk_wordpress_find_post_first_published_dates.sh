@@ -1,29 +1,31 @@
 #!/bin/bash
-############################################################################
-# MADE FOR MGGK:
-# THIS PROGRAM EXTRACTS THE first publishedDate OF AN ARTICLE THROUGH curl
-# command FROM A LIST
-# of URLs WHICH WERE COPY-PASTED FROM THE ORIGINAL sitemap.xml file, FROM
-# THE ORIGINAL URL https://www.EXAMPLE.com/sitemap.xml
-######################
-# NOTE: It is found that the dates are presented as yyyy-mm-ddThh:MM in
-# all the wordpress posts html, so we make use of a REGEX of such kind.
-######################
-# CREATION DATE: Sunday January 13, 2019
-# CREATED BY: PALI
-############################################################################
-############################################################################
-# USAGE:
-#    - Make sure that there are two folders in PWD,
-# _input (containing the sitemap.csv files) and _output (empty folder),
-# The directory structure should be like:
-# ├── PWD
-# │   ├── _input
-# │   │   ├── YOURWEBSITENAME_sitemap1.csv
-# │   │   └── YOURWEBSITENAME_sitemap2.csv
-# │   └── _output
-############################################################################
-############################## BEGIN #######################################
+cat << EOF
+    ############################################################################
+    # MADE FOR MGGK:
+    # THIS PROGRAM EXTRACTS THE first publishedDate OF AN ARTICLE THROUGH curl
+    # command FROM A LIST
+    # of URLs WHICH WERE COPY-PASTED FROM THE ORIGINAL sitemap.xml file, FROM
+    # THE ORIGINAL URL https://www.EXAMPLE.com/sitemap.xml
+    ######################
+    # NOTE: It is found that the dates are presented as yyyy-mm-ddThh:MM in
+    # all the wordpress posts html, so we make use of a REGEX of such kind.
+    ######################
+    # CREATION DATE: Sunday January 13, 2019
+    # CREATED BY: PALI
+    ############################################################################
+    ############################################################################
+    # USAGE:
+    #    - Make sure that there are two folders in PWD,
+    # _input (containing the sitemap.csv files) and _output (empty folder),
+    # The directory structure should be like:
+    # ├── PWD
+    # │   ├── _input
+    # │   │   ├── YOURWEBSITENAME_sitemap1.csv
+    # │   │   └── YOURWEBSITENAME_sitemap2.csv
+    # │   └── _output
+    ############################################################################
+    ############################## BEGIN #######################################
+EOF
 
 ## DECLARING SOME VARIABLES
 INPUT_DIR="_input" ;

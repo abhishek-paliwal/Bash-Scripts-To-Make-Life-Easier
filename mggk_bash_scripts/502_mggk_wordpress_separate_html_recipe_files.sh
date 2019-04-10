@@ -1,25 +1,27 @@
 #!/bin/bash
-############################################################################
-# MADE FOR MGGK:
-# THIS PROGRAM SEPERATES html files in _downloaded_html_files, as:
-##### 1. HTML pages using Easyrecipe markup block
-##### 2. HTML pages using Pali's created recipe markup block
-##### 3. HTML pages using no valid recipe markup block at all.
-######################
-# IMPORTANT NOTE: This program should only be run after the successful run of
-# the script '501_mggk_wordpress_find_post_first_published_dates.sh'
-# Because, it needs to have the HTML files locally saved , in the _downloaded_html_files
-# directory.
-######################
-# CREATION DATE: January 19, 2019
-# CREATED BY: PALI
-############################################################################
-############################################################################
-# USAGE (run the following command):
-# > sh 502_mggk_wordpress_separate_html_recipe_files.sh
-############################################################################
-############################## BEGIN #######################################
-############################################################################
+cat << EOF
+    ############################################################################
+    # MADE FOR MGGK:
+    # THIS PROGRAM SEPERATES html files in _downloaded_html_files, as:
+    ##### 1. HTML pages using Easyrecipe markup block
+    ##### 2. HTML pages using Pali's created recipe markup block
+    ##### 3. HTML pages using no valid recipe markup block at all.
+    ######################
+    # IMPORTANT NOTE: This program should only be run after the successful run of
+    # the script '501_mggk_wordpress_find_post_first_published_dates.sh'
+    # Because, it needs to have the HTML files locally saved , in the _downloaded_html_files
+    # directory.
+    ######################
+    # CREATION DATE: January 19, 2019
+    # CREATED BY: PALI
+    ############################################################################
+    ############################################################################
+    # USAGE (run the following command):
+    # > sh 502_mggk_wordpress_separate_html_recipe_files.sh
+    ############################################################################
+    ############################## BEGIN #######################################
+    ############################################################################
+EOF
 
 ## DECLARING SOME VARIABLES
 DATE_VAR=$(date "+%Y-%m-%d")
