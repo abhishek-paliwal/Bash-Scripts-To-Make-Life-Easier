@@ -27,6 +27,7 @@ cd $IN_DIR ;
 echo ;
 echo "###########################################" ;
 echo "Present working directory = $(pwd)" ;
+echo ">> Make sure that this file is present in working directory: $input_filename " ;
 echo "###########################################" ;
 
 ## USER CONFIRMATION
