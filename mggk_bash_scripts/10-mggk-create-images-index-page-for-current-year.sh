@@ -25,7 +25,7 @@ echo "#################################################" #Blank line
 
 FINALFILENAME="index-of-mggk-images-for-current-year.html"
 OUTPUT="$DIRPATH/$FINALFILENAME" ##Output filename
-SITEURL="https://www.MyGingerGarlicKitchen.com/wp-content/uploads/$CURRENT_YEAR/$FINALFILENAME"
+SITEURL="https://www.MyGingerGarlicKitchen.com/wp-content/uploads/$FINALFILENAME"
 
 ##### UNCOMMENT the following three lines for custom image size #######
 # echo -n "Enter the size of the DIV to use (300 works best) [ENTER]: "
