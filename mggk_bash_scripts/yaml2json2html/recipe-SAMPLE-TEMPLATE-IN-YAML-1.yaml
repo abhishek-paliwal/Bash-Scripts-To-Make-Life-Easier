@@ -54,14 +54,14 @@ datePublished: '2019-04-11'
 url: https://www.MyGingerGarlicKitchen.com/chana-dal-recipe
 
 recipeIngredient:
-  - <h4>Chana Dal Fry:</h4>
+  - "!!Chana Dal Fry:"
   - 1 cup chana dal (split, garbanzo beans/bengal gram/split chickpeas)
   - 2 tbasp oil
   - 2 cloves (laung)
   - 1 teaspoon cumin seeds (jeera)
   - pinch of asafoetida (hing)
   - 1 onion, chopped
-  - <h4>Another heading:</h4>
+  - "!!Another heading:"
   - 1/2 cup tomato, chopped
   - green chilies, chopped - 2
   - 2 teaspoons crushed ginger (adrak)
