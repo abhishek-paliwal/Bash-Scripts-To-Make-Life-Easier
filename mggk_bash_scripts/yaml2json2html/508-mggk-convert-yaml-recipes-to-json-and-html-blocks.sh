@@ -1,0 +1,356 @@
+#!/bin/bash
+cat << EOF
+
+  ##############################################################################
+  ## FILENAME: 508-mggk-convert-yaml-recipes-to-json-and-html-blocks.sh
+  ## USAGE: sh THIS_FILE_NAME
+  ## SAMPLE YAML RECIPE FILE = recipe-sample-template-in-yaml-1.yaml
+  ##############################################################################
+  #### IMPORTANT NOTE: Make sure that the recipe yaml files have the
+  #### prefix 'recipe-', and naming convention as recipe-ANY-NAME-YOU-LIKE.yaml
+  ##
+  ##############################################################################
+  ## THIS PROGRAM PARSES A MGGK RECIPE YAML FILE USING A UTILITY KNOWN AS YQ
+  ## AND OUTPUTS JSON. IT ALSO CONVERTS YAML TO JSON.
+  #### IT PARSES A YAML FILE THROUGH BASH COMMAND LINE, AND OUTPUTS JSON OUTPUT
+  #### BY GETTING THE KEYS AND VALUES (NON-NESTED AND NESTED).
+  #### It Parses a YAML file using a utility'yq' (which needs jq)
+  ##
+  ################## YQ /JQ INSTALLATION INSTRUCTIONS: #########################
+  #### JQ = https://stedolan.github.io/jq/download/
+  #### YQ = https://pypi.org/project/yq/
+  #### brew install jq
+  #### brew install python-yq OR pip3 install yq
+  ##
+  ######################### TUTORIAL ON HOW TO USE: ############################
+  #### https://medium.com/@frontman/how-to-parse-yaml-string-via-command-line-374567512303
+  #### JQ USAGE tutorial: https://stedolan.github.io/jq/tutorial/
+  ##############################################################################
+  ## CODED BY: PALI
+  ## ON: April 13, 2019
+  ##############################################################################
+  ##############################################################################
+
+EOF
+
+###############################################################################
+
+#### YAML_DIR = DIRECTORY WHERE RECIPE FILES ARE PRESENT
+#YAML_DIR="$HOME/Desktop/_TMP_Automator_results_" ;
+YAML_DIR=$(pwd);
+
+## Working directory
+PWD=$YAML_DIR;
+cd $PWD
+echo; echo ">>>> CURRENT WORKING DIRECTORY: $PWD" ; echo;
+## USER CONFIRMATION TO CONTINUE
+read -p "Please check the Current directory. If OKAY, press ENTER key to continue ..." ;
+
+###############################################################################
+## SOME VARIABLES
+TMP_DIR="$PWD/_TMP_JSON_HTML_DIR" ;
+mkdir $TMP_DIR ;
+
+HTML_INDEX_FILE="_MGGK_HTML_JSON_YAML_INDEX.html" ;
+## Initializing the HTML file
+echo "Last updated: $(date)" > $HTML_INDEX_FILE ;
+echo "<!-- HTML FILE --> <H1 style='color: #cd1c62 ; '>MGGK RECIPES - HTML FILE INDEX (YAML+ JSON)</H1>" >> $HTML_INDEX_FILE ;
+
+##############################################################################
+## BEGIN: MAIN FOR LOOP FOR EACH RECIPE YAML FILE ############################
+##############################################################################
+COUNT=0 ;
+
+for recipe_file in recipe*.yaml ;
+do
+  (( COUNT++ ))
+
+  ## CREATING A NEW YAML FILE WITHOUT recipeNotes KEY:VALUE
+  #### IT'S BECAUSE OTHERWISE IT CREATES AN INVALID RECIPE JSON WHICH GIVES
+  #### ERROR DURING GOOGLE RECIPE MARKUP CHECKING
+  #### [ IMP. NOTE: YOU CAN EXCLUDE ANY MORE KEY:VALUES THIS WAY ]
+  NEW_FILE="$TMP_DIR/_COPY-$recipe_file" ;
+  cat $recipe_file | grep -iv 'recipeNotes' > $NEW_FILE ;
+
+  echo ">>>>>>>>> NEW YAML FILE CREATED without any recipeNotes KEY VALUE. <<<<<<<<<<" ;
+  echo ">>>>>>>>> $recipe_file ==>> $NEW_FILE <<<<<<<<<< ";
+  echo ;
+
+  ############################################################################
+  ## VARIABLE DEFINITIONS
+  YAML_FILE="$NEW_FILE" ;
+
+  ## Getting filename without extension
+  ## First, getting basename for filename
+  BASENAME_YAML_FILE=$(basename $YAML_FILE);
+  ## Second, getting filename without extension
+  YAML_FILENAME_WITHOUT_EXTENSION="${BASENAME_YAML_FILE%%.*}" ;
+
+  JSON_OUTPUT1="$TMP_DIR/$YAML_FILENAME_WITHOUT_EXTENSION.json" ;
+  JSON_OUTPUT2="$TMP_DIR/$YAML_FILENAME_WITHOUT_EXTENSION-QUOTES-ESCAPED.json" ;
+
+  echo;
+  echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ;
+  echo ">>>>>>>>>>>>>>>>>>>> FILENAME READ = $YAML_FILE <<<<<<<<<<<<<<<<<<<<<" ;
+  echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ;
+
+  ## FIRST, DO A CHECK IF THE YAML FILE TO BE PARSED FOR ANY SYNTAX ERRORS
+  echo;
+  echo ">>>>>> BEGIN: CHECKING YAML FILE FOR ANY ERRORS : YAMLLINT >>>>>>>>>>>>"
+  echo ">>>>>> (NOTE: Ignore any line too long ERRORS) >>>>>>>>>>>>"
+  yamllint $YAML_FILE
+  echo ">>>>>> END: CHECKING YAML FILE FOR ANY ERRORS : YAMLLINT >>>>>>>>>>>>"
+  echo ;
+
+  ## EXAMPLE, PARSING SOME KEY VALUES (NON-NESTED AND NESTED)
+  #### NESTED
+  echo "########" ; cat $YAML_FILE | yq .video
+  echo "########" ; cat $YAML_FILE | yq .video.contentUrl
+  #### NON-NESTED
+  echo "########" ; cat $YAML_FILE | yq .name
+  echo "########" ; cat $YAML_FILE | yq .description
+  #### PRINTING OUT FULL YAML TO JSON OUTPUT (NOTICE THE DOT AT THE END)
+  echo "########" ; cat $YAML_FILE | yq .
+
+  #### OUTPUTTING THE WHOLE YAML FILE TO JSON (KINDA LIKE YAML2JSON :-) )
+  cat $YAML_FILE | yq . > $JSON_OUTPUT1
+  echo ">>>> STEP 1 DONE: CONVERTING YAML TO JSON, AND SAVING AS JSON FILE --> $JSON_OUTPUT1 <<<< " ;
+
+  ## CREATING ANOTHER FILE FROM JSON WHICH IS SUITABLE FOR MGGK COPY-PASTING
+  ## IN CREATING THE HUGO MARKDOWN POSTS IN THE
+  ## FRONTMATTER VARIABLE = mggk_recipe_json
+  ##
+  #### Removing the null keyword which appears at the end of JSON file
+  echo ">>>> STEP 2 DONE: CONVERTING $JSON_OUTPUT1 --> $JSON_OUTPUT2 <<<< " ;
+  cat $JSON_OUTPUT1 | sed 's/"/\\"/g' | sed 's/null//g' > $JSON_OUTPUT2
+
+  ## GETTING THE RECIPE NAME FROM YAML FILE
+  RECIPE_NAME=$(cat $YAML_FILE | yq .name ) ;
+
+  echo "<h3>$COUNT: $RECIPE_NAME</h3>
+  <p><a target='_blank' href='$YAML_FILE'>YAML</a>
+  // <a target='_blank' href='$JSON_OUTPUT1'>JSON-ORIGINAL</a>
+  // <a target='_blank' href='$JSON_OUTPUT2'>JSON-MODIFIED-FOR-COPY-PASTING</a>
+  </p>" >> $HTML_INDEX_FILE ;
+
+
+  ############################################################################
+  ## CREATING PROPERLY FORMATTED MGGK RECIPE HTML FILE
+  #### jq -r ==> Here '-r' means value as raw_value, without double_quotes
+  ############################################################################
+  echo;
+  echo "=====================================================================" ;
+  echo "  >>>>>>>>>>>> RECIPE VARIABLE VALUES PRINTING <<<<<<<<<<<<< ";
+  echo "=====================================================================" ;
+  echo;
+
+  ## GETTING VARIABLE VALUES
+  recipeName=$(cat $YAML_FILE | yq '.name' | jq -r '.' | sed 's/null//g') ;
+  echo "recipeName: $recipeName" ;
+
+  recipeDescription=$(cat $YAML_FILE | yq '.description' | jq -r '.' | sed 's/null//g') ;
+  echo "recipeDescription: $recipeDescription" ;
+
+  imageUrl=$(cat $YAML_FILE | yq '.image' | jq -r '.[0]' | sed 's/null//g') ;
+  echo "imageUrl: $imageUrl" ;
+
+  ratingValue=$(cat $YAML_FILE | yq '.aggregateRating.ratingValue' | jq -r '.' | sed 's/null//g') ;
+  echo "ratingValue: $ratingValue" ;
+
+  ratingCount=$(cat $YAML_FILE | yq '.aggregateRating.ratingCount' | jq -r '.' | sed 's/null//g') ;
+  echo "ratingCount: $ratingCount" ;
+
+  ###################### BEGIN: TIME VARIABLES ###############################
+  prepTime=$(cat $YAML_FILE | yq '.prepTime' | jq -r '.' | sed 's/null//g') ;
+  echo "prepTime: $prepTime" ;
+
+    prepTimeHuman=$(echo $prepTime | sed 's/PT//g' | sed 's/H/ hour(s) /g' | sed 's/M/ minutes/g' );
+    echo "  prepTimeHuman: $prepTimeHuman" ;
+
+  cookTime=$(cat $YAML_FILE | yq '.cookTime' | jq -r '.' | sed 's/null//g') ;
+  echo "cookTime: $cookTime" ;
+
+    cookTimeHuman=$(echo $cookTime | sed 's/PT//g' | sed 's/H/ hour(s) /g' | sed 's/M/ minutes/g' );
+    echo "  cookTimeHuman: $cookTimeHuman" ;
+
+  totalTime=$(cat $YAML_FILE | yq '.totalTime' | jq -r '.' | sed 's/null//g') ;
+  echo "totalTime: $totalTime" ;
+
+    totalTimeHuman=$(echo $totalTime | sed 's/PT//g' | sed 's/H/ hour(s) /g' | sed 's/M/ minutes/g' );
+    echo "  totalTimeHuman: $totalTimeHuman" ;
+
+  ###################### END: TIME VARIABLES #################################
+
+  recipeCategory=$(cat $YAML_FILE | yq '.recipeCategory' | jq -r '.' | sed 's/null//g') ;
+  echo "recipeCategory: $recipeCategory" ;
+
+  recipeCuisine=$(cat $YAML_FILE | yq '.recipeCuisine' | jq -r '.' | sed 's/null//g') ;
+  echo "recipeCuisine: $recipeCuisine" ;
+
+  recipeYield=$(cat $YAML_FILE | yq '.recipeYield' | jq -r '.' | sed 's/null//g') ;
+  echo "recipeYield: $recipeYield" ;
+
+  nutritionCalories=$(cat $YAML_FILE | yq '.nutrition.calories' | jq -r '.' | sed 's/null//g') ;
+  echo "nutritionCalories: $nutritionCalories" ;
+
+  nutritionServingSize=$(cat $YAML_FILE | yq '.nutrition.servingSize' | jq -r '.' | sed 's/null//g') ;
+  echo "nutritionServingSize: $nutritionServingSize" ;
+
+  recipeAuthor=$(cat $YAML_FILE | yq '.author.name' | jq -r '.' | sed 's/null//g') ;
+  echo "recipeAuthor: $recipeAuthor" ;
+
+  recipeUrl=$(cat $YAML_FILE | yq '.url' | jq -r '.' | sed 's/null//g') ;
+  echo "recipeUrl: $recipeUrl" ;
+
+  datePublished=$(cat $YAML_FILE | yq '.datePublished' | jq -r '.' | sed 's/null//g') ;
+  echo "datePublished: $datePublished" ;
+
+  ################### BEGIN: SPECIAL VARIABLES: ###################
+  recipeNotes=$(echo "No special notes.") ;
+  echo "recipeNotes: $recipeNotes" ;
+  ################### END: SPECIAL VARIABLES: ###################
+
+    ################### ++++++++++++++++++++++++++++++++++++ ##################
+    ######## BEGIN: CREATING RECIPE-INGREDIENTS ARRAY IN BASH ###############
+      full_recipeIngredients="" ; ## empty string initialized
+      recipeIngredients=() ; ## an empty array initialized
+
+      echo; echo "=== COUNTING NUMBER OF LINES IN INGREDIENTS: === " ;
+
+      ## Let's find out the approx number of ingredients in the yaml file by parsing
+      #### and counting the lines in the output. But first, printing ...
+      cat $YAML_FILE | yq '.recipeIngredient' | jq -r '.' | nl ;
+      ####
+      approx_ingr=$( cat $YAML_FILE | yq '.recipeIngredient' | wc -l |bc -l ) ;
+
+      #### Seems like there are 2 extra lines every time the approx_ingr is calculated.
+      #### Hence, we will now subtract 2 from it.
+      echo ; echo ">>>> approx_ingr (before, check above) = $approx_ingr" ;
+      ## Actual subtraction
+      approx_ingr_after=$(echo $approx_ingr -2 |bc -l) ;
+      echo ">>>> approx_ingr (after subtracting 2) = $approx_ingr_after" ; 
+      echo "      >>>> [ IGNORE THIS: command not found error in the above line ]" ;
+      echo ;
+
+      #### FOR LOOP THRU INGREDIENTS
+      total_ingr_length=$(echo $approx_ingr_after -1 |bc -l);
+      for x in $(seq 0 $total_ingr_length) ;
+      do
+        ingredient=$(cat $YAML_FILE | yq '.recipeIngredient' | jq -r .[$x] | sed 's/null//g') ;
+        ingredient=$( echo '"'$ingredient'"' ) ;
+        echo "RECIPE INGREDIENT [$x]: $ingredient" ;
+        ## adding this element to array
+        recipeIngredients[$x]=$(echo $ingredient) ;
+      done
+
+      ## printing full recipe-ingredients array
+      echo;
+      echo "RECIPE INGREDIENTS [HOW-MANY INGREDIENTS TOTAL]: ${#recipeIngredients[*]}  " ;
+      echo ;
+      echo "RECIPE INGREDIENTS [PRINTING FULL ARRAY]: ${recipeIngredients[*]}  " ;
+      echo;
+
+      ## for loop will be done from 0 to array_size minus one
+      arr_size_minus_1=$(echo ${#recipeIngredients[*]}-1 | bc -l) ;
+
+      for index in $(seq 0 $arr_size_minus_1) ;
+      do
+        echo ">> INDEX = $index // VALUE = ${recipeIngredients[$index]} " ;
+        full_recipeIngredients+="&bull; ${recipeIngredients[$index]} <br>" ;
+      done
+
+      echo;
+      echo "full_recipeIngredients (with double-quotes): $full_recipeIngredients" ;
+
+      ## Removing double quotes everywhere from the output to
+      ## create final recipeIngredients output variable
+      final_recipeIngredients=$( echo "$full_recipeIngredients" | sed 's/\"//g' ) ;
+
+      echo;
+      echo "FINAL_RECIPE_INGREDIENTS (double-quotes removed): $final_recipeIngredients" ;
+    ################# ++++++++++++++++++++++++++++++++++++ ##################
+    ######## END: CREATING RECIPE-INGREDIENTS ARRAY IN BASH #################
+
+    ################# ++++++++++++++++++++++++++++++++++++ ###################
+    ######## BEGIN: CREATING RECIPE-INSTRUCTIONS #############################
+      full_recipe_instructions="";
+
+      ## CREATING A SUB-JSON WITH ONLY COOKINGSECTION + COOKINGSTEPS
+      full_instructions_set=$( cat $YAML_FILE | yq '.recipeInstructions' | jq '[.[] | {cookingSection: .name , cookingSteps: [.itemListElement[].text] }]' ) ;
+      echo;
+      echo "full_instructions_set: " ;
+      echo "$full_instructions_set" ;
+
+      ## TACKLING COOKING-SECTIONS
+      num_cookingSections=$( echo "$full_instructions_set" | grep -i 'cookingSection' | wc -l | bc -l ) ;
+      echo; echo "num_cookingSections: $num_cookingSections" ;
+
+      for s in $( seq 1 $num_cookingSections) ;
+      do
+        echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
+        myVar=$(expr $s - 1) ;
+        echo "myVar: $myVar " ;
+        echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
+
+        ## Don't quote the .[$myVar].cookingSection thing below. It won't work.
+        cooking_section=$( echo "$full_instructions_set" | jq .[$myVar].cookingSection );
+        echo ">>>> cooking_section: " ;
+        echo "<h4>$cooking_section</h4>" ;
+
+        ## TACKLING COOKING-STEPS WITHIN THIS COOKING SECTION
+        all_cooking_steps=$( echo "$full_instructions_set" | jq .[$myVar].cookingSteps )
+        echo ">>>> all_cooking_steps: " ;
+        echo "$all_cooking_steps" ;
+
+        ## Finding the total number of cooking steps by only counting lines
+        ## which contain double quotes. It's bcoz JQ outputs double-quotes with
+        ## every SUB-JSON operation
+        num_cookingSteps=$( echo "$all_cooking_steps" | grep -i '\"' | wc -l | bc -l ) ;
+        echo; echo "num_cookingSteps: $num_cookingSteps" ;
+
+          ## LOOPING THRU ALL COOKING-STEPS WITHIN THIS COOKING SECTION
+          full_recipe_instructions+="<h4>$cooking_section</h4>" ;
+          full_recipe_instructions+="<ol>" ; ## opening ordered list
+
+          echo "===============";
+          for t in $( seq 1 $num_cookingSteps) ;
+          do
+            myVar1=$(expr $t - 1) ;
+            echo "myVar1: $myVar1 " ;
+            single_cook_step=$( echo "$all_cooking_steps" | jq .[$myVar1] ) ;
+            echo ">>>> single_cook_step:" ;
+            echo "$single_cook_step<br>" ;
+
+            ## joining and putting elements in a html list view ...
+            full_recipe_instructions+="<li>$single_cook_step</li>" ;
+          done
+
+          full_recipe_instructions+="</ol>" ; ## closing ordered list
+
+      done
+
+      echo ;
+      echo "full_recipe_instructions (with double-quotes): $full_recipe_instructions" ;
+
+      ## Removing double quotes everywhere from the output to
+      ## create final recipeInstructions output variable
+      final_recipeInstructions=$( echo "$full_recipe_instructions" | sed 's/\"//g' ) ;
+
+      echo;
+      echo "FINAL_RECIPE_INSTRUCTIONS (double-quotes removed): $final_recipeInstructions" ;
+    ################# ++++++++++++++++++++++++++++++++++++ ###################
+    ########## END: CREATING RECIPE-INSTRUCTIONS #############################
+
+done
+##############################################################################
+## END: MAIN FOR LOOP ######################################################
+##############################################################################
+
+## OPEN FILE IN BROWSER
+echo;
+echo ">>>> Opening HTML INDEX file for recipes ..." ;
+open $HTML_INDEX_FILE ;
+
+
+##############################################################################
+####################### PROGRAM ENDS #########################################
