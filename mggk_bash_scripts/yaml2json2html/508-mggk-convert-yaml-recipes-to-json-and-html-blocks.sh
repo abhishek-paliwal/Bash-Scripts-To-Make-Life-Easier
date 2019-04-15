@@ -122,9 +122,12 @@ do
   ## IN CREATING THE HUGO MARKDOWN POSTS IN THE
   ## FRONTMATTER VARIABLE = mggk_recipe_json
   ##
-  #### Removing the null keyword which appears at the end of JSON file
   echo ">>>> STEP 2 DONE: CONVERTING $JSON_OUTPUT1 --> $JSON_OUTPUT2 <<<< " ;
-  cat $JSON_OUTPUT1 | sed 's/"/\\"/g' | sed 's/null//g' > $JSON_OUTPUT2
+  ## But first, adding the required script ld+json start and end tags
+  echo "<!-- JSON+LD RECIPE SCHEMA BLOCK BELOW THIS --> <script type='application/ld+json'>" > $JSON_OUTPUT2
+  #### Removing the null keyword which appears at the end of JSON file
+  cat $JSON_OUTPUT1 | sed 's/"/\\"/g' | sed 's/null//g' >> $JSON_OUTPUT2
+  echo "</script> <!-- JSON+LD RECIPE SCHEMA BLOCK ABOVE THIS -->" >> $JSON_OUTPUT2
 
   ## GETTING THE RECIPE NAME FROM YAML FILE
   RECIPE_NAME=$(cat $YAML_FILE | yq .name ) ;
@@ -147,7 +150,19 @@ do
   echo "=====================================================================" ;
   echo;
 
-  ## GETTING VARIABLE VALUES
+  #################################################################
+  ################### BEGIN: SPECIAL VARIABLES: ###################
+  ## THE VALUE OF SPECIAL VARIABLES IS ONLY TO BE FOUND BY PARSING THE ORIGINAL UNTOUCHED
+  ## RECIPE YAML FILE, BECAUSE IN $YAML_FILE, THESE HAVE BEEN AUTOSTRIPPED AT THE
+  ## BEGINNING OF THIS SCRIPT, BECUASE IT DOES NOT RENDER PROPER GOOGLE RECIPE JSON.
+  ##
+  #### GETTING VARIABLE VALUES
+  recipeNotes=$(cat $recipe_file | yq '.recipeNotes' | jq -r '.' | sed 's/null//g') ;
+  echo "recipeNotes: $recipeNotes" ;
+  ################### END: SPECIAL VARIABLES: #####################
+  #################################################################
+
+  ## ALL OTHER VARIABLES
   recipeName=$(cat $YAML_FILE | yq '.name' | jq -r '.' | sed 's/null//g') ;
   echo "recipeName: $recipeName" ;
 
@@ -208,10 +223,6 @@ do
   datePublished=$(cat $YAML_FILE | yq '.datePublished' | jq -r '.' | sed 's/null//g') ;
   echo "datePublished: $datePublished" ;
 
-  ################### BEGIN: SPECIAL VARIABLES: ###################
-  recipeNotes=$(echo "No special notes.") ;
-  echo "recipeNotes: $recipeNotes" ;
-  ################### END: SPECIAL VARIABLES: ###################
 
     ################### ++++++++++++++++++++++++++++++++++++ ##################
     ######## BEGIN: CREATING RECIPE-INGREDIENTS ARRAY IN BASH ###############
