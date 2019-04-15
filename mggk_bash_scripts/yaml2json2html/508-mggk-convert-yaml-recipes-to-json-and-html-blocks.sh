@@ -89,6 +89,8 @@ do
   JSON_OUTPUT1="$TMP_DIR/$YAML_FILENAME_WITHOUT_EXTENSION.json" ;
   JSON_OUTPUT2="$TMP_DIR/$YAML_FILENAME_WITHOUT_EXTENSION-QUOTES-ESCAPED.json" ;
 
+  RECIPE_HTML_FILE="$TMP_DIR/$YAML_FILENAME_WITHOUT_EXTENSION-RECIPE-BLOCK.html" ;
+
   echo;
   echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ;
   echo ">>>>>>>>>>>>>>>>>>>> FILENAME READ = $YAML_FILE <<<<<<<<<<<<<<<<<<<<<" ;
@@ -131,6 +133,7 @@ do
   <p><a target='_blank' href='$YAML_FILE'>YAML</a>
   // <a target='_blank' href='$JSON_OUTPUT1'>JSON-ORIGINAL</a>
   // <a target='_blank' href='$JSON_OUTPUT2'>JSON-MODIFIED-FOR-COPY-PASTING</a>
+  // <a target='_blank' href='$RECIPE_HTML_FILE'>RECIPE-HTML-CODE-FOR-COPY-PASTING</a>
   </p>" >> $HTML_INDEX_FILE ;
 
 
@@ -250,15 +253,26 @@ do
       echo "RECIPE INGREDIENTS [PRINTING FULL ARRAY]: ${recipeIngredients[*]}  " ;
       echo;
 
-      ## for loop will be done from 0 to array_size minus one
+      #################
+      #### FOR loop will be done from 0 to array_size minus one
       arr_size_minus_1=$(echo ${#recipeIngredients[*]}-1 | bc -l) ;
 
       for index in $(seq 0 $arr_size_minus_1) ;
       do
         echo ">> INDEX = $index // VALUE = ${recipeIngredients[$index]} " ;
-        full_recipeIngredients+="&bull; ${recipeIngredients[$index]} <br>" ;
-      done
 
+        myString="${recipeIngredients[$index]}"
+            ## Checks if line starts with !!, then treat it as a ingredient section heading
+            ## If it does not start with !!, then treat it as an ingredient line
+            if [[ $myString == *"!!"* ]]; then
+              myString=$(echo $myString | sed 's/!!//g') ; ##Removing !! from the line
+              full_recipeIngredients+="<h4>$myString</h4>" ;
+            else
+              full_recipeIngredients+="&bull; $myString<br>" ;
+            fi
+
+      done
+      ################
       echo;
       echo "full_recipeIngredients (with double-quotes): $full_recipeIngredients" ;
 
@@ -346,7 +360,116 @@ done
 ## END: MAIN FOR LOOP ######################################################
 ##############################################################################
 
-## OPEN FILE IN BROWSER
+
+##############################################################################
+##############################################################################
+## BEGIN: CREATING THE INDIVIDUAL RECIPE HTML FILE ###########################
+####
+## COLLECTING ALL RECIPE VARIABLES AND ARRANGING THEM IN AN
+## OUTPUT AND CREATING AN HTML FILE BASED ON THAT OUTPUT, JUST WITH THE
+## RECIPE DISPLAY CODE TO BE PUT ON MGGK HUGO MARKDOWN POSTS
+##############################################################################
+##############################################################################
+
+## OUTPUTTING TO AN HTML FILE
+
+cat > $RECIPE_HTML_FILE <<EOF
+    <!-- HTML RECIPE CODE BLOCK BELOW THIS -->
+    <div id='recipe-here'></div>
+    <!-- /------------/ -->
+    <div id='recipe-print-block' style='line-height: 1.1; border: 1px dashed black; padding: 10px; font-size: 14px; font-family: sans-serif; '>
+        <div>
+    <!-- /------------/ -->
+            <h3><span itemprop='name'>$recipeName</span> [RECIPE]</h3>
+            <span itemprop='description'>$recipeDescription</span>
+    <!-- /------------/ -->
+            <div class='flexbox_recipe_container'>
+    <!-- /------------/ -->
+                <div class='flexbox_recipe_left'><!-- recipe left flexbox starts -->
+    <!-- /------------/ -->
+                            <img itemprop='image' src='$imageUrl' width='150px'>
+    <!-- /------------/ -->
+                            <div itemprop='$aggregateRating'>
+                                <span style='color: #cd1d63;'>&hearts; &hearts; &hearts; &hearts; &hearts;</span>
+                                (Rating: <span itemprop='$ratingValue'>$ratingValue</span> from <span itemprop='$ratingCount'>$ratingCount</span> reviews)
+                            </div>
+    <!-- /------------/ -->
+                            <h4>INGREDIENTS</h4>$final_recipeIngredients<hr>
+    <!-- /------------/ -->
+                </div><!-- recipe left flexbox ends -->
+    <!-- /------------/ -->
+                <div class='flexbox_recipe_right'><!-- recipe right flexbox starts -->
+                            <table border='0' cellpadding='1' cellspacing='5' width='100%'>
+                                <tr>
+                                    <th style='text-align:center; width:33%; color:#cd1d63;'>&#128336; Prep time</th>
+                                    <th style='text-align:center; width:33%; color:#cd1d63;'>&#128336; Cook time</th>
+                                    <th style='text-align:center; width:33%; color:#cd1d63;'>&#128336; Total time</th>
+                                </tr>
+    <!-- /------------/ -->
+                                <tr>
+                                    <td style='text-align:center'><time datetime='$prepTime' itemprop='prepTime'>$prepTimeHuman</time></td>
+                                    <td style='text-align:center'><time datetime='$cookTime' itemprop='cookTime'>$cookTimeHuman</time></td>
+                                    <td style='text-align:center'><time datetime='$totalTime' itemprop='totalTime'>$totalTimeHuman</time></td>
+                                </tr>
+    <!-- /------------/ -->
+                                <tr>
+                                    <th style='text-align:center; width:33%; color:#cd1d63;'>&#9782; Category</th>
+                                    <th style='text-align:center; width:33%; color:#cd1d63;'>&#9832; Cuisine</th>
+                                    <th style='text-align:center; width:33%; color:#cd1d63;'>&#9786; Serves</th>
+                                </tr>
+    <!-- /------------/ -->
+                                <tr>
+                                    <td itemprop='recipeCategory' style='text-align:center; width:33%;'>$recipeCategory</td>
+                                    <td itemprop='recipeCuisine' style='text-align:center; width:33%;'>$recipeCuisine</td>
+                                    <td itemprop='recipeYield' style='text-align:center; width:33%;'>$recipeYield</td>
+                                </tr>
+                            </table>
+    <!-- /------------/ -->
+                            <hr>
+    <!-- /------------/ -->
+                            <div itemprop='nutrition'>
+                                <strong>Nutrition Info:</strong> <span itemprop='calories'>$nutritionCalories</span> // <strong>Servings:</strong> <span itemprop='servingSize'>$nutritionServingSize</span>  </div>
+    <!-- /------------/ -->
+                            <h4>INSTRUCTIONS:</h4>
+                            <div itemprop='recipeInstructions'>$final_recipeInstructions</div>
+    <!-- /------------/ -->
+                            <hr>
+    <!-- /------------/ -->
+                            <h3>NOTES:</h3>$recipeNotes
+    <!-- /------------/ -->
+            </div><!-- recipe right flexbox ends -->
+    <!-- /------------/ -->
+         </div><!-- recipe main flexbox container ends -->
+    <!-- /------------/ -->
+            <hr>
+    <!-- /------------/ -->
+            <table border='0' cellpadding='1' cellspacing='5' width='100%'>
+                <tr>
+                    <td style='text-align:left; width:15%;'><img alt='Logo' height='70px' src='https://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/mggk-new-logo-transparent-150px.png'>
+                    </td>
+    <!-- /------------/ -->
+                    <td style='text-align:left;'>
+                        <strong>Author:</strong> <span itemprop='author'>$recipeAuthor</span><br>
+                        <strong>Recipe Source Link:</strong> <a href='$recipeUrl'><span itemprop='url'>$recipeUrl</span></a><br>
+                        <strong>Date Published: </strong> <span itemprop='datePublished'>$datePublished</span>
+                    </td>
+                </tr>
+            </table>
+    <!-- /------------/ -->
+        </div>
+    <!-- /------------/ -->
+    </div>
+    <!-- HTML RECIPE CODE BLOCK ABOVE THIS -->
+
+EOF
+
+##############################################################################
+##############################################################################
+## END: CREATING THE INDIVIDUAL RECIPE HTML FILE ###########################
+##############################################################################
+##############################################################################
+
+## OPEN INDEX HTML FILE IN BROWSER
 echo;
 echo ">>>> Opening HTML INDEX file for recipes ..." ;
 open $HTML_INDEX_FILE ;
