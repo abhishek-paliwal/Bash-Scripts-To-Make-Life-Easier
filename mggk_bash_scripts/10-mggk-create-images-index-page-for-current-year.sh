@@ -1,8 +1,8 @@
 #!/bin/bash
 CAT << EOF
     ###############################################################################
-    ## BOOTSTRAP FRAMEWORK : THIS SCRIPT CREATES AN HTML FILE WITH...
-    ## ...ALL THE IMAGES IN WORKING DIRECTORY + RECURSIVELY
+    ## BOOTSTRAP FRAMEWORK : THIS SCRIPT CREATES AN HTML FILE WITH
+    ## ALL THE IMAGES IN WORKING DIRECTORY + RECURSIVELY
     ###############################################################################
     ## Coded by: PALI
     ## On: April 13, 2019
@@ -11,16 +11,15 @@ EOF
 
 echo "#################################################" #Blank line
 
-DIRPATH="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/uploads"
-CURRENT_YEAR="$(date +%Y)"
+DIRPATH="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/uploads/2019"
 CURRENT_MONTH="$(date +%m)"
 
-MAIN_IMAGES_FOLDER="$CURRENT_YEAR" ## the current year&month is the main_images_folder
+MAIN_IMAGES_FOLDER="$CURRENT_MONTH" ## the current month is the main_images_folder
 ROOT="$DIRPATH/$MAIN_IMAGES_FOLDER"
 
 #####################
 cd $ROOT
-echo "CURRENT WORKING DIRECTORY: " $ROOT ##check the present working directory
+echo "CURRENT WORKING DIRECTORY [ROOT]: " $ROOT ##check the present working directory
 echo "#################################################" #Blank line
 
 FINALFILENAME="index-of-mggk-images-for-current-year.html"
@@ -202,14 +201,14 @@ echo "<nav class='navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-to
 </nav>" >> $OUTPUT
 
 #### OPTIONAL SECTION: Finding and listing all Image files Recursively. ####
-totalimagefiles="`find $ROOT -type f | egrep -i '\.(jpg|png|PNG|JPG|gif|GIF)$' | wc -l | tr -d '[[:space:]]'`"
+totalimagefiles=$(find $ROOT -type f | egrep -i '\.(jpg|png|PNG|JPG|gif|GIF)$' | wc -l | tr -d '[[:space:]]')
 
 echo "<div class='site-wrapper'>
 <div class='site-wrapper-inner'>
 
 <!-- HEADING DIV STARTS --> <div class='heading'>
 <!-- TOP LOGO --> <img src='https://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/mggk-new-logo-transparent-150px.png' style='width: 100px; '>
-<h1 class='heading'>MGGK - Images Index<br>(for current year)<br>&bull;&bull;&bull;&bull;&bull;</h1>
+<h1 class='heading'>MGGK - IMAGES INDEX<br>(FOR CURRENT MONTH)<br>&bull;&bull;&bull;&bull;&bull;</h1>
 
 <h2 class='heading'><font color='#FFFF00'>Designed by</font> <a href='https://www.MyGingerGarlicKitchen.com'><font color='#50c878'>My Ginger Garlic Kitchen</font></a></h2>
 <!-- HEADING DIV ENDS --> </div>
@@ -226,29 +225,29 @@ echo "<h3 class='thin'>Page last updated: "`date`"</h3>" >> $OUTPUT
 echo "<hr>" >> $OUTPUT
 echo "<div class='toc'>&bull; Table of Contents &bull;</div>" >> $OUTPUT
 
-for foldername in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort -nr`; do
+for foldername in `find "$ROOT" -maxdepth 0 -mindepth 0 -type d| sort -nr`; do
   folder=`basename "$foldername"`
-  echo "<div class='toc'><a href='#$folder'> $folder</a></div> " >> $OUTPUT
+  echo "<div class='toc'><a href='#$folder'>MONTH: $folder</a></div> " >> $OUTPUT
 done
 #### Link Creation Ends #####
 
 #### Calculations begin ####
 x=0
-for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort -nr`; do
+for filepath in `find "$ROOT" -maxdepth 0 -mindepth 0 -type d| sort -nr`; do
   path=`basename "$filepath"`
   echo " <hr> <h2 class='p1'> <a name='$path'>$path</a> <a href='#' style='color: lime ;'>( &uarr; Go to top )</a></h2>" >> $OUTPUT
 
   echo "<div class='grid'> <!-- PACKERY MASONRY DIV BEGINS -->" >> $OUTPUT
 
-  for x in `find "$filepath" -type f| sort -nr | egrep -i '\.(jpg|png|PNG|JPG|gif|GIF)$'`; do
+  for x in $(find "$filepath" -type f| sort -nr | egrep -i '\.(jpg|png|PNG|JPG|gif|GIF)$') ; do
     file=`basename "$x"`
 
     ## Finding the image dimensions using ImageMagick's identify command.
-    imagedimen="`identify $ROOT/$path/$file | awk '{FS=" "; print "WxH= " $3 " - " $7 ;}'`";
+    imagedimen="`identify $DIRPATH/$path/$file | awk '{FS=" "; print "WxH= " $3 " - " $7 ;}'`";
 
     ## Finding the FileType for the current file.
-    filetype="`file $ROOT/$path/$file | awk '{FS=" "; print $2}'`";
-    echo $filetype " - " $ROOT/$path/$file "............DONE!";
+    filetype="`file $DIRPATH/$path/$file | awk '{FS=" "; print $2}'`";
+    echo $filetype " - " $DIRPATH/$path/$file "............DONE!";
     echo "IMAGE-DIMENSIONS - " $imagedimen "\n";
 
 
@@ -257,9 +256,9 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort -nr`; do
 
 ## Printing the image dimensions for everything, except GIFs because they produce LOOOOONG outputs for all GIF frames. ##
     if [ "$filetype" != 'GIF' ]; then
-      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: deeppink; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
+      echo "<div class='grid-item'><div class='pali'><a href='$path/$file'><img src='$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: deeppink; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
     else
-      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: deeppink ; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
+      echo "<div class='grid-item'><div class='pali'><a href='$path/$file'><img src='$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: deeppink ; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
     fi
 
   done
