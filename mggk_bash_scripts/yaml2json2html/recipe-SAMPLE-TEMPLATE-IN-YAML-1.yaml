@@ -128,7 +128,6 @@ recipeInstructions:
     text: After 10 minutes the dough will be ready to roll.
   - '@type': HowToStep
     text: Dough is ready.
-
 - "@type": HowToSection
   name: How to make potato stuffing
   itemListElement:
