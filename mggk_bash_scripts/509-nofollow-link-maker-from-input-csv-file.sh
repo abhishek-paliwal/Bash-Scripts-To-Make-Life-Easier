@@ -40,8 +40,8 @@ echo;
 ## UNCOMMENT THE FOLLOWING LINE FOR TESTING
 ## REQUIRED_FILE1="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/_REQUIREMENT_FILES_MGGK/509-REQUIREMENT-FILE-COMMA_SEPARATED.CSV" ;
 MY_FILE="$REQUIRED_FILE1" ;
-TMP_OUTPUT_FILE="_TMP-$MY_FILE" ;
-OUTPUT_HTML_FILE="_TMP-HTML-OUTPUT.HTML" ;
+TMP_OUTPUT_FILE="_TMP_$MY_FILE" ;
+OUTPUT_HTML_FILE="_TMP_HTML_OUTPUT.HTML" ;
 
 ## CHECKING IF REQUIRED_FILE EXISTS ...
 if [ -z $MY_FILE ]; then
@@ -53,13 +53,16 @@ fi
 ################################################################################
 ## Initializing OUTPUT HTML FILE
 echo "<p>Created on: $(date) </p>" > $OUTPUT_HTML_FILE ;
+echo "<h1>List of created NoFollow links - ready for copy-pasting in markdown files</h1>" >> $OUTPUT_HTML_FILE ;
 
 ## Saving to TMP file with all blank lines are removed.
 sed '/^$/d' $MY_FILE > $TMP_OUTPUT_FILE ;
 
 ## Going thru line by line
+COUNT=0;
 while IFS=, read -r col1 col2 col3
 do
+  ((COUNT++))
 
   ## FIRST LETS TRIM ALL LEADING AND TRAILING WHITESPACES FROM ALL THESE VARIABLES
   col1="$( echo "${col1}" | sed -e 's/^[[:space:]]*//g' -e 's/[[:space:]]*\$//g' )" ;
@@ -67,20 +70,23 @@ do
   col3="$( echo "${col3}" | sed -e 's/^[[:space:]]*//g' -e 's/[[:space:]]*\$//g' )" ;
 
     echo; echo ;
+    echo "COUNT = $COUNT" ;
     echo "FILE_NAME = $col1"
     echo "ANCHOR_TEXT = $col2"
     echo "URL = $col3";
     echo "NO-FOLLOW LINK TO BE COPIED => <a href='$col3' rel='nofollow'>$col2</a>";
 
-    ## PRINTING TO HTML OUTPUT FILE
-    tee -a <<MYOUT
-      <p>
-      <br>FILE_NAME = $col1
-      <br>ANCHOR_TEXT = $col2
-      <br>URL = $col3
-      <br><textarea rows='2' cols='100'>> <a href='$col3' rel='nofollow'>$col2</a> </textarea>
-      </p>
-    MYOUT
+## PRINTING TO HTML OUTPUT FILE
+tee -a $OUTPUT_HTML_FILE <<MYOUT
+  <p>
+  <span style='font-size: 30px ;'>$COUNT &rArr;</span>
+  <br>FILE_NAME = $col1
+  <br>ANCHOR_TEXT = $col2
+  <br>URL = $col3
+  <br><span style='color: blue;'>Copy this:</span>
+  <textarea rows='1' cols='150'> <a href='$col3' rel='nofollow'>$col2</a> </textarea>
+  </p>
+MYOUT
 
 done < $TMP_OUTPUT_FILE
 
