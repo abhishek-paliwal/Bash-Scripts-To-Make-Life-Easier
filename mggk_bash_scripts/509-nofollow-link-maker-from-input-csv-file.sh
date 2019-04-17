@@ -13,10 +13,9 @@ cat <<EOF
 ## THIS FILE CREATES READYMADE NOFOLLOW LINKS TEXT FROM AN INPUT CSV FILE.
 ## USAGE:
 #### > sh $THIS_FILENAME
-#### WHERE \$1 = INPUT CSV FILE WITH 3 COLUMNS [md_filename, anchorText, URL]
 ################################################################################
 ######### STRUCTURE OF MYFILE_COMMA_SEPARATED.CSV ##############################
-## NOTE: This in a csv file with 3 columns => [md_filename, anchorText, URL]
+## NOTE: This in a csv file with 3 columns => [md_filename, anchorText, anchorText_URL]
 #### ...
 #### ...
 #### 2018-03-19-gut-friendly-delicious-indian-kanji-for-your-tummy.md, Google is great, http://www.google.com
@@ -73,7 +72,7 @@ do
     echo "COUNT = $COUNT" ;
     echo "FILE_NAME = $col1"
     echo "ANCHOR_TEXT = $col2"
-    echo "URL = $col3";
+    echo "ANCHOR_TEXT_URL = $col3";
     echo "NO-FOLLOW LINK TO BE COPIED => <a href='$col3' rel='nofollow'>$col2</a>";
 
 ## PRINTING TO HTML OUTPUT FILE
@@ -82,7 +81,7 @@ tee -a $OUTPUT_HTML_FILE <<MYOUT
   <span style='font-size: 30px ;'>$COUNT &rArr;</span>
   <br>FILE_NAME = $col1
   <br>ANCHOR_TEXT = $col2
-  <br>URL = $col3
+  <br>ANCHOR_TEXT_URL = $col3
   <br><span style='color: blue;'>Copy this:</span>
   <textarea rows='1' cols='150'> <a href='$col3' rel='nofollow'>$col2</a> </textarea>
   </p>
