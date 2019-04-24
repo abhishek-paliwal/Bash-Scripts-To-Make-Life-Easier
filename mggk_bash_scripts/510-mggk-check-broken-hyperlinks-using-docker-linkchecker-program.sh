@@ -21,21 +21,23 @@ EOF
 
 ## VARIABLES
 MY_SITE="https://www.mygingergarlickitchen.com" ;
-HTML_OUTPUT_FILE="_tmp_linkchecker_output_file.html" ;
 
 PWD=$(pwd) ;
 echo; echo "Current working directory: $PWD" ; echo;
 
 ###############################################################################
 ## USER CONFIRMATION
-echo "You are about to run the following command, are you sure????" ;
+echo "You are about to run the following command. It will create an HTML file in $PWD. Is it OK to proceed????" ;
 
-echo ">>>>> COMMAND >>>>> docker run --rm -it -u \$(id -u):\$(id -g) -v '\$PWD\':/mnt linkchecker/linkchecker --verbose --check-extern -F html r0 $MY_SITE
+echo ">>>>> COMMAND >>>>> docker run --rm -it -u \$(id -u):\$(id -g) -v '\$PWD\':/mnt linkchecker/linkchecker --verbose --check-extern -F html $MY_SITE" ;
 
 read -p ">>>>>> If your sure sure, press ENTER key ..." ;
-echo;
+echo ;
+
 ###############################################################################
 
 ## RUNS THE ACTUAL COMMAND FOR \$MY_SITE (r0 = link recursion depth)
+docker run --rm -it -u $(id -u):$(id -g) -v "$PWD":/mnt linkchecker/linkchecker --verbose --check-extern -F html $MY_SITE
 
-docker run --rm -it -u $(id -u):$(id -g) -v "$PWD":/mnt linkchecker/linkchecker --verbose --check-extern -F html r0 $MY_SITE
+###############################################################################
+###############################################################################
