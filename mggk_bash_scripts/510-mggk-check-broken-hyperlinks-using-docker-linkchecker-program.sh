@@ -7,7 +7,7 @@ cat <<EOF
   ## GET HELP: https://github.com/linkchecker/linkchecker
   ###############################################################################
   ## USAGE:
-  ## > docker run --rm -it -u \$(id -u):\$(id -g) -v "\$PWD":/mnt linkchecker/linkchecker --verbose www.mygingergarlickitchen.com
+  ## > docker run --rm -it -u \$(id -u):\$(id -g) -v "\$PWD":/mnt linkchecker/linkchecker --verbose --check-extern www.mygingergarlickitchen.com
   ###############################################################################
   ## CODED ON: Wednesday April 24, 2019
   ## BY: PALI
@@ -30,12 +30,12 @@ echo; echo "Current working directory: $PWD" ; echo;
 ## USER CONFIRMATION
 echo "You are about to run the following command, are you sure????" ;
 
-echo ">>>>> COMMAND >>>>> docker run --rm -it -u \$(id -u):\$(id -g) -v '\$PWD\':/mnt linkchecker/linkchecker --verbose -o html r0 $MY_SITE > $HTML_OUTPUT_FILE"
+echo ">>>>> COMMAND >>>>> docker run --rm -it -u \$(id -u):\$(id -g) -v '\$PWD\':/mnt linkchecker/linkchecker --verbose --check-extern -F html r0 $MY_SITE
 
 read -p ">>>>>> If your sure sure, press ENTER key ..." ;
-echo; 
+echo;
 ###############################################################################
 
-## RUNS THE ACTUAL COMMAND FOR $MY_SITE
-## docker run --rm -it -u $(id -u):$(id -g) -v "$PWD":/mnt linkchecker/linkchecker --verbose www.mygingergarlickitchen.com
-docker run --rm -it -u $(id -u):$(id -g) -v "$PWD":/mnt linkchecker/linkchecker --verbose -o html r0 $MY_SITE > $HTML_OUTPUT_FILE
+## RUNS THE ACTUAL COMMAND FOR \$MY_SITE (r0 = link recursion depth)
+
+docker run --rm -it -u $(id -u):$(id -g) -v "$PWD":/mnt linkchecker/linkchecker --verbose --check-extern -F html r0 $MY_SITE
