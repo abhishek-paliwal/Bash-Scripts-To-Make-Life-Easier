@@ -133,10 +133,12 @@ do
   RECIPE_NAME=$(cat $YAML_FILE | yq .name ) ;
 
   echo "<h3>$COUNT: $RECIPE_NAME</h3>
-  <p><a target='_blank' href='$YAML_FILE'>YAML</a>
-  // <a target='_blank' href='$JSON_OUTPUT1'>JSON-ORIGINAL</a>
-  // <a target='_blank' href='$JSON_OUTPUT2'>JSON-MODIFIED-FOR-COPY-PASTING</a>
-  // <a target='_blank' href='$RECIPE_HTML_FILE'>RECIPE-HTML-CODE-FOR-COPY-PASTING</a>
+  <p><a target='_blank' href='$recipe_file'>YAML (Original)</a>
+  <br><a target='_blank' href='$YAML_FILE'>YAML (Copied, without recipeNotes)</a>
+  <br><a target='_blank' href='$JSON_OUTPUT1'>JSON-ORIGINAL</a>
+  <br><a target='_blank' href='$RECIPE_HTML_FILE'>RECIPE-HTML-OUTPUT</a>
+  <br> ==> <a target='_blank' href='$JSON_OUTPUT2'>JSON-MODIFIED-FOR-COPY-PASTING</a>
+  <br> ==> <a target='_blank' href='view-source:$RECIPE_HTML_FILE'>RECIPE-HTML-CODE-FOR-COPY-PASTING</a>
   </p>" >> $HTML_INDEX_FILE ;
 
 
