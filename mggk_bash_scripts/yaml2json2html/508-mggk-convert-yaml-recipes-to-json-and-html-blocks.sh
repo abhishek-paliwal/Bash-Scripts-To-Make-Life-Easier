@@ -129,18 +129,6 @@ do
   cat $JSON_OUTPUT1 | sed 's/"/\\"/g' | sed 's/null//g' >> $JSON_OUTPUT2
   echo "</script> <!-- JSON+LD RECIPE SCHEMA BLOCK ABOVE THIS -->" >> $JSON_OUTPUT2
 
-  ## GETTING THE RECIPE NAME FROM YAML FILE
-  RECIPE_NAME=$(cat $YAML_FILE | yq .name ) ;
-
-  echo "<h3>$COUNT: $RECIPE_NAME</h3>
-  <p><a target='_blank' href='$recipe_file'>YAML (Original)</a>
-  <br><a target='_blank' href='$YAML_FILE'>YAML (Copied, without recipeNotes)</a>
-  <br><a target='_blank' href='$JSON_OUTPUT1'>JSON-ORIGINAL</a>
-  <br><a target='_blank' href='$RECIPE_HTML_FILE'>RECIPE-HTML-OUTPUT</a>
-  <br> ==> <a target='_blank' href='$JSON_OUTPUT2'>JSON-MODIFIED-FOR-COPY-PASTING</a>
-  <br> ==> <a target='_blank' href='view-source:$RECIPE_HTML_FILE'>RECIPE-HTML-CODE-FOR-COPY-PASTING</a>
-  </p>" >> $HTML_INDEX_FILE ;
-
 
   ############################################################################
   ## CREATING PROPERLY FORMATTED MGGK RECIPE HTML FILE
@@ -368,21 +356,16 @@ do
     ################# ++++++++++++++++++++++++++++++++++++ ###################
     ########## END: CREATING RECIPE-INSTRUCTIONS #############################
 
-done
-##############################################################################
-## END: MAIN FOR LOOP ######################################################
-##############################################################################
 
-
-##############################################################################
-##############################################################################
-## BEGIN: CREATING THE INDIVIDUAL RECIPE HTML FILE ###########################
-####
-## COLLECTING ALL RECIPE VARIABLES AND ARRANGING THEM IN AN
-## OUTPUT AND CREATING AN HTML FILE BASED ON THAT OUTPUT, JUST WITH THE
-## RECIPE DISPLAY CODE TO BE PUT ON MGGK HUGO MARKDOWN POSTS
-##############################################################################
-##############################################################################
+  ##############################################################################
+  ##############################################################################
+  ## BEGIN: CREATING THE INDIVIDUAL RECIPE HTML FILE ###########################
+  ####
+  ## COLLECTING ALL RECIPE VARIABLES AND ARRANGING THEM IN AN
+  ## OUTPUT AND CREATING AN HTML FILE BASED ON THAT OUTPUT, JUST WITH THE
+  ## RECIPE DISPLAY CODE TO BE PUT ON MGGK HUGO MARKDOWN POSTS
+  ##############################################################################
+  ##############################################################################
 
 ## OUTPUTTING TO AN HTML FILE
 
@@ -476,11 +459,34 @@ cat > $RECIPE_HTML_FILE <<EOF
 
 EOF
 
+## MAKING A PLAIN TEXT FILE FROM THE HTML FILE, BECAUSE WE WANT TO DISPLAY
+## THE HTML SOURCE CODE IN PLAIN TEXT FOR COPY-PASTING
+cat $RECIPE_HTML_FILE > $RECIPE_HTML_FILE.TXT ;
+
+############ APPENDING RECIPE IN HTML INDEX FILE ############
+## GETTING THE RECIPE NAME FROM YAML FILE
+RECIPE_NAME=$(cat $YAML_FILE | yq .name ) ;
+
+echo "<h3>$COUNT: $RECIPE_NAME</h3>
+<p><a target='_blank' href='$recipe_file'>YAML (Original)</a>
+<br><a target='_blank' href='$YAML_FILE'>YAML (Copied, without recipeNotes)</a>
+<br><a target='_blank' href='$JSON_OUTPUT1'>JSON-ORIGINAL</a>
+<br><a target='_blank' href='$RECIPE_HTML_FILE'>RECIPE-HTML-OUTPUT</a>
+<br> ==> <a target='_blank' href='$JSON_OUTPUT2'>JSON-MODIFIED-FOR-COPY-PASTING</a>
+<br> ==> <a target='_blank' href='$RECIPE_HTML_FILE.TXT'>RECIPE-HTML-CODE-FOR-COPY-PASTING</a>
+</p>" >> $HTML_INDEX_FILE ;
+
+  ##############################################################################
+  ##############################################################################
+  ## END: CREATING THE INDIVIDUAL RECIPE HTML FILE ###########################
+  ##############################################################################
+  ##############################################################################
+
+done
 ##############################################################################
+## END: MAIN FOR LOOP ######################################################
 ##############################################################################
-## END: CREATING THE INDIVIDUAL RECIPE HTML FILE ###########################
-##############################################################################
-##############################################################################
+
 
 ## OPEN INDEX HTML FILE IN BROWSER
 echo;
