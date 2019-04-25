@@ -1,0 +1,182 @@
+<!-- JSON+LD RECIPE SCHEMA BLOCK BELOW THIS --> <script type='application/ld+json'>
+{
+  \"@context\": \"http://schema.org/\",
+  \"@type\": \"Recipe\",
+  \"name\": \"Masala Mathri – 2 Ways | Fried & Baked Masala Mathri\",
+  \"description\": \"Masala Mathri – 2 Ways | Fried & Baked Masala Mathri | Spicy Indian Crackers. Mathris are Indian style crispy and spicy fried crackers which are a very popular snack in the northern part of the India. Any festival such as Diwali and Holi is incomplete without these.\",
+  \"image\": [
+    \"https://www.mygingergarlickitchen.com/wp-content/uploads/2017/10/Masala-Mathri-Facebook-1.jpg\",
+    \"https://i.ytimg.com/vi/GiBvoegQIqs/maxresdefault.jpg\"
+  ],
+  \"prepTime\": \"PT30M\",
+  \"cookTime\": \"PT40M\",
+  \"totalTime\": \"PT1H10M\",
+  \"recipeCategory\": \"Snacks\",
+  \"recipeCuisine\": \"Indian\",
+  \"recipeYield\": \"40 Mathris\",
+  \"aggregateRating\": {
+    \"@type\": \"AggregateRating\",
+    \"ratingValue\": \"4.8\",
+    \"ratingCount\": \"28\"
+  },
+  \"nutrition\": {
+    \"@type\": \"NutritionInformation\",
+    \"calories\": \"20 calories\",
+    \"servingSize\": \"1 mathri\"
+  },
+  \"author\": {
+    \"@type\": \"Person\",
+    \"name\": \"Anupama Paliwal\",
+    \"brand\": \"My Ginger Garlic Kitchen\",
+    \"url\": \"http://www.MyGingerGarlicKitchen.com\"
+  },
+  \"keywords\": \"baked mathri, punjabi mathri, fried mathri, indian masala mathri, diwali snack\",
+  \"video\": {
+    \"@type\": \"videoObject\",
+    \"name\": \"Masala Mathri – 2 Ways | Fried & Baked Masala Mathri\",
+    \"description\": \"Masala Mathri – 2 Ways | Fried & Baked Masala Mathri | Spicy Indian Crackers. Mathris are Indian style crispy and spicy fried crackers which are a very popular snack in the northern part of the India. Any festival such as Diwali and Holi is incomplete without these.\",
+    \"thumbnailUrl\": [
+      \"https://www.mygingergarlickitchen.com/wp-content/uploads/2017/10/Masala-Mathri-Facebook-1.jpg\",
+      \"https://i.ytimg.com/vi/GiBvoegQIqs/maxresdefault.jpg\"
+    ],
+    \"contentUrl\": \"https://youtu.be/GiBvoegQIqs\",
+    \"embedUrl\": \"https://www.youtube.com/embed/GiBvoegQIqs\",
+    \"uploadDate\": \"2019-02-22\"
+  },
+  \"datePublished\": \"2019-02-22\",
+  \"url\": \"https://www.mygingergarlickitchen.com/masala-mathri-2-ways-baked-masala-mathri-recipe-video-spicy-indian-crackers/\",
+  \"recipeIngredient\": [
+    \"Maida/all purpose flour) – 2 cups (I am using 250 ml cup)\",
+    \"Atta/whole wheat flour – 2 cups\",
+    \"Oil or Ghee for Moyan – 4-5 tbsp\",
+    \"Warm water – 6-7 tbsp or as required\",
+    \"Cumin seeds /Jeera – 1 tbsp\",
+    \"Coriander seeds / Ajwain – 1 tbsp\",
+    \"Carom seeds – 1/2 tbsp\",
+    \"Fennel seeds – 1 tsp\",
+    \"Black pepper – 1 tsp\",
+    \"Clove – 4-5\",
+    \"Kasuri methi /dried fenugreek leaves – 1/4 cup\",
+    \"A pinch of asafetida / hing\",
+    \"Baking soda – 1/4 tsp (You can omit baking soda if you are only frying mathris)\",
+    \"Salt to taste\",
+    \"Oil for deep frying\"
+  ],
+  \"recipeInstructions\": [
+    {
+      \"@type\": \"HowToSection\",
+      \"name\": \"How to Make Mathri Dough:\",
+      \"itemListElement\": [
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Add coriander seeds, fennel seeds, black peppercorns and clove to a grinder and grind them together for 30 seconds to make a coarse mixture. (You can also use mortar-pestle)\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Put whole wheat flour, all-purpose flour, ground whole spices, carom seeds, cumin seeds, salt, baking soda, and asafetida in a large mixing bowl.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Stir with a spoon/fork to mix it well.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Add hot oil or ghee and mix everything until well combined.(At this stage this mixture should look like breadcrumbs)\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Now add some warm water and knead to make a stiff dough. You will have to knead for about 7-8 minutes.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"You don't need to knead the dough very smooth. Add a little water at a time\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Cover and set it aside for 30 minutes.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Pinch very small balls from the dough.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Take a pinched portion of the dough and roll it lightly in between your palms to even them. Don't try to smoothen the edges, we want jaggy edges.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Flatten each ball between your palms to shape them into discs of about ⅓-inch thickness. (You can also use rolling pin/belan)\"
+        }
+      ]
+    },
+    {
+      \"@type\": \"HowToSection\",
+      \"name\": \"For Frying Mathri:\",
+      \"itemListElement\": [
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Heat oil in a pan broad pan on high heat.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Switch the heat to medium-low when oil is medium hot.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Add mathris to the oil is fry them on medium-low heat until they turn nicely crisp and golden.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Drain on an absorbent paper and let them cool.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Once cooled store them in an airtight container.\"
+        }
+      ]
+    },
+    {
+      \"@type\": \"HowToSection\",
+      \"name\": \"For Baking Mathri:\",
+      \"itemListElement\": [
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Preheat the oven to 335°F/180°C.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Line a baking pan with the parchment.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Prick each mathri 3 or 4 times on the top with the tines of a fork.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Place the mathris on lined baking tray.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Bake in 355⁰F/180⁰C pre-heated oven for 13-15 minutes until lightly browned.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Flip them and bake again for 13-15 minutes until lightly browned.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Let them cool on wire rack and store in an air-tight container.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"You can keep these mathris at room temperature for up to 4 weeks.\"
+        },
+        {
+          \"@type\": \"HowToStep\",
+          \"text\": \"Serve these flaky and crispy mathris with some hot tea/coffee.\"
+        }
+      ]
+    }
+  ]
+}
+</script> <!-- JSON+LD RECIPE SCHEMA BLOCK ABOVE THIS -->
