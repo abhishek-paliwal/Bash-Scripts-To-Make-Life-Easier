@@ -1,7 +1,7 @@
 #!/bin/bash
 ###############################################################################
 THIS_FILENAME="511-mggk-locate-and-compare-errors-in-urls-listed-in-json-recipe-code.sh" ;
-SEARCH_DIR="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/" ;
+SEARCH_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/" ;
 ###############################################################################
 cat<<EOF
   ###############################################################################
