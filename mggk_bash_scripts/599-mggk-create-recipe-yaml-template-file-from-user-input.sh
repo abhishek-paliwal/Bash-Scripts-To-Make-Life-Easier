@@ -46,8 +46,9 @@ DATE_TODAY=$(date +%Y-%m-%d) ;
 YAML_FILENAME_VAR="$(echo $RECIPE_NAME | tr '|' ' ' | tr '-' ' ' | awk '{$1=$1};1'  | tr ' ' '-' )" ;
 
 DATE_FOR_FILENAME=$(date +%Y%m%d) ;
+FILE_NAME_PREFIX="recipe-" ;
 FILE_EXTENSION=".yaml" ;
-YAML_FILENAME_FINAL=$(echo $DATE_FOR_FILENAME-$YAML_FILENAME_VAR$FILE_EXTENSION) ;
+YAML_FILENAME_FINAL=$(echo $FILE_NAME_PREFIX$DATE_FOR_FILENAME-$YAML_FILENAME_VAR$FILE_EXTENSION) ;
 
 ################################################################################
 
