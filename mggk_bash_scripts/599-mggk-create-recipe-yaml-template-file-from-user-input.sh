@@ -53,7 +53,6 @@ YAML_FILENAME_FINAL=$(echo $FILE_NAME_PREFIX$DATE_FOR_FILENAME-$YAML_FILENAME_VA
 ################################################################################
 
 cat >$YAML_FILENAME_FINAL <<EOFFF
-
 ---
 "@context": http://schema.org/
 
