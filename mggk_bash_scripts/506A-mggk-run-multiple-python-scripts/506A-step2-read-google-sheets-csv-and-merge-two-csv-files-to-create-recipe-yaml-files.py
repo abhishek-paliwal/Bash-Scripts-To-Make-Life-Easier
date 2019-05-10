@@ -252,7 +252,7 @@ for x in range(0, COUNT_ROWS):
     print("\n====> CREATING AN HTML INDEX FILE TO MAKE ANU'S WORK EASY ==> " + TMP_STEP2_INDEX_FILE )
 
     TMP_INDEX = open(TMP_STEP2_INDEX_FILE,'a+')
-    TMP_INDEX.write('<h2>FILE # ' + str(x+1) + '</h2> <p>URL: <a href="'+ URL + '">' + URL + '</a> <br>HUGO MARKDOWN FILENAME = <TEXTAREA ROWS="1" COLS="150">' + RECIPE_FILENAME + '</TEXTAREA> <br>YAML RECIPE FILENAME = <TEXTAREA ROWS="1" COLS="150">' + YAML_RECIPE_FILENAME + '</TEXTAREA></p>' )
+    TMP_INDEX.write('<h2>FILE # ' + str(x+1) + ' = ' + RECIPE_TITLE + '</h2> <p>URL: <a href="'+ URL + '">' + URL + '</a> <br>HUGO MARKDOWN FILENAME = <TEXTAREA ROWS="1" COLS="150">' + RECIPE_FILENAME + '</TEXTAREA> <br>YAML RECIPE FILENAME = <TEXTAREA ROWS="1" COLS="150">' + YAML_RECIPE_FILENAME + '</TEXTAREA></p>' )
     TMP_INDEX.close()
 
 
