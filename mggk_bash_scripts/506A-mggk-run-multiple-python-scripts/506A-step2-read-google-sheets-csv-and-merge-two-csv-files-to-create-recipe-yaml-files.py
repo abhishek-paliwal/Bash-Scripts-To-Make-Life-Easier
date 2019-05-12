@@ -40,6 +40,9 @@ BASHFILE.write( '\n## AUTOCREATED ON: ' + TODAY )
 BASHFILE.write( '\n##############################################################################' )
 BASHFILE.write( '\n\nread -p "Enter a number [from 1-73]: " VAR' )
 BASHFILE.write( '\n\n' )
+BASHFILE.write( '\nif [ -z $VAR ] ; then' )
+BASHFILE.write( '\n\necho "YOU ENTERED WORNG VALUE FOR VAR. PLEASE ENTER A VALUE BETWEEN 1-73. IGNORE ANY FURTHER ERROR MESSAGES BELOW.\n\n" ;' )
+BASHFILE.write( '\nfi\n\n' )
 BASHFILE.close()
 
 ## CREATING A DIRECTORY =  MY_YAML_DIR
