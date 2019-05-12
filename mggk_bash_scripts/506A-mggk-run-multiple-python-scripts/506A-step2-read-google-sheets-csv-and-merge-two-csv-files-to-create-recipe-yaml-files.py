@@ -22,18 +22,30 @@ import time ;
 ## SETTING HOME VARIABLE FROM ENVIRONMENTAL VARIABLE + SOME MORE VARIABLES
 MYHOME = os.environ['HOME'] ## GETTING THE ENVIRONMENT VALUE FOR HOME
 MY_YAML_DIR = MYHOME + '/Desktop/Y/_TMP_OUTPUTS_YAML' ;
+TODAY = str(time.strftime("%Y-%m-%d %H:%M"))
 TMP_STEP2_INDEX_FILE = MYHOME + '/Desktop/Y/_TMP_STEP2_INDEX_FILE.HTML'
+AUTOCREATED_BASH_SCRIPT = MYHOME + '/Desktop/Y/_TMP_AUTOCREATED_BASH_SCRIPT_FOR_ANU.sh'
 
 ## INITIALIZING THE TMP INDEX HTML FILE
 TMP_INDEX_INIT = open(TMP_STEP2_INDEX_FILE,'w')
-TODAY = str(time.strftime("%Y-%m-%d %H:%M"))
 TMP_INDEX_INIT.write( '<p>Updated: ' + TODAY + '</p><h1 style="color:#cd1c62;">TMP INDEX FILE with HUGO MARKDOWN FILENAME + YAML RECIPE FILENAME</h1>' )
 TMP_INDEX_INIT.close()
+
+## INITIALIZING THE AUTOCREATED_BASH_SCRIPT
+BASHFILE = open(AUTOCREATED_BASH_SCRIPT,'w')
+BASHFILE.write( '#/bin/bash' )
+BASHFILE.write( '\n##############################################################################' )
+BASHFILE.write( '\n## THIS BASH SCRIPT OPENS SELECTED FILES IN ATOM, BASED UPON A PROPER USER INPUT' )
+BASHFILE.write( '\n## AUTOCREATED ON: ' + TODAY )
+BASHFILE.write( '\n##############################################################################' )
+BASHFILE.write( '\n\nread -p "Enter a number [from 1-73]: " VAR' )
+BASHFILE.write( '\n\n' )
+BASHFILE.close()
 
 ## CREATING A DIRECTORY =  MY_YAML_DIR
 pathlib.Path(MY_YAML_DIR).mkdir(parents=True, exist_ok=True)
 
-
+##############################################################################
 ##############################################################################
 ## READING 1ST CSV FILE
 data = pd.read_csv("_STEP2-INPUT-MGGK-GOOGLE-SHEETS-CSV.CSV")
@@ -249,12 +261,25 @@ for x in range(0, COUNT_ROWS):
     ##########################################################################
     ## CREATING AN HTML INDEX FILE TO MAKE ANU'S WORK EASY.
     ## THIS INDEX FILE WILL CONTAIN THE MARKDOWN FILENAME + CORRESPONDING YAML RECIPE FILENAME
-    print("\n====> CREATING AN HTML INDEX FILE TO MAKE ANU'S WORK EASY ==> " + TMP_STEP2_INDEX_FILE )
+    print("\n====> APPENDING TO AN HTML INDEX FILE TO MAKE ANU'S WORK EASY ==> " + TMP_STEP2_INDEX_FILE )
 
     TMP_INDEX = open(TMP_STEP2_INDEX_FILE,'a+')
-    TMP_INDEX.write('<h2>FILE # ' + str(x+1) + ' = ' + RECIPE_TITLE + '</h2> <p>URL: <a href="'+ URL + '">' + URL + '</a> <br>HUGO MARKDOWN FILENAME = <TEXTAREA ROWS="1" COLS="150">' + RECIPE_FILENAME + '</TEXTAREA> <br>YAML RECIPE FILENAME = <TEXTAREA ROWS="1" COLS="150">' + YAML_RECIPE_FILENAME + '</TEXTAREA></p>' )
+    TMP_INDEX.write('<h2>FILE # ' + str(x+1) + ' = ' + RECIPE_TITLE + '</h2> <p>URL: <a href="'+ URL + '">' + URL + '</a> <br>HUGO MARKDOWN FILENAME = <TEXTAREA ROWS="1" COLS="150">' + RECIPE_FILENAME + '</TEXTAREA> <br>YAML RECIPE FILENAME = <TEXTAREA ROWS="1" COLS="150">' + MY_YAML_DIR + '/' + YAML_RECIPE_FILENAME + '</TEXTAREA></p>' )
     TMP_INDEX.close()
 
+    ##########################################################################
+    ## CREATING A BASH SCRIPT FILE TO MAKE ANU'S WORK EASY.
+    ## THIS INDEX FILE WILL CONTAIN THE ATOM LINKS TO OPEN MARKDOWN FILENAME + CORRESPONDING YAML RECIPE FILENAME
+    print("\n====> APPENDING TO A BASH SCRIPT FILE TO MAKE ANU'S WORK EASY ==> " + AUTOCREATED_BASH_SCRIPT )
+    BASHFILE = open(AUTOCREATED_BASH_SCRIPT,'a+')
+    BASHFILE.write( '\nif [ $VAR = "' + str(x+1) + '" ] ; then' )
+    BASHFILE.write( '\necho "YOU ENTERED $VAR" ;' )
+    BASHFILE.write( '\necho "====> OPENING: \n==> ' + URL + '\n==> ' + RECIPE_FILENAME + '\n==> ' + MY_YAML_DIR + '/' + YAML_RECIPE_FILENAME + '"' )
+    BASHFILE.write( '\n\nopen ' + URL )
+    BASHFILE.write( '\n# atom ' + RECIPE_FILENAME )
+    BASHFILE.write( '\natom ' + MY_YAML_DIR + '/' + YAML_RECIPE_FILENAME )
+    BASHFILE.write( '\nfi\n\n' )
+    BASHFILE.close()
 
 
 ##############################################################################
