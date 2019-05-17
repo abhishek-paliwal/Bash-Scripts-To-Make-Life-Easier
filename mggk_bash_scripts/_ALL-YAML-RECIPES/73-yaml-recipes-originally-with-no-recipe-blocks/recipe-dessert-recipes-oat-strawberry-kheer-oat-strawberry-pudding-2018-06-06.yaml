@@ -1,0 +1,82 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Oat Strawberry Kheer – Oat Strawberry Pudding [Dessert] "
+
+description: "Oat strawberry Kheer is a pudding made with oats, strawberries and milk. This is a super easy and quick delight. Oat Strawberry Kheer is fuller, healthy and full of nutrients. It is a rich and creamy textured dessert."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/06/recipe-oat-strawberry-kheer-anupama-paliwal-my-ginger-garlic-kitchen-5.jpg
+
+prepTime: PT5M
+
+cookTime: PT15M
+
+totalTime: PT20M
+
+recipeCategory: Dessert
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 18
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 200 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "oat straweberry kheer, oats ki kheer, making oats kheer recipe, strawberry kheer, oats pudding, oats kheer weight loss"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-06-06
+
+url: https://www.mygingergarlickitchen.com/dessert-recipes-oat-strawberry-kheer-oat-strawberry-pudding/
+
+recipeIngredient:
+  - "!!Ingredients for Oat Strawberry Kheer:"
+  - "1 steel cut oats, soaked overnight in water"
+  - "4 cashew nuts, chopped"
+  - "4 almonds, chopped"
+  - "1 cup strawberries, chopped"
+  - "4 cups whole milk"
+  - "4 tbsp sugar or as per taste"
+  - "1/4 tsp cardamom powder"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Oat Strawberry Kheer:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat a pan and add milk to it. Stir continuously, and let it come to boil. Once milk is boiled, add oats to it and mix well."
+  - "@type": HowToStep
+    text: "Let them cook on medium heat for about 7-8 minutes, or till they become soft."
+  - "@type": HowToStep
+    text: "Add chopped strawberries, sugar and mix well. Let it cook for 2-3 minutes."
+  - "@type": HowToStep
+    text: "Now add chopped cashew nuts, chopped almonds, and cardamom powder. Mix well, and let it cook for 2 more minutes."
+  - "@type": HowToStep
+    text: "It perfect as a dessert. Serve hot or ice cold, and enjoy!" 

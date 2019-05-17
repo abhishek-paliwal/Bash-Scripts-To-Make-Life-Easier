@@ -1,0 +1,106 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "One Pot Coconut Curry Pasta Recipe | Macaroni In Buttery Coconut Vegetable Curry"
+
+description: "Detailed recipe of One Pot Coconut Curry Pasta Recipe | Macaroni In Buttery Coconut Vegetable Curry along with step by step video tutorial. Macaroni in buttery coconut vegetable curry is a delicious one-pot meal and can be served at dinner or lunch."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/06/recipe-macaroni-in-buttery-coconut-vegetable-curry-anupama-paliwal-my-ginger-garlic-kitchen-12.jpg
+
+prepTime: PT10M
+
+cookTime: PT35M
+
+totalTime: PT45M
+
+recipeCategory: Main
+
+recipeCuisine: Indian
+
+recipeYield: 6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 1
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 289 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "coconut curry pasta vegan, coconut curry pasta recipe, coconut curry pasta sauce, thai coconut curry pasta, coconut milk and curry pasta, coconut cream curry pasta, coconut curry sauce for pasta"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-06-27
+
+url: https://www.mygingergarlickitchen.com/macaroni-buttery-coconut-vegetable-curry-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for macaroni:"
+  - "Macaroni – 2 cups"
+  - "salt"
+  - "oil – tsp"
+  - "!!Ingredients for curry:"
+  - "olive oil for curry – 2 tbsp"
+  - "onion, ginger, garlic paste – 1/2 cup"
+  - "curry powder – 1 tbsp"
+  - "chili fresh, and chopped – 1"
+  - "1 tsp cumin seeds"
+  - "cubed tomatoes – 2"
+  - "frozen mix veg – 2 cups (I am using broccoli, cauliflower, green beans, and carrot)"
+  - "green peas – 1/2 cup"
+  - "potatoes boiled, and sliced -1"
+  - "coconut milk – 1 tin (400ml)"
+  - "salt as per taste"
+  - "turmeric powder – 1/4 tsp"
+  - "garam masala powder -1/4 tsp"
+  - "coriander powder -2 tbsp"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for cooking:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat a pan. Add enough water, 1 tsp oil, salt, and macaroni. Cook according to the instructions on the package."
+  - "@type": HowToStep
+    text: "Heat another pan, and add oil to it. Add cumin seeds, and when seeds start to splutter add onion ginger-garlic paste."
+  - "@type": HowToStep
+    text: "Sauté them till they turn brown in color. Add cubed tomatoes, and cook for 3 minutes"
+  - "@type": HowToStep
+    text: "!Instructions for vegetable coconut curry:"
+  - "@type": HowToStep
+    text: "Now add salt, turmeric, coriander powder, and curry powder. Mix well and sauté for 3 more minutes."
+  - "@type": HowToStep
+    text: "Add coconut milk, and mix well. Let it cook for 5 minutes. Add all of the vegetables, and mix well."
+  - "@type": HowToStep
+    text: "Let the vegetables cook covered in coconut sauce, for 5-7 minutes on medium-low heat. Add garam masala powder, and mix well. Remove from heat."
+  - "@type": HowToStep
+    text: "Garnish with chopped coriander."
+- "@type": HowToSection
+  name: "Instructions for serving:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Transfer vegetable coconut curry in a serving bowl."
+  - "@type": HowToStep
+    text: "Add cooked macaroni to it. Serve hot and enjoy!"

@@ -1,0 +1,91 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Dal Sunehri – Split Black Gram & Bengal Gram Spiced Stew"
+
+description: "Dal sunehri is an Indian lentils stew; which is the combination of two lentils (split black gram and split bengal gram), and seasoned with spices. Sunehri means golden in hindi; when this lentils stew is ready, it comes out beautiful golden in color."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/07/recipe-dal-sunehri-anupama-paliwal-my-ginger-garlic-kitchen-5.jpg
+
+prepTime: PT10M
+
+cookTime: PT30M
+
+totalTime: PT40M
+
+recipeCategory: Side
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.7
+  ratingCount: 29
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 121 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "urad dal recipes, north indian urad dal recipe, urad dal recipes white, urad dal recipes indian, urad dal curry recipe, urad chane ki dal recipe, white urad chana dal recipe, urad and chana dal recipe, white urad and chana dal recipe, recipe for urad chana dal"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-07-16
+
+url: https://www.mygingergarlickitchen.com/dal-sunehri-split-black-gram-bengal-gram-spiced-stew-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for Dal Sunehri:"
+  - "skinless split black gram, washed-1 cup"
+  - "split bengal gram, washed- ½ cup"
+  - "onion paste – ½ cup"
+  - "green chili, chopped"
+  - "tomato, chopped – 1"
+  - "ginger-garlic paste – 1 tbsp"
+  - "chili powder – 1tsp"
+  - "cumin seeds – ½ tsp"
+  - "mustard seeds – ½ tsp"
+  - "coriander powder – 2 tsp"
+  - "turmeric powder – ¼"
+  - "garam masala powder – ¼"
+  - "dried fenugreek leaves (kasuri methi) – 1 tbsp"
+  - "pinch of asafoetida"
+  - "olive oil – 2 tbsp"
+  - "lemon juice – 1 tbsp"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Dal Sunehri:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat a pressure cooker. Add black gram, and split black gram, salt, tomato, asafoetida along with 4 cups of water. Cover the lid, and pressure cook for 6 whistles. Let it cook on on low heat for about 10 minutes. When the cooker is cooled off, open it."
+  - "@type": HowToStep
+    text: "Heat oil in a pan. Add mustard, and cumin seeds to it. When they start to splutter, add onion paste along with ginger-garlic paste. Saute for about 3-4 minutes or till it turns pink."
+  - "@type": HowToStep
+    text: "Add chili powder, coriander powder, and garam masala powder along with ¼ cup of water. Let the spices cook with water for few minutes. Add kasuri methi and cook for 2 minutes."
+  - "@type": HowToStep
+    text: "Now add boiled dal, and mix well. Cook on medium heat for 5 minutes. Add lemon juice and again mix well. Remove from heat."
+  - "@type": HowToStep
+    text: "Serve hot with any of your favorite bread or or steamed rice. Enjoy!" 

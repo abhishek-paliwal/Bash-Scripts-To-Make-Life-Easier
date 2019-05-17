@@ -1,0 +1,83 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Creamy Cappuccino Chocolate Lassi [Signature-Recipe]"
+
+description: "Creamy Cappuccino Chocolate Lassi is a yogurt smoothie; prepared with yogurt, milk, cappuccino, chocolate, honey, and brown sugar. Creamy Cappuccino Chocolate Lassi is a wonderfully refreshing recipe because of cappuccino and yogurt."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/06/recipe-creamy-cappuccino-chocolate-lassi-anupama-paliwal-my-ginger-garlic-kitchen-6.jpg
+
+prepTime: PT5M
+
+cookTime: PT2M
+
+totalTime: PT7M
+
+recipeCategory: Drinks
+
+recipeCuisine: World
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.6
+  ratingCount: 20
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 280 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "cappucinno chocolate lassi, coffee lassi, chocolate lassi, indian lassi drink, how to make coffee lassi"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-06-24
+
+url: https://www.mygingergarlickitchen.com/creamy-cappuccino-chocolate-lassi-signature-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for Cappuccino Chocolate Lassi:"
+  - "1 1/4 glass chilled yogurt"
+  - "1/2 cup chilled milk"
+  - "2 tbsp brown sugar"
+  - "2 tbsp honey"
+  - "2 tbsp cappuccino powder"
+  - "1/4 tsp instant coffee powder (for a richer taste)"
+  - "3 tbsp chocolate powder"
+  - "ice cubes"
+  - "whipped cream for topping"
+  - "chocolate powder for dusting"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Cappuccino Chocolate Lassi:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Dissolve coffee powder in 1 tsp of water and mix well."
+  - "@type": HowToStep
+    text: "Add yogurt, milk, cappuccino powder, chocolate powder, coffee liquid, honey, and brown sugar to a jug. And blend all the ingredients until smooth."
+  - "@type": HowToStep
+    text: "Add ice cubes to serving glasses, and pour lassi into serving glasses."
+  - "@type": HowToStep
+    text: "Top lassi glasses with whip cream, and dust some chocolate powder. Creamy Cappuccino Chocolate Lassi is ready. Serve chilled & enjoy!" 

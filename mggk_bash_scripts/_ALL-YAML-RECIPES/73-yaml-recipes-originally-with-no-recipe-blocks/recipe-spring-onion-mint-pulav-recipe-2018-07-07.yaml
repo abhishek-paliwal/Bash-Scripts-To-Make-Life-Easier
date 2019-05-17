@@ -1,0 +1,87 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Spring Onion Mint Pulav"
+
+description: "Spring onion mint pulav is an Indian rice recipe, and is prepared with spring onions, mint leaves, and some spices. Adding garlic with mint, and spring onions, makes this recipe so aromatic and refreshing."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/07/recipe-spring-onion-mint-pulav-anupama-paliwal-my-ginger-garlic-kitchen-5.jpg
+
+prepTime: PT5M
+
+cookTime: PT10M
+
+totalTime: PT15M
+
+recipeCategory: Side
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.4
+  ratingCount: 26
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 225 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "mint pulao recipe, mint pulao at home, how to make mint pulao at home, mint onion pulao, spring onion pulao recipe, pulao with spring onion,recipe of spring onion pulao"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-07-07
+
+url: https://www.mygingergarlickitchen.com/spring-onion-mint-pulav-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for spring onion mint pulao:"
+  - "cooked basmati rice – 1/2 cups"
+  - "spring onions cut diagonally -1 cup"
+  - "mint leaves -1/2 cup"
+  - "oil -3 tbsp"
+  - "cumin seeds – 1 tbsp"
+  - "garlic, chopped – 4"
+  - "salt as per taste"
+  - "lemon zest – 1tbsp"
+  - "bay leaf – 1"
+  - "cinnamon stick – 1"
+  - "garam masala powder – 1 tsp"
+  - "lemon juice – 1 tbsp"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Spring Onion Mint Pulao:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat oil in a pan. Add cumin seeds to it. When they start to crackle, add bay leaf and cinnamon stick."
+  - "@type": HowToStep
+    text: "Now add spring onions, mint leaves, and chopped garlic cloves. Let them cook for 2 minutes."
+  - "@type": HowToStep
+    text: "Add garam masla powder, and salt. Mix well, and cook for 1 minute."
+  - "@type": HowToStep
+    text: "At this stage add cooked rice, lemon zest, and mix well. Let them cook for 2 minutes more. Add lemon juice, and remove from heat. Cover them for 5 minutes."
+  - "@type": HowToStep
+    text: "Serve hot with your favorite curry and raita. Enjoy!" 

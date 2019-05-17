@@ -1,0 +1,86 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Cheesy Blueberry Halwa [Signature Recipe]"
+
+description: "Halwa is an Indian dessert recipe made with clarified butter, flours, fruits, nuts, and lentils; which has the consistency like a thick pudding. Cheesy blueberry halwa is prepared with semolina, blueberry, coconut, and mozzarella cheese. This recipe is a little twist to regular suji halwa."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/07/recipe-cheesy-blueberry-halwa-anupama-paliwal-my-ginger-garlic-kitchen-2.jpg
+
+prepTime: PT2M
+
+cookTime: PT20M
+
+totalTime: PT22M
+
+recipeCategory: Dessert
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.5
+  ratingCount: 28
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 280 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "blueberry halwa recipe, buleberry rava sheera, blueberry suji halwa, blueberry rava halwa, berry halwa "
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-07-06
+
+url: https://www.mygingergarlickitchen.com/cheesy-blueberry-halwa-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for halwa:"
+  - "semolina (rava/suji) – 1 cup"
+  - "clarified butter (ghee) – 3 tbsp"
+  - "cup desiccated coconut – 1/2 cup"
+  - "milk – 2 cups"
+  - "fresh mozzarella cheese – 1/4 cup"
+  - "sugar as per taste"
+  - "pureed blueberries – 1 cup"
+  - "cashew nuts, chopped – 8"
+  - "cardamom powder – 1/2 tsp"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for halwa:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat clarified butter (ghee) in a pan. Add semolina to it, and roast on low heat till it turns golden brown."
+  - "@type": HowToStep
+    text: "Now add desiccated coconut and sauté for 2 minutes."
+  - "@type": HowToStep
+    text: "Add milk, and pureed blueberries. Let it cook for 5 minutes."
+  - "@type": HowToStep
+    text: "Add crushed mozzarella cheese and mix well. Cook for 4 more minutes."
+  - "@type": HowToStep
+    text: "Add sugar and cardamom powder. Stir continuously to prevent any lumps. Cook for 3-4 minutes or till milk dries."
+  - "@type": HowToStep
+    text: "Remove from heat. Garnish with cashew nuts, and desiccated coconut. Serve hot. Enjoy!"

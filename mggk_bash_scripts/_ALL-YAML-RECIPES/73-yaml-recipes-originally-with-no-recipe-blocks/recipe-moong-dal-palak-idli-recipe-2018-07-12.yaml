@@ -1,0 +1,91 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Moong Dal Palak Idli"
+
+description: "Moong Dal Palak Idli is a steamed savory cake; which is prepared with, moong dal, yogurt, and spinach. This is a protein rich, light and a healthy dish. It includes yellow lentils, and spinach."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/07/recipe-moong-dal-palak-idli-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT20M
+
+totalTime: PT30M
+
+recipeCategory: Breakfast
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 1
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 128 calories
+  servingSize: 1 Idli
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "moong dal idli recipe, moong dal idli diabetic friendly idli, moong dal idli recipe, idli recipe, south indian breakfast recipes, the south indian breakfast, rice and moong dal idli recipe, how to cook moong dal idli "
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-07-12
+
+url: https://www.mygingergarlickitchen.com/moong-dal-palak-idli-recipe/
+
+recipeIngredient:
+  - "!!Ingredients Moong Dal Palak Idli:"
+  - "yogurt – 1 cup"
+  - "salt as per taste"
+  - "baking soda -1 tsp"
+  - "turmeric powder – 1/2 tsp"
+  - "oil for brushing moulds"
+  - "split yellow gram, soaked overnight, drained & grounded into a paste – 2 cups"
+  - "rice powder – 3/4 cup"
+  - "blanched, and chopped spinach- 3/4 cup"
+  - "green chilies, chopped -1"
+  - "oil for greasing – 1/4 tsp"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Moong Dal Palak Idli:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add everything to a mixing bowl and mix everything well. Add water if needed to make smooth batter."
+  - "@type": HowToStep
+    text: "Add baking soda to the idli batter, and mix gently until it becomes fluffy."
+  - "@type": HowToStep
+    text: "Cover the bowl, and let it rest for 30 minutes."
+  - "@type": HowToStep
+    text: "Grease the microwave-safe idli moulds and keep aside."
+  - "@type": HowToStep
+    text: "Add the water in the microwave safe idli steamer and microwave on high for 30 seconds."
+  - "@type": HowToStep
+    text: "Add 2 tbsp of the batter into 4 greased idli moulds and microwave on high for 4 minutes."
+  - "@type": HowToStep
+    text: "Repeat this process with the remaining batter to make rest of the idlis."
+  - "@type": HowToStep
+    text: "Serve hot with coriander chutney. Enjoy!"

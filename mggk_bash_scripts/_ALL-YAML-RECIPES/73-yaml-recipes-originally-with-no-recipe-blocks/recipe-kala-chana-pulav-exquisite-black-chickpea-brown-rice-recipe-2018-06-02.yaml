@@ -1,0 +1,93 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Kala Chana Pulav – Exquisite Black Chickpea Brown Rice"
+
+description: "Black Chickpea Brown Rice is a divine protein rich one pot meal. This recipe is prepared with brown rice, and black chickpeas. Frying rice with onions gives it a very beautiful color and aroma. And the flavour of garam masala with the beautiful black chickpeas is just enticing."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/05/recipe-brown-rice-chickpea-pulav-anupama-paliwal-my-ginger-garlic-kitchen-1.jpg
+
+prepTime: PT20M
+
+cookTime: PT30M
+
+totalTime: PT50M
+
+recipeCategory: Main
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 1
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 200 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "kala chana pulao, kala chana ka pulao, kala chana brown rice pulav, brown rice pulao, black chickpea pulao recipe"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-06-02
+
+url: https://www.mygingergarlickitchen.com/kala-chana-pulav-exquisite-black-chickpea-brown-rice-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for Black Chickpea Brown Rice Pulao:"
+  - "2 cups brown rice, washed and soaked in water for 2 hours"
+  - "2 tbsp olive oil"
+  - "1/2 cup onion, finely chopped"
+  - "1 tsp ginger-garlic paste"
+  - "1/2 cup tomato puree"
+  - "1/2 tsp turmeric powder"
+  - "1 tsp red chili powder"
+  - "1/4 tsp garam masala powder"
+  - "1/2 tsp dried mango powder (amchur powder)"
+  - "1 cup black chickpea (kala chana), soaked in water overnight and cooked"
+  - "salt as per taste"
+  - "2 tbsp coriander leaves, chopped"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Black Chickpea Brown Rice Pulao:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a pan and add 3 cups water to it, and heat."
+  - "@type": HowToStep
+    text: "Now add rice to the boiling water, and cook till water evaporates."
+  - "@type": HowToStep
+    text: "You can add 2-3 tbsp more water, if the rice is not cooked. Remove form heat, and keep aside."
+  - "@type": HowToStep
+    text: "Heat another pan and add oil to it. Now add the onions and sauté them, till they turn light brown in color."
+  - "@type": HowToStep
+    text: "Add the ginger-garlic paste, tomatoes, turmeric powder, chili powder, garam masala powder, salt, and dried mango powder."
+  - "@type": HowToStep
+    text: "Let them cook for 5 minutes."
+  - "@type": HowToStep
+    text: "Add black chickpea and rice. Mix gently and cook for another 3 to 4 minutes."
+  - "@type": HowToStep
+    text: "Serve hot with any of your favorite salads or raita. Enjoy!"

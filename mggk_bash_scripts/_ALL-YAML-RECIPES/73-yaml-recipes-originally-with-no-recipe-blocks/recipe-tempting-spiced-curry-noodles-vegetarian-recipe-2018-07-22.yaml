@@ -1,0 +1,89 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Tempting Spiced Curry Noodles [Vegetarian-Recipe]"
+
+description: "Tempting Spiced Curry Noodles is an aromatic one pot meal. Made with curry powder. This is a spicy nutty vegetarian noodles recipe."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/07/recipe-tempting-spiced-curry-noodles-anupama-paliwal-my-ginger-garlic-kitchen-3.jpg
+
+prepTime: PT10M
+
+cookTime: PT10M
+
+totalTime: PT20M
+
+recipeCategory: Main
+
+recipeCuisine: Indo-Chinese
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.7
+  ratingCount: 16
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 219 calories
+  servingSize: 1 Pancake
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: " spicy curry noodles, curry spiced noodles, spicy noodles curry flavor, spicy curry peanut noodles, curry noodles recipe, curry noodles and vegetables, curry asian noodles"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-07-22
+
+url: https://www.mygingergarlickitchen.com/tempting-spiced-curry-noodles-vegetarian-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for Spiced Curry Noodles:"
+  - "olive oil – 1 tbsp"
+  - "mushrooms, sliced – 3"
+  - "ginger-garlic, grated – 1 tbsp"
+  - "curry powder – 2 tbsp"
+  - "red cabbage, chiffonade – 1 cup"
+  - "carrots, julienned – 2"
+  - "red spring onions, sliced – ½ cup"
+  - "lemon juice – 1 tbsp"
+  - "green beans – ¼ cup"
+  - "bell pepper, julienned – 1"
+  - "pepper powder – 1 tsp"
+  - "salt as per taste"
+  - "noodles, cooked as per instructions – 2 cup"
+  - "Ingredients for serving:"
+  - "roasted peanuts"
+  - "chili flakes"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Spiced Curry Noodles:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat oil in a pan. Add grated ginger-garlic and saute for few seconds."
+  - "@type": HowToStep
+    text: "Now add all the vegetables, and saute for 3 minutes."
+  - "@type": HowToStep
+    text: "Add curry powder, salt, pepper powder, along with ⅛ cup of water, and mix well."
+  - "@type": HowToStep
+    text: "Let the vegetables cook with spices for 3 minutes. Add lemon juice and cooked noodles. Toss well, and top with roasted peanut and chili flakes. Serve hot!" 

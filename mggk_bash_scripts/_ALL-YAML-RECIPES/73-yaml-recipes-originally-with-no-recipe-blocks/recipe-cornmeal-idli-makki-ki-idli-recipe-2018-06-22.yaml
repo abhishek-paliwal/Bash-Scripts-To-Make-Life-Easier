@@ -1,0 +1,85 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Cornmeal Idli – Makki ki Idli [Microwave-Recipe]"
+
+description: "Cornmeal Idli is a steamed savory Indian cake. Cornmeal Idli is made with cornmeal, yogurt, some spices, and almost no oil. Natural yellow color of cornmeal gives a beautiful tempting sensation to this recipe."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/06/recipe-cornmeal-idli-anupama-paliwal-my-ginger-garlic-kitchen-2.jpg
+
+prepTime: PT10M
+
+cookTime: PT20M
+
+totalTime: PT30M
+
+recipeCategory: Breakfast
+
+recipeCuisine: Indian
+
+recipeYield: 16 idlis
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.5
+  ratingCount: 38
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 50 calories
+  servingSize: 1 Idli
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "cornmeal idli recipe, makki ki idli, makki ki idli kaise banaye, corn meal idli, instant cornmeal idli, instant healthy idli, south indian breakfast recipe"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-06-22
+
+url: https://www.mygingergarlickitchen.com/cornmeal-idli-makki-ki-idli-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for Cornmeal Idli:"
+  - "2 cups cornmeal"
+  - "2 cups yogurt"
+  - "2 tbsp oil for frying"
+  - "1 tbsp mustard seeds"
+  - "1 tsp split bengal gram (chana dal)"
+  - "1 tsp white lentils (urad dal)"
+  - "1/4 cup peanuts"
+  - "2 tsp chopped ginger"
+  - "2 green chilies, chopped"
+  - "salt as per taste"
+  - "1 tsp baking soda"
+  - "oil for brushing moulds"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Cornmeal Idli:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat oil in a pan. Add mustard seeds, split bengal gram, and white lentils. Fry them for 2 minutes."
+  - "@type": HowToStep
+    text: "Add peanuts and sauté for 3 minutes. Now add chopped ginger and chopped green chilies. Sauté for 1 minute."
+  - "@type": HowToStep
+    text: "Add cornmeal, and salt to this and roast for 3 minutes."
+  - "@type": HowToStep
+    text: "Turn off the heat. Transfer into mixing bowl. Add yogurt and mix well. Add water if needed to make a smooth batter. Cover the bowl, and let it rest for 30 minutes." 

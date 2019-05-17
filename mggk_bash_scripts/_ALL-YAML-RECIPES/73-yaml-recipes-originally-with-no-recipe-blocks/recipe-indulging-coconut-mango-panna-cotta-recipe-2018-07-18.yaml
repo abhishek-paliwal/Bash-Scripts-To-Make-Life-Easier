@@ -1,0 +1,85 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Indulging Coconut Mango Panna Cotta"
+
+description: "Indulging Coconut Mango Panna Cotta is a dessert recipe. This is made with coconut milk, cream, and mangoes. This is a perfect summer dessert."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/07/recipe-coconut-mango-panna-cotta-anupama-paliwal-my-ginger-garlic-kitchen-4.jpg
+
+prepTime: PT5M
+
+cookTime: PT15M
+
+totalTime: PT20M
+
+recipeCategory: Dessert
+
+recipeCuisine: Italian
+
+recipeYield: 6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 1
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 389 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "mango and coconut panna cotta, vegan mango coconut panna cotta, coconut panna cotta with mango gelee, coconut panna cotta with mango coulis, mango panna cotta easy, how to make mango panna cotta, coconut panna cotta with"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-07-18
+
+url: https://www.mygingergarlickitchen.com/indulging-coconut-mango-panna-cotta-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for coconut mango panna cotta:"
+  - "double cream – 1 cup"
+  - "coconut milk – cup"
+  - "unflavoured gelatin powder – 2 tbsp"
+  - "warm water – half cup"
+  - "vanilla extract – 1 tsp"
+  - "brown sugar for coconut milk & cream – ¼ cup"
+  - "white sugar for mango puree – ¼ cup"
+  - "mango puree – 2 cups"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for  Coconut Mango Panna Cotta:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Soak the gelatin in ½ cup of warm water for about 8 minutes."
+  - "@type": HowToStep
+    text: "Heat a pan. Add double cream, and coconut milk and let it boil. Add brown sugar to it and let it boil until sugar dissolves. Remove from heat, and add ¼ cup of soaked gelatin to the coconut milk cream."
+  - "@type": HowToStep
+    text: "Heat another pan. Add mango puree and powdered white sugar to it. Let it come to a boil. Remove from heat. Transfer 1 cup puree in another bowl for topping, and keep in refrigerator."
+  - "@type": HowToStep
+    text: "Add remaining ¼ cup soaked gelatin to 1 cup mango puree."
+  - "@type": HowToStep
+    text: "Divide coconut cream along with 1 cup mango puree among 6 glasses. Cover with cling film. Keep these glasses to set in refrigerator for 4-5 hours or overnight."
+  - "@type": HowToStep
+    text: "Remove the cling film the next day, and top each glass with mango sauce. Garnish with coconut shavings. Enjoy!" 

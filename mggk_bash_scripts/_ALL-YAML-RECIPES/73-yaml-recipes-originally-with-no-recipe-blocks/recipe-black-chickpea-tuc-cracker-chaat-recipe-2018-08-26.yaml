@@ -1,0 +1,86 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Black Chickpea Tuc Cracker Chaat"
+
+description: "Black Chickpea Tuc Cracker Chaat is an appetizer, prepared with boiled black chickpeas, onion, tomato, cucumber salad tossed with indian spices and herbs. This great dish is a beautiful combo of salad with crackers, which just melts in your mouth."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/08/recipe-black-chickpea-tuc-cracker-chaat-anupama-paliwal-my-ginger-garlic-kitchen-4.jpg
+
+prepTime: PT10M
+
+cookTime: PT5M
+
+totalTime: PT15M
+
+recipeCategory: Snack
+
+recipeCuisine: International
+
+recipeYield: 12
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 1
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 76 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "tuc cracker chaat, Cracker Canapes, ritz cracker canapes, cracker based canapes, easy cracker canapes, cracker chickpea canapes, Canapes Cracker"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-08-26
+
+url: https://www.mygingergarlickitchen.com/black-chickpea-tuc-cracker-chaat-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for Black Chickpea Tuc Cracker Chaat:"
+  - "black chickpea, soaked overnight & cooked – 2 cups"
+  - "cucumber, chopped – ¾ cup"
+  - "cherry tomatoes, sliced – ½ cup"
+  - "red onion, chopped – 1"
+  - "lemon juice – 3 tbsp"
+  - "green chili, chopped – 1"
+  - "salt – 1/2 tsp"
+  - "chaat masala -1/2 tsp"
+  - "cumin powder – 1 tsp"
+  - "black salt – 1/2 tsp"
+  - "red chili powder – ¼ tsp"
+  - "tuc crackers – 12 pcs"
+  - "coriander – 1 tbsp"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Black Chickpea Tuc Cracker Chaat:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a mixing bowl. Add all the ingredients except crackers to it."
+  - "@type": HowToStep
+    text: "Mix well. Toss well. Keep covered in refrigerator for 30 minutes before serving."
+  - "@type": HowToStep
+    text: "Put a tbsp chickpea salad on a cracker, top with some coriander leaves."
+  - "@type": HowToStep
+    text: "Serve immediately. Enjoy" 

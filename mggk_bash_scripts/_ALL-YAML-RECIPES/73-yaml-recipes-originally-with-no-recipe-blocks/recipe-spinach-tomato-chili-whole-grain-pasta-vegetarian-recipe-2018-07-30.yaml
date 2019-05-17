@@ -1,0 +1,82 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Spinach Tomato Chili Whole Grain Pasta [Vegetarian-Recipe]"
+
+description: "Spinach Tomato Chili Whole Grain Pasta is a deliciously vegetarian pasta dish. Which is low in fat, and has all the required nutrients for a meal."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/07/recipe-spinach-tomato-chili-pasta-anupama-paliwal-my-ginger-garlic-kitchen-5.jpg
+
+prepTime: PT5M
+
+cookTime: PT10M
+
+totalTime: PT15M
+
+recipeCategory: Main
+
+recipeCuisine: Italian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.6
+  ratingCount: 25
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 281 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "tomato spinach chilli pasta, Spinach Pasta, spinach pasta dish, spinach and pasta, spinach and pasta salad, spinach and pasta recipe healthy, spinach and pasta recipes with tomatoes, spinach pasta barilla, spinach pasta cheese"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-07-30
+
+url: https://www.mygingergarlickitchen.com/spinach-tomato-chili-whole-grain-pasta-vegetarian-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for Spinach Tomato Chili Whole Grain Pasta:"
+  - "olive oil – 2 tsp"
+  - "onion, finely chopped – 2 tsp"
+  - "garlic cloves, crushed – 2 tbsp"
+  - "dried chili flakes – ½ tsp (or as per taste)"
+  - "pepper sauce – 1 tsp (or as per taste)"
+  - "whole grain fusilli pasta, cooked according instruction – 1 packet (200g)"
+  - "tomatoes, chopped – 2"
+  - "tomato ketchup – 1 tbsp"
+  - "dried oregano – 1 tbsp"
+  - "spinach, chopped – 1 cup (I am using frozen spinach)"
+  - "parmesan cheese, grated – 4 tbsp"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Spinach Tomato Chili Whole Grain Pasta:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat the oil in a frying pan. Add onions, and saute for 2 minutes. Now add crushed garlic, chili flakes, and saute for 3 minutes."
+  - "@type": HowToStep
+    text: "Add oregano and salt. Cook for 1 minute. Now add chopped tomatoes, and spinach, and cook for 3 minutes. Add tomato ketchup, pepper sauce and mix well. Remove from heat."
+  - "@type": HowToStep
+    text: "Add cooked pasta, and toss with sauce. Sprinkle cheese on top, and serve with your favorite bread and beverage. Enjoy!"

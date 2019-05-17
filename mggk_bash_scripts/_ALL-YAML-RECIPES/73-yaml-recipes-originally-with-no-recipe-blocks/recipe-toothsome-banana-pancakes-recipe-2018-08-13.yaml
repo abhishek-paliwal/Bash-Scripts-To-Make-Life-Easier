@@ -1,0 +1,85 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Toothsome Banana Pancakes"
+
+description: "Toothsome Banana Pancakes are light, fluffy, and delicately flavored banana pancakes with the fragrance of vanilla. These pancakes make a great weekend morning breakfast."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/08/recipe-toothsome-banana-pancakes-anupama-paliwal-my-ginger-garlic-kitchen-4.jpg
+
+prepTime: PT5M
+
+cookTime: PT15M
+
+totalTime: PT20M
+
+recipeCategory: Breakfast
+
+recipeCuisine: International
+
+recipeYield: 5
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 24
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 226 calories
+  servingSize: 1 Pancake
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: " banana pancakes tasty, egg and banana pancakes, banana pancakes baking soda, banana pancakes egg, banana pancakes from scratch, banana pancakes fluffy"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-08-13
+
+url: https://www.mygingergarlickitchen.com/toothsome-banana-pancakes-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for Banana Pancakes:"
+  - "ripe banana – 2"
+  - "egg – 1"
+  - "vanilla extract – 1 tsp"
+  - "all purpose flour – 1 cup"
+  - "sugar – 1 tbsp"
+  - "butter/vegetable oil for batter – 2 tbsp"
+  - "margarine/butter for cooking"
+  - "milk – 1 cup"
+  - "baking soda – 1 1/2 tsp"
+  - "salt -¼ tsp"
+  - "!!Ingredients for serving:"
+  - "maple syrup or honey"
+  - "banana, sliced"
+  - "chocolate shreds"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for  Banana Pancakes:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a medium sized bowl. Add banana slices, butter, egg, sugar, vanilla extract, and blend with a blender. Add flour, baking soda, and milk to the banana mixture to make a smooth batter."
+  - "@type": HowToStep
+    text: "Heat a pan over medium heat. Add butter to the pan, and pour the batter onto the pan, using approximately 1/4 cup for each pancake. Cook until a few holes form on top of each pancake and the underside is golden brown. Flip the pancakes and cook for 1-2 minutes until the bottom is golden brown and the top is puffed. Using the spatula, transfer the pancakes to a serving plate."
+  - "@type": HowToStep
+    text: "Wipe the pan with paper towels. add more butter and oil, and repeat with the remaining batter. Garnish with banana slices, and chocolate shreds. Serve hot with maple syrup or honey. Enjoy!" 

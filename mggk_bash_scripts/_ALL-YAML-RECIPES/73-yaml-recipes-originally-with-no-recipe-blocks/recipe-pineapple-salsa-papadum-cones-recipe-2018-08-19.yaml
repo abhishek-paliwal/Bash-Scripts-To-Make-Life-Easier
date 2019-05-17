@@ -1,0 +1,91 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Pineapple Salsa Papadum Cones"
+
+description: "Pineapple Salsa Papadum Cones are a new Indianized twist to the great spanish salsa. We can name it a Indo-spanish dish. This is an easy, quick and refreshingly juicy citrus salsa."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/08/recipe-pineapple-salsa-papadum-cones-anupama-paliwal-my-ginger-garlic-kitchen-1.jpg
+
+prepTime: PT10M
+
+cookTime: PT10M
+
+totalTime: PT20M
+
+recipeCategory: Appetizer
+
+recipeCuisine: Indo-Mexican
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.6
+  ratingCount: 29
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 87 calories
+  servingSize: 1 Cone
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "pineapple salsa papadum cones, pineapple salsa cones, pineapple salsa recipe, pineapple salsa appetizer, fresh pineapple salsa, recipes for a pineapple salsa, pineapple salsa easy recipe"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-08-19
+
+url: https://www.mygingergarlickitchen.com/pineapple-salsa-papadum-cones-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for Pineapple Salsa Papadum Cones:"
+  - "pineapple, chopped – 2 cups"
+  - "red onion, chopped – 1"
+  - "red bell pepper, chopped – 1"
+  - "cayenne pepper – ¼ tsp"
+  - "salt, as per taste"
+  - "cilantro, chopped – 2 tbsp"
+  - "fresh lemon juice – 1 tbsp"
+  - "brown sugar – 1 tbsp"
+  - "papadum (papad) – 4"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Pineapple Salsa:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a mixing bowl. Add all the ingredients to the bowl, and mix well."
+  - "@type": HowToStep
+    text: "Cover the bowl with clingfilm and place it in the refrigerator for at least 30-40 minutes."
+  - "@type": HowToStep
+    text: "Method of papadum cones:"
+  - "@type": HowToStep
+    text: "Cut the papadums into halves. Heat a grill pan and roast the papadums."
+  - "@type": HowToStep
+    text: "Shape papadum immediately into a cone. Repeat the same process with remaining papadums. Your cones are ready."
+- "@type": HowToSection
+  name: "Instructions for serving:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Stuff the pineapple salsa into the papadum cones."
+  - "@type": HowToStep
+    text: "Garnish with coriander leaves and serve immediately." 

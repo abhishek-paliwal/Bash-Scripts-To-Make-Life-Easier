@@ -1,0 +1,91 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Classic Potato Bell Pepper Stir-Fry"
+
+description: "Classic Potato Bell Pepper Stir-fry is a simple, easy and delicious side dish for Lunch or Dinner. It is prepared with potatoes, bell pepper, onions, peas, and seasoned with the blend of spices."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/06/recipe-classic-bellpepper-potato-peas-stir-fry-anupama-paliwal-my-ginger-garlic-kitchen-4.jpg
+
+prepTime: PT10M
+
+cookTime: PT20M
+
+totalTime: PT30M
+
+recipeCategory: Side
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.5
+  ratingCount: 32
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 317 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "potato bell pepper curry, potato bell pepper indian recipe, potato bell pepper sabzi, potato with bell peppers vegetable recipe, bell pepper and potato indian recipes, potato bell pepper recipe, potato capsicum fry, potato capsicum masala, potato capsicum sabji"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-06-22
+
+url: https://www.mygingergarlickitchen.com/classic-potato-bell-pepper-stir-fry/
+
+recipeIngredient:
+  - "!!Ingredients for Classic Potato Bell Pepper Stir-Fry:"
+  - "2 medium potatoes peeled, and sliced"
+  - "1 bell pepper sliced"
+  - "1 onion sliced"
+  - "1 tomato sliced"
+  - "1/2 cup green peas, boiled"
+  - "1 tsp garlic, chopped"
+  - "1 tsp ginger, chopped"
+  - "1/2 tsp cumin seeds"
+  - "1/2 tsp red chili powder"
+  - "1/4 tsp turmeric powder"
+  - "2 tsp coriander powder"
+  - "1/4 tsp garam masala"
+  - "1 fresh chili chopped (optional)"
+  - "2 tbsp olive oil"
+  - "1 tsp lemon juice"
+  - "salt as per taste"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for  Potato Bell Pepper Stir-Fry:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat oil in a pan. Add cumin, and when they start to splutter, add sliced onions and sliced potatoes."
+  - "@type": HowToStep
+    text: "Cook for 3 minutes, and add salt, turmeric powder to it and mix well."
+  - "@type": HowToStep
+    text: "Let them cook till potatoes are almost cooked. Add bell pepper, chopped chilies, and cook for 2 minutes. Now add coriander powder, chopped ginger and cook for another 2 minutes."
+  - "@type": HowToStep
+    text: "Add tomato slices, chopped garlic, red chili powder. Mix and stir all the vegetables together for 2 minutes."
+  - "@type": HowToStep
+    text: "Now add green peas, garam masala powder and cook for 3 more minutes. Remove from heat and add lemon juice. Mix well, and serve with any of your favorite breads. Enjoy!"

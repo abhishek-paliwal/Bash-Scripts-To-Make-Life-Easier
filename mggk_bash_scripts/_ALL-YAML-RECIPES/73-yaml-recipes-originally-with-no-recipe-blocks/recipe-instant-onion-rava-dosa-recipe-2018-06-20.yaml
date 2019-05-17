@@ -1,0 +1,87 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Instant Onion Rava Dosa"
+
+description: "Instant Rava dosa is a very famous south Indian crepe recipe. Instant Rava Dosa is prepared with semolina, rice flour, all-purpose flour, onions and some spices."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/06/recipe-instant-rava-dosa-anupama-paliwal-my-ginger-garlic-kitchen.jpg-1.jpg
+
+prepTime: PT10M
+
+cookTime: PT25M
+
+totalTime: PT35M
+
+recipeCategory: Breakfast
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 26
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 110 calories
+  servingSize: 1 Dosa
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "instant onion rava dosa, how to make instant onion rava dosa, nstant onion rava dosa recipe, recipe for instant onion rava dosa, rava dosa without rice flour, rava dosa at home, rava dosa andhra style, how to make a rava dosa recipe, how to make a rava dosa without curd, rava dosa crispy "
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-06-20
+
+url: https://www.mygingergarlickitchen.com/instant-onion-rava-dosa-recipe/
+
+recipeIngredient:
+  - "!!Ingredients:"
+  - "1 cup rava/semolina"
+  - "1/2 cup rice flour"
+  - "1/2 cup all-purpose flour"
+  - "1 tbsp cumin seeds"
+  - "1/4 grounded cashew nuts"
+  - "buttermilk for making batter"
+  - "4 tbsp coriander leaves, chopped"
+  - "1 cup onions, chopped"
+  - "1 green chili, chopped"
+  - "1 tbsp crushed ginger"
+  - "salt as per taste"
+  - "oil for cooking"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a large mixing bowl. Add semolina, all-purpose flour, rice flour, cumin seeds, chopped green chili, crushed ginger, coriander leaves, salt, and grounded cashew nut."
+  - "@type": HowToStep
+    text: "Mix well, and add buttermilk to the mixture. Mix it to make a very thin batter without any lumps."
+  - "@type": HowToStep
+    text: "Heat a flat non-stick pan, and add 1 tsp oil to it. Sprinkle some water, and spread 1 tbsp chopped onions on the pan. Sprinkle the batter on top, as shown in the picture below."
+  - "@type": HowToStep
+    text: "Spread some oil on top and let it cook until it is golden brown. Flip it over and cook for few seconds. Remove the Dosa from pan. Do the same with rest of the batter."
+  - "@type": HowToStep
+    text: "Instant Onion Rava Dosa is ready. Serve with coconut chutney and sambar. Enjoy!"

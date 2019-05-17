@@ -1,0 +1,99 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Candied Sago Pudding With Blueberry Sauce"
+
+description: "Candied Sago Pudding With Blueberry Sauce is a super tasty, beautiful, and excellent pudding. Made with sago, milk, sugar and flavoured with blueberry sauce."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/08/recipe-sago-pudding-with-blueberry-sauce-anupama-paliwal-my-ginger-garlic-kitchen-4.jpg
+
+prepTime: PT5M
+
+cookTime: PT20M
+
+totalTime: PT25M
+
+recipeCategory: Dessert
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 35
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 288 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "sago pudding with blueberry sauce, sabundana kheer, sago pudding recipe, tapioca pearl pudding, sago pudding in english, best pearl tapioca pudding, sabudana kheer recipe, sabudana kheer in english"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-08-06
+
+url: https://www.mygingergarlickitchen.com/candied-sago-pudding-blueberry-sauce-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for blueberry sauce:"
+  - "fresh blueberries – 2 cups"
+  - "sugar – ¼ cup"
+  - "lemon juice – 2 tbsp"
+  - "cornstarch – 1 tbsp"
+  - "vanilla extract – ½ tsp"
+  - "!!Ingredients for sago pudding:"
+  - "sabudana (sago or tapioca pearls) – 1 cup"
+  - "milk – 2 cups"
+  - "sugar – 1/4"
+  - "cardamom powder – 1 tsp"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for blueberry sauce:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a mixing bowl. Add cornstarch & lemon juice to it and whisk well to create a quick slurry."
+  - "@type": HowToStep
+    text: "Heat a medium saucepan. Add blueberries, sugar and cook over medium heat for a couple of minutes, or until the berries start to release their juices and break down slightly."
+  - "@type": HowToStep
+    text: "Add the lemon juice-cornstarch slurry, vanilla extract and bring to a boil."
+  - "@type": HowToStep
+    text: "Reduce heat and cook on low heat for a minute , or until the blueberry mixture starts to thicken. Remove from heat and keep aside to cool off completely."
+- "@type": HowToSection
+  name: "Instructions for sago pudding:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Wash and soak the sabudana covered in 1 1/2 cups of water for about 40-50 minutes. Drain extra water, and cover with a film. Keep aside for about 30 minutes."
+  - "@type": HowToStep
+    text: "Heat a pan. Add milk to it, stir constantly until it comes to boil. Once milk has boiled, add sago and cook on medium heat for 3 minutes, or till sago turns translucent. Do not overcook."
+  - "@type": HowToStep
+    text: "Add sugar, and cardamom and let it cook for another 4-5 minutes. Remove from heat and keep aside."
+- "@type": HowToSection
+  name: "Instructions of serving:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take 4 serving glasses. Pour about 2 tbsp of blueberry sauce into each glass. Cover each glass with sago pudding. And top with with some blueberry sauce. Garnish with chopped pistachios."
+  - "@type": HowToStep
+    text: "Refrigerate for 5-6 hours or overnight. Serve chilled, and enjoy!"

@@ -1,0 +1,89 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Chana Dal Capsicum Curry [Vegetarian Recipe]"
+
+description: "Chana Dal Capsicum Curry is an Indian curry recipe; which is prepared with bengal gram, capsicum, along with spices. This is a perfect side dish for rice."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/07/recipe-chana-dal-capsicum-curry-anupama-paliwal-my-ginger-garlic-kitchen-6.jpg
+
+prepTime: PT10M
+
+cookTime: PT30M
+
+totalTime: PT40M
+
+recipeCategory: Side
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.9
+  ratingCount: 21
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 61 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "capsicum chana dal curry, capsicum chana dal recipe, chana dal with capsicum, capsicum chana dal curry, chana dal bell pepper curry, dal capsicum "
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-07-03
+
+url: https://www.mygingergarlickitchen.com/chana-dal-capsicum-curry-vegetarian-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for chana dal capsicum:"
+  - "capsicum, cubed – 1 large"
+  - "split bengal gram, washed (chana dal) – 1 cup"
+  - "tomato, chopped – 1"
+  - "onion, cubed – 1"
+  - "onion, ginger-garlic paste – 1/2 cup"
+  - "fresh chili chopped – 1"
+  - "cumin seeds – 1 tsp"
+  - "mustard seeds -1tsp"
+  - "turmeric powder – 1/4 tsp"
+  - "coriander powder – 2 tsp"
+  - "red chili powder – 1 tsp"
+  - "dried mango powder – 1/2 tsp"
+  - "salt as per taste"
+  - "olive oil – 2 tbsp"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for chana dal capsicum:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a pressure cooker. Add chana dal, with 3 cups of water, tomato, salt, and turmeric powder. Close the coverlid, and pressure cook for 6-7 whistles. Remove from heat, and let the pressure cooker cool down for a while till there is no pressure remaining."
+  - "@type": HowToStep
+    text: "Heat oil in a pan. Add cumin seeds, and mustard seeds to it. When the seeds start to splutter, add onion and ginger-garlic paste to it."
+  - "@type": HowToStep
+    text: "Let it cook for 3-4 minutes. Add fresh chili, cubed capsicum, and cubed onions. Mix well and let them cook for 4-5 minutes."
+  - "@type": HowToStep
+    text: "Now add red chili powder, coriander powder, and dried mango powder, along with 1/4 cup of water. Let the spices cook with vegetables for 3-4 minutes."
+  - "@type": HowToStep
+    text: "Now add pressure-cooked chana dal and mix well. Cook for 5 more minutes. Delicious Chana Dal Capsicum Curry is ready. Serve hot with steamed rice, papad, and pickle. Enjoy!"

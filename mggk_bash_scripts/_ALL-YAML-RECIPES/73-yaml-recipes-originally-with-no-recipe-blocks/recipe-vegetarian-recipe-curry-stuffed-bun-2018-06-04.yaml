@@ -1,0 +1,122 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Curry Stuffed Bun [Vegetarian-Recipe]"
+
+description: "Curry Stuffed Bun is a perfect dinner recipe. Curry stuffed bun is made with pizza dough, and stuffed with curry. Curry for stuffing is prepared with vegetables, spices and shredded cheese. These buns are very soft and heavenly, and the curry stuffing gives them a great angelic aroma and taste."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/06/recipe-curry-stuffed-bun-anupama-paliwal-my-ginger-garlic-kitchen-31.jpg
+
+prepTime: PT10M
+
+cookTime: PT40M
+
+totalTime: PT50M
+
+recipeCategory: Snack
+
+recipeCuisine: Indian
+
+recipeYield: 10
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 1
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 78 calories
+  servingSize: 1 Bun
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "curry stuffed buns, curry bun filling, curry bun filling recipe, curry filling for buns, vegetable curry buns, curry buns baked, indian curry buns, make curry buns"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-06-04
+
+url: https://www.mygingergarlickitchen.com/vegetarian-recipe-curry-stuffed-bun/
+
+recipeIngredient:
+  - "!!Ingredients for the stuffing:"
+  - "1 red onion, chopped"
+  - "2 tbsp garlic cloves, chopped"
+  - "4 button mushrooms, chopped"
+  - "1 tsp black pepper powder"
+  - "1/4 tsp garam masala powder (optional)"
+  - "1 small green bell pepper, grated"
+  - "1 small yellow bell pepper, grated"
+  - "2 carrots, grated"
+  - "1 cup mozzarella cheese, cubed"
+  - "1/2 cup green peas"
+  - "1/2 cup corn kernels"
+  - "4 tbsp tomato ketchup"
+  - "salt as per taste"
+  - "1 tsp oregano"
+  - "!!Ingredients for bun:"
+  - "1 packet active dry yeast"
+  - "1/2 cup warm water"
+  - "2 cups all-purpose flour (maida)"
+  - "1/2 tsp salt"
+  - "1 tbsp sugar"
+  - "2 tbsp olive oil"
+  - "1 tbsp oregano"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for for filling:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat oil in a pan, and add chopped onions to it. Saute onions for 2 minutes, and add chopped garlic cloves to it."
+  - "@type": HowToStep
+    text: "Cook for 2 more minutes, and add all the vegetables except mushrooms."
+  - "@type": HowToStep
+    text: "Cook for 5 minutes. Now add chopped mushrooms, salt, pepper powder, garam masala powder and mix well."
+  - "@type": HowToStep
+    text: "Cook for another 3 minutes, and add tomato ketchup to it. Mix well, and cook for 2 more minutes."
+  - "@type": HowToStep
+    text: "Add chopped mozzarella cheese, oregano and cook for 2 minutes. Mix well and remove from heat. You curry stuffing is ready. Keep it aside to cool down."
+- "@type": HowToSection
+  name: "Instructions for Bun:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a bowl, and add 1/2 cup warm water to it. Add, sugar, yeast, salt and mix gently. Keep aside for 10 minutes, or till yeast becomes frothy."
+  - "@type": HowToStep
+    text: "In a large mixing bowl, add all-purpose flour and oil. Mix well, and add yeast mixture to it. Knead mixture to make a smooth dough."
+  - "@type": HowToStep
+    text: "Apply a few drops of oil on dough surface, and cover the dough bowl with a plastic wrap. Keep this mixing bowl in a warm place for 2 to 4 hours."
+  - "@type": HowToStep
+    text: "At this stage bun dough would have doubled in size."
+  - "@type": HowToStep
+    text: "Preheat the oven to 375 degrees F/200 degrees Celsius."
+  - "@type": HowToStep
+    text: "Knead dough again, and divide the dough into 10 balls of equal portions."
+  - "@type": HowToStep
+    text: "Roll each ball into a circle of about 4 to 5 inches in diameter. Apply a little oil on dough circle, and place 2 tbsp curry filling in the center."
+  - "@type": HowToStep
+    text: "Close the sides of circle together carefully, and shape into a ball again."
+  - "@type": HowToStep
+    text: "Repeat the same process with all the dough balls. Brush little oil on top of the ball and sprinkle oregano."
+  - "@type": HowToStep
+    text: "Sprinkle some flour on baking tray, and place all the stuffed dough balls. Bake dough balls for 15 to 20 minutes, or till they turn slightly brown in color."
+  - "@type": HowToStep
+    text: "Serve hot, and enjoy!" 

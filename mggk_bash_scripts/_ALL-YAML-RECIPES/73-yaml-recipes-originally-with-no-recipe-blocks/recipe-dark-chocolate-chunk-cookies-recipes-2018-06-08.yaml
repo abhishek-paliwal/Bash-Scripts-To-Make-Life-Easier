@@ -1,0 +1,85 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Dark Chocolate Chunk Cookies"
+
+description: "Dark Chocolate Chunk Cookies are made with butter, flour, cocoa powder, and small chocolate chunks. These wonderful Dark Chocolate Chunk Cookies are very soft and crunchy. These cookies are perfect for satisfying the cravings of chocolate lovers."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/06/recipe-dark-chocolate-chunk-cookies-anupama-paliwal-my-ginger-garlic-kitchen-1.jpg
+
+prepTime: PT10M
+
+cookTime: PT15M
+
+totalTime: PT25M
+
+recipeCategory: Breakfast
+
+recipeCuisine: World
+
+recipeYield: 12 cookies
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.6
+  ratingCount: 19
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 40 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "dark chocolate cookies recipe, dark chocolate cookies healthy, dark chocolate cookie crust, deep dark chocolate cookies, dark chocolate cookies easy"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-06-08
+
+url: https://www.mygingergarlickitchen.com/dark-chocolate-chunk-cookies-recipes/
+
+recipeIngredient:
+  - "!!Ingredients for Dark Chocolate Chunk Cookies:"
+  - "1 cup all-purpose flour"
+  - "3/4 cup cocoa powder"
+  - "1/2 tsp baking soda"
+  - "3/4 cup small chocolate chunks"
+  - "1/2 cup / 8tbsp butter"
+  - "1 1/2 cups sugar"
+  - "1 tsp vanilla extract"
+  - "2 eggs"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Dark Chocolate Chunk Cookies:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat oven to 350F/180C degrees. Take a large mixing bowl, add butter, cocoa powder, sugar, egg, vanilla extract and beat with electric mixer on medium speed until it becomes light and fluffy."
+  - "@type": HowToStep
+    text: "Now add flour, baking soda, small chocolate chunks and mix well to make a cookie dough."
+  - "@type": HowToStep
+    text: "Divide cookie dough into 15 small balls. Flatten the balls to make cookies."
+  - "@type": HowToStep
+    text: "Bake for 15 minutes, or until cookies are cooked and surfaces begin to crack."
+  - "@type": HowToStep
+    text: "Let the cookies cool for 5 minutes on wire cooling racks."
+  - "@type": HowToStep
+    text: "Dark Chocolate Chunk Cookies are ready. Store at room temperature for 3-4 days in an airtight container."

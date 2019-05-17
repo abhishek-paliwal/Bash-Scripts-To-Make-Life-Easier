@@ -1,0 +1,98 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Red Cabbage Stuffed Paratha"
+
+description: "Red Cabbage Stuffed Paratha is a delicious Indian flatbread stuffed with scrumptious cabbage stuffing with onions, and a mix of spices. Red Cabbage Paratha is a uniquely flavorful flatbread and comes with goodness of shredded red cabbage."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/08/recipe-red-cabbage-paratha-anupama-paliwal-my-ginger-garlic-kitchen-42.jpg
+
+prepTime: PT10M
+
+cookTime: PT20M
+
+totalTime: PT30M
+
+recipeCategory: Breakfast
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.9
+  ratingCount: 26
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 301 calories
+  servingSize: 1 Paratha
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "Red Cabbage Stuffed Paratha, cabbage stuffed paratha recipe, recipe of cabbage stuffed paratha, how to make cabbage stuffed paratha,stuffed paratha with cabbage,purple cabbage stuffed paratha, patta gobhi ka paratha, how to make patta gobi ka paratha "
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-08-28
+
+url: https://www.mygingergarlickitchen.com/red-cabbage-stuffed-paratha-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for dough:"
+  - "wheat flour – 2 cups"
+  - "pinch of salt"
+  - "water"
+  - "oil for roasting paratha"
+  - "!!Ingredients for stuffing:"
+  - "red cabbage, shredded – 1 cup"
+  - "onion, finely chopped – 1"
+  - "coriander leaves"
+  - "garam masala powder – ½ tsp"
+  - "red chili powder – 1/2 tsp"
+  - "turmeric powder – ¼ tsp"
+  - "ginger-garlic, crushed – 1 tbsp"
+  - "green chili, chopped – 1"
+  - "salt as per taste"
+  - "cumin seeds – 1/2 tsp"
+  - "pinch of asafetida"
+  - "olive oil – 2 tbsp"
+  - "gram flour – 2 tbsp"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for the dough:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a mixing bowl. Add flour, and salt, along with enough water."
+  - "@type": HowToStep
+    text: "And knead to make a semi-soft dough. Cover with cling film and keep aside."
+- "@type": HowToSection
+  name: "Instructions for the stuffing:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat oil in a pan. Add cumin seeds, and asafetida. When seeds start to crackle, add chopped onions to it. Saute for 3-4 minutes. Now add chopped green chilies, and crushed ginger-garlic to it."
+  - "@type": HowToStep
+    text: "Mix well and saute for 2 minutes. Now add chopped red cabbage, salt, red chili powder, and turmeric powder."
+  - "@type": HowToStep
+    text: "Mix well and cook for about 3-4 minutes. Add gram flour, dried mango powder, and garam masala powder to it."
+  - "@type": HowToStep
+    text: "Mix well and cook for 6-7 minutes. Remove the stuffing from the pan and set aside to cool." 

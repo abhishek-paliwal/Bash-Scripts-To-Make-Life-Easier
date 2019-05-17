@@ -1,0 +1,80 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Caramelized Banana Mango with Coconut"
+
+description: "Caramelized Banana Mango with Coconut is a Thai-style dessert. It gives a nice coconutty flavor with refreshingly creamy fruits. This is an ultimate sweet dish for instant coconut cravings. Well served with vanilla or coconut ice cream."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/07/recipe-caramelized-banana-mango-with-coconut-anupama-paliwal-my-ginger-garlic-kitchen-3.jpg
+
+prepTime: PT10M
+
+cookTime: PT20M
+
+totalTime: PT30M
+
+recipeCategory: Dessert
+
+recipeCuisine: International
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 26
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 398 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "caramelized banana mango with coconut, caramelized banana recipe, caramelized banana dessert, caramelized banana breakfast, caramelized banana dessert recipe, caramelized banana easy, quick caramelized banana, caramelized banana slices"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-07-14
+
+url: https://www.mygingergarlickitchen.com/caramelized-banana-mango-coconut-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for Caramelized Banana Mango with Coconut:"
+  - "brown sugar – 5 tbsp"
+  - "bananas, peeled, and halved lengthwise – 2"
+  - "mango slices – 4"
+  - "pinch of salt"
+  - "coconut milk – 400 ml"
+  - "coconut shavings for serving- 1 tbsp"
+  - "ice cream coconut/vanilla – 4 dollops"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Caramelized Banana Mango with Coconut:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat a pan. Sprinkle 1 tsp sugar on it. When sugar is melted, add banana slices, and caramelize from both sides. Remove from pan, and keep aside."
+  - "@type": HowToStep
+    text: "Spread 1 tsp sugar more to the same pan. Caramelize mango slices from both sides. Remove from pan, and keep aside."
+  - "@type": HowToStep
+    text: "Heat another pan, add coconut milk with pinch of salt and sugar. Let it boil until it forms a syrup. Remove from heat, and let them cool."
+  - "@type": HowToStep
+    text: "Divide coconut syrup in 4 serving dishes. Top with caramelized bananas and mangoes. Add a dollop of ice cream to each plate, and garnish with coconut shavings. Enjoy!" 

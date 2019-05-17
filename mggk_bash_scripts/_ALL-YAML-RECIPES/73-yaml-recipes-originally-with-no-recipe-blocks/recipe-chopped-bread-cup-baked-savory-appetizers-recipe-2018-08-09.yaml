@@ -1,0 +1,82 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Baked Chopped Bread Cup – Savory Appetizers"
+
+description: "Baked Chopped Bread Cup - Savory Appetizers are quick snacks made with brown bread, egg, vegetables and cheese. I am sure you will love these sweet smoky flavored, fresh cheesy veggie muffin like appetizers as much as we do."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/08/recipe-chopped-bread-cup-baked-appetizers-anupama-paliwal-my-ginger-garlic-kitchen-6.jpg
+
+prepTime: PT5M
+
+cookTime: PT25M
+
+totalTime: PT30M
+
+recipeCategory: Snack
+
+recipeCuisine: International
+
+recipeYield: 3
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.2
+  ratingCount: 17
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 79 calories
+  servingSize: 1 cup
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "chopped bread cups, chopped bread cups, bread egg cups, snacks, bread omlet appetizers"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-08-09
+
+url: https://www.mygingergarlickitchen.com/chopped-bread-cup-baked-savory-appetizers-recipe/
+
+recipeIngredient:
+  - "!!Ingredients Baked Chopped Bread Cup:"
+  - "brown bread, chopped – 1 cup"
+  - "egg – 1"
+  - "black pepper powder – 1 tsp"
+  - "margarine or butter – 1 tbsp"
+  - "shredded mozzarella cheese – ½ cup"
+  - "salt as per taste"
+  - "finely chopped vegetables – ½ cup (cherry tomato, bell pepper, carrot, onion)"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions Baked Chopped Bread Cup:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat oven to 400°F/200°C."
+  - "@type": HowToStep
+    text: "Combine chopped bread, egg, pepper powder, and salt in a large bowl."
+  - "@type": HowToStep
+    text: "Whisk well, and add butter to it. Mix well till butter melts."
+  - "@type": HowToStep
+    text: "Add all the vegetables and mozzarella cheese to it, and mix well. Insert muffin liners into the muffin baking tray."
+  - "@type": HowToStep
+    text: "Evenly distribute the batter into muffin pan. Spread some cheese on top. Bake for 20 minutes, or until golden brown. Allow them to cool before eating. Remove from pan, and enjoy with your favorite beverages."

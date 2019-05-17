@@ -1,0 +1,85 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Seasoned Potato Stuffed Cheese Toast"
+
+description: "Potato Stuffed Cheese Toast is a dish which has a crispy outer skin, chunky textured filling, perfectly contrasted with the seasoning, and which completes with the melted cheese. You will feel so many flavors and textures in every single bite of it."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/05/recipe-potato-stuffed-cheese-toast-anupama-paliwal-11.jpg
+
+prepTime: PT5M
+
+cookTime: PT25M
+
+totalTime: PT30M
+
+recipeCategory: Breakfast
+
+recipeCuisine: Indian
+
+recipeYield: 2
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 1
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 150 calories
+  servingSize: 1 Toast
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "potato cheese toast sandwich, potato cheese toastie, potato cheese toast recipe, potato and cheese toast sandwich, recipe of cheese potato toast"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-05-21
+
+url: https://www.mygingergarlickitchen.com/seasoned-potato-stuffed-cheese-toast/
+
+recipeIngredient:
+  - "!!Ingredients for Seasoned Potato Stuffed Cheese Toast:"
+  - "4 slices of white bread"
+  - "2 potatoes, boiled, peeled and mashed"
+  - "4 cheese slices"
+  - "1 tomato, chopped"
+  - "1 onion, finely chopped"
+  - "1 tsp black pepper powder"
+  - "2 tsp fennel seeds"
+  - "1/2 tsp chaat masala"
+  - "a pinch of red chili powder (optional)"
+  - "salt as per taste"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Seasoned Potato Stuffed Cheese Toast:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Mash potatoes (if not mashed already), and add chopped onion, chopped tomato, fennel seeds, red chili powder, chaat masala, and salt."
+  - "@type": HowToStep
+    text: "Mix well. Your Potato mixture is ready. Now, apply the potato mixture over the breads."
+  - "@type": HowToStep
+    text: "Apply cheese slices on the bread slices. Sprinkle pepper powder on top. Do the same with all other slices."
+  - "@type": HowToStep
+    text: "Place slices on baking tray. Turn the oven settings to broil, and grill at maximum setting, for 3-4 minutes or until cheese is melted and lightly browned."
+  - "@type": HowToStep
+    text: "Serve piping hot with any ketchup." 

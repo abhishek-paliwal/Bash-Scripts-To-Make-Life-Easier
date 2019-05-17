@@ -1,0 +1,91 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Peas Corn Coconut Masala"
+
+description: "Peas Corn Coconut Masala sounds so natural as a name. Believe me, curry is strikingly natural too. This is a quick curry, which is easy to make, healthy and packed with all the spicy flavour one can ask for."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/10/recipe-oeas-corn-coconut-masala-anupama-paliwal-my-ginger-garlic-kitchen-4.jpg
+
+prepTime: PT10M
+
+cookTime: PT30M
+
+totalTime: PT40M
+
+recipeCategory: Side
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 35
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 149 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "peas corn coconut curry, green peas and corn curry, sweet corn peas curry, peas and corn curry, coconut curry and peas, green peas coconut milk curry, coconut curry green peas"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-10-07
+
+url: https://www.mygingergarlickitchen.com/peas-corn-coconut-masala-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for Peas Corn Coconut Masala:"
+  - "onion ginger-garlic paste -¼ cup"
+  - "corn kernels – ½ cup"
+  - "green peas – ½ cup"
+  - "tomatoes chopped – 1"
+  - "cumin seeds – 1 tsp"
+  - "pinch of asafetida"
+  - "green chili, chopped – 1"
+  - "desiccated coconut – ¼ cup"
+  - "natural yogurt – ½ cup"
+  - "turmeric powder -1/4 tsp"
+  - "coriander powder – 1 tsp"
+  - "oil – 2 tbsp"
+  - "red chili powder -1 tsp"
+  - "garam masala powder -1/4 tsp"
+  - "dried fenugreek leaves"
+  - "salt as per taste"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instrucions for Peas Corn Coconut Masala:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat oil in a pan. Add asafetida, and cumin seeds. When they start to splutter, add onion ginger-garlic paste. Sauté for 5 about minutes, or until the paste is light brown in color."
+  - "@type": HowToStep
+    text: "Add fresh corn kernels, and green peas along with salt. Mix well, and sauté for 2-3 minutes."
+  - "@type": HowToStep
+    text: "Now add chopped tomatoes, chopped green chilies, red chili powder, turmeric powder, coriander powder, and saute until tomatoes are soft."
+  - "@type": HowToStep
+    text: "Now add desiccated coconut, yogurt, dried fenugreek leaves, and garam masala powder. Stir continuously for about 5 minutes, or until you see curry is thick again."
+  - "@type": HowToStep
+    text: "Garnish with coriander leaves, and serve hot with steamed rice or any of your favorite breads." 

@@ -1,0 +1,104 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Beet Potato Peas Patties"
+
+description: "Beet Potato Peas Patties are delicious, healthy and colorful snacks which are prepared with beetroot, boiled potatoes, green peas, a blend of some spices, and herbs, emerging into an irresistible light meal."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/09/recipe-beet-potato-peas-patties-anupama-paliwal-my-ginger-garlic-kitchen-3.jpg
+
+prepTime: PT10M
+
+cookTime: PT25M
+
+totalTime: PT35M
+
+recipeCategory: Snack
+
+recipeCuisine: Indian
+
+recipeYield: 16 cutlets
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.5
+  ratingCount: 37
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 56 calories
+  servingSize: 1 Cutlet
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "beetroot potato patties, beet and potato patties, beet and potato cutlet, beetroot potato cutlet recipe indian, beetroot potato cutlet recipe, beetroot potato tikki"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-09-21
+
+url: https://www.mygingergarlickitchen.com/beet-potato-peas-patties-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for Beet Potato Peas Patties:"
+  - "beetroots, grated -2 cups"
+  - "boiled potatoes – 4"
+  - "onion, chopped -1"
+  - "garlic, crushed – 1 tbsp"
+  - "ginger, finely chopped -1 tbsp"
+  - "peas – 1 cup"
+  - "pinch of asafetida"
+  - "black pepper powder -1 tsp"
+  - "garam masala powder -½ tsp"
+  - "green chilies, finely chopped -2"
+  - "bread crumbs – ¼ cup"
+  - "salt as per taste"
+  - "oil for roasting"
+  - "!!Ingredients for serving:"
+  - "red onion, chopped for serving – 1"
+  - "cucumber, sliced for serving – 1"
+  - "roasted tortillas or breads for serving"
+  - "lemon slices"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Beet Potato Peas Patties:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a large mixing bowl. Add all the ingredients except oil to it. Mix well, and shape into small rounds balls, and flatten them to make patties."
+  - "@type": HowToStep
+    text: "Keep these patties in the refrigerator for about 20 minutes."
+  - "@type": HowToStep
+    text: "Preheat oven at 200°F/400°C."
+  - "@type": HowToStep
+    text: "In a flat pan, heat 2 tbs oil and fry the patties in medium heat for about 4 minutes on each side."
+  - "@type": HowToStep
+    text: "Transfer patties onto a baking sheet and bake for about 15 minutes. Remove from oven."
+- "@type": HowToSection
+  name: "Instructions for serving:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Spread hot roasted tortilla on a flat surface. Add some of your favorite dressings."
+  - "@type": HowToStep
+    text: "Add cucumber slices, herbs, and chopped red onion. Top with the sizzling beet potato peas patties."
+  - "@type": HowToStep
+    text: "Squeeze over some lemon juice. Roll up and patties ready to eat."
+  - "@type": HowToStep
+    text: "You can use these patties as sandwich filling, or simply have them with your favorite dip. Enjoy!" 

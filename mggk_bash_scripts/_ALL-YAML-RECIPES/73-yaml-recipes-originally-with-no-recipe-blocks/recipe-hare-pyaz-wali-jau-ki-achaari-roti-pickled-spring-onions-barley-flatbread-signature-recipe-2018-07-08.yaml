@@ -1,0 +1,84 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Hare Pyaz Wali Jau Ki Achaari Roti – Pickled Spring Onions Barley Flatbread [Signature Recipe]"
+
+description: "Hare pyaz wali jau ki achaari roti is an Indian flatbread. This is a quick, nutritious, and fibrous dish; which is prepared with whole-wheat flour, barley flour, spring onions, pickle, and some spices."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/07/recipe-hare-pyaz-wali-jau-ki-achari-roti-anupama-paliwal-my-ginger-garlic-kitchen-5-copy.jpg
+
+prepTime: PT10M
+
+cookTime: PT20M
+
+totalTime: PT30M
+
+recipeCategory: Side
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.9
+  ratingCount: 37
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 108 calories
+  servingSize: 1 Roti
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "jau ki roti, jau ki achaari roti, jau pyaaz ki roti, jau ki roti for weight loss, jau ke aate ki roti, how to make jau ki roti, recipe of jau ki roti, recipe of jau ki roti, barley roti for weight loss, barley ki roti"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-07-08
+
+url: https://www.mygingergarlickitchen.com/hare-pyaz-wali-jau-ki-achaari-roti-pickled-spring-onions-barley-flatbread-signature-recipe/
+
+recipeIngredient:
+  - "!!Ingredients:"
+  - "whole wheat flour – 1 cup"
+  - "barley flour – 1 cup"
+  - "spring onions, finely chopped – 1 cup"
+  - "green chilies, finely chopped – 1"
+  - "cumin seeds – 1 tsp"
+  - "grated pickle – 2 tbsp"
+  - "red chili powder – 1 tsp"
+  - "salt to taste"
+  - "oil for cooking"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a mixing bowl. Add all the ingredients and knead to make soft dough by adding water."
+  - "@type": HowToStep
+    text: "Divide the dough into 8 equal portions. Roll out to a circle of about 3″ diameter."
+  - "@type": HowToStep
+    text: "Heat a pan, and cook till both sides are slightly brown. Add a little oil to both sides and cook for few more seconds."
+  - "@type": HowToStep
+    text: "Repeat the same process with remaining dough balls."
+  - "@type": HowToStep
+    text: "Serve hot with any pickle or raita of your choice." 

@@ -1,0 +1,77 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Sweet Melon Balls With Chilled Rose Milk [Signature-Recipe]"
+
+description: "Sweet Melon Balls With Chilled Rose Milk is a beverage recipe. Which is made with melon, milk, rose water, and sugar. This is a perfect chilled summer drink."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/07/recipe-sweet-melon-balls-with-chilled-rose-milk-anupama-paliwal-my-ginger-garlic-kitchen-2.jpg
+
+prepTime: PT5M
+
+cookTime: PT5M
+
+totalTime: PT10M
+
+recipeCategory: Drinks
+
+recipeCuisine: International
+
+recipeYield: 6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.7
+  ratingCount: 21
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 76 calories
+  servingSize: 1 Pancake
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "sweet melon balls with chilled milk, Summer melon dessert, Honeydew Melon with Milk, rose milk drink, vegetarian recipe "
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-07-19
+
+url: https://www.mygingergarlickitchen.com/sweet-melon-balls-with-chilled-rose-milk-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for Sweet Melon Balls With Chilled Rose Milk:"
+  - "musk melon – 1"
+  - "sugar according to taste"
+  - "3 cups cold water"
+  - "chilled milk – 6 cups"
+  - "cardamom powder – 1 tsp"
+  - "Ice cubes"
+  - "rose water – 1 tsp"
+  - "melon baller"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Sweet Melon Balls With Chilled Rose Milk:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Cut melon in half crosswise. Scoop out the desired amount of melon by using a melon baller."
+  - "@type": HowToStep
+    text: "Take a pitcher. Add sugar, milk, rose water, cardamom powder and stir until the sugar dissolves fully. Take 4 glasses, pour sugary milk into serving glasses. Add ice cubes, and melon balls to the glasses. Enjoy on a hot summery day!" 

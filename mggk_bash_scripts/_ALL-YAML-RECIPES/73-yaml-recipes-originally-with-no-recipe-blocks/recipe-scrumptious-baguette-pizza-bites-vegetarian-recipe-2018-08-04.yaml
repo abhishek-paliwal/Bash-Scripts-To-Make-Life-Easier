@@ -1,0 +1,82 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Scrumptious Baguette Pizza Bites [Vegetarian-Recipe]"
+
+description: "Scrumptious Baguette Pizza Bites are easy to prepare pizza bites which everyone will love. Its a classic makeover to the regular pizza, which is simply delicious, and makes a quick handy snack."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/08/recipe-baguette-pizza-bites-anupama-paliwal-my-ginger-garlic-kitchen-1.jpg
+
+prepTime: PT5M
+
+cookTime: PT10M
+
+totalTime: PT15M
+
+recipeCategory: Appetizer
+
+recipeCuisine: International
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.4
+  ratingCount: 26
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 224 calories
+  servingSize: 1 Bite
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "Baguette Pizza Bites, baguette pizza recipes, baguette pizza bread,baguette pizza recipe, vegetarian pizza baguette, vegetarian pizza bites"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-08-04
+
+url: https://www.mygingergarlickitchen.com/scrumptious-baguette-pizza-bites-vegetarian-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for pizza bites:"
+  - "french bread baguette, cut into 2 inch pieces – 2"
+  - "mozzarella shreds – 2 cups"
+  - "chopped vegetables for topping"
+  - "!!Ingredients for sauce:"
+  - "garlic, grated – 2 tbsp"
+  - "dry oregano – 1 tsp"
+  - "marjoram – 1 tsp"
+  - "dry basil – 1 tsp"
+  - "garlic powder – 1 tsp"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Scrumptious Baguette Pizza Bites:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat oven to 400ºF/ 20o°C. Line a baking tray with parchment paper."
+  - "@type": HowToStep
+    text: "Take a mixing bowl. Add all the sauce ingredients to it, and mix well. Keep it covered in refrigerator for 30 mins."
+  - "@type": HowToStep
+    text: "Place baguette bites on baking tray. Spread pizza sauce over each slice. Spread all toppings on top, and top with cheese shreds."
+  - "@type": HowToStep
+    text: "Bake for 7-8 minutes or until cheese gets melted and bread becomes crispy. Enjoy with your favourite drink." 

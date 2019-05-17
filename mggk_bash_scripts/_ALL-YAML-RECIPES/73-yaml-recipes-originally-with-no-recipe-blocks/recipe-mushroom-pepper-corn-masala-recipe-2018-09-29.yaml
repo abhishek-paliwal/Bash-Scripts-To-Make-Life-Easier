@@ -1,0 +1,96 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Mushroom Pepper Corn Masala"
+
+description: "Mushroom Pepper Corn Masala is a spicy curry. I like spicy food, because I belong to the Indian State of Rajasthan, which is well known for its royal cuisine, which constitutes really hot and spicy food."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/09/recipe-mushroom-pepper-corn-masala-anupama-paliwal-my-ginger-garlic-kitchen-3.jpg
+
+prepTime: PT10M
+
+cookTime: PT20M
+
+totalTime: PT30M
+
+recipeCategory: Side
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.6
+  ratingCount: 38
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 75 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "mushroom pepper corn masala, mushroom pepper corn masala, mushroom bell pepper curry, mushroom pepper fry curry leaves, how to make mushroom pepper curry, mushroom corn curry indian, mushroom baby corn capsicum curry, mushroom and corn curry recipe"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-09-29
+
+url: https://www.mygingergarlickitchen.com/mushroom-pepper-corn-masala-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for Mushroom Pepper Corn Masala:"
+  - "mushroom diced – 3/4 cup"
+  - "corn – ½ cup"
+  - "green bell pepper, diced – 1"
+  - "onion paste – ½ cup"
+  - "tomato, chopped – 1"
+  - "ginger-garlic, crushed – 1 tbsp"
+  - "cinnamon stick – 1"
+  - "cumin seeds – 1 tsp"
+  - "pepper powder – 2 tsp"
+  - "salt as per taste"
+  - "turmeric powder – 1/4 tsp"
+  - "curry powder – 1 tsp"
+  - "cumin powder – 1/2 tsp"
+  - "olive oil – 2 tbsp"
+  - "sugar – ½ tsp (optional)"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Mushroom Pepper Corn Masala:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat oil in pan. Add cinnamon stick, and cumin seeds. When seeds start to splutter, add onion paste along with crushed ginger-garlic."
+  - "@type": HowToStep
+    text: "Saute for 4-5 minutes. Add chopped tomatoes, pepper powder, turmeric powder, curry powder, salt, and cumin powder."
+  - "@type": HowToStep
+    text: "Mix well and let them cook for 5-6 minutes, or until tomatoes are soft and mushy."
+  - "@type": HowToStep
+    text: "Now add diced mushroom, diced bell pepper, corn kernels, and sugar."
+  - "@type": HowToStep
+    text: "Mix well and let the vegetables cook for few minutes on medium heat. sprinkle some water if needed."
+  - "@type": HowToStep
+    text: "Don’t overcook the veggies, as we still want that crunchy texture of bell pepper."
+  - "@type": HowToStep
+    text: "Remove from heat, and garnish with coriander leaves. Mushroom Pepper Corn Masala is ready."
+  - "@type": HowToStep
+    text: "Serve Hot with any of your favourite breads or rice."

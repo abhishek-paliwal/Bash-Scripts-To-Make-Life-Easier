@@ -1,0 +1,88 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Sizzling Mushroom Tikki – Mushroom Cutlet"
+
+description: "Sizzling Mushroom Tikki is a cutlet recipe. Which is prepared with mushroom, onion, potatoes, and some spices. This is a perfect vegetarian snack recipes."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/07/recipe-sizzling-mushroom-tikki-anupama-paliwal-my-ginger-garlic-kitchen-1.jpg
+
+prepTime: PT5M
+
+cookTime: PT20M
+
+totalTime: PT25M
+
+recipeCategory: Snack
+
+recipeCuisine: Indian
+
+recipeYield: 5
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.7
+  ratingCount: 25
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 67 calories
+  servingSize: 1 Tikki
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "mushroom tikki recipe, mushroom aloo tikki, mushroom cutlets, potato and mushroom cutlets, healthy mushroom cutlet, homemade mushroom cutlet, mushroom cutlet indian recipe, recipe of mushroom cutlet, mushroom cutlet vegetarian"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-07-20
+
+url: https://www.mygingergarlickitchen.com/sizzling-mushroom-tikki-recipe/
+
+recipeIngredient:
+  - "!!Ingredients Mushroom Tikki:"
+  - "button mushrooms, finely chopped – 2 cups"
+  - "oil – 2 tbsp"
+  - "onions, chopped – 3 medium"
+  - "potatoes boiled, peeled and mashed – 4 large"
+  - "green chillies chopped – 2"
+  - "fresh coriander leaves chopped – 2 tablespoons"
+  - "salt to taste"
+  - "semolina (rawa) – 1 cup"
+  - "red chili powder – 1tsp"
+  - "cumin powder – 1 tsp"
+  - "garam masala – ⅓ tsp"
+  - "gram flour (besan) – 4 tbsp"
+  - "raisins – 2 tsbp"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Mushroom Tikki:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat oil in a pan. Add onions and sauté for 2 minutes. Add chopped mushrooms and sauté for 4 minutes or till all the moisture gets evaporated. Add green chilies, cumin powder, red chili powder, salt, and garam masala powder. Mix well and cook for 2 minutes."
+  - "@type": HowToStep
+    text: "Add gram flour, and mix well. Cook for 2 minutes. Remove from heat."
+  - "@type": HowToStep
+    text: "Add potatoes, and raisins. Mix well and shape into 8-10 lemon sized balls."
+  - "@type": HowToStep
+    text: "Roll mixture balls in semolina, and press slightly."
+  - "@type": HowToStep
+    text: "Heat oil in a pan. Shallow fry the flattened balls from both sides till they turn golden brown in color. Serve hot with your favourite chutney or ketchup. Enjoy!"

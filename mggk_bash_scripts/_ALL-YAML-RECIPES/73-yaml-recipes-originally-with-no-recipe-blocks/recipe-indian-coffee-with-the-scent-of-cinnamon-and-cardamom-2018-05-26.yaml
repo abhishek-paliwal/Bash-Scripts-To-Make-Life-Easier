@@ -1,0 +1,83 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Indian Coffee With The Scent Of Cinnamon And Cardamom"
+
+description: "Cinnamon Cardamom Coffee is made by adding cinnamon and cardamom to the regular coffee, which makes it unforgettably unique with a spicy-sweet flavor. When you want to have something unique, hot and flavory drink, cinnamon cardamom coffee is for you."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/05/recipe-cinnamon-cardamom-coffee-anupama-paliwal-my-ginger-garlic-kitchen-3-copy.jpg
+
+prepTime: PT5M
+
+cookTime: PT15M
+
+totalTime: PT20M
+
+recipeCategory: Drinks
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.4
+  ratingCount: 19
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 120 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "cinnamon coffee recipe, cinnamon cardamom coffee, indian cardamom coffee, instant coffee with cardamom, cinnamon coffee at home, recipe for a cinnamon coffee, how to make a cinnamon coffee, cinnamon coffee drink"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-05-26
+
+url: https://www.mygingergarlickitchen.com/indian-coffee-with-the-scent-of-cinnamon-and-cardamom/
+
+recipeIngredient:
+  - "!!Ingredients:"
+  - "1 cup water"
+  - "3 cups semi skimmed milk (I am using 1.5% fat milk)"
+  - "1 cinnamon stick"
+  - "2 tsp cardamom powder"
+  - "sugar as per taste"
+  - "2 tbsp instant coffee powder"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for making Indian Coffee With The Scent Of Cinnamon And Cardamom:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat a coffee pan, add water and cinnamon stick to it. When water comes to boil, add milk, sugar, cardamom powder and mix well."
+  - "@type": HowToStep
+    text: "Let it cook on medium low heat for about 5 minutes."
+  - "@type": HowToStep
+    text: "Meanwhile, add coffee powder to a mug along with few drops of water, and mix well till it becomes frothy."
+  - "@type": HowToStep
+    text: "Add this coffee paste to boiling milk, and mix well. Let this cook for 5 more minutes on medium low heat."
+  - "@type": HowToStep
+    text: "At this stage you would smell the beautiful aroma of cinnamon cardamom coffee."
+  - "@type": HowToStep
+    text: "Strain the coffee into desired mugs. And serve hot with your favorite snacks, and enjoy!"

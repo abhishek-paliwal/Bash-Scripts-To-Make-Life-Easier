@@ -1,0 +1,87 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Spiced Aloo Raita – Potato Raita (Yogurt Salad)"
+
+description: "Potato Raita is a yogurt based tangy spiced condiment. It is quite easy to make and at the same time, very nutritious. Aloo Raita or Potato Raita is prepared with boiled potato added to seasoned yogurt. Goes well with Rice, paratha or pulav."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/05/recipe-potato-raita-anupama-paliwal-my-ginger-garlic-kitchen-3-copy.jpg
+
+prepTime: PT5M
+
+cookTime: PT5M
+
+totalTime: PT10M
+
+recipeCategory: Side
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.9
+  ratingCount: 35
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 89 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "potato raita recipe in english, potato raita punjabi style, boiled potato raita recipe, potato raita recipe in english, potato ka raita, aloo ka raita recipe, aloo ka raita recipe in english, recipe for aloo ka raita"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-05-31
+
+url: https://www.mygingergarlickitchen.com/spiced-aloo-raita-potato-raita-yogurt-salad-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for Potato Raita:"
+  - "1 cup natural yogurt"
+  - "1 potato boiled and cubed"
+  - "1 red onion, cubed"
+  - "1 green chili, finely chopped"
+  - "2 tsp cilantro, finely chopped"
+  - "salt to taste."
+  - "!!Ingredients for tempering:"
+  - "1 tsp oil"
+  - "1 tsp mustard seeds"
+  - "a pinch of asafetida"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Potato Raita:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "In a mixing bowl, add potato, onion, green chili, coriander leaves, salt, yogurt and mix well."
+  - "@type": HowToStep
+    text: "Mix potatoes with yogurt, and add chopped onion and cilantro"
+  - "@type": HowToStep
+    text: "Heat a pan for tempering, and add oil to it. When oil is hot, immediately remove from heat."
+  - "@type": HowToStep
+    text: "Add asafetida, and mustard seeds. Pour the tempering over yogurt mixture, and mix well."
+  - "@type": HowToStep
+    text: "Keep Potato Raita in refrigerator for 30 minutes. Potato Raita is ready."
+  - "@type": HowToStep
+    text: "Serve cold with any of your favourite paratha, or rice. Enjoy!" 

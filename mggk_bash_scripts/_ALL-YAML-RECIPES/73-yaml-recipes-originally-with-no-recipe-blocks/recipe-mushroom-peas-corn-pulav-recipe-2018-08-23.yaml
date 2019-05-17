@@ -1,0 +1,92 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Mushroom Peas Corn Pulav"
+
+description: "Mushroom Peas Corn Pulav is an Indian spiced rice dish; prepared with mushroom, corn kernels, peas, onion, and raisins. This is a wonderful lunch recipe."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/08/recipe-mushroom-peas-corn-pulav-anupama-paliwal-my-ginger-garlic-kitchen-4.jpg
+
+prepTime: PT5M
+
+cookTime: PT10M
+
+totalTime: PT15M
+
+recipeCategory: Side
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 29
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 194 calories
+  servingSize: 1 Serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "mushroom peas corn pulav, mushroom and peas pulao, mushroom green peas pulao, mushroom peas pulao recipe, sweet corn mushroom pulao, mushroom and corn pulao"
+
+video:
+  name: ""
+  description: ""
+  thumbnailUrl:
+    - ""
+    - ""
+  contentUrl: ""
+  embedUrl: ""
+  uploadDate: ""
+
+datePublished: 2018-08-23
+
+url: https://www.mygingergarlickitchen.com/mushroom-peas-corn-pulav-recipe/
+
+recipeIngredient:
+  - "!!Ingredients for Mushroom Peas Corn Pulao:"
+  - "mushrooms, sliced – 1 cup"
+  - "green peas, fresh – ½ cup"
+  - "corn kernels – ½ cup"
+  - "onion, sliced – 2"
+  - "basmati rice, cooked – 2 cups"
+  - "bay leaf – 1"
+  - "garam Masala powder – 1 tsp"
+  - "lemon juice – 1 tsp"
+  - "salt to taste"
+  - "olive oil – 1 tbsp"
+  - "raisins – ¼ cup"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions for Mushroom Peas Corn Pulao:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat oil in a pan. Add cumin seeds, and bay leaf to it."
+  - "@type": HowToStep
+    text: "When the seeds start to crackle, add onion slices to it."
+  - "@type": HowToStep
+    text: "Cook for 3-4 minutes. Now add sliced mushroom, corn kernels, peas, salt, and garam masala to it."
+  - "@type": HowToStep
+    text: "Mix well, and cook for 5-6 minutes. Add cooked rice, and raisins to the cooked vegetables."
+  - "@type": HowToStep
+    text: "Mix well and cook for 3-4 minutes. Remove from heat."
+  - "@type": HowToStep
+    text: "Add lemon juice to it, and mix well."
+  - "@type": HowToStep
+    text: "Mushroom Peas Corn Pulao is ready."
+  - "@type": HowToStep
+    text: "Serve hot with any curry & raita. Enjoy!" 
