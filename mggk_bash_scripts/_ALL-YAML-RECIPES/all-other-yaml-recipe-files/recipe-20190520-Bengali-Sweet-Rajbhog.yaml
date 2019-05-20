@@ -1,0 +1,150 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Bengali Sweet Rajbhog"
+
+description: "Rajbhog is a popular and traditional Bengali dessert aka Bengali Sweet, where crushed dry fruit stuffed paneer cheese (chena) balls are cooked in a saffron cardamom flavored sugar syrup. This recipe is almost identical to another famous Bengali sweet Rasgulla."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/05/raj-bhog-recipe-my-ginger-garlic-kitchen-5.jpg
+  - https://i.ytimg.com/vi/S587lRQ5lLs/maxresdefault.jpg
+
+prepTime: PT15M
+cookTime: PT30M
+totalTime: PT35M
+recipeCategory: Dessert
+recipeCuisine: Indian
+recipeYield: 12-14 Rajbhog
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: '5'
+  ratingCount: '1'
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 125 calories
+  servingSize: 1 rajbhog
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: http://www.MyGingerGarlicKitchen.com
+
+recipeNotes: "Rajbhog stays fresh for upto 1 week when kept covered in the refrigerator.<br>I have added arrowroot to give slight stiffness to Rajbhog, but if you don’t find arrowroot you can simply replace it with semolina or corn starch. Arrowroot and semolina work as a binding agent and it is easier to shape them into balls after stuffing."
+
+keywords: "bengali sweets, bengali sweet recipes with milk, bangla sweet recipes, bengali sweet recipe video, recipe of bengali sweet dish, 	rajbhog recipe, rajbhog dish, rajbhog dessert, rajbhog food india, 	rajbhog dish recipe, 	recipe for rajbhog, recipe for rajbhog rasgulla, rajbhog ki recipe, 	rajbhog mithai recipe"
+
+video:
+  "@type": videoObject
+  name: "Bengali Sweet Rajbhog"
+  description: "Rajbhog is a popular and traditional Bengali dessert aka Bengali Sweet, where crushed dry fruit stuffed paneer cheese (chena) balls are cooked in a saffron cardamom flavored sugar syrup. This recipe is almost identical to another famous Bengali sweet Rasgulla."
+  thumbnailUrl:
+    - https://i.ytimg.com/vi/S587lRQ5lLs/maxresdefault.jpg
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/05/raj-bhog-recipe-my-ginger-garlic-kitchen-5.jpg
+  contentUrl: https://youtu.be/S587lRQ5lLs
+  embedUrl: https://www.youtube.com/embed/S587lRQ5lLs
+  uploadDate: "2019-05-20"
+
+datePublished: "2019-05-20"
+
+url: "https://www.mygingergarlickitchen.com/rajbhog-recipe/"
+
+recipeIngredient:
+  - "!!For Chena/Paneer:"
+  - "for chena/fresh paneer (cottage cheese)"
+  - "1 liter full cream milk"
+  - "1-2 tbsp vinegar/lemon juice or ½ tsp citric/tartaric acid"
+  - "!!For Sugar Syrup:"
+  - "2 cups sugar"
+  - "6 cups water"
+  - "1/4 tsp saffron threads"
+  - "1/4 green cardamom powder"
+  - "!!For Stuffing:"
+  - "2-3 tbsp blanched and chopped or coarsely ponded mixed dry fruit (almond, cashew and pistachios)"
+  - "1/4 tsp crushed green cardamom seeds, optional"
+  - "saffron strands, optional"
+  - "!!Other Ingredients For Paneer Dough:"
+  - "1 tbsp arrowroot powder/1 tbsp fine semolina"
+  - "¼ tsp cardamom powder"
+  - "¼ tsp yellow food color"
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "How to make chena/paneer:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "For making chena, add 1 liter full cream milk to the pan, and let it come to a boil."
+  - "@type": HowToStep
+    text: "Once the milk starts boiling, turn the heat to low and start adding the acidic agent (lemon juice, vinegar, citric acid) little by little."
+  - "@type": HowToStep
+    text: "Keep stirring until the milk is curdled and the whey (light green water) is separated from the milk completely. Turn off the heat."
+  - "@type": HowToStep
+    text: "Now place a muslin cloth or a cotton cloth over a colander."
+  - "@type": HowToStep
+    text: "To drain, pour the coagulated milk over the cloth and rinse well with the ice cold water to discard the whey."
+  - "@type": HowToStep
+    text: "Gather up the cloth from all the sides, and squeeze it well to take out the excess water."
+  - "@type": HowToStep
+    text: "Hang it on a tap for about 30 minutes. Chena is now ready for use."
+- "@type": HowToSection
+  name: "How to make stuffing for Rajbhog:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add blanched and chopped/crushed dry fuits to a mixing bowl."
+  - "@type": HowToStep
+    text: "Add cardamom powder and saffron strands to it, and mix everything well."
+  - "@type": HowToStep
+    text: "Stuffing is ready."
+- "@type": HowToSection
+  name: "How to make paneer dough for Rajbhog:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take out chena in a big plate and start kneading it until smooth. This would take about 5 minutes."
+  - "@type": HowToStep
+    text: "The best way to knead the chenna dough is by rubbing it with the end of your palm."
+  - "@type": HowToStep
+    text: "Now, add arrowroot/semolina to chena along with food color, cardamom powder and mix well. The dough is ready when chenna holds a dough shape and it doesn’t fall apart when you break it. If you have reached this stage then chena dough for making rajbhog is ready. You can now shape it into rajbhog balls."
+- "@type": HowToSection
+  name: "How to make Chena Balls for Rajbhog:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Divide paneer/chena dough into 12-14 small equal pieces."
+  - "@type": HowToStep
+    text: "Take one chena portion and flatten it into a circle using your fingers."
+  - "@type": HowToStep
+    text: "Add 1 tsp of dry fruit stuffing to the center. Pull up the chena circle from all sides and seal the edges to hide the stuffing entirely."
+  - "@type": HowToStep
+    text: "Roll it again into a smooth crack-free ball. Place it on a plate and similarly assemble all chena balls for rajbhog."
+- "@type": HowToSection
+  name: "How to make sugar syrup:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add 2 cups sugar and 6 cups of water to a broad and deep pan."
+  - "@type": HowToStep
+    text: "Stir well and let the sugar melt completely."
+  - "@type": HowToStep
+    text: "Add saffron strands and cardamom powder to it."
+  - "@type": HowToStep
+    text: "Stir well again and let it boil on high heat for 7-8 minutes. The syrup is ready."
+- "@type": HowToSection
+  name: "How to cook Rajbhog:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Drop rajbhog paneer balls one by one into the boiling sugar syrup."
+  - "@type": HowToStep
+    text: "Cover and cook rajbhog for 15 minutes on high heat. Balls would turn double in size."
+  - "@type": HowToStep
+    text: "Turn the heat to medium and keep boiling for 3-5 minutes.(At this stage, you can add 3-4 tbsp of water, if the syrup is thickened too much)."
+  - "@type": HowToStep
+    text: "Turn off the heat and let them cool completely at room temperature."
+- "@type": HowToSection
+  name: "How to serve Rajbhog:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "After cooling, refrigerate rajbhog along with sugar syrup for 3-4 hours."
+  - "@type": HowToStep
+    text: "Rajbhog is ready. Serve it chilled as an after meal dessert."
