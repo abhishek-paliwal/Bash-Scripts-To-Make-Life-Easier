@@ -44,7 +44,7 @@ FILELIST_USED = OUTPUT_DIR+"/_TMP_513_THIS_FILELIST_IS_USED.CSV"
 ## INITIALIZE SOME FILES FOR SUCCESS AND ERROR REPORTING
 with open(SUCCESS_FILE, 'w') as csv_file:
     writer = csv.writer(csv_file)
-    writer.writerow(["COUNT", "MYFILE", "RECIPENAME", "DESCRIPTION", "AUTHOR", "PREPTIME", "COOKTIME", "TOTALTIME", "RECIPECATEGORY", "RECIPECUISINE", "DATETIME"])
+    writer.writerow(["COUNT", "MYFILE", "RECIPENAME", "DESCRIPTION", "AUTHOR", "PREPTIME", "COOKTIME", "TOTALTIME", "RECIPECATEGORY", "RECIPECUISINE", "RECIPEYIELD", "INGREDIENTS", "INSTRUCTIONS","INGREDIENTS_HEADINGS_RAW", "INSTRUCTIONS_HEADINGS_RAW", "INGREDIENTS_HEADINGS_ALL", "INSTRUCTIONS_HEADINGS_ALL", "DATETIME"])
 
 with open(ERROR_FILE, 'w') as csv_file:
     writer = csv.writer(csv_file)
@@ -64,13 +64,13 @@ def parse_my_soup():
    try: author=soup.find('span', attrs={'itemprop':'author'}).string ;
    except Exception as e: author="NO-AUTHOR-DEFINED" ;
 
-   try: preptime=soup.find('time', attrs={'itemprop':'prepTime'}).string ;
+   try: preptime=soup.find('time', attrs={'itemprop':'prepTime'})['datetime'] ;
    except Exception as e: preptime="NO-PREPTIME-DEFINED" ;
 
-   try: cooktime=soup.find('time', attrs={'itemprop':'cookTime'}).string ;
+   try: cooktime=soup.find('time', attrs={'itemprop':'cookTime'})['datetime'] ;
    except Exception as e: cooktime="NO-COOKTIME-DEFINED" ;
 
-   try: totaltime=soup.find('time', attrs={'itemprop':'totalTime'}).string ;
+   try: totaltime=soup.find('time', attrs={'itemprop':'totalTime'})['datetime'] ;
    except Exception as e: totaltime="NO-TOTALTIME-DEFINED" ;
 
    try: description=soup.find('div', attrs={'itemprop':'description'}).string ;
@@ -82,15 +82,51 @@ def parse_my_soup():
    try: recipeCuisine=soup.find('span', attrs={'itemprop':'recipeCuisine'}).string ;
    except Exception as e: recipeCuisine="NO-CUISINE-DEFINED" ;
 
-   try: ingredients=soup.find_all('li', attrs={'itemprop':'recipeIngredient'}) ;
-   except Exception as e: ingredients="NO-INGREDIENTS-DEFINED" ;
+   try: recipeYield=soup.find('span', attrs={'itemprop':'recipeYield'}).string ;
+   except Exception as e: recipeYield="NO-RECIPEYIELD-DEFINED" ;
 
-   try: instructions=soup.find_all('li', attrs={'itemprop':'recipeInstructions'}) ;
-   except Exception as e: instructions="NO-INSTRUCTIONS-DEFINED" ;
 
-   #try: ingredientsHeaders=soup.find_all('div', attrs={'class':'ERSIngredients'}) ;
-   #except Exception as e: instructions="NO-INGREDIENTS-HEADERS-DEFINED" ;
 
+   ######### INGREDIENTS BLOCK ################################################
+   try: ingredients_all=soup.find_all('li', attrs={'itemprop':'recipeIngredient'}) ;
+   except Exception as e: ingredients_all="NO-INGREDIENTS-DEFINED" ;
+
+   ingredients="" ## INITIALIZING EMPTY STRING
+   for i in ingredients_all:
+     ingredients=ingredients + "\n" +  str(i.string)
+     ingredients=ingredients.strip()     
+
+   #####
+   full_ingredients_htmlblock=soup.find(class_='ERSIngredients')
+   ingredients_all_headings=full_ingredients_htmlblock.find_all(class_='ERSSectionHead')
+
+   ingr_head_all=[] ## INITIALIZING EMPTY LIST
+   for ingr_heading in ingredients_all_headings:
+       ingr_head_all.append(ingr_heading.get_text())
+   ############################################################################
+
+   ######### INSTRUCTIONS BLOCK ###############################################
+   try: instructions_all=soup.find_all('li', attrs={'itemprop':'recipeInstructions'}) ;
+   except Exception as e: instructions_all="NO-INSTRUCTIONS-DEFINED" ;
+
+   instructions="" ## INITIALIZING EMPTY STRING
+   for i in instructions_all:
+     instructions=instructions + "\n" +  str(i.string)
+     instructions=instructions.strip()
+
+   full_instructions_htmlblock=soup.find(class_='ERSInstructions')
+   instructions_all_headings=full_instructions_htmlblock.find_all(class_='ERSSectionHead')
+
+   instr_head_all=[] ## INITIALIZING EMPTY LIST
+   for instr_heading in instructions_all_headings:
+     instr_head_all.append(instr_heading.get_text())
+   ############################################################################
+
+
+
+
+
+   ############################################################################
    print("\n\n===== PRINTING OUT VALUES ====\n")
    print(recipename)
    print(preptime)
@@ -100,17 +136,13 @@ def parse_my_soup():
    print(author)
    print(recipeCategory)
    print(recipeCuisine)
-   print(ingredients)
-   print("=====")
-   print(instructions)
+   print("=============================================")
 
    print("\n===== INGREDIENTS ====\n")
-   for ingr in ingredients:
-       print(ingr.string)
+   print(ingredients)
 
    print("\n===== INSTRUCTIONS ====\n")
-   for instr in instructions:
-       print(instr.string)
+   print(instructions)
 
    #############################
    full_recipe_block=soup.find('div', attrs={'class':'easyrecipe'}) ;
@@ -122,7 +154,7 @@ def parse_my_soup():
    #### CSV MAGIC = Opens a csv file with append, so old data will not be erased
    with open(SUCCESS_FILE, 'a') as csv_file:
        writer = csv.writer(csv_file)
-       writer.writerow([count, myfile, recipename, description, author, preptime, cooktime, totaltime, recipeCategory, recipeCuisine, datetime.now()])
+       writer.writerow([count, myfile, recipename, description, author, preptime, cooktime, totaltime, recipeCategory, recipeCuisine, recipeYield, ingredients, instructions, ingredients_all_headings, instructions_all_headings, ingr_head_all, instr_head_all, datetime.now()])
 
    return
 #### ********************************************************************* ####
