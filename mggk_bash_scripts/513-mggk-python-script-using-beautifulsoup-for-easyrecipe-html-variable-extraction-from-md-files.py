@@ -44,7 +44,7 @@ FILELIST_USED = OUTPUT_DIR+"/_TMP_513_THIS_FILELIST_IS_USED.CSV"
 ## INITIALIZE SOME FILES FOR SUCCESS AND ERROR REPORTING
 with open(SUCCESS_FILE, 'w') as csv_file:
     writer = csv.writer(csv_file)
-    writer.writerow(["COUNT", "MYFILE", "RECIPENAME", "DESCRIPTION", "AUTHOR", "PREPTIME", "COOKTIME", "TOTALTIME", "RECIPECATEGORY", "RECIPECUISINE", "RECIPEYIELD", "INGREDIENTS", "INSTRUCTIONS","INGREDIENTS_HEADINGS_RAW", "INSTRUCTIONS_HEADINGS_RAW", "INGREDIENTS_HEADINGS_ALL", "INSTRUCTIONS_HEADINGS_ALL", "DATETIME"])
+    writer.writerow(["COUNT", "MYFILE", "RECIPENAME", "DESCRIPTION", "AUTHOR", "PREPTIME", "COOKTIME", "TOTALTIME", "RECIPECATEGORY", "RECIPECUISINE", "RECIPEYIELD", "INGREDIENTS", "INSTRUCTIONS","INGREDIENTS_HEADINGS_RAW", "INSTRUCTIONS_HEADINGS_RAW", "INGREDIENTS_HEADINGS_ALL", "INSTRUCTIONS_HEADINGS_ALL", "MYING", "MYINS","DATETIME"])
 
 with open(ERROR_FILE, 'w') as csv_file:
     writer = csv.writer(csv_file)
@@ -94,7 +94,7 @@ def parse_my_soup():
    ingredients="" ## INITIALIZING EMPTY STRING
    for i in ingredients_all:
      ingredients=ingredients + "\n" +  str(i.string)
-     ingredients=ingredients.strip()     
+     ingredients=ingredients.strip()
 
    #####
    full_ingredients_htmlblock=soup.find(class_='ERSIngredients')
@@ -122,12 +122,57 @@ def parse_my_soup():
      instr_head_all.append(instr_heading.get_text())
    ############################################################################
 
+   ###############################################################################
+   ########## PRINTING OUT INSTRUCTIONS AND INGREDIENTS IN A NICER WAY TO BE
+   ########## LATER USED UP IN YAML RECIPE FILES
+   ###############################################################################
+   ing = soup.find('div',class_='ERSIngredients')
+   ins = soup.find('div',class_='ERSInstructions')
+   #print(ing)
+   #print(ins)
+   ################################################################################
+   ## WORKING WITH INGREDIENTS
+   MYING = ""
+   for x in ing:
+           if x.name == 'div' :
+               y = x.get_text()
+               if y != "":
+                   #print( "!!" + y )
+                   MYING = MYING + "!!" + y + "\n"
 
+           if x.name == 'ul':
+               y = x.find_all('li')
+               for i in y:
+                   #print(i.string)
+                   MYING = MYING + i.string + "\n"
 
+   print(MYING)
 
+   ################################################################################
+   print("================ +++ ===================")
+   ################################################################################
+   ## WORKING WITH INSTRUCTIONS
+   MYINS = ""
+   for x in ins:
+       if x.name == 'div' :
+           y = x.get_text()
+           if y != "":
+               #print( "!!" + y )
+               MYINS = MYINS + "!!" + y + "\n"
+
+       if x.name == 'ol' :
+           y = x.find_all('li')
+           for i in y:
+               #print(i.string)
+               MYINS = MYINS + i.string + "\n"
+
+   print(MYINS)
+
+   ################################################################################
+   ################################################################################
 
    ############################################################################
-   print("\n\n===== PRINTING OUT VALUES ====\n")
+   print("\n\n===== PRINTING OUT VARIABLE VALUES ON COMMAND LINE ====\n")
    print(recipename)
    print(preptime)
    print(cooktime)
@@ -154,7 +199,7 @@ def parse_my_soup():
    #### CSV MAGIC = Opens a csv file with append, so old data will not be erased
    with open(SUCCESS_FILE, 'a') as csv_file:
        writer = csv.writer(csv_file)
-       writer.writerow([count, myfile, recipename, description, author, preptime, cooktime, totaltime, recipeCategory, recipeCuisine, recipeYield, ingredients, instructions, ingredients_all_headings, instructions_all_headings, ingr_head_all, instr_head_all, datetime.now()])
+       writer.writerow([count, myfile, recipename, description, author, preptime, cooktime, totaltime, recipeCategory, recipeCuisine, recipeYield, ingredients, instructions, ingredients_all_headings, instructions_all_headings, ingr_head_all, instr_head_all, MYING, MYINS, datetime.now()])
 
    return
 #### ********************************************************************* ####
