@@ -37,14 +37,14 @@ from datetime import datetime
 MYHOME = os.environ['HOME']
 DIRPATH = MYHOME+"/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/blog/_DONE_2_easyrecipe"
 OUTPUT_DIR = MYHOME+"/Desktop/Y"
-SUCCESS_FILE = OUTPUT_DIR+"/_TMP_513_CHECK_THIS_FILE_FOR_SUCCESS.CSV"
+SUCCESS_FILE = OUTPUT_DIR+"/_TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS.CSV"
 ERROR_FILE = OUTPUT_DIR+"/_TMP_513_CHECK_THIS_FILE_FOR_ERRORS.CSV"
 FILELIST_USED = OUTPUT_DIR+"/_TMP_513_THIS_FILELIST_IS_USED.CSV"
 
 ## INITIALIZE SOME FILES FOR SUCCESS AND ERROR REPORTING
 with open(SUCCESS_FILE, 'w') as csv_file:
     writer = csv.writer(csv_file)
-    writer.writerow(["COUNT", "MYFILE", "RECIPENAME", "DESCRIPTION", "AUTHOR", "PREPTIME", "COOKTIME", "TOTALTIME", "RECIPECATEGORY", "RECIPECUISINE", "RECIPEYIELD", "INGREDIENTS", "INSTRUCTIONS","INGREDIENTS_HEADINGS_RAW", "INSTRUCTIONS_HEADINGS_RAW", "INGREDIENTS_HEADINGS_ALL", "INSTRUCTIONS_HEADINGS_ALL", "MYING", "MYINS","DATETIME"])
+    writer.writerow(["COUNT", "DATETIME_AT_PROGRAM_RUN", "RECIPE_FILENAME", "HTML_RECIPENAME", "HTML_RECIPEDESCRIPTION", "HTML_RECIPEAUTHOR", "PREPTIME", "COOKTIME", "TOTALTIME", "RECIPECATEGORY", "RECIPECUISINE", "RECIPEYIELD", "MY_INGREDIENTS_FINAL", "MY_INSTRUCTIONS_FINAL", "EXTRA_INGREDIENTS_RAW", "EXTRA_INSTRUCTIONS_RAW","EXTRA_INGREDIENTS_HEADINGS_RAW", "EXTRA_INSTRUCTIONS_HEADINGS_RAW", "EXTRA_INGREDIENTS_HEADINGS_ALL", "EXTRA_INSTRUCTIONS_HEADINGS_ALL"])
 
 with open(ERROR_FILE, 'w') as csv_file:
     writer = csv.writer(csv_file)
@@ -199,7 +199,7 @@ def parse_my_soup():
    #### CSV MAGIC = Opens a csv file with append, so old data will not be erased
    with open(SUCCESS_FILE, 'a') as csv_file:
        writer = csv.writer(csv_file)
-       writer.writerow([count, myfile, recipename, description, author, preptime, cooktime, totaltime, recipeCategory, recipeCuisine, recipeYield, ingredients, instructions, ingredients_all_headings, instructions_all_headings, ingr_head_all, instr_head_all, MYING, MYINS, datetime.now()])
+       writer.writerow([count, datetime.now(), myfile, recipename, description, author, preptime, cooktime, totaltime, recipeCategory, recipeCuisine, recipeYield, MYING, MYINS, ingredients, instructions, ingredients_all_headings, instructions_all_headings, ingr_head_all, instr_head_all ])
 
    return
 #### ********************************************************************* ####
