@@ -51,7 +51,7 @@ pathlib.Path(MY_YAML_DIR).mkdir(parents=True, exist_ok=True)
 ##############################################################################
 ##############################################################################
 ## READING 1ST CSV FILE
-data = pd.read_csv("_STEP2-INPUT-MGGK-GOOGLE-SHEETS-CSV.CSV")
+data = pd.read_csv("_TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS.CSV")
 ## adding an extra columns with row numbers minus 1 = index_value
 data['index_data'] = data.reset_index().index
 print(data)
@@ -61,7 +61,7 @@ for colname in data.columns:
     print(colname)
 ####################################
 ## READING 2ND CSV FILE
-data1 = pd.read_csv("_TMP_STEP1_OUTPUT.CSV")
+data1 = pd.read_csv("_TMP_513_STEP1_OUTPUT.CSV")
 ## adding an extra columns with row numbers minus 1 = index_value
 data1['index_data1'] = data1.reset_index().index
 data1['data1_URL'] = data1['URL']
@@ -94,18 +94,21 @@ for x in range(0, COUNT_ROWS):
 
     ## GETTING ALL ORIGINAL COLUMNS VARIABLES
 
-    PREPTIME_H	      =str(int(data_final.at[x,'PREPTIME_H']))
-    PREPTIME_M	      =str(int(data_final.at[x,'PREPTIME_M']))
-    COOKTIME_H	      =str(int(data_final.at[x,'COOKTIME_H']))
-    COOKTIME_M	      =str(int(data_final.at[x,'COOKTIME_M']))
-    TOTALTIME_H       =str(int(data_final.at[x,'TOTALTIME_H']))
-    TOTALTIME_M       =str(int(data_final.at[x,'TOTALTIME_M']))
+    #PREPTIME_H	      =str(int(data_final.at[x,'PREPTIME_H']))
+    #PREPTIME_M	      =str(int(data_final.at[x,'PREPTIME_M']))
+    #COOKTIME_H	      =str(int(data_final.at[x,'COOKTIME_H']))
+    #COOKTIME_M	      =str(int(data_final.at[x,'COOKTIME_M']))
+    #TOTALTIME_H       =str(int(data_final.at[x,'TOTALTIME_H']))
+    #TOTALTIME_M       =str(int(data_final.at[x,'TOTALTIME_M']))
+    PREPTIME_FINAL	      =str(data_final.at[x,'PREPTIME'])
+    COOKTIME_FINAL	      =str(data_final.at[x,'COOKTIME'])
+    TOTALTIME_FINAL       =str(data_final.at[x,'TOTALTIME'])
+
     SERVINGS	          =str(data_final.at[x,'SERVINGS'])
     CATEGORY	          =str(data_final.at[x,'CATEGORY'])
     CUISINE	          =str(data_final.at[x,'CUISINE'])
     CALORIES	          =str(data_final.at[x,'CALORIES'])
     CALORIES_SERVINGS =str(data_final.at[x,'CALORIES_SERVINGS'])
-    KEYWORDS	          =str(data_final.at[x,'KEYWORDS'])
 
     RECIPE_TITLE      =str(data_final.at[x,'RECIPE_TITLE'])
     RECIPE_AUTHOR     =str(data_final.at[x,'RECIPE_AUTHOR'])
@@ -128,27 +131,28 @@ for x in range(0, COUNT_ROWS):
     TMP_NAMEVAR = re.sub("http:localhost:1313", "", TMP_NAMEVAR)
     YAML_RECIPE_FILENAME   = "recipe-" + TMP_NAMEVAR + "-" + RECIPE_DATE_MGGK + ".yaml"
 
-    ##########################################################################
-    ## CREATING FINAL COLUMNS VARIABLES FROM ORIGINAL VARIABLES
-    ##########################################################################
-
-    ## CREATING FINAL TIME VARIABLES, AND REMOVING '0H' IN OUTPUTS
-    PREPTIME_FINAL=str("PT" + PREPTIME_H + "H" + PREPTIME_M + "M")
-    PREPTIME_FINAL = re.sub("0H", "", PREPTIME_FINAL)
-
-    COOKTIME_FINAL=str("PT" + COOKTIME_H + "H" + COOKTIME_M + "M")
-    COOKTIME_FINAL = re.sub("0H", "", COOKTIME_FINAL)
-
-
-    TOTALTIME_FINAL=str("PT" + TOTALTIME_H + "H" + TOTALTIME_M + "M")
-    TOTALTIME_FINAL = re.sub("0H", "", TOTALTIME_FINAL)
-
-
+    KEYWORDS	      =str(data_final.at[x,'KEYWORDS'])
 
     ## FIXING EXTRA SPACES AND TABS IN KEYWORDS
     ## THEN, REMOVING UNNECESSARY COMMAS AT THE END OF LINE
     KEYWORDS_REGEXED = re.sub("\s+", " ", KEYWORDS)
     KEYWORDS_REGEXED = re.sub(",\s*$", " ", KEYWORDS_REGEXED)
+
+    ##########################################################################
+    ## CREATING FINAL COLUMNS VARIABLES FROM ORIGINAL VARIABLES
+    ##########################################################################
+
+    ## CREATING FINAL TIME VARIABLES, AND REMOVING '0H' IN OUTPUTS
+    #PREPTIME_FINAL=str("PT" + PREPTIME_H + "H" + PREPTIME_M + "M")
+    #PREPTIME_FINAL = re.sub("0H", "", PREPTIME_FINAL)
+
+    #COOKTIME_FINAL=str("PT" + COOKTIME_H + "H" + COOKTIME_M + "M")
+    #COOKTIME_FINAL = re.sub("0H", "", COOKTIME_FINAL)
+
+
+    #TOTALTIME_FINAL=str("PT" + TOTALTIME_H + "H" + TOTALTIME_M + "M")
+    #TOTALTIME_FINAL = re.sub("0H", "", TOTALTIME_FINAL)
+
     ##########################################################################
 
     print( "Index " + str(x) + " // Line " + str(x+1) )
@@ -166,9 +170,9 @@ for x in range(0, COUNT_ROWS):
     print("KEYWORDS_ORIGINAL: " + KEYWORDS)
     print("KEYWORDS_REGEXED: " + KEYWORDS_REGEXED)
 
-    print("PREPTIME_M: " + PREPTIME_M)
-    print("COOKTIME_M: " + COOKTIME_M)
-    print("TOTALTIME_M: " + TOTALTIME_M)
+    #print("PREPTIME_M: " + PREPTIME_M)
+    #print("COOKTIME_M: " + COOKTIME_M)
+    #print("TOTALTIME_M: " + TOTALTIME_M)
 
 
     print("PREPTIME_FINAL: " + PREPTIME_FINAL)

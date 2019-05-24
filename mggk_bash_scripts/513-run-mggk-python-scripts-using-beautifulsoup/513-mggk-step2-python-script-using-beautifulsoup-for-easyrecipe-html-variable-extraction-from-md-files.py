@@ -44,7 +44,7 @@ FILELIST_USED = OUTPUT_DIR+"/_TMP_513_THIS_FILELIST_IS_USED.CSV"
 ## INITIALIZE SOME FILES FOR SUCCESS AND ERROR REPORTING
 with open(SUCCESS_FILE, 'w') as csv_file:
     writer = csv.writer(csv_file)
-    writer.writerow(["COUNT", "DATETIME_AT_PROGRAM_RUN", "RECIPE_FILENAME", "HTML_RECIPENAME", "HTML_RECIPEDESCRIPTION", "HTML_RECIPEAUTHOR", "PREPTIME", "COOKTIME", "TOTALTIME", "RECIPECATEGORY", "RECIPECUISINE", "RECIPEYIELD", "MY_INGREDIENTS_FINAL", "MY_INSTRUCTIONS_FINAL", "EXTRA_INGREDIENTS_RAW", "EXTRA_INSTRUCTIONS_RAW","EXTRA_INGREDIENTS_HEADINGS_RAW", "EXTRA_INSTRUCTIONS_HEADINGS_RAW", "EXTRA_INGREDIENTS_HEADINGS_ALL", "EXTRA_INSTRUCTIONS_HEADINGS_ALL"])
+    writer.writerow(["COUNT", "DATETIME_AT_PROGRAM_RUN", "RECIPE_FILENAME", "HTML_RECIPENAME", "HTML_RECIPEDESCRIPTION", "HTML_RECIPEAUTHOR", "PREPTIME", "COOKTIME", "TOTALTIME", "CATEGORY", "CUISINE", "SERVINGS","CALORIES","CALORIES_SERVINGS","KEYWORDS", "MY_INGREDIENTS_FINAL", "MY_INSTRUCTIONS_FINAL", "EXTRA_INGREDIENTS_RAW", "EXTRA_INSTRUCTIONS_RAW","EXTRA_INGREDIENTS_HEADINGS_RAW", "EXTRA_INSTRUCTIONS_HEADINGS_RAW", "EXTRA_INGREDIENTS_HEADINGS_ALL", "EXTRA_INSTRUCTIONS_HEADINGS_ALL"])
 
 with open(ERROR_FILE, 'w') as csv_file:
     writer = csv.writer(csv_file)
@@ -82,8 +82,38 @@ def parse_my_soup():
    try: recipeCuisine=soup.find('span', attrs={'itemprop':'recipeCuisine'}).string ;
    except Exception as e: recipeCuisine="NO-CUISINE-DEFINED" ;
 
-   try: recipeYield=soup.find('span', attrs={'itemprop':'recipeYield'}).string ;
-   except Exception as e: recipeYield="NO-RECIPEYIELD-DEFINED" ;
+   try: recipeServings=soup.find('span', attrs={'itemprop':'recipeYield'}).string ;
+   except Exception as e: recipeServings="NO-RECIPEYIELD-DEFINED" ;
+
+   CALORIES = "50" ; ## example value (do change it later)
+   CALORIES_SERVINGS = "1 serving" ; ## example value (do change it later)
+
+   ##### GENERATING RECIPE KEYWORDS ###########
+   KEYWORDS = recipename.strip() ; ## assigning keywords
+   KEYWORDS = KEYWORDS.lower() ; # converting to lowercase
+
+   KEYWORDS = KEYWORDS.replace('&','') ;
+   KEYWORDS = KEYWORDS.replace('!','') ;
+   KEYWORDS = KEYWORDS.replace('//','') ;
+   KEYWORDS = KEYWORDS.replace('|','') ;
+   KEYWORDS = KEYWORDS.replace('[','') ;
+   KEYWORDS = KEYWORDS.replace(']','') ;
+   KEYWORDS = KEYWORDS.replace('(','') ;
+   KEYWORDS = KEYWORDS.replace(')','') ;
+   KEYWORDS = KEYWORDS.replace('{','') ;
+   KEYWORDS = KEYWORDS.replace('}','') ;
+   KEYWORDS = KEYWORDS.replace('-','') ;
+   KEYWORDS = KEYWORDS.replace('+','') ;
+   KEYWORDS = KEYWORDS.replace("'","\'") ;
+   KEYWORDS = KEYWORDS.replace(' for ','') ;
+   KEYWORDS = KEYWORDS.replace(' with ','') ;
+   KEYWORDS = KEYWORDS.replace(' the ','') ;
+   KEYWORDS = KEYWORDS.replace(' and ','') ;
+   KEYWORDS = KEYWORDS.replace('video','') ;
+   KEYWORDS = KEYWORDS.replace('recipe','') ;
+   KEYWORDS = KEYWORDS.replace(' ',',') ; ## finally splitting recipename into keywords
+   KEYWORDS = KEYWORDS.replace(',,',',') ; ## replacing multiple commas
+   KEYWORDS = KEYWORDS.replace(', ','') ;
 
 
 
@@ -199,7 +229,7 @@ def parse_my_soup():
    #### CSV MAGIC = Opens a csv file with append, so old data will not be erased
    with open(SUCCESS_FILE, 'a') as csv_file:
        writer = csv.writer(csv_file)
-       writer.writerow([count, datetime.now(), myfile, recipename, description, author, preptime, cooktime, totaltime, recipeCategory, recipeCuisine, recipeYield, MYING, MYINS, ingredients, instructions, ingredients_all_headings, instructions_all_headings, ingr_head_all, instr_head_all ])
+       writer.writerow([count, datetime.now(), myfile, recipename, description, author, preptime, cooktime, totaltime, recipeCategory, recipeCuisine, recipeServings, CALORIES, CALORIES_SERVINGS, KEYWORDS, MYING, MYINS, ingredients, instructions, ingredients_all_headings, instructions_all_headings, ingr_head_all, instr_head_all ])
 
    return
 #### ********************************************************************* ####

@@ -1,7 +1,8 @@
 #!/bin/bash
 ###############################################################################
 THIS_FILENAME="513-mggk-run-this-for-using-running-multiple-python-scripts-using-beautiful-soup-to-create-yaml-recipes.sh" ;
-REQUIREMENT_FILE="_STEP2-INPUT-MGGK-GOOGLE-SHEETS-CSV.CSV"
+REQUIREMENT_FILE1="_TMP_513_STEP1_OUTPUT.CSV"
+REQUIREMENT_FILE2="_TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS.CSV"
 ###############################################################################
 cat<<EOF
   ###############################################################################
@@ -9,13 +10,14 @@ cat<<EOF
   ## USAGE: sh $THIS_FILENAME
   ###############################################################################
   ## REQUIREMENT FILE (Make sure that this file is present in PWD):
-  #### $REQUIREMENT_FILE
+  #### $REQUIREMENT_FILE1
+  #### $REQUIREMENT_FILE2
   ###############################################################################
   ## THIS PROGRAM RUNS TWO UNDERLYING PYTHON SCRIPTS, WHICH CREATE BULK YAML
   ## RECIPE FILES FROM GOOGLE SHEETS CSV + ONE OTHER CSV FILE
-  ## SEE 506A*.py PYTHON SCRIPTS FOR MORE INFO.
+  ## SEE 513-mggk-*.py PYTHON SCRIPTS FOR MORE INFO.
   ###############################################################################
-  ## CODED ON: MAY 10, 2019
+  ## CODED ON: MAY 25, 2019
   ## CODED BY: PALI
   ###############################################################################
 EOF
@@ -38,13 +40,16 @@ echo;
 ###############################################################################
 ## MULTIPLE PYTHON SCRIPTS WILL RUN BELOW
 
-BASEDIR="$HOME/Github/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/506A-mggk-run-multiple-python-scripts" ;
+BASEDIR="$HOME/Github/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/513-run-mggk-python-scripts-using-beautifulsoup" ;
 
 ## RUNNING STEP 1 PYTHON SCRIPT
-python3 $BASEDIR/506A-step1-read-markdown-files-yaml-frontmatter-and-create-csv.py
+python3 $BASEDIR/513-mggk-step1-read-markdown-files-yaml-frontmatter-and-create-csv.py
 
 ## RUNNING STEP 2 PYTHON SCRIPT
-python3 $BASEDIR/506A-step2-read-google-sheets-csv-and-merge-two-csv-files-to-create-recipe-yaml-files.py
+python3 $BASEDIR/513-mggk-step2-python-script-using-beautifulsoup-for-easyrecipe-html-variable-extraction-from-md-files.py
+
+## RUNNING STEP 3 PYTHON SCRIPT
+python3 $BASEDIR/513-mggk-step3-read-and-merge-two-csv-files-to-create-recipe-yaml-files.py
 ################################################################################
 
 ## OPENING PWD
@@ -52,8 +57,3 @@ echo; echo "=====> Opening PWD = $PWD " ;
 open $PWD
 
 ################################################################################
-
-513-mggk-run-this-for-using-running-multiple-python-scripts-using-beautiful-soup-to-create-yaml-recipes.sh
-513-mggk-step1-read-markdown-files-yaml-frontmatter-and-create-csv.py
-513-mggk-step2-python-script-using-beautifulsoup-for-easyrecipe-html-variable-extraction-from-md-files.py
-513-mggk-step3-read-and-merge-two-csv-files-to-create-recipe-yaml-files.py
