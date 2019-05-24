@@ -23,7 +23,7 @@ import time ;
 MYHOME = os.environ['HOME'] ## GETTING THE ENVIRONMENT VALUE FOR HOME
 MY_YAML_DIR = MYHOME + '/Desktop/Y/_TMP_OUTPUTS_YAML' ;
 TODAY = str(time.strftime("%Y-%m-%d %H:%M"))
-TMP_STEP2_INDEX_FILE = MYHOME + '/Desktop/Y/_TMP_STEP2_INDEX_FILE.HTML'
+TMP_STEP2_INDEX_FILE = MYHOME + '/Desktop/Y/_TMP_STEP3_INDEX_FILE.HTML'
 AUTOCREATED_BASH_SCRIPT = MYHOME + '/Desktop/Y/_TMP_AUTOCREATED_BASH_SCRIPT_FOR_ANU.sh'
 
 ## INITIALIZING THE TMP INDEX HTML FILE
@@ -38,7 +38,7 @@ BASHFILE.write( '\n#############################################################
 BASHFILE.write( '\n## THIS BASH SCRIPT OPENS SELECTED FILES IN ATOM, BASED UPON A PROPER USER INPUT' )
 BASHFILE.write( '\n## AUTOCREATED ON: ' + TODAY )
 BASHFILE.write( '\n##############################################################################' )
-BASHFILE.write( '\n\nread -p "Enter a number [from 1-73]: " VAR' )
+BASHFILE.write( '\n\nread -p "Enter a number [from 1-178]: " VAR' )
 BASHFILE.write( '\n\n' )
 BASHFILE.write( '\nif [ -z $VAR ] ; then' )
 BASHFILE.write( '\n\necho "YOU ENTERED WORNG VALUE FOR VAR. PLEASE ENTER A VALUE BETWEEN 1-73. IGNORE ANY FURTHER ERROR MESSAGES BELOW.\n\n" ;' )
@@ -51,7 +51,7 @@ pathlib.Path(MY_YAML_DIR).mkdir(parents=True, exist_ok=True)
 ##############################################################################
 ##############################################################################
 ## READING 1ST CSV FILE
-data = pd.read_csv("_TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS.CSV")
+data = pd.read_csv("_TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS_EDITED.CSV")
 ## adding an extra columns with row numbers minus 1 = index_value
 data['index_data'] = data.reset_index().index
 print(data)
@@ -76,7 +76,7 @@ for colname in data1.columns:
 data_final=pd.merge(data, data1, on='RECIPE_FILENAME')
 print(data_final)
 
-data_final.to_csv("_TMP_STEP2_FINAL_OUTPUT.CSV",sep=",",index=True)
+data_final.to_csv("_TMP_STEP3_FINAL_OUTPUT.CSV",sep=",",index=True)
 
 ##############################################################################
 print("\n====> RUNNING FINAL PRINTING MAGIC ...")
@@ -114,6 +114,8 @@ for x in range(0, COUNT_ROWS):
     RECIPE_AUTHOR     =str(data_final.at[x,'RECIPE_AUTHOR'])
     RECIPE_DESCRIPTION=str(data_final.at[x,'RECIPE_DESCRIPTION'])
 
+    YOUTUBE_VIDEO_ID = str(data_final.at[x,'YOUTUBE_VIDEO_ID'])
+
 
     ## FORMATTING DATE (getting date from date time variable)
     RECIPE_DATE       =str(data_final.at[x,'RECIPE_DATE'])
@@ -130,6 +132,67 @@ for x in range(0, COUNT_ROWS):
     TMP_NAMEVAR = re.sub("/", "", URL)
     TMP_NAMEVAR = re.sub("http:localhost:1313", "", TMP_NAMEVAR)
     YAML_RECIPE_FILENAME   = "recipe-" + TMP_NAMEVAR + "-" + RECIPE_DATE_MGGK + ".yaml"
+
+    ##########################################################################
+    ###### FORMATTING INGREDIENTS FOR USING IN YAML FILE
+    ##########################################################################
+    MY_INGREDIENTS_INITIAL = str(data_final.at[x,'MY_INGREDIENTS_FINAL'])
+    MY_INGREDIENTS_FINAL=""
+
+    ing_list = MY_INGREDIENTS_INITIAL.split("\n")
+    for mying in ing_list:
+        mying = mying.strip() ##removing leading + trailing spaces
+        if mying != "":
+            new_ing = '  - "' + mying + '"'
+            print(new_ing)
+            MY_INGREDIENTS_FINAL = MY_INGREDIENTS_FINAL + new_ing + '\n'
+
+    #########################################################################
+    ###### FORMATTING INSTRUCTIONS FOR USING IN YAML FILE
+    #########################################################################
+    MY_INSTRUCTIONS_INITIAL = str(data_final.at[x,'MY_INSTRUCTIONS_FINAL'])
+    MY_INSTRUCTIONS_FINAL=""
+
+    ins_list = MY_INSTRUCTIONS_INITIAL.split("\n") ;
+
+    ####### DELETING THE UNNECESSARY WORD WHICH CREATES ERRORS IN YAML RECIPE RENDITION
+    print("\n>>>> Printing: List BEFORE deleting the WORD <<<<") ;
+    print(ins_list) ;
+
+    for word_to_delete in ['!!instructions','!!Instructions','!!INSTRUCTIONS']:
+        try:
+            ins_list.remove(word_to_delete) ## this word will be deleted from list
+            print('\n >>>> SELECTED WORD = '+ word_to_delete + ' FOUND. So, it will be deleted <<<< \n') ;
+
+        except:
+            print('\n >>>> SELECTED WORD = '+ word_to_delete + ' NOT FOUND. So, it can not be deleted <<<< \n') ;
+
+
+    print("\n>>>> Printing: List AFTER deleting the WORD <<<<") ;
+    print(ins_list)
+    ########
+
+    ## If the first instruction line does not contain a '!!', then add an extra heading line
+    ## to the instructions list
+    if (re.search('!!',ins_list[0])) :
+        ins_list = ins_list
+    else :
+        ins_list = ['!!Step by step instructions below:'] + ins_list
+
+    for myins in ins_list:
+        myins = myins.strip() ##removing leading + trailing spaces
+        if myins != "" and myins.lower() != '!!instructions':
+            if (re.search('^!!', myins)):
+                myins = myins.replace('!!','')
+                new_ins = '- \"@type\": HowToSection\n  name: \"' + myins + '\"\n  itemListElement:'
+            else:
+                new_ins = '  - "@type": HowToStep\n    text: \"' + myins + '\"'
+
+            print(new_ins)
+            MY_INSTRUCTIONS_FINAL = MY_INSTRUCTIONS_FINAL + new_ins + '\n'
+
+    ##########################################################################
+    ##########################################################################
 
     KEYWORDS	      =str(data_final.at[x,'KEYWORDS'])
 
@@ -155,6 +218,7 @@ for x in range(0, COUNT_ROWS):
 
     ##########################################################################
 
+    print("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     print( "Index " + str(x) + " // Line " + str(x+1) )
     print("\n")
 
@@ -181,12 +245,15 @@ for x in range(0, COUNT_ROWS):
 
     print("RECIPE_DATE: " + RECIPE_DATE)
     print('RECIPE_DATE_MGGK:', RECIPE_DATE_MGGK)
-
+    print("YOUTUBE_VIDEO_ID: " + YOUTUBE_VIDEO_ID)
 
     print("URL: " + URL)
     print("MGGK_URL: " + MGGK_URL)
 
     print("YAML_RECIPE_FILENAME: " + YAML_RECIPE_FILENAME)
+
+    print("MY_INGREDIENTS_FINAL: " + MY_INGREDIENTS_FINAL)
+    print("MY_INSTRUCTIONS_FINAL: " + MY_INSTRUCTIONS_FINAL)
 
 
     ## SAVING THE RESULTS TO A CSV FILE
@@ -235,33 +302,47 @@ for x in range(0, COUNT_ROWS):
 
     RECIPE_FILE.write('\n\nkeywords: \"'+ KEYWORDS_REGEXED + '\"')
 
-    RECIPE_FILE.write('\n\nvideo:')
-    RECIPE_FILE.write('\n  name: \"\"')
-    RECIPE_FILE.write('\n  description: \"\"')
-    RECIPE_FILE.write('\n  thumbnailUrl:')
-    RECIPE_FILE.write('\n    - \"\"')
-    RECIPE_FILE.write('\n    - \"\"')
-    RECIPE_FILE.write('\n  contentUrl: \"\"')
-    RECIPE_FILE.write('\n  embedUrl: \"\"')
-    RECIPE_FILE.write('\n  uploadDate: \"\"')
+    ############# VIDEO BLOCK ####################################
+    if YOUTUBE_VIDEO_ID !="" and YOUTUBE_VIDEO_ID != "['ZZZZ - NOTHING FOUND for youtube_video_id']" :
+        RECIPE_FILE.write('\n\nvideo:')
+        RECIPE_FILE.write('\n  name: \"' + RECIPE_TITLE + '\"')
+        RECIPE_FILE.write('\n  description: \"' + RECIPE_DESCRIPTION + '\"')
+        RECIPE_FILE.write('\n  thumbnailUrl:')
+        RECIPE_FILE.write('\n    - https://www.mygingergarlickitchen.com' + RECIPE_FEATURED_IMAGE)
+        RECIPE_FILE.write('\n    - https://i.ytimg.com/vi/'+ YOUTUBE_VIDEO_ID +'/maxresdefault.jpg')
+        RECIPE_FILE.write('\n  contentUrl: \"https://youtu.be/'+ YOUTUBE_VIDEO_ID + '\"')
+        RECIPE_FILE.write('\n  embedUrl: \"https://www.youtube.com/embed/'+ YOUTUBE_VIDEO_ID + '\"')
+        RECIPE_FILE.write('\n  uploadDate: '+ RECIPE_DATE_MGGK)
+    ##############################################################
 
     RECIPE_FILE.write('\n\ndatePublished: '+ RECIPE_DATE_MGGK)
 
     RECIPE_FILE.write('\n\nurl: '+ MGGK_URL)
 
-    RECIPE_FILE.write('\n\nrecipeIngredient:')
-    RECIPE_FILE.write('\n  - \"!!TITLE 1:\"')
-    RECIPE_FILE.write('\n  - ingredient1')
-    RECIPE_FILE.write('\n  - ingredient2')
+    ################################################################
+    ###################
+    def ingr_inst_sample_block_print():
+        RECIPE_FILE.write('\n\nrecipeIngredient:')
+        RECIPE_FILE.write('\n  - \"!!TITLE 1:\"')
+        RECIPE_FILE.write('\n  - ingredient1')
+        RECIPE_FILE.write('\n  - ingredient2')
 
+        RECIPE_FILE.write('\n\nrecipeInstructions:')
+        RECIPE_FILE.write('\n- \"@type\": HowToSection')
+        RECIPE_FILE.write('\n  name: TITLE 1 TITLE 1')
+        RECIPE_FILE.write('\n  itemListElement:')
+        RECIPE_FILE.write('\n  - \"@type\": HowToStep')
+        RECIPE_FILE.write('\n    text: Sample instruction text1')
+        RECIPE_FILE.write('\n  - \"@type\": HowToStep')
+        RECIPE_FILE.write('\n    text: Sample instruction text2')
+    ###################
+    #ingr_inst_sample_block_print()
+    RECIPE_FILE.write('\n\nrecipeIngredient:')
+    RECIPE_FILE.write('\n' + MY_INGREDIENTS_FINAL)
     RECIPE_FILE.write('\n\nrecipeInstructions:')
-    RECIPE_FILE.write('\n- \"@type\": HowToSection')
-    RECIPE_FILE.write('\n  name: TITLE 1 TITLE 1')
-    RECIPE_FILE.write('\n  itemListElement:')
-    RECIPE_FILE.write('\n  - \"@type\": HowToStep')
-    RECIPE_FILE.write('\n    text: Sample instruction text1')
-    RECIPE_FILE.write('\n  - \"@type\": HowToStep')
-    RECIPE_FILE.write('\n    text: Sample instruction text2')
+    RECIPE_FILE.write('\n' + MY_INSTRUCTIONS_FINAL)
+
+    #################################################################
 
     RECIPE_FILE.close()
 

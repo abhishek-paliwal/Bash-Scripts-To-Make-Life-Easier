@@ -2,7 +2,7 @@
 ###############################################################################
 THIS_FILENAME="513-mggk-run-this-for-using-running-multiple-python-scripts-using-beautiful-soup-to-create-yaml-recipes.sh" ;
 REQUIREMENT_FILE1="_TMP_513_STEP1_OUTPUT.CSV"
-REQUIREMENT_FILE2="_TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS.CSV"
+REQUIREMENT_FILE2="_TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS_EDITED.CSV"
 ###############################################################################
 cat<<EOF
   ###############################################################################
@@ -47,6 +47,17 @@ python3 $BASEDIR/513-mggk-step1-read-markdown-files-yaml-frontmatter-and-create-
 
 ## RUNNING STEP 2 PYTHON SCRIPT
 python3 $BASEDIR/513-mggk-step2-python-script-using-beautifulsoup-for-easyrecipe-html-variable-extraction-from-md-files.py
+
+## COMMENT THE FOLLOWING LINES IN THE FINALIZED SCRIPT (THIS IS ONLY FOR TESTING)
+## ALSO, THESE LINES SHOULD BE BEFORE RUNNING STEP3 PYTHON SCRIPT
+TODATE=$(date +%Y%m%d-%H%M%S)
+## backing up, just in case of errors
+mv _TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS_EDITED.CSV _TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS_EDITED-BACKUP-$TODATE.CSV
+cp _TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS_RAW.CSV _TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS_EDITED.CSV
+
+## USER CONFIRMATION
+read -p ">>>> If everything is OK, please press ENTER key to continue ..." ;
+echo;
 
 ## RUNNING STEP 3 PYTHON SCRIPT
 python3 $BASEDIR/513-mggk-step3-read-and-merge-two-csv-files-to-create-recipe-yaml-files.py
