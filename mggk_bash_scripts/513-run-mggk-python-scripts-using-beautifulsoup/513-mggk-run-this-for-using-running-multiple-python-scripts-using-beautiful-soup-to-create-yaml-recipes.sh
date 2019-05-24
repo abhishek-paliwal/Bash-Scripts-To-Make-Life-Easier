@@ -1,0 +1,59 @@
+#!/bin/bash
+###############################################################################
+THIS_FILENAME="513-mggk-run-this-for-using-running-multiple-python-scripts-using-beautiful-soup-to-create-yaml-recipes.sh" ;
+REQUIREMENT_FILE="_STEP2-INPUT-MGGK-GOOGLE-SHEETS-CSV.CSV"
+###############################################################################
+cat<<EOF
+  ###############################################################################
+  ## FILENAME: $THIS_FILENAME
+  ## USAGE: sh $THIS_FILENAME
+  ###############################################################################
+  ## REQUIREMENT FILE (Make sure that this file is present in PWD):
+  #### $REQUIREMENT_FILE
+  ###############################################################################
+  ## THIS PROGRAM RUNS TWO UNDERLYING PYTHON SCRIPTS, WHICH CREATE BULK YAML
+  ## RECIPE FILES FROM GOOGLE SHEETS CSV + ONE OTHER CSV FILE
+  ## SEE 506A*.py PYTHON SCRIPTS FOR MORE INFO.
+  ###############################################################################
+  ## CODED ON: MAY 10, 2019
+  ## CODED BY: PALI
+  ###############################################################################
+EOF
+
+###############################################################################
+
+## SOME VARIABLES
+MY_OUTPUT_DIR="$HOME/Desktop/Y/" ;
+cd $MY_OUTPUT_DIR ;
+##
+PWD=$(pwd) ;
+echo;
+echo "Current working directory = $PWD" ;
+echo;
+
+## USER CONFIRMATION
+read -p ">>>> If this working directory is OK, please press ENTER key to continue ..." ;
+echo;
+
+###############################################################################
+## MULTIPLE PYTHON SCRIPTS WILL RUN BELOW
+
+BASEDIR="$HOME/Github/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/506A-mggk-run-multiple-python-scripts" ;
+
+## RUNNING STEP 1 PYTHON SCRIPT
+python3 $BASEDIR/506A-step1-read-markdown-files-yaml-frontmatter-and-create-csv.py
+
+## RUNNING STEP 2 PYTHON SCRIPT
+python3 $BASEDIR/506A-step2-read-google-sheets-csv-and-merge-two-csv-files-to-create-recipe-yaml-files.py
+################################################################################
+
+## OPENING PWD
+echo; echo "=====> Opening PWD = $PWD " ;
+open $PWD
+
+################################################################################
+
+513-mggk-run-this-for-using-running-multiple-python-scripts-using-beautiful-soup-to-create-yaml-recipes.sh
+513-mggk-step1-read-markdown-files-yaml-frontmatter-and-create-csv.py
+513-mggk-step2-python-script-using-beautifulsoup-for-easyrecipe-html-variable-extraction-from-md-files.py
+513-mggk-step3-read-and-merge-two-csv-files-to-create-recipe-yaml-files.py
