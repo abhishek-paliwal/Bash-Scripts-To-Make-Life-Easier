@@ -12,14 +12,12 @@ import csv
 from datetime import datetime
 ################################################################################
 
-RULER="#"*80 ;
-
-#### CREATE AUTOMATIC HEADING BLOCK
-def make_heading_type1(myheading):
+#### CREATE AUTOMATIC HEADING BLOCK ###########################################
+def make_heading(myheading, RULERCHAR="#"):
+    RULER = 80*RULERCHAR
     print('\n' + RULER)
     mylen = round( ( 78 - len(myheading) )/2 )
-    print('#'*mylen + ' ' + myheading.upper() + ' ' + '#'*mylen)
-    print('#'*mylen + ' ' + str(datetime.now()) + ' ' + '#'*mylen)
+    print(RULERCHAR*mylen + ' ' + myheading.upper() + ' ' + RULERCHAR*mylen)
     print(RULER + '\n')
 ################################################################################
 ################################################################################
@@ -30,7 +28,18 @@ content = urllib.request.urlopen(url).read()
 soup = BeautifulSoup(content, 'html.parser' )
 #print(soup.prettify())
 
-make_heading_type1("printing the recipe block html output")
+make_heading("printing the recipe block html output", RULERCHAR="#")
 easyrecipe_block=soup.find('div',class_='easyrecipe').prettify()
 print(easyrecipe_block)
-make_heading_type1("program ends")
+make_heading("program ends", RULERCHAR="/")
+
+
+x="This is a good one very good one. This is a good one very good one. This is a good one very good one. This is a good one very good one. This is a good one very good one. This is a good one very good one. This is a good one very good one. This is a good one very good one. This is a good one very good one. This is a good one very good one. This is a good one very good one. "
+num=74
+x=x.upper()
+if len(x) > num:
+    y=round(len(x)/num)
+    print(len(x))
+    print(y)
+    for z in range(y-1):
+        print('## ' + x[(z-1)*num:z*num] + ' ##')
