@@ -110,6 +110,9 @@ for x in range(0, COUNT_ROWS):
     CALORIES	          =str(data_final.at[x,'CALORIES'])
     CALORIES_SERVINGS =str(data_final.at[x,'CALORIES_SERVINGS'])
 
+    RATING_VALUE	          =str(data_final.at[x,'RATING_VALUE'])
+    RATING_USERS	          =str(data_final.at[x,'RATING_USERS'])
+
     RECIPE_TITLE      =str(data_final.at[x,'RECIPE_TITLE'])
     RECIPE_AUTHOR     =str(data_final.at[x,'RECIPE_AUTHOR'])
     RECIPE_DESCRIPTION=str(data_final.at[x,'RECIPE_DESCRIPTION'])
@@ -255,6 +258,11 @@ for x in range(0, COUNT_ROWS):
     print("MY_INGREDIENTS_FINAL: " + MY_INGREDIENTS_FINAL)
     print("MY_INSTRUCTIONS_FINAL: " + MY_INSTRUCTIONS_FINAL)
 
+    print("CALORIES: " + CALORIES)
+    print("CALORIES_SERVINGS: " + CALORIES_SERVINGS)
+    print("RATING_VALUE: " + RATING_VALUE)
+    print("RATING_USERS: " + RATING_USERS)
+
 
     ## SAVING THE RESULTS TO A CSV FILE
 
@@ -284,8 +292,8 @@ for x in range(0, COUNT_ROWS):
 
     RECIPE_FILE.write('\n\naggregateRating:')
     RECIPE_FILE.write('\n  \"@type\": AggregateRating')
-    RECIPE_FILE.write('\n  ratingValue: 5')
-    RECIPE_FILE.write('\n  ratingCount: 1')
+    RECIPE_FILE.write('\n  ratingValue: ' + RATING_VALUE)
+    RECIPE_FILE.write('\n  ratingCount: ' + RATING_USERS)
 
     RECIPE_FILE.write('\n\nnutrition:')
     RECIPE_FILE.write('\n  \"@type\": NutritionInformation')
