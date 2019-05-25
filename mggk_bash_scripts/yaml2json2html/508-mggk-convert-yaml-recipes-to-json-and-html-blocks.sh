@@ -99,7 +99,8 @@ do
   ## FIRST, DO A CHECK IF THE YAML FILE TO BE PARSED FOR ANY SYNTAX ERRORS
   echo;
   echo ">>>>>> BEGIN: CHECKING YAML FILE FOR ANY ERRORS : YAMLLINT >>>>>>>>>>>>"
-  echo ">>>>>> (NOTE: Ignore any line too long ERRORS) >>>>>>>>>>>>"
+  echo ">>>>>> (NOTE: Ignore any line too long ERRORS + some Indentation ERRORS.) >>>>>>>>>>>>"
+  echo ">>>>>> (NOTE: HOWEVER, do check and fix any other SYNTAX ERRORS.) >>>>>>>>>>>>"
   YAMLINT_CONFIG_FILE="$HOME/Github/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/_ALL-YAML-RECIPES/yamllint-mggk-config-file-for-checking-recipes.yaml" ;
   yamllint -c $YAMLINT_CONFIG_FILE $YAML_FILE
   echo ">>>>>> END: CHECKING YAML FILE FOR ANY ERRORS : YAMLLINT >>>>>>>>>>>>"
