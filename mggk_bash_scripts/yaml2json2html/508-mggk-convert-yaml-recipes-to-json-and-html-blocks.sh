@@ -100,7 +100,8 @@ do
   echo;
   echo ">>>>>> BEGIN: CHECKING YAML FILE FOR ANY ERRORS : YAMLLINT >>>>>>>>>>>>"
   echo ">>>>>> (NOTE: Ignore any line too long ERRORS) >>>>>>>>>>>>"
-  yamllint $YAML_FILE
+  YAMLINT_CONFIG_FILE="$HOME/Github/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/_ALL-YAML-RECIPES/yamllint-mggk-config-file-for-checking-recipes.yaml" ;
+  yamllint -c $YAMLINT_CONFIG_FILE $YAML_FILE
   echo ">>>>>> END: CHECKING YAML FILE FOR ANY ERRORS : YAMLLINT >>>>>>>>>>>>"
   echo ;
 
