@@ -46,14 +46,14 @@ BASEDIR="$HOME/Github/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/513-run
 python3 $BASEDIR/513-mggk-step1-read-markdown-files-yaml-frontmatter-and-create-csv.py
 
 ## RUNNING STEP 2 PYTHON SCRIPT
-python3 $BASEDIR/513-mggk-step2-python-script-using-beautifulsoup-for-easyrecipe-html-variable-extraction-from-md-files.py
+#python3 $BASEDIR/513-mggk-step2-python-script-using-beautifulsoup-for-easyrecipe-html-variable-extraction-from-md-files.py
 
 ## COMMENT THE FOLLOWING LINES IN THE FINALIZED SCRIPT (THIS IS ONLY FOR TESTING)
 ## ALSO, THESE LINES SHOULD BE BEFORE RUNNING STEP3 PYTHON SCRIPT
 TODATE=$(date +%Y%m%d-%H%M%S)
 ## backing up, just in case of errors
-mv _TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS_EDITED.CSV _TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS_EDITED-BACKUP-$TODATE.CSV
-cp _TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS_RAW.CSV _TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS_EDITED.CSV
+#mv _TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS_EDITED.CSV _TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS_EDITED-BACKUP-$TODATE.CSV
+#cp _TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS_RAW.CSV _TMP_513_STEP2_OUTPUT_FILE_AFTER_SUCCESS_EDITED.CSV
 
 ## USER CONFIRMATION
 read -p ">>>> If everything is OK, please press ENTER key to continue ..." ;
