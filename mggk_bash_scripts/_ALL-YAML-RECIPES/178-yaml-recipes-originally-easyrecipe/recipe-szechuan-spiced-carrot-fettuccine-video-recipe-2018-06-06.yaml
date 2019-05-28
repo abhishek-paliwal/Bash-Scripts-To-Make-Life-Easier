@@ -1,0 +1,109 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Szechuan Spiced Carrot Fettuccine | VIDEO RECIPE"
+
+description: "Szechuan Spiced Carrot Fettuccine is such a perfect light meal, be it for lunch or dinner. This is the most beautiful, mouthwatering, spicy, flavorful, vegan and gluten free fettuccine. And it packs so much flavor. The carrots are slightly crunchy and they are best when paired nicely with this spicy sauce. It has Szechuan sauce, veggies, zesty tahini garlic paste, hot sauce for some spicy goodness and some tomato ketchup for tang and sweetness."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/06/title-recipes-Szechuan-Spiced-Carrot-Fettuccine-anupama-paliwal-my-ginger-garlic-kitchen-1recipes-Schezwan-Spiced-Carrot-Fettuccine-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT12M
+
+totalTime: PT22M
+
+recipeCategory: Main
+
+recipeCuisine: Asian
+
+recipeYield: 2-4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.7
+  ratingCount: 54
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 256 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "szechuan, spiced, carrot, fettuccine,  "
+
+video:
+  name: "Szechuan Spiced Carrot Fettuccine | VIDEO RECIPE"
+  description: "Szechuan Spiced Carrot Fettuccine is such a perfect light meal, be it for lunch or dinner. This is the most beautiful, mouthwatering, spicy, flavorful, vegan and gluten free fettuccine. And it packs so much flavor. The carrots are slightly crunchy and they are best when paired nicely with this spicy sauce. It has Szechuan sauce, veggies, zesty tahini garlic paste, hot sauce for some spicy goodness and some tomato ketchup for tang and sweetness."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/06/title-recipes-Szechuan-Spiced-Carrot-Fettuccine-anupama-paliwal-my-ginger-garlic-kitchen-1recipes-Schezwan-Spiced-Carrot-Fettuccine-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/OKB_S0M1Pgo/maxresdefault.jpg
+  contentUrl: "https://youtu.be/OKB_S0M1Pgo"
+  embedUrl: "https://www.youtube.com/embed/OKB_S0M1Pgo"
+  uploadDate: 2018-06-06
+
+datePublished: 2018-06-06
+
+url: https://www.mygingergarlickitchen.com/szechuan-spiced-carrot-fettuccine-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For Tahini garlic paste:"
+  - "Garlic clove, chopped - 2"
+  - "Ginger, chopped - 1 tsp"
+  - "Tahini paste - 1 tsp"
+  - "Soya sauce - 2 tsp"
+  - "Salt - 1 tsp"
+  - "Ground pepper - ½ tsp"
+  - "!!For Veggie Szechuan sauce:"
+  - "Olive oil - 1½ tbsp"
+  - "Julienned bell pepper, yellow - ¼ cup"
+  - "Julienned bell pepper, orange - ¼ cup"
+  - "Spring onions, sliced diagonally - ½ cup"
+  - "Schezwan sauce - 100 g"
+  - "Salt to taste"
+  - "Ground Pepper - ½ tsp"
+  - "Hot sauce - 1 tsp"
+  - "Tomato ketchup - 1½ tbsp"
+  - "!!For carrot fettuccine:"
+  - "Carrots, peeled - 8-10"
+  - "Ice cold water"
+  - "!!For garnish:"
+  - "Spring onions and sesame seeds for garnish"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For  Carrot Fettucinni:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Peel carrot into ribbons. Soak in ice cold water for 15 minutes. Drain and set aside."
+  - "@type": HowToStep
+    text: "In a mortar pastel, add ginger, garlic, tahini paste, soya sauce salt, pepper and grind well."
+- "@type": HowToSection
+  name: "For  Veggie Szechuan Sauce:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Pour oil in a large pan, and heat on medium low."
+  - "@type": HowToStep
+    text: "Heat oil in a pan. Add julienned bell peppers (yellow + ornage). Add spring onions and saute for 1 minute."
+  - "@type": HowToStep
+    text: "Add tahini garlic paste, szechuan sauce. Mix well and cook for another minute."
+  - "@type": HowToStep
+    text: "Add salt, pepper, hot sauce, and mix well. Cook for 1 minute. Add tomato ketchup and cook 2 minutes."
+  - "@type": HowToStep
+    text: "Turn off heat. Add carrot ribbons and toss well."
+  - "@type": HowToStep
+    text: "Pour into a serving dish, top with fresh carrot ribbons, spring onions and sprinkle with sesame seeds."
+  - "@type": HowToStep
+    text: "Serve immediately, and enjoy!"

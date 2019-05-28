@@ -1,0 +1,97 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "One Pan Thai Yellow Curry Macaroni | Video"
+
+description: "One Pan Thai Yellow Curry Macaroni is no-stress, no-mess recipes for any night of the week. A perfect flavorful meal which is fuss-free for midweek entertaining. It has simple simple yet classic flavors."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/04/recipes-One-Pan-Thai-Yellow-Curry-Mac-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT20M
+
+totalTime: PT25M
+
+recipeCategory: Main
+
+recipeCuisine: Thai
+
+recipeYield: 2-4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.1
+  ratingCount: 54
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 217 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "one, pan, thai, yellow, curry, macaroni "
+
+video:
+  name: "One Pan Thai Yellow Curry Macaroni | Video"
+  description: "One Pan Thai Yellow Curry Macaroni is no-stress, no-mess recipes for any night of the week. A perfect flavorful meal which is fuss-free for midweek entertaining. It has simple simple yet classic flavors."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/04/recipes-One-Pan-Thai-Yellow-Curry-Mac-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/nTzkN2Bq-yA/maxresdefault.jpg
+  contentUrl: "https://youtu.be/nTzkN2Bq-yA"
+  embedUrl: "https://www.youtube.com/embed/nTzkN2Bq-yA"
+  uploadDate: 2019-04-07
+
+datePublished: 2019-04-07
+
+url: https://www.mygingergarlickitchen.com/one-pan-thai-yellow-curry-mac-video/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For Macaroni"
+  - "Vegetable oil - 2 tbsp"
+  - "Onion, sliced - 1 cup"
+  - "Mushroom, sliced - 1 cup"
+  - "Yellow Thai curry paste - 150g"
+  - "Curry powder - 1 tbsp"
+  - "Salt to taste"
+  - "Light coconut milk - 2.5 cup"
+  - "Macaroni - 2 cup ( I am using wholegrain)"
+  - "!!For Serving:"
+  - "Cilantro leaves, for garnish"
+  - "Peanuts"
+  - "Lemon wedges for serving"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "In a large skillet, heat oil over medium-high heat."
+  - "@type": HowToStep
+    text: "Add onion and saute well. Add mushroom and saute. Add salt and cook for 2 minutes."
+  - "@type": HowToStep
+    text: "Now add Thai yellow Curry Paste and mix well."
+  - "@type": HowToStep
+    text: "Add coconut milk and stir well. Add macaroni and let it come to boil."
+  - "@type": HowToStep
+    text: "Add curry powder and stir-in it well again."
+  - "@type": HowToStep
+    text: "Cover and cook until macaroni is cooked."
+  - "@type": HowToStep
+    text: "Stir occasionally, and add some more water if needed."
+  - "@type": HowToStep
+    text: "Squeeze some lemon juice and garnish with cilantro leaves."
+  - "@type": HowToStep
+    text: "Top with peanuts and enjoy!"

@@ -1,0 +1,113 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "3-Bean Thick Dal Makhani"
+
+description: "3-Bean Thick Dal Makhani is a tweaked version of authentic Dal Makhani. This is rich, classic, creamy, flavorful and spicy curry. The more you cook this dal on simmer, the more exotic flavours you will get in this dal. The key of making most flavorful makhani is slow cooking."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/09/recipe-3-Bean-Thick-Dal-Makhani-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT60M
+
+totalTime: PT1H10M
+
+recipeCategory: Main
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.7
+  ratingCount: 74
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 295 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "3, bean, thick, dal, makhani"
+
+datePublished: 2018-09-18
+
+url: https://www.mygingergarlickitchen.com/3-bean-thick-dal-makhani/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "whole black lentil (whole urad) - ½ cup"
+  - "mung bean - ½ cup"
+  - "red kidney beans - ½ cup"
+  - "salt to taste"
+  - "butter - 2 tbsp"
+  - "olive oil - 2 tbsp"
+  - "cumin seeds - 1 tsp"
+  - "red onion, roughly chopped - ½"
+  - "ginger sliced - 1 tbsp"
+  - "dried whole red chili - 2"
+  - "cloves - 4"
+  - "black cardamom - 1"
+  - "onion paste - ½ cup"
+  - "ginger-garlic paste - 2 tbsp"
+  - "green chilies, chopped - 1"
+  - "tomatoes chopped - 1"
+  - "natural yogurt - ½ cup"
+  - "fresh cream - ½ cup"
+  - "red chili powder - 1 tsp"
+  - "garam masala powder - ½ tsp"
+  - "turmeric powder - ¼ tsp"
+  - "kasuri methi - 2 tbsp + 1 tsp"
+  - "for serving!"
+  - "onion rings"
+  - "fresh coriander leaves"
+  - "ginger, slices"
+  - "sour cream or fresh cream"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Clean, wash and soak the whole black lentil, mung bean and kidney beans overnight."
+  - "@type": HowToStep
+    text: "Next morning, wash beans and add 3 cups of water, chopped red onion, ginger slices and salt and pressure cook for 3-4 whistles. Turn the heat to low and cook for 15 minutes or till the dals is cooked."
+  - "@type": HowToStep
+    text: "Allow the steam to escape before opening the lid. Open the lid."
+  - "@type": HowToStep
+    text: "Heat butter and oil in a pan. Add cumin seeds."
+  - "@type": HowToStep
+    text: "When they start to crackle, cloves, cardamom, and dried red chili. Sauté for few seconds."
+  - "@type": HowToStep
+    text: "Add onion paste and ginger-garlic paste, and sauté till the onions turn golden brown in color."
+  - "@type": HowToStep
+    text: "Add chopped tomatoes and green chili. Sauté for 2 minutes."
+  - "@type": HowToStep
+    text: "Add turmeric powder, chili powder, garam masala powder, 1 tsp kasuri methi and cook over a medium heat till the mixture leaves oil."
+  - "@type": HowToStep
+    text: "Add yogurt and cream to cooked dal, and Whisk slightly till the dal is almost mashed."
+  - "@type": HowToStep
+    text: "Now add cooked spiced sauce to dal and mix well."
+  - "@type": HowToStep
+    text: "Taste, and add salt if needed."
+  - "@type": HowToStep
+    text: "Add tbsp of butter and mix well."
+  - "@type": HowToStep
+    text: "Now add 2 tbsp of kasuri methi and mix well. Cook covered on low heat for 30-40 minutes."
+  - "@type": HowToStep
+    text: "Garnished with sour cream, sliced ginger and coriander leaves."
+  - "@type": HowToStep
+    text: "Serve hot with steamed rice or naan or any of your favorite bread."

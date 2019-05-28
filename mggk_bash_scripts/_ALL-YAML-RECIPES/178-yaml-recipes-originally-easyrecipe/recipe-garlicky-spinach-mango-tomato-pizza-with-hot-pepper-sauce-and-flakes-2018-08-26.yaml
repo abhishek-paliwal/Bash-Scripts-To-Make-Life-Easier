@@ -1,0 +1,99 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Garlicky Spinach Mango Tomato Pizza with Hot Pepper Sauce and Flakes"
+
+description: "Garlicky Spinach Mango Tomato Pizza with Hot Pepper Sauce and Flakes. A nice crust, melted cheese and garlicky spinach, mango and tomatoes. A drizzle of hot pepper sauce, and a sprinkle of pepper flakes, Seriously, yummm! And do you guys see these pretty tomatoes? This is certainly a healthy food. A healthy food with so many distinct and exciting flavors. So good."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/08/recipe-Garlicky-Spinach-Mango-Tomato-Pizza-with-Hot-Pepper-Sauce-and-Flakes-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT30M
+
+totalTime: PT35M
+
+recipeCategory: Main
+
+recipeCuisine: Italian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 67
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 287 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "garlicky, spinach, mango, tomato, pizzahot, pepper, sauceflakes"
+
+datePublished: 2018-08-26
+
+url: https://www.mygingergarlickitchen.com/garlicky-spinach-mango-tomato-pizza-with-hot-pepper-sauce-and-flakes/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!for pizza:"
+  - "pizza dough (see recipe here)"
+  - "frozen spinach - 1 cup"
+  - "garlic, crushed - 2 tbsp"
+  - "frozen mango chunks - ½ cup"
+  - "tomato slices - ½ cup"
+  - "mozzarella slices - 1 cup"
+  - "grated mozzarella cheese - ¼ cup"
+  - "pizza sauce - ¼ cup"
+  - "garlic powder"
+  - "oregano"
+  - "pepper powder - ¼ tsp"
+  - "salt"
+  - "oil - 1 tbsp"
+  - "!!for serving:"
+  - "hot pepper sauce"
+  - "hot pepper flakes"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat 1 tbsp oil. Add crushed garlic and saute for 2 minutes."
+  - "@type": HowToStep
+    text: "Add spinach, pinch of salt and pepper powder and saute for 5 minutes."
+  - "@type": HowToStep
+    text: "Remove from heat and let is cool."
+  - "@type": HowToStep
+    text: "Preheat the oven to 325°F/175°C."
+  - "@type": HowToStep
+    text: "Lightly flour a counter to roll the dough. Use your hands or a rolling pin to roll the dough out until you have a flattened disk of desired size and shape."
+  - "@type": HowToStep
+    text: "Place the pizzas on a floured baking pan and then use your hands to gently tug."
+  - "@type": HowToStep
+    text: "Spread pizza sauce over the pizza dough. Sprinkle grated cheese."
+  - "@type": HowToStep
+    text: "Now add sliced cheese."
+  - "@type": HowToStep
+    text: "Add spinach, mango and tomato slices. Sprinkle some oregano and garlic powder on top."
+  - "@type": HowToStep
+    text: "Bake the pizza in a middle rack for 25 minutes or until the cheese is all melty. Transfer pizza to the lowest shelf and bake for 5-7 minutes."
+  - "@type": HowToStep
+    text: "This would give such a nice crisp to pizza."
+  - "@type": HowToStep
+    text: "Remove the pizza from the oven and and sprinkle with some pepper flakes, dried oregano and drizzle hot pepper."
+  - "@type": HowToStep
+    text: "Slice into desired shape! Enjoy!"

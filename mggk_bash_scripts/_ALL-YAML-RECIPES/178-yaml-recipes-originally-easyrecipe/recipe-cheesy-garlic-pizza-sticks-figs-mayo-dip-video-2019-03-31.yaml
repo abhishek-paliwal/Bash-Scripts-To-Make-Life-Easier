@@ -1,0 +1,103 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Cheesy Garlic Pizza Sticks With Figs Mayo Dip | Video"
+
+description: "Garlic, cheese, pizza, figs + mayo dip – the perfect marriage. These yummy, cheesy, garlicky sticks of goodness are made from the ready made basic pizza base. They are the perfect compliment for your dear beer or a glass of Italian red wine. I also made figs mayo sauce to dip them in. The combination of garlic pizza sticks and figs mayo dip is divine."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/03/recipes-cheesy-garlic-pizza-sticks-with-figs-mayo-dip-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT15M
+
+totalTime: PT20M
+
+recipeCategory: Snacks
+
+recipeCuisine: World
+
+recipeYield: 24 sticks
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.7
+  ratingCount: 61
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 258 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "cheesy, garlic, pizza, sticksfigs, mayo, dip "
+
+video:
+  name: "Cheesy Garlic Pizza Sticks With Figs Mayo Dip | Video"
+  description: "Garlic, cheese, pizza, figs + mayo dip – the perfect marriage. These yummy, cheesy, garlicky sticks of goodness are made from the ready made basic pizza base. They are the perfect compliment for your dear beer or a glass of Italian red wine. I also made figs mayo sauce to dip them in. The combination of garlic pizza sticks and figs mayo dip is divine."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/03/recipes-cheesy-garlic-pizza-sticks-with-figs-mayo-dip-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/OKNuPtc0WK8/maxresdefault.jpg
+  contentUrl: "https://youtu.be/OKNuPtc0WK8"
+  embedUrl: "https://www.youtube.com/embed/OKNuPtc0WK8"
+  uploadDate: 2019-03-31
+
+datePublished: 2019-03-31
+
+url: https://www.mygingergarlickitchen.com/cheesy-garlic-pizza-sticks-figs-mayo-dip-video/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For garlic butter:"
+  - "softened salted butter - 4 tbsp"
+  - "garlic cloves, finely minced - 2 tbsp"
+  - "pizza seasoning - 3 tsp"
+  - "!!For pizza sticks:"
+  - "garlic butter"
+  - "grated mozzarella cheese - 1 cup"
+  - "pizza base - 2"
+  - "!!For figs mayo dip:"
+  - "Greek yogurt: ¼ cup"
+  - "Pepper Mayonnaise: 2 tbsp"
+  - "Dried figs, sliced - 5"
+  - "Garlic cloves, chopped - 2"
+  - "pinch of salt"
+  - "Ground pepper to taste"
+  - "Water, if needed"
+  - "Roasted peanuts and ground pepper for garnish (optional)"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For  Garlic Butter:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Combine the ingredients and mix until smooth and set aside."
+- "@type": HowToSection
+  name: "For  Figs Mayo Dip:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add all ingredients to a food processor and pulse until smooth. Serve cold."
+- "@type": HowToSection
+  name: "For  Pizza Sticks:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat oven to 180°C."
+  - "@type": HowToStep
+    text: "Spread the garlic butter over dough and top with mozzarella cheese."
+  - "@type": HowToStep
+    text: "Cut into strips."
+  - "@type": HowToStep
+    text: "Bake 10 to 12 minutes or until crust is lightly browned and cheese in the center is bubbly."
+  - "@type": HowToStep
+    text: "Serve hot with figs mayo dip."

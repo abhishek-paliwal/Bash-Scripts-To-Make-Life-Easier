@@ -1,0 +1,76 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Strawberry Masala Chaas (Spiced Strawberry Buttermilk)"
+
+description: "Strawberry Masala Chaas (Spiced Strawberry Buttermilk)is a strawberry flavoured spiced North Indian buttermilk. It is healthy and refreshing drink — a perfect treat for the summer."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/07/recipe-strawberry-masala-chaas-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT2M
+
+cookTime: PT2M
+
+totalTime: PT4M
+
+recipeCategory: Drinks
+
+recipeCuisine: Indian
+
+recipeYield: 2
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.3
+  ratingCount: 45
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 204 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "strawberry, masala, chaas, spiced, strawberry, buttermilk"
+
+datePublished: 2018-07-01
+
+url: https://www.mygingergarlickitchen.com/strawberry-masala-chaas-spiced-strawberry-buttermilk/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "fresh strawberries - ½ cup"
+  - "natural yogurt - 1 cup"
+  - "green chili, chopped - 1"
+  - "cilantro leaves, chopped - 1 tbsp"
+  - "himalayan Black Salt - ¼ tsp"
+  - "salt - to taste"
+  - "chaat masala - ¾ tsp"
+  - "cumin powder - ½ tsp"
+  - "chilled water - 2 cups"
+  - "ice cubes - few, for serving, optional"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add all the ingredients except ice cues to the blender."
+  - "@type": HowToStep
+    text: "Blend well until frothy."
+  - "@type": HowToStep
+    text: "Add ice cubes to the serving glasses, and pour chass into the glass."
+  - "@type": HowToStep
+    text: "Garnish with cumin powder, cilantro and strawberries."
+  - "@type": HowToStep
+    text: "Serve chilled and keep your loved ones hydrate in summer! 🙂"

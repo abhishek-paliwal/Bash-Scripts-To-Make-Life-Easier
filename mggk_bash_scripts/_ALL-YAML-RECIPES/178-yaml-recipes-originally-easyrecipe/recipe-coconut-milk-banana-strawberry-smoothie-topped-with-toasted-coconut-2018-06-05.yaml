@@ -1,0 +1,74 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Coconut Milk Banana Strawberry Smoothie Topped With Toasted Coconut"
+
+description: "This Coconut Milk Banana Strawberry Smoothie topped with toasted coconut is a healthy, and nutritious breakfast smoothie."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/06/recipe-banana-strawberry-coconut-smoothie-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT2M
+
+cookTime: PT3M
+
+totalTime: PT5M
+
+recipeCategory: Breakfast
+
+recipeCuisine: World
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5.0
+  ratingCount: 75
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 156 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "coconut, milk, banana, strawberry, smoothie, toppedtoasted, coconut"
+
+datePublished: 2018-06-05
+
+url: https://www.mygingergarlickitchen.com/coconut-milk-banana-strawberry-smoothie-topped-with-toasted-coconut/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!for smoothie:"
+  - "banana, fresh - 1 large"
+  - "strawberries slices, chilled - 1 cup"
+  - "pineapple chunks, chilled - 1 cup"
+  - "full-fat coconut milk, chilled - 1 can/15oz"
+  - "vanilla extract - ½ teaspoon"
+  - "desiccated coconut - 2 tbsp"
+  - "honey - 1 tbsp (optional)"
+  - "!!for serving:"
+  - "toasted coconut, for topping"
+  - "fresh strawberry slices"
+  - "raisins"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add all ingredients into your blender and blend until creamy and smooth."
+  - "@type": HowToStep
+    text: "Pour smoothie into glasses."
+  - "@type": HowToStep
+    text: "Top with fresh strawberry, toasted coconut, and raisins."

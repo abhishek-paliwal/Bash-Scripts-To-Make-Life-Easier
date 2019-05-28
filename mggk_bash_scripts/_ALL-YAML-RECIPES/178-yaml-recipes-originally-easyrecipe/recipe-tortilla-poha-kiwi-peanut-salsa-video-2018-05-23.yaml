@@ -1,0 +1,111 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Tortilla Poha With Kiwi Peanut Salsa | Video"
+
+description: "Tortilla Poha With Kiwi Peanut Salsa is an Indo Mexican inspired bowl. Tortilla Poha delicious dish made from leftover Roti, phulka or chapatis. This poha tastes wonderful by itself, but I love to enjoy it with a bit more of flavor punch. This extra flavor comes from Kiwi Peanut Salsa. This salsa is what completes this poha. It’s sweet, spicy and has just a nice crunch of peanut and flavor of fresh cilantro. This makes a perfect breakfast or brunch."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/05/recipes-Tortilla-Poha-With-Kiwi-Peanut-Salsa-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT20M
+
+totalTime: PT30M
+
+recipeCategory: Breakfast
+
+recipeCuisine: Indo-Mexican
+
+recipeYield: 2-4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5.0
+  ratingCount: 60
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 241 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "tortilla, pohakiwi, peanut, salsa "
+
+video:
+  name: "Tortilla Poha With Kiwi Peanut Salsa | Video"
+  description: "Tortilla Poha With Kiwi Peanut Salsa is an Indo Mexican inspired bowl. Tortilla Poha delicious dish made from leftover Roti, phulka or chapatis. This poha tastes wonderful by itself, but I love to enjoy it with a bit more of flavor punch. This extra flavor comes from Kiwi Peanut Salsa. This salsa is what completes this poha. It’s sweet, spicy and has just a nice crunch of peanut and flavor of fresh cilantro. This makes a perfect breakfast or brunch."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/05/recipes-Tortilla-Poha-With-Kiwi-Peanut-Salsa-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/q7O7Ao6HMyk/maxresdefault.jpg
+  contentUrl: "https://youtu.be/q7O7Ao6HMyk"
+  embedUrl: "https://www.youtube.com/embed/q7O7Ao6HMyk"
+  uploadDate: 2018-05-23
+
+datePublished: 2018-05-23
+
+url: https://www.mygingergarlickitchen.com/tortilla-poha-kiwi-peanut-salsa-video/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For Tortilla Poha:"
+  - "Whole grain tortilla - 4"
+  - "Oil - 2 tbsp"
+  - "Pinch of asafetida"
+  - "Cumin seeds - 1 tsp"
+  - "Mustard seeds -1 tsp"
+  - "Onion, chopped - 1"
+  - "Green peas - ½ cup"
+  - "Red chili powder - 1 tsp"
+  - "Turmeric powder - ¼ tsp"
+  - "Coriander powder - 2 tbsp"
+  - "Salt to taste"
+  - "Garam masala powder - ¼ tsp"
+  - "Lemon juice - 1 tsp"
+  - "!!For Kiwi Peanut Salsa:"
+  - "Diced, peeled kiwifruit, - 3-4"
+  - "Tomato, chopped - 1"
+  - "Finely chopped fresh cilantro - 1 tbsp"
+  - "Roasted peanuts - ¼ cup"
+  - "Red onion, chopped - 1"
+  - "Hot salsa sauce - 2 tbsp"
+  - "Hot pepper sauce - ¼ tsp"
+  - "Lemon juice - 1 tsp"
+  - "Minced fresh, seeded jalapeno - ½ tbsp"
+  - "Finely chopped garlic cloves - 1 tsp"
+  - "Salt or to taste"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For  Kiwi Peanut Salsa:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "In a medium bowl, gently combine all ingredients. Taste for seasonings. Keep in refrigerate for 30 minutes."
+- "@type": HowToSection
+  name: "For  Tortilla Poha:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Grind tortilla in a food processor or crumble them with hands."
+  - "@type": HowToStep
+    text: "Heat oil in a pan, add asafetida, cumin seeds, mustard seeds and allow them to crackle."
+  - "@type": HowToStep
+    text: "Add onion and saute for 3 minutes."
+  - "@type": HowToStep
+    text: "Add green peas and saute well. Now add tomatoes, crumbled tortilla, rec chili powder, turmeric powder, coriander powder and salt. Mix well and cook for about 5 minutes or until slightly crisp, stirring occasionally."
+  - "@type": HowToStep
+    text: "Add garam masala and cook for a minute."
+  - "@type": HowToStep
+    text: "Add lemon juice and cook for few more seconds and remove from heat."
+  - "@type": HowToStep
+    text: "Serve along with chilled kiwi peanut salsa. Enjoy!"

@@ -1,0 +1,86 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Strawberry Kiwi Sparkling Cooler | Video"
+
+description: "The flavors of the strawberry and kiwi are really the ones you cannot beat — so much freshness and a solid kick of sweetness. And the most awesome part is that it really is just strawberry soda/seltzer water, no sugar only honey. Plus, all the fruity goodness."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/05/recipes-Strawberry-Kiwi-Sparkling-Cooler-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT3M
+
+cookTime: PT2M
+
+totalTime: PT5M
+
+recipeCategory: Drinks
+
+recipeCuisine: World
+
+recipeYield: 2-3
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.5
+  ratingCount: 42
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 263 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "strawberry, kiwi, sparkling, cooler "
+
+video:
+  name: "Strawberry Kiwi Sparkling Cooler | Video"
+  description: "The flavors of the strawberry and kiwi are really the ones you cannot beat — so much freshness and a solid kick of sweetness. And the most awesome part is that it really is just strawberry soda/seltzer water, no sugar only honey. Plus, all the fruity goodness."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/05/recipes-Strawberry-Kiwi-Sparkling-Cooler-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/Wx8jbZSeO2c/maxresdefault.jpg
+  contentUrl: "https://youtu.be/Wx8jbZSeO2c"
+  embedUrl: "https://www.youtube.com/embed/Wx8jbZSeO2c"
+  uploadDate: 2018-05-27
+
+datePublished: 2018-05-27
+
+url: https://www.mygingergarlickitchen.com/strawberry-kiwi-sparkling-cooler-video/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Strawberries, stems removed and crushed - 5 tbsp"
+  - "Kiwis, peeled and crushed - 5 tbsp"
+  - "Honey - 4 tbsp or as per taste"
+  - "Strawberry soda/seltzer - 1.5 cup"
+  - "Ice - 1 cup"
+  - "Sliced kiwis and strawberries for serving"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Instructions:"
+  - "@type": HowToStep
+    text: "Combine crushed strawberries and 2 tbsp honey."
+  - "@type": HowToStep
+    text: "Combine crushed kiwis and 2 tbsp honey."
+  - "@type": HowToStep
+    text: "Place crushed strawberries and crushed kiwis in a serving glass."
+  - "@type": HowToStep
+    text: "Add ice, sliced kiwis and strawberries."
+  - "@type": HowToStep
+    text: "Pour strawberry soda over top."
+  - "@type": HowToStep
+    text: "Serve immediately. Enjoy!"

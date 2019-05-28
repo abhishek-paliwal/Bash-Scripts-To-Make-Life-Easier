@@ -1,0 +1,142 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Mushroom Kale Stuffed Paratha | Video Recipe"
+
+description: "Mushroom Kale Stuffed Paratha is an Indian flatbread stuffed with spiced potatoes with kale and mushroom, garlic and lots of raisins. If you love mushroom + spices and aroma, then you will surely love these."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/12/recipes-Mushroom-Kale-Stuffed-Paratha-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT25M
+
+totalTime: PT35M
+
+recipeCategory: Breakfast
+
+recipeCuisine: Indian
+
+recipeYield: 8
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5.0
+  ratingCount: 50
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 148 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "mushroom, kale, stuffed, paratha,  "
+
+video:
+  name: "Mushroom Kale Stuffed Paratha | Video Recipe"
+  description: "Mushroom Kale Stuffed Paratha is an Indian flatbread stuffed with spiced potatoes with kale and mushroom, garlic and lots of raisins. If you love mushroom + spices and aroma, then you will surely love these."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/12/recipes-Mushroom-Kale-Stuffed-Paratha-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/EKOhUjxFT3k/maxresdefault.jpg
+  contentUrl: "https://youtu.be/EKOhUjxFT3k"
+  embedUrl: "https://www.youtube.com/embed/EKOhUjxFT3k"
+  uploadDate: 2018-12-04
+
+datePublished: 2018-12-04
+
+url: https://www.mygingergarlickitchen.com/mushroom-kale-stuffed-paratha-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For Mushroom Kale Stuffing:"
+  - "Olive oil - 4 tbsp"
+  - "Chopped garlic - 2 tbsp"
+  - "Mushroom, roughly chopped - 1 cup"
+  - "Kale, roughly chopped - 1 cup"
+  - "Salt as per taste"
+  - "Turmeric Powder"
+  - "Red chili powder - ½ tbsp"
+  - "Coriander powder - 1 tbsp water - 1 tbsp"
+  - "Dried mango powder - 1 tsp"
+  - "Garam masala powder - ½ tsp"
+  - "Warm water for needing dough"
+  - "Potatoes, peeled and boiled - 2 cup"
+  - "Gram flour - ¼ cup"
+  - "Raisins - 2 tbsp"
+  - "!!For dough:"
+  - "Whole wheat flour - 2 cup"
+  - "A pinch of salt"
+  - "Water for kneading dough"
+  - "!!For Paratha:"
+  - "some extra wheat flour for rolling"
+  - "butter or oil for roasting"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For  Stuffing:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat oil in a pan. Add chopped garlic and saute for 1 minute."
+  - "@type": HowToStep
+    text: "Add mushroom and saute for one minute."
+  - "@type": HowToStep
+    text: "Now add kale and saute for 1 minute."
+  - "@type": HowToStep
+    text: "Add salt, turmeric powder and saute for 2 minutes."
+  - "@type": HowToStep
+    text: "Add coriander powder, dried mango powder, garam masala powder, red chili powder and mix well."
+  - "@type": HowToStep
+    text: "Saute for 1 minute."
+  - "@type": HowToStep
+    text: "Add potatoes while crumbling them roughly."
+  - "@type": HowToStep
+    text: "Mix well with the spatula."
+  - "@type": HowToStep
+    text: "Now add gram flour and mix well. Cook for 2 minutes or till the stuffing dries completely."
+  - "@type": HowToStep
+    text: "Add raisins and mix well."
+  - "@type": HowToStep
+    text: "Remove from heat and let it cool completely."
+- "@type": HowToSection
+  name: "For  Dough:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add wheat flour, salt and enough water to make a soft dough."
+  - "@type": HowToStep
+    text: "Knead well to make a smooth dough."
+  - "@type": HowToStep
+    text: "Apply little oil to the dough and knead well."
+  - "@type": HowToStep
+    text: "Cover with a muslin cloth and set aside for 15 minutes."
+  - "@type": HowToStep
+    text: "Divide the dough into 8 equal sized balls."
+  - "@type": HowToStep
+    text: "Divide the prepared stuffing into 8 equal sized balls and keep aside."
+- "@type": HowToSection
+  name: "For  Paratha:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Spread some flour and roll out one dough ball into a circle of 4″ diameter."
+  - "@type": HowToStep
+    text: "Brush little oil, and place 2 tbsp mixture in the center of the dough circle."
+  - "@type": HowToStep
+    text: "Bring together all the sides in the center and seal tightly."
+  - "@type": HowToStep
+    text: "Press lightly to seal the edges well."
+  - "@type": HowToStep
+    text: "Roll out again into a circle of 6″ diameter with the help of some flour."
+  - "@type": HowToStep
+    text: "Heat a pan. Roast rolled circles from both sides. Apply a little oil on both sides. Roast until golden brown from both sides."
+  - "@type": HowToStep
+    text: "Repeat with the remaining dough and filling to make more parathas. Serve hot with your favorite pickle and raita."

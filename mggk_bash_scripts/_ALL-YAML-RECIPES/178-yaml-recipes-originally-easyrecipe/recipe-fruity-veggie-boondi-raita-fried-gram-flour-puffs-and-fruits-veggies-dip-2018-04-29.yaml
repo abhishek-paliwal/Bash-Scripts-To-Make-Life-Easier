@@ -1,0 +1,77 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Fruity-Veggie Boondi Raita – Fried Gram Flour Puffs and Fruits-Veggies Dip"
+
+description: "Fruity-Veggie Boondi Raita is a cool tasty condiment which goes well with spicy curries. A perfect pairing for spicy food."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/04/recipe-fruity-veggie-boondi-raita-gram-flour-puffs-fruity-dip-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT1M
+
+totalTime: PT6M
+
+recipeCategory: side dish
+
+recipeCuisine: Indian
+
+recipeYield: 4-6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 62
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 204 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "fruityveggie, boondi, raita, fried, gram, flour, puffsfruitsveggies, dip"
+
+datePublished: 2018-04-29
+
+url: https://www.mygingergarlickitchen.com/fruity-veggie-boondi-raita-fried-gram-flour-puffs-and-fruits-veggies-dip/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "boondi/fried gram flour puffs - ¾ cup (easily available at Indian grocery stores)"
+  - "cucumber, chopped - 4 tbsp"
+  - "onion, chopped - 1"
+  - "tomato, chopped - 1"
+  - "grapes, chopped - 4 tbsp"
+  - "chaat masala - 1 tsp (optional)"
+  - "mangoes, chopped - 2 tbsp"
+  - "strawberries, chopped - 4 tbsp"
+  - "pomegranate arils - 2 tbsp"
+  - "green chilies, chopped - 1"
+  - "salt, as per taste"
+  - "roasted cumin powder - 1 tsp"
+  - "chilled, low fat yogurt - 2 ½ cup"
+  - "!!for garnish:"
+  - "pinch of cumin powder"
+  - "sliced fruits"
+  - "green chiles, chopped"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a mixing bowl. Combine the yogurt, boondi, fruits, veggies, cumin powder, chaat masala, and salt and whisk well."
+  - "@type": HowToStep
+    text: "Garnish with your favourite fruits, green chiles. Sprinkle some cumin powder, and serve immediately."

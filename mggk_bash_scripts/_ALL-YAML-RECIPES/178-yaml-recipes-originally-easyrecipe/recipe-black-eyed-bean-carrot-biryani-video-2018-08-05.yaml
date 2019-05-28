@@ -1,0 +1,112 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Lobia Rice Recipe | Black Eyed Bean Carrot Biryani | Video"
+
+description: "Lobia Pulao Recipe | Black Eyed Bean Carrot Biryani is the main course meal loaded with carrots, black-eyed beans and spices."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/05/recipes-Black-Eyed-Bean-Carrot-Biryani-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT50M
+
+totalTime: PT1H
+
+recipeCategory: Main
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.5
+  ratingCount: 59
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 222 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "black, eyed, bean, carrot, biryani "
+
+video:
+  name: "Lobia Rice Recipe | Black Eyed Bean Carrot Biryani | Video"
+  description: "Lobia Pulao Recipe | Black Eyed Bean Carrot Biryani is the main course meal loaded with carrots, black-eyed beans and spices."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/05/recipes-Black-Eyed-Bean-Carrot-Biryani-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/hJJ8mS2eAB4/maxresdefault.jpg
+  contentUrl: "https://youtu.be/hJJ8mS2eAB4"
+  embedUrl: "https://www.youtube.com/embed/hJJ8mS2eAB4"
+  uploadDate: 2018-08-05
+
+datePublished: 2018-08-05
+
+url: https://www.mygingergarlickitchen.com/black-eyed-bean-carrot-biryani-video/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Basmati rice, washed and soaked in water for 15 minutes - 1½ cup"
+  - "Cooked black eyed beans - 2 cup"
+  - "Carrot, chopped - 2 large"
+  - "Oil - 3-4 tbsp"
+  - "Cumin seeds - 2 tsp"
+  - "Cloves 3-4"
+  - "Ginger -garlic paste - 1 tbsp"
+  - "Garlic paste 1 tablespoon"
+  - "Coriander powder 1 tbsp"
+  - "Turmeric powder - ¼ tsp"
+  - "Red chilli powder 1½ tablespoons"
+  - "Tomatoes chopped - 3 large"
+  - "Salt to taste"
+  - "Green chillies chopped 2-3"
+  - "Fresh coriander leaves, chopped"
+  - "Garam masala powder - 1 tbsp + extra for sprinkle(You can reduce the amount of garam masala powder if you are adding red chili powder)"
+  - "Boiled water"
+  - "Citrus fruit for serving (optional)"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add soaked rice to a pot and add boiled water, salt and stir well. Boil till three fourth done. Drain,i f there is any extra water. Set aside."
+  - "@type": HowToStep
+    text: "Heat oil in a thick-bottomed pan, add cumin seeds. When they begin to crackle, add chopped onions and sauté for 3-4 minutes."
+  - "@type": HowToStep
+    text: "Add carrots, chopped green chilies, turmeric powder, coriander powder, garam masala powder and cook for 3-4 minutes."
+  - "@type": HowToStep
+    text: "Add ginger-garlic paste and saute well."
+  - "@type": HowToStep
+    text: "Add tomatoes and mix well. Cook for 3-4 minutes."
+  - "@type": HowToStep
+    text: "Add cooked beans, salt and mix well. Cook covered for 2 minutes."
+  - "@type": HowToStep
+    text: "Add chopped coriander leaves and mix well. Turn off the heat."
+  - "@type": HowToStep
+    text: "Preheat the oven to 175°C."
+  - "@type": HowToStep
+    text: "Take a pot. Spread a layer of half the parboiled rice and flatten with a spatula. Sprinkle chopped coriander and garam masala powder."
+  - "@type": HowToStep
+    text: "Pour the cooked beans gravy and flatten with a spoon."
+  - "@type": HowToStep
+    text: "Spread another layer of the rice and flatten it. Sprinkle chopped coriander and garam masala powder."
+  - "@type": HowToStep
+    text: "Pour some more beans gravy."
+  - "@type": HowToStep
+    text: "Wrap with a foil and cook in the oven at 175°C for 30-35 minutes."
+  - "@type": HowToStep
+    text: "Unwrap the foil paper and serve steaming hot biryani with some spiced yogurt and some citrus fruit. Enjoy!"

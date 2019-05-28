@@ -1,0 +1,106 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Rajasthani Mirchi Vada | Video Recipe"
+
+description: "Rajasthani Mirchi Vada is a very famous street food of Rajasthan, which was originated from the city of Jodhpur. Thus, they are also known as Jodhpuri Mirchi Vada. They are chili peppers stuffed with spicy potato filling and then dipped in gram flour batter and deep-fried. Their hot flavors and extremely piquant taste is simply out of this world."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/08/recipes-Rajasthani-Mirchi-Vada-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT8M
+
+cookTime: PT20M
+
+totalTime: PT28M
+
+recipeCategory: Snacks
+
+recipeCuisine: Indian
+
+recipeYield: 6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.9
+  ratingCount: 53
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 264 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "rajasthani, mirchi, vada,  "
+
+video:
+  name: "Rajasthani Mirchi Vada | Video Recipe"
+  description: "Rajasthani Mirchi Vada is a very famous street food of Rajasthan, which was originated from the city of Jodhpur. Thus, they are also known as Jodhpuri Mirchi Vada. They are chili peppers stuffed with spicy potato filling and then dipped in gram flour batter and deep-fried. Their hot flavors and extremely piquant taste is simply out of this world."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/08/recipes-Rajasthani-Mirchi-Vada-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/8x4ER52HQ0w/maxresdefault.jpg
+  contentUrl: "https://youtu.be/8x4ER52HQ0w"
+  embedUrl: "https://www.youtube.com/embed/8x4ER52HQ0w"
+  uploadDate: 2018-08-15
+
+datePublished: 2018-08-15
+
+url: https://www.mygingergarlickitchen.com/rajasthani-mirchi-vada-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For stuffing"
+  - "Medium sized potatoes, boiled and peeled - 5-6"
+  - "Finely chopped coriander - 1 tbsp"
+  - "Red chili powder - 2 tsp or according to your taste"
+  - "Garam masala powder - ½ tsp"
+  - "Dried mango powder - 1 tsp"
+  - "Salt to taste"
+  - "Fennel seeds - 1 tsp"
+  - "Coriander seeds - 1 tsp"
+  - "!!For batter:"
+  - "Gram flour - 2 cup"
+  - "Salt - ½ tsp"
+  - "Baking soda - ¼ tsp"
+  - "Oil to deep fry"
+  - "!!For Pakoras:"
+  - "Chili peppers (mirchi) - 6 (I used white)"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For  Stuffing:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat a pan; add coriander seeds and fennel seeds and toast. Remove and slightly crush them."
+  - "@type": HowToStep
+    text: "In a plate; add boiled potatoes, chopped coriander, red chili powder, garam masala powder, dried mango powder, toasted and crushed coriander seeds and fennel seeds and salt."
+  - "@type": HowToStep
+    text: "Mash well to make a mixture."
+- "@type": HowToSection
+  name: "For  Batter:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "In a bowl, add gram flour, add 1 tsp salt, water and whisk well to prepare a thick batter. Add baking soda and whisk well again."
+- "@type": HowToSection
+  name: "For  Vadai:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Now scoop out the seeds from the mirchis (peppers) slit lengthwise and discard seeds."
+  - "@type": HowToStep
+    text: "Wash peppers and dry them with muslin cloth. Stuff with potato mixture."
+  - "@type": HowToStep
+    text: "Heat oil in a pan."
+  - "@type": HowToStep
+    text: "Now coat the mirchis (peppers) with the batter and deep fry them till they are crisp and golden."
+  - "@type": HowToStep
+    text: "Drain on an absorbent paper. Serve piping hot with any chutney or sauce."

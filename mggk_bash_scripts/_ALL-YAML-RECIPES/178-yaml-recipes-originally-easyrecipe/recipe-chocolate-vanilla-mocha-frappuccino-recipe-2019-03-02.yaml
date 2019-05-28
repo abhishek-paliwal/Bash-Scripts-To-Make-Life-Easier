@@ -1,0 +1,70 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Chocolate Vanilla Mocha Frappuccino"
+
+description: "Chocolate Vanilla Mocha Frappuccino is a chilled and refreshing summer drink. It’s a quick and easy to make recipe with ingredients you most likely already have in your kitchen."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/08/recipe-chocolate-mocha-vanilla-frappuccino-anupama-paliwal-my-ginger-garlic-kitchen-7.jpg
+
+prepTime: PT2M
+
+cookTime: PT5M
+
+totalTime: PT7M
+
+recipeCategory: Beverage
+
+recipeCuisine: International
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.3
+  ratingCount: 76
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 291 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "chocolate, vanilla, mocha, frappuccino "
+
+datePublished: 2019-03-02
+
+url: https://www.mygingergarlickitchen.com/chocolate-vanilla-mocha-frappuccino-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Instant coffee powder - 2 tbsp"
+  - "Vanilla choco bars, sliced and sticks removed - 2"
+  - "Sugar (optional)"
+  - "Milk - 2 cups"
+  - "Ice cubes - 4 cups"
+  - "Vanilla ice cream - 1 cup"
+  - "Drinking chocolate powder - 1 tbsp"
+  - "!!For serving:"
+  - "Some dollop of ice cream"
+  - "Chocolate powder"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add all the ingredients to a blender and blend on high speed until ice is crushed and drink is smooth."
+  - "@type": HowToStep
+    text: "Pour into serving glasses, top with a dollop of ice cream and sprinkle some chocolate powder. Enjoy!"

@@ -1,0 +1,95 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Classic Black Eyed Peas Curry in Pepper Onion Gravy"
+
+description: "Classic Black Eyed Pea Curry in Pepper Onion Gravy is is easy and simple, super quick and no fuss. It has beans. It has vegetables. It has spices. So in a way, this is healthy, cozy and indulging."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/05/recipe-Black-Eyed-Pea-Curry-in-Pepper-Onion-Gravy-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT40M
+
+totalTime: PT50M
+
+recipeCategory: main
+
+recipeCuisine: Indian
+
+recipeYield: 6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.6
+  ratingCount: 67
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 146 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "classic, black, eyed, pea, curry, in, pepper, onion, gravy"
+
+datePublished: 2018-05-16
+
+url: https://www.mygingergarlickitchen.com/classic-black-eyed-pea-curry-in-pepper-onion-gravy/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Black eyed pea, soaked for overnight - 2 cups"
+  - "yellow bell pepper - 1 big, cut into medium dices"
+  - "red onions - 2 large,cut into dices"
+  - "tomato, roughly chopped - 2"
+  - "onion, ginger-garlic paste - 2 tbsp"
+  - "oil - 3 tbsp"
+  - "bay leaf - 1"
+  - "cumin seeds - 1 tsp"
+  - "mustard seeds - 1 tsp"
+  - "turmeric powder - ½ tsp"
+  - "kashmiri red chili powder - 1 tsp"
+  - "fresh cream - ½ cup"
+  - "coriander powder - 2 tsp"
+  - "green chilies, slitted - 3-4"
+  - "tomato ketchup - 1 tsp"
+  - "kasuri methi - 2 tbsp"
+  - "garam masala, powder - ¼ tsp"
+  - "salt, as per taste"
+  - "coriander leaves, and green chilies for garnish"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a pressure cooker. Add black eyed beans with salt, 3 cups of water, and cover the lid. Pressure cook for 3 whistles. Let it cook on low heat for about 5 minutes."
+  - "@type": HowToStep
+    text: "When the cooker has cooled off, open it."
+  - "@type": HowToStep
+    text: "Heat a pan, and add 3 tbsp oil to it. Add cumin seeds, mustard seeds, and bay leaf to it."
+  - "@type": HowToStep
+    text: "When cumin seeds start to crackle, add onion, ginger-garlic paste to it. sauté for 5 minutes. Add chopped tomatoes, and saute for 3-4 minutes."
+  - "@type": HowToStep
+    text: "Add bell pepper, and onions. Saute for 3 minutes. Add turmeric powder, and saute for another 3 minutes. Now add coriander powder, chili powder, garam masala powder, and salt along with 1 cup of water."
+  - "@type": HowToStep
+    text: "Add green chilies and boil it covered for 2 minutes. Add kasuri methi, tomato ketchup and mix well. Cooked covered for 5-7 minutes."
+  - "@type": HowToStep
+    text: "Remove from heat, and let it cool. Transfer into a blender, and blend until smooth."
+  - "@type": HowToStep
+    text: "Heat a pan. Add pepper onion gravy to it. Let it come to a boil. Add boiled black eyed peas and fresh cream. Cook for 3-4 minutes on medium heat."
+  - "@type": HowToStep
+    text: "Remove from heat, and garnish with fresh cream, green chilies and cilantro leaves."
+  - "@type": HowToStep
+    text: "Serve hot with steamed rice or any of your flatbread. Enjoy!"

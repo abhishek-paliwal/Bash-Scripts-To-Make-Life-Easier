@@ -1,0 +1,117 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Jeera Aloo Quesadilla | Video Recipe"
+
+description: "Jeera Aloo Quesadilla is one of such dishes which can be prepared in a jiffy. And it is cheesy, spicy and tastes absolutely delish. The cumin seeds and spices coat the boiled potato pieces so nicely and give them a marvelous texture and flavor."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2017/01/recipes-Jeera-Aloo-Quesadilla-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT7M
+
+cookTime: PT20M
+
+totalTime: PT27M
+
+recipeCategory: Lunch
+
+recipeCuisine: Indian
+
+recipeYield: 8
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.2
+  ratingCount: 77
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 150 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "jeera, aloo, quesadilla,  "
+
+video:
+  name: "Jeera Aloo Quesadilla | Video Recipe"
+  description: "Jeera Aloo Quesadilla is one of such dishes which can be prepared in a jiffy. And it is cheesy, spicy and tastes absolutely delish. The cumin seeds and spices coat the boiled potato pieces so nicely and give them a marvelous texture and flavor."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2017/01/recipes-Jeera-Aloo-Quesadilla-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/bdHJ_467Qe0/maxresdefault.jpg
+  contentUrl: "https://youtu.be/bdHJ_467Qe0"
+  embedUrl: "https://www.youtube.com/embed/bdHJ_467Qe0"
+  uploadDate: 2019-01-05
+
+datePublished: 2019-01-05
+
+url: https://www.mygingergarlickitchen.com/jeera-aloo-quesadilla-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For Jeera Aloo:"
+  - "Oil - 3 Tablespoons"
+  - "Potatoes, Boiled, Peeled And Diced Into 1 Inch Pieces - 2 Large"
+  - "Pinch Of Asafetida"
+  - "Cumin Seeds - 1 Teaspoon"
+  - "Salt To Taste"
+  - "Red Chili Powder - 1 Teaspoon"
+  - "Coriander Powder 1 Teaspoon"
+  - "Dry Mango Powder (Amchoor) - 1 Tsp Teaspoon"
+  - "Fresh Coriander Leaves, Chopped - 2 Tablespoons"
+  - "Water - 5-6 Tablespoons"
+  - "!!For The Quesadillas:"
+  - "Shredded Cheddar Or Grated Mozzarella Cheese"
+  - "Tortillas - 4"
+  - "Oil For Brushing"
+  - "Chopped Red Onion - 1"
+  - "Fresh coriander leaves, chopped - 2 tablespoons"
+  - "Sour Cream Or Greek Yogurt To Serve"
+  - "Chaat Masala For Sprinkle- 1 Tsp"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat 3 tbsp oil in a pan on a medium heat."
+  - "@type": HowToStep
+    text: "Add asafetida, cumin seeds and sauté for few seconds."
+  - "@type": HowToStep
+    text: "Add turmeric powder, coriander powder, red chili powder, and dry mango powder. Stir well."
+  - "@type": HowToStep
+    text: "Add diced potatoes and stir well until the spices coat the potatoes well."
+  - "@type": HowToStep
+    text: "Add salt and sauté for a minute."
+  - "@type": HowToStep
+    text: "Add 2 tbsp chopped coriander and water. Stir well and cook covered for 3 mins."
+  - "@type": HowToStep
+    text: "Remove from heat and set aside. Jeera Aloo is ready."
+  - "@type": HowToStep
+    text: "Heat a pan and brush with oil."
+  - "@type": HowToStep
+    text: "Place a tortilla and spread jeera aloo over it."
+  - "@type": HowToStep
+    text: "Sprinkle some chopped onions, coriander and chaat masala."
+  - "@type": HowToStep
+    text: "Add about 2 tbsp of cheese on top of jeera aloo."
+  - "@type": HowToStep
+    text: "Cover with another tortilla."
+  - "@type": HowToStep
+    text: "Press down on the tortilla with the back of a spatula for a few seconds to allow the cheese to melt."
+  - "@type": HowToStep
+    text: "Toast from both sides until the tortillas become golden and lightly crisp."
+  - "@type": HowToStep
+    text: "Slice into quarters and serve hot with sour cream or greek yogurt."
+  - "@type": HowToStep
+    text: "PS: You can also grill or bake these quesadillas."

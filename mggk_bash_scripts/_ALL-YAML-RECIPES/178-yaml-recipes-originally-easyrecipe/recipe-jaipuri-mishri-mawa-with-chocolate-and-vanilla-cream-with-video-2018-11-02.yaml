@@ -1,0 +1,108 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Jaipuri Mishri Mawa Recipe with Chocolate and Vanilla Cream"
+
+description: "Jaipuri Mawa Mishri or Mishri Mawa is a traditional Rajasthani dessert made with solidified milk (mawa) and Mishri (crystal sugar)."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/11/recipes-Jaipuri-Mishri-Mawa-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT8M
+
+cookTime: PT2M
+
+totalTime: PT10M
+
+recipeCategory: Dessert
+
+recipeCuisine: Indian
+
+recipeYield: 6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.4
+  ratingCount: 42
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 183 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "jaipuri, mishri, mawachocolatevanilla, cream"
+
+video:
+  name: "Jaipuri Mishri Mawa Recipe with Chocolate and Vanilla Cream"
+  description: "Jaipuri Mawa Mishri or Mishri Mawa is a traditional Rajasthani dessert made with solidified milk (mawa) and Mishri (crystal sugar)."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/11/recipes-Jaipuri-Mishri-Mawa-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/KcnP-3Xl1VE/maxresdefault.jpg
+  contentUrl: "https://youtu.be/KcnP-3Xl1VE"
+  embedUrl: "https://www.youtube.com/embed/KcnP-3Xl1VE"
+  uploadDate: 2018-11-02
+
+datePublished: 2018-11-02
+
+url: https://www.mygingergarlickitchen.com/jaipuri-mishri-mawa-with-chocolate-and-vanilla-cream-with-video/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For Mishri Mawa:"
+  - "mawa/dried milk - ¾ cup"
+  - "crystal sugar/mishri - ¼ cup"
+  - "rose water - 1 tbsp"
+  - "milk - 1 tsp"
+  - "saffron strands - 7-8"
+  - "pistachio - 2 tbsp"
+  - "ground cardamom - 1 tbsp"
+  - "!!For Chocolate Shapes:"
+  - "dark chocolate - 100g"
+  - "!!For vanilla cream:"
+  - "icing sugar - 4 tbsp"
+  - "vanilla extract - ¼ tsp"
+  - "cream - 100g"
+  - "!!For serving:"
+  - "fruits"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Grind crystal sugar to semi-make a fine powder."
+  - "@type": HowToStep
+    text: "Transfer mawa into a microwave safe bowl, and crumble with light hands."
+  - "@type": HowToStep
+    text: "Microwave for 30 seconds. Add crystal sugar to mawa and mix thoroughly."
+  - "@type": HowToStep
+    text: "Add pistachio, cardamom powder, rose water and mix well again."
+  - "@type": HowToStep
+    text: "Add milk and saffron strands to mortar and pestle. Grind till the strands are almost dissolved."
+  - "@type": HowToStep
+    text: "Add the saffron milk to mawa mixture and mix well, and set aside for 2 hours at room temperature."
+  - "@type": HowToStep
+    text: "Add cream, icing sugar and vanilla to a bowl and mix well."
+  - "@type": HowToStep
+    text: "Microwave for 3-4 minutes and set aside to cool off completely."
+  - "@type": HowToStep
+    text: "Break chocolate into pieces and microwave for 2 minutes."
+  - "@type": HowToStep
+    text: "Make desired shape on parchment paper and let it set in refrigerator."
+  - "@type": HowToStep
+    text: "Take off the chocolate shape and place onto a serving plate."
+  - "@type": HowToStep
+    text: "Top with a spoonful mawa mixture. Garnish with fruits and drizzle with some vanilla cream."
+  - "@type": HowToStep
+    text: "Serve immediately."

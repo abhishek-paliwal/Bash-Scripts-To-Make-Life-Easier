@@ -1,0 +1,75 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Pineapple Coconut Rabri"
+
+description: "Pineapple Coconut Rabri is an Indian style dessert, and a totally awesome one. This exotic sweet dish has a unique fruity-juicy pineapple flavor which shines this authentic dessert Rabri. And coconut adds a nice nutty texture to this."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/08/recipe-pineapple-coconut-rabri-anupama-paliwal-my-ginger-garlic-kitchen-1.jpg
+
+prepTime: PT5M
+
+cookTime: PT15M
+
+totalTime: PT20M
+
+recipeCategory: Dessert
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.1
+  ratingCount: 82
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 282 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "pineapple, coconut, rabri"
+
+datePublished: 2019-03-12
+
+url: https://www.mygingergarlickitchen.com/awesome-pineapple-coconut-rabri-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Pineapple chopped - 2 cups"
+  - "Desiccated coconut - 1 cup"
+  - "Evaporated milk, cooked on high in microwave for 5 minutes - 1 can"
+  - "Condensed milk - 1 can"
+  - "Sugar - 2 tbsp"
+  - "Pistachio chopped - 2 tbsp"
+  - "Cardamom powder - 1 tsp"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat a pan. Add chopped pineapple, and sugar to it."
+  - "@type": HowToStep
+    text: "Let them cook till water evaporates. Reduce the heat."
+  - "@type": HowToStep
+    text: "Add condensed milk, evaporated milk, desiccated coconut, cardamom powder, and chopped pistachio."
+  - "@type": HowToStep
+    text: "Mix well and cook for 3 minutes. Remove from heat, and let it cool completely."
+  - "@type": HowToStep
+    text: "Keep in refrigerator for 4-5 hours."
+  - "@type": HowToStep
+    text: "Transfer chilled rabri into serving glasses, and top with some chopped pistachio. Enjoy!"

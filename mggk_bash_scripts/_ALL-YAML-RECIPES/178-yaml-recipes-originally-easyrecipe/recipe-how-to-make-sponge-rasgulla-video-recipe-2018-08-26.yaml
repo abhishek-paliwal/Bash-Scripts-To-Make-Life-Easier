@@ -1,0 +1,112 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Rasgulla Recipe | How To Make Soft And Spongy Rasgulla At Home | Sweet Recipes | रसगुल्ला  + Video Recipe"
+
+description: "Sponge Rasgulla is melt-in-mouth soft paneer ball-shaped dumplings made of chena ( छैना ) and then cooked in a light syrup made of sugar."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/10/recipes-Sponge-Rasgulla-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT20M
+
+cookTime: PT25M
+
+totalTime: PT45M
+
+recipeCategory: Dessert
+
+recipeCuisine: Indian
+
+recipeYield: 14 Rasgullas
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.1
+  ratingCount: 58
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 258 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "how, to, make, sponge, rasgulla, रसगुल्ला,  "
+
+video:
+  name: "Rasgulla Recipe | How To Make Soft And Spongy Rasgulla At Home | Sweet Recipes | रसगुल्ला  + Video Recipe"
+  description: "Sponge Rasgulla is melt-in-mouth soft paneer ball-shaped dumplings made of chena ( छैना ) and then cooked in a light syrup made of sugar."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/10/recipes-Sponge-Rasgulla-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/1d7oTInuW54/maxresdefault.jpg
+  contentUrl: "https://youtu.be/1d7oTInuW54"
+  embedUrl: "https://www.youtube.com/embed/1d7oTInuW54"
+  uploadDate: 2018-08-26
+
+datePublished: 2018-08-26
+
+url: https://www.mygingergarlickitchen.com/how-to-make-sponge-rasgulla-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For Sponge Rasgulla:"
+  - "Milk - ­ 1 Liter (Use full Milk Cow Milk)"
+  - "White vinegar or lemon juice - 3 tbsp + 1.5 tbsp more if needed."
+  - "!!For Sugar Syrup:"
+  - "Sugar - 1 1/­2 Cups"
+  - "Water - 7½ cups"
+  - "Cardamom pods - 3-4 (Optional)"
+  - "!!For serving:"
+  - "Saffron Strands"
+  - "Pistachio, chopped­"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat milk in a pan and let it come to a boil."
+  - "@type": HowToStep
+    text: "Stir the milk occasionally to prevent burning."
+  - "@type": HowToStep
+    text: "Once the milk comes to a boil, turn the heat to low and add lemon juice/vinegar to it. Stir with a spatula."
+  - "@type": HowToStep
+    text: "When you see the green whey separated from the solids, then your milk is curdled."
+  - "@type": HowToStep
+    text: "Turn off the heat."
+  - "@type": HowToStep
+    text: "Line a strainer/colander with a cheese/muslin cloth and pass the curdled milk through the lined strainer."
+  - "@type": HowToStep
+    text: "Rinse well. Washing will remove the tang from the (curdled milk) chena."
+  - "@type": HowToStep
+    text: "Now gather the cloth from the sides and squeeze well.(Chenna ­has to be dry well."
+  - "@type": HowToStep
+    text: ")"
+  - "@type": HowToStep
+    text: "Hang the cloth for 25-30 mins, or put some weight."
+  - "@type": HowToStep
+    text: "Remove the chena out from the cloth and knead well for about 10-12 minutes. You can also use a food processor for kneading. (Knead well until it starts leaving the fat, or you see your palms are getting greasy.)"
+  - "@type": HowToStep
+    text: "Divide the dough into 12-14 pieces and roll them between your palms to make smooth and round lemon sized balls."
+  - "@type": HowToStep
+    text: "Add 1½ sugar, 7.5 cups water, and cardamom pods to a large pot and stir with a spatula.(The ratio of sugar water should be 1:5.)"
+  - "@type": HowToStep
+    text: "Let the water boil for few minutes and add the balls into it and cover it."
+  - "@type": HowToStep
+    text: "Shake the covered pan slightly and boil for 15 minutes or until the balls are double in size."
+  - "@type": HowToStep
+    text: "Setup a timer of 15 mins! Do not open the lid."
+  - "@type": HowToStep
+    text: "Let it cool completely and refrigerate."
+  - "@type": HowToStep
+    text: "Garnish with saffron strands and pistachio and serve."

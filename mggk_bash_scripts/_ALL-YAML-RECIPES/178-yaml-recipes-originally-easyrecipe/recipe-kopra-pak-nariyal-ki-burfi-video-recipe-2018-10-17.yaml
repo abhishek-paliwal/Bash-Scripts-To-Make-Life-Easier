@@ -1,0 +1,93 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Kopra Pak | Nariyal Ki Burfi | Khopra Pak Video Recipe"
+
+description: "Kopra Pak | Nariyal Ki Burfi | Khopra Pak is a very sophisticatedly and delicately flavored coconut sweet/mithai. It has intense coconut flavor and an amazing texture."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2017/01/recipes-kopra-pak-nariyal-ki-burfi-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT25M
+
+totalTime: PT30M
+
+recipeCategory: Dessert
+
+recipeCuisine: Indian 
+
+recipeYield: 16
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.1
+  ratingCount: 84
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 247 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "kopra, pak, nariyal, ki, burfi,  "
+
+video:
+  name: "Kopra Pak | Nariyal Ki Burfi | Khopra Pak Video Recipe"
+  description: "Kopra Pak | Nariyal Ki Burfi | Khopra Pak is a very sophisticatedly and delicately flavored coconut sweet/mithai. It has intense coconut flavor and an amazing texture."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2017/01/recipes-kopra-pak-nariyal-ki-burfi-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/YcERhB04QLI/maxresdefault.jpg
+  contentUrl: "https://youtu.be/YcERhB04QLI"
+  embedUrl: "https://www.youtube.com/embed/YcERhB04QLI"
+  uploadDate: 2018-10-17
+
+datePublished: 2018-10-17
+
+url: https://www.mygingergarlickitchen.com/kopra-pak-nariyal-ki-burfi-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Unsweetened Desiccated Coconut - 1 Cup"
+  - "Mawa - 1 Cup"
+  - "Ghee - 1 Tbsp"
+  - "Ground Cardamom - 1 Tsp"
+  - "Whole Milk - 1 Cup"
+  - "Powdered Sugar - ½ Cup (Or As Per Taste)"
+  - "Pistachio, chopped For Garnish"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat a pan over medium heat. Add coconut and dry roast it for 2-3 mins."
+  - "@type": HowToStep
+    text: "Add crumbled mawa and sauté it for 3-4 mins."
+  - "@type": HowToStep
+    text: "Add milk and cook for 5 mins stirring continuously."
+  - "@type": HowToStep
+    text: "Add sugar and cook for 5-7 mins or till the mixture is almost thick and lumpy as shown in the video."
+  - "@type": HowToStep
+    text: "Now add ghee and cardamom and cook for 2 mins while stirring continuously. Remove from the heat."
+  - "@type": HowToStep
+    text: "Grease a pan with ghee and transfer the mixture into the pan and spread it evenly using a flat ladle. I used a 7x7 inch here."
+  - "@type": HowToStep
+    text: "Garnish with chopped pistachio and lightly."
+  - "@type": HowToStep
+    text: "Decorate with silver leaf. This step is completely optional."
+  - "@type": HowToStep
+    text: "Let it cool completely for 45-60 mins."
+  - "@type": HowToStep
+    text: "Cut into square pieces and serve or store in an air-tight container."

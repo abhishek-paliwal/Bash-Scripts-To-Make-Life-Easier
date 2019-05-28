@@ -1,0 +1,83 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Rose Flavored Vermicelli Pudding | Seviyan Kheer"
+
+description: "Rose Flavored Vermicelli Pudding aka 'seviyan kheer' is a very delicious and popular Indian dessert. This pudding is prepared with thin vermicelli milk, sugar, and rose water. I am using pre roasted fine vermicelli, which is easily available at any Indian grocery store."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/09/recipe-rose-flavoured-vermicelli-pudding-anupama-paliwal-my-ginger-garlic-kitchen-1.jpg
+
+prepTime: PT5M
+
+cookTime: PT25M
+
+totalTime: PT30M
+
+recipeCategory: Dessert
+
+recipeCuisine: Indian
+
+recipeYield: 4-6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.9
+  ratingCount: 46
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 233 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "rose, flavored, vermicelli, pudding, seviyan, kheer"
+
+datePublished: 2018-09-15
+
+url: https://www.mygingergarlickitchen.com/rose-flavored-vermicelli-pudding/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Full cream milk - 3½ cups"
+  - "Ghee or butter - 1 tsp"
+  - "Roasted vermicelli, broken into rough 2” pieces - 1 cup"
+  - "Sugar as per taste"
+  - "Cardamom powder - 1 tsp"
+  - "Rose water - 2 tbsp"
+  - "Raisins - 2 tbsp"
+  - "Almonds, chopped - 1 tbsp"
+  - "Cashew nuts chopped - 1 tbsp"
+  - "Pistachio, chopped for garnishing - 1 tbsp"
+  - "Dried rose petals for garnishing"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat a pan, and add 1 tsp clarified butter to it. Add broken vermicelli and roast for a minute."
+  - "@type": HowToStep
+    text: "Heat another pan, and add milk to it."
+  - "@type": HowToStep
+    text: "Once the milk has reduced, add the roasted vermicelli to the milk and cook on medium heat for 10-15 minutes, or until the vermicelli is soft."
+  - "@type": HowToStep
+    text: "Add sugar, cardamom powder and cook for 5 minutes."
+  - "@type": HowToStep
+    text: "Remove from heat, add rose water along with almonds, cashew nuts, and raisins."
+  - "@type": HowToStep
+    text: "Mix well, and let it cool. Pour into a serving glasses."
+  - "@type": HowToStep
+    text: "Garnish with chopped pistachio and rose petals."
+  - "@type": HowToStep
+    text: "Refrigerate for 4-5 hours. Served chilled after main meals. Enjoy!"

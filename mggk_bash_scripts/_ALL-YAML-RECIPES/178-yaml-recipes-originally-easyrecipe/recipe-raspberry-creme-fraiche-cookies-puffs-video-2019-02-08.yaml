@@ -1,0 +1,115 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "French Style Puff Pastry Filled With Raspberry Crème Fraîche | VIDEO Recipe"
+
+description: "These gorgeous little Raspberry Creme Puffs are easy to make and are a perfect treat to make for Valentine’s Day. They are simple and so light. Plus, these are so easy to prepare. Also they look and taste absolutely fantastic."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/02/recipes-Raspberry-Crème-Fraîche-and-Cookies-Puffs-anupama-paliwal-my-ginger-garlic-kitchen-AAA.jpg
+
+prepTime: PT5M
+
+cookTime: PT15M
+
+totalTime: PT20M
+
+recipeCategory: Dessert
+
+recipeCuisine: French
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.3
+  ratingCount: 55
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 194 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "raspberry, crème, fraîche, cookies, puffs "
+
+video:
+  name: "French Style Puff Pastry Filled With Raspberry Crème Fraîche | VIDEO Recipe"
+  description: "These gorgeous little Raspberry Creme Puffs are easy to make and are a perfect treat to make for Valentine’s Day. They are simple and so light. Plus, these are so easy to prepare. Also they look and taste absolutely fantastic."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/02/recipes-Raspberry-Crème-Fraîche-and-Cookies-Puffs-anupama-paliwal-my-ginger-garlic-kitchen-AAA.jpg
+    - https://i.ytimg.com/vi/H-G_lF2PtH4/maxresdefault.jpg
+  contentUrl: "https://youtu.be/H-G_lF2PtH4"
+  embedUrl: "https://www.youtube.com/embed/H-G_lF2PtH4"
+  uploadDate: 2019-02-08
+
+datePublished: 2019-02-08
+
+url: https://www.mygingergarlickitchen.com/raspberry-creme-fraiche-cookies-puffs-video/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For Puffs:"
+  - "Puff Pastry sheet, thawed - 4"
+  - "egg - 1"
+  - "water - 1 tbsp"
+  - "Heart cookie cutter"
+  - "Round Cookie Cutter"
+  - "!!For Filling:"
+  - "chocolate chip cookies - 2-3"
+  - "creme fraiche - ¾ cup"
+  - "frozen raspberries - ½ cup"
+  - "granulated sugar - 3 tbsp"
+  - "lemon juice - 2 tsp"
+  - "!!For Serving:"
+  - "Icing sugar - 2 tbsp"
+  - "Sliced almonds - 1 tbsp"
+  - "Dried cranberries - 1 tbsp"
+  - "Fresh parsley"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Pre-heat oven to 180°C."
+  - "@type": HowToStep
+    text: "Line a baking tray with baking or foil paper."
+  - "@type": HowToStep
+    text: "Using round cookie cutter, cut out 8 circles from the pastry sheets."
+  - "@type": HowToStep
+    text: "Cut out 4 hearts from 4 round circles. Place hearts on rounds."
+  - "@type": HowToStep
+    text: "In a small bowl, whisk egg and water together. Brush each circle with egg wash."
+  - "@type": HowToStep
+    text: "Place rounds on the lined baking sheet."
+  - "@type": HowToStep
+    text: "Bake circles until puffy and light brown - about 10-12 minutes."
+  - "@type": HowToStep
+    text: "Add raspberries, sugar and lemon juice to a pan, and let them boil till the juice thickens."
+  - "@type": HowToStep
+    text: "Remove from the heat and let it cool down completely."
+  - "@type": HowToStep
+    text: "Add creme fraiche to the cooked berry sauce and fold gently."
+  - "@type": HowToStep
+    text: "Crush cookies and add to the berry cream. Fold in berry cream to mix well."
+  - "@type": HowToStep
+    text: "Using a knife, gently cut the top in keeping the heart shape."
+  - "@type": HowToStep
+    text: "Fill the puffs with raspberry cream. Top with dried cranberries, sliced almonds and decorate with some parsley."
+  - "@type": HowToStep
+    text: "Top filled puffs with heart shapes."
+  - "@type": HowToStep
+    text: "Dust with icing sugar. Top with some more cream and dried cranberries and serve."
+  - "@type": HowToStep
+    text: "Enjoy!"

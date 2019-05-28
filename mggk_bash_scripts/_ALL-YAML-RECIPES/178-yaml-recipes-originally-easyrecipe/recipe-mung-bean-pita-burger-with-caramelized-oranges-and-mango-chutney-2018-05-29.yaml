@@ -1,0 +1,110 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Mung Bean Pita Burger With Caramelized Oranges And Mango Chutney"
+
+description: "Mung Bean Pita Burger With Caramelized Oranges And Mango Chutney is made with green gram. This is a cheese free burger, and also this packed with lots of fruits and veggies."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/05/recipe-mung-bean-pita-burger-with-grilled-oranges-and-mango-chutney-anupama-paliwal-my-ginger-garlic-kitchen-FI1.jpg
+
+prepTime: PT15M
+
+cookTime: PT20M
+
+totalTime: PT35M
+
+recipeCategory: Main
+
+recipeCuisine: World
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5.0
+  ratingCount: 53
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 211 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "mung, bean, pita, burgercaramelized, orangesmango, chutney"
+
+datePublished: 2018-05-29
+
+url: https://www.mygingergarlickitchen.com/mung-bean-pita-burger-with-caramelized-oranges-and-mango-chutney/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!for burger:"
+  - "whole green gram or mung beans, cooked - 2 cups, or cans"
+  - "green bell pepper, finely chopped in food processor - 1"
+  - "onion, finely chopped in food processor - 2"
+  - "garlic cloves, peeled and crushed - 4"
+  - "salt and pepper to taste"
+  - "eggs -2"
+  - "chili powder - 1 tsp"
+  - "cumin powder - 1 tsp"
+  - "hot sauce - 1tsp"
+  - "bread crumbs - 1 cup"
+  - "butter or margarine of baking (you can also replace butter with cooking oil )"
+  - "!!for fried eggs:"
+  - "eggs - 4"
+  - "oil - 1 tsp"
+  - "pepper and salt"
+  - "!!for caramelized oranges:"
+  - "orange slices - 8"
+  - "powdered sugar"
+  - "oil - 1 tsp"
+  - "!!for serving:"
+  - "greek pita bread (pocket less) - 8"
+  - "mayonnaise"
+  - "lettuce"
+  - "sliced tomato"
+  - "sliced red onion"
+  - "pickled jalapeño"
+  - "tomato sauce"
+  - "mango chutney"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For Burger:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat oven to 375 degrees F /190 degrees C, and lightly oil a baking sheet."
+  - "@type": HowToStep
+    text: "In a medium bowl, mash mung beans with a fork. Keep mashing until they're mostly broken up, or until thick and pasty. Add bell pepper, onion, garlic, salt and pepper, egg, chili powder, cumin, and chili sauce. Add bread crumbs."
+  - "@type": HowToStep
+    text: "Stir until everything is combined, or mixture is sticky and holds together."
+  - "@type": HowToStep
+    text: "Divide mixture into 8 patties. Place them on a baking sheet. Top with some butter or brush oil. Flip it over and top the other side with butter/oil. Bake for about 10 minutes on each side or until they are brown and crisp."
+- "@type": HowToSection
+  name: "For Fried Egg:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat ¼ tsp tbsp oil in a pan over medium-high heat. Crack 1 egg into it. Sprinkle with salt and pepper. Cook 2 minutes. Flip it over and cook for few seconds. Remove from heat and repeat the same process with rest of the eggs."
+- "@type": HowToSection
+  name: "For Caramelized Oranges:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Sprinkle some sugar on the both sides of orange slices."
+  - "@type": HowToStep
+    text: "Heat a pan over high heat. Add 1 teaspoon of olive oil and sear both sides of the oranges for about 1 minute."
+- "@type": HowToSection
+  name: "For To Assemble The Burgers:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "To assemble, place 4 breads on a tray. Top each bread with lettuce. Place 1 burger, 1 fried egg, two slices of caramelized oranges on each bread. Top with 1 tomato slice, 1 onion slice, 1 pickled jalapeño. Drizzle with mayo, tomato sauce, and a spoonful mango chutney. Add the top bread and serve."

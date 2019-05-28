@@ -1,0 +1,83 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Fruits & Vegetables Fiesta Salad With Honey Pepper Dressing"
+
+description: "Fruits and Vegetables Fiesta Salad With Honey Pepper Dressing. This is also one of my favorite salads to make during any season. A healthy recipes season."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/recipe-fruits-and-vegetable-fiesta-salda-with-honey-pepper-dressing-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT7M
+
+cookTime: PT2M
+
+totalTime: PT9M
+
+recipeCategory: Salad
+
+recipeCuisine: Main
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5.0
+  ratingCount: 74
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 296 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "fruits, vegetables, fiesta, saladhoney, pepper, dressing"
+
+datePublished: 2019-02-24
+
+url: https://www.mygingergarlickitchen.com/fruits-vegetables-fiesta-salad-honey-pepper-dressing/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "onion, chopped - 1"
+  - "cucumber, cut lengthwise - ½ cup"
+  - "orange, chopped - 1"
+  - "carrot, sliced - 1"
+  - "red bell pepper, chopped - 1"
+  - "raspberry - ½ cup"
+  - "pomegranate arils - ¾ cup"
+  - "apple, sliced - 1"
+  - "banana, sliced - 1"
+  - "green grapes - ½ cup"
+  - "cooked green peas - ½ cup"
+  - "lemon juice - 2 tbsp"
+  - "white vinegar - 1 tsp"
+  - "cayenne pepper powder - ½ tsp"
+  - "black pepper powder - ¼ tsp"
+  - "dried parsley - 1 tbsp"
+  - "virgin olive oil - 1 tbsp"
+  - "salt, as per taste"
+  - "honey - 2 tbsp"
+  - "almonds - 8-10"
+  - "hot pepper sauce - 1 tsp (optional)"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a large bowl. Combine, red bell pepper, carrot, green peas, raspberries, banana, cucumber, apple, green grapes, and onion."
+  - "@type": HowToStep
+    text: "In a bowl combine lemon juice, white vinegar, cayenne pepper powder, dried parsley, black pepper powder, honey, olive oil, and salt. Whisk well until combined."
+  - "@type": HowToStep
+    text: "Add a few drops of pepper sauce, if you like hot! Pour dressing over salad and toss well. Top with almonds and serve."

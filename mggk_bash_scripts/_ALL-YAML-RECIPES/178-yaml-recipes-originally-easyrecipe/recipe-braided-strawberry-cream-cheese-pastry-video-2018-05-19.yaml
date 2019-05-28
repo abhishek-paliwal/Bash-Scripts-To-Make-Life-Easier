@@ -1,0 +1,99 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Braided Strawberry Cream Cheese Pastry | Video"
+
+description: "This Braided Strawberry Cream Cheese Pastry is a such a stunning, delicious and the simplest thing that you can make. A strawberry cream cheese filling wrapped in puff pastry with appealing slits allowing its sweet and delicious center to peak through. It&#039;s just the perfect way to pack the fresh strawberries."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/05/recipes-Braided-Strawberry-Cream-Cheese-Pastry-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT30M
+
+totalTime: PT35M
+
+recipeCategory: Dessert
+
+recipeCuisine: European
+
+recipeYield: 6-8
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.4
+  ratingCount: 43
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 198 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "braided, strawberry, cream, cheese, pastry "
+
+video:
+  name: "Braided Strawberry Cream Cheese Pastry | Video"
+  description: "This Braided Strawberry Cream Cheese Pastry is a such a stunning, delicious and the simplest thing that you can make. A strawberry cream cheese filling wrapped in puff pastry with appealing slits allowing its sweet and delicious center to peak through. It&#039;s just the perfect way to pack the fresh strawberries."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/05/recipes-Braided-Strawberry-Cream-Cheese-Pastry-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/y5B2LZks3UI/maxresdefault.jpg
+  contentUrl: "https://youtu.be/y5B2LZks3UI"
+  embedUrl: "https://www.youtube.com/embed/y5B2LZks3UI"
+  uploadDate: 2018-05-19
+
+datePublished: 2018-05-19
+
+url: https://www.mygingergarlickitchen.com/braided-strawberry-cream-cheese-pastry-video/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "cream cheese or quark cheese, at room temperature - 120g"
+  - "strawberry jam - 2 tbsp"
+  - "Frozen puff pastry sheet, thawed - 250g"
+  - "All-purpose flour, for dusting"
+  - "Fresh strawberries, hulled and sliced - 12-14"
+  - "Pearl sugar, for garnish"
+  - "egg wash - 1"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat the oven to 400°F/200°C. Line a baking sheet with parchment paper."
+  - "@type": HowToStep
+    text: "In a small bowl, combine cream cheese and strawberry jam. Mix until well combined."
+  - "@type": HowToStep
+    text: "Roll the pastry into a 14-by-12-inch rectangle."
+  - "@type": HowToStep
+    text: "Transfer the pastry dough into the prepared baking sheet. Cut diagonal slits 1 inch apart from the 2 sides of the pastry rectangle."
+  - "@type": HowToStep
+    text: "Spread the cream cheese mixture lengthwise down the center of the pastry."
+  - "@type": HowToStep
+    text: "Top with fresh strawberries."
+  - "@type": HowToStep
+    text: "Add some more mixture and strawberries."
+  - "@type": HowToStep
+    text: "Fold the top and bottom parts of sheet as shown in video."
+  - "@type": HowToStep
+    text: "To braid; Start at one end and fold the pastry strips over the strawberries on a diagonal, alternating sides until the whole sheet is braided."
+  - "@type": HowToStep
+    text: "Brush the pastry with the egg wash. Sprinkle with the pearl sugar and top."
+  - "@type": HowToStep
+    text: "Bake for 25-30 minutes or until golden brown."
+  - "@type": HowToStep
+    text: "Let cool on completely on wire rack before serving."
+  - "@type": HowToStep
+    text: "Enjoy with a cup of coffee."

@@ -1,0 +1,72 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Green Tea Watermelon Detox Smoothie Recipe"
+
+description: "Green Tea Watermelon Detox Smoothie Recipe — For this smoothie, I used a combo of green tea, watermelon, lemon, and honey. This smoothie is beyond YUM. This smoothie is dairy-free, gluten-free, and sugar-free too if you skip honey! Add maple syrup to make it VEGAN. This mighty super vibrant red smoothie tastes AWESOME."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/07/recipe-green-tea-watermelon-detox-smoothie-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT2M
+
+totalTime: PT7M
+
+recipeCategory: Beverage
+
+recipeCuisine: International
+
+recipeYield: 2-3
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.5
+  ratingCount: 79
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 255 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "green, tea, watermelon, detox, smoothie"
+
+datePublished: 2019-04-20
+
+url: https://www.mygingergarlickitchen.com/green-tea-watermelon-detox-smoothie/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "green Tea Bags- 2"
+  - "chilled watermelon, roughly chopped - 2 cups"
+  - "water- 1 cup"
+  - "honey - 1½ tbsp"
+  - "lemon juice - 1 tsp"
+  - "ice cubes"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Bring water to boil, pour over tea bags and steep for about 4 minutes."
+  - "@type": HowToStep
+    text: "Squeeze and remove tea bags, chill for 4 hours or overnight."
+  - "@type": HowToStep
+    text: "Place all the ingredients in a blender, and blend until smooth."
+  - "@type": HowToStep
+    text: "Add ice cubes to serving glasses and pour smoothie on top."
+  - "@type": HowToStep
+    text: "Serve immediately."

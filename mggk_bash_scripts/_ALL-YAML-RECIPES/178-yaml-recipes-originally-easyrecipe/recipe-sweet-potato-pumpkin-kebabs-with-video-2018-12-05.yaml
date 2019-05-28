@@ -1,0 +1,119 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Sweet Potato Pumpkin Kebabs | Video Recipe"
+
+description: "Sweet Potato Pumpkin Kebabs. They are crunchy on the outside, soft, cheesy and nutty in the middle, sweet from the sweet potatoes, pumpkin, spiced from spices."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/10/recipes-Sweet-Potato-Pumpkin-kebabs-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT30M
+
+totalTime: PT40M
+
+recipeCategory: Snacks
+
+recipeCuisine: Indian
+
+recipeYield: 6 pieces
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.3
+  ratingCount: 62
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 240 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "sweet, potato, pumpkin, kebabs"
+
+video:
+  name: "Sweet Potato Pumpkin Kebabs | Video Recipe"
+  description: "Sweet Potato Pumpkin Kebabs. They are crunchy on the outside, soft, cheesy and nutty in the middle, sweet from the sweet potatoes, pumpkin, spiced from spices."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/10/recipes-Sweet-Potato-Pumpkin-kebabs-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/b83TU8Yyfqs/maxresdefault.jpg
+  contentUrl: "https://youtu.be/b83TU8Yyfqs"
+  embedUrl: "https://www.youtube.com/embed/b83TU8Yyfqs"
+  uploadDate: 2018-12-05
+
+datePublished: 2018-12-05
+
+url: https://www.mygingergarlickitchen.com/sweet-potato-pumpkin-kebabs-with-video/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For sweet potato pumpkin kebabs:"
+  - "chickpea flour - ½ cup"
+  - "grated pumpkin - 1 cup"
+  - "grated sweet potato - 1 cup"
+  - "salt to taste"
+  - "oil - 2 tbsp"
+  - "oil for shallow frying"
+  - "cumin seeds - 1 tsp"
+  - "coriander seeds - 1 tsp"
+  - "ginger, crushed - 2 tsp"
+  - "garlic, crushed - 1 tbsp"
+  - "cumin powder - 1 tbsp"
+  - "dried mango powder - 1 tbsp"
+  - "chili powder - 2 tsp"
+  - "garam masala powder - ½ tsp"
+  - "chili flakes - 1 tsp"
+  - "roasted peanuts - ½ cup"
+  - "raisins - ½ sup"
+  - "shredded mozzarella cheese - ½ cup"
+  - "some extra chicken flour for rolling patties"
+  - "!!For sweet potato pumpkin kebas:"
+  - "roasted peanut"
+  - "raisins"
+  - "mayonnaise"
+  - "hot pepper sauce"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat 2 tbsp oil in a pan. Add crushed garlic and saute for 1 minute."
+  - "@type": HowToStep
+    text: "Add crushed ginger and saute for another minute."
+  - "@type": HowToStep
+    text: "Add gram flour and roast till it turn golden brown."
+  - "@type": HowToStep
+    text: "Add grated pumpkin and grated sweet potatoes. Mix well and saute for 2 minutes."
+  - "@type": HowToStep
+    text: "Add salt, chili powder, cumin powder, dried mango powder and chili flakes."
+  - "@type": HowToStep
+    text: "Splash ⅛ cup water and mix well again. Cook for 2 minutes."
+  - "@type": HowToStep
+    text: "Remove from heat and transfer onto a plate. Let it cool slightly."
+  - "@type": HowToStep
+    text: "Take a lemon sized mixture. Make a ball and flatten it. Add roasted peanuts, raisins and cheese to the center."
+  - "@type": HowToStep
+    text: "Bring together all sides in the center and seal tightly to make a ball again."
+  - "@type": HowToStep
+    text: "Repeat the same process to make 5 more balls."
+  - "@type": HowToStep
+    text: "Roll each ball into chickpea flour and flatten them to make into a compact disc."
+  - "@type": HowToStep
+    text: "Heat oil in a pan for shallow frying."
+  - "@type": HowToStep
+    text: "Shallow fry these patties on both sides till nice & golden. Transfer them onto an absorbent paper."
+  - "@type": HowToStep
+    text: "Top with roasted peanuts and raisins. Serve hot with mayonnaise and hot pepper sauce."

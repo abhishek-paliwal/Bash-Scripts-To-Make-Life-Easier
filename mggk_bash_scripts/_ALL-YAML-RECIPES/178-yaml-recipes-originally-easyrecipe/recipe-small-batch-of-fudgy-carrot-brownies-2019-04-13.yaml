@@ -1,0 +1,94 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Small Batch Of Fudgy Carrot Brownies Recipe"
+
+description: "Learn how to make Small Batch Of Fudgy Carrot Brownies Recipe recipe with step-by-step photo instructions. Imagine the taste of a chilled fudgy brownie topped with some vanilla custard, a dollop of vanilla ice-cream and a drizzle of caramel sauce. Uummm! Doesn’t that sound sinfully delicious?"
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/06/recipe-carrot-brownies-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT20M
+
+totalTime: PT25M
+
+recipeCategory: Dessert
+
+recipeCuisine: World
+
+recipeYield: 3-4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5.0
+  ratingCount: 76
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 188 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "small, batch, of, fudgy, carrot, brownies"
+
+datePublished: 2019-04-13
+
+url: https://www.mygingergarlickitchen.com/small-batch-of-fudgy-carrot-brownies/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!for brownie:"
+  - "flour - ¼ cup"
+  - "salted butter - ¼ cup"
+  - "egg - 1"
+  - "vanilla extract - ½ tsp"
+  - "granulated sugar - ½ cup"
+  - "unsweetened cocoa powder - ¼ cup"
+  - "shredded carrots - ½ cup"
+  - "ground cinnamon - 1 tsp"
+  - "!!for serving:"
+  - "vanilla custard"
+  - "vanilla ice-cream"
+  - "caramel sauce"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For Brwonie:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat oven to 300°/150C."
+  - "@type": HowToStep
+    text: "Line 8x4” pan and spray with non-stick cooking spray."
+  - "@type": HowToStep
+    text: "Place butter in a microwave safe bowl and heat in microwave until ⅔ of the way melted, about 25 seconds."
+  - "@type": HowToStep
+    text: "Mix in sugar, stirring until butter is fully melted, then add egg and vanilla extract. Mix well."
+  - "@type": HowToStep
+    text: "Add flour and cocoa powder and mix just until combined."
+  - "@type": HowToStep
+    text: "Stir in grated carrots, and cinnamon."
+  - "@type": HowToStep
+    text: "Pour into prepared pan and bake 20-25 minutes."
+  - "@type": HowToStep
+    text: "Allow the brownies to cool before frosting."
+  - "@type": HowToStep
+    text: "Allow the brownies to set at least one 3o minutes in the fridge before cutting."
+- "@type": HowToSection
+  name: "For Serving:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Drizzle vanilla custard right over the brownies."
+  - "@type": HowToStep
+    text: "Top brownie with a dollar of ice-cream and drizzle some caramel sauce. Enjoy with a glass of milk or coffee!"

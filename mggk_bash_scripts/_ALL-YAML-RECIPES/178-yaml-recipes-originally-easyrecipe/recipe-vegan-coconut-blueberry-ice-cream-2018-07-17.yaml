@@ -1,0 +1,85 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Vegan Coconut  Blueberry Ice-Cream"
+
+description: "This Vegan Coconut Blueberry Ice Cream is so creamy and classic. And you don’t need an ice cream maker to create it. Blueberries are gently swirled into a coconut whip cream base, which creates a colorful dessert that tastes as delectable as the coconut and blueberries themselves. You would only need one scoop of this fruity dessert after an evening meal, and you can simply call it a day! Nothing can beat that refreshing feeling."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/07/recipe-no-churn-vegan-coconut-blubeberry-icecream-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT5H
+
+totalTime: PT5H10M
+
+recipeCategory: Dessert
+
+recipeCuisine: World
+
+recipeYield: 5-6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.4
+  ratingCount: 49
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 209 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "vegan, coconut, blueberry, icecream"
+
+datePublished: 2018-07-17
+
+url: https://www.mygingergarlickitchen.com/vegan-coconut-blueberry-ice-cream/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!for blueberry sauce:"
+  - "blueberries (frozen or fresh) - ¼ cup"
+  - "sugar - 2 tbsp"
+  - "!!for ice-cream:"
+  - "full fat coconut milk, chilled - 400ml"
+  - "sweetened coconut condensed milk - ½ cup"
+  - "vanilla extract - 1 tsp"
+  - "blueberry sauce - 5-6 tbsp"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For Blueberry Sauce:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Blend together blueberries and sugar in a blender or food processor. Blend until smooth."
+  - "@type": HowToStep
+    text: "Pass it through a sieve and set aside."
+- "@type": HowToSection
+  name: "For  Vegan Coconut Blueberry Ice-Cream:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Remove water from chilled coconut milk (400 ml) and carefully scoop the cream into a mixing bowl."
+  - "@type": HowToStep
+    text: "Using an electric beater, whip up the coconut cream on high speed until it's light and fluffy, or 4-5 minutes."
+  - "@type": HowToStep
+    text: "Add the condensed coconut milk and whip on high speed for another 3-4 minutes."
+  - "@type": HowToStep
+    text: "Add vanilla extract and fold gently. Add blueberry sauce and gently swirl to create a marbled effect."
+  - "@type": HowToStep
+    text: "Transfer to a an airtight container and top with shredded coconut and chocolate chunks."
+  - "@type": HowToStep
+    text: "Freeze for 4 hours or overnight."
+  - "@type": HowToStep
+    text: "Keep ice-cream at room temperature for 3-4 minutes, to make it easier to scoop. Serve in waffle cones or cups! Enjoy!"

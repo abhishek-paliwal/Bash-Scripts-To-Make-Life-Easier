@@ -1,0 +1,109 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Pumpkin Muesli Chocolate Bread | Video Recipe"
+
+description: "This Pumpkin Muesli Chocolate Bread has brown sugar, pumpkin, muesli, and chocolate. It is swirled with a layer of chocolate and a layer of muesli and some sprinkle of brown sugar. I did not drizzle it with any sauce. If you like sweet stuff then feel free to drizzle it with chocolate ganache. Also, if you like melting gooey chocolate in your bread, then eat it warm. Or if you think it’s too messy, then let it cool completely."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/10/recipes-Pumpkin-Muesli-Chocolate-Bread-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT50M
+
+totalTime: PT1H
+
+recipeCategory: Breakfast
+
+recipeCuisine: American
+
+recipeYield: 1 loaf
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 41
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 226 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "pumpkin, muesli, chocolate, bread,  "
+
+video:
+  name: "Pumpkin Muesli Chocolate Bread | Video Recipe"
+  description: "This Pumpkin Muesli Chocolate Bread has brown sugar, pumpkin, muesli, and chocolate. It is swirled with a layer of chocolate and a layer of muesli and some sprinkle of brown sugar. I did not drizzle it with any sauce. If you like sweet stuff then feel free to drizzle it with chocolate ganache. Also, if you like melting gooey chocolate in your bread, then eat it warm. Or if you think it’s too messy, then let it cool completely."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/10/recipes-Pumpkin-Muesli-Chocolate-Bread-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/dV3hhR3OgxQ/maxresdefault.jpg
+  contentUrl: "https://youtu.be/dV3hhR3OgxQ"
+  embedUrl: "https://www.youtube.com/embed/dV3hhR3OgxQ"
+  uploadDate: 2018-10-26
+
+datePublished: 2018-10-26
+
+url: https://www.mygingergarlickitchen.com/pumpkin-muesli-chocolate-bread-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For Chocolate Filling:"
+  - "Dark chocolate or semi­sweet chocolate - 200g"
+  - "Cream - 200ml or 2dl"
+  - "!!For Bread:"
+  - "Pumpkin puree - ¾ cup"
+  - "Melted butter or oil - ½ cup"
+  - "Eggs - 2"
+  - "Vanilla extract - ½ tbs"
+  - "Buttermilk - ¼ cup or more if batter is too thick"
+  - "Bread flour - 200g or 1½ cup"
+  - "Brown sugar - 165g or ¾ cup + 2 tbsp"
+  - "Baking soda - 1 tsp"
+  - "Salt - ¼ tsp"
+  - "Pumpkin pie spice - 2 tbsp (1½ tbsp ground cinnamon + ¼ tbsp ground nutmeg + ¼ tbsp ground ginger + ⅛ tbsp ground cloves)"
+  - "Fruits and nut muesli - ¼ cup + 4 tbsp"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat the oven to 175°C."
+  - "@type": HowToStep
+    text: "Brush a pan with butter and dust with some sugar. (9 X 5 inch - 23X 13 cm loaf pan would be good)"
+  - "@type": HowToStep
+    text: "In a large bowl, using an electric hand mixer, cream together Cream together brown sugar, eggs and vanilla and the pumpkin puree until creamy."
+  - "@type": HowToStep
+    text: "Add flour, baking soda, salt and pumpkin pie spice and whisk until combined."
+  - "@type": HowToStep
+    text: "Add buttermilk and whisk again."
+  - "@type": HowToStep
+    text: "Fold in ¼ cup muesli and mix well."
+  - "@type": HowToStep
+    text: "Pour the ¾ of the batter into the prepared greased loaf pan."
+  - "@type": HowToStep
+    text: "Add chocolate filling to create a chocolate layer."
+  - "@type": HowToStep
+    text: "Add ¼ of the batter and rest of the chocolate filling."
+  - "@type": HowToStep
+    text: "Make swirls with a knife or tooth piece."
+  - "@type": HowToStep
+    text: "Sprinkle muesli and brown sugar on top."
+  - "@type": HowToStep
+    text: "Bake for about 50-60 minutes until golden brown and a toothpick inserted into the center comes out clean."
+  - "@type": HowToStep
+    text: "Let bread cool in pan for 10 minutes, and then invert onto a wire rack or clean surface."
+  - "@type": HowToStep
+    text: "Slice and enjoy."

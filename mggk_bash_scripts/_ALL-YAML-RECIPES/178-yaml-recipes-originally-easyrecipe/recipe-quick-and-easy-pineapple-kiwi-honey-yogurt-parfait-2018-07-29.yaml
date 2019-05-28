@@ -1,0 +1,76 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Quick And Easy Pineapple Kiwi Honey Yogurt Parfait"
+
+description: "Quick And Easy Pineapple Kiwi Honey Yogurt Parfait is a light fruity and delicious parfait with kiwi, pineapple, yogurt, honey and cookies. It tastes best with fresh fruits, but you can also use canned pineapples. And if you want to have these for desserts too, then you have plenty of time for chilling. So just chill it for about 1-2 hours, and you are good to go."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/07/recipe-pineapple-kiwi-yogurt-parfait-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT2M
+
+cookTime: PT3M
+
+totalTime: PT5M
+
+recipeCategory: Breakfast
+
+recipeCuisine: World
+
+recipeYield: 2
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.1
+  ratingCount: 80
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 145 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "quickeasy, pineapple, kiwi, honey, yogurt, parfait"
+
+datePublished: 2018-07-29
+
+url: https://www.mygingergarlickitchen.com/quick-and-easy-pineapple-kiwi-honey-yogurt-parfait/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "digestive cookies crust - ½ cup"
+  - "natural full fat yogurt, chilled - 1 cup"
+  - "pineapple chopped and chilled - ¼ cup"
+  - "kiwi chopped and chilled - ¼ cup"
+  - "honey"
+  - "cherry for topping"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add 2 tsp honey to kiwi and mix well."
+  - "@type": HowToStep
+    text: "Add 2 tsp honey to pineapple and mix well."
+  - "@type": HowToStep
+    text: "Add 2 tbsp honey to yogurt and mix well."
+  - "@type": HowToStep
+    text: "When ready to assemble, place yogurt in bottom of glasses. Add a layer of cookies crust. Then a layer of pineapple."
+  - "@type": HowToStep
+    text: "And then second layer of yogurt. Then a layer of cookies crust. And then a layer of kiwi."
+  - "@type": HowToStep
+    text: "Third layer of yogurt. Then a layer of cookies crust. And then a layer of pineapple."
+  - "@type": HowToStep
+    text: "Top with some more yogurt and a cherry. Dig in and enjoy!"

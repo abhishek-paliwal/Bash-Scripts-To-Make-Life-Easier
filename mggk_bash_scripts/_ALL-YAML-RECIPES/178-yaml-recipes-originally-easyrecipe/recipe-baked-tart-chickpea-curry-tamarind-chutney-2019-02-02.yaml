@@ -1,0 +1,73 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Baked Tart with Chickpea Curry and Tamarind Chutney"
+
+description: "Baked Tart with Chickpea Curry and Tamarind Chutney is warm, buttery, crisp, filled with chickpea curry, and comes with the sweet-spicy-fragrant flavors."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/recipe-baked-tart-with-chickpeas-curry-and-tamarind-chuntey-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT30M
+
+totalTime: PT35M
+
+recipeCategory: Appetizer
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.3
+  ratingCount: 32
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 292 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "baked, tartchickpea, currytamarind, chutney"
+
+datePublished: 2019-02-02
+
+url: https://www.mygingergarlickitchen.com/baked-tart-chickpea-curry-tamarind-chutney/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "puff pastry sheets - 4"
+  - "chickpea curry - 1 cup (see recipe here)"
+  - "tamarind chutney - 4 tbsp"
+  - "red onion, chopped - 1"
+  - "pomegranate arils - ¼ cup"
+  - "cumin powder - 1 tsp"
+  - "cilantro leaves - 2 tbsp"
+  - "natural yogurt - ¼ tsp"
+  - "chaat masala - 1 tsp"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat oven at 200°c. Roll out the pastry sheet into a rectangle of approximately 16x25cm. Mark 1cm border at the edge."
+  - "@type": HowToStep
+    text: "Bake the tart for about 15-20 minutes, or till it turn golden brown."
+  - "@type": HowToStep
+    text: "Spread curry on the tart. Spread 2 tbsp of yogurt, 1 tbsp tamarind chutney, chopped onions, pomegranate arils, cilantro leaves. Finish with a pinch of cumin powder, and a pinch of chaat masala. Repeat the same process with remaining sheets."
+  - "@type": HowToStep
+    text: "Serve hot."

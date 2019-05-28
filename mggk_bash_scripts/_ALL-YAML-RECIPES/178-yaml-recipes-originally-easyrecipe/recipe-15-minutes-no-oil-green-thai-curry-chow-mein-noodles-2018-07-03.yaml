@@ -1,0 +1,86 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "15 minutes No Oil Green Thai Curry Chow-Mein Noodles"
+
+description: "15 minutes No Oil Green Thai Curry Chow-Mein Noodles. This noodle is so simple and utterly delicious. This 15 minutes No Oil Thai Green Curry Chow-Mein Noodles is possibly one of the easiest recipes I have posted as a full meal."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/07/recipe-no-oil-thai-green-curry-chow-mein-noodles-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT2M
+
+cookTime: PT15M
+
+totalTime: PT17M
+
+recipeCategory: Main
+
+recipeCuisine: Asian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.5
+  ratingCount: 39
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 203 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "15, minutes, no, oil, green, thai, curry, chowmein, noodles"
+
+datePublished: 2018-07-03
+
+url: https://www.mygingergarlickitchen.com/15-minutes-no-oil-green-thai-curry-chow-mein-noodles/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!for noodles:"
+  - "chow-mein (wheat) noodles - 250 g"
+  - "thai green curry paste - 160 g"
+  - "soup vegetables, frozen - 100 g"
+  - "hot pepper sauce - 1 tbsp"
+  - "chili flakes - 1 tsp"
+  - "salt as per taste"
+  - "garlic powder - 1 tsp"
+  - "water to boil - 3 ½ - 4 cup"
+  - "!!for serving:"
+  - "pan roasted skinned peanuts"
+  - "spring onion, julienned - 1"
+  - "ground pepper"
+  - "hot pepper sauce"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Boil 3 ½ cup water in a large sauce pan."
+  - "@type": HowToStep
+    text: "Add chow-mein noodles, and frozen vegetables."
+  - "@type": HowToStep
+    text: "Mix well and let it boil for 5 minutes. Add green curry paste and let it boil for another 5 minutes."
+  - "@type": HowToStep
+    text: "Add garlic powder, salt, chili flakes, hot sauce and mix well."
+  - "@type": HowToStep
+    text: "Let it boil for 5 more minute or until noodles are cooked. Add more water if needed."
+  - "@type": HowToStep
+    text: "Remove from heat and toss well."
+  - "@type": HowToStep
+    text: "Transfer to a serving bowl, and top with sprung onion, roasted peanut, hot pepper sauce, and ground pepper."
+  - "@type": HowToStep
+    text: "Serve and enjoy."

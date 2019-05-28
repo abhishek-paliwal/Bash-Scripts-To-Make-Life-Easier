@@ -1,0 +1,131 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Oats Orange Eggless Muffins 3 Ways | Video Recipe"
+
+description: "Oats Orange Eggless Muffins 3 Ways | These muffins are moist and delicious with a distinct orange flavour. Oats are healthy, so the muffins made using oats are an healthier option too. The addition of dried fig is a nice touch, as fig seeds add crunchy texture. They are perfect breakfast, brunch or even evening or late night snack."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/07/recipes-Oats-Orange-Eggless-Muffins-3-Ways-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT7M
+
+cookTime: PT20M
+
+totalTime: PT27M
+
+recipeCategory: Brunch
+
+recipeCuisine: International
+
+recipeYield: 14-18
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.6
+  ratingCount: 76
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 197 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "oats, orange, eggless, muffins, 3, ways,  "
+
+video:
+  name: "Oats Orange Eggless Muffins 3 Ways | Video Recipe"
+  description: "Oats Orange Eggless Muffins 3 Ways | These muffins are moist and delicious with a distinct orange flavour. Oats are healthy, so the muffins made using oats are an healthier option too. The addition of dried fig is a nice touch, as fig seeds add crunchy texture. They are perfect breakfast, brunch or even evening or late night snack."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/07/recipes-Oats-Orange-Eggless-Muffins-3-Ways-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/z9lZJu34z30/maxresdefault.jpg
+  contentUrl: "https://youtu.be/z9lZJu34z30"
+  embedUrl: "https://www.youtube.com/embed/z9lZJu34z30"
+  uploadDate: 2018-07-07
+
+datePublished: 2018-07-07
+
+url: https://www.mygingergarlickitchen.com/oats-orange-eggless-muffins-3-ways-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For batter:"
+  - "Rolled oats - ½ cup + extra for sprinkle"
+  - "Fresh orange juice - ¼ cup"
+  - "Pulp of one orange"
+  - "Zest of one orange"
+  - "Boiling water - ¼ cup"
+  - "Melted, margarine or butter (salted) - ¼ cup"
+  - "Sugar - ¼ cup"
+  - "Whole-wheat flour - ½ cup"
+  - "Baking powder - 1 tsp"
+  - "Baking soda - ½ tsp"
+  - "Ground cinnamon - ½ tsp"
+  - "Vanilla extract - 1 tsp"
+  - "Dried figs, chopped - ½ cup"
+  - "Orange cups, pulp removed - 2-4"
+  - "!!For decoration:"
+  - "Chocolate sauce (optional)"
+  - "Icing sugar (optional)"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For Batter:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat oven to 350°F/175°C."
+  - "@type": HowToStep
+    text: "In a bowl soak oats in orange juice and hot water for 15 minutes."
+  - "@type": HowToStep
+    text: "In a large bowl cream together margarine and sugars."
+  - "@type": HowToStep
+    text: "Add orange pulp and orange zest and whisk well."
+  - "@type": HowToStep
+    text: "Sift flour, baking powder, baking soda and cinnamon."
+  - "@type": HowToStep
+    text: "Stir into batter."
+  - "@type": HowToStep
+    text: "Add vanilla extract and figs."
+- "@type": HowToSection
+  name: "For  muffins in muffin pan: Makes 12 muffins:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Paper-line muffin pans."
+  - "@type": HowToStep
+    text: "Spoon batter into prepared muffin pans, filling ½ full."
+  - "@type": HowToStep
+    text: "Bake at 175°C for about 20 minutes, or until golden brown."
+  - "@type": HowToStep
+    text: "Drizzle chocolate sauce and dust some icing sugar."
+  - "@type": HowToStep
+    text: "Eat warm or cold and enjoy!"
+- "@type": HowToSection
+  name: "For  Orange cup muffins: Makes 4 muffins:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Spoon batter into orange cups. Sprinkle oats and bake at 175°C for about 20 minutes, or until golden brown."
+  - "@type": HowToStep
+    text: "Eat warm and enjoy!"
+- "@type": HowToSection
+  name: "For  Heart shaped muffins: Makes 8 muffins:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Pour batter to fill bottom of a well heated and greased heart shaped muffin maker machine."
+  - "@type": HowToStep
+    text: "Sprinkle rolled oats."
+  - "@type": HowToStep
+    text: "Cook according to manufacturers directions, mine takes about 5 minutes."
+  - "@type": HowToStep
+    text: "Drizzle chocolate sauce and dust some icing sugar."
+  - "@type": HowToStep
+    text: "Eat warm and enjoy!"

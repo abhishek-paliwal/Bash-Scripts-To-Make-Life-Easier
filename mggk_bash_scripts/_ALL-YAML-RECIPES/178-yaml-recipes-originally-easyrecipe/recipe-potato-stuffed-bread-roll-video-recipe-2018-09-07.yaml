@@ -1,0 +1,106 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Potato Stuffed Bread Roll | Video Recipe"
+
+description: "Potato Stuffed Bread Rolls are quick, easy and flavor-bursting snacks. Crispy from the outside, and soft and spicy from the inside. Bread with spicy potato filling makes it a mouthwatering VEGAN snack and goes perfectly well with your favorite tea or coffee."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/09/recipes-Potato-Stuffed-Bread-Rolls-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT20M
+
+totalTime: PT25M
+
+recipeCategory: Snacks
+
+recipeCuisine: Indian
+
+recipeYield: 8
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.2
+  ratingCount: 30
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 220 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "potato, stuffed, bread, roll,  "
+
+video:
+  name: "Potato Stuffed Bread Roll | Video Recipe"
+  description: "Potato Stuffed Bread Rolls are quick, easy and flavor-bursting snacks. Crispy from the outside, and soft and spicy from the inside. Bread with spicy potato filling makes it a mouthwatering VEGAN snack and goes perfectly well with your favorite tea or coffee."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/09/recipes-Potato-Stuffed-Bread-Rolls-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/TScdyIRho9c/maxresdefault.jpg
+  contentUrl: "https://youtu.be/TScdyIRho9c"
+  embedUrl: "https://www.youtube.com/embed/TScdyIRho9c"
+  uploadDate: 2018-09-07
+
+datePublished: 2018-09-07
+
+url: https://www.mygingergarlickitchen.com/potato-stuffed-bread-roll-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For stuffing:"
+  - "Medium sized potatoes, boiled and peeled - 4-5"
+  - "Finely chopped coriander - 1 tbsp"
+  - "Red chili powder - 2 tsp or according to your taste"
+  - "Garam masala powder - ½ tsp"
+  - "Dried mango powder - 1 tsp"
+  - "Salt to taste"
+  - "Fennel seeds - 1 tsp"
+  - "Coriander seeds - 1 tsp"
+  - "Onions, chopped - 1"
+  - "Raisins - 8-10"
+  - "!!For Bread Rolls:"
+  - "Bread slices - 6-8 (I have used multi-grain)"
+  - "Water for soaking bread"
+  - "Oil for deep frying"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For  Stuffing:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat a pan; add coriander seeds and fennel seeds and toast. Remove and slightly crush them."
+  - "@type": HowToStep
+    text: "In a plate; add boiled potatoes, chopped coriander, red chili powder, garam masala powder, dried mango powder, toasted and crushed coriander seeds and fennel seeds and salt."
+  - "@type": HowToStep
+    text: "Mash well to make a mixture. Add onions and raisins and mix well again. Divide mixture into 6-8 balls."
+  - "@type": HowToStep
+    text: "small to medium rolls of the filling depending on the size of the bread and how many you are going to use."
+  - "@type": HowToStep
+    text: "taste and add more salt or spice powders if required."
+- "@type": HowToSection
+  name: "For  Bread Rolls:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Cut the edges of bread slices. Dip one slice of bread in water. Take out and press between palms to squeeze out excess water."
+  - "@type": HowToStep
+    text: "Place on stuffing ball in the center of the bread. Close the edges and roll again to make into a ball."
+  - "@type": HowToStep
+    text: "Repeat with the reaming bread slices."
+  - "@type": HowToStep
+    text: "Refrigerate for 30 mins."
+  - "@type": HowToStep
+    text: "Heat oil in a pan and deep them till they are crisp and golden."
+  - "@type": HowToStep
+    text: "Drain on an absorbent paper. Serve piping hot with any chutney or sauce."

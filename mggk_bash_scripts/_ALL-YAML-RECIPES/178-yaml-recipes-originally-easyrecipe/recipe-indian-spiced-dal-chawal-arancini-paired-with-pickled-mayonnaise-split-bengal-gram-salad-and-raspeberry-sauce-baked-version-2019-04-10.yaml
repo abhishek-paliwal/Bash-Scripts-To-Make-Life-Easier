@@ -1,0 +1,124 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Indian Spiced Dal Chawal Arancini Paired with Pickled Mayonnaise, Split Bengal Gram Salad, and Raspberry Sauce – Baked Version"
+
+description: "Indian Spiced Dal Chawal Arancini Paired with Pickled Mayonnaise, Split Bengal Gram Salad, and Raspberry Sauce - Baked Version. This taste so good — plus, this is packed with so many flavours, textures and perfect crispness."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/03/recipe-indian-spiced-dal-chawal-arancini-paired-with-pickled-mayo-split-bengal-gram-salad-and-raspeberry-sauce-baked-version-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT15M
+
+cookTime: PT30M
+
+totalTime: PT45M
+
+recipeCategory: Main
+
+recipeCuisine: World
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.4
+  ratingCount: 64
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 223 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "indian, spiced, dal, chawal, arancini, pairedpickled, mayo, split, bengal, gram, salad, raspeberry, saucebaked, version"
+
+datePublished: 2019-04-10
+
+url: https://www.mygingergarlickitchen.com/indian-spiced-dal-chawal-arancini-paired-with-pickled-mayonnaise-split-bengal-gram-salad-and-raspeberry-sauce-baked-version/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For arancini:"
+  - "basmati rice, cooked - 1 cup"
+  - "yellow lentils, cooked - ¾ cup"
+  - "olive oil for brushing - 2 tbsp"
+  - "garlic, crushed - 1 tsp"
+  - "ginger, crushed - 1 tsp"
+  - "yellow/red bell pepper, finely chopped - 1"
+  - "carrots, peeled and finely chopped - 2"
+  - "button mushrooms, stems removed, very finely chopped - 5"
+  - "frozen peas - ¼ cup"
+  - "breadcrumbs - ½ cup"
+  - "turmeric powder - ½ tsp"
+  - "cayenne pepper or red chili powder - 1 tsp"
+  - "cumin powder - ½ tsp"
+  - "cumin seeds - 2 tsp"
+  - "garam masala powder - ¼ tsp"
+  - "salt and pepper, to taste"
+  - "breadcrumbs for dusting"
+  - "!!For Raspberry Sauce:"
+  - "raspberries - ¾ cup"
+  - "icing sugar - 1 ½ tbsp"
+  - "!!For split bengal gram salad:"
+  - "split bengal gram, boiled - ½ cup"
+  - "carrot, chopped - 2 tbsp"
+  - "onion, chopped - 2 tbsp"
+  - "tomato chopped - 2 tbsp"
+  - "cucumber chopped - 2 tbsp"
+  - "chaat masala - ½ tsp"
+  - "lemon juice - ½ tsp"
+  - "olive oil - 1 tsp"
+  - "salt & pepper to taste"
+  - "!!For pickled mayonnaise:"
+  - "grated mango pickle - 2 tbsp"
+  - "mayonnaise - ¼ cup"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For Arancini:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a large mixing bowl. Add rice, lentils, mushroom, bell pepper, green peas, carrot, crushed garlic, crushed ginger, cumin seeds, cayenne pepper, turmeric powder, garam masala powder, breadcrumbs, salt, and pepper. Mix well to make a mixture."
+  - "@type": HowToStep
+    text: "Use wet hands to form the mixture into golf ball sized balls. Repeat with the remaining risotto to make about 15 balls."
+  - "@type": HowToStep
+    text: "Roll 1 ball in the flour and shake off excess. Repeat with the remaining balls."
+  - "@type": HowToStep
+    text: "Refrigerate for 30 minutes."
+  - "@type": HowToStep
+    text: "Preheat oven to 180C. Line 2 baking trays with non-stick baking paper."
+  - "@type": HowToStep
+    text: "Place on the prepared tray. Brush the arancini with olive oil. Bake in oven for 20 minutes or until crisp and golden."
+  - "@type": HowToStep
+    text: "For raspberry sauce"
+- "@type": HowToSection
+  name: "For raspberry sauce:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Place raspberries and icing sugar in a small food processor, and process until pureed. Press the raspberry puree through a sieve and discard the seeds."
+- "@type": HowToSection
+  name: "For split bengal gram salad:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a mixing bowl. Add all the ingredients, and mix well. Refrigerate for 30 minutes."
+- "@type": HowToSection
+  name: "For pickled mayonnaise:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a mixing bowl. Add both the ingredients, and mix well until smooth."
+- "@type": HowToSection
+  name: "For serving:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Serve Indian spiced baked arancini with pickled mayonnaise, split bengal gram salad, and raspberry sauce. Garnish with fresh strawberries and serve."

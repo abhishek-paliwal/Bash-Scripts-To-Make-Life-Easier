@@ -1,0 +1,88 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Chocolate Almond Milk with Frothy Coffee | Video Recipe"
+
+description: "Chocolate Almond Milk with Frothy Coffee - dairy-free, gluten-free, and vegan. A silky, creamy drink which is packed with a good dose of chocolate flavor. This drink is a chocolate lover's delight, and a coffee lover's life."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/06/recipes-Chocolate-Almond-Milk-With-Frothy-Coffee-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT2M
+
+totalTime: PT7M
+
+recipeCategory: Drinks
+
+recipeCuisine: World
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.9
+  ratingCount: 71
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 263 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "chocolate, almond, milkfrothy, coffee"
+
+video:
+  name: "Chocolate Almond Milk with Frothy Coffee | Video Recipe"
+  description: "Chocolate Almond Milk with Frothy Coffee - dairy-free, gluten-free, and vegan. A silky, creamy drink which is packed with a good dose of chocolate flavor. This drink is a chocolate lover's delight, and a coffee lover's life."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/06/recipes-Chocolate-Almond-Milk-With-Frothy-Coffee-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/HKbB73WDp4s/maxresdefault.jpg
+  contentUrl: "https://youtu.be/HKbB73WDp4s"
+  embedUrl: "https://www.youtube.com/embed/HKbB73WDp4s"
+  uploadDate: 2018-06-16
+
+datePublished: 2018-06-16
+
+url: https://www.mygingergarlickitchen.com/chocolate-almond-milk-with-frothy-coffee-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For frothy coffee:"
+  - "Instant Coffee Powder - 4 tbsp"
+  - "Sugar - 2 tbsp or more"
+  - "Boiled water - ¼ cup"
+  - "!!For chocolate almond milk:"
+  - "Almond milk chilled - 3.5 cups"
+  - "Unsweetened cocoa powder - ⅓ cup + more for sprinkle"
+  - "Vanilla/Almond extract - 1 tbsp"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Combine coffee, sugar boiled water in a bowl and froth until foamy or until the mixture has tripled in volume."
+  - "@type": HowToStep
+    text: "Freeze for 10-12 hours."
+  - "@type": HowToStep
+    text: "Combine chilled almond milk, cocoa, and vanilla/almond extract to a jar."
+  - "@type": HowToStep
+    text: "Blend on high until smooth and creamy, about 1 minute."
+  - "@type": HowToStep
+    text: "Scoop 1 tbsp frozen coffee in a serving cup."
+  - "@type": HowToStep
+    text: "Pour almond chocolate milk (shake well before pouring)."
+  - "@type": HowToStep
+    text: "Sprinkle cocoa powder and enjoy!"

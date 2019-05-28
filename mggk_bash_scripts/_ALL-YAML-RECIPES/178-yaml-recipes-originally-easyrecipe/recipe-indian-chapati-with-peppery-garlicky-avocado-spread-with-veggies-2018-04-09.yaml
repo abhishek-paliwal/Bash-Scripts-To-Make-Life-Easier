@@ -1,0 +1,116 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Indian Chapati With Peppery Garlicky Avocado Spread And Veggies"
+
+description: "Indian Chapati With Peppery Garlicky Avocado Spread With Veggies is a delightful meal in itself. This is more delicious when topped with loads and loads of basil leaves. Whenever you are in a hurry, this Indian Chapati With Peppery Garlicky Avocado Spread would come to your rescue."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/04/recipe-Indian-chapati-with-peppery-garlicky-avacado-Spread-anupama-paliwal-my-ginger-garlic-kitchen-FI1.jpg
+
+prepTime: PT10M
+
+cookTime: PT20M
+
+totalTime: PT30M
+
+recipeCategory: Main
+
+recipeCuisine: Indian
+
+recipeYield: 6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.1
+  ratingCount: 70
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 246 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "indian, chapatipeppery, garlicky, avocado, spreadveggies"
+
+datePublished: 2018-04-09
+
+url: https://www.mygingergarlickitchen.com/indian-chapati-with-peppery-garlicky-avocado-spread-with-veggies/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For chapati"
+  - "whole wheat flour - 1 cup"
+  - "water to knead soft dough (around ½ cup)"
+  - "pinch of salt"
+  - "oil - tsp"
+  - "!!For avocado spread"
+  - "avocados, pitted, peeled, and sliced - 2 ripe"
+  - "onion, chopped – 1 medium"
+  - "tomato, chopped – 1 large"
+  - "garlic cloves - 4-5"
+  - "cayenne pepper - ¼ tsp (or as per taste)"
+  - "pepper sauce - 2 tsp"
+  - "green chilies, chopped – 1"
+  - "lemon juice – 1 tbsp"
+  - "sea salt to taste"
+  - "olive oil - 2 tbsp"
+  - "chili flakes - 1 tsp"
+  - "!!For serving:"
+  - "cucumber sliced and halved - 1 cup"
+  - "red onion, roughly chopped - 2"
+  - "basil leaves - 1 cup"
+  - "almonds, chopped - ¼ cup"
+  - "red chili, chopped - 1"
+  - "chili flakes - 2 tsp"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For spread:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a food processor or blender."
+  - "@type": HowToStep
+    text: "Add avocados, tomatoes, onions, green chili, garlic cloves, salt, lemon juice, cayenne pepper, and pepper sauce."
+  - "@type": HowToStep
+    text: "Blend for about a minute or until smooth. Add a little bit of water if needed."
+  - "@type": HowToStep
+    text: "Sprinkled with chili flakes and drizzled with olive oil."
+- "@type": HowToSection
+  name: "For chapati:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a large mixing bowl. Add wheat flour, oil, salt. Mix well knead into a soft dough, using enough water. Cover with a cling film and keep aside it for 30 minutes."
+  - "@type": HowToStep
+    text: "Divide the dough into 6 balls."
+  - "@type": HowToStep
+    text: "Roll each ball into a tortilla like at, about ⅛″ thick."
+  - "@type": HowToStep
+    text: "Put rolled tortilla on it, and let it cook for about 1 minute. Some small bubbles should just start to form at this point. Turn and cook the second side for 2 minutes until small bubbles form."
+  - "@type": HowToStep
+    text: "Turn again and cook the first side pressed lightly with a towel. It would puff at this stage."
+  - "@type": HowToStep
+    text: "Remove from heat and repeat the process with remaining dough balls."
+- "@type": HowToSection
+  name: "For serving:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Lay the tortillas flat on a clean work surface."
+  - "@type": HowToStep
+    text: "Spread the avocado spread equally among the tortillas."
+  - "@type": HowToStep
+    text: "Top each with an equal amount of the onion, cucumber, basil leaves, red chili, and almonds. Sprinkle with chili flakes."
+  - "@type": HowToStep
+    text: "Fold in both sides and the bottom of each tortilla up over the filling; then roll to close."
+  - "@type": HowToStep
+    text: "Serve at room temperature or cover with plastic wrap and refrigerate for up to 1 hour. Enjoy!"

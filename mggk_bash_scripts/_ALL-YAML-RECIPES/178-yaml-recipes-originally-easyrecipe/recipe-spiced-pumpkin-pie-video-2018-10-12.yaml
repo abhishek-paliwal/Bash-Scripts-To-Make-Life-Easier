@@ -1,0 +1,107 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Spiced Pumpkin Pie Recipe"
+
+description: "Spiced Pumpkin Pie Recipe is a super easy delicious pie. The filling is made from pumpkin puree, eggs, condensed milk a little salt, and spice mix."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/10/recipes-Spiced-Pumpkin-Pie-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT8M
+
+cookTime: PT45M
+
+totalTime: PT53M
+
+recipeCategory: Dessert
+
+recipeCuisine: World
+
+recipeYield: 6-8
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.9
+  ratingCount: 56
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 231 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "spiced, pumpkin, pie "
+
+video:
+  name: "Spiced Pumpkin Pie Recipe"
+  description: "Spiced Pumpkin Pie Recipe is a super easy delicious pie. The filling is made from pumpkin puree, eggs, condensed milk a little salt, and spice mix."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/10/recipes-Spiced-Pumpkin-Pie-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/oAjny9En8rU/maxresdefault.jpg
+  contentUrl: "https://youtu.be/oAjny9En8rU"
+  embedUrl: "https://www.youtube.com/embed/oAjny9En8rU"
+  uploadDate: 2018-10-12
+
+datePublished: 2018-10-12
+
+url: https://www.mygingergarlickitchen.com/spiced-pumpkin-pie-video/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!for pie:"
+  - "pie crust (I am using readymade crust)"
+  - "pumpkin puree - 1 cup"
+  - "spice mix - (1 tbsp ground cinnamon, ⅛ tsp ground nutmeg, ⅛ tsp teaspoons ground ginger, 1 tsp ground allspice)"
+  - "condensed milk - 1 can (15oz)"
+  - "eggs - 2 large"
+  - "pumpkin pie spice - 1 tbsp"
+  - "salt - ½ tsp"
+  - "!!for serving:"
+  - "chocolate shards"
+  - "chocolate cereals"
+  - "chilled condensed milk"
+  - "cinnamon sugar"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat oven to 425°F/220° C."
+  - "@type": HowToStep
+    text: "Whisk together pumpkin puree and eggs in a large bowl until smooth."
+  - "@type": HowToStep
+    text: "Add sweetened condensed milk, spice mix, ginger and salt."
+  - "@type": HowToStep
+    text: "Whisk until thoroughly combined."
+  - "@type": HowToStep
+    text: "Roll the dough on a floured surface to fit the pie plate leaving about 3-5 inches of dough hanging over the edge."
+  - "@type": HowToStep
+    text: "Roll the dough on the rolling pin, and fit the pie crust in a pie plate."
+  - "@type": HowToStep
+    text: "Now crimp the edges to make a pretty pattern. Set this aside aside."
+  - "@type": HowToStep
+    text: "In a large bowl whisk together all the pumpkin filling ingredients until all combined."
+  - "@type": HowToStep
+    text: "Pour the prepared filling into the prepared pie shell and bake for 15 minutes in the preheated oven."
+  - "@type": HowToStep
+    text: "After 15 minutes, reduce your oven temperature to 350°F/175°C."
+  - "@type": HowToStep
+    text: "Bake for 30 to 35 minutes."
+  - "@type": HowToStep
+    text: "Cool for 30 minutes on a wire rack. Now chill it in the fridge for at least 2 hours."
+  - "@type": HowToStep
+    text: "Top with chilled condensed milk, and sprinkle some cinnamon sugar."
+  - "@type": HowToStep
+    text: "Decorate with chocolate cereals and chocolate shards and serve chilled. Enjoy this rich, classic and custardy cinnamon pie."

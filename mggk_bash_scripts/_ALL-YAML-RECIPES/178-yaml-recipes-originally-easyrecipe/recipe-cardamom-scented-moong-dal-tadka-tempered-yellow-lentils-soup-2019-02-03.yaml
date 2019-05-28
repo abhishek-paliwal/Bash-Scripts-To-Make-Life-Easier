@@ -1,0 +1,104 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Cardamom Scented Moong Dal Tadka Recipe – Tempered Yellow Lentils Soup"
+
+description: "Cardamom Scented Moong Dal Tadka - Tempered Yellow Lentils Soup Recipe with step by step photos. One of the best parts about this recipe is how quick and easy it is to make. Just a handful of simple ingredients, a pressure cooker, and a pan and gluten-free, vegan dal is ready. Perfect for busy weeknights."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/09/recipe-Cardamom-Scented-Moong-Dal-Tadka-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT25M
+
+totalTime: PT30M
+
+recipeCategory: Main
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.4
+  ratingCount: 50
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 298 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "cardamom, scented, moong, dal, tadka, tempered, yellow, lentils, soup"
+
+datePublished: 2019-02-03
+
+url: https://www.mygingergarlickitchen.com/cardamom-scented-moong-dal-tadka-tempered-yellow-lentils-soup/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!for dal:"
+  - "split yellow lentils (moong dal) - 1 cup"
+  - "water - 4.5 cups"
+  - "dried red chilies - 2"
+  - "tomato, roughly chopped - 1"
+  - "cardamom powder - 2 tsp"
+  - "salt to taste"
+  - "pinch of asafetida"
+  - "turmeric powder - ¼ tsp"
+  - "coriander powder - 2 tsp"
+  - "lemon juice - 1 tsp"
+  - "!!for tempering:"
+  - "oil or ghee - 2 tbsp"
+  - "garlic, crushed - 2-3 large cloves"
+  - "cumin seeds - 1 tsp"
+  - "ginger paste - ¼ tsp"
+  - "onion, finely chopped - 1"
+  - "garam masala - ⅛ tsp"
+  - "!!for serving:"
+  - "chopped coriander leaves"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For Making dal:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Wash the yellow moong dal in running water and soak for about 20-25 min till the dal becomes soft."
+  - "@type": HowToStep
+    text: "In a pressure cooker add soaked moong dal, turmeric powder and water and cook for about 5 mins or till you see foam on the top."
+  - "@type": HowToStep
+    text: "Remove this foam gently with the help of a ladle. Add salt, coriander powder, asafetida and chopped tomatoes."
+  - "@type": HowToStep
+    text: "Cover the lid and pressure cook for 2 whistles on high heat."
+  - "@type": HowToStep
+    text: "Remove from heat. Let the pressure come off."
+  - "@type": HowToStep
+    text: "Open the lid and add ground cardamom to it."
+  - "@type": HowToStep
+    text: "Whisk slightly to mash and cook it covered on medium heat for 5 minutes."
+  - "@type": HowToStep
+    text: "Add lemon juice and mix well."
+  - "@type": HowToStep
+    text: "Remove from heat. Dal is ready now."
+- "@type": HowToSection
+  name: "For Tempering/tadka:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat ghee in a small saucepan and add mustard seeds, cumin seeds and dried red chilies. When they start to splutter add ginger, garlic and chopped onions. Saute for 5 minutes. Add garam masala powder, and cook for 3 more minutes."
+- "@type": HowToSection
+  name: "For Serving:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Pour this tempering over hot dal. Garnish with chopped coriander leaves and serve hot."

@@ -1,0 +1,74 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Corn Cheese Toast"
+
+description: "Corn Cheese Toast for a weekend breakfast is a quick filling recipe, which is simply tasty and quite easy to make."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/09/recipe-corn-cheese-toast-anupama-paliwal-my-ginger-garlic-kitchen-4.jpg
+
+prepTime: PT2M
+
+cookTime: PT5M
+
+totalTime: PT7M
+
+recipeCategory: Breakfast
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.5
+  ratingCount: 64
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 229 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "corn, cheese, toastweekend, breakfast "
+
+datePublished: 2019-03-07
+
+url: https://www.mygingergarlickitchen.com/corn-cheese-toast-weekend-breakfast-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "4 toasted slices , cut into halves"
+  - "Sweet corn kernels - ½ cup"
+  - "Cubed mozzarella cheese - 1 cup"
+  - "Margarine or butter - 1 tbsp"
+  - "Chopped onions - 1"
+  - "Grounded pepper - 1 tsp"
+  - "Capsicum, finely chopped - 2 tbsp"
+  - "Garlic powder - 1 tsp"
+  - "Dried parsley - 1 tsp"
+  - "Salt to taste"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat a pan. Add margarine to it. Now add chopped onions and saute for 2 minutes. Add corn kernels and saute for 2 minutes."
+  - "@type": HowToStep
+    text: "Add dried parsley, salt, ground pepper, and garlic powder. Mix well and cook for a minute."
+  - "@type": HowToStep
+    text: "Add cubed cheese, and cook until cheese melts. Stir continuously, and remove from heat when its done."
+  - "@type": HowToStep
+    text: "Spread corn cheese topping on toasted bread halves. Garnish with coriander leaves and cheese cubes. Serve immediately and enjoy!"

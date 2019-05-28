@@ -1,0 +1,96 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Kidney Bean Tostadas with Bell Pepper Salsa"
+
+description: "Kidney Bean Tostadas with Bell Pepper Salsa is a mexican, spanish dish for very famous for lunch or dinner. This is full of awesomeness includes bell pepper."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/12/recipe-wholewheat-kidneybean-tostadas-with-bellpepper-salsa-anupama-paliwal-my-ginger-garlic-kitchen-6.jpg
+
+prepTime: PT10M
+
+cookTime: PT20M
+
+totalTime: PT30M
+
+recipeCategory: Main
+
+recipeCuisine: Mexican
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.9
+  ratingCount: 61
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 156 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "kidney, bean, tostadasbell, pepper, salsa"
+
+datePublished: 2019-02-05
+
+url: https://www.mygingergarlickitchen.com/kidney-bean-tostadas-bell-pepper-salsa/
+
+recipeIngredient:
+  - "!!Ingredients for tostadas:"
+  - "whole wheat tortillas -8"
+  - "olive oil – 2 tbsp"
+  - "cumin powder – 1 tbsp"
+  - "garlic, chopped – 2 tbsp"
+  - "red onion, chopped – 1"
+  - "cayenne pepper – 2 tsp"
+  - "honey – 2 tbsp"
+  - "apple cider vinegar – 4 tbsp"
+  - "kidney beans, cooked – 1 cup"
+  - "salt, as per taste"
+  - "!!Ingredients for Bell pepper salsa:"
+  - "red bell pepper, cubed – 1"
+  - "honey – ½ tbsp"
+  - "cayenne pepper – ½ tsp"
+  - "vinegar – 1 tbsp"
+  - "pinch of salt"
+  - "cumin powder – 1 tbsp"
+  - "!! Ingredients For serving:"
+  - "cucumber"
+  - "sliced red onion"
+  - "green chili, chopped"
+  - "pepper sauce"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add all the salsa ingredients to a bowl and mix well. Keep in refrigerator for 15 minutes. Salsa is ready."
+  - "@type": HowToStep
+    text: "Heat oven to 200°C/400°F. Brush the tortillas with a little oil and place on a baking sheet."
+  - "@type": HowToStep
+    text: "Bake until they turn crisp. Repeat the same process with remaining tortillas."
+  - "@type": HowToStep
+    text: "Mash cooked beans slightly. Heat oil in a pan. Add the onion and garlic, and cook for 5 mins."
+  - "@type": HowToStep
+    text: "Now add the cumin powder, cayenne pepper, salt, vinegar and honey."
+  - "@type": HowToStep
+    text: "Cook for 2 mins. Add the ,mashed beans to the seasoning. Cook for 4-5 minutes."
+  - "@type": HowToStep
+    text: "Spread some beans over the crispy tortillas."
+  - "@type": HowToStep
+    text: "Top with sliced red onions, sliced cucumber, and bell pepper salsa."
+  - "@type": HowToStep
+    text: "Splash a little tabasco sauce on top, and enjoy!"

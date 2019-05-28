@@ -1,0 +1,121 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Peppery Hot Broccoli Cheese Dip Recipe"
+
+description: "Make this hot, cheesy, warm, creamy, spicy Peppery Hot Broccoli Cheese Dip Recipe dip as an appetizer any day of the week, or the year. Or you can have this on a toasted bread as breakfast or with some flatbreads as lunch. It would be delicious in any way."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/02/recipes-Peppery-Hot-Broccoli-Cheese-DIp-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT10M
+
+totalTime: PT15M
+
+recipeCategory: Appetizer
+
+recipeCuisine: Indian
+
+recipeYield: 4-6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.4
+  ratingCount: 75
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 162 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "peppery, hot, broccoli, cheese, dip "
+
+video:
+  name: "Peppery Hot Broccoli Cheese Dip Recipe"
+  description: "Make this hot, cheesy, warm, creamy, spicy Peppery Hot Broccoli Cheese Dip Recipe dip as an appetizer any day of the week, or the year. Or you can have this on a toasted bread as breakfast or with some flatbreads as lunch. It would be delicious in any way."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/02/recipes-Peppery-Hot-Broccoli-Cheese-DIp-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/6LSD3dbEAL8/maxresdefault.jpg
+  contentUrl: "https://youtu.be/6LSD3dbEAL8"
+  embedUrl: "https://www.youtube.com/embed/6LSD3dbEAL8"
+  uploadDate: 2019-02-15
+
+datePublished: 2019-02-15
+
+url: https://www.mygingergarlickitchen.com/peppery-hot-broccoli-cheese-dip/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For Blanching:"
+  - "Ice cold water"
+  - "Broccoli florets - 1½ cup"
+  - "Salt - 1 tbsp"
+  - "!!For Dip:"
+  - "Finely chopped green bell pepper - ½ cup"
+  - "Finely chopped yellow bell pepper - ½ cup"
+  - "Broccoli, blanched and chopped - 1 cup"
+  - "Finely chopped onions - ½ cup"
+  - "Butter or margarine - 1 tbsp"
+  - "Milk - 1 cup"
+  - "Green chili chopped - 1 tbsp"
+  - "Garlic, chopped - 1 tbsp"
+  - "Fresh cream - ½ cup"
+  - "Shredded mozzarella cheese - ½ cup"
+  - "Salt to taste"
+  - "Crushed rose pepper or black pepper - 1 tsp"
+  - "Oregano - 1 tsp"
+  - "!!For serving"
+  - "Crackers or veggies"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For  Blanching:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Fill a pot ⅔ of the way full with water and let it boil."
+  - "@type": HowToStep
+    text: "Once the water has begun to boil add 1 tablespoon of salt to the water. Once the water is boiled add the cut broccoli florets into the boiling water."
+  - "@type": HowToStep
+    text: "Boil for about 3-4 minutes."
+  - "@type": HowToStep
+    text: "Fill a large bowl with cold water and a few ice cubes. Set it aside."
+  - "@type": HowToStep
+    text: "Remove broccoli with a slotted spoon and immediately place the broccoli in the ice water. Let them stay in water for about a minutes and strain them in the colander."
+  - "@type": HowToStep
+    text: "Finally chop the broccoli florets."
+- "@type": HowToSection
+  name: "For  Dip:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat the butter in a broad non-stick pan."
+  - "@type": HowToStep
+    text: "Add chopped green chilies and chopped garlic."
+  - "@type": HowToStep
+    text: "Sauté for a few seconds on a medium heat"
+  - "@type": HowToStep
+    text: "Add blanched broccoli, yellow bell pepper and green bell pepper."
+  - "@type": HowToStep
+    text: "Saute for a minute and add chopped and saute for 3-4 minutes."
+  - "@type": HowToStep
+    text: "Add crushed pepper, oregano and salt."
+  - "@type": HowToStep
+    text: "Add the cheese, fresh cream and mix well. Cook for 2 minutes."
+  - "@type": HowToStep
+    text: "Add milk and mix well. Cook for another minute."
+  - "@type": HowToStep
+    text: "Garnish with some rose pepper, sliced almonds and sunflower seeds."
+  - "@type": HowToStep
+    text: "Serve immediately with cracker or veggie of your choice."

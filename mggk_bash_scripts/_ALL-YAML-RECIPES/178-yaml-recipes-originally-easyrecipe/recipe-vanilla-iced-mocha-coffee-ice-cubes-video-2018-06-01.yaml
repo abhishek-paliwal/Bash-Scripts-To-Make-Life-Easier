@@ -1,0 +1,84 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Vanilla Iced Mocha With Coffee Ice Cubes | Video"
+
+description: "Vanilla Iced Mocha With Coffee Ice Cubes is a coffee which is classic, creamy, cold, frothy, creamy, heavy on vanilla, and stronger on coffee taste, but still a bit sweeter due to milk. 3 simple things, coffee + milk + vanilla = an amazingly delish iced coffee."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/06/recipes-Vanilla-Iced-Mocha-With-Coffee-Ice-Cubes-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT3M
+
+cookTime: PT2M
+
+totalTime: PT5M
+
+recipeCategory: Drinks
+
+recipeCuisine: World
+
+recipeYield: 3
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.4
+  ratingCount: 81
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 197 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "vanilla, iced, mochacoffee, ice, cubes "
+
+video:
+  name: "Vanilla Iced Mocha With Coffee Ice Cubes | Video"
+  description: "Vanilla Iced Mocha With Coffee Ice Cubes is a coffee which is classic, creamy, cold, frothy, creamy, heavy on vanilla, and stronger on coffee taste, but still a bit sweeter due to milk. 3 simple things, coffee + milk + vanilla = an amazingly delish iced coffee."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/06/recipes-Vanilla-Iced-Mocha-With-Coffee-Ice-Cubes-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/sWfwTYNyyWg/maxresdefault.jpg
+  contentUrl: "https://youtu.be/sWfwTYNyyWg"
+  embedUrl: "https://www.youtube.com/embed/sWfwTYNyyWg"
+  uploadDate: 2018-06-01
+
+datePublished: 2018-06-01
+
+url: https://www.mygingergarlickitchen.com/vanilla-iced-mocha-coffee-ice-cubes-video/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Instant Coffee Powder - 4 tbsp"
+  - "Boiled water - 2 cups"
+  - "Vanilla Extract - 1 tbsp"
+  - "1.5% Fat Cold Milk - 1.5 glass (Use coconut milk to make it VEGAN)"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Combine coffee, boiled water in a glass and stir well."
+  - "@type": HowToStep
+    text: "Let coffee cool a bit and pour into the ice tray. Let the ice set in the freezer."
+  - "@type": HowToStep
+    text: "Combine milk and vanilla to a jar."
+  - "@type": HowToStep
+    text: "Hold your frother and put it inside the pitcher and deep in the milk (just before touching the bottom of the pitcher)."
+  - "@type": HowToStep
+    text: "Turn on your frother, and foth until foamy."
+  - "@type": HowToStep
+    text: "Fill your glass with coffee ice cubes and, pour your frothy vanilla milk over top."
+  - "@type": HowToStep
+    text: "Stir and drink!"

@@ -1,0 +1,88 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "No-Bake Peach Gingerbread Cheesecake Parfait"
+
+description: "This No-bake Peach Gingerbread Cheesecake Parfait is ridiculously easy. Sweet + tangy cream cheese filling. It also has a distinct gingerbread layer."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/10/recipes-No-Bake-Peach-Gingerbread-Cheesecake-Parfait-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT7M
+
+totalTime: PT17M
+
+recipeCategory: Dessert
+
+recipeCuisine: French
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5.0
+  ratingCount: 42
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 213 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "nobake, peach, gingerbread, cheesecake, parfait"
+
+datePublished: 2018-10-21
+
+url: https://www.mygingergarlickitchen.com/no-bake-peach-gingerbread-cheesecake-parfait/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For Peach Puree:"
+  - "peach slices - 1 cup"
+  - "sugar - ¼ cup"
+  - "lemon juice - 1 tbsp"
+  - "!!For Cheesecake layer:"
+  - "cream cheese - 250 g"
+  - "sugar - 3 tbsp"
+  - "lemon juice - 1 tsp"
+  - "vanilla bean - 1 tsp"
+  - "whipped cream - ½ cup"
+  - "!!To Assemble:"
+  - "gingerbread cookies, crumbled - 12-14 pieces"
+  - "cream cheese filling"
+  - "peach slices"
+  - "chocolate sauce"
+  - "cookie crumbs"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For  Peach Syrup:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Put all the ingredients in a medium saucepan.Cook over medium heat until it begins to thicken."
+  - "@type": HowToStep
+    text: "Remove from heat and let it cool completely. Blend peaches until smooth. Press the puree through a sieve and discard the solids. Set aside."
+- "@type": HowToSection
+  name: "For  Cream Cheese Layer:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Whisk cream cheese and vanilla. Add sugar, lemon juice and whip. And whipped topping in bowl. Add whipped cream and whisk to well. Add peach syrup and fold gently."
+- "@type": HowToSection
+  name: "To  Assemble:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Layer crumbled cookies, cheesecake mixture in parfait glass. Repeat layers. Sprinkle with cookie crumbs. Garnish with sliced Peach, and drizzle chocolate sauce."
+  - "@type": HowToStep
+    text: "Place in the fridge and chill for about 1-2 hours. Serve with spoons."

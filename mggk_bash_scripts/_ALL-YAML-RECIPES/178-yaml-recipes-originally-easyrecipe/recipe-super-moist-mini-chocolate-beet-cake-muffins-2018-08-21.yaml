@@ -1,0 +1,139 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Super Moist Mini Chocolate Beet Cake + Muffins"
+
+description: "Super Moist Mini Chocolate Beet Cake + Muffins. I personally think that addition of a little coffee to a chocolate cake brings out all the flavors. The awesome thing that makes this recipe shine is coffee."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/08/recipe-Mini-Chocolate-Beet-Cake-and-Muffins-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT15M
+
+cookTime: PT40M
+
+totalTime: PT55M
+
+recipeCategory: Dessert
+
+recipeCuisine: World
+
+recipeYield: 8-10
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 48
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 164 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "super, moist, mini, chocolate, beet, cake, muffins"
+
+datePublished: 2018-08-21
+
+url: https://www.mygingergarlickitchen.com/super-moist-mini-chocolate-beet-cake-muffins/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!for cake:"
+  - "all­-purpose flour - 2 cups"
+  - "extra dark cocoa powder - 2⁄3 cup"
+  - "fine dark chocolate (70%) - 50g fresh"
+  - "freshly brewed coffee - 3 tbsp"
+  - "baking soda - 1 tsp"
+  - "baking powder - 1⁄2 tsp"
+  - "salt - 1⁄2 tsp"
+  - "beets, peeled, cooked and coarse puréed - 11⁄2 cup"
+  - "unsalted butter at room temperature - 3⁄4 cups"
+  - "granulated sugar - 3⁄4 cup"
+  - "eggs, at room temperature - 2 large"
+  - "vanilla extract - 1 tsp"
+  - "buttermilk - 11⁄4 cup"
+  - "!!for chocolate frosting:"
+  - "cooking chocolate (I am using 52%) - 200g"
+  - "butter - ½ cup"
+  - "icing sugar - 4 cups"
+  - "vanilla extract - 2 tsp"
+  - "whip cream - 3-4 tbsp"
+  - "milk - 2 tbsp"
+  - "unsweetened desiccated chocolate"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat the oven to 350°F/175°C. Prepare a 4 ­inch cake pan by greasing it. Set it aside for later."
+- "@type": HowToSection
+  name: "For Making cake and muffins batter:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Melt the chocolate in a small bowl set over a pot of simmering water, or cook for 30 seconds on high heat in microwave. Repeat for 30 seconds more. Add freshly brewed coffee to it, and set aside."
+  - "@type": HowToStep
+    text: "In a medium bowl, whisk together the flour, cocoa, baking soda, baking powder, and salt. Set it"
+  - "@type": HowToStep
+    text: "aside."
+  - "@type": HowToStep
+    text: "In a stand mixer, cream the butter and sugars together until light and fluffy."
+  - "@type": HowToStep
+    text: "Add the eggs and beat well. Add the vanilla and beat again."
+  - "@type": HowToStep
+    text: "With the mixer running on low speed, add the flour mixture alternately with the buttermilk and the"
+  - "@type": HowToStep
+    text: "grated beets. Continue mixing and scraping down the bowl until the batter is well combined."
+- "@type": HowToSection
+  name: "For Baking mini cake:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Spread the batter in the prepared pan and bake it for about 40 minutes or until a cake tester poked"
+  - "@type": HowToStep
+    text: "through the center of the cake comes out clean. The cake will begin to pull away from the sides of"
+  - "@type": HowToStep
+    text: "the pan when it is done. Let the cake cool completely before proceeding."
+- "@type": HowToSection
+  name: "For Baking muffins:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Line 10-11 muffin tins with paper liners. Divide the batter among 10-11 muffins cups."
+  - "@type": HowToStep
+    text: "Bake for 20-25 minutes or until a toothpick inserted into the middle comes out clean. Allow the"
+  - "@type": HowToStep
+    text: "muffins to cool slightly and then drizzle with chocolate frosting. Sprinkle some desiccated coconut"
+  - "@type": HowToStep
+    text: "on top."
+- "@type": HowToSection
+  name: "For Chocolate Frosting:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Microwave chocolate in large microwaveable bowl on high for 1-1/2 minutes, stirring every 30 sec."
+  - "@type": HowToStep
+    text: "Stir until chocolate is completely melted. Cool for 5 mins."
+  - "@type": HowToStep
+    text: "Add sugar, butter and vanilla. Gradually add whip cream, beating constantly with mixer on low speed until blended."
+  - "@type": HowToStep
+    text: "If you like a sweeter or thicker frosting add more powdered sugar. Add some milk, if you want thinner frosting."
+- "@type": HowToSection
+  name: "For  Assemble the Cake:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Slightly cut off the cake from top to make it flat. Turn it upside down on a plate or cake stand."
+  - "@type": HowToStep
+    text: "Drizzle the cake with a good amount of frosting. With a knife or offset spatula, spread the top with frosting."
+  - "@type": HowToStep
+    text: "Decorate with desiccated coconut or whatever your heart desires. This cake is best served at room temperature."
+  - "@type": HowToStep
+    text: "Note: Refrigerate this cake or muffins. And warm for 10-15 seconds before serving."

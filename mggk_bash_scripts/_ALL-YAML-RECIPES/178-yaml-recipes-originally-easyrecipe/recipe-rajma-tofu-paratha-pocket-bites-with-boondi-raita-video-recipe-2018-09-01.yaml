@@ -1,0 +1,151 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Rajma Tofu Paratha Pocket Bites With Boondi Raita | Video Recipe"
+
+description: "Rajma Tofu Paratha Pocket Bites With Boondi Raita! These spicy and delicious Rajma Tofu Paratha pockets are a wholesome meal which would taste even better when served with boondi raita. This is a mouth-watering breakfast full of protein and iron."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/09/recipes-Rajma-Tofu-Pcoket-Paratha-Bites-With-Boondi-Raita-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT30M
+
+totalTime: PT40M
+
+recipeCategory: Breakfast
+
+recipeCuisine: Indian
+
+recipeYield: 6-8
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5.0
+  ratingCount: 53
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 299 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "rajma, tofu, paratha, pocket, bitesboondi, raita,  "
+
+video:
+  name: "Rajma Tofu Paratha Pocket Bites With Boondi Raita | Video Recipe"
+  description: "Rajma Tofu Paratha Pocket Bites With Boondi Raita! These spicy and delicious Rajma Tofu Paratha pockets are a wholesome meal which would taste even better when served with boondi raita. This is a mouth-watering breakfast full of protein and iron."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/09/recipes-Rajma-Tofu-Pcoket-Paratha-Bites-With-Boondi-Raita-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/CC4Z_yTOHFU/maxresdefault.jpg
+  contentUrl: "https://youtu.be/CC4Z_yTOHFU"
+  embedUrl: "https://www.youtube.com/embed/CC4Z_yTOHFU"
+  uploadDate: 2018-09-01
+
+datePublished: 2018-09-01
+
+url: https://www.mygingergarlickitchen.com/rajma-tofu-paratha-pocket-bites-with-boondi-raita-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "For Raita:"
+  - "Boondi (gram flour puffs) - ¾ cup"
+  - "Boiled water - 1 cup"
+  - "Ice cold water - 1 cup"
+  - "Natural yogurt or use vegan yogurt to make it vegan- 1 cup"
+  - "Salt to taste (I have used Himalayan black salt + white table salt)"
+  - "Roasted cumin powder - ½ tbsp"
+  - "Chopped coriander leaves - 1 tbsp"
+  - "!!For Rajma Tofu Stuffing:"
+  - "Oil - 2 tbsp"
+  - "Cumin seeds- 1 tsp"
+  - "Chopped garlic - 1 tbsp"
+  - "Chopped ginger - 1 tbsp"
+  - "Cooked kidney beans - 1 cup"
+  - "Crumbled tofu - 1 cup"
+  - "Salt to taste"
+  - "Red chili powder - 1.5 tsp"
+  - "Coriander powder - 2 tsp"
+  - "Garam masala powder - ½ tsp"
+  - "Chopped green chilies - 2"
+  - "Chopped coriander - 2 tbsp"
+  - "Chopped onion - ¼ cup"
+  - "Lemon juice - 1 tbsp"
+  - "For dough:"
+  - "Whole wheat flour - 2 cup"
+  - "A pinch of salt"
+  - "water, for kneading"
+  - "For Paratha:"
+  - "Some extra wheat flour for dusting"
+  - "butter or oil for roasting"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For  Boondi Raita:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Soak boondi in the boiled water for 2 mins. Drain and soak again in ice cold water for 2 mins."
+  - "@type": HowToStep
+    text: "Drain excess water and transfer to a bowl."
+  - "@type": HowToStep
+    text: "Add yogurt, coriander powder, salt, cumin powder and mix well gently. Add some water if needed."
+  - "@type": HowToStep
+    text: "Refrigerate for 30 mins."
+  - "@type": HowToStep
+    text: "Garnish with chopped coriander leaves and sprinkle with some chili powder."
+  - "@type": HowToStep
+    text: "For Stuffing:"
+- "@type": HowToSection
+  name: "For  Boondi Raita:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat oil in a pan. Add cumin seeds, chopped ginger and chopped garlic. Sauté for few seconds and add"
+  - "@type": HowToStep
+    text: "Cooked kidney beans. Cook and mash slightly with the back of a spatula. Add garam masala powder, chili powder, coriander powder and salt. Mix well and cook for 2 minutes."
+  - "@type": HowToStep
+    text: "Add crumbled tofu and mix well. Cook for 3 mins."
+  - "@type": HowToStep
+    text: "Add chopped chilies, chopped coriander and chopped onions."
+  - "@type": HowToStep
+    text: "Mix well and cook for one more minute."
+  - "@type": HowToStep
+    text: "Add lemon juice and mix well."
+  - "@type": HowToStep
+    text: "Remove from heat and set aside to cool."
+  - "@type": HowToStep
+    text: "Divide the prepared stuffing into 8 equal sizes and keep aside."
+- "@type": HowToSection
+  name: "For  Dough:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add wheat flour, salt, and water to make a soft dough. Divide the dough into 8 equal sized balls."
+- "@type": HowToSection
+  name: "For  Paratha:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take the ball, roll out thinly into a circle or square. Try to roll out thin, but not paper thing because it needs to hold the stuffing well."
+  - "@type": HowToStep
+    text: "Place the rajma tofu filling in the center."
+  - "@type": HowToStep
+    text: "Now fold the paratha to cover the stuffing as shown in the video. Press slightly to seal the edges well."
+  - "@type": HowToStep
+    text: "Heat a pan on medium heat. Roast the stuffed pockets from both sides on medium heat."
+  - "@type": HowToStep
+    text: "Apply a little oil on the both sides, and roast until golden brown on both sides."
+  - "@type": HowToStep
+    text: "Repeat the steps till the dough last."
+  - "@type": HowToStep
+    text: "Cut into pieces. Your rajma tofu pocket paratha bites are ready."
+  - "@type": HowToStep
+    text: "Serve with chilled boondi raita and onions rings. Enjoy!"

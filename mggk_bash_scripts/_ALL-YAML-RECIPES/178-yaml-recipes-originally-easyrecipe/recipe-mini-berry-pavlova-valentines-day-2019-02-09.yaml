@@ -1,0 +1,93 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Mini Berry Pavlova for Valentine's Day"
+
+description: "Mini Berry Pavlovas are meringue-like cookies topped with berries sauce whipped cream, and fresh strawberries. It has egg whites, sugar, corn flour, and of course, berry sauce. It is more egg-ish."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/recipe-mini-beryy-pavlova-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT25M
+
+cookTime: PT50M
+
+totalTime: PT1H15M
+
+recipeCategory: Dessert
+
+recipeCuisine: Russian
+
+recipeYield: 6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.1
+  ratingCount: 85
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 241 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "mini, berry, pavlovavalentine's, day"
+
+datePublished: 2019-02-09
+
+url: https://www.mygingergarlickitchen.com/mini-berry-pavlova-valentines-day/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Egg whites, at room temperature - 4"
+  - "Pinch of salt"
+  - "Icing sugar - 1 cup (220g)"
+  - "White vinegar - 1 tsp"
+  - "Cornflour - 2 tsp"
+  - "Red food coloring - ½ tsp"
+  - "Vanilla extract - 1 tsp"
+  - "!!For Raspberry cream:"
+  - "Raspberries - ¾ cup"
+  - "Icing sugar - 1 ½ tbsp"
+  - "Whipped cream - 1/c cup"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat it to 110°C. Line a large oven tray with baking paper, and place the oven tray in the lower third row."
+  - "@type": HowToStep
+    text: "Whisk the egg whites in a large bowl using an electric mixer with a whisk attachment on medium speed until foamy."
+  - "@type": HowToStep
+    text: "Add the salt, vinegar and cornflour and whisk on medium speed for about 1 minute."
+  - "@type": HowToStep
+    text: "Add the sugar a spoonful at a time, whisking well after each addition, until all the sugar has dissolved and the mixture is very thick. This will take about 4-5 minutes."
+  - "@type": HowToStep
+    text: "Add the vanilla extract, red food color and whisk to combine."
+  - "@type": HowToStep
+    text: "Use a spatula to stir the meringue mixture to ‘loosen’ it slightly. This will get rid of any excess air in the mixture and give it a smoother, less ‘foamy’ texture."
+  - "@type": HowToStep
+    text: "Spoon 6 large circles of mixture onto the lined tray and use the back of a metal spoon to make an intent in the center of each."
+  - "@type": HowToStep
+    text: "Bake in preheated oven for 50-60 minutes, until the meringue is crisp and hard to touch, but not coloured. Turn off the oven, leave the door slightly open and cool completely in the oven for about 2 hours."
+  - "@type": HowToStep
+    text: "Method to make the Raspberry Cream:"
+  - "@type": HowToStep
+    text: "Place raspberries and icing sugar in a small food processor, and process until pureed. Press the raspberry puree through a sieve and discard the seeds."
+  - "@type": HowToStep
+    text: "Gently fold half the raspberry puree through the whipped cream. Fill each pavlova with the Raspberry Cream and then top with the Strawberries, and raspberries."
+  - "@type": HowToStep
+    text: "Serve immediately with the remaining berry puree passed separately."
+  - "@type": HowToStep
+    text: "Note: The unfilled pavlova shells can be kept in an airtight container in a cool place, for up to 1 day."

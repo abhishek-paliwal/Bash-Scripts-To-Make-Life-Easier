@@ -1,0 +1,98 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Bhindi Aloo Tofu Masala Recipe | Okra Potato Tofu Stir Fry"
+
+description: "Learn to make Bhindi Aloo Tofu Masala Recipe | Okra Potato Tofu Stir Fry with step-by-step photos. Bhindi Tofu Masala aka okra tofu stir-fry is a vegan and gluten-free spicy side dish which is best served with rice and bread."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/11/recipe-bhindi-tofu-masala-anupama-paliwal-my-ginger-garlic-kitchen-7.jpg
+
+prepTime: PT10M
+
+cookTime: PT20M
+
+totalTime: PT30M
+
+recipeCategory: Main
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.9
+  ratingCount: 54
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 267 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "bhindi, tofu, masala"
+
+datePublished: 2019-03-02
+
+url: https://www.mygingergarlickitchen.com/bhindi-tofu-masala-okra-tofu-stir-fry/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Okra/Bhindi, cut to half lengthwise – 2 cups"
+  - "Tofu, cut into triangles - 1 cup"
+  - "Potato, peeled, sliced - 2"
+  - "Onion, cut into half slice – 1"
+  - "Green chillies, finely chopped – 2"
+  - "Turmeric powder – ¼ tsp"
+  - "Chili powder – ½ tsp"
+  - "Coriander powder – 2 tsp (Optional)"
+  - "Garam masala – ½ tsp"
+  - "cumin seeds – ¼ tsp"
+  - "carom seeds -1/2 tsp"
+  - "a pinch of asafetida"
+  - "salt as per taste"
+  - "olive oil – 1½ tbsp"
+  - "oil for roasting - 2 tbsp"
+  - "lemon juice- ½ tsp"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat 1 tbsp oil in a pan. Add tofu triangles and roast from both sides, till they turn slightly brown in color."
+  - "@type": HowToStep
+    text: "Remove from pan, and set aside."
+  - "@type": HowToStep
+    text: "Now add 1 tbsp oil and add sliced potatoes to it, and roast from both sides, till they turn golden brown."
+  - "@type": HowToStep
+    text: "Remove from pan, and keep aside for later use."
+  - "@type": HowToStep
+    text: "Heat 1 ½ tbsp oil in the same pan. Add asafetida, cumin seeds, and carom seeds."
+  - "@type": HowToStep
+    text: "Let them splutter. Add onions, and sauté them for 2-3 minutes."
+  - "@type": HowToStep
+    text: "Now add okra, turmeric powder, and salt."
+  - "@type": HowToStep
+    text: "Let them cook covered for 7-8 minutes or till okra is soft."
+  - "@type": HowToStep
+    text: "Stir occasionally to prevent from burning."
+  - "@type": HowToStep
+    text: "Now add roasted tofu, roasted potato slices, coriander powder, red chili powder, garam masala powder, and mix well."
+  - "@type": HowToStep
+    text: "Cook for 4-5 minutes, and remove from heat."
+  - "@type": HowToStep
+    text: "Squeeze some lemon juice and mix well."
+  - "@type": HowToStep
+    text: "Serve hot with any of your favorite bread or rice."

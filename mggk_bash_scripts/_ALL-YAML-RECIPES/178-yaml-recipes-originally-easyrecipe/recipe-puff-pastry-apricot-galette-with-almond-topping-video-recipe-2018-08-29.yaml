@@ -1,0 +1,112 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Puff Pastry Apricot Galette with Almond Topping | VIDEO Recipe"
+
+description: "Puff Pastry Apricot Galette with Almond Topping. This is puff pastry filled with fresh tangy apricots, sugar, cornstarch, cardamom and cinnamon. Cinnamon and cardamom provide a subtle background flavor which works wonderfully with the tart and apricots. The topping of almond on pastry and on the top is what makes it more desirable. Some sprinkle of cinnamon sugar at the end. It can be eaten hot, warm or cold with a dollop of ice-cream or may be without the ice-cream."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/08/recipes-Puff-Pastry-Apricot-Galette-With-Almond-Topping-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT30M
+
+totalTime: PT40M
+
+recipeCategory: Dessert
+
+recipeCuisine: French
+
+recipeYield: 6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.5
+  ratingCount: 29
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 145 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "puff, pastry, apricot, galettealmond, topping,  "
+
+video:
+  name: "Puff Pastry Apricot Galette with Almond Topping | VIDEO Recipe"
+  description: "Puff Pastry Apricot Galette with Almond Topping. This is puff pastry filled with fresh tangy apricots, sugar, cornstarch, cardamom and cinnamon. Cinnamon and cardamom provide a subtle background flavor which works wonderfully with the tart and apricots. The topping of almond on pastry and on the top is what makes it more desirable. Some sprinkle of cinnamon sugar at the end. It can be eaten hot, warm or cold with a dollop of ice-cream or may be without the ice-cream."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/08/recipes-Puff-Pastry-Apricot-Galette-With-Almond-Topping-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/p4kfHMr1Qmc/maxresdefault.jpg
+  contentUrl: "https://youtu.be/p4kfHMr1Qmc"
+  embedUrl: "https://www.youtube.com/embed/p4kfHMr1Qmc"
+  uploadDate: 2018-08-29
+
+datePublished: 2018-08-29
+
+url: https://www.mygingergarlickitchen.com/puff-pastry-apricot-galette-with-almond-topping-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For Filling:"
+  - "Salted butter, melted - 2 tbsp"
+  - "Apricots, halved, pitted, and cut into wedges - 2 cup"
+  - "Sugar - 4 tbsp or as per taste"
+  - "Ground cardamom - ¼ tsp"
+  - "Ground cinnamon - ½ tsp"
+  - "Cornstarch or arrowroot - 1 tbsp"
+  - "Lemon juice (Use if apricots are sweet) - ½ tsp"
+  - "Milk or cream - 3 tbsp"
+  - "Sliced almonds - ⅛ cup"
+  - "!!For Galette:"
+  - "Frozen Puff pastry dough, thawed - 8‐ounce/0.5 lb"
+  - "All‐purpose flour, for dusting"
+  - "!!For Topping:"
+  - "Sliced almonds - 2 tbsp"
+  - "Cinnamon sugar - 1 tbsp for sprinkling"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add all of the filling ingredients to a medium bowl and gently stir until everything is combined and the apricots are evenly coated."
+  - "@type": HowToStep
+    text: "Set aside for 10 mins."
+  - "@type": HowToStep
+    text: "Preheat the oven to 375°F. Line a baking sheet with parchment paper and set aside."
+  - "@type": HowToStep
+    text: "On a lightly floured surface, roll the dough into about a 12/14-inch diameter and ⅛ inch thick circle."
+  - "@type": HowToStep
+    text: "It does not have to be perfect."
+  - "@type": HowToStep
+    text: "Transfer the dough to the center of the prepared baking sheet."
+  - "@type": HowToStep
+    text: "Arrange the apricot filling in the middle of the circle leaving about 2 inches around the edge empty."
+  - "@type": HowToStep
+    text: "Gently bring up the edges of the dough, folding and creasing a little along the way towards the center of the galette."
+  - "@type": HowToStep
+    text: "Lightly brush the edges with milk or cream."
+  - "@type": HowToStep
+    text: "Press the almonds all over the sides of the galette then brush again with the milk."
+  - "@type": HowToStep
+    text: "Bake for 25-30 minutes until the edges are golden brown."
+  - "@type": HowToStep
+    text: "Remove from the oven."
+  - "@type": HowToStep
+    text: "Cool for 20 minutes to serve warm, or cool for 1-2 hours to serve at room temperature."
+  - "@type": HowToStep
+    text: "Sprinkle with cinnamon sugar and sliced almonds."
+  - "@type": HowToStep
+    text: "Slice and serve."

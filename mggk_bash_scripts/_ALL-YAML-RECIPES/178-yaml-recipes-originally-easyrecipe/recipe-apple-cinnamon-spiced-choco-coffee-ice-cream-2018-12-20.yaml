@@ -1,0 +1,87 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Apple Cinnamon Spiced Choco Coffee with Ice Cream"
+
+description: "Apple Cinnamon Spiced Choco Coffee with Ice Cream is a steaming hot beverage. It is sweet, and perfect for christmas and holiday parties."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/12/recipe-apple-cinnamon-spiced-choco-coffee-icecream-anupama-paliwal-my-ginger-garlic-kitchen-5.jpg
+
+prepTime: PT2M
+
+cookTime: PT10M
+
+totalTime: PT12M
+
+recipeCategory: Beverage
+
+recipeCuisine: World
+
+recipeYield: 2
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.3
+  ratingCount: 47
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 239 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "apple, cinnamon, spiced, choco, coffeeice, cream"
+
+datePublished: 2018-12-20
+
+url: https://www.mygingergarlickitchen.com/apple-cinnamon-spiced-choco-coffee-ice-cream/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Prep time - 2 mins"
+  - "Cook time - 10-12 mins"
+  - "Serves - 2"
+  - "cocoa powder - 2 tbsp"
+  - "ground cinnamon - ½ tsp"
+  - "instant coffee powder - 1 ½ tbsp"
+  - "2.5% fat milk - 2 cups"
+  - "vanilla extract - 1 tsp"
+  - "brown sugar - 1 tbsp"
+  - "!!for serving:"
+  - "ppple cinnamon marmalade"
+  - "whipped cream"
+  - "marshmallow"
+  - "nuts (I have used walnuts)"
+  - "gingerbread cookies"
+  - "cocoa powder"
+  - "icing sugar"
+  - "marshmallow"
+  - "ice-cream of your choice (I have used apple cinnamon flavor)"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "In a small bowl, mix together the chocolate powder, sugar, cinnamon, instant coffee powder. Heat a large pan over medium heat."
+  - "@type": HowToStep
+    text: "Add milk, all spices, and bring it to a boil. Let it boil id 5-7 minutes."
+  - "@type": HowToStep
+    text: "Remove from heat."
+  - "@type": HowToStep
+    text: "Take serving glass. Add 1 tbsp apple cinnamon marmalade. 2 dollop of ice-cream to it."
+  - "@type": HowToStep
+    text: "Pour hot spiced coffee and top with whipped cream, chocolate powder, icing sugar, gingerbread cookies, nuts, marshmallow and marmalade."
+  - "@type": HowToStep
+    text: "Serve hot & enjoy!"

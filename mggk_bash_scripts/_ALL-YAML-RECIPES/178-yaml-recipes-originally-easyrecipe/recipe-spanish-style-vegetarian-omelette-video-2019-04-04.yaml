@@ -1,0 +1,112 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Spanish Style Omelette Recipe – Tortilla Española | Video Recipe"
+
+description: "This Spanish Style Omelette Recipe - Tortilla Española is traditionally made from eggs, potatoes, onions and chorizo or tuna. To make it vegetarian I added vegetables instead of chorizo or tuna. You know what I love most about this dish — it’s so rich, classic and versatile."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/04/recipes-Spanish-Style-Vegetarian-Omelette-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT35M
+
+totalTime: PT45M
+
+recipeCategory: Main
+
+recipeCuisine: Spanish
+
+recipeYield: 2
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.7
+  ratingCount: 64
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 213 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "spanish, style, vegetarian, omelette "
+
+video:
+  name: "Spanish Style Omelette Recipe – Tortilla Española | Video Recipe"
+  description: "This Spanish Style Omelette Recipe - Tortilla Española is traditionally made from eggs, potatoes, onions and chorizo or tuna. To make it vegetarian I added vegetables instead of chorizo or tuna. You know what I love most about this dish — it’s so rich, classic and versatile."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/04/recipes-Spanish-Style-Vegetarian-Omelette-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/cYaVfs5raiQ/maxresdefault.jpg
+  contentUrl: "https://youtu.be/cYaVfs5raiQ"
+  embedUrl: "https://www.youtube.com/embed/cYaVfs5raiQ"
+  uploadDate: 2019-04-04
+
+datePublished: 2019-04-04
+
+url: https://www.mygingergarlickitchen.com/spanish-style-vegetarian-omelette-video/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Potatoes, peeled and diced - 3 medium"
+  - "Eggs - 4 Large"
+  - "Onion, peeled and diced - 2"
+  - "Pinch of salt to taste"
+  - "Chopped vegetables of your choice - ½ cup"
+  - "Olive Oil - 4 tbsp + 2 tsp"
+  - "ground pepper"
+  - "salt to taste"
+  - "For serving:"
+  - "Fruits or vegetable of your choice"
+  - "pepper"
+  - "Any sauce of your choice"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Boil water in a medium sauce pan."
+  - "@type": HowToStep
+    text: "Add potatoes to the water and parboil them for 5­-7"
+  - "@type": HowToStep
+    text: "minutes."
+  - "@type": HowToStep
+    text: "Now drain the potatoes (make sure you don’t overcook them – they should be cooked partially only to speed up the process) and add them to the pan."
+  - "@type": HowToStep
+    text: "Heat up 3 table spoons of olive oil in a frying pan and add the onion. Sauté for about 5 minutes."
+  - "@type": HowToStep
+    text: "Add potatoes and vegetables and cook till all the vegetables are cooked."
+  - "@type": HowToStep
+    text: "occasionally."
+  - "@type": HowToStep
+    text: "Break the eggs into a bowl. Add a pinch of salt and ground pepper and beat well."
+  - "@type": HowToStep
+    text: "Once the vegetables are cooked, pour over the beaten eggs and mix well."
+  - "@type": HowToStep
+    text: "Heat 2 tbsp oil in the same pan."
+  - "@type": HowToStep
+    text: "Pour over the egg mixture and flatten with a fork to shape into an omelette."
+  - "@type": HowToStep
+    text: "Reduce the heat to medium low and cover with lid."
+  - "@type": HowToStep
+    text: "Cook slowly for 10-12 minutes or until almost set and golden brown underneath."
+  - "@type": HowToStep
+    text: "Remove the lid."
+  - "@type": HowToStep
+    text: "Now it is time to turn it over. For this, use a plate (cover the pan"
+  - "@type": HowToStep
+    text: "with the plate, holding both turn the pan over. Transfer the omelette back onto the pan and cook for further 8-10 minutes. Remove from heat."
+  - "@type": HowToStep
+    text: "Top with your favorite salad, drizzle some sauce, sprinkle some pepper and serve with a slice of bread."

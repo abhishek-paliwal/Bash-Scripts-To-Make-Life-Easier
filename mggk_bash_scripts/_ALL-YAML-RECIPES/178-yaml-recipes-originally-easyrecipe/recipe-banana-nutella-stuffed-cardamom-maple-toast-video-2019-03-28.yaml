@@ -1,0 +1,115 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Banana Nutella Stuffed Cardamom Maple Toast Recipe"
+
+description: "A rich and decadent Cardamom Maple Toasts stuffed with a sweet combo of Banana + Nutella filling, dusted with icing sugar, drizzled with extra chocolate sauce, topped with whipped cream and sprinkled with crushed almonds and marshmallows."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/03/recipes-Banana-Nutella-Stuffed-Cinnamon-Maple-Toast-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT20M
+
+totalTime: PT25M
+
+recipeCategory: Dessert
+
+recipeCuisine: French
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.5
+  ratingCount: 70
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 192 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "banana, nutella, stuffed, cardamom, maple, toast "
+
+video:
+  name: "Banana Nutella Stuffed Cardamom Maple Toast Recipe"
+  description: "A rich and decadent Cardamom Maple Toasts stuffed with a sweet combo of Banana + Nutella filling, dusted with icing sugar, drizzled with extra chocolate sauce, topped with whipped cream and sprinkled with crushed almonds and marshmallows."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/03/recipes-Banana-Nutella-Stuffed-Cinnamon-Maple-Toast-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/UGRRUBO98tY/maxresdefault.jpg
+  contentUrl: "https://youtu.be/UGRRUBO98tY"
+  embedUrl: "https://www.youtube.com/embed/UGRRUBO98tY"
+  uploadDate: 2019-03-28
+
+datePublished: 2019-03-28
+
+url: https://www.mygingergarlickitchen.com/banana-nutella-stuffed-cardamom-maple-toast-video/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For baked banana:"
+  - "Banana - 1 large"
+  - "Nutella - 2-3 tbsp"
+  - "!!For toasts:"
+  - "Bread slices - 4"
+  - "Cardamom powder - 2 tsp"
+  - "Maple syrup - 1-2 tbsp"
+  - "Butter - 2 tbsp"
+  - "!!For serving:"
+  - "Whipped cream"
+  - "Chocolate sauce"
+  - "Sliced almonds"
+  - "Marshmallows"
+  - "Icing sugar"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For  Baked Banana:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Slit the banana lengthwise, but don’t cut completely through it!"
+  - "@type": HowToStep
+    text: "Stuff the banana with the nutella and wrap in tin foil."
+  - "@type": HowToStep
+    text: "Bake in the oven at 180°C for about 15 minutes."
+  - "@type": HowToStep
+    text: "Unwrap the foil and take out the banana nutella mixture into a bowl and mix well."
+- "@type": HowToSection
+  name: "For  Cardamom Maple Mixture:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat butter in a pan. Add cardamom powder and maple syrup."
+  - "@type": HowToStep
+    text: "Stir well and let it come to boil. Remove from heat and set aside."
+- "@type": HowToSection
+  name: "For  Toasts:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Slather the mixture on two bread slices and sandwich with other two slices."
+  - "@type": HowToStep
+    text: "Brush both sides of sandwiches with the prepared cardamom maple mixture."
+  - "@type": HowToStep
+    text: "Broil them at 200°C for 2 minutes or simply grill them."
+- "@type": HowToSection
+  name: "For  Serving:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Cut sandwiches into desired shapes and dust them with icing sugar."
+  - "@type": HowToStep
+    text: "Top with whipped cream and drizzled chocolate sauce."
+  - "@type": HowToStep
+    text: "Top with almond slices and marshmallows."
+  - "@type": HowToStep
+    text: "Enjoy with a glass of milk or coffee."

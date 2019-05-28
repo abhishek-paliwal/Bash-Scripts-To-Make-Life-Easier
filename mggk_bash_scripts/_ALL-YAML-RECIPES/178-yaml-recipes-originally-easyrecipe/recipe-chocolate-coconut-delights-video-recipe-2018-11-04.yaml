@@ -1,0 +1,104 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Chocolate Coconut Delights easyrecipe"
+
+description: "Chocolate Coconut Delights are a super easy, simple, and quick chocolate dessert. In this particular recipe Mawa/khoya is cooked with desiccated coconut, cocoa powder shaped into discs."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/11/recipes-Chocolate-coconut-delight-anupama-paliwal-my-ginger-garlic-kitchen-4-FI1.jpg
+
+prepTime: PT2M
+
+cookTime: PT15M
+
+totalTime: PT17M
+
+recipeCategory: Dessert
+
+recipeCuisine: Indian
+
+recipeYield: 14-15 pieces
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.2
+  ratingCount: 75
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 234 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "chocolate, coconut, delights "
+
+video:
+  name: "Chocolate Coconut Delights easyrecipe"
+  description: "Chocolate Coconut Delights are a super easy, simple, and quick chocolate dessert. In this particular recipe Mawa/khoya is cooked with desiccated coconut, cocoa powder shaped into discs."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/11/recipes-Chocolate-coconut-delight-anupama-paliwal-my-ginger-garlic-kitchen-4-FI1.jpg
+    - https://i.ytimg.com/vi/oI-1PUg3LnU/maxresdefault.jpg
+  contentUrl: "https://youtu.be/oI-1PUg3LnU"
+  embedUrl: "https://www.youtube.com/embed/oI-1PUg3LnU"
+  uploadDate: 2018-11-04
+
+datePublished: 2018-11-04
+
+url: https://www.mygingergarlickitchen.com/chocolate-coconut-delights-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For Chocolate Coconut Delight:"
+  - "Almonds for garnish"
+  - "Cashews - 8-10"
+  - "Cocoa powder - 3 tbsp"
+  - "Dessicated coconut - 1 cup + ½ cup"
+  - "Ground cardamom - 1 tbsp"
+  - "Ghee - 1 tbsp"
+  - "Khoya/solidified milk - 1 cup"
+  - "Milk - 2 tbsp"
+  - "Silver warq"
+  - "Sugar - 1 cup"
+  - "Rose water - 1 tsp"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat ghee in a pan. Crumble khoya and add it to the pan. Saute for about 1 minute."
+  - "@type": HowToStep
+    text: "Add 1 cup desiccated coconut and saute for 2 minutes."
+  - "@type": HowToStep
+    text: "Add sugar and saute for another 2 minutes."
+  - "@type": HowToStep
+    text: "Now add milk and mix well. Saute for 1 more minute."
+  - "@type": HowToStep
+    text: "Add cocoa powder and saute for 2 minutes."
+  - "@type": HowToStep
+    text: "Add rose water and mix well. Add cardamom and saute for 1 minute."
+  - "@type": HowToStep
+    text: "Remove from heat and let it cool off."
+  - "@type": HowToStep
+    text: "Take ½ cup desiccated coconut in plate."
+  - "@type": HowToStep
+    text: "Roll the mixture into a log. Flatten it and arrange cashews on top."
+  - "@type": HowToStep
+    text: "Roll into a log again and coat with desiccated coconut. Cut into 10-12 equal sizes."
+  - "@type": HowToStep
+    text: "Roll and press each piece to make a disc. Coat with desiccated coconut and top each disc with almond."
+  - "@type": HowToStep
+    text: "Decorate with silver warq and serve."
+  - "@type": HowToStep
+    text: "Enjoy!"

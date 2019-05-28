@@ -1,0 +1,73 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Chocolate Chip Cookies Salted Peanuts Caramel Ice-cream Sundae"
+
+description: "Chocolate Chip Cookies Salted Peanuts Caramel Ice-cream Sundae. This easy to make Sundae is a love affair between chocolate chip cookies and caramel ice-cream."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/06/recipe-caramel-chocolate-chip-cookies-salted-peanuts-ice-cream-sundae-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT2M
+
+cookTime: PT2M
+
+totalTime: PT4M
+
+recipeCategory: Dessert
+
+recipeCuisine: World
+
+recipeYield: 2
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.7
+  ratingCount: 42
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 240 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "chocolate, chip, cookies, salted, peanuts, caramel, icecream, sundae"
+
+datePublished: 2018-06-29
+
+url: https://www.mygingergarlickitchen.com/chocolate-chip-cookies-salted-peanuts-caramel-ice-cream-sundae/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "caramel ice cream - 5 scoops"
+  - "salted roasted peanuts - 3 tbsp"
+  - "chilled whip cream - ¼ cup"
+  - "chocolate chip cookies, crumbles - ½ cup"
+  - "chocolate sauce"
+  - "caramel sauce"
+  - "cherries"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a large ice-cream bowl. Add ¼ cup chilled whip cream at the bottom."
+  - "@type": HowToStep
+    text: "Add crumbled cookies on top of whip cream."
+  - "@type": HowToStep
+    text: "Add ice-cream scoops on top of cookies. Add salted peanuts on top."
+  - "@type": HowToStep
+    text: "Drizzle chocolate sauce, and caramel sauce. Top with cherries and cookies."
+  - "@type": HowToStep
+    text: "Dig in! 🙂"

@@ -1,0 +1,97 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Aloo Palak Paratha Recipe – Potato stuffed Spinach Flatbread"
+
+description: "Learn to make Aloo Palak Paratha Recipe - Potato stuffed Spinach Flatbread with step-by-step photo instructions. Aloo Palak Paratha is prepared with chopped onions, green chilies, garam masala powder, red chili powder, dried mango powder, fennel seeds, and salt. This is simply delish, quick and easy recipe."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/01/recipe-aloo-palak-paratha-anupama-paliwal-my-ginger-garlic-kitchen-6.jpg
+
+prepTime: PT10M
+
+cookTime: PT20M
+
+totalTime: PT30M
+
+recipeCategory: Breakfast
+
+recipeCuisine: Indian
+
+recipeYield: 8
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.3
+  ratingCount: 39
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 193 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: ", aloo, palak, paratha, potato, stuffed, spinach, flatbread"
+
+datePublished: 2019-03-25
+
+url: https://www.mygingergarlickitchen.com/aloo-palak-paratha-potato-stuffed-spinach-flatbread/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For dough:"
+  - "whole wheat flour - 2 cups"
+  - "salt as per taste"
+  - "spinach puree - 1 cup"
+  - "Water as per requirement"
+  - "oil for roasting"
+  - "!!For stuffing:"
+  - "potatoes, peeled & boiled – 5"
+  - "onion, chopped – 1"
+  - "green chillies , chopped – 2"
+  - "dried mango powder (amchur) – 2 tsp"
+  - "garam masala powder – ½ tsp"
+  - "chili powder – ½ tsp"
+  - "fennel seeds – 2 tsp"
+  - "salt to taste"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For  Dough:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a mixing bowl. Add all the dough ingredients, and knead to make a semi-soft dough."
+  - "@type": HowToStep
+    text: "Add some water if needed. Cover with cling film and keep aside for 10 minutes."
+- "@type": HowToSection
+  name: "For  Stuffing:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take another mixing bowl. Add potatoes and mash coarsely."
+  - "@type": HowToStep
+    text: "Add chopped onions, chopped green chilies, and all the spices."
+  - "@type": HowToStep
+    text: "Mix well all the spices with mashed potatoes. Divide the potato mixture into 6-8 equal sized balls."
+- "@type": HowToSection
+  name: "For  Paratha:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Divide the dough into 6-8 equal sized balls. Roll out one portion of the dough into a circle of 4″ diameter."
+  - "@type": HowToStep
+    text: "Apply a little oil, and place one mixture ball in the center of the dough circle. Bring together all the sides in the center and seal tightly."
+  - "@type": HowToStep
+    text: "Roll out again into a circle of 6″ diameter with the help of some flour."
+  - "@type": HowToStep
+    text: "Heat a pan. Roast rolled circles from both sides. Apply a little oil on both sides, and roast until golden brown."
+  - "@type": HowToStep
+    text: "Repeat with the remaining dough and filling to make more parathas. Serve hot with your favorite pickle and raita."

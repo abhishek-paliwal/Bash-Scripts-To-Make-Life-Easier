@@ -1,0 +1,108 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Seasoned Sweet Potato Vada Grilled Pita Burger"
+
+description: "Seasoned Sweet Potato Vada Grilled Pita Burger is super delicious burger is made with seasoned sweet potato filling, which is dipped gram flour batter, and pan fried."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/07/recipe-sweet-potato-vada-pita-burger-anupama-paliwal-my-ginger-garlic-kitchen-5.jpg
+
+prepTime: PT10M
+
+cookTime: PT40M
+
+totalTime: PT50M
+
+recipeCategory: Snacks
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.2
+  ratingCount: 42
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 249 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "seasoned, sweet, potato, vada, grilled, pita, burger"
+
+datePublished: 2019-02-03
+
+url: https://www.mygingergarlickitchen.com/seasoned-sweet-potato-vada-grilled-pita-burger-vegetarian-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For vada filling:"
+  - "Sweet potatoes boiled, peeled and mashed - 1½ cup"
+  - "Garlic, grated - 2 tsp"
+  - "Ginger, crushed- 1 tsp"
+  - "green chilies, chopped - 1"
+  - "Onion, sliced - 1"
+  - "Turmeric powder - ½ tsp"
+  - "Mustard seeds -1/2 tsp"
+  - "Salt to taste"
+  - "Dried mango powder - 1 tsp"
+  - "Garam masala powder - ¼ tsp"
+  - "Oil - 2 tbsp"
+  - "Ingredients for Vada Batter:"
+  - "Bengal gram flour - 2 cups"
+  - "Cooking oil for deep frying"
+  - "Pinch of baking soda"
+  - "Pinch of salt"
+  - "Ingredients for serving:"
+  - "red chutney for spreading [SEE RED CHUTNEY RECIPE HERE]"
+  - "tomatoes, sliced"
+  - "onions, sliced"
+  - "cucumber, sliced"
+  - "red or green cabbage, julienned"
+  - "hamburger sauce or any other sauce"
+  - "french french fries"
+  - "pita bread 8 slices"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For  Vada filling:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat 2 tbsp oil in a pan. Add mustard seeds to it. when they start to splutter, add sliced onions, chopped green chilies, salt, and turmeric powder to it. Mix well and let them cook for 3 minutes."
+  - "@type": HowToStep
+    text: "Add grated garlic, crushed ginger and cook for 2 minutes. Now add mashed sweet potato, and mix well."
+  - "@type": HowToStep
+    text: "Cook for 2 minutes, and add dried mango powder, and garam masala and mix well. Cook for one more minute and remove from heat."
+- "@type": HowToSection
+  name: "For  Vada frying:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Divide vada filling into 5-6 equal sized balls, and slightly flatten them. Heat the oil for deep frying on a medium flame."
+  - "@type": HowToStep
+    text: "When the oil is hot, dip one filling ball at a time into the gram flour batter to coat well, and then deep fry till it turns golden."
+  - "@type": HowToStep
+    text: "Repeat the same with remaining balls. Drain on paper towels."
+- "@type": HowToSection
+  name: "For  Assembling:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Grill pita breads. Spread a spoonful of red chutney on one side."
+  - "@type": HowToStep
+    text: "Place a hot fried vada ball on it. Spread sliced vegetables."
+  - "@type": HowToStep
+    text: "Apply hamburger sauce on other side, and close the burger."
+  - "@type": HowToStep
+    text: "Serve hot with french fries and your favorite drink. Enjoy!"

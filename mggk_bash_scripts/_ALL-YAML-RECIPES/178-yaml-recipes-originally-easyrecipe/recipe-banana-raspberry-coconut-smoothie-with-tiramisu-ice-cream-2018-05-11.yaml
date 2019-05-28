@@ -1,0 +1,70 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Banana Raspberry Coconut Smoothie with Tiramisu Ice Cream"
+
+description: "Banana Raspberry Coconut Smoothie with Tiramisu Ice Cream is an AWESOME smoothie, so full of healthy antioxidants. Also it has a beautiful color. A dollop of ice-cream with some nuts and raspberry jam on top. That's it."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/05/recipe-banana-raspberry-coconut-smoothie-with-tiramisu-chocolate-anupama-paliwal-my-ginger-garlic-kitchen-FI1.jpg
+
+prepTime: PT5M
+
+cookTime: PT2M
+
+totalTime: PT7M
+
+recipeCategory: Drinks
+
+recipeCuisine: World
+
+recipeYield: 2
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.9
+  ratingCount: 55
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 162 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "banana, raspberry, coconut, smoothietiramisu, ice, cream"
+
+datePublished: 2018-05-11
+
+url: https://www.mygingergarlickitchen.com/banana-raspberry-coconut-smoothie-with-tiramisu-ice-cream/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "banana sliced - 2"
+  - "raspberry fresh or frozen - 1/ 2 cup"
+  - "desiccated coconut - ½ cup"
+  - "1 cup milk"
+  - "sugar - 2 tbsp or as per taste"
+  - "!!for serving:"
+  - "tiramisu ice cream"
+  - "raspberry jam"
+  - "chopped almonds raisins"
+  - "desiccated coconut coconut"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "In a blender, combine the milk, banana, raspberries, sugar and coconut to a blender. Blend until smooth."
+  - "@type": HowToStep
+    text: "Pour into glasses and top with 2 dollops of ice cream, 1 tbsp of raspberry jam, chopped almonds, and some raisins. Sprinkle some desiccated coconut. And drink! 🙂"

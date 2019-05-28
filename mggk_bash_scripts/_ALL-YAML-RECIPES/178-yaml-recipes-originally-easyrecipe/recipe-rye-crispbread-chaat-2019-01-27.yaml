@@ -1,0 +1,82 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Rye Crispbread Chaat"
+
+description: "Rye Crispbread Chaat is a twsited version of papdi chaat with roasted potatoes, chickpeas, tamarind chutney, roasted peanut, roasted green chili, and pomegranate arils. I added a lot of yogurt, and some spices to chaat."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/01/recipe-rye-cracker-chaat-anupama-paliwal-my-ginger-garlic-kitchen-41.jpg
+
+prepTime: PT7M
+
+cookTime: PT5M
+
+totalTime: PT12M
+
+recipeCategory: Appetizer
+
+recipeCuisine: Indian
+
+recipeYield: 2
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.2
+  ratingCount: 63
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 179 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "rye, crispbread, chaat"
+
+datePublished: 2019-01-27
+
+url: https://www.mygingergarlickitchen.com/rye-crispbread-chaat/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "rye crispbreads - 8"
+  - "roasted potato slices - 1 cup"
+  - "natural yogurt or greek yogurt - 2 cup"
+  - "tamarind chutney - 6 tbsp"
+  - "chickpeas, cooked - ¼ cup"
+  - "roasted peanuts - ¼ cup"
+  - "roasted green chilies - 4"
+  - "onions, chopped - 1"
+  - "cilantro leaves - 2 tbsp"
+  - "pomegranate arils - ¼ cup"
+  - "salt to taste"
+  - "chaat masala - 1 tsp"
+  - "cumin powder - 1 tsp"
+  - "chili powder - 1 tsp"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Coarsely crush 8 crispbreads and arrange them on a serving plate."
+  - "@type": HowToStep
+    text: "Top it with half potatoes, half chickpeas, 1 cup yogurt, 3 tbsp tamarind chutney."
+  - "@type": HowToStep
+    text: "Sprinkle roasted half peanuts, pinch of salt, ¼ tsp chaat masala, pinch of cumin powder and pinch of chili powder over it."
+  - "@type": HowToStep
+    text: "Top with some chopped onions, pomegranate arils, and cilantro leaves."
+  - "@type": HowToStep
+    text: "Repeat steps 1 to 3 to make 1 more plate."
+  - "@type": HowToStep
+    text: "Serve immediately!"

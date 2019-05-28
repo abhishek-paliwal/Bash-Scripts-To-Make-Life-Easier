@@ -1,0 +1,104 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Potato Stuffed Bread Pakora Recipe | How To Make Bread Pakora | Bread Snack Recipe"
+
+description: "Potato Stuffed Bread Pakora Recipe | How To Make Bread Pakora. Bread Pakora is a very popular and beloved street food of Northern India. You can call them the appetizer, brunch, or tea-time snack or sometimes even breakfast. Easy to make, and so damn delicious, spicy, crispy, and deep fried snack."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/06/recipe-potato-stuffed-bread-pakora-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT24M
+
+totalTime: PT34M
+
+recipeCategory: Snacks
+
+recipeCuisine: Indian 
+
+recipeYield: 5
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 65
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 155 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "potato, stuffed, bread, pakora, story"
+
+datePublished: 2019-02-13
+
+url: https://www.mygingergarlickitchen.com/potato-stuffed-bread-pakora-recipestory/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!for potato stuffing:"
+  - "potatoes, boiled, peeled and halved - 2 cup"
+  - "oil - 2 tsp"
+  - "cumin seeds - ½ tsp"
+  - "boiled green peas - ¼ cup"
+  - "turmeric powder - ¼ tsp"
+  - "coriander powder - 2 tsp"
+  - "red chili powder - 1 tsp"
+  - "chaat masala - 1 tsp"
+  - "dry mango powder - 1 tbsp"
+  - "ginger, finely chopped - 1 tsp"
+  - "green chili, finely chopped - 1"
+  - "onion, chopped - 1"
+  - "salt to taste"
+  - "!!for batter:"
+  - "gram flour - 11/2 cup"
+  - "turmeric powder - ¼ tsp"
+  - "pinch of asafetida"
+  - "baking soda - ⅛ tsp (optional)"
+  - "warm water - ½ cup"
+  - "salt to taste"
+  - "!!for pakora:"
+  - "bread slices (white or whole grain) - 8"
+  - "oil for deep-frying"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat the oil in a pan, and add the cumin seeds."
+  - "@type": HowToStep
+    text: "When the seeds start to crackle, add potatoes, green peas, turmeric powder, ginger, green chili, coriander powder, red chili powder, dried mango powder, salt, garam masala powder, and mix well. Cook on a medium heat for 5-6 minutes. Add onions and cook for another 2 minutes."
+  - "@type": HowToStep
+    text: "Remove from heat, and keep aside."
+- "@type": HowToSection
+  name: "For Batter"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a large mixing bowl. Add gram flour, salt, soda, and turmeric powder powder and mix well. Add enough water to make a smooth batter, and whisk well to avoid any lumps."
+- "@type": HowToSection
+  name: "For Pakora"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a bread slice and cut it diagonally into 2 equal pieces. Repeat the same with remaining."
+  - "@type": HowToStep
+    text: "Place a slice of bread on a clean, dry and flat surface and spread a portion of the potato stuffing evenly over it. Place another slice of bread over it, and press gently."
+  - "@type": HowToStep
+    text: "Heat the oil in a deep pan."
+  - "@type": HowToStep
+    text: "Dip one bread sandwich in the batter and deep-fry on a medium heat till it turns crisp and golden brown in color from both the sides."
+  - "@type": HowToStep
+    text: "Drain on an absorbent paper. Serve hot with your favourite chutney and tea/coffee."

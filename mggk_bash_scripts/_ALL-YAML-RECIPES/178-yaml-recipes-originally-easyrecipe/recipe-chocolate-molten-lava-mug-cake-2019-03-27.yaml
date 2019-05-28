@@ -1,0 +1,82 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Chocolate Molten Lava Mug Cake"
+
+description: "This Cake is warm, moist and fluffy on the outside. A warm chocolate molten lava sauce with the gooey oozing chocolaty center inside. Chocolate outside, chocolate inside - I would say it is DOUBLE YUM!"
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/03/recipe-Chocoalte-Molten-Lava-Mug-Cake-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT2M
+
+cookTime: PT2M
+
+totalTime: PT4M
+
+recipeCategory: Dessert
+
+recipeCuisine: World
+
+recipeYield: 1
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.9
+  ratingCount: 48
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 211 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "chocolate, molten, lava, mug, cake"
+
+datePublished: 2019-03-27
+
+url: https://www.mygingergarlickitchen.com/chocolate-molten-lava-mug-cake/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For cake:"
+  - "all-purpose flour - ¼ cup"
+  - "melted butter - 3 tbsp"
+  - "unsweetened cocoa powder - 2 tbsp"
+  - "whole milk - 3 tbsp"
+  - "egg - 1"
+  - "pinch of salt"
+  - "vanilla extract - 1 tsp"
+  - "1 ounce chunk of milk chocolate or semisweet"
+  - "granulated sugar - ¼ cup"
+  - "baking powder - ½ tsp"
+  - "!!For topping:"
+  - "whipped cream"
+  - "rainbow nonpareils sprinkles"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a microwave safe mug. Add flour, sugar, cocoa powder, baking powder and salt and whisk well until well combined."
+  - "@type": HowToStep
+    text: "Add melted butter, milk, egg and vanilla extract. Whisk well with a fork."
+  - "@type": HowToStep
+    text: "Place the chocolate pieces in the center of the mug."
+  - "@type": HowToStep
+    text: "Cook in microwave for about 1 minutes 30 seconds. If it is not cooked, cook for 30 seconds more."
+  - "@type": HowToStep
+    text: "It should slightly sticky in the centre. Do not overcook, because you want molten chocolate center."
+  - "@type": HowToStep
+    text: "Take out the mug, and let it cool for about 5 minutes. Top with your favorite toppings and enjoy!"

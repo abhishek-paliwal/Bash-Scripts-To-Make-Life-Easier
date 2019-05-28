@@ -1,0 +1,98 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Caramelized Peach Pesto Tart with Blueberries and Pistachio"
+
+description: "These Caramelized Peach Pesto Tart with Blueberries and Pistachio are so full of caramelized peaches, pesto, feta cheese and some more feta cheese with fresh blueberries and pistachio. For a finishing touch they are nicely drizzled up with some sriracha sauce or some hot pepper sauce. The result you get is the perfect tarts — the most divine appetizers ever. These ingredients really go incredibly well together."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/09/recipe-Peach-Pesto-Tart-with-Blueberries-and-Basils-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT30M
+
+totalTime: PT35M
+
+recipeCategory: Appetizer
+
+recipeCuisine: World
+
+recipeYield: 3
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.6
+  ratingCount: 53
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 236 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "caramelized, peach, pesto, tartblueberriespistachio"
+
+datePublished: 2018-09-07
+
+url: https://www.mygingergarlickitchen.com/caramelized-peach-pesto-tart-with-blueberries-and-pistachio/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!for caramelized peaches:"
+  - "peaches, quartered - 4"
+  - "honey - 1 tbsp"
+  - "butter - 1 tbsp"
+  - "fresh lemon juice - ¼ tbsp"
+  - "!!for tart:"
+  - "frozen puff pastry, thawed - 3 sheets"
+  - "basil pesto - ½ cup"
+  - "feta cheese, crumbled - 1 cup"
+  - "!!for serving:"
+  - "fresh basil, roughly chopped"
+  - "fresh blueberries"
+  - "sriracha sauce or hot pepper sauce"
+  - "pistachio"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For Caramelized Peaches:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat the butter in a non-stick skillet over medium heat. When butter is hot add the peaches and sauté them until they sizzle and their juices reduce and begin to thicken, 2 to 3 minutes."
+  - "@type": HowToStep
+    text: "Sprinkle the honey/sugar over them and sauté until the juices further thicken and the sugar caramelizes slightly, about 1 minute."
+  - "@type": HowToStep
+    text: "Add the lemon juice and sauté until the juices thicken."
+  - "@type": HowToStep
+    text: "Let the peaches cook, shaking the pan occasionally. The total cooking time will be about 4 minutes."
+- "@type": HowToSection
+  name: "For Tart:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat the oven to 400°F/200°C. Line two baking sheets with parchment paper."
+  - "@type": HowToStep
+    text: "Lay the puff pastry and cut each piece in half. Place on the baking sheet. Spread pesto equally on to the 6 pieces of pastry sheets."
+  - "@type": HowToStep
+    text: "Sprinkle good amount of cheese overtop the pastries."
+  - "@type": HowToStep
+    text: "Place in the oven with the peaches and bake for 25-30 minutes or until the pastry is puffed and cooked"
+  - "@type": HowToStep
+    text: "Remove the tarts from the oven."
+- "@type": HowToSection
+  name: "For Serving:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Divide the peaches among the tarts. Top with fresh blueberries and basil leaves. Add some feta cheese and sprinkle some pistachio top."
+  - "@type": HowToStep
+    text: "Drizzle with the sriracha sauce and eat."

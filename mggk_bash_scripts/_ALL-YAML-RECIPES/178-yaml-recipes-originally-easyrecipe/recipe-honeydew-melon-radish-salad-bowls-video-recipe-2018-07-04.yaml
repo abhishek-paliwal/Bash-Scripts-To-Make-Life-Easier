@@ -1,0 +1,96 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Honeydew Melon Radish Salad Bowls | Video Recipe"
+
+description: "Honeydew Melon Radish Salad Bowl is an easy, fast, fresh, healthy and delish salad. The Dressing is slightly sweet, a little bit spicy and perfectly tangy. It really goes very well with the flavors and textures of this salad. The dressing adds just the right touch to the salad without overpowering the natural sweetness of the fruit. I have added some honey to the dressing for sweetness and to help bring out the juices in the fruit. This is VEGAN DAIRY_FREE and GLUTEN-FREE too."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/07/recipes-Honeydew-Melon-Radish-Salad_Bowls-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT2M
+
+totalTime: PT12M
+
+recipeCategory: Main
+
+recipeCuisine: World
+
+recipeYield: 2
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.3
+  ratingCount: 39
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 255 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "honeydew, melon, radish, salad, bowls,  "
+
+video:
+  name: "Honeydew Melon Radish Salad Bowls | Video Recipe"
+  description: "Honeydew Melon Radish Salad Bowl is an easy, fast, fresh, healthy and delish salad. The Dressing is slightly sweet, a little bit spicy and perfectly tangy. It really goes very well with the flavors and textures of this salad. The dressing adds just the right touch to the salad without overpowering the natural sweetness of the fruit. I have added some honey to the dressing for sweetness and to help bring out the juices in the fruit. This is VEGAN DAIRY_FREE and GLUTEN-FREE too."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/07/recipes-Honeydew-Melon-Radish-Salad_Bowls-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/j82N9gdAQu4/maxresdefault.jpg
+  contentUrl: "https://youtu.be/j82N9gdAQu4"
+  embedUrl: "https://www.youtube.com/embed/j82N9gdAQu4"
+  uploadDate: 2018-07-04
+
+datePublished: 2018-07-04
+
+url: https://www.mygingergarlickitchen.com/honeydew-melon-radish-salad-bowls-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For dressing:"
+  - "Olive oil - 4 tbsp"
+  - "Fresh lemon juice - ¼ cup"
+  - "Salt & pepper to taste"
+  - "Honey - 2 tbsp"
+  - "Chopped, cilantro - 1 tbsp"
+  - "Garlic, chopped - 1 tbsp"
+  - "!!For salad:"
+  - "Honeydew - 1"
+  - "Radish, sliced - ¼ cup"
+  - "Cherry tomatoes, halved - ¼ cup"
+  - "Cucumber, sliced - ½ cup"
+  - "Onion rings - ¼ cup"
+  - "!!For serving:"
+  - "Chili flakes"
+  - "Almonds"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Combine honey, lemon juice, olive oil, salt, pepper, garlic and cilantro. Whisk well."
+  - "@type": HowToStep
+    text: "Cut melon in half, remove and discard seeds and scoop flesh with a sharp 1-inch melon baller."
+  - "@type": HowToStep
+    text: "Hollow out the melon shell completely."
+  - "@type": HowToStep
+    text: "Cut cucumber slices with a flower cookie cutter. That's completely optional."
+  - "@type": HowToStep
+    text: "Add melon balls, cucumber flowers, onions rings, radish slices, tomatoes to a large serving bowl."
+  - "@type": HowToStep
+    text: "Pour over the dressing and toss to coat."
+  - "@type": HowToStep
+    text: "Keep the salad in the refrigerator until you are ready to serve. To serve place the salad in the melon bowl and sprinkle with chili flakes, and add some almonds. Enjoy!"

@@ -1,0 +1,87 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Rajasthani Sweet Oliya Recipe – Fruity Rice Yogurt Pudding | Recipe Video"
+
+description: "Rajasthani Sweet Oliya Recipe - Fruity Rice Yogurt Pudding recipe with step by step video tutorial. This is a traditional rice and yogurt base creamy and classic pudding. Oliya is made during festival of Holi, and Sheetla Saptami which is also known as Basoda in Rajasthan."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/03/recipe-oliya-Indian-veriosn-of-greek-style-rice-pudding-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT5M
+
+totalTime: PT10M
+
+recipeCategory: Dessert
+
+recipeCuisine: Indian
+
+recipeYield: 4-6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 41
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 199 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "oliyafruity, rice, yogurt, pudding"
+
+video:
+  name: "Rajasthani Sweet Oliya Recipe – Fruity Rice Yogurt Pudding | Recipe Video"
+  description: "Rajasthani Sweet Oliya Recipe - Fruity Rice Yogurt Pudding recipe with step by step video tutorial. This is a traditional rice and yogurt base creamy and classic pudding. Oliya is made during festival of Holi, and Sheetla Saptami which is also known as Basoda in Rajasthan."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/03/recipe-oliya-Indian-veriosn-of-greek-style-rice-pudding-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/d7fC8F3yypA/maxresdefault.jpg
+  contentUrl: "https://youtu.be/d7fC8F3yypA"
+  embedUrl: "https://www.youtube.com/embed/d7fC8F3yypA"
+  uploadDate: 2019-03-04
+
+datePublished: 2019-03-04
+
+url: https://www.mygingergarlickitchen.com/oliya-fruity-rice-yogurt-pudding/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "plain boiled rice - 1 cup"
+  - "granulated sugar - 1 cup or to taste"
+  - "natural fat-free yogurt - 3 cup"
+  - "raisins - 4 tbsp"
+  - "almonds, chopped, 4 tbsp"
+  - "cashew nuts, chopped - 4 tbsp"
+  - "pistachio, chopped - 2 tbsp"
+  - "saffron strands - 8-10"
+  - "cardamom powder - 1 ½ tsp"
+  - "rose water - 1 tbsp"
+  - "any of your favorite fruits, chopped - 2 cups"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Crush saffron strands, and add 1 tsp rose water to it. Mix well."
+  - "@type": HowToStep
+    text: "Take a large mixing bowl. Add rice and yogurt to it."
+  - "@type": HowToStep
+    text: "Add chopped fruits, sugar, cardamom powder, raisins, almonds, pistachio, cashew nuts, and rose water to the rice-yogurt mixture."
+  - "@type": HowToStep
+    text: "Mix well, and refrigerate covered for 1-2 hours."
+  - "@type": HowToStep
+    text: "Top with almonds, and pistachio and enjoy! 🙂"

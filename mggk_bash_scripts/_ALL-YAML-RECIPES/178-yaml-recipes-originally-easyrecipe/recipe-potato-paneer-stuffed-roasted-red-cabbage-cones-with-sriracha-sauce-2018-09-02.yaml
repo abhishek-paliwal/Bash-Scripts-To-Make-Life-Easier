@@ -1,0 +1,107 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Potato Paneer Stuffed Roasted Red Cabbage Cones with Sriracha Sauce"
+
+description: "Potato Paneer Stuffed Roasted Red Cabbage Cones with Sriracha Sauce. They are gluten free too. And if you omit paneer they are VEGAN too. Clearly, I love paneer so my version of this dish was not VEGAN."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/09/recipe-Poato-Panner-Stuffed-Roaste-Red-Cabbage-Cones-with-Sriracha-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT15M
+
+cookTime: PT18M
+
+totalTime: PT33M
+
+recipeCategory: Main
+
+recipeCuisine: World
+
+recipeYield: 5
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 37
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 223 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "potato, paneer, stuffed, roasted, red, cabbage, conessriracha, sauce"
+
+datePublished: 2018-09-02
+
+url: https://www.mygingergarlickitchen.com/potato-paneer-stuffed-roasted-red-cabbage-cones-with-sriracha-sauce/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!for cones:"
+  - "red cabbage cups - 5"
+  - "toothpicks - 10"
+  - "!!for stuffing:"
+  - "sesame oil - 2 tbsp"
+  - "salt as per taste"
+  - "ground pepper - 2 tsp"
+  - "soya sauce - 2 tsp"
+  - "potatoes, peeled, boiled and halved - 2 cups"
+  - "paneer, finely grated - ½ cup"
+  - "white vinegar - 1 tsp"
+  - "honey - 1 tbsp"
+  - "sriracha sauce - 2 tbsp ( you can use less, if you think it’s too spicy)"
+  - "extra oil for brushing"
+  - "!!for serving:"
+  - "sriracha sauce"
+  - "mayonnaise"
+  - "sesame seeds"
+  - "roasted peanuts"
+  - "basil leaves"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For Making cones:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Cut 5 cabbage cups in equal halves. Roll them into a cone shape and secure them with a toothpick. You can remove toothpick at the time of serving, if you wish."
+  - "@type": HowToStep
+    text: "Warm enough water in a pan with 2 tsp salt. Soak cabbage cones in warm salted water for 25-30 minutes. Drain and keep aside."
+- "@type": HowToSection
+  name: "For Stuffing:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat 2 tbsp oil in another pan. Add chopped garlic and saute for 2-3 minutes or till they turn brown. Add chopped onions and chopped green bell pepper. Saute for 3-4 minutes."
+  - "@type": HowToStep
+    text: "Add green peas, soya sauce, honey, ground pepper, vinegar and salt. Let them cook for another 2-3 minutes."
+  - "@type": HowToStep
+    text: "Add potatoes and paneer. Mix well to make a soft and mushy mixture. Cook for 5 more minutes."
+  - "@type": HowToStep
+    text: "Add sriracha sauce and saute for another minute. Remove from heat and let it cool."
+- "@type": HowToSection
+  name: "For Baking:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat oven at 150°C/ 300°F."
+  - "@type": HowToStep
+    text: "Now the fun part. Fill the prepared cones with stuffing. Brush cones with little oil and bake them for 10 minutes. Turn them and bake again for 2-3 minutes."
+  - "@type": HowToStep
+    text: "Remove from oven. Transfer these cones in serving tray."
+- "@type": HowToSection
+  name: "For Serving:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Sprinkle some sesame seeds and drizzle sriracha sauce and mayonnaise. Garnish with basil leaves, and top with roasted peanuts."
+  - "@type": HowToStep
+    text: "Eat!"

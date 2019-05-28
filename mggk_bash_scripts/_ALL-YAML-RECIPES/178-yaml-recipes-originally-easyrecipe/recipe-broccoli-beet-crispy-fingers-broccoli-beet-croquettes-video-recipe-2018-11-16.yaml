@@ -1,0 +1,99 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Broccoli Beet Crispy Fingers / Croquettes | Video Recipe"
+
+description: "Broccoli Beet Crispy Fingers | Broccoli Beet Croquettes are vegan snacks and can also be made gluten-free. These fingers are the best way to sneak up the vegetables in your child’s diet. And they also make a great finger food for any party or get-together."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/11/recipes-Broccoli-Beet-Crispy-Fingers-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT22M
+
+totalTime: PT32M
+
+recipeCategory: Snacks
+
+recipeCuisine: Indian
+
+recipeYield: 18
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.7
+  ratingCount: 47
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 230 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "broccoli, beet, crispy, fingers, broccoli, beet, croquettes,  "
+
+video:
+  name: "Broccoli Beet Crispy Fingers / Croquettes | Video Recipe"
+  description: "Broccoli Beet Crispy Fingers | Broccoli Beet Croquettes are vegan snacks and can also be made gluten-free. These fingers are the best way to sneak up the vegetables in your child’s diet. And they also make a great finger food for any party or get-together."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/11/recipes-Broccoli-Beet-Crispy-Fingers-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/-aKWik9g72c/maxresdefault.jpg
+  contentUrl: "https://youtu.be/-aKWik9g72c"
+  embedUrl: "https://www.youtube.com/embed/-aKWik9g72c"
+  uploadDate: 2018-11-16
+
+datePublished: 2018-11-16
+
+url: https://www.mygingergarlickitchen.com/broccoli-beet-crispy-fingers-broccoli-beet-croquettes-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Potatoes peeled, boiled and mashed - 1 cup"
+  - "Broccoli blanched and chopped - 1 cup"
+  - "Beetroot, puree - 2 tbsp"
+  - "Cumin seeds - 1 tbsp"
+  - "Dried mango powder/Amchoor Powder - 1 tbsp"
+  - "Garam masala powder - 1 tsp"
+  - "Chaat masala - 1 tsp"
+  - "Salt to taste"
+  - "Green chilis, chopped - 2 tbsp or as per taste"
+  - "Ginger-garlic paste - 1 tbsp"
+  - "Breadcrumbs - ¼ cup (use gluten-free breadcrumbs to make them gluten-free)"
+  - "!!For the crust"
+  - "Breadcrumbs - ¼ cup"
+  - "Sesame seeds - ¼ cup"
+  - "Olive oil for drizzle"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "In a mixing bowl add the broccoli, mashed potatoes, beet puree, cumin seeds, amchur powder, garam masala powder, salt, green chilis and breadcrumbs and mix well."
+  - "@type": HowToStep
+    text: "Divide the mixture into 18-20 equal balls and roll each one into a short sausage shape."
+  - "@type": HowToStep
+    text: "Meanwhile, make the dip. Put the cream cheese, yogurt and chives in a bowl and stir to a soft consistency, adding the milk if needed."
+  - "@type": HowToStep
+    text: "Preheat oven at 175°C."
+  - "@type": HowToStep
+    text: "Put the breadcrumbs and sesame seeds in a bowl and mix well."
+  - "@type": HowToStep
+    text: "Roll the croquettes in the mixture of breadcrumbs and sesame seeds."
+  - "@type": HowToStep
+    text: "Place them on a parchment-lined a baking tray and drizzle/ spray generously with olive oil."
+  - "@type": HowToStep
+    text: "Bake in the oven about 20-22 minutes, or until golden."
+  - "@type": HowToStep
+    text: "Serve with any of your favourtie."

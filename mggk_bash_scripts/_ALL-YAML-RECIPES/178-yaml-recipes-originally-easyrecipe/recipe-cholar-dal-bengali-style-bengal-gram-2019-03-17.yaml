@@ -1,0 +1,82 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Cholar Dal - Bengal Style Bengal Gram"
+
+description: "Cholar Dal - Bengali Style Bengal Gram is a delicious lentil dish made with Bengal gram. This is slightly sweet and fragrant due to the addition of sugar and whole spices or garam masala. This dal is mildly spicy, packed with nutrients and lots of seasoning. This is also rich in proteins."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/03/recipe-cholar-dal-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT2M
+
+cookTime: PT12M
+
+totalTime: PT14M
+
+recipeCategory: Main
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.6
+  ratingCount: 31
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 168 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "cholar, dal, bengali, style, bengal, gram"
+
+datePublished: 2019-03-17
+
+url: https://www.mygingergarlickitchen.com/cholar-dal-bengali-style-bengal-gram/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "chana dal/bengal gram, cooked - 1 cup"
+  - "dried red chili - 3"
+  - "raisins - 2 tbsp"
+  - "cashew nuts - 10-12"
+  - "sugar - 1 tsp"
+  - "green chili cut lengthwise - 2"
+  - "coconut chopped - 2 tbsp"
+  - "dessicated coconut - 1 tbsp"
+  - "salt, as per taste"
+  - "cumin seeds - 2 tsp"
+  - "bay leaf - 1"
+  - "cinnamon stick - 1"
+  - "ghee/clarified butter - 2 tbsp"
+  - "coconut shavings, raisins, and basil leaves for garnishing"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat ghee in a pan. Add cumin seeds, bay leaf, cinnamon, dried red chili and sauté for 20-30 seconds."
+  - "@type": HowToStep
+    text: "Add cashew nuts, and raisins and fry for few seconds, or ‘till cashew turns slightly brown."
+  - "@type": HowToStep
+    text: "Add chopped coconut, desiccated coconut and shallow fry them until coconut slices turn light brown. Drain excess oil and transfer them to a plate."
+  - "@type": HowToStep
+    text: "Add cooked dal, salt, sugar, slit green chili along with water, and cook covered for 5-6 minutes over medium heat or ‘till dal become slightly thick."
+  - "@type": HowToStep
+    text: "Stir in between occasionally to prevent sticking."
+  - "@type": HowToStep
+    text: "Remove from heat, and garnish with coconut shavings, raisins, and basil leaves. Serve hot with any flat bread or rice."

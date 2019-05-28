@@ -1,0 +1,77 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Baked Garlicky Sweet Potato Chips"
+
+description: "Baked Garlicky Sweet Potato Chips are crispy, sweet-salty, and seasoned chips. Some garlic, pepper powder, and salt is all that is required to make them mouth-watering."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/08/recipe-baked-sweet-potato-chips-anupama-paliwal-my-ginger-garlic-kitchen-4.jpg
+
+prepTime: PT5M
+
+cookTime: PT30M
+
+totalTime: PT35M
+
+recipeCategory: Snacks
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 70
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 209 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "baked, garlicky, sweet, potato, chips "
+
+datePublished: 2019-01-20
+
+url: https://www.mygingergarlickitchen.com/baked-garlicky-sweet-potato-chips-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Sweet potatoes, thinly sliced- 2 large"
+  - "Olive oil - 2 tbsp"
+  - "Sea salt - as per taste"
+  - "Pepper powder - ½ tsp"
+  - "Garlic powder - ½ tsp"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat oven at 400°F/200°C, and position oven rack in the center of the oven."
+  - "@type": HowToStep
+    text: "Add the sliced sweet potatoes to a mixing bowl."
+  - "@type": HowToStep
+    text: "Add oil to it, and mix gently. Now add garlic powder, salt and mix well."
+  - "@type": HowToStep
+    text: "Arrange seasoned sweet potato slices onto a lined baking sheet."
+  - "@type": HowToStep
+    text: "Place in the oven and cook for about 15 minutes. Turn the chips upside down, and bake for 10-12 minutes, or until they are nice and crisp."
+  - "@type": HowToStep
+    text: "Keep an eye on them, as we don’t want burnt chips."
+  - "@type": HowToStep
+    text: "Once all the chips are crispy, take them out and sprinkle some pepper powder on top."
+  - "@type": HowToStep
+    text: "Serve with your favorite dipping. Enjoy!"

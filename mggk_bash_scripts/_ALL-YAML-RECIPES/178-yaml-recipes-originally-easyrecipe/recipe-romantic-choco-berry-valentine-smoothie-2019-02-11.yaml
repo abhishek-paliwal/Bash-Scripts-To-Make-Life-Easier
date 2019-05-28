@@ -1,0 +1,76 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Romantic CHOCO-BERRY Valentine Smoothie"
+
+description: "Romantic CHOCO-BERRY Valentine Smoothie! It is one of those things that when people taste, you will get remarks like - this is the best smoothie ever."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/recipe-valentie-smoothie-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT1M
+
+cookTime: PT2M
+
+totalTime: PT3M
+
+recipeCategory: Drinks
+
+recipeCuisine: Indian
+
+recipeYield: 2
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.1
+  ratingCount: 53
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 177 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "romantic, chocoberry, valentine, smoothie"
+
+datePublished: 2019-02-11
+
+url: https://www.mygingergarlickitchen.com/romantic-choco-berry-valentine-smoothie/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "strawberries - 1 cup"
+  - "honey - 2 tbsp"
+  - "milk - 1 ½ cup"
+  - "vanilla extract - ½ tsp"
+  - "chocolate chunks - ½ cup"
+  - "ice cream ( I am using 2 choco-vanilla cones) - 4 scoops"
+  - "whipped cream for topping"
+  - "chocolate sauce"
+  - "berry sauce for topping"
+  - "chocolate for topping"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Combine strawberry, milk, honey and vanilla extract in a blender."
+  - "@type": HowToStep
+    text: "Blend all the ingredients together until smooth."
+  - "@type": HowToStep
+    text: "Place two scoops of ice cream, and chocolate chunks in each cup."
+  - "@type": HowToStep
+    text: "Pour the strawberry smoothie over it. The ice cream will float up."
+  - "@type": HowToStep
+    text: "Top with whipped cream, chocolate, and strawberry sauce, and a piece of your favorite chocolate. Serve immediately."

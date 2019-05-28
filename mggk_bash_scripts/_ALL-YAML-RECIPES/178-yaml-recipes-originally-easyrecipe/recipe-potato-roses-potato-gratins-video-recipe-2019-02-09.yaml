@@ -1,0 +1,96 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Potato Roses | Potato Gratins | Video Recipe"
+
+description: "Potato Roses | Potato Gratins. What could be a better present for your loved one other than the mighty roses? Roses which are crafted with so much love and affection. These potato roses make a lovely dish for Valentine's Day dinner."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2017/02/recipes-potato-roses-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT55M
+
+totalTime: PT1H5M
+
+recipeCategory: Side Dish
+
+recipeCuisine: French
+
+recipeYield: 7
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.9
+  ratingCount: 60
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 218 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "potato, roses, potato, gratins,  "
+
+video:
+  name: "Potato Roses | Potato Gratins | Video Recipe"
+  description: "Potato Roses | Potato Gratins. What could be a better present for your loved one other than the mighty roses? Roses which are crafted with so much love and affection. These potato roses make a lovely dish for Valentine's Day dinner."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2017/02/recipes-potato-roses-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/gdxaNTmF2wI/maxresdefault.jpg
+  contentUrl: "https://youtu.be/gdxaNTmF2wI"
+  embedUrl: "https://www.youtube.com/embed/gdxaNTmF2wI"
+  uploadDate: 2019-02-09
+
+datePublished: 2019-02-09
+
+url: https://www.mygingergarlickitchen.com/potato-roses-potato-gratins-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Yellow/gold potatoes - 4 medium"
+  - "Garlic Olive Oil - 4-5 Tbsp (Or Use Olive Oil + 1 Tbsp Garlic Powder)"
+  - "Italian Seasoning - 1 Tbsp"
+  - "Kosher Salt - 1 Tsp Or As Per Taste"
+  - "Ground Black Pepper - ½ Tsp"
+  - "Grated Parmesan Cheese - ¼ Cup + 2 Tbsp"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat the oven to 190°C/375F."
+  - "@type": HowToStep
+    text: "Use a food processor or a mandolin slicer to slice the potatoes."
+  - "@type": HowToStep
+    text: "Generously grease a muffin tin with melted butter and set it aside."
+  - "@type": HowToStep
+    text: "Place potato slices in a bowl and add italian seasoning, garlic oil, ¼ cup parmesan cheese, salt and black pepper. Drizzle in the remaining melted butter."
+  - "@type": HowToStep
+    text: "Toss with your hands until all the potatoes are coated well, it would take about 1-2 minutes."
+  - "@type": HowToStep
+    text: "On a board; arrange 10-11 potato slices partially overlapped in a row. Starting with the first slice, Start at one end and carefully roll them up, you have a rose shape."
+  - "@type": HowToStep
+    text: "If needed, you can add a few more slices to make a bigger rose."
+  - "@type": HowToStep
+    text: "Hold the rose tightly between your fingers and place it in a greased muffin cup."
+  - "@type": HowToStep
+    text: "Sprinkle with some more parmesan cheese on top."
+  - "@type": HowToStep
+    text: "Bake at 190°C for around 55-60 minutes until the edges are cooked, golden and crispy."
+  - "@type": HowToStep
+    text: "Loosen the edges of potato roses with a fork to lift out."
+  - "@type": HowToStep
+    text: "Arrange in a serving dish and enjoy."

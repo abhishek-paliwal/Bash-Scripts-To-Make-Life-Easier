@@ -1,0 +1,137 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Chocolate Cheesecake | Video Recipe"
+
+description: "Chocolate cheesecakes are best for this festive season. So for this chocolate cheesecake, I can say one thing — Season no bar, only chocolate is the limit! Chocolate in, chocolate out = Deliciousness."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/12/recipes-Chocolate-Cheesecake-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT75M
+
+totalTime: PT1H25M
+
+recipeCategory: Desserts
+
+recipeCuisine: World
+
+recipeYield: 1 Cake
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.1
+  ratingCount: 46
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 276 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "chocolate, cheesecake"
+
+video:
+  name: "Chocolate Cheesecake | Video Recipe"
+  description: "Chocolate cheesecakes are best for this festive season. So for this chocolate cheesecake, I can say one thing — Season no bar, only chocolate is the limit! Chocolate in, chocolate out = Deliciousness."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/12/recipes-Chocolate-Cheesecake-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/Oa2lsVheVR0/maxresdefault.jpg
+  contentUrl: "https://youtu.be/Oa2lsVheVR0"
+  embedUrl: "https://www.youtube.com/embed/Oa2lsVheVR0"
+  uploadDate: 2018-12-21
+
+datePublished: 2018-12-21
+
+url: https://www.mygingergarlickitchen.com/chocolate-cheesecake-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For Chocoalte Cookie Crust:"
+  - "Whole Dark Chocolate Cookies Or Oreo Cookies - 18-20"
+  - "Melted Butter - ¼ Cup"
+  - "!!For Chocolate Cheesecake"
+  - "Whipping Cream (Warmed For 1 Minute In Microwave) - 200ml"
+  - "Baking Chocolate Bar (Mine Had 62% Cocoa) - 250g"
+  - "Condensed Milk - 396g (14oz)"
+  - "Cream Cheese Softened To Room Temperature - 500g"
+  - "Vanilla Extract - 1½ Tsp"
+  - "Eggs - 4"
+  - "Instant Coffee Powder - 1 Tbsp Diluted In 1 Tbsp Hot Water"
+  - "!!For Chocolate Ganache:"
+  - "Dark Chocolate (I Used 82%) - 200g"
+  - "Whipping Cream - 200ml"
+  - "!!For Decoration:"
+  - "Chocolate Candies, For Garnish"
+  - "Melted White Chocolate For Drizzle"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For  Chocolate Cookies Crust:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Crush cookies until fine crumbs form."
+  - "@type": HowToStep
+    text: "Add butter and stir well until crumbs are completely coated and moist."
+  - "@type": HowToStep
+    text: "Brush a (∅ 25 cm or 9 inches) cake pan with butter and line the base with baking paper."
+  - "@type": HowToStep
+    text: "Press mixture evenly and firmly in bottom of the dish."
+- "@type": HowToSection
+  name: "For  Cream Cheese Filling:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat oven to 150°C/300°F."
+  - "@type": HowToStep
+    text: "In a bowl add baking chocolate and microwave at high for 1-2 minutes or until melted."
+  - "@type": HowToStep
+    text: "Keep stirring at 30-second intervals."
+  - "@type": HowToStep
+    text: "Add warm whipping cream and stir well into melted chocolate until combined well."
+  - "@type": HowToStep
+    text: "In a large bowl using a hand mixer, beat cream cheese until smooth."
+  - "@type": HowToStep
+    text: "Add sweetened condensed milk, vanilla and beat until well combined."
+  - "@type": HowToStep
+    text: "Add eggs one at a time, beating at medium speed until it blends well between each addition."
+  - "@type": HowToStep
+    text: "Add diluted coffee, chocolate mixture and beat until blended well."
+  - "@type": HowToStep
+    text: "Pour cheesecake filling over prepared crust."
+- "@type": HowToSection
+  name: "For  Baking:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Bake at 150°C for 75 minutes or until well set in the center."
+  - "@type": HowToStep
+    text: "Turn off the oven and remove cheesecake."
+  - "@type": HowToStep
+    text: "Cool it completely on a wire rack. Refrigerate cheesecake for 8 hours or overnight. Stirring constantly until the sauce is smooth."
+- "@type": HowToSection
+  name: "For  Ganache:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Place dark chocolate in a microwave safe bowl. Pour whipping cream and microwave at high for 1-2 minutes or until melted. Keep stirring at 30-second intervals."
+- "@type": HowToSection
+  name: "For  Decoration:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Remove sides of cake pan. Pour warm ganache over chilled cheesecake."
+  - "@type": HowToStep
+    text: "Decorate with chocolate candies and drizzle with white chocolate."
+  - "@type": HowToStep
+    text: "Chill 30 mins before serving to let the ganache topping set."
+  - "@type": HowToStep
+    text: "Slice and enjoy."

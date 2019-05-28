@@ -1,0 +1,73 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Blueberry Kiwi Cooler (Recipe + Story)"
+
+description: "Blueberry Kiwi Cooler is very refreshing, tangy and sweet drink. Basically, a tall glass is just perfect to sip and relax on any evening. This vibrant and gorgeous blue mocktail has enough to entice you to enjoy this drink. An awesome delight to quench your thirst! This mighty drink would be ready to serve in less than 5 minutes."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/07/recipe-blubeberry-kiwi-cooler-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT3M
+
+cookTime: PT2M
+
+totalTime: PT5M
+
+recipeCategory: Drinks
+
+recipeCuisine: World
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.4
+  ratingCount: 47
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 179 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "blueberry, kiwi, cooler, story"
+
+datePublished: 2018-07-20
+
+url: https://www.mygingergarlickitchen.com/blueberry-kiwi-cooler-recipestory/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Ingredients"
+  - "crushed ice - 2 glass"
+  - "sugar syrup - 4 tbsp"
+  - "kiwi, peeled and mashed - 4 tbsp"
+  - "blueberry mashed 4 tbsp"
+  - "lemon juice - 4 tbsp"
+  - "chilled soda - 2 bottles"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "In a tall glass, add ½ cup of crushed ice."
+  - "@type": HowToStep
+    text: "Pour 1 tbsp kiwi, 1 tbsp blueberry, 1 tbsp sugar syrup, 1 tbsp lemon juice over it."
+  - "@type": HowToStep
+    text: "Repeat the same process to make 3 more glasses."
+  - "@type": HowToStep
+    text: "Add soda water to each glass and top with kiwi slices."
+  - "@type": HowToStep
+    text: "Serve immediately. Enjoy!"

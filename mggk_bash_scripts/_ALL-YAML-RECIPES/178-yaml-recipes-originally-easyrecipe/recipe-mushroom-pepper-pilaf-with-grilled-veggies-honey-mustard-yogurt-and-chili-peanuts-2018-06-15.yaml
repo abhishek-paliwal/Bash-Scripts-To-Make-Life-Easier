@@ -1,0 +1,133 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Mushroom Pepper Pilaf With Grilled Veggies, Honey Mustard Yogurt And Chili Peanuts"
+
+description: "Mushroom Pepper Pilaf With Grilled Veggies, Honey Mustard Yogurt and Chili Peanuts. I am totally in love with the combo of pilaf and honey mustard yogurt. It’s super hearty. And all the grilled veggies and chilli peanuts simply helped to balance out this meal and made it even more flavorful."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/06/recipe-mushroom-pepper-pilaf-with-grilled-veggies-and-honey-mustard-yogurt-and-chili-panuts-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT40M
+
+totalTime: PT50M
+
+recipeCategory: Main
+
+recipeCuisine: Indian
+
+recipeYield: 4-6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5.0
+  ratingCount: 78
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 281 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "mushroom, pepper, pilafgrilled, veggies, honey, mustard, yogurtchili, peanuts"
+
+datePublished: 2018-06-15
+
+url: https://www.mygingergarlickitchen.com/mushroom-pepper-pilaf-with-grilled-veggies-honey-mustard-yogurt-and-chili-peanuts/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!for pilaf:"
+  - "1 onion, sliced lengthwise - 1"
+  - "button mushrooms, sliced - 1 cup"
+  - "red bell pepper, julienned - 1"
+  - "oil/ butter - 4 tbsp"
+  - "dried red chili - 1"
+  - "cloves - 2"
+  - "green cardamom pods - 2"
+  - "black cardamom - 1"
+  - "cinnamon stick - 1"
+  - "cloves - 2"
+  - "cumin seeds - 1 tsp"
+  - "coriander seeds - 1 tsp"
+  - "garlic chopped - 2 tbsp"
+  - "long grain basmati rice, washed and soaked in water for 15 minutes - 2 cups"
+  - "salt, as per taste"
+  - "kasuri methi - 1 tbsp"
+  - "turmeric powder - ½ tsp"
+  - "curry powder - 1 ½ tbsp"
+  - "fresh lemon juice - 1 tbsp"
+  - "!!for honey mustard yogurt"
+  - "fat free plain greek yogurt - ½ cup"
+  - "garlic powder - ¼ tsp"
+  - "salt - ¼ tsp"
+  - "lemon juice - 1 tbsp"
+  - "yellow mustard - 2 tbsp"
+  - "honey - 3 tbsp"
+  - "ground pepper - ¼ tsp"
+  - "!!for grilled veggies:"
+  - "cooking spray"
+  - "oil for brushing"
+  - "lemon, cut into wedges - 1"
+  - "onion, sliced - 1"
+  - "cucumber sliced - ½"
+  - "carrot julienned - 1"
+  - "!!for serving:"
+  - "peanut chili peanut"
+  - "mushroom pepper pilaf"
+  - "grilled veggie"
+  - "honey mustard yogurt"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For Pilaf:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat 4 tbsp oil in a non-stick pan. Add cloves, cinnamon stick, dried red chili, black cardamom, green cardamom, and saute for few seconds."
+  - "@type": HowToStep
+    text: "Now add cumin seeds, coriander seeds and saute till they start to crackle."
+  - "@type": HowToStep
+    text: "Add chopped garlic and saute for a minute."
+  - "@type": HowToStep
+    text: "Add mushroom, onion, bell pepper, salt, turmeric powder, and kasuri methi. Saute for 5 minutes. Add curry powder and saute for 2-3 minutes."
+  - "@type": HowToStep
+    text: "Add 4 cups of water rice, juice, and mix well."
+  - "@type": HowToStep
+    text: "Bring it to the boil, and turn down the heat on medium-low. Cook covered for 25-30 mins or until rice is tender. Remove from heat."
+- "@type": HowToSection
+  name: "For Honey Mustard Yogurt:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Whisk ingredients together in a bowl until thoroughly mixed."
+- "@type": HowToSection
+  name: "For Grilled Veggies:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat grill to high heat."
+  - "@type": HowToStep
+    text: "Brush all the veggies with olive oil."
+  - "@type": HowToStep
+    text: "Place vegetables on a grill rack coated with cooking spray. Grill cucumber and carrot 4 minutes on each side or until tender."
+  - "@type": HowToStep
+    text: "Grill onion 6 minutes on each side or until tender."
+  - "@type": HowToStep
+    text: "Grilled lemon wedges for 4 minutes or until tender."
+  - "@type": HowToStep
+    text: "Sprinkle with pepper powder and salt."
+- "@type": HowToSection
+  name: "For Serving:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Transfer pilaf in a serving plate. Drizzle over some honey mustard yogurt. Top with chili peanuts and serve along with grilled veggies. Enjoy!"

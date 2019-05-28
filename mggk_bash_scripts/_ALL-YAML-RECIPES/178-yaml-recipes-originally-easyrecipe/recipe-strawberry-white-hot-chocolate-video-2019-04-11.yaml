@@ -1,0 +1,83 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Strawberry White Hot Chocolate | Video"
+
+description: "This rich and classic strawberry white hot chocolate is made with fresh strawberries blended with milk and cream. A super fast pink and delicious hot chocolate which can be made in 15 minutes from start to finish."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/04/recipes-Strawberry-white-hot-chocolate-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT10M
+
+totalTime: PT15M
+
+recipeCategory: Drinks
+
+recipeCuisine: American
+
+recipeYield: 2
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.2
+  ratingCount: 37
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 265 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "strawberry, white, hot, chocolate "
+
+video:
+  name: "Strawberry White Hot Chocolate | Video"
+  description: "This rich and classic strawberry white hot chocolate is made with fresh strawberries blended with milk and cream. A super fast pink and delicious hot chocolate which can be made in 15 minutes from start to finish."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/04/recipes-Strawberry-white-hot-chocolate-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/XFqp3tlw3ec/maxresdefault.jpg
+  contentUrl: "https://youtu.be/XFqp3tlw3ec"
+  embedUrl: "https://www.youtube.com/embed/XFqp3tlw3ec"
+  uploadDate: 2019-04-11
+
+datePublished: 2019-04-11
+
+url: https://www.mygingergarlickitchen.com/strawberry-white-hot-chocolate-video/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Milk - 11/2 cup"
+  - "Cream - ½ cup"
+  - "Strawberries - 1 cup"
+  - "white chocolate, chopped - 100g"
+  - "vanilla extract - 1 tsp"
+  - "Whipped Cream for Topping"
+  - "Sprinkles"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Blend strawberries, milk and cream in a blender or a food processor until it is a smooth liquid. Pour through a sieve or cheesecloth to remove all seeds."
+  - "@type": HowToStep
+    text: "In a small saucepan add the blended strawberries, white chocolate."
+  - "@type": HowToStep
+    text: "Cook it on medium high heat stirring frequently until the white chocolate is melted. Taste it, and add some sugar."
+  - "@type": HowToStep
+    text: "Add vanilla extract if using and boil for a minute."
+  - "@type": HowToStep
+    text: "Pour into cups and top with whipped cream and sprinkles if desired."

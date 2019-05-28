@@ -1,0 +1,111 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Butternut Spaghetti Squash Pineapple Bean Boats | Video Recipe"
+
+description: "Butternut Spaghetti Squash Pineapple Bean Boats are Italian food with a delicious healthy twist. These are so autumn-ish, so delish and full of exotic Fall flavors. Plus, these are good for everyone because they are packed with everything you need in a meal. They are cheesy, saucy, and spicy, crunchy, and satisfying. This is really easy to make and is vegetarian and gluten-free too"
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/10/recipes-Butternut-Spaghetti-Squash-Pineapple-Bean-Boats-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT7M
+
+cookTime: PT40M
+
+totalTime: PT47M
+
+recipeCategory: Main
+
+recipeCuisine: Italian
+
+recipeYield: 2
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.5
+  ratingCount: 77
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 233 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "butternut, spaghetti, squash, pineapple, bean, boats,  "
+
+video:
+  name: "Butternut Spaghetti Squash Pineapple Bean Boats | Video Recipe"
+  description: "Butternut Spaghetti Squash Pineapple Bean Boats are Italian food with a delicious healthy twist. These are so autumn-ish, so delish and full of exotic Fall flavors. Plus, these are good for everyone because they are packed with everything you need in a meal. They are cheesy, saucy, and spicy, crunchy, and satisfying. This is really easy to make and is vegetarian and gluten-free too"
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/10/recipes-Butternut-Spaghetti-Squash-Pineapple-Bean-Boats-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/PWibrKHtAb4/maxresdefault.jpg
+  contentUrl: "https://youtu.be/PWibrKHtAb4"
+  embedUrl: "https://www.youtube.com/embed/PWibrKHtAb4"
+  uploadDate: 2018-10-20
+
+datePublished: 2018-10-20
+
+url: https://www.mygingergarlickitchen.com/butternut-spaghetti-squash-pineapple-bean-boats-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For the spaghetti squash boats:"
+  - "Spaghetti squash, cut lengthwise and seeded - 1"
+  - "Olive oil - 1 tbsp"
+  - "Garlic powder - 1 tbsp"
+  - "Salt and pepper to taste"
+  - "Pineapple diced - ¼ cup"
+  - "Green olives sliced - ¼ cup"
+  - "!!For the sauce:"
+  - "Olive oil - 1 tbsp"
+  - "Garlic chopped - 1 tbsp"
+  - "Sliced yellow onion - 1 large"
+  - "Dried oregano - 1½ tsp"
+  - "Arrabbiata sauce - ¾ cup"
+  - "Garlic powder - 1 tsp (optional)"
+  - "Pepper - ½ tsp"
+  - "Chili flakes - 1 tsp"
+  - "Whole black gram, cooked - ⅓ cup"
+  - "Mozzarella cheese - ¾ cup"
+  - "Cilantro leaves for garnish - 1 tbsp"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat oven to 175°C."
+  - "@type": HowToStep
+    text: "Cut squash in half lengthwise, and remove seeds."
+  - "@type": HowToStep
+    text: "Brush spaghetti squash with 1 tbsp olive oil and sprinkle with garlic powder, salt, and pepper."
+  - "@type": HowToStep
+    text: "Bake, uncovered, at 175° for 35 minutes or until tender."
+  - "@type": HowToStep
+    text: "In a skillet, heat olive oil over medium heat."
+  - "@type": HowToStep
+    text: "Add chopped garlic and sauté for a minute."
+  - "@type": HowToStep
+    text: "Add onion and sauté for 3-4 minutes, or until onion is translucent."
+  - "@type": HowToStep
+    text: "Add dried oregano, arrabbiata sauce and cook for 3-4 minutes."
+  - "@type": HowToStep
+    text: "Add garlic powder, pepper, chili flakes and cook for 2 minutes."
+  - "@type": HowToStep
+    text: "Stir in beans and salt and cook for 2 more minutes."
+  - "@type": HowToStep
+    text: "When squash is ready and cool enough ti handle, scrape with a fork to create long strands."
+  - "@type": HowToStep
+    text: "Spoon bean sauce into squash boats. Top with pineapple, olives, and cheese."
+  - "@type": HowToStep
+    text: "Sprinkle some pepper and bake for 5-7 minutes at 175°C, or simply place under the broiler for2-3 minutes, until cheese is melted and slightly crispy."

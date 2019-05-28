@@ -1,0 +1,88 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Moong Dal Toast"
+
+description: "Moong Dal Toast is a healthy, delicious, nutritious, and easy breakfast recipe. It is super quick. It really is. If you have cooked lentils, then this one is as easy as cake."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/03/recipe-moong-dal-toast-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT10M
+
+totalTime: PT15M
+
+recipeCategory: Breakfast
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.1
+  ratingCount: 60
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 253 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "moong, dal, toast"
+
+datePublished: 2019-03-11
+
+url: https://www.mygingergarlickitchen.com/moong-dal-toast/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "moong dal(split green gram) boiled - 1 cup"
+  - "ginger, grated - 1 tsp"
+  - "onion, chopped: 1"
+  - "tomato, chopped - 1"
+  - "green chili, chopped - 2"
+  - "red chili powder - ½ tsp"
+  - "cumin powder - ½ tsp"
+  - "coriander leaves, chopped - 1 tbsp"
+  - "butter - 1 tbsp"
+  - "ketchup of your choice"
+  - "bread slices - 8"
+  - "chaat masala - ½ tsp"
+  - "lemon juice - ½ tsp"
+  - "salt as per taste"
+  - "butter"
+  - "haldiram bhujia to sprinkle (optional) (easily available at indian grocery stores)"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a large mixing bowl."
+  - "@type": HowToStep
+    text: "Add coriander leaves, moong dal, ginger, onion, tomato, green chili, chopped, red chili powder, cumin powder, coriander leaves, chaat masala, lemon juice, and salt. And mix well."
+  - "@type": HowToStep
+    text: "Heat a pan. Spread butter, and place a bread slice on it. Toast for a 1 minute."
+  - "@type": HowToStep
+    text: "Apply butter, and ketchup on top. Now take 2 tbsp of mixture and spread it on the bread."
+  - "@type": HowToStep
+    text: "Apply some butter on top."
+  - "@type": HowToStep
+    text: "Flip it over, and Press gently to cook till the bread become golden brown and crisp. it would take about 1 to 2 minutes."
+  - "@type": HowToStep
+    text: "Remove from heat, and repeat the process with remaining bread slices. Sprinkle some bhujia on top."
+  - "@type": HowToStep
+    text: "Serve hot before it gets soggy!"

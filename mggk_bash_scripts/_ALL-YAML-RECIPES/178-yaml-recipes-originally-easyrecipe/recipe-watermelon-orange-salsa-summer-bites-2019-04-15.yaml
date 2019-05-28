@@ -1,0 +1,86 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Watermelon Salsa Recipe | Watermelon Orange Salsa Summer Bites"
+
+description: "Learn to make Watermelon Salsa Recipe | Watermelon Orange Salsa Summer Bites — It’s super simple, cool and refreshing with a nice little spicy kick. You just need a sweet, ripe, pink, juicy watermelon — and the salsa would taste amazingly delicious."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/06/recipe-watermelon-orange-salsa-bites-anupama-paliwal-my-ginger-garlic-kitchen-1.jpg
+
+prepTime: PT10M
+
+cookTime: PT4M
+
+totalTime: PT14M
+
+recipeCategory: Appetizer
+
+recipeCuisine: Spanish
+
+recipeYield: 4-6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.9
+  ratingCount: 82
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 215 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "watermelon, orange, salsa, summer, bites"
+
+datePublished: 2019-04-15
+
+url: https://www.mygingergarlickitchen.com/watermelon-orange-salsa-summer-bites/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "watermelon chopped - 3 cups"
+  - "oranges slices, deseeded & chopped - 1"
+  - "cucumber, peeled, seeded, and diced - 1 cup"
+  - "fresh lime juice - 2-3 tbsp"
+  - "sugar/honey - 2 tbsp"
+  - "coarsely ground pepper - 1 tsp"
+  - "jalapeno peppers, seeded and minced - 2"
+  - "red onion, finely chopped - 1"
+  - "lime zest - 1 tsp"
+  - "coriander, chopped - 2 tbsp"
+  - "hot sauce - ½ tsp"
+  - "cayenne pepper - ½ tsp"
+  - "salt, as per taste"
+  - "round crackers - 20-30 pcs"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For Dressing:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Stir together the lime zest, lime juice, sugar, ground pepper, cayenne pepper, hot sauce in a bowl. Keep this dressing aside."
+- "@type": HowToSection
+  name: "For Salsa:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a large mixing bowl. Add watermelon, oranges, cucumber, onion, jalapeno, coriander and mix well. Add dressing to it, and gently toss to coat."
+  - "@type": HowToStep
+    text: "Cover and chill the salsa until ready to serve. serving and stir."
+- "@type": HowToSection
+  name: "For Serving:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "To assemble top each cracker with a tsp salsa, and serve immediately."
+  - "@type": HowToStep
+    text: "Refrigerate any leftovers."

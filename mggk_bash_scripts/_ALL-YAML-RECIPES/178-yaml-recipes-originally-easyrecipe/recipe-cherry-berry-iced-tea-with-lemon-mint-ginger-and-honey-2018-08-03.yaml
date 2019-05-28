@@ -1,0 +1,76 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Cherry-Berry Iced Tea With Lemon Mint Ginger And Honey"
+
+description: "Cherry-Berry Iced Tea With Lemon Mint Ginger And Honey has all the goodness of berries, freshness of lemon and mint, piquant taste of ginger, and sweetness of honey. This cherry berry iced tea will cool you off and make you smile. So try it once and and you will be so happy. This is one of those perfect drinks to beat the summer heat."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/08/recipe-cherry-iced-tea-with-lemon-mint-ginger-and-honey-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT2M
+
+cookTime: PT5M
+
+totalTime: PT7M
+
+recipeCategory: Drinks
+
+recipeCuisine: World
+
+recipeYield: 5-6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.1
+  ratingCount: 82
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 217 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "cherryberry, iced, tealemon, mint, gingerhoney"
+
+datePublished: 2018-08-03
+
+url: https://www.mygingergarlickitchen.com/cherry-berry-iced-tea-with-lemon-mint-ginger-and-honey/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "mixed berry tea bags - 4"
+  - "water - 6 cup"
+  - "honey, as per taste"
+  - "lemon juice - 1 tbsp"
+  - "ice cubes"
+  - "sliced ginger - 2 tbsp"
+  - "fresh mint leaves - 4 tbsp"
+  - "lemon slices - 4-5"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Boil water. Pour boiled water into the pitcher and steep tea bags for 8-10 minutes."
+  - "@type": HowToStep
+    text: "Remove tea bags. Chilled covered for about 1-2 hours, or until cold."
+  - "@type": HowToStep
+    text: "Stir in honey and lemon juice."
+  - "@type": HowToStep
+    text: "Add mint, lemon slices and ginger slices to pitcher, and keep in refrigerator for about 10 minutes."
+  - "@type": HowToStep
+    text: "Add ice cubes to the serving glass and pour tea ice."
+  - "@type": HowToStep
+    text: "Enjoy healthy and berrylicious iced tea!"

@@ -1,0 +1,87 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Peas Coconut Peda Recipe | Matar Nariyal Ke Pede"
+
+description: "Peas Coconut Peda Recipe | Matar Nariyal Ke Pede — they are are soft, buttery, creamy, and with a little bit nutty. They would just melt in your mouth."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/10/recipe-peas-coconut-peda-anupama-paliwal-my-ginger-garlic-kitchen-4.jpg
+
+prepTime: PT15M
+
+cookTime: PT29M
+
+totalTime: PT44M
+
+recipeCategory: Dessert
+
+recipeCuisine: Indian
+
+recipeYield: 10
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 38
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 173 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "peas, coconut, peda "
+
+datePublished: 2018-09-10
+
+url: https://www.mygingergarlickitchen.com/peas-coconut-peda/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Green peas puree - 1 cup"
+  - "Non-fat dried milk - ¾ cup (Mawa)"
+  - "Desiccated coconut - ½ cup"
+  - "Sugar - ¾ cup or as per taste"
+  - "Cardamom powder - 1 tbsp"
+  - "Clarified butter - 2 tbsp (easily available at Indian grocery stores)"
+  - "Almonds chopped - 2 tbsp"
+  - "Cashew chopped - 2 tbsp"
+  - "Rose water - 1 tsp"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat a pan. Add tbsp clarified butter to it. Add dried milk (khoya) to it, and cook till it turn brown in color."
+  - "@type": HowToStep
+    text: "Add sugar, cardamom powder, desiccated coconut, chopped almonds, and chopped cashews."
+  - "@type": HowToStep
+    text: "Mix well and cook for 2 minutes. Remove from pan, and add rose water to it. Mix well again, and keep it aside. Khoya mixture is ready."
+  - "@type": HowToStep
+    text: "Heat another pan. Add 1 tbsp clarified butter to it. Now add green peas puree, sauté till puree is thickened."
+  - "@type": HowToStep
+    text: "Add khoya mixture to it, and mix well. The mixture will initially thin out."
+  - "@type": HowToStep
+    text: "Stir continuously until you see the mixture come together easily enough to roll into a ball. This might take 5-7 minutes."
+  - "@type": HowToStep
+    text: "Let the mixture slightly cool down on a room temperature, so that you would not burn your hands."
+  - "@type": HowToStep
+    text: "Knead the mixture well to make it evenly smooth and easier to mold."
+  - "@type": HowToStep
+    text: "Take about 2 tbsp of the mixture and roll into a smooth ball. Roll the flattened ball on desiccated coconut, and flatten gently in the middle, without breaking it."
+  - "@type": HowToStep
+    text: "Place these flattened balls individually in muffin liners. Garnish each ball by making small floral cuts with a cookie cutter, and sprinkle some edible pearls on top."
+  - "@type": HowToStep
+    text: "Allow to cool in the refrigerator for about an hour. Enjoy!"

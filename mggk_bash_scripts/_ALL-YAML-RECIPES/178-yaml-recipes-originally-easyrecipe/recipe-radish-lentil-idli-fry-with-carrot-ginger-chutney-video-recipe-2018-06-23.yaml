@@ -1,0 +1,149 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Radish Lentil Idli Fry With Carrot Ginger Chutney | Video Recipe"
+
+description: "About this radish lentil idli: Radish Lentil Idli Fry With Carrot Ginger Chutney is a steamed savory cake made into stir-fry with veggies. And its loveliness increases even more when it is paired with sweet, spicy and tangy carrot ginger chutney. It is a zesty addition."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/06/recipes-Radish-Lentil-Idli-Fry-With-Carrot-Ginger-Chutney-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT10M
+
+cookTime: PT30M
+
+totalTime: PT40M
+
+recipeCategory: Breakfast
+
+recipeCuisine: Indian
+
+recipeYield: 4-6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.4
+  ratingCount: 64
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 279 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "radish, lentil, idli, frycarrot, ginger, chutney,  "
+
+video:
+  name: "Radish Lentil Idli Fry With Carrot Ginger Chutney | Video Recipe"
+  description: "About this radish lentil idli: Radish Lentil Idli Fry With Carrot Ginger Chutney is a steamed savory cake made into stir-fry with veggies. And its loveliness increases even more when it is paired with sweet, spicy and tangy carrot ginger chutney. It is a zesty addition."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/06/recipes-Radish-Lentil-Idli-Fry-With-Carrot-Ginger-Chutney-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/0n-UNIfEYj4/maxresdefault.jpg
+  contentUrl: "https://youtu.be/0n-UNIfEYj4"
+  embedUrl: "https://www.youtube.com/embed/0n-UNIfEYj4"
+  uploadDate: 2018-06-23
+
+datePublished: 2018-06-23
+
+url: https://www.mygingergarlickitchen.com/radish-lentil-idli-fry-with-carrot-ginger-chutney-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For Radish lentil idli:"
+  - "Radish, stem removed - 2 cup"
+  - "Ginger, peeled and chopped - 2 tbsp"
+  - "Onion, diced - 2"
+  - "Green chilies - 2-3"
+  - "Split black gram skinned/Urad dal, washed and soaked in water overnight - 1 cup"
+  - "Split green gram/Moong dal, washed and soaked in water overnight - 1 cup"
+  - "Salt - 1.5 tbsp"
+  - "Rice flour - 1 cup or more as needed"
+  - "Baking soda or eno fruit salt - 2 tsp"
+  - "!!For Carrot Ginger Chutney:"
+  - "Carrots, sliced into 2 inch pieces - 3 large"
+  - "Ginger peeled, and chopped roughly - 1 tbsp"
+  - "Garlic cloves, peeled - 4"
+  - "Dried ref chili - 2-3"
+  - "Salt to taste"
+  - "White vinegar - 1 tbsp"
+  - "Honey - 1 tbsp"
+  - "Dessicated coconut - 3 tbsp"
+  - "!!For Idli stir-fry:"
+  - "Oil - 2 tbsp"
+  - "Onion, sliced - 1 large"
+  - "Green chilies, sliced diagonally - 3-4"
+  - "Carrot, julienned - ¾ cup"
+  - "cabbage, chopped lengthwise - ¾ cup"
+  - "Pinch of salt to taste"
+  - "White vinegar - 1.5 tsp"
+  - "Turmeric powder - ½ tsp"
+  - "Dessicated coconut - 2 tbsp"
+  - "Sriracha sauce - 2 tbsp"
+  - "!!For serving:"
+  - "Carrot ginger chutney"
+  - "sliced, chilies (they give nice contrast)"
+  - "Cabbage, chopped"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For  Carrot Ginger Chutney:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add carrots to pan with enough water and cook covered till they become soft."
+  - "@type": HowToStep
+    text: "Blend all the chutney ingredients to a smooth consistency."
+  - "@type": HowToStep
+    text: "Check the seasoning and add more salt or water if required."
+- "@type": HowToSection
+  name: "For  Radish lentil idli:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "In a food processor add radish, ginger, onion, green chili and grind well."
+  - "@type": HowToStep
+    text: "Remove water from dals and wash one more time."
+  - "@type": HowToStep
+    text: "Now add soaked dals, salt to the food processor and grind into a smooth paste."
+  - "@type": HowToStep
+    text: "Transfer lentil mixture into a large mixing bowl. Add rice flour and mix well. Add some water or more rice flour if needed."
+  - "@type": HowToStep
+    text: "Add Eno Fruit Salt or soda to the batter and mix well. The batter would be so light, fluffy and almost double in size. This is exactly what we need."
+  - "@type": HowToStep
+    text: "Add ¼ cup boiling water to the base of steamer."
+  - "@type": HowToStep
+    text: "Grease the idli molds. Now pour a idli batter into the molds and microwave it on high for 3-4 minutes. Insert a toothpick in idli to check if it is cooked. We want soft and spongy idlis, so do not overcook idlis as they might absorb the moisture and will become hard."
+  - "@type": HowToStep
+    text: "Remove the idlis from mold by inverting the mold. They will come out automatically."
+  - "@type": HowToStep
+    text: "Now repeat the same process with rest of the batter."
+- "@type": HowToSection
+  name: "For  Idli stir-fry:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Dice idlis into 4 pieces."
+  - "@type": HowToStep
+    text: "Heat oil in a pan. Add onions and sauté for a minute."
+  - "@type": HowToStep
+    text: "Now add green chilies, carrot, cabbage, salt and cook for 2 minutes."
+  - "@type": HowToStep
+    text: "Add vinegar, turmeric powder, desiccated coconut and mix well."
+  - "@type": HowToStep
+    text: "Add chopped idlis and fold gently. Cook for a minute."
+  - "@type": HowToStep
+    text: "Now add Sriracha sauce and mix well gently."
+- "@type": HowToSection
+  name: "For  Serving:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Slather a generous amounts of carrot chutney on serving dish. Add idli stir-fry. Top with cabbage and chilies. This addition is essential as they make them more appealing."
+  - "@type": HowToStep
+    text: "Enjoy!"

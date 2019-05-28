@@ -1,0 +1,81 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Creamy Chocolate Vermicelli Pudding"
+
+description: "This Creamy Chocolate Vermicelli Pudding is one of its kind. I mean just perfect. If you are looking at all that chocolate and cardamom and nuts and vermicelli in a one dish, this is it for you. It’s the perfect solution. The great part about the entire recipe is the fact that it is super quick, easy and ready in 25 minutes. It’s so easy to make."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/08/recipe-chocolate-vermicelli-kheer-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT20M
+
+totalTime: PT25M
+
+recipeCategory: Dessert
+
+recipeCuisine: Indian
+
+recipeYield: 4-6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.1
+  ratingCount: 66
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 228 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "creamy, chocolate, vermicelli, pudding"
+
+datePublished: 2018-08-14
+
+url: https://www.mygingergarlickitchen.com/creamy-chocolate-vermicelli-pudding/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "milk – 1 ltr"
+  - "roasted vermicelli, broken into rough 2” pieces – 1 cup"
+  - "sugar - 3 tbsp or as per taste"
+  - "cocoa powder - 1 tsp"
+  - "milk chocolate, roughly chopped and melted - 100 g"
+  - "cardamom powder – 1 tsp"
+  - "almonds, chopped – 1 tbsp"
+  - "pistachio, chopped for garnishing – 1 tbsp"
+  - "banana slices for garnishing"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat another pan, and add milk to it."
+  - "@type": HowToStep
+    text: "Once the milk has boiled add melted chocolate and cocoa powder. Let it boil for 2 minutes."
+  - "@type": HowToStep
+    text: "Turn the heat to medium. Add the roasted vermicelli to the milk and cook on medium heat for 10-15 minutes, or until the vermicelli is soft."
+  - "@type": HowToStep
+    text: "Add sugar, cardamom powder and cook for 5 minutes."
+  - "@type": HowToStep
+    text: "Remove from heat."
+  - "@type": HowToStep
+    text: "Mix well, and let it cool. Pour into a serving glasses."
+  - "@type": HowToStep
+    text: "Garnish with chopped pistachio, chopped almonds and sliced bananas."
+  - "@type": HowToStep
+    text: "Refrigerate for 4-5 hours. Served chilled Enjoy!"

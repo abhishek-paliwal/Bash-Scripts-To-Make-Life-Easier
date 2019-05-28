@@ -1,0 +1,122 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Apple Hand Pies | Video Recipe"
+
+description: "These apple hand pies are pretty easy and simple to make. Plus they taste awesome. Eating them is a sensual experience in itself, because they are buttery, flaky, crisp on the outside and luscious and sweet inside."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/10/recipes-Apple-Hand-Pies-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT7M
+
+cookTime: PT35M
+
+totalTime: PT42M
+
+recipeCategory: Dessert
+
+recipeCuisine: World
+
+recipeYield: 8-10 pies
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5.0
+  ratingCount: 66
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 182 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "apple, hand, pies,  "
+
+video:
+  name: "Apple Hand Pies | Video Recipe"
+  description: "These apple hand pies are pretty easy and simple to make. Plus they taste awesome. Eating them is a sensual experience in itself, because they are buttery, flaky, crisp on the outside and luscious and sweet inside."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2016/10/recipes-Apple-Hand-Pies-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://i.ytimg.com/vi/aftF4PBlGLA/maxresdefault.jpg
+  contentUrl: "https://youtu.be/aftF4PBlGLA"
+  embedUrl: "https://www.youtube.com/embed/aftF4PBlGLA"
+  uploadDate: 2018-09-26
+
+datePublished: 2018-09-26
+
+url: https://www.mygingergarlickitchen.com/apple-hand-pies-video-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For Apple Pie Filling:"
+  - "Apples, apples, peeled and diced - 3"
+  - "Lemon juice - 1-1/4 tsp"
+  - "Water - 1-1/2 cup"
+  - "Powdered sugar - ½ cup"
+  - "Brown sugar - ¼ cup"
+  - "Cornstarch - 2 tbsp"
+  - "Ground cinnamon - ½ tsp"
+  - "Salt - ⅛ teaspoon"
+  - "!!For Hand pies:"
+  - "Apple pie filling"
+  - "Frozen puff pastry thawed and lightly kneaded - 4 sheets"
+  - "!!For serving:"
+  - "Sliced almonds"
+  - "Apple pie filling or vanilla ice-cream(Optional)"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For  Apple pie filling:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "In a large bowl, toss apples with lemon juice and set aside."
+  - "@type": HowToStep
+    text: "Boil water in a pan."
+  - "@type": HowToStep
+    text: "Combine sugars, cornstarch, cinnamon and salt in a bowl."
+  - "@type": HowToStep
+    text: "Add apples and boil for a minute."
+  - "@type": HowToStep
+    text: "Add cornstarch mixture and to water, stir well, and bring to a boil."
+  - "@type": HowToStep
+    text: "Boil for 2 minutes, stirring constantly."
+  - "@type": HowToStep
+    text: "Reduce heat to low, cover and cook until apples are tender, it would take about 6-8 minutes."
+  - "@type": HowToStep
+    text: "Let it cool for 30 minutes."
+- "@type": HowToSection
+  name: "For  Assembling:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat oven to 180°C."
+  - "@type": HowToStep
+    text: "Roll the dough until it is about ⅛-inch thick on a floured work surface."
+  - "@type": HowToStep
+    text: "Use a 5 inch round cookie cutter to cut the dough into circles."
+  - "@type": HowToStep
+    text: "Roll again the dough if needed. We need about 8-10 circles."
+  - "@type": HowToStep
+    text: "Add one heaping tbsp of apple pie filling (without liquid) to the center of each dough circle."
+  - "@type": HowToStep
+    text: "Fold the dough in half and use a fork to seal the edges."
+  - "@type": HowToStep
+    text: "Place hand pies on lined baking tray."
+  - "@type": HowToStep
+    text: "Use the tip of a sharp knife to cut few diagonal slits into the tops of each pie."
+  - "@type": HowToStep
+    text: "Use a pastry brush to lightly brush the tops of the hand pies with the melted butter."
+  - "@type": HowToStep
+    text: "Bake the pastry pies for 25-30 minutes, or until the tops are lightly golden brown."
+  - "@type": HowToStep
+    text: "Brush with more butter and sprinkle with sugar and almonds. Enjoy."

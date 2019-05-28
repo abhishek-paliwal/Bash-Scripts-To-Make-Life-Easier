@@ -1,0 +1,131 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Broccoli Paratha With Garlic Roasted Veggies And Spiced Coconut Sauce [RECIPE+STORY]"
+
+description: "Broccoli Paratha With garlic roasted veggies and spiced coconut sauce. The spicy flavors play really well with the broccoli paratha, roasted veggies and curried coconut. Spices indeed makes it spectacular. You just have to make these rolls or tacos once, and soon you will realize how much you love these distinct flavours."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/04/recipe-broccoli-paratha-with-garlic-roasted-veggies-and-spiced-coconut-sauce-anupama-paliwal-my-ginger-garlic-kitchen-FI1.jpg
+
+prepTime: PT20M
+
+cookTime: PT60M
+
+totalTime: PT1H20M
+
+recipeCategory: Main
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.3
+  ratingCount: 34
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 257 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "broccoli, parathagarlic, roasted, veggiesspiced, coconut, sauce"
+
+datePublished: 2018-04-19
+
+url: https://www.mygingergarlickitchen.com/broccoli-paratha-with-garlic-roasted-veggies-and-spiced-coconut-sauce/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!for broccoli paratha:"
+  - "whole wheat flour - 2 cup"
+  - "broccoli florets, boiled - 1 ½ cup"
+  - "turmeric powder - ¼ tsp"
+  - "garlic - 1 clove"
+  - "cumin seeds - 1 tsp"
+  - "salt to taste"
+  - "oil for roasting"
+  - "!!for roasted vegetables:"
+  - "potatoes peeled, and cut into wedges - 2"
+  - "red bell pepper, deseeded and sliced into wedges - 1"
+  - "white onion peeled, and cut into wedges - 2"
+  - "yellow bell pepper, deseeded and sliced into wedges - 1"
+  - "green chilies, roughly chopped - 2"
+  - "pepper powder - 1 tsp"
+  - "garlic powder - 1 tsp"
+  - "olive oil - 2 tbsp"
+  - "!!for spiced coconut sacue:"
+  - "olive oil - 2 tbsp"
+  - "mustard seeds - 1tsp"
+  - "fresh green chillies, deseeded and chopped - 2"
+  - "onion, ginger garlic paste - 4 tbsp"
+  - "ground coriander - ½ tsp"
+  - "garam masala"
+  - "curry powder"
+  - "turmeric powder"
+  - "chili powder"
+  - "tomatoes, chopped - 1"
+  - "300 ml coconut milk"
+  - "sea salt"
+  - "!!for serving:"
+  - "grapes"
+  - "cucumber, slices"
+  - "fresh lemon"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For broccoli paratha:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a food processor. Add broccoli florets, salt, cumin seeds, green chilies, garlic, turmeric powder, and grind it."
+  - "@type": HowToStep
+    text: "In a mixing bowl add wheat flour, ground broccoli mixture and salt. Mix well knead into a soft dough, using enough water."
+  - "@type": HowToStep
+    text: "Cover with a cling film and keep aside it for 30 minutes."
+  - "@type": HowToStep
+    text: "Divide the dough into 8 balls. Roll each ball to make a circle into 3″ to 4″ in diameter."
+  - "@type": HowToStep
+    text: "Heat a pan, and roast dough circle from one side, and flip over to another side."
+  - "@type": HowToStep
+    text: "Brush oil on both sides, and roast for few seconds again. Repeat the same process with remaining dough balls."
+- "@type": HowToSection
+  name: "For roasted vegetables:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat oven to 400° F/ 200°C."
+  - "@type": HowToStep
+    text: "In a large bowl, toss all the vegetables together with olive oil, salt, and pepper."
+  - "@type": HowToStep
+    text: "Divide the vegetables among two jelly roll pans."
+  - "@type": HowToStep
+    text: "Roast vegetables for 30-35 minutes."
+- "@type": HowToSection
+  name: "For spiced coconut sauce:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat the oil in a pan and fry the mustard seeds for 2 to 3 minutes or until they start to pop."
+  - "@type": HowToStep
+    text: "Add the onion, ginger-garlic paste, coriander, garam masala, turmeric powder. Cook over a medium heat for 2 minutes."
+  - "@type": HowToStep
+    text: "Add chopped tomatoes, and chilli powder. Saute for about 3 minutes.Add coconut milk, salt and cook for about 5-7 minutes on medium heat."
+- "@type": HowToSection
+  name: "For serving:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "To serve, add 2 tbsp of roasted veggies to a warm broccoli paratha."
+  - "@type": HowToStep
+    text: "Top with spiced coconut sauce. Add some grapes and cucumber slices."
+  - "@type": HowToStep
+    text: "Squeeze lemon juice. Enjoy!"

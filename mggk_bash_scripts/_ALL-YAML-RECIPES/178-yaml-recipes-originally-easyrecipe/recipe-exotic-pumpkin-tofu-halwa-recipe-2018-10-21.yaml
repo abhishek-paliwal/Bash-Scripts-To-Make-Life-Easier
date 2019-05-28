@@ -1,0 +1,92 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Pumpkin Tofu Halwa"
+
+description: "This Pumpkin Tofu Halwa has a nice aroma of cardamom with the slightly roasting flavour of tofu, and creaminess of pumpkin. When they all came together at one place, it was like a match made in heaven."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2014/10/recipe-pumpkin-tofu-jalwa-anupama-paliwal-my-ginger-garlic-kitchen-10-copy1.jpg
+
+prepTime: PT5M
+
+cookTime: PT30M
+
+totalTime: PT35M
+
+recipeCategory: Dessert
+
+recipeCuisine: Indian
+
+recipeYield: 4-6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.6
+  ratingCount: 84
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 182 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "exotic, pumpkin, tofu, halwa "
+
+datePublished: 2018-10-21
+
+url: https://www.mygingergarlickitchen.com/exotic-pumpkin-tofu-halwa-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!For Mawa aka khoya (dried milk):"
+  - "Non-fat milk powder - 1 cup"
+  - "Ghee (Clarified butter) - ⅛ cup"
+  - "Milk - ¼ cup"
+  - "!!For halwa:"
+  - "Pumpkin puree - 1 cup"
+  - "Crumbled tofu - 1 cup"
+  - "Clarified butter - 5 tbsp"
+  - "Sugar - ¾ cup"
+  - "Cardamon powder - 1 tbsp"
+  - "Khoya - ½ cup"
+  - "Cashew chopped - 1 tbsp"
+  - "Almonds chopped - 1 tbsp"
+  - "Pistachio chopped - 1 tbsp"
+  - "Method:"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "For Mawa:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a microwaveable safe bowl. Add milk powder, and clarified butter to it, and mix well to make a crumble."
+  - "@type": HowToStep
+    text: "Add milk to it and mix well again."
+  - "@type": HowToStep
+    text: "Cook this on high settings in the microwave for 2 minutes. Stir well, and cook again for 30 seconds."
+  - "@type": HowToStep
+    text: "Stir well again, and cook for 30 more seconds. At this point, khoya would be thick, and it would be thicker once cooled off."
+  - "@type": HowToStep
+    text: "Let it cool completely, and store covered with cling film in the refrigerator. After that, you can crumble it for recipes."
+- "@type": HowToSection
+  name: "For Halwa:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat 1 tbsp clarified butter in a pan. Add crumbled tofu to it, and fry for 3-4 minutes. Remove from pan, and keep it aside."
+  - "@type": HowToStep
+    text: "In the same pan, add 4 tbsp clarified butter. Add pumpkin puree to it, and cook till the puree is reduced. This would take about 8-10 minutes."
+  - "@type": HowToStep
+    text: "Add tofu, and cook for 5 minutes. Now add sugar, and continue cooking until it reduces again. Add khoya to it, and cook for 7-8 minutes."
+  - "@type": HowToStep
+    text: "Add cardamom powder, and chopped nuts to it. Cook for 2 more minutes. Serve hot & enjoy!"

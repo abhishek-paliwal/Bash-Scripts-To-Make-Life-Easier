@@ -1,0 +1,81 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Pink and White Refreshing Watermelon Lemonade"
+
+description: "Pink and White Refreshing Watermelon Lemonade is a VERY simple recipe. You just need watermelon, lemon juice, sugar, and water. Some ice cubes are great, too. Oh, and garnish with some chives if you like."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/06/recipe-watermelon-lemonade-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT5M
+
+cookTime: PT2M
+
+totalTime: PT7M
+
+recipeCategory: Beverage
+
+recipeCuisine: International
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.9
+  ratingCount: 79
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 280 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "pinkwhite, refreshing, watermelon, lemonade"
+
+datePublished: 2018-06-12
+
+url: https://www.mygingergarlickitchen.com/pink-and-white-refreshing-watermelon-lemonade/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "!!for lemonade:"
+  - "fresh watermelon juice - 2 cups"
+  - "fresh lemon juice - 1 cups"
+  - "!!for syrup:"
+  - "sugar - 1 cup"
+  - "water - ½ cup"
+  - "!!for serving:"
+  - "ice cubes, or crushed ice"
+  - "chives for garnish"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat a pan, and add 2 cup of water to it. Bring it to a boil."
+  - "@type": HowToStep
+    text: "Add sugar and stir until sugar dissolves."
+  - "@type": HowToStep
+    text: "Let it boil for 2-3 minutes. Remove from heat, and let the syrup cool completely."
+  - "@type": HowToStep
+    text: "Let it rest in fridge for 1 hour."
+  - "@type": HowToStep
+    text: "Take a pitcher. Mix syrup and lemon juice and stir until well mixed. Set aside."
+  - "@type": HowToStep
+    text: "Add ice in a tall glass when ready to pour drink."
+  - "@type": HowToStep
+    text: "First pour the lemonade as it is thick in consistency."
+  - "@type": HowToStep
+    text: "Pour watermelon juice slowly. Garnish with lemon wedges and chives. Enjoy!"

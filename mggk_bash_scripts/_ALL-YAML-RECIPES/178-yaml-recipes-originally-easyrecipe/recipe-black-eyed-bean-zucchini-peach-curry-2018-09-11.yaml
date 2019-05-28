@@ -1,0 +1,91 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Black Eyed Bean Zucchini Peach Curry"
+
+description: "Black Eyed Bean Zucchini Peach Curry. Serve this curry with hot steamed rice, and you will be pleased to have a full vegan and gluten-free meal."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/09/recipe-Black-Eyed-Bean-Zucchini-Peach-Curry-anupama-paliwal-my-ginger-garlic-kitchen-FI1.jpg
+
+prepTime: PT5M
+
+cookTime: PT30M
+
+totalTime: PT35M
+
+recipeCategory: Side Dish
+
+recipeCuisine: Indian
+
+recipeYield: 4-6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.2
+  ratingCount: 84
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 171 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "black, eyed, bean, zucchini, peach, curry"
+
+datePublished: 2018-09-11
+
+url: https://www.mygingergarlickitchen.com/black-eyed-bean-zucchini-peach-curry/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "Black eyed bean (lobia) - 1 cup, boiled"
+  - "Onion, chopped - ½ cup"
+  - "Tomato, chopped - ½ cup"
+  - "Peach slices - 1 cup"
+  - "Zucchini slices, halved - 1 cup"
+  - "Olive oil -1/2 tbsp"
+  - "Garlic, crushed - 2 tbsp"
+  - "Honey - 2 tsp"
+  - "Soya milk - 2 cups"
+  - "Salt as per taste"
+  - "Turmeric powder - ¼ tsp"
+  - "Garam masala powder - 1 tsp"
+  - "Kasuri methi (dried fenugreek leaves) - 1 tbsp"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat oil in a pan and add chopped onions to it."
+  - "@type": HowToStep
+    text: "Sauté for 5 minutes."
+  - "@type": HowToStep
+    text: "Add sliced zucchini and sauté for 2-3 minutes."
+  - "@type": HowToStep
+    text: "Now add peaches and sauté for 2 minutes."
+  - "@type": HowToStep
+    text: "Add crushed garlic, salt and turmeric powder and mix well."
+  - "@type": HowToStep
+    text: "Sauté for 5 minutes."
+  - "@type": HowToStep
+    text: "Now add cooked black eyed beans, curry powder, garam masala powder, soya milk and honey."
+  - "@type": HowToStep
+    text: "Mix well and cook covered for 5 minutes on medium-high heat."
+  - "@type": HowToStep
+    text: "Add kasuri methi and mix well."
+  - "@type": HowToStep
+    text: "Cook covered for another 5-7 minutes and remove from heat."
+  - "@type": HowToStep
+    text: "Serve this delicious curry with hot rice or any other flat-bread."
