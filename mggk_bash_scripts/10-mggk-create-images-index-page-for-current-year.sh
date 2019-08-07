@@ -323,3 +323,6 @@ echo "######## SM IMAGES Index Successfully created. ######### ";
 echo "####### DONE! File will now be opened in SAFARI. ########"
 open -a Safari $OUTPUT
 open -a Safari $SITEURL
+
+## EXTRA message, just in case this script needs a password after successful run
+say "Enter password on the command prompt if needed, else the program is done."
