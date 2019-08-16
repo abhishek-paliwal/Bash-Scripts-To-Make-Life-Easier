@@ -1,0 +1,103 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Quick And Easy Bhatura - How To Make Instant Bhature - Bhatura Recipe With Soda Water"
+
+description: "Making traditional puffed ‘Bhatura’ is a tedious task since it requires fermentation. But not to worry, here is a quick and easy recipe with a video tutorial to make tempting Instant Bhaturas quickly and instantly. This mouth-watering, steaming hot, puffed deep-fried, crispy and soft Instant ‘Bhatura’ is best served with the hot, spicy and flavored chole. "
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/08/quick-and-easy-bhatura-how-to-make-instant-bhature-recipe-my-ginger-garlic-kitchen-5.jpg
+
+prepTime: PT30M
+
+cookTime: PT20M
+
+totalTime: PT50M
+
+recipeCategory: Breakfast
+
+recipeCuisine: Indian
+
+recipeYield: 8
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 1
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 267 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "instant bhature ki recipe, instant bhature recipe, instant bhatura, instant bhatura with soda water, instant bhatura recipe with soda water, instant chole bhature, instant bhatura recipe, quick bhatura recipe, quick and easy bhatura recipe, quick bhatura recipe without yeast, instant chole bhature recipe, instant chole bhature with soda water, how to make instant chole bhature, recipe of instant chole bhature, quick chole bhature recipe "
+
+video:
+  name: "Quick And Easy Bhatura - How To Make Instant Bhature - Bhatura Recipe With Soda Water"
+  description: "Making traditional puffed ‘Bhatura’ is a tedious task since it requires fermentation. But not to worry, here is a quick and easy recipe with a video tutorial to make tempting Instant Bhaturas quickly and instantly. This mouth-watering, steaming hot, puffed deep-fried, crispy and soft Instant ‘Bhatura’ is best served with the hot, spicy and flavored chole. "
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/08/quick-and-easy-bhatura-how-to-make-instant-bhature-recipe-my-ginger-garlic-kitchen-5.jpg
+    - https://i.ytimg.com/vi/anAHIuQoJeY/maxresdefault.jpg
+  contentUrl: "https://youtu.be/anAHIuQoJeY"
+  embedUrl: "https://www.youtube.com/embed/anAHIuQoJeY"
+  uploadDate: 2019-08-09
+
+datePublished: 2019-08-09
+
+url: https://www.mygingergarlickitchen.com/how-to-make-instant-bhature/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "2 cups all-purpose flour (maida/plain flour/refined flour)"
+  - "1/4 cup semolina (rava/sooji)"
+  - "1 tablespoon sugar"
+  - "½ teaspoon salt"
+  - "2 tablespoons oil"
+  - "4 tablespoons plain yogurt (dahi)"
+  - "3/4 cup soda water room temperature, or as required"
+  - "Oil for deep frying"
+  - "!!For serving:"
+  - "Chana masala/chole masala for serving"
+  - "Onion rings"
+  - "Pickle"
+  - "Raita"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Instructions:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add flour, semolina to a large mixing bowl."
+  - "@type": HowToStep
+    text: "Mix them well."
+  - "@type": HowToStep
+    text: "Add oil, salt, sugar, yogurt and mix everything well to combine."
+  - "@type": HowToStep
+    text: "Knead into a soft dough using soda water."
+  - "@type": HowToStep
+    text: "Cover with a muslin cloth and set aside for 30 minutes."
+  - "@type": HowToStep
+    text: "Apply little oil and knead lightly."
+  - "@type": HowToStep
+    text: "Divide the dough into 6-8 equal portions with greased hands and roll into balls."
+  - "@type": HowToStep
+    text: "Roll out into an oval shape."
+  - "@type": HowToStep
+    text: "Heat enough oil in a pan."
+  - "@type": HowToStep
+    text: "Slide rolled bhatura into hot oil and deep fry on high heat till the bhatura puff up and both sides are slightly golden brown in color. (Pressing the center lightly with a large frying spoon and splashing hot oil over the bhatura would help bhatura to puff up completely.)"
+  - "@type": HowToStep
+    text: "Drain fried bhatura on an absorbent paper to remove excess oil. And deep fry rest of the bhaturas."
+  - "@type": HowToStep
+    text: "Serve hot with amritsari chole, or chole masala, onion rings, pickle and some raita."

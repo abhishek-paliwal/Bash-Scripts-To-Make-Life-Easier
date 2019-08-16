@@ -1,0 +1,150 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Restaurant Style Chana Masala | How to Make Chole Masala"
+
+description: "This Restaurant Style Chana Masala is one of the most sumptuous and famous vegetarian dishes of Punjabi cuisine. This is also one of the most commonly ordered dishes in any Indian restaurant around the globe. Protein-enriched Chana Masala is Indian cuisine’s finest dishes because, this melt in-your-mouth, tender, and creamy chickpeas curry have a medley of various Indian spices. 
+"
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/08/restaurant-style-chole-masala-recipe-my-ginger-garlic-kitchen-4.jpg
+
+prepTime: PT8H
+
+cookTime: PT55M
+
+totalTime: PT8H55M
+
+recipeCategory: Side
+
+recipeCuisine: Indian
+
+recipeYield: 6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 1
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 423 calories
+  servingSize: 1
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "restaurant style chole masala recipe, restaurant style punjabi chole masala, how to make restaurant style chole masala, recipe of restaurant style chole masala, recipe for restaurant style chole masala, chole masala gravy restaurant style, restaurant style chana masala how to prepare, recipe of restaurant style chana masala,chole masala pressure cooker restaurant style, best restaurant style chana masala recipe, how to make restaurant style chana masala"
+
+video:
+  name: "Restaurant Style Chana Masala | How to Make Chole Masala"
+  description: "This Restaurant Style Chana Masala is one of the most sumptuous and famous vegetarian dishes of Punjabi cuisine. This is also one of the most commonly ordered dishes in any Indian restaurant around the globe. Protein-enriched Chana Masala is Indian cuisine’s finest dishes because, this melt in-your-mouth, tender, and creamy chickpeas curry have a medley of various Indian spices. 
+"
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/08/restaurant-style-chole-masala-recipe-my-ginger-garlic-kitchen-4.jpg
+    - https://i.ytimg.com/vi/x24P68oNHJQ/maxresdefault.jpg
+  contentUrl: "https://youtu.be/x24P68oNHJQ"
+  embedUrl: "https://www.youtube.com/embed/x24P68oNHJQ"
+  uploadDate: 2019-08-16
+
+datePublished: 2019-08-16
+
+url: https://www.mygingergarlickitchen.com/restaurant-style-chana-masala/
+
+recipeIngredient:
+  - "!!Dry Ingredients:"
+  - "1.5 cups chickpeas (kabuli chana)"
+  - "1 teaspoon cumin seeds (jeera)"
+  - "1 bay leaf (tej patta)"
+  - "4 cloves (laung)"
+  - "2 green cardamom pods (hari ilaichi)"
+  - "1 black cardamom pod (moti or kali ilaichi)"
+  - "2 cinnamon sticks (dalchini)"
+  - "1 star anise (chakrafool)"
+  - "4 black peppercorns (kali mirch)"
+  - "1 teaspoon red chili powder (lal mirch powder)"
+  - "1 teaspoon coriander powder (dhaniya powder)"
+  - "1 teaspoon dried ginger powder (sonth powder)"
+  - "2.5 teaspoon chole masala"
+  - "1 teaspoon cumin powder (jeera powder)"
+  - "1 teaspoon dried mango powder (jeera powder)"
+  - "1 teaspoon pomegranate seeds powder (anardana powder)"
+  - "2 tablespoons dried fenugreek leaves (kasuri methi)"
+  - "Salt to taste"
+  - "3 green chilies slit (lambi kati hui hari mirch)"
+  - "1/2 tablespoon ginger juliennes (adrak ki katran)"
+  - "onion rings (pyaaz ke challe)"
+  - "½ teaspoon baking soda"
+  - "2 black tea bags (chai patti)"
+  - "!!Wet Ingredients"
+  - "3 tablespoons oil/ ghee + 1 teaspoon ghee"
+  - "3 tablespoons plain whisked yogurt (dahi)"
+  - "½ cup onion paste"
+  - "½ cup homemade tomato puree"
+  - "1 tablespoon homemade ginger garlic paste"
+  - "1 tablespoon store-bought tomato puree or paste"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "How to cook Chickpeas (Chana):"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Rinse and soak chickpeas in enough water for 8-10 hours or overnight."
+  - "@type": HowToStep
+    text: "Drain out the excess water and rinse them again with fresh running water in the morning and set aside."
+  - "@type": HowToStep
+    text: "Add rinsed chickpeas to a pressure cooker along with salt, water, tea bags, and baking soda."
+  - "@type": HowToStep
+    text: "Pressure cook chickpeas for 4-5 whistles on low heat."
+  - "@type": HowToStep
+    text: "Let the pressure come off completely before opening the lid."
+- "@type": HowToSection
+  name: "How to make Onion Tomato Masala:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat oil/ghee in a pan over medium heat."
+  - "@type": HowToStep
+    text: "Add cumin seeds and let them crackle. Once they start to crackle add whole spices (cloves, green cardamom, black cardamom, bay leaf, black peppercorns, cinnamon sticks) and sauté them for few seconds or until they are fragrant."
+  - "@type": HowToStep
+    text: "Now add onion paste and sauté it for 2 minutes."
+  - "@type": HowToStep
+    text: "Once the onion is slightly translucent, add the homemade tomato puree."
+  - "@type": HowToStep
+    text: "Mix everything well, and let the puree cook for 3 minutes."
+  - "@type": HowToStep
+    text: "After 3 minutes, add ginger garlic paste, green chilies, and ginger juliennes."
+  - "@type": HowToStep
+    text: "Mix everything well and cook for 2 minutes."
+  - "@type": HowToStep
+    text: "Now add store-bought tomato puree and mix everything well."
+  - "@type": HowToStep
+    text: "Let the masala cook for 2-3 minutes or until tomatoes are cooked and raw smell goes off."
+  - "@type": HowToStep
+    text: "Next, add the ground all the spices (red chili powder, coriander powder, amchoor, coriander, readymade chole masala, dried ginger powder, cumin powder, and pomegranate seeds powder)."
+  - "@type": HowToStep
+    text: "Mix everything well and saute spices with onion tomato mixture for 1 minute."
+  - "@type": HowToStep
+    text: "Following, add some water and let the masalas cook for 2-3 minutes."
+- "@type": HowToSection
+  name: "How to make Restaurant Style Chana Masala:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Once the masala is ready, add cooked chickpeas and mix everything well."
+  - "@type": HowToStep
+    text: "Check for seasoning, add more salt or if required. Also, you can adjust spices at this point."
+  - "@type": HowToStep
+    text: "Now add Kasuri methi and stir everything well. (To maintain and hold the shape of chickpeas while cooking, make sure you stir them gently.)"
+  - "@type": HowToStep
+    text: "Cover and simmer for at 15-30 minutes. (This simmering time depends upon your ease. Simmering is the key to make best Restaurant Style Chana Masala so do not skip it. The more you simmer the chickpeas, the more flavorful your chana masala would come out.)"
+  - "@type": HowToStep
+    text: "Once done, open the lid and add some ghee and onion rings. Cook for 1-2 minutes."
+  - "@type": HowToStep
+    text: "Garnish with coriander leaves and some butter and serve along with some hot naan."
