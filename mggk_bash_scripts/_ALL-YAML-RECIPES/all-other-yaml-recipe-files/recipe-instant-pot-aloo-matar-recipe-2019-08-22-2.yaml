@@ -1,0 +1,134 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Instant Pot Aloo Matar Recipe  | Pressure Cooker Potato Peas"
+
+description: "Aloo Matar is a quick, easy, simple and comforting Indian curry made potatoes and green peas. This inherently vegan and gluten-free Aloo Matar cooked with basic kitchen ingredients and is ideal for a toothsome weekday lunch or dinner. I have made this curry in the Instant Pot, but this can also be made on traditional stovetop pressure cooker or a stovetop pan.
+
+"
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/08/instant-pot-aloo-matar-recipe-my-ginger-garlic-kitchen-2.jpg
+
+prepTime: PT05M
+
+cookTime: PT20M
+
+totalTime: PT25M
+
+recipeCategory: Side
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 1
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 123 calories
+  servingSize: 1
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "instant pot indian recipes vegetarian, instant pot and indian recipes, instant pot indian dinner recipes, instant pot indian vegetarian recipes dinner, quick instant pot indian dinner recipes, easy instant pot indian vegetarian recipes, easy instant pot indian vegetarian recipes, pressure cooker aloo matar, instant pot aloo matar recipe, aloo matar in a pressure cooker, aloo matar curry in pressure cooker "
+
+video:
+  name: "Instant Pot Aloo Matar Recipe  | Pressure Cooker Potato Peas"
+  description: "Aloo Matar is a quick, easy, simple and comforting Indian curry made potatoes and green peas. This inherently vegan and gluten-free Aloo Matar cooked with basic kitchen ingredients and is ideal for a toothsome weekday lunch or dinner. I have made this curry in the Instant Pot, but this can also be made on traditional stovetop pressure cooker or a stovetop pan.
+
+"
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/08/instant-pot-aloo-matar-recipe-my-ginger-garlic-kitchen-2.jpg
+    - https://i.ytimg.com/vi/1ivjmxYhA_w/maxresdefault.jpg
+  contentUrl: "https://youtu.be/1ivjmxYhA_w"
+  embedUrl: "https://www.youtube.com/embed/1ivjmxYhA_w"
+  uploadDate: 2019-08-22
+
+datePublished: 2019-08-22
+
+url: https://www.mygingergarlickitchen.com/instant-pot-aloo-matar-recipe/
+
+recipeIngredient:
+  - "!!Ingredients"
+  - "2 medium sized potatoes/aloo, peeled and diced"
+  - "3/4 green peas/hare matar (frozen and fresh both work)"
+  - "2 tablespoons oil/tel"
+  - "1 teaspoon cumin seeds/jeera"
+  - "pinch of asafoetida/hing"
+  - "1/2 cup onions/pyaaj"
+  - "2 medium sized tomatoes/tamatar, diced"
+  - "4 cloves of garlic/lehsun"
+  - "1-inch piece ginger/adrak"
+  - "3 small green chilis/hari mirch"
+  - "1 teaspoon red chili powder/lal mirch powder"
+  - "2 teaspoons coriander powder/dhaniya powder"
+  - "1/4 teaspoon turmeric powder/haldi powder"
+  - "1 teaspoon dried mango powder/amchoor powder"
+  - "1/4 teaspoon garam masala powder"
+  - "salt/namak to taste"
+  - "2 tablespoons coriander leaves/hara dhania"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "How to make Aloo Matar in Instant Pot:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add tomatoes, ginger, and garlic to a blender and puree. Keep it aside."
+  - "@type": HowToStep
+    text: "Start the instant pot in sauté mode."
+  - "@type": HowToStep
+    text: "When the display reads ‘Hot', add oil. Once the oil heats up, add cumin seeds and asafoetida."
+  - "@type": HowToStep
+    text: "When the cumin seeds start to splutter, add chopped onions and sauté them for 2 minutes."
+  - "@type": HowToStep
+    text: "Then add tomato puree and stir well. Sauté for 3-4 minutes, or until the mixture come to a boil."
+  - "@type": HowToStep
+    text: "Now add spices and sauté for another 2 more minutes. Now just add green peas, potatoes and mix well."
+  - "@type": HowToStep
+    text: "Add water and stir well again. Cover the instant pot with lid, set the valve to sealing position."
+  - "@type": HowToStep
+    text: "Cook on manual (high pressure) for 3 minutes. NPR (Natural pressure release) for 5 minutes, and then do a quick pressure release. Once the pin drops, open the lid."
+  - "@type": HowToStep
+    text: "Add the Garam Masala powder, and chopped coriander leaves. Mix well and cook for 1 minute. Lightly mash potatoes using a fork, this is to ensure that you get a thick creamy gravy."
+  - "@type": HowToStep
+    text: "Serve hot with some garlic tandoori roti or brown rice."
+- "@type": HowToSection
+  name: "How to make Aloo Matar on stovetop Pressure Cooker:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add tomatoes, ginger, and garlic to a blender and puree. Keep it aside."
+  - "@type": HowToStep
+    text: "Heat oil in the pan or pressure cooker."
+  - "@type": HowToStep
+    text: "Add cumin seeds and asafoetida. Add the chopped onions and sauté them for 2-3 minutes."
+  - "@type": HowToStep
+    text: "Then add pureed tomatoes, and saute for 3 minutes over medium heat."
+  - "@type": HowToStep
+    text: "Add the spices and mix everything well. Cook for 1 minute."
+  - "@type": HowToStep
+    text: "Add green peas, potato, and water. Mix well, and let it come to boil."
+  - "@type": HowToStep
+    text: "After that, just close the pressure cooker lid and pressure cook for 2 whistles on medium heat."
+  - "@type": HowToStep
+    text: "Turn-off the stove, and let the pressure cool off completely before opening the lid."
+  - "@type": HowToStep
+    text: "Now add garam masala and chopped coriander leaves."
+  - "@type": HowToStep
+    text: "Mix well and cook for 2 minutes."
+  - "@type": HowToStep
+    text: "Also, lightly mash the potatoes using a fork."
+  - "@type": HowToStep
+    text: "Serve hot with any flatbread of your choice."
