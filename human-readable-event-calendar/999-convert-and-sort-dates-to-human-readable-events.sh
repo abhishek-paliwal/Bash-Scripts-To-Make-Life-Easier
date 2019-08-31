@@ -1,9 +1,59 @@
 #!/bin/bash
-##########################################################
+#################################################################################
+REQUIREMENTS_FILE="999-EVENT-NAMES-WITH-DATES.txt"
+#################################################################################
+cat << EOF
+	###############################################################################
+	## THIS PROGRAM READS A TEXT FILE CONTAINING DATES AND EVENTS IN SPECIFIED
+  ## FORMAT, THEN PARSES THEM AND MAKES AN HTML EVENTS INDEX HTML FILE USING
+  ## JAVASCRIPT MOMENT LIBRARY
+  #### REQUIREMENTS FILE = $REQUIREMENTS_FILE
+	##############################################################################
+	## MADE BY: PALI
+	## DATE: AUGUST 31 2019
+	###############################################################################
+EOF
 
+## CD to a chosen directory on desktop
+PWD="$HOME/Desktop/Y"
+cd $PWD ;
+echo ">>>> PWD is $PWD" ;
+
+## DEFINE SOME VARIABLE FILENAMES
 ##########################################################
+OUTPUT_HTML_FILE="INDEX-OF-OUR-EVENTS.html"
 #prefix="swimming" ## for swimming
 prefix="skating" ## for skating
+##########################################################
+##########################################################
+
+## Initializing the HTML file : WRITING THE FIRST LINE, THEN APPENDING LATER
+echo "Initializing the HTML file : $OUTPUT_HTML_FILE " ;
+
+echo "<!DOCTYPE html>
+<html lang='en' >
+
+<head>
+  <meta charset='UTF-8'>
+  <title>INDEX OF OUR EVENTS</title>
+
+  <meta http-equiv='refresh' content='30'> <!-- Refresh every 30 seconds -->
+
+  <!-- Loading moment.js from CDN -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
+</head>
+
+<body style='font-family: sans-serif;'>
+  <center>
+
+  <p style='color: #c0c0c0; '>// This page auto-refreshes every 30 seconds // </p>
+  <h3>Right now, it's <span id='dateDisplay'></span> </h3>
+
+  <h1>INDEX OF OUR EVENTS</h1>
+
+  <hr>" > $OUTPUT_HTML_FILE ;
+
+##########################################################
 ##########################################################
 echo;
 input1="tmp.txt"
