@@ -29,7 +29,8 @@ echo ;
 ## this particular rss feed file contains only 8 entries)
 echo "Initializing the HTML file : $OUTPUT_HTML_FILE " ;
 
-echo "<p>Hello [Name,fallback=]</p><p>Please find the latest food posts below from the blog:</p><p>Simply click the buttons below to watch the how-to videos and to download recipes.</p>" > $OUTPUT_HTML_FILE ; ## WRITING THE FIRST EMPTY LINE, THEN APPENDING LATER
+echo "<p>Hello [Name,fallback=]</p><p><strong>🍴Please find the latest food posts below published on the website:</strong></p><p>Simply click the buttons below to watch the how-to videos and to download recipes.</p>
+<p style='text-align: center; color: #cd1c62; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" > $OUTPUT_HTML_FILE ; ## WRITING THE FIRST EMPTY LINE, THEN APPENDING LATER
 
 echo "<center>" >> $OUTPUT_HTML_FILE ;
 
@@ -58,7 +59,17 @@ do
 	echo "DONE ... running for RSS XML NODE = item[$x]" ;
 done
 
+
+echo "<hr>
+<strong>I hope you will love them.<br><br>Best wishes,</strong>
+<br>
+<img align='none' height='35' src='https://gallery.mailchimp.com/126a7c0d8271b7ec930c15e67/images/623b3f2b-7d5f-426d-857a-2c3175fdd285.png' style='width: 110px;height: 35px;>
+<!-- Google Analytics Image -->
+<img src='http://www.google-analytics.com/collect?v=1&amp;tid=UA-48712319-2&amp;cid=mggkmailchimp&amp;t=event&amp;ec=dailyemailmailChimp&amp;ea=open&amp;el=dailyemailmailChimp&amp;cs=gmail-inbox&amp;cm=email&amp;cn=dailyemailmailChimp' style='border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;height: auto !important;'>" >> $OUTPUT_HTML_FILE ;
+
+
 echo "<hr>" >> $OUTPUT_HTML_FILE ;
+echo "<p>&nbsp;</p>" >> $OUTPUT_HTML_FILE ;
 echo "<webversion>View web version</webversion> // <unsubscribe>Unsubscribe</unsubscribe>" >> $OUTPUT_HTML_FILE ;
 echo "<p><a href='https://www.mygingergarlickitchen.com' target='_blank'><img src='https://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/mggk-new-logo-transparent-150px.png' width='100px' ;></img></a></p>" >> $OUTPUT_HTML_FILE ;
 
