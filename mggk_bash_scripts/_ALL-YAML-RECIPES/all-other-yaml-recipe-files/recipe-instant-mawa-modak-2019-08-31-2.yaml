@@ -1,0 +1,116 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Instant Mawa Modak Recipe ( Khoya Modak )"
+
+description: "Mawa Modak is a sweet dish made from sweetened Mawa/khoya (dried milk or milk solids). Mawa Modak or Khoya Modak recipe is usually made on the festive occasion of Ganesh Chaturthi, but this divine dessert can be made anytime you like. In the state of maha Maharashtra, the modak made from mawa is known as 'Khavyache Modak'.
+"
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/08/mawa-modak-recipe-my-ginger-garlic-kitchen-2.jpg
+
+prepTime: PT10M
+
+cookTime: PT10M
+
+totalTime: PT20M
+
+recipeCategory: Dessert
+
+recipeCuisine: Indian
+
+recipeYield: 12-14 Modaks
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 1
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 100 calories
+  servingSize: 1 modak
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: No notes.
+
+keywords: "mawa modak recipe, instant mawa modak, khoya modak, mawa modak recipe youtube, how to make mava modak, homemade mawa modak, mawa modak variations, mawa modal without mould, modak recipe video, ganesh chaturthi modak, authentic modak recipe"
+
+video:
+  name: "Instant Mawa Modak Recipe ( Khoya Modak )"
+  description: "Mawa Modak is a sweet dish made from sweetened Mawa/khoya (dried milk or milk solids). Mawa Modak or Khoya Modak recipe is usually made on the festive occasion of Ganesh Chaturthi, but this divine dessert can be made anytime you like. In the state of maha Maharashtra, the modak made from mawa is known as 'Khavyache Modak'.
+"
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/08/mawa-modak-recipe-my-ginger-garlic-kitchen-2.jpg
+    - https://i.ytimg.com/vi/lrbJoajsfnA/maxresdefault.jpg
+  contentUrl: "https://youtu.be/lrbJoajsfnA"
+  embedUrl: "https://www.youtube.com/embed/lrbJoajsfnA"
+  uploadDate: 2019-08-31
+
+datePublished: 2019-08-31
+
+url: https://www.mygingergarlickitchen.com/instant-mawa-modak/
+
+recipeIngredient:
+  - "!!Ingredients:"
+  - "1 cup crumbled mawa/khoya (dried milk)"
+  - "1/3 cup powdered sugar (confectioner’s sugar or icing sugar, both will work)"
+  - "1 tsp cardamom powder (ilaichi powder)"
+  - "2 tbsp warm milk (gunguna doodh)"
+  - "12-15 saffron strands (kesar)"
+  - "Almonds(badam)/cashews (kaju)/pistachios(pista) for stuffing  (optional)"
+  - "Sliced pistachios (kati hui pista) for garnish  (optional)"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "How To Make Mawa Modak:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat a nonstick or heavy bottom pan over medium heat."
+  - "@type": HowToStep
+    text: "Next, add mawa and roast for 5 minutes or till mawa softens. (Keep stirring continuously, otherwise, mawa would stick to the bottom)."
+  - "@type": HowToStep
+    text: "Once mawa is heated enough, transfer roasted mawa to a mixing bowl and set aside for 5 minutes or until the mawa mixture is still warm but cool enough to handle.( Don’t let roasted mawa cool down completely, or else mawa will turn stiff and it would be hard to mix it with sugar)."
+  - "@type": HowToStep
+    text: "Add saffron strands to warm milk and mix well. Set aside saffron milk for 5 minutes (This would ensure that you get the best color and flavors.)"
+  - "@type": HowToStep
+    text: "Add saffron milk to warm mawa, and mix well to combine."
+  - "@type": HowToStep
+    text: "Break mawa using a spoon, and make sure there are no lumps."
+  - "@type": HowToStep
+    text: "Now add sieved powdered sugar and cardamom powder and mix till everything is well combined."
+  - "@type": HowToStep
+    text: "Knead well to make a smooth dough."
+  - "@type": HowToStep
+    text: "The mawa mixture for making modak is ready now. We will now start shaping them into modaks."
+- "@type": HowToSection
+  name: "How To Shape Mawa Modak With Moulds:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "You can dust your modak mould with icing sugar, or grease it with some melted ghee.This way you can easily pull out modaks from the mould."
+  - "@type": HowToStep
+    text: "Once the mould is ready for use, take mould and put some mawa mixture on the both sides of the mould."
+  - "@type": HowToStep
+    text: "Using fingers, press down the mixture firmly to get a fine shape."
+  - "@type": HowToStep
+    text: "Add cashew, almond or pistachio and close the mould."
+  - "@type": HowToStep
+    text: "Discard the excess mawa from the sides and the bottom."
+  - "@type": HowToStep
+    text: "Seal the bottom by pressing it with fingers."
+  - "@type": HowToStep
+    text: "Gently open the mould, and press it lightly from the bottom to take it out from the mould."
+  - "@type": HowToStep
+    text: "Similarly, make all the mawa modaks until all the mixture is used up."
+  - "@type": HowToStep
+    text: "Arrange them on a serving plate and serve."
+  - "@type": HowToStep
+    text: "Store them in the refrigerator for up to 4-5 days."
