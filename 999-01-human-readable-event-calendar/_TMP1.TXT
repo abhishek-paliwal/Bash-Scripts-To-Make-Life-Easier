@@ -1,0 +1,32 @@
+20190830,19:20:00,DeepSkyBlue,Swimming-Class
+20190902,16:10:00,deeppink,Skating-Class
+20190906,19:20:00,DeepSkyBlue,Swimming-Class
+20190909,16:10:00,deeppink,Skating-Class
+20190913,19:20:00,DeepSkyBlue,Swimming-Class
+20190916,16:10:00,deeppink,Skating-Class
+20190920,19:20:00,DeepSkyBlue,Swimming-Class
+20190923,16:10:00,deeppink,Skating-Class
+20190927,19:20:00,DeepSkyBlue,Swimming-Class
+20190930,16:10:00,deeppink,Skating-Class
+20191004,19:20:00,DeepSkyBlue,Swimming-Class
+20191007,16:10:00,deeppink,Skating-Class
+20191011,19:20:00,DeepSkyBlue,Swimming-Class
+20191014,16:10:00,deeppink,Skating-Class
+20191017,00:00:00,orange,Karwachauth Vrat
+20191021,16:10:00,deeppink,Skating-Class
+20191025,19:20:00,DeepSkyBlue,Swimming-Class
+20191027,00:00:00,orange,Deepavali
+20191028,16:10:00,deeppink,Skating-Class
+20191101,19:20:00,DeepSkyBlue,Swimming-Class
+20191104,16:10:00,deeppink,Skating-Class
+20191108,19:20:00,DeepSkyBlue,Swimming-Class
+20191111,16:10:00,deeppink,Skating-Class
+20191115,19:20:00,DeepSkyBlue,Swimming-Class
+20191118,16:10:00,deeppink,Skating-Class
+20191121,00:00:00,Pink,Wedding Anniversary
+20191122,19:20:00,DeepSkyBlue,Swimming-Class
+20191125,16:10:00,deeppink,Skating-Class
+20191129,19:20:00,DeepSkyBlue,Swimming-Class
+20191213,19:20:00,DeepSkyBlue,Swimming-Class
+20191225,00:00:00,Red,Christmas Eve
+20191231,11:59:00,Red,New Year Eve
