@@ -53,9 +53,18 @@ do
 
   echo "<hr>" >> $HTML_OUTPUT_FILE
   echo "<h3 style='color:blue;'>FILE# $filecount //</h3> <br>EXTERNAL URLs found in FILE = <strong>$filename</strong>" >> $HTML_OUTPUT_FILE
+
+
   echo "<pre>" >> $HTML_OUTPUT_FILE
-  grep -rEoh "(http|https)://[a-zA-Z0-9./?=_-]*" $filename | grep -iv 'mygingergarlickitchen.com'| nl >> $HTML_OUTPUT_FILE
+  grep -rEoh "(http|https)://[a-zA-Z0-9./?=_-]*" $filename | grep -iv 'mygingergarlickitchen.com' >> $HTML_OUTPUT_FILE
   echo "</pre>" >> $HTML_OUTPUT_FILE
+
+  ## finding the URL of the blog post in YAML frontmatter
+  myurl=$(grep -rEoh "^url:.*[a-zA-Z0-9./?=_-]*" $filename | tr -d '[:space:]'| sed 's/url:/https:\/\/www.MyGingerGarlicKitchen.com/g') ;
+  echo "<p>Direct Post link: <a href='$myurl'>$myurl</a></p>" >> $HTML_OUTPUT_FILE
+
+  ## Where to find the DA (Domain Authority) in bulk
+  echo "<p>Check DA for these here, upto 10 URLs at once: <a href='https://www.checkmoz.com'>https://www.checkmoz.com</a></p>" >> $HTML_OUTPUT_FILE
 
   ## PRINTING ON CLI FOR QUICK REFERENCE
   echo; echo "FILE# $filecount // EXTERNAL URLs found in FILE => $filename" ;
