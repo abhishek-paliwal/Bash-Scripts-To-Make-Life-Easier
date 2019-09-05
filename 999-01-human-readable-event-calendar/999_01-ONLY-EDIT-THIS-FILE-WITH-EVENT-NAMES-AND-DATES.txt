@@ -1,3 +1,13 @@
+##############################################################################
+## THIS IS THE REQUIREMENTS FILE FOR THE FOLLOWING SCRIPT =
+## 999_01-convert-and-sort-dates-to-human-readable-events.sh
+##############################################################################
+## FOR ANY NEW EVENT, ADD A NEW ROW WHICH SHOULD HAVE 4 COLUMNS SEPARATED BY
+## COMMA: 4 COLUMNS ARE:
+#### DATE AS YYYYMMDD,TIME_OF_EVENT,HIGHLIGHT_COLOR,EVENT-NAME(CAN HAVE SPACES)
+##############################################################################
+##############################################################################
+## SKATING CLASSES
 20190902,16:10:00,deeppink,Skating-Class
 20190909,16:10:00,deeppink,Skating-Class
 20190916,16:10:00,deeppink,Skating-Class
@@ -11,6 +21,7 @@
 20191111,16:10:00,deeppink,Skating-Class
 20191118,16:10:00,deeppink,Skating-Class
 20191125,16:10:00,deeppink,Skating-Class
+## SWIMMING CLASSES
 20190830,19:20:00,DeepSkyBlue,Swimming-Class
 20190906,19:20:00,DeepSkyBlue,Swimming-Class
 20190913,19:20:00,DeepSkyBlue,Swimming-Class
@@ -25,9 +36,9 @@
 20191122,19:20:00,DeepSkyBlue,Swimming-Class
 20191129,19:20:00,DeepSkyBlue,Swimming-Class
 20191213,19:20:00,DeepSkyBlue,Swimming-Class
+## OTHER EVENTS
 20191121,00:00:00,Pink,Wedding Anniversary
 20191225,00:00:00,Red,Christmas Eve
 20191231,11:59:00,Red,New Year Eve
 20191017,00:00:00,orange,Karwachauth Vrat
 20191027,00:00:00,orange,Deepavali
-20190905,12:00:23,yellow,test event

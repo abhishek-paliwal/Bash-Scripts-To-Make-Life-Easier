@@ -25,7 +25,7 @@ EOF
 #PWD="$HOME/Desktop/Y"
 PWD="$(pwd)"
 cd $PWD ;
-echo; echo ">>>> PWD is $PWD" ; echo; 
+echo; echo ">>>> PWD is $PWD" ; echo;
 
 ## DEFINE SOME VARIABLE FILENAMES
 ##########################################################
@@ -40,7 +40,9 @@ prefix="Event" ## for skating
 REQUIREMENTS_FILE_SORTED="_TMP_SORTED_$REQUIREMENTS_FILE" ;
 rm $REQUIREMENTS_FILE_SORTED
 
-cat $REQUIREMENTS_FILE | sort -n > _TMP1.TXT ;
+## CREATE A TEMP FILE BY REMOVING ALL LINES CONTAINING #'s
+cat $REQUIREMENTS_FILE | grep -v '#' | sort -n > _TMP1.TXT ;
+
 while IFS= read -r line
 do
 	## EXTRACT THE DATES FROM EACH LINE, MEANING FIRST 8 CHARS OF EACH LINE
