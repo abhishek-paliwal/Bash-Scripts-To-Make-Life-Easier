@@ -1,59 +1,68 @@
-COUNT,HTML_RECIPENAME,HTML_RECIPEDESCRIPTION,HTML_RECIPEAUTHOR,PREPTIME,COOKTIME,TOTALTIME,CATEGORY,CUISINE,SERVINGS,CALORIES,CALORIES_SERVINGS,KEYWORDS,MY_INGREDIENTS_FINAL,MY_INSTRUCTIONS_FINAL,RATING_VALUE,RATING_USERS,YOUTUBE_VIDEO_ID,RECIPE_DATE,RECIPE_FEATURED_IMAGE,RECIPE_FILENAME_MARKDOWN_POST,URL_PART_MINUS_MGGK
-1,Watermelon Onion Yogurt Dip,Watermelon onion yogurt chip dip is indeed a light and refreshing classic dip perfect for hot days. The grated watermelon oozing sweet juice adds so much flavor and natural sweetness. And onion adds the perfect crunch.,Anupama Paliwal,PT5M,PT5M,PT10M,Appetizer,World,4,227,1 serving,"watermelon, onion, yogurt, dip","!!Ingredients
-greek yogurt, chilled - 2 cup
-watermelon, grated and chilled- 1 cup
-salt, as per taste
-onion, chopped - 1 large
-cumin powder - 1 tsp
-chaat masala - ½ tsp
-almonds, chopped for garnish
-fresh chilies, and pepper for garnish
+COUNT,HTML_RECIPENAME,HTML_RECIPEDESCRIPTION,HTML_RECIPEAUTHOR,PREPTIME,COOKTIME,TOTALTIME,CATEGORY,CUISINE,SERVINGS,CALORIES,CALORIES_SERVINGS,KEYWORDS,MY_INGREDIENTS_FINAL,MY_INSTRUCTIONS_FINAL,RATING_VALUE,RATING_USERS,YOUTUBE_VIDEO_ID,RECIPE_DATE,RECIPE_FEATURED_IMAGE,URL_PART_MINUS_MGGK,HTML_RECIPE_NOTES
+1,Instant Pot Rajma Masala | Pressure Cooker Rajma Masala,"Rajma or Razma Masala, is a popular vegetarian curry originating from North India. This North Indian melt-in-your-mouth kidney Bean Curry is made with rajma. In this curry, red kidney beans are soaked overnight, cooked in a spicy and thick onion tomato gravy consisting whole and powdered spices. For this Instant Pot Rajma Masala recipe, I cooked my rajma masala on high pressure for 35 minutes. But you can also make the Rajma masala using “Bean/Chili” mode.",Anupama Paliwal,PT15M,PT40M,PT55M,Side,Indian,4,198,1 serving,"punjabi rajma instant pot, authentic punjabi rajma recipe, instant pot rajma chawal recipe, rajma masala in instant pot, instant pot rajma canned beans, instant pot rajma pulao, instant pot rajma recipe, instant pot rajma dal, easy instant pot rajma, instant pot indian rajma recipes, 	instant pot rajma masala, pressure cooker rajma, punjabi rajma masala curry recipe, authentic punjabi rajma recipe","!!Ingredients
+2 cups rajma (kidney beans), it would become 3 cups after soaking overnight
+1 bay leaf (tej patta)
+2-3 cloves
+salt to taste
+2 onions, chopped
+2 tomatoes, chopped
+1 tablespoon ginger, chopped
+2 tablespoons garlic, chopped
+2 tablespoons oil
+3  green chilies, slit
+1/2 teaspoon cumin seeds
+2 teaspoon coriander powder (dhaniya powder)
+1 teaspoon cumin powder (jeera powder)
+1/4 teaspoon roasted cumin powder (bhuna jeera powder)
+1 teaspoon red chilli powder (lal mirch powder)
+1/2 teaspoons garam masala powder
+1/2 tablespoons powdered kasuri methi, optional (dried fenugreek leaves)
+3 cups water or more if required
 ","!!Instructions
 Take a mixing bowl. Combine the yogurt, watermelon, onion, cumin powder, chaat masala, and salt and whisk well.
 Garnish with your favorite, green chiles, Top with chopped almonds, and serve with crackers, chips or fruits.
-",5,47,,2019-07-06,https://www.mygingergarlickitchen.com/wp-content/uploads/2019/07/effortless-summer-sides-strawberry-poppyseed-salad.jpg,NA,effortless-summer-side-dishes
-2,Strawberry Poppyseed Salad,"Strawberry poppyseed salad is a great option for summer due to its light and sweet flavor. Summer is also strawberry picking season, so if you and your family have gone out and find yourselves with pounds and pounds of the berries, put them to work in this unique recipe.
-",Anupama Paliwal,PT5M,PT5M,PT10M,Side,International,2,189,1 serving,"strawberry poppyseed salad recipe, strawberry poppyseed salad nutrition, strawberry poppyseed salad calories, strawberry poppyseed salad dressing","!!Ingredients:
-1 cup strawberries
-Baby spinach
-3 tbsp poppy seeds
-¼ tbsp Balsamic vinegar
-Goat cheese
-½ cup Olive oil
-¼ cup white vinegar
-1/4 cup sugar","!!Instructions
-In a small bowl, combine the vinegars, oil, poppyseeds, and sugar. This will be your dressing.
-Wash and cut strawberries into bite-sized pieces, making sure to take the tops off.
-Wash the spinach and place it in a large bowl. Sprinkle in strawberries and goat cheese, mixing lightly. Drizzle the dressing over the top or leave it on the side for guests to pour themselves.
-",5,1,,2019-07-06,https://www.mygingergarlickitchen.com/wp-content/uploads/2019/07/effortless-summer-sides-strawberry-poppyseed-salad.jpg,NA,effortless-summer-side-dishes
-3,"Marinated Cucumbers
-","Quick and easy, marinated cucumbers don’t take much effort as most of the preparation happens while the dish sits in the fridge. If you’re tight on time, this would be the ideal side to bring to a gathering.",Anupama Paliwal,PT1H,PT10M,PT1H10M,Side,Asian,4,21,1 serving,"marinated cucumbers recipe, marinated cucumbers with dill, marinated cucumbers salad","!!Ingredients:
-2 whole cucumbers
-1 sprig of dill
-¼ cup vinegar
-¼ cup water
-1 lime
-Salt and pepper to taste
-4 tbsp oil","!!Instructions:
-This dish can be prepared the night before or an hour before, depending on how much time you have. All in all, the actual preparation takes about ten minutes. 
-Begin by washing the cucumbers and slicing them thinly, or using a mandolin. Leave the skin on! It’s where all the nutrients are, and it won’t take away from the appeal. Place the cucumber in a shallow dish. 
-In a measuring cup, combine the vinegar, water, and oil. Chop dill up or break by hand for larger pieces, and mix in with the liquid ingredients.
-Sprinkle the cucumbers with salt and pepper. Pour the vinegar mixture evenly over the slices, using a fork to make sure every slice is distributed evenly and in contact with the liquid. 
-Roll the lime against a hard surface to release the juices, cut in half, and squeeze over the dish. Cover the cucumbers with a lid or cling wrap and refrigerate, either overnight or for at least an hour. This dish can be served chilled or at room temp.
-",5,1,,2019-07-06,https://www.mygingergarlickitchen.com/wp-content/uploads/2019/07/effortless-summer-sides-marinated-cucumbers.jpg,NA,effortless-summer-side-dishes
-4,Buttermilk Biscuits,"Biscuits are popular in many fast food chains, but you probably didn’t know that they’re incredibly easy to make at home and take no longer than a half hour.",Anupama Paliwal,PT15M,PT18M,PT33M,Breakfast,British,8,88,1 serving,"buttermilk biscuits from scratch, buttermilk biscuits recipe, buttermilk biscuits all purpose flour, buttermilk biscuits best, buttermilk biscuits baking soda","!!Ingredients:
-2 cups flour
-Buttermilk (¾ cups milk plus 2tbs vinegar – this works with milk alternatives as well!)
-6 tbsp butter, cold
-¼ tbsp baking soda
-1 tbsp baking powder
-2 tsp sugar
-Salt","!!Instructions:
-If you’re making the buttermilk from scratch, combine the milk and vinegar in a measuring cup and let chill in the refrigerator.
-Preheat the oven to 450 and line a baking sheet. In a large bowl, whisk together the dry ingredients.
-You can cube butter and cut it in, but we’ve found a simpler way to incorporate the frustrating ingredient: grate it. As long as the butter is cold, you can easily grate it using a cheese grater. Add the butter into the flour and use your hands to mix the two, crumbling the flour and butter between your hands until it reaches a fine, pea-sized consistency. 
-Pour almost all of the buttermilk into the mixture (leave at least a few tablespoons) and beat it on low until everything is incorporated but not over-mixed. Turn the dough onto a floured surface and carefully fold it over repeatedly a few times. 
-Making sure the surface is floured just enough that the dough won’t stick, flatten it by hand or with a roller to about ½ inch thickness. Cut out circles using a cookie cutter or by cutting with a knife around an upturned glass to guide you.
-After you place the biscuits on the baking sheet, brush the tops of each one lightly with the remaining buttermilk. If you’d like to add a bit of sweetness, drizzle honey on top.
-Bake at 450 for about 15-18 minutes, until golden brown on top.
-",5,1,,2019-07-06,https://www.mygingergarlickitchen.com/wp-content/uploads/2019/07/effortless-summer-sides-buttermilk-biscuits.jpg,NA,effortless-summer-side-dishes
+",5,1,gv1ZjK8whfM,2019-07-31,https://www.mygingergarlickitchen.com/wp-content/uploads/2019/07/effortless-summer-sides-strawberry-poppyseed-salad.jpg,my-test-recipe-url-goes-here,1. Line one goes here.<br>2. Line two goes here.<br>3. Line three goes here.
+2,Bhutte Ka Kees Recipe | Grated Corn Stir Fry,"Bhutte ka Kees or Grated Corn Stir Fry is a famous and delectable North Indian street food originated from the city of  Indore in Madhya Pradesh, India. Bhutte Ka Kees has a rich creamy texture and delectable taste. This dish is one of such snacks which is admired by the people of all ages. This simple-to-cook Indore special snack is made especially during the monsoon or winter season. This tasty and filling snack can be served an evening snack, brunch, appetizer or even as breakfast. ",Anupama Paliwal,PT10M,PT25M,PT35M,Snack,Indian,3,125,1 serving,"bhutte ka kees indore, bhutte ka meetha kees, recipe of bhutte ki kees, bhutte ki kees banane ka tarika, bhutte ka kis, bhutte ka kis recipe, bhutte ka kees kaise banate hai, bhutte ki kees in hindi, भुट्टे का किस बनाना है, grated corn stir fry, grated corn snack, grated corn snack, indian snacks for party, indian snacks for picnic, indian snacks with tea, indian snacks at home, indian snacks for potluck
+","!!For Bhutte Ka Kees:
+3 medium sized corn cobs or sweet corn (bhutta or makai)
+4 tablespoon oil 
+1/4 tsp asafoetida (hing)
+3/4 teaspoon mustard seeds (rai)
+3/4 teaspoon cumin seeds (jeera)
+2 tablespoons green chilies, chopped (kati hui hari mirch)
+1 tablespoon grated ginger (kisi hui adrak)
+1/2 teaspoon turmeric powder (haldi)
+1 teaspoon red chili powder 
+1 teaspoon coriander powder (dhania powder) 
+3/4 cup milk
+1/2 cup water (I washed my grater in 1/2 cup of water and used that water)
+Salt to taste required
+1 tablespoons ghee (clarified butter)
+2 tablespoons chopped coriander leaves
+2 teaspoons lemon juice or as required
+1 teaspoon sugar (optional)
+!!For Serving:
+Grated fresh coconut
+Roasted, roughly crushed peanuts
+Chopped coriander leaves","!!How to grate corn kernels:
+For this recipe, you need corn on the cob which have milkier and plump kernels. To check, if the corn is milky and plump insert a knife or toothpick in a kernel and if it bursts with milk then the corn is perfect. 
+Now, grate corn off the cob. Once you have grated corn, set is aside. Also, rinse used grater in 1/2 cup of water. Keep it aside too.
+!!How to cook Bhutte Ka Kees:
+Heat a deep-bottomed pan over medium heat.
+Heat oil or ghee in the pan.
+Once hot, add asafoetida, mustard seeds and cumin seeds. 
+When the seeds start to crackle add green chilies in it and sauté for 1 minute. 
+Now add grated ginger and sauté for 1 more minute.
+Now add turmeric powder, coriander powder and red chili powder.
+Sauté masala powders in oil for 1 minute.
+Now add grated corn mixture, water, and mix well. Cook for 6-7 minutes or until the color changes slightly. Keep stirring continuously. 
+Now add milk and stir well. Cover and cook for 8-10 minutes over low heat. Stir it every 2 minutes.
+Uncover the pan, and turn the heat to medium. Cook until mixture thickens. 
+Once the mixture thickens, add the salt and mix until combined.   
+Add sugar and mix well.
+Then add ghee and mix well again. 
+Add chopped coriander leaves and mix. 
+Once done, turn off the flame and add lemon juice and mix well. 
+!!How to serve Bhutte Ka Kees: 
+Transfer bhutte ka kees into a serving dish and top with grated coconut, roasted peanuts and coriander leaves. 
+Serve immediately and enjoy with hot tea.",5,1,b4VEU-Ou36A,2019-09-06,https://www.mygingergarlickitchen.com/wp-content/uploads/2019/09/bhutte-ka-kees-recipe-my-ginger-garlic-kitchen-2.jpg,bhutte-ka-kees,"1. Sugar is optional in this recipe. If you want it 'Khatta Meetha' (tangy and sweet), like an Indori, then add it.<br>2. For the recipe, always use corn on the cob which have milkier and plump kernels.<br>3. This dish requires some extra oil, because Bhutte Ka Kees tastes great when it is cooked in ample amount oil/ghee. However, if you are not comfortable with 4 tablespoons of oil, then you can surely reduce the amount of oil/ghee."

@@ -103,6 +103,8 @@ for x in range(0, COUNT_ROWS):
 
     YOUTUBE_VIDEO_ID = str(data_final.at[x,'YOUTUBE_VIDEO_ID'])
 
+    HTML_RECIPE_NOTES = str(data_final.at[x,'HTML_RECIPE_NOTES'])
+
 
     ## FORMATTING DATE (getting date from date time variable)
     RECIPE_DATE       =str(data_final.at[x,'RECIPE_DATE'])
@@ -230,6 +232,7 @@ for x in range(0, COUNT_ROWS):
     print("CALORIES_SERVINGS: " + CALORIES_SERVINGS)
     print("RATING_VALUE: " + RATING_VALUE)
     print("RATING_USERS: " + RATING_USERS)
+    print("HTML_RECIPE_NOTES: " + HTML_RECIPE_NOTES)
 
 
     ## SAVING THE RESULTS TO A CSV FILE
@@ -274,7 +277,7 @@ for x in range(0, COUNT_ROWS):
     RECIPE_FILE.write('\n  brand: My Ginger Garlic Kitchen')
     RECIPE_FILE.write('\n  url: https://www.MyGingerGarlicKitchen.com')
 
-    RECIPE_FILE.write('\n\nrecipeNotes: No notes.')
+    RECIPE_FILE.write('\n\nrecipeNotes: \"'+ HTML_RECIPE_NOTES + '\"')
 
     RECIPE_FILE.write('\n\nkeywords: \"'+ KEYWORDS_REGEXED + '\"')
 
