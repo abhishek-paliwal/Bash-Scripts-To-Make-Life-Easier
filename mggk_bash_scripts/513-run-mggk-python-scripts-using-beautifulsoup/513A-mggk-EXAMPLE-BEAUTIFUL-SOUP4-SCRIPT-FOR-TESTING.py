@@ -42,14 +42,41 @@ def make_heading(myheading, RULERCHAR="#"):
 
 make_heading("program begins", RULERCHAR="#")
 
-############################################
-url = "https://www.mygingergarlickitchen.com/szechuan-spiced-carrot-fettuccine-video-recipe/"
+################################################################################
+## SUPPLYING THE USER AGENT BECAUSE SOMETIMES URLs CHECK FOR IT, ELSE THEY
+## SHOW 403 FORBIDDEN ERROR.
+################################################################################
+from urllib.request import urlopen, Request
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.3'}
 
-content = urllib.request.urlopen(url).read()
+################################################################################
+## SET WHICH URL TO FETCH, and ACTUALLY FETCH CONTENT
+################################################################################
+#req_url ="https://www.mygingergarlickitchen.com/instant-mawa-modak/"
+req_url = "https://www.lifehack.org/444291/100-motivational-quotes-that-will-guide-you-to-massive-success"
+req = Request(url=req_url, headers=headers)
+content = urlopen(req).read()
+#print(content)
+
+################################################################################
+## BEAUTIFUL SOUP MAGIC BEGINS BELOW
+################################################################################
 soup = BeautifulSoup(content, 'html.parser' )
 #print(soup.prettify())
 
 make_heading("printing the recipe block html output", RULERCHAR="+")
-easyrecipe_block=soup.find('div',class_='easyrecipe').prettify()
-print(easyrecipe_block)
+
+mainDiv=soup.find('div',class_="article-content")
+print(mainDiv.prettify())
+
+allH2s=mainDiv.find_all('h2') ## it will be a list, so later we will have to loop over it to get individual elements
+print(allH2s)
+
+for x in allH2s:
+    print("\n")
+    print(x)
+
+#easyrecipe_block=soup.find_all('h2').prettify()
+#print(easyrecipe_block)
+
 make_heading("program ends", RULERCHAR="/")
