@@ -1,0 +1,138 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Corn Pakora Recipe | Corn Pakoda | Corn Fritters"
+
+description: "Corn Pakora is a famous Indian snack recipe which is widely consumed during the monsoon season in India. Sweet corn Pakoda | corn fritter is a temptingly delicious, crispy, and crunchy deep-fried snack recipe made using gram flour and fresh corn kernels. This Pakora makes an excellent tea time snack and can be made under 20 minutes from start to finish. Plus, making this corn pakora is very quick and easy. Nothing warms you up in a wet and cool monsoon season like this plateful of old fashioned hot, spicy, and crispy snack corn pakora.
+"
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/09/corn-pakora-recipe-my-ginger-garlic-kitchen-1.jpg
+
+prepTime: PT10M
+
+cookTime: PT15M
+
+totalTime: PT25M
+
+recipeCategory: Snack
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 1
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 59 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: "1. If rice flour is not easily available in your region then you can make your rice flour by grinding rice into a fine powder. You can also replace rice flour with cornflour to the batter.<br>2. Always make sure you fry the corn pakoda on medium heat. This would ensure that your pakoras would come out perfectly crispy. If the heat is too high, then pakoras would cook faster from outside, and won't cook from the center.<br>3. I like to add some freshly squeezed lemon juice for a slight tang in pakoras. If you want, you can either skip it or replace it with some amchur powder."
+
+keywords: "corn pakora recipe, corn pakoda, crispy corn pakoda, desi corn pakoda, sweet corn pakoda gobble, recipe of corn pakoda, corn fritters recipe, corn fritters vegan, corn fritters gobble, corn fritters batter, best corn fritters recipe, crispy corn fritters recipe, deep fried corn fritters, corn fritters eggless, corn fritters dairy free, easy corn fritters recipe, भुट्टे के पकोड़े, recipe of bhutte ke pakode, corn pakoda, corn pakoda recipe video, boiled corn pakoda"
+
+video:
+  name: "Corn Pakora Recipe | Corn Pakoda | Corn Fritters"
+  description: "Corn Pakora is a famous Indian snack recipe which is widely consumed during the monsoon season in India. Sweet corn Pakoda | corn fritter is a temptingly delicious, crispy, and crunchy deep-fried snack recipe made using gram flour and fresh corn kernels. This Pakora makes an excellent tea time snack and can be made under 20 minutes from start to finish. Plus, making this corn pakora is very quick and easy. Nothing warms you up in a wet and cool monsoon season like this plateful of old fashioned hot, spicy, and crispy snack corn pakora.
+"
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/09/corn-pakora-recipe-my-ginger-garlic-kitchen-1.jpg
+    - https://i.ytimg.com/vi/_85aV5QThuQ/maxresdefault.jpg
+  contentUrl: "https://youtu.be/_85aV5QThuQ"
+  embedUrl: "https://www.youtube.com/embed/_85aV5QThuQ"
+  uploadDate: 2019-09-11
+
+datePublished: 2019-09-11
+
+url: https://www.mygingergarlickitchen.com/corn-pakora/
+
+recipeIngredient:
+  - "!!For Corn Pakora:"
+  - "11/2 cups fresh corn kernels or 3 ears of corn (bhutte or makai)"
+  - "2 medium-sized onions (pyaaz), roughly chopped"
+  - "1 teaspoon grated ginger (adrak)"
+  - "2 teaspoon chopped green chilies"
+  - "2 teaspoon minced garlic (kisi hui lehsun)"
+  - "2 teaspoons lemon juice (neembu ka ras)"
+  - "1 teaspoon cumin seeds (jeera)"
+  - "1/2 teaspoon turmeric powder (haldi powder)"
+  - "1 tablespoon red chili powder (lal mirch powder)"
+  - "1/2 teaspoon garam masala powder"
+  - "1/2 teaspoon ground black pepper (pisi hui kali mirch)"
+  - "1 teaspoon chaat masala"
+  - "2 tablespoons rice flour (chawal ka atta)"
+  - "1 tablespoon cornflour"
+  - "6 tablespoons gram flour (besan), or as needed"
+  - "Salt to taste"
+  - "Oil for frying"
+  - "!!For serving:"
+  - "Green coriander chutney"
+  - "Chaat masala"
+  - "Red chili powder (lal mirch powder)"
+  - "Onion slices (kata hua pyaaz)"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "How To Make Corn Pakora Batter:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Slice the corn, off the cob, and arrange kernels in a steamer."
+  - "@type": HowToStep
+    text: "Bring a large pot of water to boil."
+  - "@type": HowToStep
+    text: "Put the steamer basket in the bottom of the pot and cover. Steam for 7-8 minutes."
+  - "@type": HowToStep
+    text: "Once done, take out the steamer basket and set it aside for 5 minutes or until kernels are cool enough to touch."
+  - "@type": HowToStep
+    text: "Press a kernel between an index finger and thumb, and if it squeezes easily that means kernels are steamed perfectly. We want them soft yet hard enough to hold their shape."
+  - "@type": HowToStep
+    text: "Now, add chopped onions and steamed corn kernels to a mixing bowl."
+  - "@type": HowToStep
+    text: "Also, add grated ginger, chopped green chilies, minced garlic, lemon juice, cumin seeds, turmeric powder, red chili powder, garam masala powder, ground black pepper, chat masala, and rice flour to it."
+  - "@type": HowToStep
+    text: "Mix well, using hands and keep smashing the mixture at the same time. (We need to remove all the excess moisture from the mixture, so keep smashing corn kernels while making the batter.)"
+  - "@type": HowToStep
+    text: "Now add cornflour and mix well again. (Adding cornflour and rice flour to the batter will make pakoras crispy.)"
+  - "@type": HowToStep
+    text: "Once the flour is mixed add gram flour and mix again."
+  - "@type": HowToStep
+    text: "Keep adding gram flour in small amounts until the batter is thick and holds the shape. (I have used 6 tablespoons of gram flour for this recipe)."
+- "@type": HowToSection
+  name: "How To Fry Corn Pakora:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat oil in a wide pan."
+  - "@type": HowToStep
+    text: "Once the oil is hot, drop small portions of the batter in the hot oil using fingers or a spoon."
+  - "@type": HowToStep
+    text: "Deep fry on medium heat until the pakoras are crispy and browned."
+  - "@type": HowToStep
+    text: "Remove the pakoras using a slotted spoon to drain excess oil. Drain them onto a tissue lined plate."
+  - "@type": HowToStep
+    text: "Sprinkle with some chili powder and chat masala."
+  - "@type": HowToStep
+    text: "Serve hot with coriander chutney and tamarind chutney."
+- "@type": HowToSection
+  name: "How to bake Corn Pakora:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat the oven to 392°F/200°C."
+  - "@type": HowToStep
+    text: "Scoop out small balls of batter on a parchment-lined baking sheet using your hands or a tablespoon or ice cream scoop. Flatten them using a spoon and brush or spray with some cooking oil."
+  - "@type": HowToStep
+    text: "Bake for 22-25 minutes until pakoras are golden brown and crisp on the outside."
+  - "@type": HowToStep
+    text: "Sprinkle pakoras with some red chili powder, some chaat masala and then serve hot with tomato chutney or ketchup or sauces of your choice."
