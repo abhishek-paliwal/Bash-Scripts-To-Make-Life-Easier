@@ -284,6 +284,7 @@ for x in range(0, COUNT_ROWS):
     ############# VIDEO BLOCK ####################################
     if YOUTUBE_VIDEO_ID !="" and YOUTUBE_VIDEO_ID != "['ZZZZ - NOTHING FOUND for youtube_video_id']" :
         RECIPE_FILE.write('\n\nvideo:')
+        RECIPE_FILE.write('\n  \"@type\": \"VideoObject\"')
         RECIPE_FILE.write('\n  name: \"' + RECIPE_TITLE + '\"')
         RECIPE_FILE.write('\n  description: \"' + RECIPE_DESCRIPTION + '\"')
         RECIPE_FILE.write('\n  thumbnailUrl:')
