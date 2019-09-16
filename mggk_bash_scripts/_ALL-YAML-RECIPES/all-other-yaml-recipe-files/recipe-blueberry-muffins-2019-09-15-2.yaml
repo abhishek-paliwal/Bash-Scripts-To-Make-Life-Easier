@@ -1,0 +1,120 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Quick and Easy Blueberry Muffins Recipe"
+
+description: "These quick and easy homemade Blueberry Muffins are light, fluffy, and packed with the goodness of juicy blueberries. Bursting with fresh blueberries and a wonderfully tender crumb with crispy pearl sugar crumbs on top — these are the best blueberry muffins. Who doesn’t yearn for a freshly home-baked blueberry muffin? A bite into a tender muffin with the pockets of succulent blueberries would take your taste goblet on a tour to food heaven. These muffins are ideal for weekend brunches or pick-and-go breakfast."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/09/blueberry-muffins-recipe-my-ginger-garlic-kitchen-3.jpg
+
+prepTime: PT10M
+
+cookTime: PT20M
+
+totalTime: PT30M
+
+recipeCategory: Dessert
+
+recipeCuisine: International
+
+recipeYield: 12 standard muffins
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 1
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 313 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: "1. If you are making 8 muffins, then fill the remaining cups with 2 tablespoons of water. This will help the muffins bake evenly.<br>2. If you are using frozen blueberries, then use them frozen. Do not thaw them.<br>3. I have added sunflower oil for this recipe because I love the light texture of muffins made with oil. You can substitute oil with melted butter for a rich taste.<br>4. I have topped my muffins with pearl sugar because they are just so perfect for decorating and they taste so deliciously coarse and crunchy on top of a muffin. However, you can replace it with any other type of granulated or raw sugar of your choice."
+
+keywords: "blueberry muffins recipe, blueberry muffins with oil, a blueberry muffin recipe, how to make a blueberry muffins, blueberry muffins buttermilk, blueberry muffins recipe, blueberry muffins healthy, blueberry muffins with buttermilk, blueberry muffins easy, blueberry muffins from scratch, blueberry muffins easy healthy, blueberry muffin recipe video, blueberry muffin video"
+
+video:
+  "@type": "VideoObject"
+  name: "Quick and Easy Blueberry Muffins Recipe"
+  description: "These quick and easy homemade Blueberry Muffins are light, fluffy, and packed with the goodness of juicy blueberries. Bursting with fresh blueberries and a wonderfully tender crumb with crispy pearl sugar crumbs on top — these are the best blueberry muffins. Who doesn’t yearn for a freshly home-baked blueberry muffin? A bite into a tender muffin with the pockets of succulent blueberries would take your taste goblet on a tour to food heaven. These muffins are ideal for weekend brunches or pick-and-go breakfast.
+"
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/09/blueberry-muffins-recipe-my-ginger-garlic-kitchen-3.jpg
+    - https://i.ytimg.com/vi/rMql-T27rkY/maxresdefault.jpg
+  contentUrl: "https://youtu.be/rMql-T27rkY"
+  embedUrl: "https://www.youtube.com/embed/rMql-T27rkY"
+  uploadDate: 2019-09-15
+
+datePublished: 2019-09-15
+
+url: https://www.mygingergarlickitchen.com/blueberry-muffins/
+
+recipeIngredient:
+  - "!!Ingredients:"
+  - "1 3/4 cups all-purpose (plain) flour"
+  - "3/4 cup white sugar"
+  - "1 large egg"
+  - "3/4 cup milk"
+  - "1 tsp vanilla extract"
+  - "1 tablespoon white vinegar"
+  - "1/2 tsp salt"
+  - "2 tsp baking powder"
+  - "6 tablespoons vegetable oil"
+  - "2 cups fresh blueberries, or frozen"
+  - "3 tablespoons pearl sugar or coarse sugar for topping"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "How to make buttermilk:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "In a measuring jug, combine 1 tablespoon of vinegar and milk to make buttermilk and set aside. Alternatively, you can use 3/4 cup buttermilk."
+- "@type": HowToSection
+  name: "How to make blueberry muffins:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat oven to 400°F/200°C."
+  - "@type": HowToStep
+    text: "Line 8 muffin cups with paper liners for jumbo muffins. Or for making standard-size muffins, line 12 muffin cups with the paper liners."
+  - "@type": HowToStep
+    text: "Alternatively, you can also grease the muffin tin with oil spray or butter."
+  - "@type": HowToStep
+    text: "In a large mixing bowl add flour, sugar, salt and baking powder."
+  - "@type": HowToStep
+    text: "Whisk well to combine the dry ingredients."
+  - "@type": HowToStep
+    text: "Fold in the blueberries."
+  - "@type": HowToStep
+    text: "In the same measuring jug, add vanilla extract, oil, and egg and whisk to combine."
+  - "@type": HowToStep
+    text: "Add milk mixture to the bowl with dry ingredients and mix until just combined. Do not over mix the batter. You need to only mix until there is no more dry ingredients remain. Let it rest for 10 minutes."
+- "@type": HowToSection
+  name: "How to bake blueberry muffins:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Evenly divide the batter between 12 muffin cups."
+  - "@type": HowToStep
+    text: "Sprinkle a little pearl or coarse sugar on top of each muffin."
+  - "@type": HowToStep
+    text: "Bake in a preheated 400°F/200°C oven for 18-20 minutes or until toothpick inserted into the center of the muffins comes out clean and tops are no longer wet."
+  - "@type": HowToStep
+    text: "Turn off the oven, and let the muffins cool for 5-10 minutes before removing from the tin."
+  - "@type": HowToStep
+    text: "Remove muffins from pan, and let them cool completely on a cooling rack."
+- "@type": HowToSection
+  name: "How to store blueberry muffins:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "After cooling, you can store these muffins in an airtight container for up to 4 days at room temperature."
+  - "@type": HowToStep
+    text: "Or, arrange blueberry muffins on a lined plate or a tray. Freeze for 1 hour and then transfer them into a freezer-safe container. You can freeze them for up to 3 months."
