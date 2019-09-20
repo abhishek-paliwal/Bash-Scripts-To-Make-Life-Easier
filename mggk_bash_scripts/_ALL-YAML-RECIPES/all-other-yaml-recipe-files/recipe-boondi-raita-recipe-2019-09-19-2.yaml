@@ -1,0 +1,105 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Boondi Raita Recipe | How to make Boondi ka Raita"
+
+description: "Boondi Raita or Boondi ka Raita is a classic side dish from Northern part of India. Here spiced yogurt is mixed with boondi aka fried gram flour (chickpea flour) puffs. This is a nourishing, delicious and easy to make accompaniment which fits well with all type of Indian meals. This boondi raita also makes for a great side dish for stuffed paratha and pulao."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/09/boondi-ka-raita-recipe-my-ginger-garlic-kitchen-2.jpg
+
+prepTime: PT10M
+
+cookTime: PT05M
+
+totalTime: PT15M
+
+recipeCategory: Side
+
+recipeCuisine: Indian
+
+recipeYield: 6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 1
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 79 calories
+  servingSize: 1
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: "1. You can also add fruits and vegetables of your choice and make this fruity veggie version of Boondi Raita.<br>2. If you want a mild version of boondi raita, then you can make a simple boondi raita by only adding only salt and cumin powder. Omit all the other spices.<br>3. If using salted boondi, add less salt, because the boondi also has salt in it.<br>4. It tastes best when served fresh, so serve this Boondi Raita immediately, or you can also refrigerate it for up to 1 day.<br>5. I did not add any green chilies in this raita. But if you want it hotter, then feel free to add some chopped green chilies. If you are using green chilies, then I would advise you to skip the red chili powder, or else it would be very hot."
+
+keywords: "boondi raita recipe, boondi raita video, best boondi raita, boondi raita boondi, boondi raita in english, boondi raita masala, boondi ka raita, boondi raita at home, boondi raita best recipe, boondi raita tadka"
+
+video:
+  "@type": "VideoObject"
+  name: "Boondi Raita Recipe | How to make Boondi ka Raita"
+  description: "Boondi Raita or Boondi ka Raita is a classic side dish from Northern part of India. Here spiced yogurt is mixed with boondi aka fried gram flour (chickpea flour) puffs. This is a nourishing, delicious and easy to make accompaniment which fits well with all type of Indian meals. This boondi raita also makes for a great side dish for stuffed paratha and pulao."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/09/boondi-ka-raita-recipe-my-ginger-garlic-kitchen-2.jpg
+    - https://i.ytimg.com/vi/ToP63ICO7bo/maxresdefault.jpg
+  contentUrl: "https://youtu.be/ToP63ICO7bo"
+  embedUrl: "https://www.youtube.com/embed/ToP63ICO7bo"
+  uploadDate: 2019-09-19
+
+datePublished: 2019-09-19
+
+url: https://www.mygingergarlickitchen.com/boondi-raita-recipe/
+
+recipeIngredient:
+  - "!!For Boondi Raita:"
+  - "1/2 cup plain salted boondi"
+  - "1.5 cups whisked plain yogurt/curd (dahi) (I have used full cream yogurt)"
+  - "1/4 teaspoon black pepper powder (kali mirch powder)"
+  - "1 teaspoon bhuna jeera powder (roasted cumin powder)"
+  - "1/2 teaspoon black salt (kala namak)"
+  - "1/2 teaspoon red chili powder (lal mirch powder)"
+  - "2 tablespoons chopped coriander leaves (kata hua hara dhaniya)"
+  - "Salt to taste"
+  - "!!For Garnish:"
+  - "Roasted cumin powder"
+  - "Red chili powder"
+  - "Dried mint powder"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "How to soak Boondi:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add 1/2 cup boondi to a large mixing bowl."
+  - "@type": HowToStep
+    text: "Fill the bowl with 3 cups of hot water, and let it get soaked for 10 minutes."
+  - "@type": HowToStep
+    text: "After 10 minutes, drain boondi using a slotted spoon or a colander. You can also lightly squeeze the soaked boondi."
+- "@type": HowToSection
+  name: "How to make Boondi Raita:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add whisked yogurt to a mixing bowl."
+  - "@type": HowToStep
+    text: "Next add ice cold water and whisk well."
+  - "@type": HowToStep
+    text: "Now add ground black pepper, salt, black powder, red chili powder, and and chopped coriander leaves."
+  - "@type": HowToStep
+    text: "Whisk everything well until combined."
+  - "@type": HowToStep
+    text: "Now add the soaked boondi and mix again."
+- "@type": HowToSection
+  name: "How to serve Boondi Raita:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Garnish boondi raita with roasted cumin powder, chili powder, mint powder and coriander leaves."
+  - "@type": HowToStep
+    text: "Serve chilled with biryani, pulao or paratha."
