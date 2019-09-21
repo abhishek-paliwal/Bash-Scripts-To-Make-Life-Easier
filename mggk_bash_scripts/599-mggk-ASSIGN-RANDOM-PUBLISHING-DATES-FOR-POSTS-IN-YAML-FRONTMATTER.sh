@@ -113,9 +113,9 @@ do
 
   ################## BEGIN : IF-ELSE LOOP ######################################
   ## ONLY UPDATING THE DATES IF THE DATE IN EXISTING FRONTMATTER IS OLDER
-  #### AND THE DATE DIFFERENCE IS MORE THAN ZERO.
+  #### AND THE DATE DIFFERENCE IS MORE THAN ONE.
 
-  if [[ $datediff_in_days -gt 0 ]]
+  if [[ $datediff_in_days -gt 1 ]]
   then
     (( COUNT_VALID++ ))
     echo;
