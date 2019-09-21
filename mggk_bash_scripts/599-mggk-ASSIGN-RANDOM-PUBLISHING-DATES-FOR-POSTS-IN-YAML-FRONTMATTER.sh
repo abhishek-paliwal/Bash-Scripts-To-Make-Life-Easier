@@ -3,12 +3,12 @@
 THIS_SCRIPT_NAME="599-mggk-ASSIGN-RANDOM-PUBLISHING-DATES-FOR-POSTS-IN-YAML-FRONTMATTER.sh"
 ################################################################################
 ## VARIABLE SETTING
-SHIFT_BY_NUMDAYS="120" ; ## 120 DAYS, ABOUT 4 MONTHS
+SHIFT_BY_NUMDAYS="180" ; ## 120 DAYS, ABOUT 4 MONTHS
 SUFFIX_STRING="d"; # d for days, w for weeks, m for months, y for years
 DATE_SHIFT_BY_NUMDAYS="$SHIFT_BY_NUMDAYS$SUFFIX_STRING" ;
 ################################################################################
-#HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content" ;
-HUGO_CONTENT_DIR="$HOME/GitHub/ZZ-HUGO-TEST/content" ;
+HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content" ;
+#HUGO_CONTENT_DIR="$HOME/GitHub/ZZ-HUGO-TEST/content" ;
 ################################################################################
 #################### DON'T CHANGE ANYTHING BELOW THIS LINE #####################
 ################################################################################
@@ -90,7 +90,7 @@ COUNT_NUMFILES=0;
 COUNT_VALID=0;
 COUNT_INVALID=0;
 
-for mdfile in $(find $HUGO_CONTENT_DIR -name '*.md' | head -5);
+for mdfile in $(find $HUGO_CONTENT_DIR -name '*.md' );
 do
   (( COUNT_NUMFILES++ ))
   ##############################################################################
@@ -140,7 +140,7 @@ do
     #### On Mac OS, sed requires a chosen 'backup file extension' after using sed -i
     #### WE'LL USE .bak EXTENSION FOR THIS
     echo ">> PERFORMING ACTUAL REPLACEMENT OF THE DATE IN ORIGINAL FILE = $mdfile" ;
-    sed -i .bak "s/date:.*$/date: $ASSIGNED_DATE_FORMATTED/" $mdfile ;
+    #sed -i .bak "s/date:.*$/date: $ASSIGNED_DATE_FORMATTED/" $mdfile ;
 
     echo ">> DELETING TEMPORARY BACKUP FILE CREATED DURING RUNNING SED COMMAND = $mdfile.bak" ;
     rm $mdfile.bak
@@ -160,4 +160,7 @@ done
 ################################################################################
 
 echo "=======================================================================" ;
-echo "COUNT OF TOTAL FILES = $COUNT_NUMFILES // COUNT_VALID = $COUNT_VALID // COUNT_INVALID = $COUNT_INVALID" ;
+echo "SUMMARY OF RESULTS:" ;
+echo "// COUNT OF TOTAL FILES = $COUNT_NUMFILES files"
+echo "// DATE CHANGE IS NEEDED = $COUNT_VALID files"
+echo "// DATE IS ALREADY OKAY = $COUNT_INVALID files" ;
