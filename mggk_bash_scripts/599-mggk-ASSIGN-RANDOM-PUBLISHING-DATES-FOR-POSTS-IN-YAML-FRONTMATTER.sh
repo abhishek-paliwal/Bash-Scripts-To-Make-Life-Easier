@@ -68,7 +68,8 @@ read -p ">>>>>>>>>>>>>>>>> IF ALL IS OKAY, then press ENTER key to continue ... 
 echo ;
 
 ## PRINTING OUT ALL THE DATES IN FRONTMATTER SECION OF ALL FILES IN HUGO_CONTENT_DIR
-#grep -irh '^date: ' $HUGO_CONTENT_DIR/* | sort -n | sed 's/date: //g' | sort -nr | nl
+grep -irh '^date: ' $HUGO_CONTENT_DIR/* | sort -n | sed 's/date: //g' | sort -nr | nl
+echo "=======================================================================" ;
 
 ################################################################################
 ## FIND THE DATE WHICH WAS EXACTLY $DATE_SHIFT_BY_NUMDAYS DAYS AGO FROM TODAY
@@ -99,6 +100,8 @@ do
   FRONTMATTER_DATE_EPOCH_TIME=$(date -j -f '%Y-%m-%dT%H:%M:%S' "$FRONTMATTER_DATE" +'%s') ;
 
   ## PRINTING SOME IMPORTANT STUFF FOR DEBUGGING
+  echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+  echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
   echo "CURRENT FILENAME = $mdfile" ;
   echo "FRONTMATTER_DATE = $FRONTMATTER_DATE // NEW_DATE (=> date $DATE_SHIFT_BY_NUMDAYS days ago from today) = $NEW_DATE_FORMATTED" ;
 
@@ -109,13 +112,16 @@ do
 
   ## PRINTING SOME DETAILS TO A TMP FILE
   echo >> $TMP_OUTPUT_FILE ;
-  echo "$datediff_in_days days difference // $mdfile // FRONTMATTER_DATE = $FRONTMATTER_DATE // NEW_DATE (=> date $DATE_SHIFT_BY_NUMDAYS days ago from today) = $NEW_DATE" >> $TMP_OUTPUT_FILE ;
+  echo "FILENAME = $mdfile" >> $TMP_OUTPUT_FILE ;
+  echo "$datediff_in_days days difference is found." >> $TMP_OUTPUT_FILE ;
+  echo "$FRONTMATTER_DATE = DATE FOUND IN YAML FRONTMATTER" >> $TMP_OUTPUT_FILE ;
+  echo "$NEW_DATE = NEW_DATE (=> date $DATE_SHIFT_BY_NUMDAYS days ago from today)" >> $TMP_OUTPUT_FILE ;
 
   ################## BEGIN : IF-ELSE LOOP ######################################
   ## ONLY UPDATING THE DATES IF THE DATE IN EXISTING FRONTMATTER IS OLDER
-  #### AND THE DATE DIFFERENCE IS MORE THAN ONE.
+  #### AND THE DATE DIFFERENCE IS MORE THAN ZERO.
 
-  if [[ $datediff_in_days -gt 1 ]]
+  if [[ $datediff_in_days -gt 0 ]]
   then
     (( COUNT_VALID++ ))
     echo;
@@ -129,16 +135,22 @@ do
 
     ## SINCE THE ASSIGNED DATE WILL HAVE THE H:M:S THE SAME AS THE TIME OF THIS
     #### PROGRAM RUN TIME, ALL THE ASSIGNED DATES WILL HAVE THE SAME H:M:S VALUES
-    #### HENCE WE NEED TO RANDMOIZE THAT TOO IN A ONE DAY WINDOW (86400 SECONDS)
-    #### FOR THIS, WE WILL USE BUILTIN $RANDOM FUNCION WHICH GIVES OUT A RANDOM
-    #### INTEGER VALUE IN THE RANGE OF 0 - 32767
+    #### HENCE WE NEED TO RANDOMIZE THAT TOO BY ADDING RANDOM SECONDS TO EPOCH SECONDS.
+    ######
+    #### FOR THIS, WE WILL USE BUILTIN $RANDOM FUNCTION WHICH GIVES OUT A RANDOM
+    #### INTEGER VALUE IN THE RANGE OF 0 - 32767. THIS IS SUFFICIENT FOR US BCOZ
+    #### 32767 SECONDS MEAN ABOUT 9 HOURS. SO FINAL ASSIGNED EPOCH SECONDS WILL
+    #### ADD ANYHING FROM 0 TO 9 HOURS.
+    ####
     ASSIGNED_DATE=$(date -v -$RAND_DATENUM$SUFFIX_STRING) ;
     ASSIGNED_DATE_EPOCH=$(date -v -$RAND_DATENUM$SUFFIX_STRING +%s) ;
     ASSIGNED_DATE_EPOCH_RAND=$(echo "$ASSIGNED_DATE_EPOCH + $RANDOM" | bc ) ;
     ASSIGNED_DATE_FORMATTED=$(date -r $ASSIGNED_DATE_EPOCH_RAND +'%Y-%m-%dT%H:%M:%S') ;
 
     echo "ORIGINAL ASSIGNED_DATE = $ASSIGNED_DATE // MODIFIED H:M:S ASSIGNED DATE = $ASSIGNED_DATE_FORMATTED " ;
-    echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+    echo "++++++++++++++++++++++++++++++++++++++" ;
+    echo "$ASSIGNED_DATE = ASSIGNED_DATE BY PROGRAM - ORIGINAL" >> $TMP_OUTPUT_FILE ;
+    echo "$ASSIGNED_DATE_FORMATTED = ASSIGNED DATE FINAL - AFTER MODIFIED H:M:S" >> $TMP_OUTPUT_FILE ;
     echo;
 
     ## REPLACING THE EXISTING DATE LINE WITH THE NEW ASSIGNED DATE LINE
@@ -166,6 +178,9 @@ done
 
 echo "=======================================================================" ;
 echo "SUMMARY OF RESULTS:" ;
+echo "-----------------------------------------------------------------------" ;
+echo "CHOSEN OLDEST DATE ($DATE_SHIFT_BY_NUMDAYS days ago from today) = $NEW_DATE_FORMATTED // $NEW_DATE // $NEW_DATE_EPOCH (EPOCH)" ;
+echo "-----------------------------------------------------------------------" ;
 echo "// COUNT OF TOTAL FILES = $COUNT_NUMFILES files"
 echo "// DATE CHANGE IS NEEDED = $COUNT_VALID files"
 echo "// DATE IS ALREADY OKAY = $COUNT_INVALID files" ;
