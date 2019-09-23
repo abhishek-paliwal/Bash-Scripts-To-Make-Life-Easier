@@ -191,3 +191,15 @@ echo "-----------------------------------------------------------------------" ;
 echo "// COUNT OF TOTAL FILES = $COUNT_NUMFILES files"
 echo "// DATE CHANGE COMPLETED FOR = $COUNT_VALID files"
 echo "// DATE IS ALREADY OKAY FOR = $COUNT_INVALID files" ;
+
+## FINALLY RENAMING THE BACKUP ZIP FILE WITH NEW INFORMATION POINTERS
+#### Getting the basename of the zipfile
+NEW_ZIPFILE_FULL_PREFIX=$(basename $BACKUP_ZIPFILE_NAME .zip) ;
+NEW_ZIPFILE_FULL_NAME="$PWD/$NEW_ZIPFILE_FULL_PREFIX-Total-$COUNT_NUMFILES-Changed-$COUNT_VALID-Unchanged-$COUNT_INVALID.zip" ;
+#### Renaming
+mv "$BACKUP_ZIPFILE_NAME" "$NEW_ZIPFILE_FULL_NAME" ;
+
+echo;
+echo "BACKUP file renamed from =>" ;
+echo "// OLD_NAME => $BACKUP_ZIPFILE_NAME" ;
+echo "// NEW_NAME => $NEW_ZIPFILE_FULL_NAME" ;
