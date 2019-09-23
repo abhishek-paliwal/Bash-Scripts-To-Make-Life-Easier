@@ -3,7 +3,7 @@
 THIS_SCRIPT_NAME="599-mggk-ASSIGN-RANDOM-PUBLISHING-DATES-FOR-POSTS-IN-YAML-FRONTMATTER.sh"
 ################################################################################
 ## VARIABLE SETTING
-SHIFT_BY_NUMDAYS="1900" ; ## 120 DAYS, ABOUT 4 MONTHS
+SHIFT_BY_NUMDAYS="180" ; ## 180 DAYS, ABOUT 6 MONTHS
 SUFFIX_STRING="d"; # d for days, w for weeks, m for months, y for years
 DATE_SHIFT_BY_NUMDAYS="$SHIFT_BY_NUMDAYS$SUFFIX_STRING" ;
 ################################################################################
@@ -54,7 +54,7 @@ echo ">>>>>>>>>>>>>>>>> GOOD TO GO ... >>>>>>>>>>>>>>>>>>>>" ;
 ## FIRST IMPORTANT THINGS FIRST, WE WILL MAKE A ZIP BACKUP OF THE ORIGINAL DIRECTORY
 ## BEFORE MAKING ANY CHANGES TO THE EXISTING FILE. THIS IS A PRECAUTION.
 BACKUP_DATE_PREFIX=$(date '+%Y-%m-%d-%H%M%S') ;
-BACKUP_ZIPFILE_NAME="$PWD/$BACKUP_DATE_PREFIX-HUGO_CONTENT_DIR-BACKUP.zip"
+BACKUP_ZIPFILE_NAME="$PWD/$BACKUP_DATE_PREFIX-BACKUP-of-2019-HUGO-MGGK-WEBSITE-OFFICIAL-content-directory.zip"
 
 zip -r $BACKUP_ZIPFILE_NAME $HUGO_CONTENT_DIR ;
 echo;
@@ -162,7 +162,9 @@ do
     #### On Mac OS, sed requires a chosen 'backup file extension' after using sed -i
     #### WE'LL USE .bak EXTENSION FOR THIS
     echo ">> PERFORMING ACTUAL REPLACEMENT OF THE DATE IN ORIGINAL FILE = $mdfile" ;
-    #sed -i .bak "s/date:.*$/date: $ASSIGNED_DATE_FORMATTED/" $mdfile ;
+    #### COMMENT THE FOLLOWING LINE IF YOU ARE JUST DOING A TEST TO SEE WHICH FILES WILL BE CHANGED BEFORE
+    #### ACTUALLY UPDATING THEM IN PLACE. CURRENTLY UPDATING THE CURRENT FILE IN PLACE.
+    sed -i .bak "s/^date:.*$/date: $ASSIGNED_DATE_FORMATTED/" $mdfile ;
 
     echo ">> DELETING TEMPORARY BACKUP FILE CREATED DURING RUNNING SED COMMAND = $mdfile.bak" ;
     rm $mdfile.bak
@@ -187,5 +189,5 @@ echo "-----------------------------------------------------------------------" ;
 echo "CHOSEN OLDEST DATE ($DATE_SHIFT_BY_NUMDAYS days ago from today) = $NEW_DATE_FORMATTED // $NEW_DATE // $NEW_DATE_EPOCH (EPOCH)" ;
 echo "-----------------------------------------------------------------------" ;
 echo "// COUNT OF TOTAL FILES = $COUNT_NUMFILES files"
-echo "// DATE CHANGE IS NEEDED = $COUNT_VALID files"
-echo "// DATE IS ALREADY OKAY = $COUNT_INVALID files" ;
+echo "// DATE CHANGE COMPLETED FOR = $COUNT_VALID files"
+echo "// DATE IS ALREADY OKAY FOR = $COUNT_INVALID files" ;
