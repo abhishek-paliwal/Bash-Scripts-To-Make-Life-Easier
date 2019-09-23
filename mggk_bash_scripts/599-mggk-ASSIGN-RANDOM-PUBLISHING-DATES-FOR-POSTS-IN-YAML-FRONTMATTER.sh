@@ -3,7 +3,7 @@
 THIS_SCRIPT_NAME="599-mggk-ASSIGN-RANDOM-PUBLISHING-DATES-FOR-POSTS-IN-YAML-FRONTMATTER.sh"
 ################################################################################
 ## VARIABLE SETTING
-SHIFT_BY_NUMDAYS="180" ; ## 120 DAYS, ABOUT 4 MONTHS
+SHIFT_BY_NUMDAYS="1900" ; ## 120 DAYS, ABOUT 4 MONTHS
 SUFFIX_STRING="d"; # d for days, w for weeks, m for months, y for years
 DATE_SHIFT_BY_NUMDAYS="$SHIFT_BY_NUMDAYS$SUFFIX_STRING" ;
 ################################################################################
@@ -84,7 +84,11 @@ echo;
 ################################################################################
 TMP_OUTPUT_FILE="_TMP_OUTPUT_599_MGGK.TXT" ;
 
-echo > $TMP_OUTPUT_FILE ; ## INITIALIZING THE TMP OUTPUT FILE
+## INITIALIZING THE TMP OUTPUT FILE
+echo "#####################################################" > $TMP_OUTPUT_FILE ;
+echo "## OUTPUT CREATED ON: $(date)" >> $TMP_OUTPUT_FILE ;
+echo "## OUTPUT created from bash script = $THIS_SCRIPT_NAME" >> $TMP_OUTPUT_FILE ;
+echo "#####################################################" >> $TMP_OUTPUT_FILE ;
 
 ## SETTING SOME COUNTER VARIABLES
 COUNT_NUMFILES=0;
@@ -112,8 +116,9 @@ do
 
   ## PRINTING SOME DETAILS TO A TMP FILE
   echo >> $TMP_OUTPUT_FILE ;
+  echo "FILE = $COUNT_NUMFILES" >> $TMP_OUTPUT_FILE ;
   echo "FILENAME = $mdfile" >> $TMP_OUTPUT_FILE ;
-  echo "$datediff_in_days days difference is found." >> $TMP_OUTPUT_FILE ;
+  echo ">> $datediff_in_days days difference is found." >> $TMP_OUTPUT_FILE ;
   echo "$FRONTMATTER_DATE = DATE FOUND IN YAML FRONTMATTER" >> $TMP_OUTPUT_FILE ;
   echo "$NEW_DATE = NEW_DATE (=> date $DATE_SHIFT_BY_NUMDAYS days ago from today)" >> $TMP_OUTPUT_FILE ;
 
@@ -150,7 +155,7 @@ do
     echo "ORIGINAL ASSIGNED_DATE = $ASSIGNED_DATE // MODIFIED H:M:S ASSIGNED DATE = $ASSIGNED_DATE_FORMATTED " ;
     echo "++++++++++++++++++++++++++++++++++++++" ;
     echo "$ASSIGNED_DATE = ASSIGNED_DATE BY PROGRAM - ORIGINAL" >> $TMP_OUTPUT_FILE ;
-    echo "$ASSIGNED_DATE_FORMATTED = ASSIGNED DATE FINAL - AFTER MODIFIED H:M:S" >> $TMP_OUTPUT_FILE ;
+    echo "$ASSIGNED_DATE_FORMATTED = ASSIGNED DATE FINAL (AFTER MODIFIED H:M:S)" >> $TMP_OUTPUT_FILE ;
     echo;
 
     ## REPLACING THE EXISTING DATE LINE WITH THE NEW ASSIGNED DATE LINE
