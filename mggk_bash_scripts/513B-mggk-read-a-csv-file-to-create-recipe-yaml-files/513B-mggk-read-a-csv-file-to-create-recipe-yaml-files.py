@@ -191,6 +191,14 @@ for x in range(0, COUNT_ROWS):
     KEYWORDS_REGEXED = re.sub("\s+", " ", KEYWORDS)
     KEYWORDS_REGEXED = re.sub(",\s*$", " ", KEYWORDS_REGEXED)
 
+
+    ##########################################################################
+    ## REMOVING EMPTY LINES FROM SOME VARIABLES (ALSO REMOVING EMPTY WHITESPACES)
+    ##########################################################################
+
+    RECIPE_DESCRIPTION="".join([s for s in RECIPE_DESCRIPTION.strip().splitlines(True) if s.strip()])
+    HTML_RECIPE_NOTES="".join([s for s in HTML_RECIPE_NOTES.strip().splitlines(True) if s.strip()])
+
     ##########################################################################
     ## PRINTING FINAL COLUMNS VARIABLES FROM ORIGINAL VARIABLES
     ##########################################################################
