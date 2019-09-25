@@ -1,0 +1,120 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Jalebi recipe | How to make Jalebi"
+
+description: "Jalebi is a quick and easy Indian style funnel cake recipe which is very popular throughout India. This juicy and crispy jalebi can be prepared under 30 minutes. This popular dessert is cherished not just by kids but grown-ups too. The crispiness of these fried spirals filled with juicy sugar syrup makes it extremely desirable."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/09/instant-jalebi-recipe-my-ginger-garlic-kitchen-6.jpg
+
+prepTime: PT15M
+
+cookTime: PT15M
+
+totalTime: PT30M
+
+recipeCategory: Dessert
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 1
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 225 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: "1. Add 1-2 tablespoons of water to sugar syrup every time you are heating it up. This way, the syrup will maintain it's sticky uniformity and won't get thicker.<br>2. Make sure the oil is hot enough before you drop the batter. To gauging the temperature for frying, simply drop a tiny piece of batter, If it sizzles and comes up without browning then the oil is perfect for frying jalebi. Or just use a wooden spoon, if you see bubbles around the wood then the oil is ready. If it sinks in the bottom then the oil is too cold, your jalebi won't turn crispy and they will absorb so much of oil/ghee. If the batter turns brown and comes right away on the top, then the batter is too hot, you jalebi would darken very fast from outside.<br>3. Always fry jalebi on medium heat. If your jalebi has shrunk, then that means you over-fried your jalebi. If your jalebi turns flat, then it means that jalebis were fried on low heat or the batter was too thin. If your jalebi comes out thick & soft, then the reason is that the batter is too thick."
+
+keywords: "jalebi recipe, jalebi sweet, jalebi in english, jalebi recipe video, jalebi recipe instant, jalebi recipe ingredients, jalebi recipe crispy, diwali sweets recipe, diwali sweets at home, indian sweet, popular indian sweet, poha jalebi, indian breakfast recipe, indian mithai"
+
+video:
+  "@type": "VideoObject"
+  name: "Jalebi recipe | How to make Jalebi"
+  description: "Jalebi is a quick and easy Indian style funnel cake recipe which is very popular throughout India. This juicy and crispy jalebi can be prepared under 30 minutes. This popular dessert is cherished not just by kids but grown-ups too. The crispiness of these fried spirals filled with juicy sugar syrup makes it extremely desirable."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/09/instant-jalebi-recipe-my-ginger-garlic-kitchen-6.jpg
+    - https://i.ytimg.com/vi/ZVDqGKTTYMo/maxresdefault.jpg
+  contentUrl: "https://youtu.be/ZVDqGKTTYMo"
+  embedUrl: "https://www.youtube.com/embed/ZVDqGKTTYMo"
+  uploadDate: 2019-09-25
+
+datePublished: 2019-09-25
+
+url: https://www.mygingergarlickitchen.com/instant-jalebi-recipe/
+
+recipeIngredient:
+  - "!!For Jalebi Batter:"
+  - "1 cup all purpose flour/plain flour) (maida)"
+  - "3/4 cup yogurt/curd (dahi)"
+  - "1 teaspoon baking powder"
+  - "Water 2 tablespoons or more if required"
+  - "A pinch of orange food color (optional)"
+  - "!!For Sugar Syrup (Chashni):"
+  - "2 cups sugar (shakkar/chini)"
+  - "1 1/4 cups water (pani)"
+  - "A slice of lemon"
+  - "1/2 tsp cardamom powder (ilaichi powder)"
+  - "12-15 saffron strands (kesar ki pattiyan)"
+  - "!!For Frying:"
+  - "Oil (tel) or clarified butter (ghee)"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "How to make Jalebi Batter:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "In a large bowl mix together flour (maida), and yogurt."
+  - "@type": HowToStep
+    text: "Start whisking in one direction. For this, you can use a wire whisk or you can use your hands."
+  - "@type": HowToStep
+    text: "Keep whisking. After about 5 minutes the mixture would start turning into a smooth and lump-free batter."
+  - "@type": HowToStep
+    text: "Add 1-2 tablespoons of water to the batter if the batter seems a little thick. ( It has to be thick, but of flowing consistency. Once the batter turns smooth add food color (if using), and baking powder and mix it well again. The batter is ready.)"
+- "@type": HowToSection
+  name: "How to make sugar syrup for Jalebi:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add sugar and water to a pan."
+  - "@type": HowToStep
+    text: "Stir well and let it boil over medium heat until sugar is fully dissolved."
+  - "@type": HowToStep
+    text: "Once it comes to boil, add a slice of lemon and boil for a few minutes."
+  - "@type": HowToStep
+    text: "Now add saffron strands and boil until you get the sticky syrup."
+  - "@type": HowToStep
+    text: "The syrup we need here has almost 1-string consistency (ek taar ki chashni).To check sugar syrup consistency, pour a drop of syrup in a plate or bowl. Allow it to cool for a few seconds. Touch the syrup with the index finger and then touch your thumb and index finger together and gently pull apart. If the syrup is sticky then your syrup is ready."
+  - "@type": HowToStep
+    text: "Add cardamom powder and stir well. Turn off the heat and keep aside. We need warm syrup for jalebis, so keep it on very low heat while you fry the jalebis. (You can add 1-2 tablespoons of water if it gets thicker.)"
+- "@type": HowToSection
+  name: "How to fry Jalebi:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat ghee or oil in a broad pan over high heat. Once hot, turn the heat to medium. You can check if the oil is hot enough by dropping a small portion of the batter if it sizzles and comes up within seconds than the oil is ready."
+  - "@type": HowToStep
+    text: "Now fill the squeeze bottle with the batter and pour spiral shapes or concentric circles in the hot oil."
+  - "@type": HowToStep
+    text: "Fry Jalebis over medium heat until they are crisp and golden from both the sides."
+  - "@type": HowToStep
+    text: "Once fried, drain jalebis on a cooling rack and let them cool for a couple of minutes."
+  - "@type": HowToStep
+    text: "Now add fried jalebis to warm sugar syrup and soak them for 1-2 minutes."
+  - "@type": HowToStep
+    text: "Next, remove jalebis from the syrup and place on a cooling rack or a tray lined with butter paper."
+  - "@type": HowToStep
+    text: "Garnish with chopped pistachios and serve warm with some rabri or warm milk."
