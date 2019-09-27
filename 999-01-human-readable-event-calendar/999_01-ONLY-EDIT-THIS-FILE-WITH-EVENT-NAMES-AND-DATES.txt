@@ -21,7 +21,6 @@
 20191111,16:10:00,deeppink,Skating-Class
 20191118,16:10:00,deeppink,Skating-Class
 20191125,16:10:00,deeppink,Skating-Class
-
 ## SWIMMING CLASSES
 20190830,19:20:00,DeepSkyBlue,Swimming-Class
 20190906,19:20:00,DeepSkyBlue,Swimming-Class
@@ -37,18 +36,15 @@
 20191122,19:20:00,DeepSkyBlue,Swimming-Class
 20191129,19:20:00,DeepSkyBlue,Swimming-Class
 20191213,19:20:00,DeepSkyBlue,Swimming-Class
-
 ## OTHER EVENTS
 20191121,00:00:00,Pink,Wedding Anniversary
 20191225,00:00:00,Red,Christmas Eve
 20191231,11:59:00,Red,New Year Eve
 20191017,00:00:00,orange,Karwachauth Vrat
 20191027,00:00:00,orange,Deepavali
-
 ## ADO EVENTS
 20191003,00:00:00,yellow,Photography-at-school // check www.kuvaverkko.fi
 20191002,08:15:00,yellow,Class starts early this wednesday
-
 ## HOME EVENTS
 20191001,10:00:00,red,Water supply interruption from 10-12
 20191008,08:00:00,red,Water supply interruption from 08-15
