@@ -46,7 +46,8 @@ cat $REQUIREMENTS_FILE | grep -v '#' | sort -n > _TMP1.TXT ;
 while IFS= read -r line
 do
 	## EXTRACT THE DATES FROM EACH LINE, MEANING FIRST 8 CHARS OF EACH LINE
-	myVar=$(echo "$line" | cut -c1-8) ;
+	## after removing the leading and trailing whitespaces thru sed
+	myVar=$(echo "$line" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' | cut -c1-8) ;
 	myDateVar=$(date +%Y%m%d) ;
 
 	## COMPARE THE TWO DATES
