@@ -1,6 +1,9 @@
 #/bin/bash
 ###############################################################################
-## This script download two files from my github account, and then runs them.
+## THIS SCRIPT SHOULD ONLY BE RUN FROM DIGITAL OCEAN VPS. IT IS NOT MEANT
+## TO BE RUN LOCALLY, BECAUSE ALL THE PATHS WILL BREAK. 
+###############################################################################
+## This script downloads two files from my github account, and then runs them.
 ###############################################################################
 ## Created on: Wednesday September 4, 2019
 ## Created by: Pali
@@ -26,4 +29,6 @@ cp INDEX-OF-OUR-EVENTS.html /var/www/vps.abhishekpaliwal.com/html/our-human-read
 
 ## Checking whether cronjob is running as intended (current cronjob runs every 30 mins):
 dateVar="$(date +%Y%m%d-%H%M%S)" ;
-cp INDEX-OF-OUR-EVENTS.html /var/www/vps.abhishekpaliwal.com/html/our-human-readable-events/$dateVar-INDEX-OF-OUR-EVENTS.html
+#cp INDEX-OF-OUR-EVENTS.html /var/www/vps.abhishekpaliwal.com/html/our-human-readable-events/$dateVar-INDEX-OF-OUR-EVENTS.html
+
+echo ">>>> Script last ran at: $dateVar" ;
