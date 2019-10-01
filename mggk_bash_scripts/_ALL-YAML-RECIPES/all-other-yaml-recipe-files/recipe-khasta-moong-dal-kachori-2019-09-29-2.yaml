@@ -1,0 +1,172 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Khasta Moong Dal Kachori Recipe (ख़स्ता कचौरी)"
+
+description: "Crispy and flaky Khasta Moong Dal Kachori is a delicious and popular North Indian snack. This spicy moong dal (yellow lentils) filled deep-fried pastry is best served as breakfast or tea time snack or a mid-day-meal. This yummy kachori recipe can also be savored as an appetizer or as a side dish with the main meal."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/09/khasta-moong-dal-kachori-recipe-my-ginger-garlic-kitchen-8.jpg
+
+prepTime: PT10M
+
+cookTime: PT40M
+
+totalTime: PT50M
+
+recipeCategory: Snack
+
+recipeCuisine: Indian
+
+recipeYield: 12-15 Kachoris
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 1
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 198 calories
+  servingSize: 1 Kachori
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: "1. Pulsing dal is completely optional, you can skip this step.<br>2. The crust for khasta kachori is always made using maida. But if you want to healthify the recipe, then you can replace it with wheat flour or you can also use the combination of whole wheat flour and maida.<br>3. Before kneading the dough, check if you have added enough ‘moyan’ to flour. To check, grab a small amount of flour mixed with ghee and make a fist. If it holds the shape then you have added enough fat. If the dough falls to pieces, that means you need to add more oil/ghee."
+
+keywords: "kachori recipe, khasta kachori video, how to make khasta kachori recipe, moong dal kachori, kachori recipe, khasta kachori recipe, moong dal kachori recipe, moong dal ki khasta kachori, khasta kachori without moong dal, moong dal ki khasta kachori recipe,moong dal khasta kachori recipe, khasta kachori chaat, khasta kachori moong dal, khasta kachori at home, khasta kachori besan ki, khasta kachori chole, khasta kachori delhi, khasta kachori dal ki, recipe for khasta kachori, khasta kachori street food, khasta kachori filling, khasta kachori halwai style, khasta kachori halwai wali, jain khasta kachori recipe"
+
+video:
+  "@type": "VideoObject"
+  name: "Khasta Moong Dal Kachori Recipe (ख़स्ता कचौरी)"
+  description: "Crispy and flaky Khasta Moong Dal Kachori is a delicious and popular North Indian snack. This spicy moong dal (yellow lentils) filled deep-fried pastry is best served as breakfast or tea time snack or a mid-day-meal. This yummy kachori recipe can also be savored as an appetizer or as a side dish with the main meal."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/09/khasta-moong-dal-kachori-recipe-my-ginger-garlic-kitchen-8.jpg
+    - https://i.ytimg.com/vi/pQEoEhpeE9g/maxresdefault.jpg
+  contentUrl: "https://youtu.be/pQEoEhpeE9g"
+  embedUrl: "https://www.youtube.com/embed/pQEoEhpeE9g"
+  uploadDate: 2019-09-29
+
+datePublished: 2019-09-29
+
+url: https://www.mygingergarlickitchen.com/khasta-moong-dal-kachori/
+
+recipeIngredient:
+  - "!!For Kachori Dough:"
+  - "2 cups all purpose flour (maida)"
+  - "1 teaspoon salt"
+  - "1 teaspoon carom seeds (ajwain)"
+  - "4 tablespoons melted warm ghee or oil"
+  - "1/2 cup + 2 tablespoons of water or add as required"
+  - "!!For Making Kachori Stuffing:"
+  - "1/2 cup split yellow moong dal"
+  - "3 cups water"
+  - "4 tablespoons oil"
+  - "1 teaspoon cumin seeds (jeera)"
+  - "1 tablespoon crushed fennel seeds (saunf)"
+  - "1 tablespoon crushed coriander seeds (sabut dhaniya)"
+  - "1/2 teaspoon turmeric powder (haldi)"
+  - "1 teaspoon red chilli powder (lal mirch powder)"
+  - "1 tablespoon coriander powder (dhania powder)"
+  - "1 teaspoon garam masala powder"
+  - "1 teaspoon crushed black pepper (kali mirch)"
+  - "1 teaspoon asafoetida (hing)"
+  - "1 tablespoon dried mango powder (amchur powder)"
+  - "1 teaspoon black salt (kala namak)"
+  - "Salt to taste"
+  - "!!For Frying Kachori:"
+  - "Oil for deep frying"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "How to make Moong dal stuffing for Khasta Kachori:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Rinse 1/2 cup moong dal 3-4 times, and soak it in enough water for about 4-5 hours."
+  - "@type": HowToStep
+    text: "After 4-5 hours, drain all the excess water and add soaked dal to a blender jar."
+  - "@type": HowToStep
+    text: "Blend it without water for about 10 seconds. All we want is a slightly coarse texture of dal. If you want, you can also skip this step."
+  - "@type": HowToStep
+    text: "Next, heat the oil in a pan over medium heat."
+  - "@type": HowToStep
+    text: "Once hot, add cumin seeds, crushed coriander seeds, and crushed fennel seeds. Sauté for few seconds."
+  - "@type": HowToStep
+    text: "Add crushed ginger and green chilies and mix well. Sauté for 2 minutes."
+  - "@type": HowToStep
+    text: "Now add kasuri methi and mix well."
+  - "@type": HowToStep
+    text: "After few seconds, turn the heat to low and add gram flour and mix well."
+  - "@type": HowToStep
+    text: "Sauté for 2-3 minutes or until the gram flour is roasted and raw smell goes off."
+  - "@type": HowToStep
+    text: "Add red chili powder, turmeric powder, crushed black pepper, coriander powder, and garam masala powder. Let the masalas cook for 2 minutes over low heat."
+  - "@type": HowToStep
+    text: "Now, add coarse moong dal mixture and stir well to combine."
+  - "@type": HowToStep
+    text: "Cook for 4-5 minutes over low heat or until all the moisture from the dal has been dried up."
+  - "@type": HowToStep
+    text: "Add asafoetida (hing), black salt (kala namak), salt, and amchoor powder. Mix well and check for seasoning. You can adjust spices at this stage."
+  - "@type": HowToStep
+    text: "Cook for 2 minutes over low heat. Once cooked, turn off the heat and let the mixture cool down for 15 minutes or until it is warm."
+- "@type": HowToSection
+  name: "How to make khasta kachori dough:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add all purpose flour, salt, to a large mixing bowl. Lightly crush carom seeds between palms and add this to flour bowl. Mix well using hands."
+  - "@type": HowToStep
+    text: "Next add, melted warm ghee."
+  - "@type": HowToStep
+    text: "Mix it by rubbing and massaging the flour and ghee using your fingertips. You need to keep mixing until it resembles breadcrumbs and retains its shape."
+  - "@type": HowToStep
+    text: "Now start adding a little water at a time, and make a semi-stiff dough."
+  - "@type": HowToStep
+    text: "Once the dough is ready, cover it with a damp cloth and set aside for 15-20 minutes."
+  - "@type": HowToStep
+    text: "After 15 minutes, divide the dough into 12-15 equal portions. Roll each portion into a smooth ball. Cover it with a damp cloth and set aside."
+- "@type": HowToSection
+  name: "How to shape khasta kachori:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Once the mixture has cooled off, divide it into 12-15 balls."
+  - "@type": HowToStep
+    text: "Take a dough ball and flatten it with your fingers, keeping the edges thin. You can also use a rolling pin for flattening the dough ball."
+  - "@type": HowToStep
+    text: "Place a dal mixture ball on the flattened dough ball."
+  - "@type": HowToStep
+    text: "Pull from all the sides and join."
+  - "@type": HowToStep
+    text: "Remove excess dough and pinch."
+  - "@type": HowToStep
+    text: "Seal and press it between your palm to flatten it into a 2-3 inch circle. You can also roll with using a rolling pin. Remember to put very gentle pressure while using a rolling pin (belan). If you put too much pressure, then kachoris might break while deep-frying."
+  - "@type": HowToStep
+    text: "Shape all the kachoris the same way, and arrange them on a plate. Keep them covered, so the outer layer doesn’t dry out."
+- "@type": HowToSection
+  name: "How to fry khasta kachori:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat the oil on medium heat for frying. Once hot, drop the kachoris carefully into the hot oil. Immediately, turn heat to low. Once they puff up and the bottom is light brown and then you can flip the kachoris."
+  - "@type": HowToStep
+    text: "Deep fry until both sides are crispy and golden brown."
+  - "@type": HowToStep
+    text: "Once fried from both sides, drain them using the slotted spatula, and put them on a paper towel-lined plate."
+  - "@type": HowToStep
+    text: "Fry few kachoris at a time, do not overcrowd the pan. Fry all the kachoris. Serve hot or at room temperature with aloo ki sabzi or chutney."
+- "@type": HowToSection
+  name: "How to bake khasta kachori:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "For baking, preheat oven to 180°C."
+  - "@type": HowToStep
+    text: "Arrange kachoris on a baking tray lined with parchment paper."
+  - "@type": HowToStep
+    text: "Brush each kachori with some oil and bake in the preheated oven for about 15 minutes or until the kachoris are crispy and golden."
+  - "@type": HowToStep
+    text: "Serve hot with any of your favourite chutney."
