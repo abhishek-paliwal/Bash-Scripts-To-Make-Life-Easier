@@ -43,8 +43,6 @@
 20191017,00:00:00,orange,Karwachauth Vrat
 20191027,00:00:00,orange,Deepavali
 ## ADO EVENTS
-20191003,00:00:00,yellow,Photography-at-school // check www.kuvaverkko.fi
-20191002,08:15:00,yellow,Class starts early this wednesday
+20191003,08:15:00,yellow,Photography-at-school // check www.kuvaverkko.fi
 ## HOME EVENTS
-20191001,10:00:00,red,Water supply interruption from 10-12
 20191008,08:00:00,red,Water supply interruption from 08-15
