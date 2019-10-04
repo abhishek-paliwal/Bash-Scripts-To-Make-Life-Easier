@@ -76,20 +76,17 @@ echo "<!DOCTYPE html>
   <meta charset='UTF-8'>
   <title>INDEX OF OUR EVENTS</title>
 
-  <meta http-equiv='refresh' content='30'> <!-- Refresh every 30 seconds -->
+  <meta http-equiv='refresh' content='60'> <!-- Refresh every 60 seconds -->
 
   <!-- Loading moment.js from CDN -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
 </head>
 
-<body style='font-family: sans-serif; background:black; color:white;'>
+<body style='font-family: sans-serif; background:#121212; color:white;'>
   <center>
-	<p style='color: #c0c0c0; '>[ This html output page auto-created at: $(date) ]</p>
-  <p style='color: #c0c0c0; '>// This page auto-refreshes every 30 seconds // </p>
 
 	<hr>
-
-	<div style='padding: 3px; background:white; color:black;'>
+	<div style='padding: 3px; background:white; color:#121212;'>
 	<h1>INDEX OF OUR EVENTS</h1>
   <h3>Right now, it's <span id='dateDisplay'></span> </h3>
 	</div>
@@ -194,7 +191,7 @@ do
 	mycolor=$( echo "$line" | awk -F "," '{print $3}' ) ;
 	mytitle=$( echo "$line" | awk -F "," '{print $4}' ) ;
 
-	echo "document.getElementById(\"$prefix$x\").innerHTML = \"$mytitle - \" + date$prefix$x + \"<br><span style='color:silver;'>(\" + date$prefix$x$var0 + \")</span>\" ; " >> $OUTPUT_HTML_FILE ;
+	echo "document.getElementById(\"$prefix$x\").innerHTML = \"<span style='text-transform: uppercase;'>\" + date$prefix$x + \"</span> - $mytitle\" + \"<br><span style='color:silver;'>(\" + date$prefix$x$var0 + \")</span>\" ; " >> $OUTPUT_HTML_FILE ;
 
 done < "$REQUIREMENTS_FILE_SORTED"
 
@@ -204,5 +201,10 @@ echo ">>>> OUTPUT BLOCK 4 ... DONE!!" ;
 ########## ++++++++++ BEGIN FOOTER: SCRIPT BLOCK  ++++++++++++ ############
 		echo "</script>
 		<!-- END: Scripts will load above -->
+
+			<hr>
+			<p style='color: #444444; '>[ This html output page auto-created at: $(date) ]</p>
+		  <p style='color: #444444; '>// This page auto-refreshes every 60 seconds // </p>
+
 		</body></html>" >> $OUTPUT_HTML_FILE ;
 ########## ++++++++++ END FOOTER: SCRIPT BLOCK  ++++++++++++ ############

@@ -60,11 +60,10 @@ then
     echo ;
     echo "     ++++++++ Getting backups to-and-from DREAMCOMPUTE and KVM ARCH Server......" ;
 
-    # 1_backup_from_kvmarch_server
     echo ;
-    echo "     >>>>>>>> BEGINNING: Backup [FROM] KVM ARCH Server DONE. <<<<<<<" ;
-    1_backup_from_kvmarch_server ;
-    echo "     >>>>>>>> DONE: Backup [FROM] KVM ARCH Server DONE. <<<<<<<" ;
+    echo "     >>>>>>>> BEGINNING: Backup [FROM] DIGITAL OCEAN Server DONE. <<<<<<<" ;
+    1_backup_from_digitalocean_server ;
+    echo "     >>>>>>>> DONE: Backup [FROM] DIGITAL OCEAN Server DONE. <<<<<<<" ;
     echo ;
 
     echo " = = = = > Now opening the DreamCompute + KVM ARCH VPS Backup directory..." ;
