@@ -86,7 +86,7 @@ echo "<!DOCTYPE html>
   <center>
 
 	<hr>
-	<div style='padding: 3px; background:#c0c0c0; color:#121212;'>
+	<div style='padding: 3px; background:white; color:#121212;'>
 	<h1>INDEX OF OUR EVENTS</h1>
   <h3>Right now, it's <span id='dateDisplay'></span> </h3>
 	</div>
