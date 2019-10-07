@@ -1,10 +1,16 @@
 #!/bin/bash
+################################################################################
+REQUIREMENTS_FILE="503b_mylinks.txt"
+################################################################################
 cat << EOF
     ###############################################################################
     ## THIS SCRIPT CREATES AN HTML FILE FROM A TEXT FILE CONTAINING A LIST OF
     ## MGGK URLs, TO MAKE A FINAL COLLECTION
     ## USAGE:
-    #### sh 503b-mggk-hugo-list-collection-maker-from-hyperlinks-file.sh
+    #### sh 503b-mggk-hugo-list-collection-maker-from-hyperlinks-file.sh $REQUIREMENTS_FILE
+    ###############################################################################
+    ## REQUIREMENT-FILE="503b_mylinks.txt"
+    ###############################################################################
     ## DATE: March 18 2019
     ## MADE BY: PALI
     ###############################################################################
@@ -12,21 +18,20 @@ cat << EOF
 EOF
 
 ## CD to temporary directory on desktop
-myPWD="$HOME/Desktop/_TMP_Automator_results_" ;
+myPWD="$HOME/Desktop/Y" ;
 cd $myPWD ;
 echo ">>>> PWD is $myPWD" ;
 echo "<<<< IN CASE OF ERROR: Make sure that there is a file named mylinks.txt in $myPWD >>>>" ;
 
 ## DEFINE SOME VARIABLE FILENAMES
-LINKS_FILE_INPUT="mylinks.txt" ; ## Taking the first argument as txt file containing urls
 LINKS_FILE_OUTPUT="TMP_MYLINKS.txt" ;
-OUTPUT_HTML_FILE="TMP_FINAL_OUTPUT.html"
+OUTPUT_HTML_FILE="TMP_503b_FINAL_OUTPUT.html"
 TMP_CURL_FILE="TMP_mycurlfile.txt" ;
 ###############################################################################
 
 echo ;
 echo "## SCRIPT USAGE (Hint: It needs an argument):" ;
-echo "sh 503b-mggk-hugo-list-collection-maker-from-hyperlinks-file.sh LINKS_FILENAME.txt" ;
+echo "sh 503b-mggk-hugo-list-collection-maker-from-hyperlinks-file.sh $REQUIREMENTS_FILE" ;
 echo ;
 
 ########### PRINTING TO CLI : THE REQUIRED FORMAT FOR THE MYLINKS.TXT FILE
@@ -42,13 +47,25 @@ echo "
 ...
 " ;
 echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ;
+echo; echo "OR simply," ; echo;
+echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" ;
+echo "
+...
+...
+https://www.mygingergarlickitchen.com/how-to-make-gajar-ka-halwa-carrot-halwa-video-recipe/
+https://www.mygingergarlickitchen.com/how-to-make-ghevar-jaipuri-malai-ghevar-ghewar-video-recipe/
+https://www.mygingergarlickitchen.com/best-gulab-jamun-recipe-dessert-sweets-video-recipe/
+...
+...
+" ;
+echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ;
 ###############################################################################
 
 ########### CREATING THE TMP LINKS FILES #############
 
 ## CHANGING THE INPUT FILE AND REMOVING SOME CONTENT AND SAVING TO OUTPUT FILE
 ## ONLY THOSE LINES ARE SAVED WHICH HAVE THE WORD 'HTTPS' IN THEM
-cat $LINKS_FILE_INPUT | sed 's/\[.*\]//g' | sed 's/(//g' | sed 's/)//g' | grep -i 'https' > $LINKS_FILE_OUTPUT
+cat $REQUIREMENTS_FILE | sed 's/\[.*\]//g' | sed 's/(//g' | sed 's/)//g' | grep -i 'https' > $LINKS_FILE_OUTPUT
 
 ###############################################################################
 
