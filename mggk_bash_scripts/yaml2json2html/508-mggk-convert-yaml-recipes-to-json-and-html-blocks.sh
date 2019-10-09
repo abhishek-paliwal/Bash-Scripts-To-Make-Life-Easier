@@ -375,7 +375,7 @@ cat > $RECIPE_HTML_FILE <<EOF
     <!-- HTML RECIPE CODE BLOCK BELOW THIS -->
     <div id='recipe-here'></div>
     <!-- /------------/ -->
-    <div id='recipe-print-block' style='line-height: 1.1; border: 1px dashed black; padding: 10px; font-size: 14px; font-family: sans-serif; '>
+    <div id='recipe-print-block' style='line-height: 1.4; border: 1px dashed black; padding: 10px; font-size: 0.9rem; font-family: sans-serif; '>
         <div>
     <!-- /------------/ -->
             <h3><span itemprop='name'>$recipeName</span> [RECIPE]</h3>
