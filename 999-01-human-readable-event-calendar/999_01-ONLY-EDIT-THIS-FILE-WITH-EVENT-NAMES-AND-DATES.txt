@@ -31,4 +31,5 @@
 20191027,00:00:00,orange,Deepavali
 ## ADO EVENTS
 20191003,08:15:00,yellow,Photography-at-school // check www.kuvaverkko.fi
+20191102,12:00:00,yellow,School Halloween party at Kivenlahti Squash (See Vilma message received on Oct 11)
 ## HOME EVENTS
