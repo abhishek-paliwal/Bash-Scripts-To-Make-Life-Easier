@@ -2,6 +2,8 @@
 ##############################################################################
 cat << EOF
   ##############################################################################
+  ## THIS FILENAME = 598-elasticsearch-index-maker-and-uploader-for-mggk-website.sh
+  ##############################################################################
   ## This script creates a JSON index file from all the md files in hugo content
   directory and then pushes that mggk index json data to an elasticsearch
   ## cluster locally or remotely for indexing and searching.
@@ -55,14 +57,14 @@ echo "====> NOTE: Make sure that Elasticsearch is runnnig locally OR remotely, b
 ##############################################################################
 
 echo;
-echo "RUNNING STEP 1 => CREATING the JSON DATA FROM RAW MARKDOWN FILESFOR INDEXING LATER TO ELASTIC SEARCH";
+echo "RUNNING STEP 1 => CREATING the JSON DATA FROM RAW MARKDOWN FILES FOR INDEXING LATER TO ELASTIC SEARCH";
 
 hugo-elasticsearch --input "$CONTENT_DIR/content/**/*.md" --output "$OUTPUT_DIR/$ELASTIC_JSON_INDEX_FILENAME" --language "yaml" --delimiter "---" --index-name "$INDEX_NAME"
 
 ##############################################################################
 ## STEP 2: Pushing the JSON DATA TO LOCALLY RUNNING ELASTIC SEARCH FOR INDEXING
 ##############################################################################
-echo "RUNNING STEP 2 => Deleting the existing Index on HOST machine and then Pushing the JSON DATA TO the cluster RUNNING ELASTIC SEARCH FOR INDEXING";
+echo; echo "RUNNING STEP 2 => Deleting the existing Index on HOST machine and then Pushing the JSON DATA TO the cluster RUNNING ELASTIC SEARCH FOR INDEXING";
 
 ## Deleting existing index
 curl -X DELETE "$ELASTIC_HOST:$PORT/$INDEX_NAME" ;
@@ -70,7 +72,7 @@ echo ">> Existing index (= $INDEX_NAME) deleted on $ELASTIC_HOST " ;
 echo; echo;
 
 ## ADDING ALL JSON DATA IN BULK. IT WILL RECREATE THE INDEX.
-echo ">> ADDING ALL JSON DATA IN BULK. IT WILL RECREATE THE INDEX.";
+echo; echo ">> ADDING ALL JSON DATA IN BULK. IT WILL RECREATE THE INDEX.";
 echo; echo;
 
 curl \
