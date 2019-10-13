@@ -3,7 +3,7 @@
 THIS_SCRIPT_NAME="599-mggk-ASSIGN-RANDOM-PUBLISHING-DATES-FOR-POSTS-IN-YAML-FRONTMATTER.sh"
 ################################################################################
 ## VARIABLE SETTING
-SHIFT_BY_NUMDAYS="180" ; ## 180 DAYS, ABOUT 6 MONTHS
+SHIFT_BY_NUMDAYS="100" ; ## 100 DAYS, ABOUT 4 MONTHS
 SUFFIX_STRING="d"; # d for days, w for weeks, m for months, y for years
 DATE_SHIFT_BY_NUMDAYS="$SHIFT_BY_NUMDAYS$SUFFIX_STRING" ;
 ################################################################################
@@ -29,7 +29,7 @@ cat << EOF
   #### 3. Compare the date in each file thus found with the one we selected
   #### about $SHIFT_BY_NUMDAYS days ago from today.
   #### 4. If the date found is older, then assign a new date between
-  #### 45 and $SHIFT_BY_NUMDAYS days ago from today, for that file.
+  #### 30 and $SHIFT_BY_NUMDAYS days ago from today, for that file.
   #### 5. Insert this new date in the current file under execution.
   #### 6. Check everything is as it should be in Github Desktop. Make sure that
   #### only the 'date' line in yaml frontmatter is changed after the
@@ -133,10 +133,10 @@ do
     echo;echo "//// datediff_in_days => $datediff_in_days is more than 0 days. Hence, the date WILL BE updated." ;
     echo ;
     ##############################################################################
-    ## NOW WE NEED TO CREATE A RANDOM DATE WHICH IS 45 DAYS TO $SHIFT_BY_NUMDAYS DAYS OLDER THAN TODAY
-    ## HENCE, FOR THAT WE NEED TO CREATE A RANDOM NUMBER BETWEEN 45 AND 120
-    REMAINDER_VAR=$(( $SHIFT_BY_NUMDAYS -45 | bc )) ;
-    RAND_DATENUM=$(( ($RANDOM % $REMAINDER_VAR) + 45 | bc )) ;
+    ## NOW WE NEED TO CREATE A RANDOM DATE WHICH IS 30 DAYS TO $SHIFT_BY_NUMDAYS DAYS OLDER THAN TODAY
+    ## HENCE, FOR THAT WE NEED TO CREATE A RANDOM NUMBER BETWEEN 30 AND 100
+    REMAINDER_VAR=$(( $SHIFT_BY_NUMDAYS -30 | bc )) ;
+    RAND_DATENUM=$(( ($RANDOM % $REMAINDER_VAR) + 30 | bc )) ;
 
     ## SINCE THE ASSIGNED DATE WILL HAVE THE H:M:S THE SAME AS THE TIME OF THIS
     #### PROGRAM RUN TIME, ALL THE ASSIGNED DATES WILL HAVE THE SAME H:M:S VALUES
