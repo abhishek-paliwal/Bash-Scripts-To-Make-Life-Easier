@@ -37,7 +37,7 @@ echo ;
 ###############################################################################
 
 ## RUNS THE ACTUAL COMMAND FOR \$MY_SITE (r0 = link recursion depth)
-docker run --rm -it -u $(id -u):$(id -g) -v "$PWD":/mnt linkchecker/linkchecker --verbose --check-extern -F html $MY_SITE
+sudo docker run --rm -it -u $(id -u):$(id -g) -v "$PWD":/mnt linkchecker/linkchecker --verbose --check-extern -F html $MY_SITE
 
 ###############################################################################
 ###############################################################################
