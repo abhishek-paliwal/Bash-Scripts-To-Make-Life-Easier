@@ -1,0 +1,95 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "5 Ingredient Pumpkin Fritters | Pumpkin Gulgule | Kaddu Ke Meethe Pakode"
+
+description: "5 Ingredient Pumpkin Fritters | Pumpkin Gulgule | Kaddu Ke Meethe Pakode recipe with step-by-step photo instructions. Gulgula is an Indian version of mini donuts. Basically, they are like sweetened mini donuts. They are super spongy and crispy. These are packed with an awesome flavor of pumpkin, aroma of cardamom."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/10/recipes-Pumpkin-Fritters-anupama-paliwal-my-ginger-garlic-kitchen-6.jpg
+
+prepTime: PT10M
+
+cookTime: PT20M
+
+totalTime: PT25M
+
+recipeCategory: Dessert
+
+recipeCuisine: Indian
+
+recipeYield: 6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 50
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 105 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: "1. You can also added shredded coconut for nutty and rich texture.<br>2. To make them more flavorful you can also 1 tsp of all-spice."
+
+keywords: "gulgula recipe, aate ke meethe pua, meetha pua, pumpkin donuts, pumpking sweet fritters, Kaddu ke meethe pakode, pumpkin fritters indian, pumpkin fritters recipe, indian dessert recipes "
+
+video:
+  "@type": "VideoObject"
+  name: "5 Ingredient Pumpkin Fritters | Pumpkin Gulgule | Kaddu Ke Meethe Pakode"
+  description: "5 Ingredient Pumpkin Fritters | Pumpkin Gulgule | Kaddu Ke Meethe Pakode recipe with step-by-step photo instructions. Gulgula is an Indian version of mini donuts. Basically, they are like sweetened mini donuts. They are super spongy and crispy. These are packed with an awesome flavor of pumpkin, aroma of cardamom."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2015/10/recipes-Pumpkin-Fritters-anupama-paliwal-my-ginger-garlic-kitchen-6.jpg
+    - https://i.ytimg.com/vi/nan/maxresdefault.jpg
+  contentUrl: "https://youtu.be/nan"
+  embedUrl: "https://www.youtube.com/embed/nan"
+  uploadDate: 2019-10-14
+
+datePublished: 2019-10-14
+
+url: https://www.mygingergarlickitchen.com/5-ingredient-pumpkin-fritters-pumpkin-gulgula/
+
+recipeIngredient:
+  - "!!Ingredients:"
+  - "2 cups wheat-flour or all-purpose flour"
+  - "1 cup pumpkin puree"
+  - "1 cup sugar,  or as per taste"
+  - "1 tablespoon cardamom powder"
+  - "1 teaspoon cinnamon powder"
+  - "Oil for deep frying"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "Step by step instructions below:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Take a mixing bowl, and combine all the ingredients (except the oil )."
+  - "@type": HowToStep
+    text: "Add ¼ cup add water slowly, and whisk well to make thick consistency batter."
+  - "@type": HowToStep
+    text: "Add 2-3 tbsp more water, if needed."
+  - "@type": HowToStep
+    text: "Cover the bowl with plastic wrap and set aside for 15 minutes (you can also keep this batter for longer period (1-2 hours) to get the better result."
+  - "@type": HowToStep
+    text: "Heat the oil in a frying pan on medium high heat."
+  - "@type": HowToStep
+    text: "To check if the oil is hot enough to fry, add one drop of batter to the oil. If the batter comes up then oil is ready to fry."
+  - "@type": HowToStep
+    text: "Slowly drop 1 tbsp of batter at a time over medium heat. Drop 6-7 fritters at a time."
+  - "@type": HowToStep
+    text: "Fry the balls until they turn golden brown from all sides."
+  - "@type": HowToStep
+    text: "Remove the gulgulas and place over a paper towel, so the excess oil is absorbed."
+  - "@type": HowToStep
+    text: "Repeat the same with rest of the batter."
+  - "@type": HowToStep
+    text: "Sprinkle some powdered sugar on top, and serve hot."
