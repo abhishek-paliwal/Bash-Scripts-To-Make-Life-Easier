@@ -1,15 +1,30 @@
 #!/bin/bash
 ################################################################################
-REQUIREMENTS_FILE="503b_mylinks.txt"
+## DEFINE REQUIREMENTS_FILE VARIABLE BASED UPON WHETHER CLI ARGUMENT IS PRESENT OR NOT ...
 ################################################################################
+if [ -z "$1" ]
+then
+  echo "\$1 is EMPTY. Hence, REQUIREMENTS_FILE will be assigned as = 503b_mylinks.txt)." ;
+  REQUIREMENTS_FILE="503b_mylinks.txt" ;
+else
+  echo "\$1 is NOT EMPTY. Hence, REQUIREMENTS_FILE will be assigned as = $1)." ;
+  REQUIREMENTS_FILE="$1" ;
+fi
+################################################################################
+
 cat << EOF
     ###############################################################################
     ## THIS SCRIPT CREATES AN HTML FILE FROM A TEXT FILE CONTAINING A LIST OF
-    ## MGGK URLs, TO MAKE A FINAL COLLECTION
+    ## MGGK URLs, TO MAKE A FINAL COLLECTION. IT NEEDS AN ARGUMENT, ELSE THE DEFAULT
+    ## FILE WILL BE USED (= $REQUIREMENTS_FILE)
     ## USAGE:
     #### sh 503b-mggk-hugo-list-collection-maker-from-hyperlinks-file.sh $REQUIREMENTS_FILE
+    #### OR
+    #### sh 503b-mggk-hugo-list-collection-maker-from-hyperlinks-file.sh \$1
     ###############################################################################
-    ## REQUIREMENT-FILE="503b_mylinks.txt"
+    ## REQUIREMENTS_FILE="503b_mylinks.txt"
+    ## OR
+    ## REQUIREMENT_FILE="\$1"
     ###############################################################################
     ## DATE: March 18 2019
     ## MADE BY: PALI
@@ -25,7 +40,7 @@ echo "<<<< IN CASE OF ERROR: Make sure that there is a file named mylinks.txt in
 
 ## DEFINE SOME VARIABLE FILENAMES
 LINKS_FILE_OUTPUT="TMP_MYLINKS.txt" ;
-OUTPUT_HTML_FILE="TMP_503b_FINAL_OUTPUT.html"
+OUTPUT_HTML_FILE="TMP_503b_FINAL_OUTPUT-$REQUIREMENTS_FILE.html"
 TMP_CURL_FILE="TMP_mycurlfile.txt" ;
 ###############################################################################
 
@@ -35,7 +50,7 @@ echo "sh 503b-mggk-hugo-list-collection-maker-from-hyperlinks-file.sh $REQUIREME
 echo ;
 
 ########### PRINTING TO CLI : THE REQUIRED FORMAT FOR THE MYLINKS.TXT FILE
-echo "STRUCTURE OF $1 file should be:" ;
+echo "STRUCTURE OF $REQUIREMENTS_FILE file should be:" ;
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" ;
 echo "
 ...
