@@ -22,6 +22,7 @@ cat << EOF
     #### OR
     #### sh 503b-mggk-hugo-list-collection-maker-from-hyperlinks-file.sh \$1
     ###############################################################################
+    ## NOTE: REQUIREMENTS_FILE should be present in $HOME/Desktop/Y
     ## REQUIREMENTS_FILE="503b_mylinks.txt"
     ## OR
     ## REQUIREMENT_FILE="\$1"
@@ -39,9 +40,10 @@ echo ">>>> PWD is $myPWD" ;
 echo "<<<< IN CASE OF ERROR: Make sure that there is a file named mylinks.txt in $myPWD >>>>" ;
 
 ## DEFINE SOME VARIABLE FILENAMES
-LINKS_FILE_OUTPUT="TMP_MYLINKS.txt" ;
-OUTPUT_HTML_FILE="TMP_503b_FINAL_OUTPUT-$REQUIREMENTS_FILE.html"
-TMP_CURL_FILE="TMP_mycurlfile.txt" ;
+LINKS_FILE_OUTPUT="_TMP_MYLINKS.txt" ;
+OUTPUT_HTML_FILE="_TMP_503b_FINAL_OUTPUT-$REQUIREMENTS_FILE.html"
+TMP_CURL_FILE="_TMP_mycurlfile.txt" ;
+MD_FILENAME="_TMP-$REQUIREMENTS_FILE.md";
 ###############################################################################
 
 echo ;
@@ -120,7 +122,7 @@ echo ""  >> $OUTPUT_HTML_FILE;
 
         ## PRINTING RESPONSIVE GRID COLUMNS
         echo ""  >> $OUTPUT_HTML_FILE;
-        echo "  <div class=\"col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 blog-main\">"  >> $OUTPUT_HTML_FILE;
+        echo "  <div class=\"col-6 col-sm-4 col-md-4 col-lg-4 col-xl-4 blog-main\">"  >> $OUTPUT_HTML_FILE;
         echo "  <article class=\"blog-post\" style=\"border: 0px solid #c0c0c0 ;\" >"  >> $OUTPUT_HTML_FILE;
         echo "  <header>"  >> $OUTPUT_HTML_FILE;
 
@@ -137,6 +139,47 @@ echo ""  >> $OUTPUT_HTML_FILE;
 
 echo "</div>" >> $OUTPUT_HTML_FILE ;
 echo "<!--END: row-->"  >> $OUTPUT_HTML_FILE ;
+
+###############################################################################
+###############################################################################
+## NOW CREATE A NEW POST MARKDOWN FILE USING THE ABOVE CREATED HTML FILE
+
+## Date is assigned in mdfile as 12 hours in the past from current time, to take care
+#### of various timezones errors, so that it gets published when the hugo site is made.
+DATEVAR=$(date -v -12H +%Y-%m-%dT%H:%M:%S) ;
+
+################ BEGIN: CREATE MD FILE BY DUMPING ALL TEXT
+echo "---
+title: $REQUIREMENTS_FILE (2019 edition)
+author: Anupama Paliwal
+type: post
+date: $DATEVAR
+url: /$REQUIREMENTS_FILE/
+featured_image:
+
+categories:
+  - All-Recipes
+  -
+
+tags:
+  - All-Recipes
+  -
+
+yoast_description: \"SOME TEXT HERE\"
+
+---
+
+SOME DESCRIPTION.
+
+<!--more-->
+
+SOME MORE DESCRIPTION.
+
+" > $MD_FILENAME
+
+cat $OUTPUT_HTML_FILE >> $MD_FILENAME
+
+################ END: CREATE MD FILE BY DUMPING ALL TEXT
 
 ###############################################################################
 ## Opening directory = PWD
