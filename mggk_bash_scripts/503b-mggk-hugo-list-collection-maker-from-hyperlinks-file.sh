@@ -25,7 +25,7 @@ cat << EOF
     ## NOTE: REQUIREMENTS_FILE should be present in $HOME/Desktop/Y
     ## REQUIREMENTS_FILE="503b_mylinks.txt"
     ## OR
-    ## REQUIREMENT_FILE="\$1"
+    ## REQUIREMENTS_FILE="\$1"
     ###############################################################################
     ## DATE: March 18 2019
     ## MADE BY: PALI
@@ -119,6 +119,9 @@ echo ""  >> $OUTPUT_HTML_FILE;
         ## EXTRACTING IMAGE URL
         IMAGE=$( cat $TMP_CURL_FILE | grep -i 'og:image:secure_url' | sed 's/<meta property=\"og:image:secure_url\" content=\"//g'  | sed 's/\" \/>//g' ) ;
         echo "IMAGE = $IMAGE " ;
+
+          ## DOWNLOADING THE IMAGE INTO A SPECIFIC FOLDER (folder will be created if not present already)
+          wget -P _TMP_IMAGES_$REQUIREMENTS_FILE/ $IMAGE
 
         ## PRINTING RESPONSIVE GRID COLUMNS
         echo ""  >> $OUTPUT_HTML_FILE;
