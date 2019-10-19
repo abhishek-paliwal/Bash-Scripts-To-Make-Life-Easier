@@ -1,0 +1,137 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Motichoor Ladoo - Motichur Laddu "
+
+description: "Motichoor Ladoo or Motichur Ladoo is a round-shaped sweet dish made with saffron coloured fine, and tiny chickpea flour pearls or balls. These chickpea flour droplets aka boondi prepared by frying chickpea flour batter into hot oil/ghee. These mesmerizing pearl-like balls are then mixed with sugar syrup, and they are then molded into ladoos or round balls."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/10/motichur-ladoo-recipe-my-ginger-garlic-kitchen-1.jpg
+
+prepTime: PT35M
+
+cookTime: PT15M
+
+totalTime: PT50M
+
+recipeCategory: Dessert
+
+recipeCuisine: Indian
+
+recipeYield: 14-15 ladoos
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 2
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 174 calories
+  servingSize: 1 ladoo
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: "1. Use the coarse variety of besan if possible. If you don't find coarse besan then you can also add 1 tablespoon of semolina to it.<br>2. Right consistency of batter plays an important role in making perfect boondi. Make sure the batter is neither too thick nor too thin.<br>3. After pouring batter, keep tapping your strainer or skimmer consistently.<br>4. Frying the boondis for 1 minute and take it out instantly.<br>5. Always make sure that you drain fried boondis on a lined paper to take out to get rid of excess oil/ghee.<br>6. If you want the market style sweet and melt in mouth ladoos, then resting boondi ladoos for 3-4 hours or more is important. Because this resting time makes sure that all the flavours in ladoos mingle so beautifully, and the boondis turn super soft.<br>6. You can store motichoor ladoo for up to 10 days when kept in an air-tight container."
+
+keywords: "motichoor ladoo at home,motichoor ladoo dessert, desi ghee motichoor ladoo, motichoor ladoo easy recipe, recipe for motichoor ladoo, motichoor ladoo recipe halwai style, homemade motichoor ladoo, motichoor ladoo ingredients, motichoor ladoo is made of, motichoor ke ladoo, motichoor ladoo making, perfect motichoor ladoo recipe, motichoor ladoo recipe video, diwali sweet recipe, motichoor ladoo video, motichoor ladoo vs boondi ladoo, how to make simple ladoo at home"
+
+video:
+  "@type": "VideoObject"
+  name: "Motichoor Ladoo - Motichur Laddu "
+  description: "Motichoor Ladoo or Motichur Ladoo is a round-shaped sweet dish made with saffron coloured fine, and tiny chickpea flour pearls or balls. These chickpea flour droplets aka boondi prepared by frying chickpea flour batter into hot oil/ghee. These mesmerizing pearl-like balls are then mixed with sugar syrup, and they are then molded into ladoos or round balls."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/10/motichur-ladoo-recipe-my-ginger-garlic-kitchen-1.jpg
+    - https://i.ytimg.com/vi/Ih58hcRCtBc/maxresdefault.jpg
+  contentUrl: "https://youtu.be/Ih58hcRCtBc"
+  embedUrl: "https://www.youtube.com/embed/Ih58hcRCtBc"
+  uploadDate: 2019-10-15
+
+datePublished: 2019-10-15
+
+url: https://www.mygingergarlickitchen.com/motichoor-ladoo/
+
+recipeIngredient:
+  - "!!For Motichoor Ladoo:"
+  - "1 & 1/4 cups besan / chickpea flour (if possible, use thicker coarse variety of besan)"
+  - "1 cup water or as required to make a runny watery batter"
+  - "2 pinches of deep orange food color (optional)"
+  - "1 tbsp ghee"
+  - "Oil or ghee for frying"
+  - "!!For Sugar Syrup:"
+  - "1 cup + 3 tablespoon sugar (if you want sweeter, then add 1/4 cup more sugar)"
+  - "1/2 cup water"
+  - "1 teaspoon kewara or rose water (optional)"
+  - "1/2 teaspoon cardamom powder (ilaichi powder)"
+  - "2 tablespoons or more sliced almonds and sliced pistachios"
+  - "1 tablespoon sliced pistachios"
+  - "!!For Garnish:"
+  - "Edible silver leaf"
+  - "Sliced pistachios"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "How To Make Batter:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add sieved besan/gram flour, a pinch of kesar food color, and 1 tbsp ghee to a large mixing bowl."
+  - "@type": HowToStep
+    text: "Add water little by little to make a thick batter and lump free smooth batter."
+  - "@type": HowToStep
+    text: "Next, dd more water to make a thin and watery batter."
+  - "@type": HowToStep
+    text: "Keep the batter aside for 30 minutes."
+  - "@type": HowToStep
+    text: "After 30 minutes, the batter will puff up and thicken up after resting. So check the batter consistency before frying the boondi. If after resting, the batter has thickened too much add a little water to thin it. We need pourable consistency water. Next, we will fry Motichoor boondis."
+- "@type": HowToSection
+  name: "How To Fry Boondi:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "For frying small boondis you’ll need a jhara (stainless skimmer or strainer) or a shredder/grater with the small holes. You can also use a DIY skimmer box by poking tiny holes in the base of tin with a simple toothpick. You can see the video below for reference."
+  - "@type": HowToStep
+    text: "Add oil/ghee in a pan or kadhai and heat it. Check the oil temperature before frying by dropping a pea-sized batter drop in the hot oil."
+  - "@type": HowToStep
+    text: "Now start frying boondis by holding the shredder or strainer right above the pan. The shredder should neither be too low, nor too high."
+  - "@type": HowToStep
+    text: "Stir the batter before pouring it in the oil. Pour the batter into the shredder/strainer and keep tapping the strainer or with the help of the back of a spoon."
+  - "@type": HowToStep
+    text: "Once you drop the batter, you would see small drops of boondi falling in the hot oil. Fry them over medium to high heat for about 1 minute."
+  - "@type": HowToStep
+    text: "Once done, remove fried boondis from oil and place them on a paper napkin lined plate to absorb the excess ghee/oil.  Keep them aside. Let it cool down for a couple of minutes."
+- "@type": HowToSection
+  name: "How to make sugar syrup (chashni):"
+  itemListElement:
+  - "@type": HowToStep
+    text: "In a pan, add the sugar and water."
+  - "@type": HowToStep
+    text: "Stir well and add 1/2 teaspoon lemon juice. Boil for 4-5 minutes."
+  - "@type": HowToStep
+    text: "Add deep orange color, cardamom powder and mix well."
+  - "@type": HowToStep
+    text: "Next, add kewara or rose water to it. Keep boiling it until it is reduced in quantity and has reached one string consistency. (To check sugar syrup thickness, spill a drop of sugar syrup in a plate or bowl. Allow it to cool for a few seconds. Touch the syrup with forefinger and then touch your thumb and forefinger together and gently pull apart. If the syrup forms 1 thread then your syrup is ready.)"
+  - "@type": HowToStep
+    text: "The syrup will take 5 to 6 minutes. Turf the heat to low."
+- "@type": HowToSection
+  name: "How to Make Motichoor Ladoo:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add prepared fried boondi to the warm sugar syrup."
+  - "@type": HowToStep
+    text: "Stir the mixture very well and cook for 1 minutes over low heat. (It would start leaving sides.)"
+  - "@type": HowToStep
+    text: "Cover and let it sit for 15 minutes."
+  - "@type": HowToStep
+    text: "Once it is warm, add sliced almonds, sliced cashews, and 1 tbsp ghee to the boondi mixture."
+  - "@type": HowToStep
+    text: "When the mixture is comfortable to touch, apply some ghee on your palm and crush the mixture with hands, and start shaping the ladoos."
+  - "@type": HowToStep
+    text: "Shape all the ladoos and garnish them with edible sliver and with pistachios ."
+  - "@type": HowToStep
+    text: "Cover ladoos and let them rest for 3-4 hours. In these 3-4 hours, your boondis would get softer, and soak up all the sweetness from the syrup."
