@@ -112,6 +112,10 @@ echo ""  >> $OUTPUT_HTML_FILE;
         TITLE=$( cat $TMP_CURL_FILE | grep -i 'og:title' | sed 's/<meta property=\"og:title\" content=\"//g'  | sed 's/\" \/>//g' ) ;
         echo "TITLE = $TITLE " ;
 
+        ## EXTRACTING META DESCRIPTION
+        META_DESCRIPTION=$( cat $TMP_CURL_FILE | grep -i 'og:description' | sed 's/<meta property=\"og:description\" content=\"//g'  | sed 's/\" \/>//g' ) ;
+        echo "META_DESCRIPTION = $META_DESCRIPTION " ;
+
         ## EXTRACTING URL
         URL=$( cat $TMP_CURL_FILE | grep -i 'og:url' | sed 's/<meta property=\"og:url\" content=\"//g'  | sed 's/\" \/>//g' ) ;
         echo "PAGE URL = $URL " ;
@@ -121,7 +125,7 @@ echo ""  >> $OUTPUT_HTML_FILE;
         echo "IMAGE = $IMAGE " ;
 
           ## DOWNLOADING THE IMAGE INTO A SPECIFIC FOLDER (folder will be created if not present already)
-          wget -P _TMP_IMAGES_$REQUIREMENTS_FILE/ $IMAGE
+          #wget -P _TMP_IMAGES_$REQUIREMENTS_FILE/ $IMAGE
 
         ## PRINTING RESPONSIVE GRID COLUMNS
         echo ""  >> $OUTPUT_HTML_FILE;
@@ -131,6 +135,7 @@ echo ""  >> $OUTPUT_HTML_FILE;
 
             echo "  <p><a href='$URL'><img class='lazy' src='$IMAGE' data-src='$IMAGE' alt='$TITLE' width='100%' \></a></p>" >> $OUTPUT_HTML_FILE ;
             echo "  <p style=\"font-family: 'Playfair Display', serif ; font-size: 0.8rem ; \"><a href='$URL'>$COUNT : $TITLE</a></p>" >> $OUTPUT_HTML_FILE;
+            echo "  <p style=\"font-family: sans-serif ; font-size: 0.8rem ; \">$META_DESCRIPTION</p>" >> $OUTPUT_HTML_FILE;
 
         echo "  </header>" >> $OUTPUT_HTML_FILE;
         echo "  </article> " >> $OUTPUT_HTML_FILE;
