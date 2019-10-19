@@ -91,14 +91,15 @@ cat $REQUIREMENTS_FILE | sed 's/\[.*\]//g' | sed 's/(//g' | sed 's/)//g' | grep 
 ## NOW, FINDING THE MARKDOWN FILES WHICH HAVE THE LINES FROM THE ABOVE OUTPUT1 FILE
 echo ">>>> Beginning WHILE LOOP" ;
 
-echo "<!--BEGIN: row-->"  > $OUTPUT_HTML_FILE ; ## Initializing the html file
-echo "<div class='row'>"  >> $OUTPUT_HTML_FILE ;
+echo "<div class='row'> <!--BEGIN: MAIN ROW -->" > $OUTPUT_HTML_FILE ; ## Initializing the html file
 
 echo ""  >> $OUTPUT_HTML_FILE;
 echo "  <div class='col-12' align='center' style='background: rgba(205,30,100,0.1) ;'>"  >> $OUTPUT_HTML_FILE ;
 echo "  <h2>&bull; ANY SECTION NAME &bull;</h2>"  >> $OUTPUT_HTML_FILE ;
 echo "  </div>"  >> $OUTPUT_HTML_FILE ;
 echo ""  >> $OUTPUT_HTML_FILE;
+
+  echo "  <div class='col-12'><div class='row'> <!-- BEGIN: ALL CONTENT COLUMN+ROW -->"  >> $OUTPUT_HTML_FILE ;
 
     COUNT=1;
     while read -r line; do
@@ -113,7 +114,8 @@ echo ""  >> $OUTPUT_HTML_FILE;
         echo "TITLE = $TITLE " ;
 
         ## EXTRACTING META DESCRIPTION
-        META_DESCRIPTION=$( cat $TMP_CURL_FILE | grep -i 'og:description' | sed 's/<meta property=\"og:description\" content=\"//g'  | sed 's/\" \/>//g' ) ;
+        #### (long descriptions will be trimmed after 200 chars, so that all will have equal length)
+        META_DESCRIPTION=$( cat $TMP_CURL_FILE | grep -i 'og:description' | sed 's/<meta property=\"og:description\" content=\"//g'  | sed 's/\" \/>//g' | cut -c1-200 ) ;
         echo "META_DESCRIPTION = $META_DESCRIPTION " ;
 
         ## EXTRACTING URL
@@ -129,24 +131,34 @@ echo ""  >> $OUTPUT_HTML_FILE;
 
         ## PRINTING RESPONSIVE GRID COLUMNS
         echo ""  >> $OUTPUT_HTML_FILE;
-        echo "  <div class=\"col-6 col-sm-4 col-md-4 col-lg-4 col-xl-4 blog-main\">"  >> $OUTPUT_HTML_FILE;
-        echo "  <article class=\"blog-post\" style=\"border: 0px solid #c0c0c0 ;\" >"  >> $OUTPUT_HTML_FILE;
-        echo "  <header>"  >> $OUTPUT_HTML_FILE;
+        echo "<!-- Keep the column sizes intact below. Make sure to define all column view-port sizes explicitly, namely, sm, md ,lg and xl -->"  >> $OUTPUT_HTML_FILE;
 
-            echo "  <p><a href='$URL'><img class='lazy' src='$IMAGE' data-src='$IMAGE' alt='$TITLE' width='100%' \></a></p>" >> $OUTPUT_HTML_FILE ;
-            echo "  <p style=\"font-family: 'Playfair Display', serif ; font-size: 0.8rem ; \"><a href='$URL'>$COUNT : $TITLE</a></p>" >> $OUTPUT_HTML_FILE;
-            echo "  <p style=\"font-family: sans-serif ; font-size: 0.8rem ; \">$META_DESCRIPTION</p>" >> $OUTPUT_HTML_FILE;
+        echo ""  >> $OUTPUT_HTML_FILE;
+        echo "  <div class='col-sm-12 col-md-6 col-lg-4 col-xl-4'> <!-- BEGIN: single element column -->
+            <div class='row'> <!-- BEGIN: nested column row -->"  >> $OUTPUT_HTML_FILE;
 
-        echo "  </header>" >> $OUTPUT_HTML_FILE;
-        echo "  </article> " >> $OUTPUT_HTML_FILE;
-        echo "  </div>" >> $OUTPUT_HTML_FILE;
+        echo ""  >> $OUTPUT_HTML_FILE;
+        echo "      <div class='col-5 col-sm-5 col-md-12 col-lg-12 col-xl-12'>
+        <a href='$URL'><img class='lazy' src='$IMAGE' data-src='$IMAGE' alt='$TITLE' width='100%' \></a>
+        </div>" >> $OUTPUT_HTML_FILE ;
+
+        echo ""  >> $OUTPUT_HTML_FILE;
+        echo "      <div class='col-7 col-sm-7 col-md-12 col-lg-12 col-xl-12' style='margin-top: 10px;'>
+        <p style='font-family: sans-serif ; font-size: 0.9rem ; font-weight: 700;'>
+        <a href='$URL'>$COUNT.) $TITLE</a></p><p style='font-family: sans-serif ; font-size: 0.9rem ; '>$META_DESCRIPTION...<a href='$URL'> &rarr;</a>
+        </p>
+        </div>" >> $OUTPUT_HTML_FILE;
+
+        echo ""  >> $OUTPUT_HTML_FILE;
+        echo "      </div> <!-- END: nested column row -->
+            </div> <!-- END: single element column -->" >> $OUTPUT_HTML_FILE;
 
         (( COUNT++ ))
 
     done < $LINKS_FILE_OUTPUT
 
-echo "</div>" >> $OUTPUT_HTML_FILE ;
-echo "<!--END: row-->"  >> $OUTPUT_HTML_FILE ;
+  echo "   </div></div> <!-- END: ALL CONTENT COLUMN+ROW -->
+  </div> <!--END: MAIN ROW -->"  >> $OUTPUT_HTML_FILE ;
 
 ###############################################################################
 ###############################################################################
@@ -185,7 +197,14 @@ SOME MORE DESCRIPTION.
 
 " > $MD_FILENAME
 
-cat $OUTPUT_HTML_FILE >> $MD_FILENAME
+## HUGO SHORTCODE TO RENDER HTML AS SUCH WITHOUT MODIFYING
+echo "{{< mggkrecipeHTMLcode >}}" >> $MD_FILENAME ;
+echo "" >> $MD_FILENAME ;
+echo "<!-- ////////////// BEGIN: WHOLE COLLECTION BLOCK /////////////////// -->" >> $MD_FILENAME ;
+cat $OUTPUT_HTML_FILE >> $MD_FILENAME ; ## CONCATENATING ALL HTML CONTENT GENERATED ABOVE
+echo "<!-- ////////////// END: WHOLE COLLECTION BLOCK ///////////////////// -->" >> $MD_FILENAME ;
+echo "" >> $MD_FILENAME ;
+echo "{{< /mggkrecipeHTMLcode >}}" >> $MD_FILENAME ;
 
 ################ END: CREATE MD FILE BY DUMPING ALL TEXT
 
