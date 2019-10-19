@@ -95,7 +95,7 @@ echo "<div class='row'> <!--BEGIN: MAIN ROW -->" > $OUTPUT_HTML_FILE ; ## Initia
 
 echo ""  >> $OUTPUT_HTML_FILE;
 echo "  <div class='col-12' align='center' style='background: rgba(205,30,100,0.1) ;'>"  >> $OUTPUT_HTML_FILE ;
-echo "  <h2>&bull; ANY SECTION NAME &bull;</h2>"  >> $OUTPUT_HTML_FILE ;
+echo "  <h2>&bull; SECTION NAME: $REQUIREMENTS_FILE &bull;</h2>"  >> $OUTPUT_HTML_FILE ;
 echo "  </div>"  >> $OUTPUT_HTML_FILE ;
 echo ""  >> $OUTPUT_HTML_FILE;
 
