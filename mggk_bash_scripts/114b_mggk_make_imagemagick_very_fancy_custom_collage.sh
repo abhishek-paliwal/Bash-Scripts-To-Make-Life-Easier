@@ -1,16 +1,36 @@
 #!/bin/bash
 ################################################################################
-## THIS PROGRAM MAKES A COLLAGE BY MAKING ROWS OF SUBCOLLAGES ...
-## USING IMAGES PRESENT IN A FOLDER
+THIS_SCRIPT_NAME="114b_mggk_make_imagemagick_very_fancy_custom_collage.sh"
+REQUIREMENTS_FILE="_collageformat.txt"
 ################################################################################
-padding="1" ; # padding between images in pixels
+cat << EOF
+  ################################################################################
+  ## THIS PROGRAM MAKES A COLLAGE BY MAKING ROWS OF SUBCOLLAGES ...
+  ## USING IMAGES PRESENT IN A FOLDER. IF NO DIMENSIONS ARE PROVIDED, IT WILL USE
+  ## DIMENSIONS OF 800x1200, MOST SUITABLE FOR MGGK PURPOSES.
+  ################################################################################
+  ## CODED ON: Sunday October 20, 2019
+  ## CODED BY: PALI
+  ###############################################################################
+  ## USAGE (run the following command):
+  ## > bash $THIS_SCRIPT_NAME
+  ###############################################################################
+  #### IMPORTANT NOTE:
+  #### REQUIREMENTS_FILE (=$REQUIREMENTS_FILE) SHOULD BE IN $(pwd)
+  ###############################################################################
+EOF
+
+## VARIABLE SETTING
+padding="0" ; # padding between images in pixels (change if needed)
 
 ## COLLAGE FORMAT STRING (edit as needed)
-string="50:1x2+50:2x1+50
-50:3x3+50:2x2+50" ;
+string="25:4x1+100
+50:1x1+100
+25:4x1+100" ;
 
 ## ASSIGNS AND CHECKS FOR COLLAGE FORMAT TEXT FILE
-collageformat_file="_collageformat.txt" ;
+#collageformat_file="_collageformat.txt" ;
+collageformat_file=$REQUIREMENTS_FILE ;
 
 if [ -e "$collageformat_file" ]; then
     echo "===> File exists : $collageformat_file " ;
