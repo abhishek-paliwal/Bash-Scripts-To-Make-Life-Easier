@@ -94,9 +94,12 @@ echo ">>>> Beginning WHILE LOOP" ;
 echo "<div class='row'> <!--BEGIN: MAIN ROW -->" > $OUTPUT_HTML_FILE ; ## Initializing the html file
 
 echo ""  >> $OUTPUT_HTML_FILE;
-echo "  <div class='col-12' align='center' style='background: rgba(205,30,100,0.1) ;'>"  >> $OUTPUT_HTML_FILE ;
-echo "  <h2>&bull; SECTION NAME: $REQUIREMENTS_FILE &bull;</h2>"  >> $OUTPUT_HTML_FILE ;
-echo "  </div>"  >> $OUTPUT_HTML_FILE ;
+
+## UNCOMMENT THE FOLLOWING 3 LINES IF YOU ALSO WANT THIS BLOCK TO APPEAR IN HTML OUTPUT FILE
+## 
+#echo "  <div class='col-12' align='center' style='background: rgba(205,30,100,0.1) ;'>"  >> $OUTPUT_HTML_FILE ;
+#echo "  <h2>&bull; SECTION NAME: $REQUIREMENTS_FILE &bull;</h2>"  >> $OUTPUT_HTML_FILE ;
+#echo "  </div>"  >> $OUTPUT_HTML_FILE ;
 echo ""  >> $OUTPUT_HTML_FILE;
 
   echo "  <div class='col-12'><div class='row'> <!-- BEGIN: ALL CONTENT COLUMN+ROW -->"  >> $OUTPUT_HTML_FILE ;
@@ -179,7 +182,7 @@ featured_image:
 
 categories:
   - All-Recipes
-  -
+  - Collections
 
 tags:
   - All-Recipes
