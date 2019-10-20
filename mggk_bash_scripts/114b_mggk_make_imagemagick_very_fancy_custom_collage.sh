@@ -1,9 +1,9 @@
 #!/bin/bash
-######################################
+################################################################################
 ## THIS PROGRAM MAKES A COLLAGE BY MAKING ROWS OF SUBCOLLAGES ...
 ## USING IMAGES PRESENT IN A FOLDER
-######################################
-padding="10" ;
+################################################################################
+padding="1" ; # padding between images in pixels
 
 ## COLLAGE FORMAT STRING (edit as needed)
 string="50:1x2+50:2x1+50
@@ -24,10 +24,10 @@ fi
 
 #######################################
 
-echo "Enter the WIDTH in pixels for the collage [KEEP EMPTY TO USE DEFAULTS]: " ;
+echo "Enter the WIDTH in pixels for the collage [KEEP EMPTY TO USE DEFAULTS =800px ]: " ;
 read width ;
 
-echo "Enter the HEIGHT in pixels for the collage [KEEP EMPTY TO USE DEFAULTS]: " ;
+echo "Enter the HEIGHT in pixels for the collage [KEEP EMPTY TO USE DEFAULTS =1200px ]: " ;
 read height ;
 
 echo "Enter the TITLE for the collage [KEEP EMPTY TO USE DEFAULTS]: " ;
@@ -44,9 +44,9 @@ read subcollagebackground ;
 if [ -z "$width" ] && [ -z "$height" ] && [ -z "$title" ]
     then
     echo ;
-    echo "No values supplied. So default values will be used. (5400x3600: Best for printing at 12x18 ratio)" ;
-    width="5400" ;
-    height="3600" ;
+    echo "No values supplied. So default values will be used. (800x1200 - BEST FOR MGGK NEEDS)" ;
+    width="800" ;
+    height="1200" ;
     title="MY COLLAGE" ;
     echo "THE DEFAULT VALUES CHOSEN ARE: $width px // $height px // TITLE: $title " ;
 fi
@@ -184,7 +184,10 @@ done < "$filename"
 
 ## Creating Final Collage using all the subcollages
 ECHO "========> Creating Final Collage using all the subcollages <======== " ;
-montage zz_collage-* -title "$collage_title [ $total_images images ]" -tile 1x$lineNumber -geometry +$padding+$padding -background $collagebackground -gravity center _FINAL_COLLAGE.jpg
+#### final collage with title
+montage zz_collage-* -title "$collage_title [ $total_images images ]" -tile 1x$lineNumber -geometry +$padding+$padding -background $collagebackground -gravity center _FINAL_COLLAGE_with_title.jpg
+#### final collage without title
+montage zz_collage-* -tile 1x$lineNumber -geometry +$padding+$padding -background $collagebackground -gravity center _FINAL_COLLAGE.jpg
 
 ## IN CASE OF ERRORS
 echo ;
