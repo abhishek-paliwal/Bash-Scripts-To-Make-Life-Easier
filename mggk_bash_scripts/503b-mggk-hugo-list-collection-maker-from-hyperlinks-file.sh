@@ -16,7 +16,9 @@ cat << EOF
     ###############################################################################
     ## THIS SCRIPT CREATES AN HTML FILE FROM A TEXT FILE CONTAINING A LIST OF
     ## MGGK URLs, TO MAKE A FINAL COLLECTION. IT NEEDS AN ARGUMENT, ELSE THE DEFAULT
-    ## FILE WILL BE USED (= $REQUIREMENTS_FILE)
+    ## FILE WILL BE USED (= $REQUIREMENTS_FILE).
+    ## THIS PROGRAM AUTOMATICALLY EXRACTS UNIQUE URLs, SO EVEN IF THE DUPLICATES URLs ARE
+    ## PRESENT IN $REQUIREMENTS_FILE, IT IS OKAY. THEY WILL BE TAKEN CARE OF.
     ## USAGE:
     #### sh 503b-mggk-hugo-list-collection-maker-from-hyperlinks-file.sh $REQUIREMENTS_FILE
     #### OR
@@ -81,9 +83,18 @@ echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ;
 ########### CREATING THE TMP LINKS FILES #############
 
 ## CHANGING THE INPUT FILE AND REMOVING SOME CONTENT AND SAVING TO OUTPUT FILE
-## ONLY THOSE LINES ARE SAVED WHICH HAVE THE WORD 'HTTPS' IN THEM
-cat $REQUIREMENTS_FILE | sed 's/\[.*\]//g' | sed 's/(//g' | sed 's/)//g' | grep -i 'https' > $LINKS_FILE_OUTPUT
+## ONLY THOSE LINES ARE SAVED WHICH HAVE THE WORD 'HTTPS' IN THEM, CONSIDERING ONLY
+## UNIQUE LINES. UNIQ ONLY WORKS WHEN THE LINES ARE SORTED FIRST. SO WE WILL SORT FIRST.
+cat $REQUIREMENTS_FILE | sed 's/\[.*\]//g' | sed 's/(//g' | sed 's/)//g' | grep -i 'https' | sort | uniq > $LINKS_FILE_OUTPUT
 
+## PRINTING URLs BEFORE AND AFTER REMOVING DUPLICATES
+echo; echo ">> PRINTING URLs BEFORE REMOVING DUPLICATES >>" ;
+cat $REQUIREMENTS_FILE | grep -i 'https' | sort | nl
+echo; echo ">> PRINTING URLs AFTER REMOVING DUPLICATES >>" ;
+cat $LINKS_FILE_OUTPUT | nl
+echo;
+
+###############################################################################
 ###############################################################################
 
 ########### USING THE TMP LINKS FILE AND FINDING CORRESPONDING MARKDOWN FILES #############
@@ -96,7 +107,7 @@ echo "<div class='row'> <!--BEGIN: MAIN ROW -->" > $OUTPUT_HTML_FILE ; ## Initia
 echo ""  >> $OUTPUT_HTML_FILE;
 
 ## UNCOMMENT THE FOLLOWING 3 LINES IF YOU ALSO WANT THIS BLOCK TO APPEAR IN HTML OUTPUT FILE
-## 
+##
 #echo "  <div class='col-12' align='center' style='background: rgba(205,30,100,0.1) ;'>"  >> $OUTPUT_HTML_FILE ;
 #echo "  <h2>&bull; SECTION NAME: $REQUIREMENTS_FILE &bull;</h2>"  >> $OUTPUT_HTML_FILE ;
 #echo "  </div>"  >> $OUTPUT_HTML_FILE ;
