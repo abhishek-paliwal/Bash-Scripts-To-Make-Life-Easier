@@ -62,6 +62,7 @@ then
 
     echo ;
     echo "     >>>>>>>> BEGINNING: Backup [FROM] DIGITAL OCEAN Server DONE. <<<<<<<" ;
+    say "Enter password on command prompt:" ;
     1_backup_from_digitalocean_server ;
     echo "     >>>>>>>> DONE: Backup [FROM] DIGITAL OCEAN Server DONE. <<<<<<<" ;
     echo ;
