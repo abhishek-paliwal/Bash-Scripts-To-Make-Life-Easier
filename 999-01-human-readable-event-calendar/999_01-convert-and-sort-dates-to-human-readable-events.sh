@@ -84,12 +84,19 @@ echo "<!DOCTYPE html>
 	  <!-- Loading moment.js from CDN -->
 	  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
 
+		<style>
+		.bgtheme1 {background: rgb(18,18,18) ; padding: 15px; }
+		.bgtheme2 {background: rgb(45,45,45) ; padding: 15px; }
+		</style>
+
 	<title>INDEX OF OUR EVENTS</title>
 
   </head>
 
 <body style='font-family: sans-serif; background:#121212; color:white;'>
   <center>
+
+	<div class='container-fluid'> <!--  BEGIN: CONTAINER -->
 
 	<hr>
 	<div style='padding: 3px; background:white; color:#121212;'>
@@ -111,7 +118,11 @@ do
   (( x++ ))
 	mycolor=$( echo "$line" | awk -F "," '{print $3}' ) ;
 
-	echo "<h2 style=\"color: $mycolor;\" id=\"$prefix$x\"></h2> " >> $OUTPUT_HTML_FILE ;
+	if (( $x%2 == 0 )) ; then
+		echo "<h4 class='bgtheme1' style=\"color: $mycolor;\" id=\"$prefix$x\"></h2> " >> $OUTPUT_HTML_FILE ;
+	else
+		echo "<h4 class='bgtheme2' style=\"color: $mycolor;\" id=\"$prefix$x\"></h2> " >> $OUTPUT_HTML_FILE ;
+	fi
 
 done < "$REQUIREMENTS_FILE_SORTED"
 
@@ -218,5 +229,6 @@ echo ">>>> OUTPUT BLOCK 4 ... DONE!!" ;
 	    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' crossorigin='anonymous'></script>
 	    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' crossorigin='anonymous'></script>
 
+		</div> <!--  END : CONTAINER -->
 		</body></html>" >> $OUTPUT_HTML_FILE ;
 ########## ++++++++++ END FOOTER: SCRIPT BLOCK  ++++++++++++ ############
