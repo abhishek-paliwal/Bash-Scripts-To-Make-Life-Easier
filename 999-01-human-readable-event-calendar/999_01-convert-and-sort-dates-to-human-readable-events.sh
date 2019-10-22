@@ -73,14 +73,20 @@ echo "<!DOCTYPE html>
 <html lang='en' >
 
 <head>
-  <meta charset='UTF-8'>
-  <title>INDEX OF OUR EVENTS</title>
+    <!-- Required meta tags -->
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
 
-  <meta http-equiv='refresh' content='60'> <!-- Refresh every 60 seconds -->
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' crossorigin='anonymous'>
 
-  <!-- Loading moment.js from CDN -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
-</head>
+		<meta http-equiv='refresh' content='60'> <!-- Refresh every 60 seconds -->
+	  <!-- Loading moment.js from CDN -->
+	  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
+
+	<title>INDEX OF OUR EVENTS</title>
+
+  </head>
 
 <body style='font-family: sans-serif; background:#121212; color:white;'>
   <center>
@@ -205,6 +211,12 @@ echo ">>>> OUTPUT BLOCK 4 ... DONE!!" ;
 			<hr>
 			<p style='color: #444444; '>[ This html output page auto-created at: $(date) ]</p>
 		  <p style='color: #444444; '>// This page auto-refreshes every 60 seconds // </p>
+
+			<!-- Optional Bootstrap 4 official JavaScript -->
+	    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js' crossorigin='anonymous'></script>
+	    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' crossorigin='anonymous'></script>
+	    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' crossorigin='anonymous'></script>
 
 		</body></html>" >> $OUTPUT_HTML_FILE ;
 ########## ++++++++++ END FOOTER: SCRIPT BLOCK  ++++++++++++ ############
