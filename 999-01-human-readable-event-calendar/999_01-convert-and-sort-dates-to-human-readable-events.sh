@@ -100,8 +100,8 @@ echo "<!DOCTYPE html>
 
 	<hr>
 	<div style='padding: 3px; background:white; color:#121212;'>
-	<h1>INDEX OF OUR EVENTS</h1>
-  <h3>Right now, it's <span id='dateDisplay'></span> </h3>
+	<h3>INDEX OF OUR EVENTS</h3>
+  <h5>Right now, it's <span id='dateDisplay'></span> </h5>
 	</div>
   <hr>" > $OUTPUT_HTML_FILE ;
 
@@ -220,7 +220,7 @@ echo ">>>> OUTPUT BLOCK 4 ... DONE!!" ;
 		<!-- END: Scripts will load above -->
 
 			<hr>
-			<p style='color: #444444; '>[ This html output page auto-created at: $(date) ]</p>
+			<p style='color: #444444; '>// This html output page auto-created at: $(date) //</p>
 		  <p style='color: #444444; '>// This page auto-refreshes every 60 seconds // </p>
 
 			<!-- Optional Bootstrap 4 official JavaScript -->
