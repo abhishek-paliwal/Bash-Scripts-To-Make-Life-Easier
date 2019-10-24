@@ -20,8 +20,6 @@ cat << EOF
   ###############################################################################
 EOF
 
-## VARIABLE SETTING
-padding="0" ; # padding between images in pixels (change if needed)
 #################################################################################
 ## COLLAGE FORMAT STRING FOR TESTING (edit as needed)
 string="25:4x1+100
