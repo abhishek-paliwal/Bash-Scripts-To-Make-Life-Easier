@@ -29,6 +29,7 @@ HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content" ;
 #HUGO_CONTENT_DIR="$HOME/Desktop/Z/content"
 OUTPUT_DIR="$HOME/Desktop/Y/"
 OUTPUT_HTML_FILE="$OUTPUT_DIR/_TMP_OUTPUT_FILE.HTML"
+OUTPUT_HTML_FILE_RENAMED_ONLY="$OUTPUT_DIR/_TMP_OUTPUT_FILE_RENAMED_ONLY.HTML"
 
 ################################################################################
 #################### DON'T CHANGE ANYTHING BELOW THIS LINE #####################
@@ -67,8 +68,10 @@ echo ;
 ########################## REAL MAGIC BEGINS BELOW
 ################################################################################
 
-## INITIALIZING THE TMP HTML OUTPUT FILE
-echo "<h1>LIST OF MD FILES RENAMED.</h1>" > $OUTPUT_HTML_FILE
+## INITIALIZING THE TWO TEMPORARY HTML OUTPUT FILES
+echo "<h1>LIST OF MD FILES (ONLY RENAMED)</h1>" > $OUTPUT_HTML_FILE_RENAMED_ONLY
+echo "<h1>LIST OF MD FILES (ALL + RENAMED)</h1>" > $OUTPUT_HTML_FILE
+
 echo "<h2>UNDER DIRECTORY = $HUGO_CONTENT_DIR</h2>" >> $OUTPUT_HTML_FILE
 
 echo "<h3 style='color:red;'>THE FOLLOWING FILES HAVE BEEN RENAMED IN THE FOLLOWING DIRECTORIES.</h3>" >> $OUTPUT_HTML_FILE
@@ -85,6 +88,7 @@ do
 ((counter_directories++))
 echo "=========================================================================";
 echo "$counter_directories // DIRECTORY FOUND = $d" ;
+echo "<hr><h4 style='color:blue;'>$counter_directories // DIRECTORY FOUND = $d</h4>" >> $OUTPUT_HTML_FILE_RENAMED_ONLY ;
 echo "<hr><h4 style='color:blue;'>$counter_directories // DIRECTORY FOUND = $d</h4>" >> $OUTPUT_HTML_FILE ;
 echo "=========================================================================";
 
@@ -123,6 +127,7 @@ cd $d
       echo "    FILE-$counter // File WILL BE renamed." ;
       ## creating the output html file for a review
       echo "<tr style='background:yellow;'><td>$counter</td> <td>$f</td> <td>$new_name</td></tr>" >> $OUTPUT_HTML_FILE ;
+      echo "<tr style='background:yellow;'><td>$counter</td> <td>$f</td> <td>$new_name</td></tr>" >> $OUTPUT_HTML_FILE_RENAMED_ONLY ;
 
       ## ACTUAL FILE RENAMING
       mv $f $new_name ;
