@@ -96,7 +96,7 @@ echo "========================================================================="
 cd $d
 
   ################ BEGIN LOOP 2: LOOPING THRU FILES IN EACH DIR THUS FOUND #####
-
+  echo "<table border='1'>" >> $OUTPUT_HTML_FILE_RENAMED_ONLY
   echo "<table border='1'>" >> $OUTPUT_HTML_FILE
   echo "<tr> <th>FILE COUNTER</th> <th>EXISTING NAME (yellow = renamed | lime = not renamed)</th> <th>NEW NAME</th> </tr>" >> $OUTPUT_HTML_FILE
 
@@ -136,6 +136,7 @@ cd $d
   done
 
   echo "</table>" >> $OUTPUT_HTML_FILE
+  echo "</table>" >> $OUTPUT_HTML_FILE_RENAMED_ONLY
   ############### END LOOP 2: LOOPING THRU FILES IN EACH DIR THUS FOUND ########
 
 done
@@ -163,3 +164,4 @@ echo "</div>"  >> $OUTPUT_HTML_FILE ;
 
 ## REVIEW RESULTS (following command only works on MAC OS)
 open $OUTPUT_HTML_FILE
+open $OUTPUT_HTML_FILE_RENAMED_ONLY
