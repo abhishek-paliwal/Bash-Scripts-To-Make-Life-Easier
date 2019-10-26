@@ -31,6 +31,9 @@ OUTPUT_DIR="$HOME/Desktop/Y/"
 OUTPUT_HTML_FILE="$OUTPUT_DIR/_TMP_OUTPUT_FILE.HTML"
 OUTPUT_HTML_FILE_RENAMED_ONLY="$OUTPUT_DIR/_TMP_OUTPUT_FILE_RENAMED_ONLY.HTML"
 
+## DELETE HTML FILES IF ALREADY EXISTS
+rm $OUTPUT_HTML_FILE_RENAMED_ONLY $OUTPUT_HTML_FILE
+
 ################################################################################
 #################### DON'T CHANGE ANYTHING BELOW THIS LINE #####################
 ################################################################################
@@ -69,13 +72,28 @@ echo ;
 ################################################################################
 
 ## INITIALIZING THE TWO TEMPORARY HTML OUTPUT FILES
-echo "<h1>LIST OF MD FILES (ONLY RENAMED)</h1>" > $OUTPUT_HTML_FILE_RENAMED_ONLY
-echo "<h1>LIST OF MD FILES (ALL + RENAMED)</h1>" > $OUTPUT_HTML_FILE
+echo "<!doctype html>
+<html lang='en'>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
 
-echo "<h2>UNDER DIRECTORY = $HUGO_CONTENT_DIR</h2>" >> $OUTPUT_HTML_FILE
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
 
-echo "<h3 style='color:red;'>THE FOLLOWING FILES HAVE BEEN RENAMED IN THE FOLLOWING DIRECTORIES.</h3>" >> $OUTPUT_HTML_FILE
+    <title>Program output</title>
+  </head>
+  <body>
+  <div class='container'><!-- BEGIN: main containter div -->" | tee -a $OUTPUT_HTML_FILE_RENAMED_ONLY $OUTPUT_HTML_FILE
 
+echo "<h1>LIST OF MD FILES (ONLY RENAMED)</h1>" >> $OUTPUT_HTML_FILE_RENAMED_ONLY
+echo "<h1>LIST OF MD FILES (ALL + RENAMED)</h1>" >> $OUTPUT_HTML_FILE
+
+echo "<h4>UNDER DIRECTORY = $HUGO_CONTENT_DIR</h4>" >> $OUTPUT_HTML_FILE
+
+echo "<h6 style='color:red;'>THE FOLLOWING FILES HAVE BEEN RENAMED IN THE FOLLOWING DIRECTORIES.</h6>" >> $OUTPUT_HTML_FILE
+echo "<hr><h5>COLOR-KEY: RED = renamed // LIGHT-BLUE = not renamed</h5></hr>" >> $OUTPUT_HTML_FILE
 
 ############### BEGIN LOOP 1: LOOPING THRU DIRECTORIES IN THE MAIN-DIR #########
 counter_directories=0;
@@ -88,17 +106,21 @@ do
 ((counter_directories++))
 echo "=========================================================================";
 echo "$counter_directories // DIRECTORY FOUND = $d" ;
-echo "<hr><h4 style='color:blue;'>$counter_directories // DIRECTORY FOUND = $d</h4>" >> $OUTPUT_HTML_FILE_RENAMED_ONLY ;
-echo "<hr><h4 style='color:blue;'>$counter_directories // DIRECTORY FOUND = $d</h4>" >> $OUTPUT_HTML_FILE ;
+echo "<hr><h5 style='color:blue;'>$counter_directories // DIRECTORY FOUND = $d</h5>" | tee -a  $OUTPUT_HTML_FILE_RENAMED_ONLY $OUTPUT_HTML_FILE ;
 echo "=========================================================================";
 
 ## Change the directory, so that the file listing can be done in that directory
 cd $d
 
   ################ BEGIN LOOP 2: LOOPING THRU FILES IN EACH DIR THUS FOUND #####
-  echo "<table border='1'>" >> $OUTPUT_HTML_FILE_RENAMED_ONLY
-  echo "<table border='1'>" >> $OUTPUT_HTML_FILE
-  echo "<tr> <th>FILE COUNTER</th> <th>EXISTING NAME (yellow = renamed | lime = not renamed)</th> <th>NEW NAME</th> </tr>" >> $OUTPUT_HTML_FILE
+  echo "<table class='table table-bordered text-center'>" | tee -a $OUTPUT_HTML_FILE_RENAMED_ONLY $OUTPUT_HTML_FILE
+
+  echo "<thead class='thead-dark'><tr>
+  <th scope='col'>FILE COUNTER</th>
+  <th scope='col'>EXISTING NAME</th>
+  <th scope='col'>NEW NAME</th>
+  </tr></thead>
+  <tbody>" | tee -a $OUTPUT_HTML_FILE_RENAMED_ONLY $OUTPUT_HTML_FILE
 
   #### Listing all files except the ones which have the words '_index' in name.
   #### IMPORTANT NOTE: Make sure that there are no _index.md file renamed at the end of this program.
@@ -121,13 +143,12 @@ cd $d
     then
       ((counter_invalid++))
       echo "    FILE-$counter // File WILL NOT BE renamed. Because old name and new name are the same."
-      echo "<tr style='background:lime;'><td>$counter</td> <td>$f</td> <td>$new_name</td></tr>" >> $OUTPUT_HTML_FILE ;
+      echo "<tr class='table-primary'><th scope='row'>$counter</th> <td>$f</td> <td>$new_name</td></tr>" >> $OUTPUT_HTML_FILE ;
     else
       ((counter_valid++))
       echo "    FILE-$counter // File WILL BE renamed." ;
       ## creating the output html file for a review
-      echo "<tr style='background:yellow;'><td>$counter</td> <td>$f</td> <td>$new_name</td></tr>" >> $OUTPUT_HTML_FILE ;
-      echo "<tr style='background:yellow;'><td>$counter</td> <td>$f</td> <td>$new_name</td></tr>" >> $OUTPUT_HTML_FILE_RENAMED_ONLY ;
+      echo "<tr class='table-danger'><th scope='row'>$counter</th> <td>$f</td> <td>$new_name</td></tr>" | tee -a  $OUTPUT_HTML_FILE_RENAMED_ONLY $OUTPUT_HTML_FILE ;
 
       ## ACTUAL FILE RENAMING
       mv $f $new_name ;
@@ -135,8 +156,7 @@ cd $d
 
   done
 
-  echo "</table>" >> $OUTPUT_HTML_FILE
-  echo "</table>" >> $OUTPUT_HTML_FILE_RENAMED_ONLY
+  echo "<tbody></table>" | tee -a $OUTPUT_HTML_FILE_RENAMED_ONLY $OUTPUT_HTML_FILE
   ############### END LOOP 2: LOOPING THRU FILES IN EACH DIR THUS FOUND ########
 
 done
@@ -161,6 +181,16 @@ echo "<br>TOTAL FILES FOUND = $counter"  >> $OUTPUT_HTML_FILE ;
 echo "<br>FILES RENAMED = $counter_valid"  >> $OUTPUT_HTML_FILE ;
 echo "<br>FILES NOT RENAMED = $counter_invalid"  >> $OUTPUT_HTML_FILE ;
 echo "</div>"  >> $OUTPUT_HTML_FILE ;
+
+## FINALIZING THE HTML OUTPUT FILES BY APPENDING THE FOOTER REQUIRED FOR BOOTSTRAP4
+echo "</div> <!-- END: main containter div -->
+    <!-- Optional Bootstrap JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+  </body>
+</html>" | tee -a $OUTPUT_HTML_FILE_RENAMED_ONLY $OUTPUT_HTML_FILE
 
 ## REVIEW RESULTS (following command only works on MAC OS)
 open $OUTPUT_HTML_FILE
