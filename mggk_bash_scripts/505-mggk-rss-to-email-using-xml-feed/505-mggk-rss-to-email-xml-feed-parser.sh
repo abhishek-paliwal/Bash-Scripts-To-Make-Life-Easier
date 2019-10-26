@@ -12,13 +12,25 @@ cat << EOF
 EOF
 
 ## CD to temporary directory on desktop
-PWD="$HOME/Desktop/_TMP_Automator_results_"
+PWD="$HOME/Desktop/Y"
 cd $PWD ;
 echo ">>>> PWD is $PWD" ;
 
 ## DEFINE SOME VARIABLE FILENAMES
-OUTPUT_RSSFEED_FILE="mggk-rssfeed.xml" ;
-OUTPUT_HTML_FILE="tmp-output-rss.html"
+OUTPUT_RSSFEED_FILE="_TMP_505_mggk-rssfeed.xml" ;
+OUTPUT_HTML_FILE="_TMP_505_tmp-output-rss.html"
+OUTPUT_HTML_FILE_FINAL="_TMP_505_FINAL_OUTPUT_HTML_FILE.html"
+
+###############################################################################
+## USER INPUT IS ASKED
+echo;
+echo "Enter the NUMBER OF POSTS you want in HTML output [KEEP EMPTY TO USE DEFAULTS = 8 ]: " ;
+read numPosts ;
+## CHECKING IF VALUES ARE ENTERED OR NOT. IF NOT ENTERED, FOLLOWING DEFAULT VALUES WILL BE USED.
+if [ -z "$numPosts" ] ; then numPosts="8" ; fi
+## PRINTING
+echo; echo "NUMBER of posts to be included in HTML output = $numPosts" ;
+###############################################################################
 
 ## first download the xml file locally and save as feed.xml
 curl -s https://www.mygingergarlickitchen.com/index.xml > $OUTPUT_RSSFEED_FILE
@@ -50,7 +62,7 @@ echo "<p>Hello [Name,fallback=]</p><p><strong>🍴Please find the latest food po
 echo "<center>" >> $OUTPUT_HTML_FILE ;
 
 echo ">>>> Beginning FOR LOOP" ;
-for x in {1..8}
+for x in $(seq 1 $numPosts)
 do
 	TITLE=$( xmlstarlet sel -t -v "/rss/channel/item[$x]/title" $OUTPUT_RSSFEED_FILE ) ;
 	PUBDATE=$( xmlstarlet sel -t -v "/rss/channel/item[$x]/pubDate" $OUTPUT_RSSFEED_FILE ) ;
@@ -100,9 +112,9 @@ echo "<!-- Optional JavaScript -->
 
 ##########################################
 ## Replacing strange characters to formal html symbols and saving to final html file
-cat $OUTPUT_HTML_FILE | sed 's/&lt;/</g' | sed 's/&gt;/>/g' | sed 's/&amp;lsquo;/"/g' | sed 's/&amp;rsquo;/"/g' | sed 's/&amp;#8216;/"/g' > FINAL_OUTPUT_HTML_FILE.html
+cat $OUTPUT_HTML_FILE | sed 's/&lt;/</g' | sed 's/&gt;/>/g' | sed 's/&amp;lsquo;/"/g' | sed 's/&amp;rsquo;/"/g' | sed 's/&amp;#8216;/"/g' > $OUTPUT_HTML_FILE_FINAL
 
 ## Opening directory = PWD
 # This command works only on mac
 open $PWD
-open FINAL_OUTPUT_HTML_FILE.html
+open $OUTPUT_HTML_FILE_FINAL
