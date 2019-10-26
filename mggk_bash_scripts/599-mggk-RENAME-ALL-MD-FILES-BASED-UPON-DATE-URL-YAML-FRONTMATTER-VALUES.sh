@@ -113,7 +113,7 @@ echo "========================================================================="
 cd $d
 
   ################ BEGIN LOOP 2: LOOPING THRU FILES IN EACH DIR THUS FOUND #####
-  echo "<table class='table-bordered'>" | tee -a $OUTPUT_HTML_FILE_RENAMED_ONLY $OUTPUT_HTML_FILE
+  echo "<table class='table table-bordered text-center'>" | tee -a $OUTPUT_HTML_FILE_RENAMED_ONLY $OUTPUT_HTML_FILE
 
   echo "<thead class='thead-dark'><tr>
   <th scope='col'>FILE COUNTER</th>
