@@ -15,14 +15,13 @@
 20191118,16:10:00,deeppink,Skating-Class
 20191125,16:10:00,deeppink,Skating-Class
 ## SWIMMING CLASSES
-20191011,19:20:00,DeepSkyBlue,Swimming-Class
-20191025,19:20:00,DeepSkyBlue,Swimming-Class
-20191101,19:20:00,DeepSkyBlue,Swimming-Class
+20191101,19:20:00,DeepSkyBlue,Swimming-Class (This class has been cancelled.)
 20191108,19:20:00,DeepSkyBlue,Swimming-Class (Ask from instructor session on this day. Ask how the child is doing in the class. See Email received on Oct 10 )
 20191115,19:20:00,DeepSkyBlue,Swimming-Class
 20191122,19:20:00,DeepSkyBlue,Swimming-Class
 20191129,19:20:00,DeepSkyBlue,Swimming-Class
 20191213,19:20:00,DeepSkyBlue,Swimming-Class
+20191216,19:20:00,DeepSkyBlue,Swimming-Class (Replacement for class which was cancelled on Nov 1 2019)
 ## OTHER EVENTS
 20191121,00:00:00,Pink,Wedding Anniversary
 20191225,00:00:00,Red,Christmas Eve
