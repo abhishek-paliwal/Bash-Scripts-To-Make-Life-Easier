@@ -1,11 +1,13 @@
 ##Stop word list from SMART (Salton,1971).  Available at ftp://ftp.cs.cornell.edu/pub/smart/english.stop
 ##BEGIN: MGGK KEYWORDS
 mggk
+mygingergarlickitchen
 anupama
 paliwal
 https
 http
 www
+com
 date
 published
 ##END: MGGK KEYWORDS

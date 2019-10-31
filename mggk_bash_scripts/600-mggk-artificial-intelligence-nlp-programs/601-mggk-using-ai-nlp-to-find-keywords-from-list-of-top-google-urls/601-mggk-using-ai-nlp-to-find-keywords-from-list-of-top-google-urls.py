@@ -14,9 +14,10 @@ import matplotlib.pyplot as plt
 ################################################################################
 from os.path import expanduser
 home = expanduser("~")
-rake_stop_dir = home + '/Desktop/Y/MGGK-PYTHON-RAKE-SmartStoplist.txt'
-NLP_URLS_TEXT_FILE = home + '/Desktop/Y/ALL_NLP_URLS.txt'
-OUTPUT_HTML_FILE = home + '/Desktop/Y/_TMP_HTML_OUTPUT.HTML'
+dirpath = '/GitHub/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls'
+rake_stop_dir = home + dirpath + '/601-MGGK-PYTHON-RAKE-SmartStoplist.txt'
+NLP_URLS_TEXT_FILE = home + '/Desktop/Y/601-MGGK-REQUIREMENT-ALL-URLS-FOR-NLP.txt'
+OUTPUT_HTML_FILE = home + '/Desktop/Y/_TMP_601_MGGK_AI_NLP_HTML_OUTPUT.HTML'
 
 dateformat="%Y-%m-%d %H:%M"
 TIME_NOW = datetime.strftime(datetime.now(), dateformat)
@@ -348,7 +349,7 @@ MY_URL_COUNT=0
 for line in myfile:
     MY_URL_COUNT = MY_URL_COUNT+1
     print("\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-    print(">>>> CURRENT LINE: ",line)
+    print(">>>> CURRENT URL READING: ",line)
     print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
     line=line.strip() ## removes all unnecessary character in line (leading and trailing)
     mggk_find_ai_details_from_url_lines(url = line, URL_COUNT = MY_URL_COUNT)
