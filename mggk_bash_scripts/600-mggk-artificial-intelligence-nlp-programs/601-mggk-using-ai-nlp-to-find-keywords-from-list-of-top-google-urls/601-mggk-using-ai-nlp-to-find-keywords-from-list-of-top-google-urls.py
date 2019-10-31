@@ -93,6 +93,19 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     content = urllib.request.urlopen(req).read()
     soup = BeautifulSoup(content, 'html.parser' )
 
+    ############# EXTRACTING THE META DESCRIPTON FROM THE WEBPAGE #############
+    #### Description is Case-Sensitive. So, we need to look for both 'Description' and 'description'.
+    META_DESCRIPTION = "No meta description found." ## INITIALIZING
+    try:
+        meta_desc = soup.find(attrs={'name':'description'})
+        if meta_desc == None:
+            meta_desc = soup.find(attrs={'name':'Description'})
+        ## PRINTING THE META CONTENT DESCRIPTION
+        META_DESCRIPTION = meta_desc['content']
+        print(">>>> META_DESCRIPTION: \n", META_DESCRIPTION)
+    except:
+        print("***** BEAUTIFUL SOUP ERROR: FAILED TO FIND META DESCRIPTION TAG IN WEBPAGE ***** = ", url)
+
     ## INITIALIZING SOME VALUES, ELSE BS4 GIVES ERRORS IF NO SUCH TAG IS FOUND ON WEBPAGE
     num_words = 0 ;
     BSOUP_NUMWORDS = 0
@@ -106,8 +119,15 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
 
     try:
         print("-------------------------------------------------------------------")
-        #my_main_div_html = soup.find("div", class_="mggk-main-article-content")
-        my_main_div_html = soup.find("article")
+        ## finding main post content in mggk site
+        my_main_div_html = soup.find("div", class_="mggk-main-article-content")
+        ## finding main post content in all other sites worldwide
+        if my_main_div_html == None:
+            my_main_div_html = soup.find("article")
+        ## if no main content is found still, try with the whole webpage
+        if my_main_div_html == None:
+            my_main_div_html = soup
+
         #print(my_main_div_html.prettify())
         my_main_div_text = my_main_div_html.get_text()
         #print(">>>> ALL EXTRACTED TEXT [BEAUTIFUL SOUP]: ", my_main_div_text)
@@ -115,6 +135,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         print(">>>> NUMBER OF WORDS [BEAUTIFUL SOUP]: ", num_words)
         BSOUP_NUMWORDS = num_words
         all_hyerlinks = my_main_div_html.find_all("a")
+
     except:
         print("***** BEAUTIFUL SOUP ERROR: FAILED TO FIND ARTICLE HTML TAG IN WEBPAGE ***** = ", url)
 
@@ -174,7 +195,6 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
 
     ALL_HYPERLINKS_ARRAY_TMP = sorted(ALL_HYPERLINKS_ARRAY_TMP) ## sorting the list
     ALL_HYPERLINKS_ARRAY = '<br>'.join(str(v) for v in ALL_HYPERLINKS_ARRAY_TMP)
-
 
     #########################################################
     ## END: GETTING SOME MORE DETAILS USING BeautifulSoup
@@ -285,6 +305,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     f.write('<td><h2>'+ str(URL_COUNT) +'</h2></td>')
     f.write('<td><a href="'+ url +'">' + url + '</a></td>')
     f.write('<td>'+ NLP_ARTICLE_TOP_IMAGE +'</td>')
+    f.write('<td>'+ META_DESCRIPTION +'</td>')
     f.write('<td>'+ str(NLP_ARTICLE_ANY_VIDEO) +'</td>')
     f.write('<td>' + TOP20_WORDS_STRING_HTML + '</td>')
     f.write('<td>'+ str(BSOUP_NUMWORDS) + '</td>')
@@ -325,6 +346,7 @@ f.write('<tr>')
 f.write('<td>URL_COUNT</td>')
 f.write('<td>URL LINK</td>')
 f.write('<td>NLP_ARTICLE_TOP_IMAGE</td>')
+f.write('<td>META_DESCRIPTION</td>')
 f.write('<td>NLP_ARTICLE_ANY_VIDEO</td>')
 f.write('<td>TOP20_WORDS<br>(num_appearances, word)</td>')
 f.write('<td>BSOUP_NUMWORDS</td>')
