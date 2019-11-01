@@ -38,7 +38,7 @@ BOOTSTRAP4_HTML_HEADER = """<!doctype html>
     <title>601 - AI + NLP Program output</title>
   </head>
   <body>
-  <div class='container'><!-- BEGIN: main containter div -->"""
+  <div class='container-fluid'><!-- BEGIN: main containter div -->"""
 
 BOOTSTRAP4_HTML_FOOTER = """   </div> <!-- END: main containter div -->
     <!-- Optional Bootstrap JavaScript -->
@@ -219,7 +219,8 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         hlink_href= str(hlink.get('href')) ## convert NoneType to String
         if ("http" in hlink_href):
             print(hlink_href)
-            ALL_HYPERLINKS_ARRAY_TMP.append('&bull; '+str(hlink_href))
+            hlink_href_substr = str(hlink_href[0:70]) ## extracting substring till 100 characters
+            ALL_HYPERLINKS_ARRAY_TMP.append('&rarr; <a href="'+ hlink_href + '">' + hlink_href_substr + '...</a>')
 
     ALL_HYPERLINKS_ARRAY_TMP = sorted(ALL_HYPERLINKS_ARRAY_TMP) ## sorting the list
     ALL_HYPERLINKS_ARRAY = '<br>'.join(str(v) for v in ALL_HYPERLINKS_ARRAY_TMP)
@@ -230,13 +231,14 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     print("\n>>>> ALL IMAGES IN ARTICLE BLOCK: \n")
     for myimg in ALL_IMAGES:
         #print(myimg)
-        IMAGE_URL = "IMAGE_URL: " + str(myimg.get('src'))
-        IMAGE_ALT_TAG = "IMAGE_ALT_TAG: " + str(myimg.get('alt'))
+        IMAGE_URL = str(myimg.get('src'))
+        IMAGE_URL_SUBSTR = IMAGE_URL[0:100]
+        IMAGE_ALT_TAG = str(myimg.get('alt'))
         print(IMAGE_URL)
         print(IMAGE_ALT_TAG)
         print('')
-        ALL_IMAGES_ARRAY_TMP.append('&bull; ' + IMAGE_URL )
-        ALL_IMAGES_ARRAY_TMP.append('&bull; ' + IMAGE_ALT_TAG )
+        ALL_IMAGES_ARRAY_TMP.append('<br>&rarr; IMAGE_URL: <a href="' + IMAGE_URL + '">' + IMAGE_URL_SUBSTR + '</a>')
+        ALL_IMAGES_ARRAY_TMP.append('&rarr; IMAGE_ALT_TAG: <strong>' + IMAGE_ALT_TAG + '</strong>')
 
     ALL_IMAGES_ARRAY = '<br>'.join(str(v) for v in ALL_IMAGES_ARRAY_TMP)
     ############################################################################
@@ -370,7 +372,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     f.write('<td>'+ GENSIM_KEYWORDS_TOP25_WITH_SCORES +'</td>')
     f.write('<td>'+ FULL_HEADINGS_ARRAY_FINAL +'</td>')
     f.write('<td>'+ ALL_HYPERLINKS_ARRAY +'</td>')
-    f.write('<td>'+ ALL_IMAGES_ARRAY +'</td>')    
+    f.write('<td>'+ ALL_IMAGES_ARRAY +'</td>')
     f.write('</tr>')
 
 ################################################################################
