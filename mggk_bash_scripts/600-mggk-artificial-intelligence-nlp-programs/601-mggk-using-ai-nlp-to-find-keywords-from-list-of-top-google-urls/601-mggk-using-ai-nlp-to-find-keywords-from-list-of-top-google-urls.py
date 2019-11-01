@@ -183,27 +183,27 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         print(h1)
         FULL_HEADINGS_ARRAY.append("<br>&bull; " + h1.get_text())
 
-    FULL_HEADINGS_ARRAY.append("<h2>H2 headings</h2>")
+    FULL_HEADINGS_ARRAY.append("<br><br><h2>H2 headings</h2>")
     for h2 in h2_array:
         print(h2)
         FULL_HEADINGS_ARRAY.append("<br>&bull; " + h2.get_text())
 
-    FULL_HEADINGS_ARRAY.append("<h2>H3 headings</h3>")
+    FULL_HEADINGS_ARRAY.append("<br><br><h2>H3 headings</h3>")
     for h3 in h3_array:
         print(h3)
         FULL_HEADINGS_ARRAY.append("<br>&bull; " + h3.get_text())
 
-    FULL_HEADINGS_ARRAY.append("<h4>H4 headings</h4>")
+    FULL_HEADINGS_ARRAY.append("<br><br><h4>H4 headings</h4>")
     for h4 in h4_array:
         print(h4)
         FULL_HEADINGS_ARRAY.append("<br>&bull; " + h4.get_text())
 
-    FULL_HEADINGS_ARRAY.append("<h5>H5 headings</h5>")
+    FULL_HEADINGS_ARRAY.append("<br><br><h5>H5 headings</h5>")
     for h5 in h5_array:
         print(h5)
         FULL_HEADINGS_ARRAY.append("<br>&bull; " + h5.get_text())
 
-    FULL_HEADINGS_ARRAY.append("<h6>H6 headings</h6>")
+    FULL_HEADINGS_ARRAY.append("<br><br><h6>H6 headings</h6>")
     for h6 in h6_array:
         print(h6)
         FULL_HEADINGS_ARRAY.append("<br>&bull; " + h6.get_text())
