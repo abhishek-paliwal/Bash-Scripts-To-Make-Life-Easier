@@ -283,8 +283,11 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     GENSIM_KEYWORDS_ALL = GENSIM_KEYWORDS_ALL_TMP.replace('\n', '<br>')
     print(GENSIM_KEYWORDS_ALL)
 
-    print("\n\n>>>> GENSIM KEYWORDS = top 25 keywords with scores \n")
-    GENSIM_KEYWORDS_TOP25_WITH_SCORES_TMP = keywords(article.text,split=False,words=25,scores=True)
+    ## INITIAL IDEA BELOW WAS TO TAKE 25 KEYWORDS, BUT IT DOES NOT KEEP WELL WITH
+    #### THE CASE WHEN THERE ARE LESS THAN 25 KEYWORDS IN TOTAL. SO NOW, WE WILL
+    #### CONSIDER ALL KEYWORDS
+    print("\n\n>>>> GENSIM KEYWORDS = Top Keywords with scores \n")
+    GENSIM_KEYWORDS_TOP25_WITH_SCORES_TMP = keywords(article.text,split=False,scores=True)
     ## WORKING WITH THIS GENSIM KEYWORDS TUPLE (BREAKING IT DOWN LINE BY LINE)
     GENSIM_TOP_KEYWORD_ARRAY=[]
     for gkword in GENSIM_KEYWORDS_TOP25_WITH_SCORES_TMP:
