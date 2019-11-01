@@ -22,6 +22,33 @@ OUTPUT_HTML_FILE = home + '/Desktop/Y/_TMP_601_MGGK_AI_NLP_HTML_OUTPUT.HTML'
 dateformat="%Y-%m-%d %H:%M"
 TIME_NOW = datetime.strftime(datetime.now(), dateformat)
 
+## BOOTSTRAP4 HTML HEADER + FOOTER (defining multiline string variables)
+BOOTSTRAP4_HTML_HEADER = """<!doctype html>
+<html lang='en'>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+
+    <style>td {vertical-align: baseline; font-family: sans-serif; padding: 5px; }</style>
+
+    <title>601 - AI + NLP Program output</title>
+  </head>
+  <body>
+  <div class='container'><!-- BEGIN: main containter div -->"""
+
+BOOTSTRAP4_HTML_FOOTER = """   </div> <!-- END: main containter div -->
+    <!-- Optional Bootstrap JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+  </body>
+</html>"""
+
 ################################################################################
 
 ################################################################################
@@ -335,38 +362,39 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
 ################################################################################
 ## OPEN HTML OUTPUT FILE FOR WRITING the first line. AFter that, the file will be appended using 'a' flag.
 f = open(OUTPUT_HTML_FILE,'w')
-f.write('<html><head>' )
-f.write('<style>td {vertical-align: baseline; font-family: sans-serif; padding: 5px; }</style>' )
-f.write('</head><body>')
-f.write('Created: '+TIME_NOW)
+f.write(BOOTSTRAP4_HTML_HEADER)
+#f.write('<html><head>' )
+#f.write('<style>td {vertical-align: baseline; font-family: sans-serif; padding: 5px; }</style>' )
+#f.write('</head><body>')
+f.write('Created: '+ TIME_NOW)
 f.write('<h1>Keyword Analysis using NLP (Natural Language Processing)</h1>')
 f.write('<h2>Output for MGGK using Google Search Top URLs</h2>')
 f.close()
 ## APPENDING THE HTML FILE BEGINS
 f = open(OUTPUT_HTML_FILE,'a')
-f.write('<table border="1">')
-f.write('<tr>')
-f.write('<td>URL_COUNT</td>')
-f.write('<td>URL LINK</td>')
-f.write('<td>NLP_ARTICLE_TOP_IMAGE</td>')
-f.write('<td>META_DESCRIPTION</td>')
-f.write('<td>NLP_ARTICLE_ANY_VIDEO</td>')
-f.write('<td>TOP20_WORDS<br>(num_appearances, word)</td>')
-f.write('<td>BSOUP_NUMWORDS</td>')
-f.write('<td>NLP_NUMWORDS</td>')
-f.write('<td>NLP_READINGTIME_212WPM</td>')
-f.write('<td>NLP_ARTICLE_AUTHORS</td>')
-f.write('<td>NLP_ARTICLE_PUBLISH_DATE</td>')
-f.write('<td>NLP_ARTICLE_SUMMARY</td>')
-f.write('<td>GENSIM_ARTICLE_SUMMARY_100</td>')
-f.write('<td>GENSIM_ARTICLE_SUMMARY_20PC</td>')
-f.write('<td>NLP_TOP_KEYWORDS</td>')
-f.write('<td>GENSIM_KEYWORDS_ALL</td>')
-f.write('<td>RAKE_TOP_KEYWORD_PHRASES</td>')
-f.write('<td>GENSIM_KEYWORDS_TOP25_WITH_SCORES</td>')
-f.write('<td>ALL_HEADINGS_IN_WHOLE_WEBPAGE</td>')
-f.write('<td>FOUND_HYPERLINKS_IN_ARTICLE_BLOCK</td>')
-f.write('</tr>')
+f.write('<table class="table-striped table-bordered">')
+f.write('<thead class="thead-dark"><tr>')
+f.write('<th scope="col">URL COUNT</th>')
+f.write('<th scope="col">URL LINK</th>')
+f.write('<th scope="col">NLP ARTICLE TOP IMAGE</th>')
+f.write('<th scope="col">BSOUP META DESCRIPTION</th>')
+f.write('<th scope="col">NLP ARTICLE FOUND VIDEOS</th>')
+f.write('<th scope="col">TOP 20 WORDS<br>(num appearances, word)</th>')
+f.write('<th scope="col">BSOUP NUMWORDS</th>')
+f.write('<th scope="col">NLP NUMWORDS</th>')
+f.write('<th scope="col">NLP READINGTIME AT 212 WPM</th>')
+f.write('<th scope="col">NLP ARTICLE AUTHORS</th>')
+f.write('<th scope="col">NLP ARTICLE PUBLISH DATE</th>')
+f.write('<th scope="col">NLP ARTICLE SUMMARY</th>')
+f.write('<th scope="col">GENSIM ARTICLE SUMMARY 100 WORDS</th>')
+f.write('<th scope="col">GENSIM ARTICLE SUMMARY 20 PERCENT OF ARTICLE LENGTH</th>')
+f.write('<th scope="col">NLP TOP KEYWORDS</th>')
+f.write('<th scope="col">GENSIM KEYWORDS ALL</th>')
+f.write('<th scope="col">RAKE TOP KEYWORD PHRASES</th>')
+f.write('<th scope="col">GENSIM KEYWORDS TOP25 WITH SCORES</th>')
+f.write('<th scope="col">BSOUP ALL HEADINGS IN WHOLE WEBPAGE</th>')
+f.write('<th scope="col">BSOUP FOUND HYPERLINKS IN ARTICLE BLOCK</th>')
+f.write('</tr></thead>')
 
 ## Calling the above function on each url line from url links text FILE
 myfile = open(NLP_URLS_TEXT_FILE, "r")
@@ -381,7 +409,8 @@ for line in myfile:
 
 ## FINAL HTML OUTPUT OPERATIONS
 f.write('</table>')
-f.write('</body></html>')
+f.write(BOOTSTRAP4_HTML_FOOTER)
+#f.write('</body></html>')
 f.close()
 ################################################################################
 ################################################################################
