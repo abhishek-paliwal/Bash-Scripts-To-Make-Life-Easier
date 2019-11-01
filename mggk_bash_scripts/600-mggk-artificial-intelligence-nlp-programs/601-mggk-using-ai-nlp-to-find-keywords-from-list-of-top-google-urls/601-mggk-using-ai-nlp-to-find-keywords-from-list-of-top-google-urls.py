@@ -162,6 +162,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         print(">>>> NUMBER OF WORDS [BEAUTIFUL SOUP]: ", num_words)
         BSOUP_NUMWORDS = num_words
         all_hyerlinks = my_main_div_html.find_all("a")
+        ALL_IMAGES = my_main_div_html.find_all('img')
 
     except:
         print("***** BEAUTIFUL SOUP ERROR: FAILED TO FIND ARTICLE HTML TAG IN WEBPAGE ***** = ", url)
@@ -222,6 +223,23 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
 
     ALL_HYPERLINKS_ARRAY_TMP = sorted(ALL_HYPERLINKS_ARRAY_TMP) ## sorting the list
     ALL_HYPERLINKS_ARRAY = '<br>'.join(str(v) for v in ALL_HYPERLINKS_ARRAY_TMP)
+    #######################################################################
+
+    ############# FINDING ALL IMAGES URLS + THEIR ALT_TAGS ON WEBPAGE ##########
+    ALL_IMAGES_ARRAY_TMP = []
+    print("\n>>>> ALL IMAGES IN ARTICLE BLOCK: \n")
+    for myimg in ALL_IMAGES:
+        #print(myimg)
+        IMAGE_URL = "IMAGE_URL: " + str(myimg.get('src'))
+        IMAGE_ALT_TAG = "IMAGE_ALT_TAG: " + str(myimg.get('alt'))
+        print(IMAGE_URL)
+        print(IMAGE_ALT_TAG)
+        print('')
+        ALL_IMAGES_ARRAY_TMP.append('&bull; ' + IMAGE_URL )
+        ALL_IMAGES_ARRAY_TMP.append('&bull; ' + IMAGE_ALT_TAG )
+
+    ALL_IMAGES_ARRAY = '<br>'.join(str(v) for v in ALL_IMAGES_ARRAY_TMP)
+    ############################################################################
 
     #########################################################
     ## END: GETTING SOME MORE DETAILS USING BeautifulSoup
@@ -352,6 +370,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     f.write('<td>'+ GENSIM_KEYWORDS_TOP25_WITH_SCORES +'</td>')
     f.write('<td>'+ FULL_HEADINGS_ARRAY_FINAL +'</td>')
     f.write('<td>'+ ALL_HYPERLINKS_ARRAY +'</td>')
+    f.write('<td>'+ ALL_IMAGES_ARRAY +'</td>')    
     f.write('</tr>')
 
 ################################################################################
@@ -398,6 +417,7 @@ f.write('<th scope="col">RAKE_TOP_KEYWORD_PHRASES</th>')
 f.write('<th scope="col">GENSIM ALL_KEYWORDS_WITH_SCORES</th>')
 f.write('<th scope="col">BSOUP ALL_HEADINGS_IN_WHOLE_WEBPAGE</th>')
 f.write('<th scope="col">BSOUP FOUND_HYPERLINKS_IN_ARTICLE_BLOCK</th>')
+f.write('<th scope="col">BSOUP ALL_IMAGES_ARRAY</th>')
 f.write('</tr></thead><tbody>')
 
 ## Calling the above function on each url line from url links text FILE
