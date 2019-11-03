@@ -38,7 +38,7 @@ BOOTSTRAP4_HTML_HEADER = """<!doctype html>
     <title>601 - AI + NLP Program output</title>
   </head>
   <body>
-  <div class='container'><!-- BEGIN: main containter div -->"""
+  <div class='container-fluid'><!-- BEGIN: main containter div -->"""
 
 BOOTSTRAP4_HTML_FOOTER = """   </div> <!-- END: main containter div -->
     <!-- Optional Bootstrap JavaScript -->
@@ -162,6 +162,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         print(">>>> NUMBER OF WORDS [BEAUTIFUL SOUP]: ", num_words)
         BSOUP_NUMWORDS = num_words
         all_hyerlinks = my_main_div_html.find_all("a")
+        ALL_IMAGES = my_main_div_html.find_all('img')
 
     except:
         print("***** BEAUTIFUL SOUP ERROR: FAILED TO FIND ARTICLE HTML TAG IN WEBPAGE ***** = ", url)
@@ -183,27 +184,27 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         print(h1)
         FULL_HEADINGS_ARRAY.append("<br>&bull; " + h1.get_text())
 
-    FULL_HEADINGS_ARRAY.append("<h2>H2 headings</h2>")
+    FULL_HEADINGS_ARRAY.append("<br><br><h2>H2 headings</h2>")
     for h2 in h2_array:
         print(h2)
         FULL_HEADINGS_ARRAY.append("<br>&bull; " + h2.get_text())
 
-    FULL_HEADINGS_ARRAY.append("<h2>H3 headings</h3>")
+    FULL_HEADINGS_ARRAY.append("<br><br><h2>H3 headings</h3>")
     for h3 in h3_array:
         print(h3)
         FULL_HEADINGS_ARRAY.append("<br>&bull; " + h3.get_text())
 
-    FULL_HEADINGS_ARRAY.append("<h4>H4 headings</h4>")
+    FULL_HEADINGS_ARRAY.append("<br><br><h4>H4 headings</h4>")
     for h4 in h4_array:
         print(h4)
         FULL_HEADINGS_ARRAY.append("<br>&bull; " + h4.get_text())
 
-    FULL_HEADINGS_ARRAY.append("<h5>H5 headings</h5>")
+    FULL_HEADINGS_ARRAY.append("<br><br><h5>H5 headings</h5>")
     for h5 in h5_array:
         print(h5)
         FULL_HEADINGS_ARRAY.append("<br>&bull; " + h5.get_text())
 
-    FULL_HEADINGS_ARRAY.append("<h6>H6 headings</h6>")
+    FULL_HEADINGS_ARRAY.append("<br><br><h6>H6 headings</h6>")
     for h6 in h6_array:
         print(h6)
         FULL_HEADINGS_ARRAY.append("<br>&bull; " + h6.get_text())
@@ -218,10 +219,29 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         hlink_href= str(hlink.get('href')) ## convert NoneType to String
         if ("http" in hlink_href):
             print(hlink_href)
-            ALL_HYPERLINKS_ARRAY_TMP.append('&bull; '+str(hlink_href))
+            hlink_href_substr = str(hlink_href[0:70]) ## extracting substring till 100 characters
+            ALL_HYPERLINKS_ARRAY_TMP.append('&rarr; <a href="'+ hlink_href + '">' + hlink_href_substr + '...</a>')
 
     ALL_HYPERLINKS_ARRAY_TMP = sorted(ALL_HYPERLINKS_ARRAY_TMP) ## sorting the list
     ALL_HYPERLINKS_ARRAY = '<br>'.join(str(v) for v in ALL_HYPERLINKS_ARRAY_TMP)
+    #######################################################################
+
+    ############# FINDING ALL IMAGES URLS + THEIR ALT_TAGS ON WEBPAGE ##########
+    ALL_IMAGES_ARRAY_TMP = []
+    print("\n>>>> ALL IMAGES IN ARTICLE BLOCK: \n")
+    for myimg in ALL_IMAGES:
+        #print(myimg)
+        IMAGE_URL = str(myimg.get('src'))
+        IMAGE_URL_SUBSTR = IMAGE_URL[0:100]
+        IMAGE_ALT_TAG = str(myimg.get('alt'))
+        print(IMAGE_URL)
+        print(IMAGE_ALT_TAG)
+        print('')
+        ALL_IMAGES_ARRAY_TMP.append('<br>&rarr; IMAGE_URL: <a href="' + IMAGE_URL + '">' + IMAGE_URL_SUBSTR + '</a>')
+        ALL_IMAGES_ARRAY_TMP.append('&rarr; IMAGE_ALT_TAG: <strong>' + IMAGE_ALT_TAG + '</strong>')
+
+    ALL_IMAGES_ARRAY = '<br>'.join(str(v) for v in ALL_IMAGES_ARRAY_TMP)
+    ############################################################################
 
     #########################################################
     ## END: GETTING SOME MORE DETAILS USING BeautifulSoup
@@ -332,7 +352,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     ## BEGIN: COLLECTING ALL VARIABLES AND WRITING TO OUTPUT HTML FILE
     ################################################################################
     f.write('<tr>')
-    f.write('<td><h2>'+ str(URL_COUNT) +'</h2></td>')
+    f.write('<th scope="row"><h2>'+ str(URL_COUNT) +'</h2></th>')
     f.write('<td><a href="'+ url +'">' + url + '</a></td>')
     f.write('<td>'+ NLP_ARTICLE_TOP_IMAGE +'</td>')
     f.write('<td>'+ META_DESCRIPTION +'</td>')
@@ -352,6 +372,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     f.write('<td>'+ GENSIM_KEYWORDS_TOP25_WITH_SCORES +'</td>')
     f.write('<td>'+ FULL_HEADINGS_ARRAY_FINAL +'</td>')
     f.write('<td>'+ ALL_HYPERLINKS_ARRAY +'</td>')
+    f.write('<td>'+ ALL_IMAGES_ARRAY +'</td>')
     f.write('</tr>')
 
 ################################################################################
@@ -371,30 +392,35 @@ f.write('<h1>Keyword Analysis using NLP (Natural Language Processing)</h1>')
 f.write('<h2>Output for MGGK using Google Search Top URLs</h2>')
 f.close()
 ## APPENDING THE HTML FILE BEGINS
+#### Make sure to use the column header names to have underscores so that they
+#### are long enough to have a good enough column width. Else, the default bootstrap4
+#### column widths are very narrow.
+####
 f = open(OUTPUT_HTML_FILE,'a')
-f.write('<table class="table-striped table-bordered">')
+f.write('<table class="table table-striped table-bordered">')
 f.write('<thead class="thead-dark"><tr>')
 f.write('<th scope="col">URL COUNT</th>')
 f.write('<th scope="col">URL LINK</th>')
 f.write('<th scope="col">NLP ARTICLE TOP IMAGE</th>')
-f.write('<th scope="col">BSOUP META DESCRIPTION</th>')
-f.write('<th scope="col">NLP ARTICLE FOUND VIDEOS</th>')
-f.write('<th scope="col">TOP 20 WORDS<br>(num appearances, word)</th>')
+f.write('<th scope="col">BSOUP_META_DESCRIPTION</th>')
+f.write('<th scope="col">NLP ARTICLE VIDEOS FOUND</th>')
+f.write('<th scope="col">TOP_20_WORDS<br>(num appearances, word)</th>')
 f.write('<th scope="col">BSOUP NUMWORDS</th>')
 f.write('<th scope="col">NLP NUMWORDS</th>')
 f.write('<th scope="col">NLP READINGTIME AT 212 WPM</th>')
 f.write('<th scope="col">NLP ARTICLE AUTHORS</th>')
-f.write('<th scope="col">NLP ARTICLE PUBLISH DATE</th>')
-f.write('<th scope="col">NLP ARTICLE SUMMARY</th>')
-f.write('<th scope="col">GENSIM ARTICLE SUMMARY 100 WORDS</th>')
-f.write('<th scope="col">GENSIM ARTICLE SUMMARY 20 PERCENT OF ARTICLE LENGTH</th>')
-f.write('<th scope="col">NLP TOP KEYWORDS</th>')
-f.write('<th scope="col">GENSIM KEYWORDS ALL</th>')
-f.write('<th scope="col">RAKE TOP KEYWORD PHRASES</th>')
-f.write('<th scope="col">GENSIM KEYWORDS TOP25 WITH SCORES</th>')
-f.write('<th scope="col">BSOUP ALL HEADINGS IN WHOLE WEBPAGE</th>')
-f.write('<th scope="col">BSOUP FOUND HYPERLINKS IN ARTICLE BLOCK</th>')
-f.write('</tr></thead>')
+f.write('<th scope="col">NLP_ARTICLE_PUBLISH_DATE</th>')
+f.write('<th scope="col">NLP_ARTICLE_SUMMARY</th>')
+f.write('<th scope="col">GENSIM ARTICLE_SUMMARY_100_WORDS</th>')
+f.write('<th scope="col">GENSIM ARTICLE_SUMMARY_20_PERCENT_OF_ARTICLE_LENGTH</th>')
+f.write('<th scope="col">NLP_TOP_KEYWORDS</th>')
+f.write('<th scope="col">GENSIM_KEYWORDS_ALL</th>')
+f.write('<th scope="col">RAKE_TOP_KEYWORD_PHRASES</th>')
+f.write('<th scope="col">GENSIM ALL_KEYWORDS_WITH_SCORES</th>')
+f.write('<th scope="col">BSOUP ALL_HEADINGS_IN_WHOLE_WEBPAGE</th>')
+f.write('<th scope="col">BSOUP FOUND_HYPERLINKS_IN_ARTICLE_BLOCK</th>')
+f.write('<th scope="col">BSOUP ALL_IMAGES_ARRAY</th>')
+f.write('</tr></thead><tbody>')
 
 ## Calling the above function on each url line from url links text FILE
 myfile = open(NLP_URLS_TEXT_FILE, "r")
@@ -408,7 +434,7 @@ for line in myfile:
     mggk_find_ai_details_from_url_lines(url = line, URL_COUNT = MY_URL_COUNT)
 
 ## FINAL HTML OUTPUT OPERATIONS
-f.write('</table>')
+f.write('</tbody></table>')
 f.write(BOOTSTRAP4_HTML_FOOTER)
 #f.write('</body></html>')
 f.close()
