@@ -32,15 +32,17 @@ echo "Select the Song directory =======>
 a) Desktop/_TMP_SONGS_
 b) bollywood-music
 c) royalty-free-music
+d) mggk-royalty-free-music-from-youtube
 " ;
 
-echo "Enter your choice (a/b/c): " ;
+echo "Enter your choice (a/b/c/d): " ;
 read song_dir
 
 case $song_dir in
     a) MY_SONG_DIR="$HOME/Desktop/_TMP_SONGS_" ;;
     b) MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/bollywood-music" ;;
     c) MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/royalty-free-music" ;;
+    c) MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/mggk-royalty-free-music-from-youtube" ;;
     *) echo "Invalid option $song_dir" ;;
 esac
 
