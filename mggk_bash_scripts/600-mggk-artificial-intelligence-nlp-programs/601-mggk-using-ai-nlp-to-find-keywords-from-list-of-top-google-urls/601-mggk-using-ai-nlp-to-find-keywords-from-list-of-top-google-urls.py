@@ -220,7 +220,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         if ("http" in hlink_href):
             print(hlink_href)
             hlink_href_substr = str(hlink_href[0:70]) ## extracting substring till 100 characters
-            ALL_HYPERLINKS_ARRAY_TMP.append('&rarr; <a href="'+ hlink_href + '">' + hlink_href_substr + '...</a>')
+            ALL_HYPERLINKS_ARRAY_TMP.append('&rarr; <a target="_blank" href="'+ hlink_href + '">' + hlink_href_substr + '...</a>')
 
     ALL_HYPERLINKS_ARRAY_TMP = sorted(ALL_HYPERLINKS_ARRAY_TMP) ## sorting the list
     ALL_HYPERLINKS_ARRAY = '<br>'.join(str(v) for v in ALL_HYPERLINKS_ARRAY_TMP)
@@ -237,7 +237,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         print(IMAGE_URL)
         print(IMAGE_ALT_TAG)
         print('')
-        ALL_IMAGES_ARRAY_TMP.append('<br>&rarr; IMAGE_URL: <a href="' + IMAGE_URL + '">' + IMAGE_URL_SUBSTR + '</a>')
+        ALL_IMAGES_ARRAY_TMP.append('<br>&rarr; IMAGE_URL: <a target="_blank" href="' + IMAGE_URL + '">' + IMAGE_URL_SUBSTR + '</a>')
         ALL_IMAGES_ARRAY_TMP.append('&rarr; IMAGE_ALT_TAG: <strong>' + IMAGE_ALT_TAG + '</strong>')
 
     ALL_IMAGES_ARRAY = '<br>'.join(str(v) for v in ALL_IMAGES_ARRAY_TMP)
@@ -353,7 +353,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     ################################################################################
     f.write('<tr>')
     f.write('<th scope="row"><h2>'+ str(URL_COUNT) +'</h2></th>')
-    f.write('<td><a href="'+ url +'">' + url + '</a></td>')
+    f.write('<td><a target="_blank" href="'+ url +'">' + url + '</a></td>')
     f.write('<td>'+ NLP_ARTICLE_TOP_IMAGE +'</td>')
     f.write('<td>'+ META_DESCRIPTION +'</td>')
     f.write('<td>'+ str(NLP_ARTICLE_ANY_VIDEO) +'</td>')
