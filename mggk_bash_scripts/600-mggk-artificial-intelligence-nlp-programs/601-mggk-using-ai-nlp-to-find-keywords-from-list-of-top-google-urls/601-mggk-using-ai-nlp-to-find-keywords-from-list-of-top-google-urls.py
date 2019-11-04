@@ -218,9 +218,11 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     for hlink in all_hyerlinks:
         hlink_href= str(hlink.get('href')) ## convert NoneType to String
         if ("http" in hlink_href):
+            anchor_text_for_link = hlink.get_text() ## get the anchor text for this hyperlink
             print(hlink_href)
             hlink_href_substr = str(hlink_href[0:70]) ## extracting substring till 100 characters
-            ALL_HYPERLINKS_ARRAY_TMP.append('&rarr; <a href="'+ hlink_href + '">' + hlink_href_substr + '...</a>')
+            ALL_HYPERLINKS_ARRAY_TMP.append('<br>&rarr; LINK: <a href="'+ hlink_href + '">' + hlink_href_substr + '...</a>' + '<br>ANCHOR-TEXT: <strong>' + anchor_text_for_link + '</strong>')
+            #ALL_HYPERLINKS_ARRAY_TMP.append('<br>ANCHOR-TEXT: <strong>' + anchor_text_for_link + '</strong>')
 
     ALL_HYPERLINKS_ARRAY_TMP = sorted(ALL_HYPERLINKS_ARRAY_TMP) ## sorting the list
     ALL_HYPERLINKS_ARRAY = '<br>'.join(str(v) for v in ALL_HYPERLINKS_ARRAY_TMP)
@@ -242,6 +244,95 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
 
     ALL_IMAGES_ARRAY = '<br>'.join(str(v) for v in ALL_IMAGES_ARRAY_TMP)
     ############################################################################
+
+    ################################################################################
+    ## FINDING THE META GENERATOR NAME VALUE FROM THE WEBPAGE
+    #### This is of the format such as = <meta name="generator" content="WordPress 5.2.4" />
+    meta_generator_tmp = soup.find(attrs={'name':'generator'})
+    if meta_generator_tmp == None:
+        META_GENERATOR = "Generator name not found."
+    else:
+        META_GENERATOR = str(meta_generator_tmp['content'])
+
+    print("\n>>>> WEBSITE_CREATED_USING: ", META_GENERATOR)
+    ################################################################################
+
+    ################################################################################
+    ## GETTING THE TITLE TAG TEXT FROM THE WEBPAGE
+    TITLE_TAG_VALUE = "No title tag value found."
+    try:
+        TITLE_TAG_VALUE = soup.find('title').get_text()
+        if title_value_tmp == None:
+            TITLE_TAG_VALUE = "No title tag value found."
+    except:
+        print("***** BEAUTIFUL SOUP ERROR: FAILED TO FIND TITLE HTML TAG IN WEBPAGE ***** = ", url)
+
+    print("\n>>>> PAGE TITLE: ",TITLE_TAG_VALUE)
+    ################################################################################
+
+    ################################################################################
+    ## BEGIN: FINDING PUBLISHED AND UPDATED/MODIFIED TIMES FOR WEBPAGE USING BEAUTIFUL SOUP
+    ################################################################################
+    print('\n///////////////////////////////////////////////////////////////////////\n')
+
+    META_PUBLISHED_DATETIME = "Not found = first published time."
+    META_MODIFIED_DATETIME = "Not found = Last updated time."
+    BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY = []
+
+    try:
+        #### Most webpages have this format in the HTML source code:
+        #### <meta property="article:published_time" content="2014-03-16T23:10:22+00:00" />
+        #### <meta property="article:modified_time" content="2014-03-16T23:10:22+00:00" />
+        meta_published_time_tmp = soup.find(attrs={'property':'article:published_time'})
+        META_PUBLISHED_DATETIME = str(meta_published_time_tmp['content'])
+        print("\n>>>> META_PUBLISHED_DATETIME: ", META_PUBLISHED_DATETIME)
+
+        meta_modified_time_tmp = soup.find(attrs={'property':'article:modified_time'})
+        META_MODIFIED_DATETIME = str(meta_modified_time_tmp['content'])
+        print(">>>> META_MODIFIED_DATETIME: ", META_MODIFIED_DATETIME)
+
+        ## CONVERTING OBTAINED DATE STRINGS INTO PYTHON DATE OBJECTS FOR CALCULATIONS
+        #### a.) converting string to corresponding date format (by using strptime)
+        date_post_published_tmp = datetime.strptime(META_PUBLISHED_DATETIME, "%Y-%m-%dT%H:%M:%S%z")
+        date_post_modified_tmp = datetime.strptime(META_MODIFIED_DATETIME, "%Y-%m-%dT%H:%M:%S%z")
+        #### b.) converting thus created date into desired format for printing (by using strftime)
+        date_post_published = datetime.strftime(date_post_published_tmp, '%Y-%m-%d')
+        date_post_modified = datetime.strftime(date_post_modified_tmp, '%Y-%m-%d')
+
+        ## GETTING TODAY
+        today_tmp = datetime.now()
+        date_today = datetime.strftime(today_tmp,'%Y-%m-%d')
+
+        ## DEFINE FUNCTION TO CALCULATE DATE DIFFERENCE
+        def days_between(d1, d2):
+            d1 = datetime.strptime(d1, "%Y-%m-%d")
+            d2 = datetime.strptime(d2, "%Y-%m-%d")
+            return abs((d2 - d1).days) ## RETURNS A TIMEDELTA OBJECT
+
+        days_diff_first_published = days_between(date_today, date_post_published)
+        print(">>>> POST FIRST PUBLISHED: ", days_diff_first_published, " days ago", " = ", round(days_diff_first_published/365,3), " years ago" )
+
+        days_diff_modified = days_between(date_today, date_post_modified)
+        print(">>>> POST LAST MODIFIED: ", days_diff_modified, " days ago", " = ", round(days_diff_modified/365,3), " years ago" )
+
+        BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP = []
+
+        BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('META_PUBLISHED_DATETIME: <br>' + META_PUBLISHED_DATETIME)
+        BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('META_MODIFIED_DATETIME: <br>' + META_MODIFIED_DATETIME)
+        BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('<hr><h4 style="color: #cd1c62;">Post first published: <br>' + str(days_diff_first_published) + ' days ago<br>' + ' = ' + str( round(days_diff_first_published/365,3) ) + ' years ago</h4>' )
+        BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('<h4 style="color: #cd1c62;">Post last modified: <br>' + str(days_diff_modified) + ' days ago<br>' + ' = ' + str( round(days_diff_modified/365,3) ) + ' years ago</h4>' )
+
+        BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY = '<br><br>'.join(str(v) for v in BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP)
+
+        print(">>>>>>")
+        print(BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY)
+
+    except:
+        print("***** BEAUTIFUL SOUP ERROR: FAILED TO FIND PUBLISHED + MODIFIED DATES IN WEBPAGE ***** = ", url)
+    ################################################################################
+    ## END: FINDING PUBLISHED AND UPDATED/MODIFIED TIMES FOR WEBPAGE USING BEAUTIFUL SOUP
+    ################################################################################
+
 
     #########################################################
     ## END: GETTING SOME MORE DETAILS USING BeautifulSoup
@@ -355,6 +446,8 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     f.write('<th scope="row"><h2>'+ str(URL_COUNT) +'</h2></th>')
     f.write('<td><a href="'+ url +'">' + url + '</a></td>')
     f.write('<td>'+ NLP_ARTICLE_TOP_IMAGE +'</td>')
+    f.write('<td>'+ META_GENERATOR +'</td>')
+    f.write('<td>'+ TITLE_TAG_VALUE +'</td>')
     f.write('<td>'+ META_DESCRIPTION +'</td>')
     f.write('<td>'+ str(NLP_ARTICLE_ANY_VIDEO) +'</td>')
     f.write('<td>' + TOP20_WORDS_STRING_HTML + '</td>')
@@ -362,6 +455,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     f.write('<td><h2>'+ str(NLP_NUMWORDS) +' words</h2></td>')
     f.write('<td><h2>'+ str(NLP_READINGTIME_212WPM) +' minutes</h2></td>')
     f.write('<td>'+ str(NLP_ARTICLE_AUTHORS) +'</td>')
+    f.write('<td>'+ str(BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY) +'</td>')
     f.write('<td>'+ str(NLP_ARTICLE_PUBLISH_DATE) +'</td>')
     f.write('<td>'+ NLP_ARTICLE_SUMMARY +'</td>')
     f.write('<td>'+ GENSIM_ARTICLE_SUMMARY_100 +'</td>')
@@ -402,6 +496,8 @@ f.write('<thead class="thead-dark"><tr>')
 f.write('<th scope="col">URL COUNT</th>')
 f.write('<th scope="col">URL LINK</th>')
 f.write('<th scope="col">NLP ARTICLE TOP IMAGE</th>')
+f.write('<th scope="col">BSOUP_META_GENERATOR</th>')
+f.write('<th scope="col">BSOUP_TITLE_TAG_VALUE</th>')
 f.write('<th scope="col">BSOUP_META_DESCRIPTION</th>')
 f.write('<th scope="col">NLP ARTICLE VIDEOS FOUND</th>')
 f.write('<th scope="col">TOP_20_WORDS<br>(num appearances, word)</th>')
@@ -409,6 +505,7 @@ f.write('<th scope="col">BSOUP NUMWORDS</th>')
 f.write('<th scope="col">NLP NUMWORDS</th>')
 f.write('<th scope="col">NLP READINGTIME AT 212 WPM</th>')
 f.write('<th scope="col">NLP ARTICLE AUTHORS</th>')
+f.write('<th scope="col">BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY</th>')
 f.write('<th scope="col">NLP_ARTICLE_PUBLISH_DATE</th>')
 f.write('<th scope="col">NLP_ARTICLE_SUMMARY</th>')
 f.write('<th scope="col">GENSIM ARTICLE_SUMMARY_100_WORDS</th>')
