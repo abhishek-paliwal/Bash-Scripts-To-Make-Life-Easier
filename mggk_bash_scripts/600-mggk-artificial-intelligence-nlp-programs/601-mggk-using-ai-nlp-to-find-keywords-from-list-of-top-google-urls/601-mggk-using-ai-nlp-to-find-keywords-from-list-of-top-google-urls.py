@@ -326,6 +326,12 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         print(">>>>>>")
         print(BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY)
 
+        ####################################
+        ## ASSIGNING A SUITABLE COLOR WRT WEBPAGE FIRST PUBLISHED AGE IN YEARS
+        #### Colors (from recent to oldest // recent is red-hot; oldest is so cold like blue ice) =
+        #### red (under 1 yr), orange (1-2.5 yrs), yellow (2.5-4 yrs), light blue (4-5.5 yrs), darkblue (older than 5.5 yrs)
+
+
     except:
         print("***** BEAUTIFUL SOUP ERROR: FAILED TO FIND PUBLISHED + MODIFIED DATES IN WEBPAGE ***** = ", url)
     ################################################################################
