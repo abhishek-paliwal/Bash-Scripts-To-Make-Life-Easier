@@ -550,9 +550,9 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
 
     ## OUTPUT CSV FILE 3
     with open('_tmp_601_mggk_barchart3.csv', 'a', newline='') as csvfile3:
-        fieldnames3 = ['URL_NUM', 'NLP_READING_TIME_IN_MINS_212WPM']
+        fieldnames3 = ['URL_NUM', 'NLP_READING_TIME_IN_MINS_212WPM', 'URL_NAME']
         writer = csv.DictWriter(csvfile3, fieldnames=fieldnames3)
-        writer.writerow({'URL_NUM':'url'+str(URL_COUNT) , 'NLP_READING_TIME_IN_MINS_212WPM':str(NLP_READINGTIME_212WPM) })
+        writer.writerow({'URL_NUM':'url'+str(URL_COUNT) , 'NLP_READING_TIME_IN_MINS_212WPM':str(NLP_READINGTIME_212WPM) , 'URL_NAME':str(url) })
 
 
 ################################################################################
@@ -689,28 +689,28 @@ with open('_tmp_601_mggk_barchart2.csv', 'w', newline='') as csvfile2:
 
 #### OUTPUT CSV FILE 3
 with open('_tmp_601_mggk_barchart3.csv', 'w', newline='') as csvfile3:
-    fieldnames3 = ['URL_NUM', 'NLP_READING_TIME_IN_MINS_212WPM']
+    fieldnames3 = ['URL_NUM', 'NLP_READING_TIME_IN_MINS_212WPM', 'URL_NAME']
     writer = csv.DictWriter(csvfile3, fieldnames=fieldnames3)
-    writer.writerow({'URL_NUM':'URL_NUM' , 'NLP_READING_TIME_IN_MINS_212WPM':'NLP_READING_TIME_IN_MINS_212WPM' })
+    writer.writerow({'URL_NUM':'URL_NUM' , 'NLP_READING_TIME_IN_MINS_212WPM':'NLP_READING_TIME_IN_MINS_212WPM' , 'URL_NAME':'URL_NAME' })
 
-
-## Calling the above MAIN function on each url line from url links text FILE
+#################################################################################
+## CALLING THE ABOVE MAIN FUNCTION ON EACH URL LINE FROM URL LINKS TEXT FILE
+#################################################################################
 myfile = open(NLP_URLS_TEXT_FILE, "r")
 MY_URL_COUNT=0
 for line in myfile:
-    MY_URL_COUNT = MY_URL_COUNT+1
-    print("\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-    print(">>>> CURRENT URL READING: ",line)
-    print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
-    line=line.strip() ## removes all unnecessary character in line (leading and trailing)
-    mggk_find_ai_details_from_url_lines(url = line, URL_COUNT = MY_URL_COUNT)
+    ## Moving forward only when the line contains the substring 'http', meaning
+    ## it's a valid url
+    if ('http' in line):
+        MY_URL_COUNT = MY_URL_COUNT+1
+        print("\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+        print(">>>> CURRENT URL READING: ",line)
+        print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
+        line=line.strip() ## removes all unnecessary character in line (leading and trailing)
+        mggk_find_ai_details_from_url_lines(url = line, URL_COUNT = MY_URL_COUNT)
 
 ## FINAL HTML OUTPUT OPERATIONS
 f.write('</tbody></table>')
-
-
-
-
 f.write(BOOTSTRAP4_HTML_FOOTER)
 f.close()
 ################################################################################
