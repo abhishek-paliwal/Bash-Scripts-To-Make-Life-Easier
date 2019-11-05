@@ -39,14 +39,19 @@ from random import randint
 import matplotlib.pyplot as plt
 
 ################################################################################
-## DEFINING SOME VARIABLES
+## DEFINING SOME VARIABLES (Only edit these paths if running on the VPS SERVER)
 ################################################################################
 from os.path import expanduser
 home = expanduser("~")
 dirpath = '/GitHub/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls'
+
 rake_stop_dir = home + dirpath + '/601-MGGK-PYTHON-RAKE-SmartStoplist.txt'
 NLP_URLS_TEXT_FILE = home + '/Desktop/Y/601-MGGK-REQUIREMENT-ALL-URLS-FOR-NLP.txt'
 OUTPUT_HTML_FILE = home + '/Desktop/Y/_TMP_601_MGGK_AI_NLP_HTML_OUTPUT.HTML'
+
+################################################################################
+## DO NOT EDIT ANYTHING BELOW. THE FOLLOWING CODE WILL WORK UNIVERSALLY.
+################################################################################
 
 dateformat="%Y-%m-%d %H:%M"
 TIME_NOW = datetime.strftime(datetime.now(), dateformat)
