@@ -1,3 +1,32 @@
+################################################################################
+THIS_PROGRAM_DETAILS = """
+################################################################################
+THIS_SCRIPT_NAME: 601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls.py
+################################################################################
+REQUIREMENTS_FILE  = 601-MGGK-REQUIREMENT-ALL-URLS-FOR-NLP.txt
+(Note: This file should be present in the 'Desktop/Y/' directory)
+################################################################################
+USAGE: python3 THIS_SCRIPT_NAME
+################################################################################
+################################################################################
+THIS SCRIPT USES NATURAL LANGUAGE PROCESSING (NLP + AI), Newspaper3k, and BeautifulSoup 4
+OVER AN EXTERNAL TEXT FILE CONTAINING URLS FOR KEYWORDS ANALYSIS, AND PRODUCES
+A DETAILED HTML FILE WITH ALL THE EXTRACTED DATA FOR EACH URL PRESENT IN
+THE REQUIREMENTS_FILE.
+################################################################################
+THIS SCRIPT ALSO PRODUCES SOME CSV FILES FOR LATER ANALYSES (OR FOR PLOTTING).
+################################################################################
+CREATED ON: November 5, 2019
+CREATED BY: Pali
+################################################################################
+
+"""
+
+################################################################################
+print(THIS_PROGRAM_DETAILS)
+################################################################################
+
+## IMPORTING MODULES
 from newspaper import Article
 from bs4 import BeautifulSoup
 from bs4.diagnose import diagnose
@@ -287,16 +316,18 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         #### <meta property="article:modified_time" content="2014-03-16T23:10:22+00:00" />
         meta_published_time_tmp = soup.find(attrs={'property':'article:published_time'})
         META_PUBLISHED_DATETIME = str(meta_published_time_tmp['content'])
+        META_PUBLISHED_DATETIME = META_PUBLISHED_DATETIME[:19] ## DISCARDING TIMEZONE INFO BY SUBSTRING METHOD
         print("\n>>>> META_PUBLISHED_DATETIME: ", META_PUBLISHED_DATETIME)
 
         meta_modified_time_tmp = soup.find(attrs={'property':'article:modified_time'})
         META_MODIFIED_DATETIME = str(meta_modified_time_tmp['content'])
+        META_MODIFIED_DATETIME = META_MODIFIED_DATETIME[:19] ## DISCARDING TIMEZONE INFO BY SUBSTRING METHOD
         print(">>>> META_MODIFIED_DATETIME: ", META_MODIFIED_DATETIME)
 
         ## CONVERTING OBTAINED DATE STRINGS INTO PYTHON DATE OBJECTS FOR CALCULATIONS
         #### a.) converting string to corresponding date format (by using strptime)
-        date_post_published_tmp = datetime.strptime(META_PUBLISHED_DATETIME, "%Y-%m-%dT%H:%M:%S%z")
-        date_post_modified_tmp = datetime.strptime(META_MODIFIED_DATETIME, "%Y-%m-%dT%H:%M:%S%z")
+        date_post_published_tmp = datetime.strptime(META_PUBLISHED_DATETIME, "%Y-%m-%dT%H:%M:%S")
+        date_post_modified_tmp = datetime.strptime(META_MODIFIED_DATETIME, "%Y-%m-%dT%H:%M:%S")
         #### b.) converting thus created date into desired format for printing (by using strftime)
         date_post_published = datetime.strftime(date_post_published_tmp, '%Y-%m-%d')
         date_post_modified = datetime.strftime(date_post_modified_tmp, '%Y-%m-%d')
