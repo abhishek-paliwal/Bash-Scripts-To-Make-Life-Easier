@@ -239,7 +239,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         print(IMAGE_ALT_TAG)
         print('')
         ALL_IMAGES_ARRAY_TMP.append('<br>&rarr; IMAGE_URL: <a target="_blank" href="' + IMAGE_URL + '">' + IMAGE_URL_SUBSTR + '</a>')
-        ALL_IMAGES_ARRAY_TMP.append('&rarr; IMAGE_ALT_TAG: <strong>' + IMAGE_ALT_TAG + '</strong>')
+        ALL_IMAGES_ARRAY_TMP.append('IMAGE_ALT_TAG: <strong>' + IMAGE_ALT_TAG + '</strong>')
 
     ALL_IMAGES_ARRAY = '<br>'.join(str(v) for v in ALL_IMAGES_ARRAY_TMP)
     ############################################################################
@@ -277,6 +277,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     META_PUBLISHED_DATETIME = "Not found = first published time."
     META_MODIFIED_DATETIME = "Not found = Last updated time."
     BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY = []
+    row_color = "#000000" ## default is black
 
     try:
         #### Most webpages have this format in the HTML source code:
@@ -316,10 +317,11 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
 
         BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP = []
 
+        BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('<strong>URL: <br>' + url + '</strong>')
         BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('META_PUBLISHED_DATETIME: <br>' + META_PUBLISHED_DATETIME)
         BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('META_MODIFIED_DATETIME: <br>' + META_MODIFIED_DATETIME)
-        BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('<hr><h4 style="color: #cd1c62;">Post first published: <br>' + str(days_diff_first_published) + ' days ago<br>' + ' = ' + str( round(days_diff_first_published/365,3) ) + ' years ago</h4>' )
-        BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('<h4 style="color: #cd1c62;">Post last modified: <br>' + str(days_diff_modified) + ' days ago<br>' + ' = ' + str( round(days_diff_modified/365,3) ) + ' years ago</h4>' )
+        BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('<hr><h4 style="color: black;">Post first published: <br>' + str(days_diff_first_published) + ' days ago<br>' + ' = ' + str( round(days_diff_first_published/365,3) ) + ' years ago</h4>' )
+        BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('<h4 style="color: black;">Post last modified: <br>' + str(days_diff_modified) + ' days ago<br>' + ' = ' + str( round(days_diff_modified/365,3) ) + ' years ago</h4>' )
 
         BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY = '<br><br>'.join(str(v) for v in BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP)
 
@@ -330,10 +332,28 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         ## ASSIGNING A SUITABLE COLOR WRT WEBPAGE FIRST PUBLISHED AGE IN YEARS
         #### Colors (from recent to oldest // recent is red-hot; oldest is so cold like blue ice) =
         #### red (under 1 yr), orange (1-2.5 yrs), yellow (2.5-4 yrs), light blue (4-5.5 yrs), darkblue (older than 5.5 yrs)
+        years_old = round(int(days_diff_first_published)/365,3)
 
+        if ( 0.000 < years_old <= 0.250) :
+            row_color = "deeppink"
+        elif ( 0.250 < years_old <= 1.0) :
+            row_color = "red"
+        elif (1.0 < years_old <= 2.5) :
+            row_color = "orange"
+        elif (2.5 < years_old <= 4.0) :
+            row_color = "yellow"
+        elif (4.0 < years_old <= 6.0) :
+            row_color = "skyBlue"
+        elif (years_old > 6.0) :
+            row_color = "blue"
+        else:
+            row_color = "#000000"
+
+        print("++++ROW COLOR = ",row_color, "// years_old",years_old)
 
     except:
         print("***** BEAUTIFUL SOUP ERROR: FAILED TO FIND PUBLISHED + MODIFIED DATES IN WEBPAGE ***** = ", url)
+
     ################################################################################
     ## END: FINDING PUBLISHED AND UPDATED/MODIFIED TIMES FOR WEBPAGE USING BEAUTIFUL SOUP
     ################################################################################
@@ -447,31 +467,33 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     ################################################################################
     ## BEGIN: COLLECTING ALL VARIABLES AND WRITING TO OUTPUT HTML FILE
     ################################################################################
+    colored_bullet_chars = '<hr style="height: 5px; background-color: ' + row_color + '">';
+
     f.write('<tr>')
     f.write('<th scope="row"><h2>'+ str(URL_COUNT) +'</h2></th>')
-    f.write('<td><a target="_blank" href="'+ url +'">' + url + '</a></td>')
-    f.write('<td>'+ NLP_ARTICLE_TOP_IMAGE +'</td>')
-    f.write('<td>'+ META_GENERATOR +'</td>')
-    f.write('<td>'+ TITLE_TAG_VALUE +'</td>')
-    f.write('<td>'+ META_DESCRIPTION +'</td>')
-    f.write('<td>'+ str(NLP_ARTICLE_ANY_VIDEO) +'</td>')
-    f.write('<td>' + TOP20_WORDS_STRING_HTML + '</td>')
-    f.write('<td>'+ str(BSOUP_NUMWORDS) + '</td>')
-    f.write('<td><h2>'+ str(NLP_NUMWORDS) +' words</h2></td>')
-    f.write('<td><h2>'+ str(NLP_READINGTIME_212WPM) +' minutes</h2></td>')
-    f.write('<td>'+ str(NLP_ARTICLE_AUTHORS) +'</td>')
-    f.write('<td>'+ str(BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY) +'</td>')
-    f.write('<td>'+ str(NLP_ARTICLE_PUBLISH_DATE) +'</td>')
-    f.write('<td>'+ NLP_ARTICLE_SUMMARY +'</td>')
-    f.write('<td>'+ GENSIM_ARTICLE_SUMMARY_100 +'</td>')
-    f.write('<td><span style="color:blue">'+ GENSIM_ARTICLE_SUMMARY_20PC +'</span></td>')
-    f.write('<td>'+ NLP_TOP_KEYWORDS +'</td>')
-    f.write('<td><span style="color:blue">'+ GENSIM_KEYWORDS_ALL +'</span></td>')
-    f.write('<td>'+ RAKE_TOP_KEYWORD_PHRASES +'</td>')
-    f.write('<td>'+ GENSIM_KEYWORDS_TOP25_WITH_SCORES +'</td>')
-    f.write('<td>'+ FULL_HEADINGS_ARRAY_FINAL +'</td>')
-    f.write('<td>'+ ALL_HYPERLINKS_ARRAY +'</td>')
-    f.write('<td>'+ ALL_IMAGES_ARRAY +'</td>')
+    f.write('<td>'+colored_bullet_chars+'<a target="_blank" href="'+ url +'">' + url + '</a></td>')
+    f.write('<td>'+colored_bullet_chars+ NLP_ARTICLE_TOP_IMAGE +'</td>')
+    f.write('<td>'+colored_bullet_chars+ META_GENERATOR +'</td>')
+    f.write('<td>'+colored_bullet_chars+ TITLE_TAG_VALUE +'</td>')
+    f.write('<td>'+colored_bullet_chars+ META_DESCRIPTION +'</td>')
+    f.write('<td>'+colored_bullet_chars+ str(NLP_ARTICLE_ANY_VIDEO) +'</td>')
+    f.write('<td>'+colored_bullet_chars+ TOP20_WORDS_STRING_HTML + '</td>')
+    f.write('<td>'+colored_bullet_chars+ str(BSOUP_NUMWORDS) + '</td>')
+    f.write('<td>'+colored_bullet_chars+'<h2>'+ str(NLP_NUMWORDS) +' words</h2></td>')
+    f.write('<td>'+colored_bullet_chars+'<h2>'+ str(NLP_READINGTIME_212WPM) +' minutes</h2></td>')
+    f.write('<td>'+colored_bullet_chars+ str(NLP_ARTICLE_AUTHORS) +'</td>')
+    f.write('<td>'+colored_bullet_chars+ str(BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY) +'</td>')
+    f.write('<td>'+colored_bullet_chars+ str(NLP_ARTICLE_PUBLISH_DATE) +'</td>')
+    f.write('<td>'+colored_bullet_chars+'<span style="color:blue">'+ NLP_ARTICLE_SUMMARY +'</span></td>')
+    f.write('<td>'+colored_bullet_chars+ GENSIM_ARTICLE_SUMMARY_100 +'</td>')
+    f.write('<td>'+colored_bullet_chars+'<span style="color:blue">'+ GENSIM_ARTICLE_SUMMARY_20PC +'</span></td>')
+    f.write('<td>'+colored_bullet_chars+ NLP_TOP_KEYWORDS +'</td>')
+    f.write('<td>'+colored_bullet_chars+'<span style="color:blue">'+ GENSIM_KEYWORDS_ALL +'</span></td>')
+    f.write('<td>'+colored_bullet_chars+ RAKE_TOP_KEYWORD_PHRASES +'</td>')
+    f.write('<td>'+colored_bullet_chars+ GENSIM_KEYWORDS_TOP25_WITH_SCORES +'</td>')
+    f.write('<td>'+colored_bullet_chars+ FULL_HEADINGS_ARRAY_FINAL +'</td>')
+    f.write('<td>'+colored_bullet_chars+ ALL_HYPERLINKS_ARRAY +'</td>')
+    f.write('<td>'+colored_bullet_chars+ ALL_IMAGES_ARRAY +'</td>')
     f.write('</tr>')
 
 ################################################################################
@@ -486,10 +508,23 @@ f.write(BOOTSTRAP4_HTML_HEADER)
 #f.write('<html><head>' )
 #f.write('<style>td {vertical-align: baseline; font-family: sans-serif; padding: 5px; }</style>' )
 #f.write('</head><body>')
-f.write('Created: '+ TIME_NOW)
+f.write('Created on: '+ TIME_NOW)
 f.write('<h1>Keyword Analysis using NLP (Natural Language Processing)</h1>')
 f.write('<h2>Output for MGGK using Google Search Top URLs</h2>')
+
+
+###### WRITING COLOR KEY BLOCK TO HTML PAGE ####
+color_age_dict = {"Post is less than 3 monts old [Latest]":"deeppink" ,"0.250 < Post age in years <= 1":"red" , "1 < Post age in years <= 2.5":"orange", "2.5 < Post age in years <= 4":"yellow", "4 < Post age in years <= 6":"skyBlue", "Post age in years > 6 [Oldest]":"blue"  }
+
+f.write('<div class="container-fluid"><div class="row">')
+
+for c_key in color_age_dict:
+    c_value = color_age_dict[c_key]
+    f.write('<div class="col-2" style="color: black; background: ' + c_value + ' ;"> ' + c_key + '</div>')
+
+f.write('</div></div><hr>')
 f.close()
+
 ## APPENDING THE HTML FILE BEGINS
 #### Make sure to use the column header names to have underscores so that they
 #### are long enough to have a good enough column width. Else, the default bootstrap4
