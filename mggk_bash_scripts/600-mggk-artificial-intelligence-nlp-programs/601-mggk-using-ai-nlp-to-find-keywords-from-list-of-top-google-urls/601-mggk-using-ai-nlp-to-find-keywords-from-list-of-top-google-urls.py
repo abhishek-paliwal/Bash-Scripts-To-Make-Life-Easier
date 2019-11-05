@@ -57,7 +57,7 @@ BOOTSTRAP4_HTML_FOOTER = """   </div> <!-- END: main containter div -->
 #url=url.strip() ## removes all unnecessary character in line (leading and trailing)
 
 ################################################################################
-## BEGIN: FUNCTION DEFINITIONS
+## BEGIN: ALL FUNCTION DEFINITIONS
 ################################################################################
 ## DEFINING THE MAIN FUNCTION WHICH WILL WORK UPON EACH URL LINE IN AN EXTERNAL TEXT FILE
 def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
@@ -143,6 +143,8 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     h5_array = []
     h6_array = []
     all_hyerlinks = []
+    YEARS_SINCE_FIRST_PUBLISHED = 0
+    YEARS_SINCE_LAST_MODIFIED = 0
 
     try:
         print("-------------------------------------------------------------------")
@@ -315,13 +317,16 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         days_diff_modified = days_between(date_today, date_post_modified)
         print(">>>> POST LAST MODIFIED: ", days_diff_modified, " days ago", " = ", round(days_diff_modified/365,3), " years ago" )
 
+        YEARS_SINCE_FIRST_PUBLISHED = round(int(days_diff_first_published)/365,3)
+        YEARS_SINCE_LAST_MODIFIED = round(int(days_diff_modified)/365,3)
+
         BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP = []
 
         BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('<strong>URL: <br>' + url + '</strong>')
         BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('META_PUBLISHED_DATETIME: <br>' + META_PUBLISHED_DATETIME)
         BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('META_MODIFIED_DATETIME: <br>' + META_MODIFIED_DATETIME)
-        BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('<hr><h4 style="color: black;">Post first published: <br>' + str(days_diff_first_published) + ' days ago<br>' + ' = ' + str( round(days_diff_first_published/365,3) ) + ' years ago</h4>' )
-        BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('<h4 style="color: black;">Post last modified: <br>' + str(days_diff_modified) + ' days ago<br>' + ' = ' + str( round(days_diff_modified/365,3) ) + ' years ago</h4>' )
+        BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('<hr><h4 style="color: black;">Post first published: <br>' + str(days_diff_first_published) + ' days ago<br>' + ' = ' + str(YEARS_SINCE_FIRST_PUBLISHED) + ' years ago</h4>' )
+        BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP.append('<h4 style="color: black;">Post last modified: <br>' + str(days_diff_modified) + ' days ago<br>' + ' = ' + str(YEARS_SINCE_LAST_MODIFIED) + ' years ago</h4>' )
 
         BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY = '<br><br>'.join(str(v) for v in BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY_TMP)
 
@@ -332,7 +337,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         ## ASSIGNING A SUITABLE COLOR WRT WEBPAGE FIRST PUBLISHED AGE IN YEARS
         #### Colors (from recent to oldest // recent is red-hot; oldest is so cold like blue ice) =
         #### red (under 1 yr), orange (1-2.5 yrs), yellow (2.5-4 yrs), light blue (4-5.5 yrs), darkblue (older than 5.5 yrs)
-        years_old = round(int(days_diff_first_published)/365,3)
+        years_old = YEARS_SINCE_FIRST_PUBLISHED
 
         if ( 0.000 < years_old <= 0.250) :
             row_color = "deeppink"
@@ -496,9 +501,87 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     f.write('<td>'+colored_bullet_chars+ ALL_IMAGES_ARRAY +'</td>')
     f.write('</tr>')
 
+    ############################################################################
+    ## APPENDING data for charting and plotting to CSV files
+    ############################################################################
+    import csv
+    ## OUTPUT CSV FILE 1
+    with open('_tmp_601_mggk_barchart1.csv', 'a', newline='') as csvfile1:
+        fieldnames1 = ['URL_NUM', 'BSOUP_NUMWORDS','NLP_NUMWORDS']
+        writer = csv.DictWriter(csvfile1, fieldnames=fieldnames1)
+        writer.writerow({'URL_NUM':'url'+str(URL_COUNT) , 'BSOUP_NUMWORDS':str(BSOUP_NUMWORDS) ,'NLP_NUMWORDS':str(NLP_NUMWORDS) })
+
+    ## OUTPUT CSV FILE 2
+    with open('_tmp_601_mggk_barchart2.csv', 'a', newline='') as csvfile2:
+        fieldnames2 = ['URL_NUM', 'YEARS_SINCE_FIRST_PUBLISHED','YEARS_SINCE_LAST_MODIFIED']
+        writer = csv.DictWriter(csvfile2, fieldnames=fieldnames2)
+        writer.writerow({'URL_NUM':'url'+str(URL_COUNT) , 'YEARS_SINCE_FIRST_PUBLISHED':str(YEARS_SINCE_FIRST_PUBLISHED) ,'YEARS_SINCE_LAST_MODIFIED':str(YEARS_SINCE_LAST_MODIFIED) })
+
+    ## OUTPUT CSV FILE 3
+    with open('_tmp_601_mggk_barchart3.csv', 'a', newline='') as csvfile3:
+        fieldnames3 = ['URL_NUM', 'NLP_READING_TIME_IN_MINS_212WPM']
+        writer = csv.DictWriter(csvfile3, fieldnames=fieldnames3)
+        writer.writerow({'URL_NUM':'url'+str(URL_COUNT) , 'NLP_READING_TIME_IN_MINS_212WPM':str(NLP_READINGTIME_212WPM) })
+
+
 ################################################################################
-## END: FUNCTION DEFINITIONS
 ################################################################################
+
+################################################################################
+## BEGIN: BARCHART 1 = DEFINE FUNCTION FOR PLOTTING VALUES ON BAR CHART
+################################################################################
+def mggk_make_chart_for_num_words(CHART_LABELS,CHART_DATA_BSOUP_WORDS,CHART_DATA_NLP_WORDS):
+    import matplotlib
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    labels = CHART_LABELS
+    men_means = CHART_DATA_BSOUP_WORDS
+    women_means = CHART_DATA_NLP_WORDS
+
+    x = np.arange(len(labels))  # the label locations
+    width = 0.35  # the width of the bars
+
+    fig, ax = plt.subplots()
+    rects1 = ax.bar(x - width/2, men_means, width, label='BSoup // Number of words')
+    rects2 = ax.bar(x + width/2, women_means, width, label='NLP // Number of words')
+
+    # Add some text for labels, title and custom x-axis tick labels, etc.
+    ax.set_ylabel('Scores')
+    ax.set_title('Scores by group and gender')
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels)
+    ax.legend()
+
+    def autolabel(rects):
+        """Attach a text label above each bar in *rects*, displaying its height."""
+        for rect in rects:
+            height = rect.get_height()
+            ax.annotate('{}'.format(height),
+                        xy=(rect.get_x() + rect.get_width() / 2, height),
+                        xytext=(0, 3),  # 3 points vertical offset
+                        textcoords="offset points",
+                        ha='center', va='bottom')
+
+    autolabel(rects1)
+    autolabel(rects2)
+
+    fig.tight_layout()
+
+    ## Displaying the chart on screen
+    #plt.show()
+
+    ## Saving the chart to an external PNG file
+    plt.savefig('_tmp_601_mggk_barchart1.png')
+################################################################################
+## END: BARCHART 1 = DEFINE FUNCTION FOR PLOTTING VALUES ON BAR CHART
+################################################################################
+
+################################################################################
+## END: ALL FUNCTION DEFINITIONS
+################################################################################
+
+
 
 ################################################################################
 ################################################################################
@@ -559,7 +642,28 @@ f.write('<th scope="col">BSOUP FOUND_HYPERLINKS_IN_ARTICLE_BLOCK</th>')
 f.write('<th scope="col">BSOUP ALL_IMAGES_ARRAY</th>')
 f.write('</tr></thead><tbody>')
 
-## Calling the above function on each url line from url links text FILE
+## INITIALIZING THE CSV FILES FOR WRITING, AND WRITING THE HEADER ROW
+#### OUTPUT CSV FILE 1
+with open('_tmp_601_mggk_barchart1.csv', 'w', newline='') as csvfile1:
+    fieldnames1 = ['URL_NUM', 'BSOUP_NUMWORDS','NLP_NUMWORDS']
+    writer = csv.DictWriter(csvfile1, fieldnames=fieldnames1)
+    writer.writerow({'URL_NUM':'URL_NUM' , 'BSOUP_NUMWORDS':'BSOUP_NUMWORDS' ,'NLP_NUMWORDS':'NLP_NUMWORDS' })
+
+
+#### OUTPUT CSV FILE 2
+with open('_tmp_601_mggk_barchart2.csv', 'w', newline='') as csvfile2:
+    fieldnames2 = ['URL_NUM', 'YEARS_SINCE_FIRST_PUBLISHED','YEARS_SINCE_LAST_MODIFIED']
+    writer = csv.DictWriter(csvfile2, fieldnames=fieldnames2)
+    writer.writerow({'URL_NUM':'URL_NUM' , 'YEARS_SINCE_FIRST_PUBLISHED':'YEARS_SINCE_FIRST_PUBLISHED' ,'YEARS_SINCE_LAST_MODIFIED':'YEARS_SINCE_LAST_MODIFIED' })
+
+#### OUTPUT CSV FILE 3
+with open('_tmp_601_mggk_barchart3.csv', 'w', newline='') as csvfile3:
+    fieldnames3 = ['URL_NUM', 'NLP_READING_TIME_IN_MINS_212WPM']
+    writer = csv.DictWriter(csvfile3, fieldnames=fieldnames3)
+    writer.writerow({'URL_NUM':'URL_NUM' , 'NLP_READING_TIME_IN_MINS_212WPM':'NLP_READING_TIME_IN_MINS_212WPM' })
+
+
+## Calling the above MAIN function on each url line from url links text FILE
 myfile = open(NLP_URLS_TEXT_FILE, "r")
 MY_URL_COUNT=0
 for line in myfile:
@@ -572,8 +676,11 @@ for line in myfile:
 
 ## FINAL HTML OUTPUT OPERATIONS
 f.write('</tbody></table>')
+
+
+
+
 f.write(BOOTSTRAP4_HTML_FOOTER)
-#f.write('</body></html>')
 f.close()
 ################################################################################
 ################################################################################
