@@ -434,7 +434,10 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
 
     NLP_ARTICLE_TOP_IMAGE = article.top_image +'<br><br><img width="300px" src="'+ article.top_image+'"></img>'
     NLP_ARTICLE_ANY_VIDEO = article.movies
+
     NLP_TOP_KEYWORDS = str('<br>'.join(article.keywords))
+    NLP_TOP_KEYWORDS_FOR_CSV = str(' - '.join(article.keywords))
+
     NLP_ARTICLE_SUMMARY_TMP = article.summary
     NLP_ARTICLE_SUMMARY = NLP_ARTICLE_SUMMARY_TMP.replace('\n', '<br><br>')
 
@@ -551,62 +554,33 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     import csv
     ## OUTPUT CSV FILE 1
     with open(OUTPUT_CSV_FILE, 'a', newline='') as csvfile1:
-        fieldnames1 = ['URL_NUM', 'URL_NAME', 'NLP_READING_TIME_IN_MINS_212WPM','BSOUP_NUMWORDS','NLP_NUMWORDS','META_YEARS_SINCE_FIRST_PUBLISHED','META_YEARS_SINCE_LAST_MODIFIED','NLP_FIRST_PUBLISHED_DATETIME','META_LAST_MODIFIED_DATETIME']
+        fieldnames1 = ['URL_NUM',
+        'URL_NAME',
+        'NLP_READING_TIME_IN_MINS_212WPM',
+        'BSOUP_NUMWORDS',
+        'NLP_NUMWORDS',
+        'META_YEARS_SINCE_FIRST_PUBLISHED',
+        'META_YEARS_SINCE_LAST_MODIFIED',
+        'NLP_FIRST_PUBLISHED_DATETIME',
+        'META_FIRST_PUBLISHED_DATE',
+        'META_LAST_MODIFIED_DATETIME',
+        'NLP_KEYWORDS']
+
         writer = csv.DictWriter(csvfile1, fieldnames=fieldnames1)
-        writer.writerow({'URL_NUM':'url'+str(URL_COUNT) , 'URL_NAME':str(url), 'NLP_READING_TIME_IN_MINS_212WPM':str(NLP_READINGTIME_212WPM) , 'BSOUP_NUMWORDS':str(BSOUP_NUMWORDS) , 'NLP_NUMWORDS':str(NLP_NUMWORDS) ,'META_YEARS_SINCE_FIRST_PUBLISHED':str(YEARS_SINCE_FIRST_PUBLISHED) ,'META_YEARS_SINCE_LAST_MODIFIED':str(YEARS_SINCE_LAST_MODIFIED) ,  'NLP_FIRST_PUBLISHED_DATETIME':str(NLP_ARTICLE_PUBLISH_DATE),
-        'META_LAST_MODIFIED_DATETIME':str(META_MODIFIED_DATETIME) })
+
+        writer.writerow({'URL_NUM':'url'+str(URL_COUNT) ,
+        'URL_NAME':str(url),
+        'NLP_READING_TIME_IN_MINS_212WPM':str(NLP_READINGTIME_212WPM) ,
+        'BSOUP_NUMWORDS':str(BSOUP_NUMWORDS) ,
+        'NLP_NUMWORDS':str(NLP_NUMWORDS) ,
+        'META_YEARS_SINCE_FIRST_PUBLISHED':str(YEARS_SINCE_FIRST_PUBLISHED) ,
+        'META_YEARS_SINCE_LAST_MODIFIED':str(YEARS_SINCE_LAST_MODIFIED) ,
+        'NLP_FIRST_PUBLISHED_DATETIME':str(NLP_ARTICLE_PUBLISH_DATE),
+        'META_FIRST_PUBLISHED_DATE':str(META_PUBLISHED_DATETIME),
+        'META_LAST_MODIFIED_DATETIME':str(META_MODIFIED_DATETIME),
+        'NLP_KEYWORDS':NLP_TOP_KEYWORDS_FOR_CSV })
 
 ################################################################################
-################################################################################
-
-################################################################################
-## BEGIN: BARCHART 1 = DEFINE FUNCTION FOR PLOTTING VALUES ON BAR CHART
-################################################################################
-def mggk_make_chart_for_num_words(CHART_LABELS,CHART_DATA_BSOUP_WORDS,CHART_DATA_NLP_WORDS):
-    import matplotlib
-    import matplotlib.pyplot as plt
-    import numpy as np
-
-    labels = CHART_LABELS
-    men_means = CHART_DATA_BSOUP_WORDS
-    women_means = CHART_DATA_NLP_WORDS
-
-    x = np.arange(len(labels))  # the label locations
-    width = 0.35  # the width of the bars
-
-    fig, ax = plt.subplots()
-    rects1 = ax.bar(x - width/2, men_means, width, label='BSoup // Number of words')
-    rects2 = ax.bar(x + width/2, women_means, width, label='NLP // Number of words')
-
-    # Add some text for labels, title and custom x-axis tick labels, etc.
-    ax.set_ylabel('Scores')
-    ax.set_title('Scores by group and gender')
-    ax.set_xticks(x)
-    ax.set_xticklabels(labels)
-    ax.legend()
-
-    def autolabel(rects):
-        """Attach a text label above each bar in *rects*, displaying its height."""
-        for rect in rects:
-            height = rect.get_height()
-            ax.annotate('{}'.format(height),
-                        xy=(rect.get_x() + rect.get_width() / 2, height),
-                        xytext=(0, 3),  # 3 points vertical offset
-                        textcoords="offset points",
-                        ha='center', va='bottom')
-
-    autolabel(rects1)
-    autolabel(rects2)
-
-    fig.tight_layout()
-
-    ## Displaying the chart on screen
-    #plt.show()
-
-    ## Saving the chart to an external PNG file
-    plt.savefig('_tmp_601_mggk_barchart1.png')
-################################################################################
-## END: BARCHART 1 = DEFINE FUNCTION FOR PLOTTING VALUES ON BAR CHART
 ################################################################################
 
 ################################################################################
@@ -677,10 +651,31 @@ f.write('</tr></thead><tbody>')
 ## INITIALIZING THE CSV FILES FOR WRITING, AND WRITING THE HEADER ROW
 #### OUTPUT CSV FILE 1
 with open(OUTPUT_CSV_FILE, 'w', newline='') as csvfile1:
-    fieldnames1 = ['URL_NUM', 'URL_NAME', 'NLP_READING_TIME_IN_MINS_212WPM','BSOUP_NUMWORDS','NLP_NUMWORDS','META_YEARS_SINCE_FIRST_PUBLISHED','META_YEARS_SINCE_LAST_MODIFIED','NLP_FIRST_PUBLISHED_DATETIME','META_LAST_MODIFIED_DATETIME']
-    writer = csv.DictWriter(csvfile1, fieldnames=fieldnames1)
-    writer.writerow({'URL_NUM':'URL_NUM' , 'URL_NAME':'URL_NAME', 'NLP_READING_TIME_IN_MINS_212WPM':'NLP_READING_TIME_IN_MINS_212WPM', 'BSOUP_NUMWORDS':'BSOUP_NUMWORDS' ,'NLP_NUMWORDS':'NLP_NUMWORDS', 'META_YEARS_SINCE_FIRST_PUBLISHED':'META_YEARS_SINCE_FIRST_PUBLISHED' ,'META_YEARS_SINCE_LAST_MODIFIED':'META_YEARS_SINCE_LAST_MODIFIED' ,'NLP_FIRST_PUBLISHED_DATETIME':'NLP_FIRST_PUBLISHED_DATETIME','META_LAST_MODIFIED_DATETIME':'META_LAST_MODIFIED_DATETIME' })
+    fieldnames1 = ['URL_NUM',
+    'URL_NAME',
+    'NLP_READING_TIME_IN_MINS_212WPM',
+    'BSOUP_NUMWORDS',
+    'NLP_NUMWORDS',
+    'META_YEARS_SINCE_FIRST_PUBLISHED',
+    'META_YEARS_SINCE_LAST_MODIFIED',
+    'NLP_FIRST_PUBLISHED_DATETIME',
+    'META_FIRST_PUBLISHED_DATE',
+    'META_LAST_MODIFIED_DATETIME',
+    'NLP_KEYWORDS']
 
+    writer = csv.DictWriter(csvfile1, fieldnames=fieldnames1)
+
+    writer.writerow({ 'URL_NUM':'URL_NUM' ,
+    'URL_NAME':'URL_NAME',
+    'NLP_READING_TIME_IN_MINS_212WPM':'NLP_READING_TIME_IN_MINS_212WPM',
+    'BSOUP_NUMWORDS':'BSOUP_NUMWORDS' ,
+    'NLP_NUMWORDS':'NLP_NUMWORDS',
+    'META_YEARS_SINCE_FIRST_PUBLISHED':'META_YEARS_SINCE_FIRST_PUBLISHED' ,
+    'META_YEARS_SINCE_LAST_MODIFIED':'META_YEARS_SINCE_LAST_MODIFIED' ,
+    'NLP_FIRST_PUBLISHED_DATETIME':'NLP_FIRST_PUBLISHED_DATETIME',
+    'META_FIRST_PUBLISHED_DATE':'META_FIRST_PUBLISHED_DATE',
+    'META_LAST_MODIFIED_DATETIME':'META_LAST_MODIFIED_DATETIME',
+    'NLP_KEYWORDS':'NLP_KEYWORDS' })
 
 #################################################################################
 ## CALLING THE ABOVE MAIN FUNCTION ON EACH URL LINE FROM URL LINKS TEXT FILE
