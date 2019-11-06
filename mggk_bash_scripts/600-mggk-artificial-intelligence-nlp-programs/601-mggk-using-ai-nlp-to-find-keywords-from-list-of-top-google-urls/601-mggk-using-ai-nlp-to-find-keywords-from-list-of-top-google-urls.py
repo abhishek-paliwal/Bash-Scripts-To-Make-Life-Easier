@@ -111,11 +111,13 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         article.download()
         ## Parsing the article
         article.parse()
+        article.nlp()
         #print(article.html)
         #print(article.text)
         #print(">>>> ARTICLE FULL TEXT [via NLP] = ", article.text)
     except:
         print('***** NLP ERROR: FAILED TO DOWNLOAD *****', article.url)
+        pass
     #########################################################
     ## END: GETTING SOME PRIMARY DETAILS USING NEWSPAPER3K
     #########################################################
@@ -422,7 +424,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     print(">>>> [NLP] ARTICLE TOP IMAGE = ", article.top_image)
     print(">>>> [NLP] ARTICLE VIDEOS FOUND = ", article.movies)
     ####
-    article.nlp()
+    ## article.nlp() OUTPUTS
     print("\n>>>> [NLP] TOP KEYWORDS = ", article.keywords)
     print()
     print(">>>> [NLP] ARTICLE SUMMARY =\n\n", article.summary)
