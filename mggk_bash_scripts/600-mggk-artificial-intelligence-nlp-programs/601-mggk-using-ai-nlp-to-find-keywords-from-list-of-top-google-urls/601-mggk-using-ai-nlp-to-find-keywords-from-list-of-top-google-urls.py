@@ -44,15 +44,20 @@ import matplotlib.pyplot as plt
 from os.path import expanduser
 home = expanduser("~")
 dirpath = '/GitHub/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls'
-
 rake_stop_dir = home + dirpath + '/601-MGGK-PYTHON-RAKE-SmartStoplist.txt'
 NLP_URLS_TEXT_FILE = home + '/Desktop/Y/601-MGGK-REQUIREMENT-ALL-URLS-FOR-NLP.txt'
-OUTPUT_HTML_FILE = home + '/Desktop/Y/_TMP_601_MGGK_AI_NLP_HTML_OUTPUT.HTML'
+
+#######################################
+prefix_dateformat="%Y%m%d-%H%M"
+prefix_today = datetime.strftime(datetime.now(), prefix_dateformat)
+
+OUTPUT_HTML_FILE = home + '/Desktop/Y/'+str(prefix_today)+'_TMP_601_MGGK_AI_NLP_HTML_OUTPUT.HTML'
+OUTPUT_CSV_FILE = home + '/Desktop/Y/'+str(prefix_today)+'_TMP_601_MGGK_AI_NLP_OUTPUT_FOR_FUTURE_ANALYSES.CSV'
+#######################################
 
 ################################################################################
 ## DO NOT EDIT ANYTHING BELOW. THE FOLLOWING CODE WILL WORK UNIVERSALLY.
 ################################################################################
-
 dateformat="%Y-%m-%d %H:%M"
 TIME_NOW = datetime.strftime(datetime.now(), dateformat)
 
@@ -542,23 +547,10 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     ############################################################################
     import csv
     ## OUTPUT CSV FILE 1
-    with open('_tmp_601_mggk_barchart1.csv', 'a', newline='') as csvfile1:
-        fieldnames1 = ['URL_NUM', 'BSOUP_NUMWORDS','NLP_NUMWORDS']
+    with open(OUTPUT_CSV_FILE, 'a', newline='') as csvfile1:
+        fieldnames1 = ['URL_NUM', 'URL_NAME', 'NLP_READING_TIME_IN_MINS_212WPM','BSOUP_NUMWORDS','NLP_NUMWORDS','YEARS_SINCE_FIRST_PUBLISHED','YEARS_SINCE_LAST_MODIFIED']
         writer = csv.DictWriter(csvfile1, fieldnames=fieldnames1)
-        writer.writerow({'URL_NUM':'url'+str(URL_COUNT) , 'BSOUP_NUMWORDS':str(BSOUP_NUMWORDS) ,'NLP_NUMWORDS':str(NLP_NUMWORDS) })
-
-    ## OUTPUT CSV FILE 2
-    with open('_tmp_601_mggk_barchart2.csv', 'a', newline='') as csvfile2:
-        fieldnames2 = ['URL_NUM', 'YEARS_SINCE_FIRST_PUBLISHED','YEARS_SINCE_LAST_MODIFIED']
-        writer = csv.DictWriter(csvfile2, fieldnames=fieldnames2)
-        writer.writerow({'URL_NUM':'url'+str(URL_COUNT) , 'YEARS_SINCE_FIRST_PUBLISHED':str(YEARS_SINCE_FIRST_PUBLISHED) ,'YEARS_SINCE_LAST_MODIFIED':str(YEARS_SINCE_LAST_MODIFIED) })
-
-    ## OUTPUT CSV FILE 3
-    with open('_tmp_601_mggk_barchart3.csv', 'a', newline='') as csvfile3:
-        fieldnames3 = ['URL_NUM', 'NLP_READING_TIME_IN_MINS_212WPM', 'URL_NAME']
-        writer = csv.DictWriter(csvfile3, fieldnames=fieldnames3)
-        writer.writerow({'URL_NUM':'url'+str(URL_COUNT) , 'NLP_READING_TIME_IN_MINS_212WPM':str(NLP_READINGTIME_212WPM) , 'URL_NAME':str(url) })
-
+        writer.writerow({'URL_NUM':'url'+str(URL_COUNT) , 'URL_NAME':str(url), 'NLP_READING_TIME_IN_MINS_212WPM':str(NLP_READINGTIME_212WPM) , 'BSOUP_NUMWORDS':str(BSOUP_NUMWORDS) , 'NLP_NUMWORDS':str(NLP_NUMWORDS) ,'YEARS_SINCE_FIRST_PUBLISHED':str(YEARS_SINCE_FIRST_PUBLISHED) ,'YEARS_SINCE_LAST_MODIFIED':str(YEARS_SINCE_LAST_MODIFIED) })
 
 ################################################################################
 ################################################################################
@@ -680,23 +672,11 @@ f.write('</tr></thead><tbody>')
 
 ## INITIALIZING THE CSV FILES FOR WRITING, AND WRITING THE HEADER ROW
 #### OUTPUT CSV FILE 1
-with open('_tmp_601_mggk_barchart1.csv', 'w', newline='') as csvfile1:
-    fieldnames1 = ['URL_NUM', 'BSOUP_NUMWORDS','NLP_NUMWORDS']
+with open(OUTPUT_CSV_FILE, 'w', newline='') as csvfile1:
+    fieldnames1 = ['URL_NUM', 'URL_NAME', 'NLP_READING_TIME_IN_MINS_212WPM','BSOUP_NUMWORDS','NLP_NUMWORDS','YEARS_SINCE_FIRST_PUBLISHED','YEARS_SINCE_LAST_MODIFIED']
     writer = csv.DictWriter(csvfile1, fieldnames=fieldnames1)
-    writer.writerow({'URL_NUM':'URL_NUM' , 'BSOUP_NUMWORDS':'BSOUP_NUMWORDS' ,'NLP_NUMWORDS':'NLP_NUMWORDS' })
+    writer.writerow({'URL_NUM':'URL_NUM' , 'URL_NAME':'URL_NAME', 'NLP_READING_TIME_IN_MINS_212WPM':'NLP_READING_TIME_IN_MINS_212WPM', 'BSOUP_NUMWORDS':'BSOUP_NUMWORDS' ,'NLP_NUMWORDS':'NLP_NUMWORDS', 'YEARS_SINCE_FIRST_PUBLISHED':'YEARS_SINCE_FIRST_PUBLISHED' ,'YEARS_SINCE_LAST_MODIFIED':'YEARS_SINCE_LAST_MODIFIED' })
 
-
-#### OUTPUT CSV FILE 2
-with open('_tmp_601_mggk_barchart2.csv', 'w', newline='') as csvfile2:
-    fieldnames2 = ['URL_NUM', 'YEARS_SINCE_FIRST_PUBLISHED','YEARS_SINCE_LAST_MODIFIED']
-    writer = csv.DictWriter(csvfile2, fieldnames=fieldnames2)
-    writer.writerow({'URL_NUM':'URL_NUM' , 'YEARS_SINCE_FIRST_PUBLISHED':'YEARS_SINCE_FIRST_PUBLISHED' ,'YEARS_SINCE_LAST_MODIFIED':'YEARS_SINCE_LAST_MODIFIED' })
-
-#### OUTPUT CSV FILE 3
-with open('_tmp_601_mggk_barchart3.csv', 'w', newline='') as csvfile3:
-    fieldnames3 = ['URL_NUM', 'NLP_READING_TIME_IN_MINS_212WPM', 'URL_NAME']
-    writer = csv.DictWriter(csvfile3, fieldnames=fieldnames3)
-    writer.writerow({'URL_NUM':'URL_NUM' , 'NLP_READING_TIME_IN_MINS_212WPM':'NLP_READING_TIME_IN_MINS_212WPM' , 'URL_NAME':'URL_NAME' })
 
 #################################################################################
 ## CALLING THE ABOVE MAIN FUNCTION ON EACH URL LINE FROM URL LINKS TEXT FILE
