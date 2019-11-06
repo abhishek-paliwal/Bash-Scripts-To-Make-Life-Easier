@@ -1,3 +1,32 @@
+################################################################################
+THIS_PROGRAM_DETAILS = """
+################################################################################
+THIS_SCRIPT_NAME: 601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls.py
+################################################################################
+REQUIREMENTS_FILE  = 601-MGGK-REQUIREMENT-ALL-URLS-FOR-NLP.txt
+(Note: This file should be present in the 'Desktop/Y/' directory)
+################################################################################
+USAGE: python3 THIS_SCRIPT_NAME
+################################################################################
+################################################################################
+THIS SCRIPT USES NATURAL LANGUAGE PROCESSING (NLP + AI), Newspaper3k, and BeautifulSoup 4
+OVER AN EXTERNAL TEXT FILE CONTAINING URLS FOR KEYWORDS ANALYSIS, AND PRODUCES
+A DETAILED HTML FILE WITH ALL THE EXTRACTED DATA FOR EACH URL PRESENT IN
+THE REQUIREMENTS_FILE.
+################################################################################
+THIS SCRIPT ALSO PRODUCES SOME CSV FILES FOR LATER ANALYSES (OR FOR PLOTTING).
+################################################################################
+CREATED ON: November 5, 2019
+CREATED BY: Pali
+################################################################################
+
+"""
+
+################################################################################
+print(THIS_PROGRAM_DETAILS)
+################################################################################
+
+## IMPORTING MODULES
 from newspaper import Article
 from bs4 import BeautifulSoup
 from bs4.diagnose import diagnose
@@ -10,14 +39,19 @@ from random import randint
 import matplotlib.pyplot as plt
 
 ################################################################################
-## DEFINING SOME VARIABLES
+## DEFINING SOME VARIABLES (Only edit these paths if running on the VPS SERVER)
 ################################################################################
 from os.path import expanduser
 home = expanduser("~")
 dirpath = '/GitHub/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls'
+
 rake_stop_dir = home + dirpath + '/601-MGGK-PYTHON-RAKE-SmartStoplist.txt'
 NLP_URLS_TEXT_FILE = home + '/Desktop/Y/601-MGGK-REQUIREMENT-ALL-URLS-FOR-NLP.txt'
 OUTPUT_HTML_FILE = home + '/Desktop/Y/_TMP_601_MGGK_AI_NLP_HTML_OUTPUT.HTML'
+
+################################################################################
+## DO NOT EDIT ANYTHING BELOW. THE FOLLOWING CODE WILL WORK UNIVERSALLY.
+################################################################################
 
 dateformat="%Y-%m-%d %H:%M"
 TIME_NOW = datetime.strftime(datetime.now(), dateformat)
@@ -287,16 +321,18 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         #### <meta property="article:modified_time" content="2014-03-16T23:10:22+00:00" />
         meta_published_time_tmp = soup.find(attrs={'property':'article:published_time'})
         META_PUBLISHED_DATETIME = str(meta_published_time_tmp['content'])
+        META_PUBLISHED_DATETIME = META_PUBLISHED_DATETIME[:19] ## DISCARDING TIMEZONE INFO BY SUBSTRING METHOD
         print("\n>>>> META_PUBLISHED_DATETIME: ", META_PUBLISHED_DATETIME)
 
         meta_modified_time_tmp = soup.find(attrs={'property':'article:modified_time'})
         META_MODIFIED_DATETIME = str(meta_modified_time_tmp['content'])
+        META_MODIFIED_DATETIME = META_MODIFIED_DATETIME[:19] ## DISCARDING TIMEZONE INFO BY SUBSTRING METHOD
         print(">>>> META_MODIFIED_DATETIME: ", META_MODIFIED_DATETIME)
 
         ## CONVERTING OBTAINED DATE STRINGS INTO PYTHON DATE OBJECTS FOR CALCULATIONS
         #### a.) converting string to corresponding date format (by using strptime)
-        date_post_published_tmp = datetime.strptime(META_PUBLISHED_DATETIME, "%Y-%m-%dT%H:%M:%S%z")
-        date_post_modified_tmp = datetime.strptime(META_MODIFIED_DATETIME, "%Y-%m-%dT%H:%M:%S%z")
+        date_post_published_tmp = datetime.strptime(META_PUBLISHED_DATETIME, "%Y-%m-%dT%H:%M:%S")
+        date_post_modified_tmp = datetime.strptime(META_MODIFIED_DATETIME, "%Y-%m-%dT%H:%M:%S")
         #### b.) converting thus created date into desired format for printing (by using strftime)
         date_post_published = datetime.strftime(date_post_published_tmp, '%Y-%m-%d')
         date_post_modified = datetime.strftime(date_post_modified_tmp, '%Y-%m-%d')
@@ -519,9 +555,9 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
 
     ## OUTPUT CSV FILE 3
     with open('_tmp_601_mggk_barchart3.csv', 'a', newline='') as csvfile3:
-        fieldnames3 = ['URL_NUM', 'NLP_READING_TIME_IN_MINS_212WPM']
+        fieldnames3 = ['URL_NUM', 'NLP_READING_TIME_IN_MINS_212WPM', 'URL_NAME']
         writer = csv.DictWriter(csvfile3, fieldnames=fieldnames3)
-        writer.writerow({'URL_NUM':'url'+str(URL_COUNT) , 'NLP_READING_TIME_IN_MINS_212WPM':str(NLP_READINGTIME_212WPM) })
+        writer.writerow({'URL_NUM':'url'+str(URL_COUNT) , 'NLP_READING_TIME_IN_MINS_212WPM':str(NLP_READINGTIME_212WPM) , 'URL_NAME':str(url) })
 
 
 ################################################################################
@@ -658,28 +694,28 @@ with open('_tmp_601_mggk_barchart2.csv', 'w', newline='') as csvfile2:
 
 #### OUTPUT CSV FILE 3
 with open('_tmp_601_mggk_barchart3.csv', 'w', newline='') as csvfile3:
-    fieldnames3 = ['URL_NUM', 'NLP_READING_TIME_IN_MINS_212WPM']
+    fieldnames3 = ['URL_NUM', 'NLP_READING_TIME_IN_MINS_212WPM', 'URL_NAME']
     writer = csv.DictWriter(csvfile3, fieldnames=fieldnames3)
-    writer.writerow({'URL_NUM':'URL_NUM' , 'NLP_READING_TIME_IN_MINS_212WPM':'NLP_READING_TIME_IN_MINS_212WPM' })
+    writer.writerow({'URL_NUM':'URL_NUM' , 'NLP_READING_TIME_IN_MINS_212WPM':'NLP_READING_TIME_IN_MINS_212WPM' , 'URL_NAME':'URL_NAME' })
 
-
-## Calling the above MAIN function on each url line from url links text FILE
+#################################################################################
+## CALLING THE ABOVE MAIN FUNCTION ON EACH URL LINE FROM URL LINKS TEXT FILE
+#################################################################################
 myfile = open(NLP_URLS_TEXT_FILE, "r")
 MY_URL_COUNT=0
 for line in myfile:
-    MY_URL_COUNT = MY_URL_COUNT+1
-    print("\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-    print(">>>> CURRENT URL READING: ",line)
-    print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
-    line=line.strip() ## removes all unnecessary character in line (leading and trailing)
-    mggk_find_ai_details_from_url_lines(url = line, URL_COUNT = MY_URL_COUNT)
+    ## Moving forward only when the line contains the substring 'http', meaning
+    ## it's a valid url
+    if ('http' in line):
+        MY_URL_COUNT = MY_URL_COUNT+1
+        print("\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+        print(">>>> CURRENT URL READING: ",line)
+        print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
+        line=line.strip() ## removes all unnecessary character in line (leading and trailing)
+        mggk_find_ai_details_from_url_lines(url = line, URL_COUNT = MY_URL_COUNT)
 
 ## FINAL HTML OUTPUT OPERATIONS
 f.write('</tbody></table>')
-
-
-
-
 f.write(BOOTSTRAP4_HTML_FOOTER)
 f.close()
 ################################################################################
