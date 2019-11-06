@@ -48,7 +48,7 @@ rake_stop_dir = home + dirpath + '/601-MGGK-PYTHON-RAKE-SmartStoplist.txt'
 NLP_URLS_TEXT_FILE = home + '/Desktop/Y/601-MGGK-REQUIREMENT-ALL-URLS-FOR-NLP.txt'
 
 #######################################
-prefix_dateformat="%Y%m%d-%H%M"
+prefix_dateformat="%Y%m%d"
 prefix_today = datetime.strftime(datetime.now(), prefix_dateformat)
 
 OUTPUT_HTML_FILE = home + '/Desktop/Y/'+str(prefix_today)+'_TMP_601_MGGK_AI_NLP_HTML_OUTPUT.HTML'
