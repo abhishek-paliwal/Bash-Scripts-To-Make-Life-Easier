@@ -485,15 +485,20 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     from gensim.summarization import summarize
     from gensim.summarization import keywords
 
-    print("\n\n>>>> GENSIM SUMMARY (100 words)\n")
-    GENSIM_ARTICLE_SUMMARY_100_TMP = summarize(article.text, word_count=100)
-    GENSIM_ARTICLE_SUMMARY_100 = GENSIM_ARTICLE_SUMMARY_100_TMP.replace('\n', '<br><br>')
-    print(GENSIM_ARTICLE_SUMMARY_100)
+    GENSIM_ARTICLE_SUMMARY_100 = "" # initializing
+    GENSIM_ARTICLE_SUMMARY_20PC = "" # initializing
+    try:
+        print("\n\n>>>> GENSIM SUMMARY (100 words)\n")
+        GENSIM_ARTICLE_SUMMARY_100_TMP = summarize(article.text, word_count=100)
+        GENSIM_ARTICLE_SUMMARY_100 = GENSIM_ARTICLE_SUMMARY_100_TMP.replace('\n', '<br><br>')
+        print(GENSIM_ARTICLE_SUMMARY_100)
 
-    print("\n\n>>>> GENSIM SUMMARY (20% of original article length)\n")
-    GENSIM_ARTICLE_SUMMARY_20PC_TMP = summarize(article.text, ratio=0.2) # show 20% of the original text
-    GENSIM_ARTICLE_SUMMARY_20PC = GENSIM_ARTICLE_SUMMARY_20PC_TMP.replace('\n', '<br><br>')
-    print("\n\n",GENSIM_ARTICLE_SUMMARY_20PC)
+        print("\n\n>>>> GENSIM SUMMARY (20% of original article length)\n")
+        GENSIM_ARTICLE_SUMMARY_20PC_TMP = summarize(article.text, ratio=0.2) # show 20% of the original text
+        GENSIM_ARTICLE_SUMMARY_20PC = GENSIM_ARTICLE_SUMMARY_20PC_TMP.replace('\n', '<br><br>')
+        print("\n\n",GENSIM_ARTICLE_SUMMARY_20PC)
+    except:
+        print("**** PRINT WARNING = Gensim summary can not be extracted. Maybe because the page content is only one sentence long. ****")
 
     print("\n\n>>>> GENSIM KEYWORDS = ALL \n")
     GENSIM_KEYWORDS_ALL_TMP = keywords(article.text,split=False)
