@@ -315,8 +315,8 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     ################################################################################
     print('\n///////////////////////////////////////////////////////////////////////\n')
 
-    META_PUBLISHED_DATETIME = "Not found = first published time."
-    META_MODIFIED_DATETIME = "Not found = Last updated time."
+    META_PUBLISHED_DATETIME = "Not found = first published time"
+    META_MODIFIED_DATETIME = "Not found = last updated time"
     BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY = []
     row_color = "#000000" ## default is black
 
@@ -428,7 +428,10 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     print(">>>> [NLP] ARTICLE SUMMARY =\n\n", article.summary)
 
     NLP_ARTICLE_AUTHORS = article.authors
-    NLP_ARTICLE_PUBLISH_DATE = article.publish_date
+
+    NLP_ARTICLE_PUBLISH_DATE = str(article.publish_date).replace(' ','T')
+    NLP_ARTICLE_PUBLISH_DATE = NLP_ARTICLE_PUBLISH_DATE[:19] ## stripping off the timezone part
+
     NLP_ARTICLE_TOP_IMAGE = article.top_image +'<br><br><img width="300px" src="'+ article.top_image+'"></img>'
     NLP_ARTICLE_ANY_VIDEO = article.movies
     NLP_TOP_KEYWORDS = str('<br>'.join(article.keywords))
@@ -548,9 +551,10 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     import csv
     ## OUTPUT CSV FILE 1
     with open(OUTPUT_CSV_FILE, 'a', newline='') as csvfile1:
-        fieldnames1 = ['URL_NUM', 'URL_NAME', 'NLP_READING_TIME_IN_MINS_212WPM','BSOUP_NUMWORDS','NLP_NUMWORDS','YEARS_SINCE_FIRST_PUBLISHED','YEARS_SINCE_LAST_MODIFIED']
+        fieldnames1 = ['URL_NUM', 'URL_NAME', 'NLP_READING_TIME_IN_MINS_212WPM','BSOUP_NUMWORDS','NLP_NUMWORDS','META_YEARS_SINCE_FIRST_PUBLISHED','META_YEARS_SINCE_LAST_MODIFIED','NLP_FIRST_PUBLISHED_DATETIME','META_LAST_MODIFIED_DATETIME']
         writer = csv.DictWriter(csvfile1, fieldnames=fieldnames1)
-        writer.writerow({'URL_NUM':'url'+str(URL_COUNT) , 'URL_NAME':str(url), 'NLP_READING_TIME_IN_MINS_212WPM':str(NLP_READINGTIME_212WPM) , 'BSOUP_NUMWORDS':str(BSOUP_NUMWORDS) , 'NLP_NUMWORDS':str(NLP_NUMWORDS) ,'YEARS_SINCE_FIRST_PUBLISHED':str(YEARS_SINCE_FIRST_PUBLISHED) ,'YEARS_SINCE_LAST_MODIFIED':str(YEARS_SINCE_LAST_MODIFIED) })
+        writer.writerow({'URL_NUM':'url'+str(URL_COUNT) , 'URL_NAME':str(url), 'NLP_READING_TIME_IN_MINS_212WPM':str(NLP_READINGTIME_212WPM) , 'BSOUP_NUMWORDS':str(BSOUP_NUMWORDS) , 'NLP_NUMWORDS':str(NLP_NUMWORDS) ,'META_YEARS_SINCE_FIRST_PUBLISHED':str(YEARS_SINCE_FIRST_PUBLISHED) ,'META_YEARS_SINCE_LAST_MODIFIED':str(YEARS_SINCE_LAST_MODIFIED) ,  'NLP_FIRST_PUBLISHED_DATETIME':str(NLP_ARTICLE_PUBLISH_DATE),
+        'META_LAST_MODIFIED_DATETIME':str(META_MODIFIED_DATETIME) })
 
 ################################################################################
 ################################################################################
@@ -673,9 +677,9 @@ f.write('</tr></thead><tbody>')
 ## INITIALIZING THE CSV FILES FOR WRITING, AND WRITING THE HEADER ROW
 #### OUTPUT CSV FILE 1
 with open(OUTPUT_CSV_FILE, 'w', newline='') as csvfile1:
-    fieldnames1 = ['URL_NUM', 'URL_NAME', 'NLP_READING_TIME_IN_MINS_212WPM','BSOUP_NUMWORDS','NLP_NUMWORDS','YEARS_SINCE_FIRST_PUBLISHED','YEARS_SINCE_LAST_MODIFIED']
+    fieldnames1 = ['URL_NUM', 'URL_NAME', 'NLP_READING_TIME_IN_MINS_212WPM','BSOUP_NUMWORDS','NLP_NUMWORDS','META_YEARS_SINCE_FIRST_PUBLISHED','META_YEARS_SINCE_LAST_MODIFIED','NLP_FIRST_PUBLISHED_DATETIME','META_LAST_MODIFIED_DATETIME']
     writer = csv.DictWriter(csvfile1, fieldnames=fieldnames1)
-    writer.writerow({'URL_NUM':'URL_NUM' , 'URL_NAME':'URL_NAME', 'NLP_READING_TIME_IN_MINS_212WPM':'NLP_READING_TIME_IN_MINS_212WPM', 'BSOUP_NUMWORDS':'BSOUP_NUMWORDS' ,'NLP_NUMWORDS':'NLP_NUMWORDS', 'YEARS_SINCE_FIRST_PUBLISHED':'YEARS_SINCE_FIRST_PUBLISHED' ,'YEARS_SINCE_LAST_MODIFIED':'YEARS_SINCE_LAST_MODIFIED' })
+    writer.writerow({'URL_NUM':'URL_NUM' , 'URL_NAME':'URL_NAME', 'NLP_READING_TIME_IN_MINS_212WPM':'NLP_READING_TIME_IN_MINS_212WPM', 'BSOUP_NUMWORDS':'BSOUP_NUMWORDS' ,'NLP_NUMWORDS':'NLP_NUMWORDS', 'META_YEARS_SINCE_FIRST_PUBLISHED':'META_YEARS_SINCE_FIRST_PUBLISHED' ,'META_YEARS_SINCE_LAST_MODIFIED':'META_YEARS_SINCE_LAST_MODIFIED' ,'NLP_FIRST_PUBLISHED_DATETIME':'NLP_FIRST_PUBLISHED_DATETIME','META_LAST_MODIFIED_DATETIME':'META_LAST_MODIFIED_DATETIME' })
 
 
 #################################################################################
@@ -689,7 +693,7 @@ for line in myfile:
     if ('http' in line):
         MY_URL_COUNT = MY_URL_COUNT+1
         print("\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-        print(">>>> CURRENT URL READING: ",line)
+        print(">>>> URL# " + str(MY_URL_COUNT) + " // CURRENT URL READING: ",line)
         print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
         line=line.strip() ## removes all unnecessary character in line (leading and trailing)
         mggk_find_ai_details_from_url_lines(url = line, URL_COUNT = MY_URL_COUNT)
