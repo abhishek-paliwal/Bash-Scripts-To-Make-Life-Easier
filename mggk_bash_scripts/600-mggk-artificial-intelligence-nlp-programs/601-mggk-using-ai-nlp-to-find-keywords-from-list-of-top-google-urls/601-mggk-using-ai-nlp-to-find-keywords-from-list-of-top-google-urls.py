@@ -631,7 +631,7 @@ f.write('<div class="container-fluid"><div class="row">')
 
 for c_key in color_age_dict:
     c_value = color_age_dict[c_key]
-    f.write('<div class="col-2" style="color: black; background: ' + c_value + ' ;"> ' + c_key + '</div>')
+    f.write('<div class="col-2" style="color: white; background: ' + c_value + ' ;"> ' + c_key + '</div>')
 
 f.write('</div></div><hr>')
 f.close()
