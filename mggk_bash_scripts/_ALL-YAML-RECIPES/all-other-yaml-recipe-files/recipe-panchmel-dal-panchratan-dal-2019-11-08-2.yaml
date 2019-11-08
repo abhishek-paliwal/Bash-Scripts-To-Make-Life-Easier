@@ -1,0 +1,161 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Rajasthani Panchmel Dal | Panchratan Dal Recipe"
+
+description: "Panchmel dal or Panchratan dal or mix lentils stew is a very popular delicacy from Rajasthani cuisine. This classic and creamy textured Panchratna dal is a side dish of Baati in a Rajasthani Thali. Panchmel dal recipe has beautifully medley of aromatic flavors that comes from spicy onion tomato masala and is packed with proteins and nutrients."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/11/panchmel-dal-recipe-my-ginger-garlic-kitchen-7.jpg
+
+prepTime: PT20M
+
+cookTime: PT40M
+
+totalTime: PT60M
+
+recipeCategory: Side
+
+recipeCuisine: Indian
+
+recipeYield: 5-6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 3
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 398 calories
+  servingSize: 1 serving
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: "1. I have boiled dals in a stovetop pressure cooker. You can also make this dal in an Instant pot, a slow cooker or in a thick bottomed pan.<br>2. This is a spicy dal and its hotness levels are a bit high. So feel free to adjust the amount of spices in this recipe."
+
+keywords: "mixed dal recipe, panchmel dal, 5 lentil dahl, jaipur dal recipe, dal for chapathi, panchmel dal kaise banti hai, panchmel dal recipe, panchmel dal tadka recipe, panchmel dal dhaba style, panchmel dal bati recipe, panchmel dal fry, recipe for panchmel dal, panchmel dal without onion garlic, mixed dal without onion garlic, panchmel dal ki recipe, panchratan dal recipe, panchratan dal fry, panchratan dal ki recipe"
+
+video:
+  "@type": "VideoObject"
+  name: "Rajasthani Panchmel Dal | Panchratan Dal Recipe"
+  description: "Panchmel dal or Panchratan dal or mix lentils stew is a very popular delicacy from Rajasthani cuisine. This classic and creamy textured Panchratna dal is a side dish of Baati in a Rajasthani Thali. Panchmel dal recipe has beautifully medley of aromatic flavors that comes from spicy onion tomato masala and is packed with proteins and nutrients."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/11/panchmel-dal-recipe-my-ginger-garlic-kitchen-7.jpg
+    - https://i.ytimg.com/vi/5Jp6E3xnw3c/maxresdefault.jpg
+  contentUrl: "https://youtu.be/5Jp6E3xnw3c"
+  embedUrl: "https://www.youtube.com/embed/5Jp6E3xnw3c"
+  uploadDate: 2019-11-08
+
+datePublished: 2019-11-08
+
+url: https://www.mygingergarlickitchen.com/panchmel-dal-panchratan-dal/
+
+recipeIngredient:
+  - "!!For Panchmel Dal:"
+  - "1/4 cup urad dal chilka (split black lentils)"
+  - "1/4 cup chana dal ( split bengal gram or chickpeas)"
+  - "1/4 cup green moong dal chilka (split green grams)"
+  - "1/4 cup masoor dal (split red lentils or egyptian lentils)"
+  - "1/4 cup tuar/toor dal or arhar ki dal ( split pigeon peas )"
+  - "salt to taste"
+  - "1/2 tsp + 1/2 tsp turmeric powder (haldi powder)"
+  - "2 teaspoonS coriander powder"
+  - "1/2 teaspoon garam masala power"
+  - "1/2 teaspoon black pepper (kali mirch) powder, optional"
+  - "6 cups water or as required"
+  - "1 medium sized onion, finely chopped"
+  - "1 tablespoon minced ginger (kisi hui adrak)"
+  - "1 tablespoon minced garlic (kisi hui lehsun)"
+  - "2-3 green chillies"
+  - "2 medium sized tomatoes, chopped"
+  - "2 pinches of asafoetida (hing)"
+  - "1/2 teaspoon mustard seeds (rai)"
+  - "1/2 teaspoon cumin seeds (jeera)"
+  - "3 tablespoons + 2 tsp ghee"
+  - "2 tablespoons oil"
+  - "2 dried red chilies (sukhi lal mirch)"
+  - "2 green chilies (hari mirch), chopped"
+  - "2 tablespoons fresh coriander chopped"
+  - "lemon juice to taste"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "How To Cook Panchmel Dal:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Add all the dals to a large mixing bowl."
+  - "@type": HowToStep
+    text: "Mix well using fingers and rinse 3-4 times."
+  - "@type": HowToStep
+    text: "Soak the dals (lentils) in 2 cups of water for 1 hour."
+  - "@type": HowToStep
+    text: "In a pressure cooker add the mix of dals (lentils) along with 3 cups of some water. (Alternatively, you can also cook dals in a thick bottomed pan, or in a slow cooker.)"
+  - "@type": HowToStep
+    text: "Next add 1 teaspoon salt, 1/2 teaspoon turmeric powder, pinch of asafoetida (hing), and 1 teaspoon of ghee."
+  - "@type": HowToStep
+    text: "Cover the lid and pressure cook for 7-8 whistles over medium heat."
+  - "@type": HowToStep
+    text: "Let the pressure release naturally before opening the lid."
+  - "@type": HowToStep
+    text: "At this point, the mix of dals should be completely cooked and you should be able to mash them with your fingers. Mash some of the cooked dal using a ladle."
+- "@type": HowToSection
+  name: "How To Make Temepring (Tadka) For Panchmel Dal:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "To make the temepring, in a large pot/pan, heat 2 tablespoons oil and 3 tablespoons ghee on medium heat  (You can also use butter instead of ghee)."
+  - "@type": HowToStep
+    text: "Once the oil ghee mixture is hot, add a pinch of asafoetida. Sauté for a few seconds."
+  - "@type": HowToStep
+    text: "Then add mustard seeds and cumin seeds. When the ghee is hot, add hing, jeer and dry red chilies and fry for a few seconds. Let the seeds crackle."
+  - "@type": HowToStep
+    text: "Add bay leaf, peppercorns, cloves and crushed black cardamom. Sauté for few seconds."
+  - "@type": HowToStep
+    text: "Add chopped onions and sauté for 2 minutes."
+  - "@type": HowToStep
+    text: "Add green chillies and sauté for another minute."
+  - "@type": HowToStep
+    text: "Then add minced garlic, minced ginger, and 2 dried red chiles."
+  - "@type": HowToStep
+    text: "Fry for 2 minutes or until onion turns translucent."
+  - "@type": HowToStep
+    text: "Add 1/2 teaspoon turmeric powder, 1 teaspoon red chilli powder, 2 teaspoons coriander powder and mix well."
+  - "@type": HowToStep
+    text: "Sauté over medium-low heat for 1 minute or until the oil leaves the side."
+  - "@type": HowToStep
+    text: "Take out 3 tsp of masala in a bowl and keep it aside. (We will use at the time of serving)"
+  - "@type": HowToStep
+    text: "Mix well and cook it ."
+  - "@type": HowToStep
+    text: "Add chopped tomatoes, ground black pepper and mix well. Cook for 2 minutes."
+  - "@type": HowToStep
+    text: "Add 4 tablespoons of water and mix well again."
+  - "@type": HowToStep
+    text: "Cook for another 3-4 minutes or until oil starts oozing out from the sides."
+  - "@type": HowToStep
+    text: "To get the smooth texture, mash tomatoes with a spoon."
+  - "@type": HowToStep
+    text: "Once the masala is ready,"
+  - "@type": HowToStep
+    text: "Add cooked dal to the pan and mix well."
+  - "@type": HowToStep
+    text: "Add salt to taste and mix again. This dal is supposed to be of creamy consistency. (At this stage you can also add some water, if the dal mixture looks too thick.)"
+  - "@type": HowToStep
+    text: "Boil for 2 minutes over medium-low heat.This boiling time ensures that your dal will absorb all the flavors from masala and it would get nice and creamy texture."
+  - "@type": HowToStep
+    text: "Add garam masala powder, coriander leaves and mix well and boil for another minute."
+  - "@type": HowToStep
+    text: "Add 1 tsp of ghee and mix well. Turn off the heat."
+  - "@type": HowToStep
+    text: "Transfer dal to a seving bowl and drizzle with some tempering."
+  - "@type": HowToStep
+    text: "Garnish with coriander leaves and drizzle with some lemon juice and ghee."
+  - "@type": HowToStep
+    text: "Serve this delightful Panchmel Dal or Panchratna Dal hot with bati, roti, rice or paratha."
