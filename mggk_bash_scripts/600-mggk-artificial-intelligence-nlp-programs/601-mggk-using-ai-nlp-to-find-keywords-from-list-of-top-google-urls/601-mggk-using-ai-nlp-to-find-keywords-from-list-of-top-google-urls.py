@@ -46,14 +46,14 @@ home = expanduser("~")
 
 ## IF THIS SCRIPT IS RUNNING ON THE VPS SERVER, THEN CHECK FOR THE USERNAME 'ubuntu' IN HOME DIRECTORY,
 #### AND SET DIRECTORY PATHS APPROPRIATELY. ELSE, SET OTHER PATHS FOR EXECUTION LOCALLY.
-if ('ubuntu' not in home):
-    dirpath = '/GitHub/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls'
-    rake_stop_dir = home + dirpath + '/601-MGGK-PYTHON-RAKE-SmartStoplist.txt'
-    working_directory = home + '/Desktop/Y/'
-else:
+if ('ubuntu' in home): ## if running on VPS
     dirpath = '/scripts-made-by-pali/600-mggk-ai-nlp-scripts/'
     rake_stop_dir = home + dirpath + '601-MGGK-PYTHON-RAKE-SmartStoplist.txt'
     working_directory = home + dirpath
+else: ## if running elsewhere
+    dirpath = '/GitHub/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls'
+    rake_stop_dir = home + dirpath + '/601-MGGK-PYTHON-RAKE-SmartStoplist.txt'
+    working_directory = home + '/Desktop/Y/'
 
 ################################################################################
 ## DO NOT EDIT ANYTHING BELOW. THE FOLLOWING CODE WILL WORK UNIVERSALLY.
