@@ -43,20 +43,37 @@ import matplotlib.pyplot as plt
 ################################################################################
 from os.path import expanduser
 home = expanduser("~")
-dirpath = '/GitHub/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls'
-rake_stop_dir = home + dirpath + '/601-MGGK-PYTHON-RAKE-SmartStoplist.txt'
-NLP_URLS_TEXT_FILE = home + '/Desktop/Y/601-MGGK-REQUIREMENT-ALL-URLS-FOR-NLP.txt'
 
-#######################################
-prefix_dateformat="%Y%m%d"
-prefix_today = datetime.strftime(datetime.now(), prefix_dateformat)
-
-OUTPUT_HTML_FILE = home + '/Desktop/Y/'+str(prefix_today)+'_TMP_601_MGGK_AI_NLP_HTML_OUTPUT.HTML'
-OUTPUT_CSV_FILE = home + '/Desktop/Y/'+str(prefix_today)+'_TMP_601_MGGK_AI_NLP_OUTPUT_FOR_FUTURE_ANALYSES.CSV'
-#######################################
+## IF THIS SCRIPT IS RUNNING ON THE VPS SERVER, THEN CHECK FOR THE USERNAME 'ubuntu' IN HOME DIRECTORY,
+#### AND SET DIRECTORY PATHS APPROPRIATELY. ELSE, SET OTHER PATHS FOR EXECUTION LOCALLY.
+if ('ubuntu' not in home):
+    dirpath = '/GitHub/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls'
+    rake_stop_dir = home + dirpath + '/601-MGGK-PYTHON-RAKE-SmartStoplist.txt'
+    working_directory = '/Desktop/Y/'
+else:
+    dirpath = dirpath = home + '/scripts-made-by-pali/600-mggk-ai-nlp-scripts'
+    rake_stop_dir = dirpath + '/601-MGGK-PYTHON-RAKE-SmartStoplist.txt'
+    working_directory = dirpath
 
 ################################################################################
 ## DO NOT EDIT ANYTHING BELOW. THE FOLLOWING CODE WILL WORK UNIVERSALLY.
+################################################################################
+## PTINTING IMPORTANT PATHS
+print('') ## empty line
+print('>>>> HOME = ',home)
+print('>>>> CURRENT WORKING DIRECTORY = ',dirpath)
+print('>>>> RAKE STOP WORDS DIRECTORY = ',rake_stop_dir)
+print('') ## empty line
+################################################################################
+prefix_dateformat="%Y%m%d"
+prefix_today = datetime.strftime(datetime.now(), prefix_dateformat)
+
+NLP_URLS_TEXT_FILE = home + working_directory + '601-MGGK-REQUIREMENT-ALL-URLS-FOR-NLP.txt'
+OUTPUT_HTML_FILE = home + working_directory + str(prefix_today) + '_TMP_601_MGGK_AI_NLP_HTML_OUTPUT.HTML'
+OUTPUT_CSV_FILE = home + working_directory + str(prefix_today) +'_TMP_601_MGGK_AI_NLP_OUTPUT_FOR_FUTURE_ANALYSES.CSV'
+#######################################
+
+################################################################################
 ################################################################################
 dateformat="%Y-%m-%d %H:%M"
 TIME_NOW = datetime.strftime(datetime.now(), dateformat)
