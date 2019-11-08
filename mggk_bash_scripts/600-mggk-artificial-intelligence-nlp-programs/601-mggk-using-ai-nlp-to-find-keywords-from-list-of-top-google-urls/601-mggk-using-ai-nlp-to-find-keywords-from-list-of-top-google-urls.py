@@ -1,8 +1,7 @@
 ################################################################################
 THIS_PROGRAM_DETAILS = """
 ################################################################################
-THIS_SCRIPT_NAME (LOCAL NAME): 601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls.py
-THIS_SCRIPT_NAME (ON VPS): 601-VPS-SERVER-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls.py
+THIS_SCRIPT_NAME : 601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls.py
 ################################################################################
 REQUIREMENTS_FILE  = 601-MGGK-REQUIREMENT-ALL-URLS-FOR-NLP.txt
 (Note: This file should be present in the Present Working Directory)
@@ -179,7 +178,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     content = urllib.request.urlopen(req).read()
     soup = BeautifulSoup(content, 'html.parser' )
 
-    ############# EXTRACTING THE META DESCRIPTON FROM THE WEBPAGE #############
+    ############# EXTRACTING THE META DESCRIPTION FROM THE WEBPAGE #############
     #### Description is Case-Sensitive. So, we need to look for both 'Description' and 'description'.
     META_DESCRIPTION = "No meta description found." ## INITIALIZING
     try:
@@ -187,7 +186,12 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         if meta_desc == None:
             meta_desc = soup.find(attrs={'name':'Description'})
         ## PRINTING THE META CONTENT DESCRIPTION
-        META_DESCRIPTION = meta_desc['content']
+        META_DESCRIPTION_TMP = meta_desc['content']
+        LEN_META_DESC = str(len(META_DESCRIPTION_TMP)) ## CONVERT INT TO STRING
+        print(">> LENGTH OF META DESCRIPTION: ", LEN_META_DESC)
+        ## Meta description should be less than 160 characters long, ideal for Google SERP. 155-160 is ideal.
+        META_DESCRIPTION = '<strong>CURRENT LENGTH: </strong>' + LEN_META_DESC + '<hr><span style="color:blue;" >' + META_DESCRIPTION_TMP[:160] + '</span>' + META_DESCRIPTION_TMP[160:]
+
         print(">>>> META_DESCRIPTION: \n", META_DESCRIPTION)
     except:
         print("***** BEAUTIFUL SOUP ERROR: FAILED TO FIND META DESCRIPTION TAG IN WEBPAGE ***** = ", url)
@@ -652,7 +656,7 @@ f.write('<th scope="col">URL LINK</th>')
 f.write('<th scope="col">NLP ARTICLE TOP IMAGE</th>')
 f.write('<th scope="col">BSOUP_META_GENERATOR</th>')
 f.write('<th scope="col">BSOUP_TITLE_TAG_VALUE</th>')
-f.write('<th scope="col">BSOUP_META_DESCRIPTION</th>')
+f.write('<th scope="col">BSOUP_META_DESCRIPTION (Ideal length: 160 characters // Blue = 160 chars)</th>')
 f.write('<th scope="col">NLP ARTICLE VIDEOS FOUND</th>')
 f.write('<th scope="col">TOP_20_WORDS<br>(num appearances, word)</th>')
 f.write('<th scope="col">BSOUP NUMWORDS</th>')
