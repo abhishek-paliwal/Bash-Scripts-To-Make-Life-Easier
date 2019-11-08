@@ -51,8 +51,8 @@ if ('ubuntu' not in home):
     rake_stop_dir = home + dirpath + '/601-MGGK-PYTHON-RAKE-SmartStoplist.txt'
     working_directory = '/Desktop/Y/'
 else:
-    dirpath = dirpath = home + '/scripts-made-by-pali/600-mggk-ai-nlp-scripts'
-    rake_stop_dir = dirpath + '/601-MGGK-PYTHON-RAKE-SmartStoplist.txt'
+    dirpath = dirpath = home + '/scripts-made-by-pali/600-mggk-ai-nlp-scripts/'
+    rake_stop_dir = dirpath + '601-MGGK-PYTHON-RAKE-SmartStoplist.txt'
     working_directory = dirpath
 
 ################################################################################
