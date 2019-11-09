@@ -23,9 +23,6 @@ print(THIS_PROGRAM_DETAILS)
 ## IMPORTING MODULES
 from bs4 import BeautifulSoup
 import requests
-################################################################################
-################################################################################
-OUTPUT_CSV_FILE = '_OUTPUT_9999_SITEMAP_ALL_URLS.csv'
 
 ################################################################################
 ## LIST OF SITEMAPS FOR VARIOUS WEBSITES (comment and uncomment as needed)
@@ -43,6 +40,12 @@ sitemap_urls = ['https://www.mygingergarlickitchen.com/sitemap.xml']
 
 ## COOKWITHMANALI.COM SITEMAPS (uncomment if running the following)
 #sitemap_urls = ['https://www.cookwithmanali.com/post-sitemap.xml', 'https://www.cookwithmanali.com/page-sitemap.xml']
+
+################################################################################
+################################################################################
+## VARIABLE DECLARATION
+OUTPUT_CSV_FILE = '_OUTPUT_9999_SITEMAP_ALL_URLS.csv'
+OUTPUT_FULL_ORIGINAL_SITEMAP = 'OUTPUT_9999_ORIGINAL_DOWNLOADED_SITEMAP_FROM_XML.csv'
 
 ################################################################################
 xmlDict = {} ## initializing an empty dictionary
@@ -81,6 +84,7 @@ SORTED_xmlDict = collections.OrderedDict(sorted(xmlDict.items()))
 ## SAVING URL NAMES DATA TO A CSV FILE
 ################################################################################
 file = open(OUTPUT_CSV_FILE,'w') ## initializing
+file_sitemap = open(OUTPUT_FULL_ORIGINAL_SITEMAP,'w') ## initializing
 #####################
 print(">>>> PRINTING ALL SORTED URLS IN ALL THE SITEMAP URLS\n\n")
 
@@ -94,7 +98,10 @@ for urlname,lastmod_date in SORTED_xmlDict.items():
     VAR_TO_WRITE = urlname + '\n'
 
     print("==========================") ##printing blank line
+
     print(VAR_TO_PRINT) ## printing all found URLs
+    file_sitemap.write(VAR_TO_PRINT) ## writing to sitemap file
+
     ## WRITING TO FILE ALL URLs NOT CONTAINING '/tags/' and '/categories/' WORDS
     if ('/tags/' not in urlname) and ('/categories/' not in urlname):
         COUNT_VALID = COUNT_VALID +1
@@ -110,5 +117,6 @@ print( "VALID URLS = ",COUNT_VALID )
 print( "INVALID URLS = ",COUNT_INVALID )
 #####################
 file.close()
+file_sitemap.close()
 ################################################################################
 ################################################################################
