@@ -1,5 +1,7 @@
 #!/bin/bash
 ################################################################################
+THIS_SCRIPT_NAME="601-step1-run-this-bash-script-if-website-subfolders-are-present-for-AI-NLP-mggk.sh"
+################################################################################
 cat << EOF
   ################################################################################
   ## This is the only script in this folder that you need to run for running the
@@ -30,10 +32,10 @@ EOF
 ################################################################################
 if [ $USER = "ubuntu" ]; then
   MY_PWD="$HOME/scripts-made-by-pali/600-mggk-ai-nlp-scripts"
-  echo "USER is ubuntu. Hence, MY_PWD will be: $MY_PWD " ;
+  echo "USER = $USER // USER is ubuntu. Hence, MY_PWD will be: $MY_PWD " ;
 else
   MY_PWD="$HOME/Desktop/Y"
-  echo "USER is not ubuntu. Hence, MY_PWD will be: $MY_PWD " ;
+  echo "USER = $USER // USER is not ubuntu. Hence, MY_PWD will be: $MY_PWD " ;
 fi
 ################################################################################
 
