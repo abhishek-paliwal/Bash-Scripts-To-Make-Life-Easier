@@ -19,7 +19,7 @@
 1. Create a sub directory in Present working directory, naming it as XX-SITENAME-COM
 2. Then place the 9999_Tempory_sitemap extractor python script in that directory
 3. Finally, open that python script in text editor, and replace the relevant site specific 'sitemaps' variable in that extractor script at appropriate place.
-4. Go to the parent directory, and run this on command prompt => `bash 601-step0-run-this-bash-script-if-website-subfolders-are-present-for-AI-NLP-mggk.sh`
+4. Go to the parent directory, and run this on command prompt => `bash 601-step1-run-this-bash-script-if-website-subfolders-are-present-for-AI-NLP-mggk.sh`
 5. That's it. Done. Add as many website as you like to scout the details for.
 
 -----------------
@@ -40,9 +40,8 @@
 ├── 601-MGGK-PYTHON-RAKE-SmartStoplist.txt
 ├── 601-MGGK-REQUIREMENT-ALL-URLS-FOR-NLP.txt
 ├── 601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls.py
-├── 601-step0-run-this-bash-script-if-website-subfolders-are-present-for-AI-NLP-mggk.sh
+├── 601-step1-run-this-bash-script-if-website-subfolders-are-present-for-AI-NLP-mggk.sh
 └── __README_FIRST.md
 ```
 
 -------------------
-
