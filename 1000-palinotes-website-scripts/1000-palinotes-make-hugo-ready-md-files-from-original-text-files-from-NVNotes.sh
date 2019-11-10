@@ -18,11 +18,14 @@ mkdir $OUTPUT_DIR ;
 ## BEGIN : MAIN FOR LOOP #######################################################
 for x in *.txt ;
 do
-##
 ## Find file modification time of current file
+#### 'stat -s' command output various times as bash variables ready to be used.
+#### We are interested in modification time (st_mtime), which is in the 10 columnn
+#### of the 'stat -s' output for each file.
 MOD_TIME=$(stat -s $x | awk '{print $10}' | sed 's/st_mtime=//g')
 
 ## Get date prefix based upon above modification time
+#### Converting dates from EPOCH to regular format
 DATE_PREFIX=$(date -r $MOD_TIME +%Y-%m-%dT%H:%M:%S)
 DATE_PREFIX_YMD=$(date -r $MOD_TIME +%Y-%m-%d)
 NEW_FILENAME=$(echo $DATE_PREFIX_YMD-$x | sed 's/_/-/g' | sed 's/.txt/.md/g')
