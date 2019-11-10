@@ -34,8 +34,7 @@ OUTPUT_CSV_FILE = '_OUTPUT_9999_SITEMAP_ALL_URLS.csv'
 
 ## CONCEPRO.COM SITEMAPS (uncomment if running the following)
 sitemap_urls = ['https://www.spiceupthecurry.com/post-sitemap1.xml',
-'https://www.spiceupthecurry.com/post-sitemap2.xml',
-'https://www.spiceupthecurry.com/page-sitemap.xml']
+'https://www.spiceupthecurry.com/post-sitemap2.xml']
 
 ################################################################################
 xmlDict = {} ## initializing an empty dictionary
