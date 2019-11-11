@@ -53,7 +53,23 @@ mkdir $TMP_DIR ;
 
 HTML_INDEX_FILE="_MGGK_HTML_JSON_YAML_INDEX.html" ;
 ## Initializing the HTML file
-echo "Last updated: $(date)" > $HTML_INDEX_FILE ;
+
+echo "<!doctype html>
+<html lang='en'>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+
+    <title>508 MGGK - Program output</title>
+  </head>
+  <body>
+  <div class='container'>" > $HTML_INDEX_FILE ;
+
+echo "Last updated: $(date)" >> $HTML_INDEX_FILE ;
 echo "<!-- HTML FILE --> <H1 style='color: #cd1c62 ; '>MGGK RECIPES - HTML FILE INDEX (YAML+ JSON)</H1>" >> $HTML_INDEX_FILE ;
 
 ##############################################################################
@@ -474,10 +490,12 @@ echo "<h3>$COUNT: $RECIPE_NAME</h3>
 <br><a target='_blank' href='$YAML_FILE'>YAML (Copied, without recipeNotes)</a>
 <br><a target='_blank' href='$JSON_OUTPUT1'>JSON-ORIGINAL</a> // (Test this code on <a a target='_blank' href='https://search.google.com/structured-data/testing-tool'>Google LD JSON Testing-Tool</a>)
 <br>
-<br><a target='_blank' href='$RECIPE_HTML_FILE'>RECIPE-HTML-OUTPUT</a>
-<br> ==> <a target='_blank' href='$JSON_OUTPUT2'>JSON-MODIFIED-FOR-COPY-PASTING</a>
-<br> ==> <a target='_blank' href='$RECIPE_HTML_FILE.TXT'>RECIPE-HTML-CODE-FOR-COPY-PASTING</a>
-</p>" >> $HTML_INDEX_FILE ;
+<br><button type='button' class='btn btn-warning'><a target='_blank' href='$RECIPE_HTML_FILE'>RECIPE-HTML-OUTPUT</a></button>
+<br> &Rarr; <a target='_blank' href='$JSON_OUTPUT2'>JSON-MODIFIED-FOR-COPY-PASTING</a>
+<br> &Rarr; <a target='_blank' href='$RECIPE_HTML_FILE.TXT'>RECIPE-HTML-CODE-FOR-COPY-PASTING</a>
+</p>
+<hr>" >> $HTML_INDEX_FILE ;
+
 
   ##############################################################################
   ##############################################################################
@@ -490,6 +508,16 @@ done
 ## END: MAIN FOR LOOP ######################################################
 ##############################################################################
 
+## ADDING FINAL BOOTSTRAP FOOTER IN HTML_INDEX_FILE
+echo "    </div>
+<!-- Optional Bootstrap JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+  </body>
+</html>" >> $HTML_INDEX_FILE ;
+################################################################################
 
 ## OPEN INDEX HTML FILE IN BROWSER
 echo;
