@@ -141,7 +141,7 @@ echo ""  >> $OUTPUT_HTML_FILE;
         echo "IMAGE = $IMAGE " ;
 
           ## DOWNLOADING THE IMAGE INTO A SPECIFIC FOLDER (folder will be created if not present already)
-          #wget -P _TMP_IMAGES_$REQUIREMENTS_FILE/ $IMAGE
+          wget -P _TMP_IMAGES_$REQUIREMENTS_FILE/ $IMAGE
 
         ## PRINTING RESPONSIVE GRID COLUMNS
         echo ""  >> $OUTPUT_HTML_FILE;
