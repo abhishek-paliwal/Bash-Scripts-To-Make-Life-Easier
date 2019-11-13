@@ -32,4 +32,5 @@
 20191003,08:15:00,yellow,Photography-at-school // check www.kuvaverkko.fi
 20191102,12:00:00,yellow,School Halloween party at Kivenlahti Squash (See Vilma message received on Oct 11)
 20191210,13:15:00,yellow, Meeting as school with Teacher
+20191116,15:00:00,yellow, B-Party at Little L.
 ## HOME EVENTS
