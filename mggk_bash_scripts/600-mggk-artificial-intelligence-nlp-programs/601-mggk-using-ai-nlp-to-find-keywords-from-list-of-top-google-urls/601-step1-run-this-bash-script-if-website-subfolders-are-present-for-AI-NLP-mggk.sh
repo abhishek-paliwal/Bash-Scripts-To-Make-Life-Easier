@@ -136,9 +136,11 @@ for dirname in $(ls -d1 $PWD/*/); do
 
   END_TIME=$(date)
   ## APPENDING THE LAST RUN SUMMARY FILE
-  echo "PROGRAM STARTED AT: $START_TIME (FOR => $CURRENT_DIR)"  >> $TMP_LAST_RUN_SUMMARY_FILE
-  echo "PROGRAM FINISHED AT: $END_TIME (FOR => $CURRENT_DIR)" >> $TMP_LAST_RUN_SUMMARY_FILE
-  echo "=================================================" >> $TMP_LAST_RUN_SUMMARY_FILE
+  echo "DIR => $CURRENT_DIR" >> $TMP_LAST_RUN_SUMMARY_FILE
+  echo "  START TIME: $START_TIME"  >> $TMP_LAST_RUN_SUMMARY_FILE
+  echo "  END   TIME: $END_TIME" >> $TMP_LAST_RUN_SUMMARY_FILE
+  echo "=============================" >> $TMP_LAST_RUN_SUMMARY_FILE
+  echo "" >> $TMP_LAST_RUN_SUMMARY_FILE
   echo;
 done
 ########### END: MAIN FOR LOOP FOR SUBDIRS #################
