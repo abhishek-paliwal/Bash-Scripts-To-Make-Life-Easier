@@ -137,8 +137,8 @@ for dirname in $(ls -d1 $PWD/*/); do
   END_TIME=$(date)
   ## APPENDING THE LAST RUN SUMMARY FILE
   echo "DIR => $CURRENT_DIR" >> $TMP_LAST_RUN_SUMMARY_FILE
-  echo "  START TIME: $START_TIME"  >> $TMP_LAST_RUN_SUMMARY_FILE
-  echo "  END   TIME: $END_TIME" >> $TMP_LAST_RUN_SUMMARY_FILE
+  echo "  START-TIME: $START_TIME"  >> $TMP_LAST_RUN_SUMMARY_FILE
+  echo "  END---TIME: $END_TIME" >> $TMP_LAST_RUN_SUMMARY_FILE
   echo "=============================" >> $TMP_LAST_RUN_SUMMARY_FILE
   echo "" >> $TMP_LAST_RUN_SUMMARY_FILE
   echo;
