@@ -1,0 +1,210 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Samosa Recipe - How to make Best Samosa"
+
+description: "Flaky and crispy samosa is a great snack for anytime of the day. Learn how to make your best samosa at home every time with these useful tips and tricks."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2018/09/samosa-recipe-anupama-paliwal-my-ginger-garlic-kitchen-4.jpg
+
+prepTime: PT20M
+
+cookTime: PT30M
+
+totalTime: PT50M
+
+recipeCategory: Snack
+
+recipeCuisine: Indian
+
+recipeYield: 15-16 Samosa
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 36
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 308 calories
+  servingSize: 1 samosa
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: "1. If you want a crispy outer layer, then I would recommend using ghee in the pastry dough. It helps in making the Samosa crispy.<br>2. Always fry samosa on low heat, to ensure that they are thoroughly cooked.<br>3. For stuffing, you can reduce the amount of red chili powder, and green chilies."
+
+keywords: "samosa origin, samosa ingredients, easy samosa recipe, samosa filling ideas, aloo samosa recipe, samosa recipe video, samosa in english, samosa at home, samosa at home, samosa aloo, samosa how to fold "
+
+video:
+  "@type": "VideoObject"
+  name: "Samosa Recipe - How to make Best Samosa"
+  description: "Flaky and crispy samosa is a great snack for anytime of the day. Learn how to make your best samosa at home every time with these useful tips and tricks."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2018/09/samosa-recipe-anupama-paliwal-my-ginger-garlic-kitchen-4.jpg
+    - https://i.ytimg.com/vi/clg246sz-bc/maxresdefault.jpg
+  contentUrl: "https://youtu.be/clg246sz-bc"
+  embedUrl: "https://www.youtube.com/embed/clg246sz-bc"
+  uploadDate: 2019-11-14
+
+datePublished: 2019-11-14
+
+url: https://www.mygingergarlickitchen.com/best-samosa-recipe/
+
+recipeIngredient:
+  - "!!For Samosa Dough:"
+  - "2 cups all-purpose flour/refined flour (maida)"
+  - "3 tablespoon hot ghee or oil"
+  - "3/4 teaspoon carom seeds (ajwain)"
+  - "salt to taste"
+  - "warm water for kneading the dough"
+  - "!!For Samosa Filling:"
+  - "3 tablespoon ghee/oil"
+  - "1 teaspoon cumin seeds"
+  - "1 teaspoon crushed coriander seeds"
+  - "1 teaspoon grated ginger"
+  - "2 green chilies, chopped"
+  - "5 tablespoon green peas"
+  - "6-7 cashew nuts, halved"
+  - "1 teaspoon coriander leaves"
+  - "1/4 teaspoon turmeric powder"
+  - "1 teaspoon red chili powder"
+  - "1/4 teaspoon garam masala powder"
+  - "2 teaspoon amchoor powder"
+  - "1 teaspoon cumin powder"
+  - "Salt to taste"
+  - "5 medium-sized potatoes, boiled"
+  - "!!For Frying Samosa:"
+  - "Oil for deep frying"
+  - "!!For Baking Samosa:"
+  - "Oil for brushing"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "How to Make Samosa Pastry Dough:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "For Making samosa pastry, add the flour to a large mixing bowl. Make a well using a finger and add salt, carom seeds, and hot ghee or oil."
+  - "@type": HowToStep
+    text: "Mix it well by rubbing the flour and oil mixture between the palms. Keep mixing until it oil is well incorporated in all of the flour. This would take about 4-5 minutes."
+  - "@type": HowToStep
+    text: "At this point, it resembles crumbs and holds shape. To check, take some flour mixture between your palm and make a fist. If it holds the shape then you have added enough fat. If the dough falls to pieces, that means you need to add more oil/ghee."
+  - "@type": HowToStep
+    text: "Start by adding the water little by little and knead it into a firm dough. I used a little less than 1/2 cup of water here."
+  - "@type": HowToStep
+    text: "Cover the dough with a plastic wrap or a damp cloth and let it rest for 30 minutes."
+  - "@type": HowToStep
+    text: "Don’t overwork the dough and don’t knead a soft dough. It should just come together and form a stiff dough."
+- "@type": HowToSection
+  name: "How to Make Samosa Filling:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Peeled the potatoes and mash them well. Set aside"
+  - "@type": HowToStep
+    text: "Heat 3 tablespoon oil in a pan."
+  - "@type": HowToStep
+    text: "Add cumin seeds and crushed coriander seeds."
+  - "@type": HowToStep
+    text: "Once the seeds are aromatic add the grated ginger, and chopped green chilies."
+  - "@type": HowToStep
+    text: "Stir-fry for 2 minutes."
+  - "@type": HowToStep
+    text: "Add the green peas and mix well. Cook for 3 minutes."
+  - "@type": HowToStep
+    text: "Now add cashews and saute for another minute."
+  - "@type": HowToStep
+    text: "Add the coriander powder, turmeric powder, red chili powder, garam masala powder, cumin powder, amchur powder, and salt."
+  - "@type": HowToStep
+    text: "Stir everything well and cook all the spices for 2 minutes."
+  - "@type": HowToStep
+    text: "Add the mashed potatoes and mix everything well."
+  - "@type": HowToStep
+    text: "Cook for at least 5-7 minutes. (Keep stirring)."
+  - "@type": HowToStep
+    text: "Add the chopped coriander leaves and mix well."
+  - "@type": HowToStep
+    text: "Cook for 1 minute and turn off the heat."
+  - "@type": HowToStep
+    text: "Transfer the stuffing into a bowl and let it cool completely."
+- "@type": HowToSection
+  name: "How To Warp Samosa:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Once the dough has rested for 30 minutes, unwrap it. Knead again for a few seconds and divide it into 7-8 lemon sized balls, or as per the size of the samosas required."
+  - "@type": HowToStep
+    text: "Take a ball, roll between your palms till smooth. Repeat with all the remaining balls. Keep all the dough balls covered with a wet muslin cloth, or else the dough balls will dry out."
+  - "@type": HowToStep
+    text: "Take one ball and roll it out into a thin oval shape which is about 7 inches in diameter."
+- "@type": HowToSection
+  name: " Samosa Folding #1"
+  itemListElement:
+  - "@type": HowToStep
+    text: "1. On the half side of the rolled oval cut the small lines using knife little distance apart from each other. Keep 1-2 cm distance on both edges."
+  - "@type": HowToStep
+    text: "2. Fold the oval into a semi-circle."
+  - "@type": HowToStep
+    text: "3. Roll it lightly over it 1-2 times so that it sticks together."
+  - "@type": HowToStep
+    text: "4. Apply water on all the edges of the semi-circle."
+  - "@type": HowToStep
+    text: "5. Take one edge of the straight side and place it on the other edge to shape it into a cone. Pinch the corner of the cone to make sure it is perfectly sealed."
+  - "@type": HowToStep
+    text: "6. Stick by lightly pressing between fingers."
+  - "@type": HowToStep
+    text: "7. Fill with stuffing inside the cone shape."
+  - "@type": HowToStep
+    text: "8. Seal the watered edges by pressing between fingers to shape into a triangular pocket."
+  - "@type": HowToStep
+    text: "9. Striped or layered samosa is ready. Repeat with the rest."
+- "@type": HowToSection
+  name: "Samosa Folding #2"
+  itemListElement:
+  - "@type": HowToStep
+    text: "1. Cut the rolled oval in half using a knife."
+  - "@type": HowToStep
+    text: "2. Apply water on all the edges of the semi-circle."
+  - "@type": HowToStep
+    text: "3. Take one edge of the straight side and place it on the other edge to shape it into a cone. Stick by lightly pressing between fingers. (Check out the video recipe on this page for a clear idea.)"
+  - "@type": HowToStep
+    text: "4. Pinch the corner of the cone to make sure it is perfectly sealed."
+  - "@type": HowToStep
+    text: "5. Fill with the 1-2 tablespoons of potato filling inside the cone shape."
+  - "@type": HowToStep
+    text: "6. Seal the watered edges by pressing between fingers to shape into a triangular pocket."
+  - "@type": HowToStep
+    text: "7. Samosa is ready. Repeat till all the dough is used up."
+- "@type": HowToSection
+  name: " How to Deep Fry Samosa:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Half fill a deep-frying pan with vegetable oil and let it heat."
+  - "@type": HowToStep
+    text: "To test if the oil is hot enough, add a tiny piece of the dough ball to the oil and if it sizzles, comes on the surface, and turns golden in few seconds, your oil is ready for frying."
+  - "@type": HowToStep
+    text: "Add samosas to the oil, don’t overcrowd the pan, fry only 3-4 samosas at a time."
+  - "@type": HowToStep
+    text: "Fry them on low heat for 10-15 minutes or until golden and crisp on all sides. Samosa frying takes a bit time, so you have to be patient."
+  - "@type": HowToStep
+    text: "Remove samosas with a slotted spoon and drain onto a kitchen towel to absorb any extra oil."
+  - "@type": HowToStep
+    text: "Serve immediately with ketchup, coriander chutney or tamarind chutney."
+- "@type": HowToSection
+  name: "How to Bake Samosa:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat the oven to 180°C/356°F."
+  - "@type": HowToStep
+    text: "Arrange the shaped samosa onto a lined baking tray."
+  - "@type": HowToStep
+    text: "Brush each samosa lightly with oil."
+  - "@type": HowToStep
+    text: "Bake in the center of the oven for 20-35 minutes, or until golden and crisp, turning halfway through the cooking time."
+  - "@type": HowToStep
+    text: "Serve immediately with ketchup, coriander chutney or tamarind chutney."
