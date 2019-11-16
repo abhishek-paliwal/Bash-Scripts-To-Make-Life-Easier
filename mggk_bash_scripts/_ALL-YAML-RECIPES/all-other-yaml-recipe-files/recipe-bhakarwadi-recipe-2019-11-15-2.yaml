@@ -1,0 +1,212 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Bhakarwadi Recipe - How to make Bhakarwadi - Bakarwadi"
+
+description: "Bhakarwadi is a traditional Maharastrian spicy deep-fried tea time snack. This video recipe shows how to make  Bhakarwadi at home which can be stored for weeks."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/11/bhakarwadi-recipe-my-ginger-garlic-kitchen-2.jpg
+
+prepTime: PT20M
+
+cookTime: PT40M
+
+totalTime: PT60M
+
+recipeCategory: Snack
+
+recipeCuisine: Indian
+
+recipeYield: 26-28 bhakarwadi
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 2
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 65 calories
+  servingSize: 1 fried bhakarwadi
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: "1. If you don’t want to add garam masala powder, then you can also add a ¼ teaspoon of cinnamon (dalchini) and ¼ teaspoon of clove (laung) powder to the masala.<br>2. Some people like to add some sev (fried gram flour noodles or vermicelli) to bhakarwadi masala for an additional crunch. If you like you can also add some sev either in the masalas while grinding or sprinkle it over masala powder before rolling and folding bhakarwadis.<br>3. If you want to make them spicier, then add green chopped green chilies while roasting dry masalas.<br>4. You can store bhakarwadis in an airtight container lined with a Kitchen tissue. These stay fresh for up to 2-3 weeks."
+
+keywords: "bhakarwadi recipe, make a bhakarwadi, bakarwadi, indian tea time snack, bhakarwadi dish, bhakarwadi recipe video, bhakarwadi recipe chitale, bhakarwadi recipe at home, authentic bhakarwadi recipe, bhakarwadi chaat recipe, crispy bhakarwadi recipe, bhakarwadi dish recipe, bhakarwadi recipe easy, bhakarwadi recipe in english, recipe for bhakarwadi video, bhakarwadi recipe healthy, baked bhakarwadi recipe, bake bhakarwadi"
+
+video:
+  "@type": "VideoObject"
+  name: "Bhakarwadi Recipe - How to make Bhakarwadi - Bakarwadi"
+  description: "Bhakarwadi is a traditional Maharastrian spicy deep-fried tea time snack. This video recipe shows how to make  Bhakarwadi at home which can be stored for weeks."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/11/bhakarwadi-recipe-my-ginger-garlic-kitchen-2.jpg
+    - https://i.ytimg.com/vi/gv1ZjK8whfM/maxresdefault.jpg
+  contentUrl: "https://youtu.be/gv1ZjK8whfM"
+  embedUrl: "https://www.youtube.com/embed/gv1ZjK8whfM"
+  uploadDate: 2019-11-15
+
+datePublished: 2019-11-15
+
+url: https://www.mygingergarlickitchen.com/bhakarwadi-recipe/
+
+recipeIngredient:
+  - "!!For Bhakarwadi Dough"
+  - "1.5 cups all-purpose flour (maida)"
+  - "3 tablespoons gram flour (besan)"
+  - "1 teaspoon salt or to taste"
+  - "3 tablespoons hot oil or ghee"
+  - "water as required"
+  - "!!For Bhakarwadi Filling:"
+  - "1 tablespoon cumin seeds (jeera)"
+  - "1 tablespoon coriander seeds (sabut dhaniya)"
+  - "2 tablespoons white sesame seeds (safed til)"
+  - "1 tablespoon poppy seeds (khaskhas / Khus Kush / Post ke dane)"
+  - "4 tablespoons desiccated or grated dried coconut (kisa hua nariyal or nariyal ka bura)"
+  - "2 tablespoons chopped coriander leaves"
+  - "1 teaspoon red chili powder or to taste"
+  - "1 teaspoon coriander powder (dhania powder)"
+  - "3/4 teaspoon cumin powder (jeera powder)"
+  - "1/2 teaspoon garam masala powder"
+  - "salt to taste"
+  - "3/4 tablespoons sugar or add as per taste"
+  - "!!For Assembling Bhakarwadi:"
+  - "3-4 tablespoons tamarind chutney or freshly squeezed lemon juice"
+  - "1-2 tablespoons water for sealing"
+  - "!!For Frying Bhakarwadi:"
+  - "oil deep frying"
+  - "!!For Baking Bhakarwadi:"
+  - "oil for brushing:"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "How To Make Bhakarwadi Dough:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "For making bhakarwadi dough, sieve the besan, all-purpose flour."
+  - "@type": HowToStep
+    text: "Then add the all-purpose flour, gram flour, salt to a large mixing bowl. Mix well using a spoon or fingers."
+  - "@type": HowToStep
+    text: "Next, add hot ghee or oil."
+  - "@type": HowToStep
+    text: "Mix it well by rubbing the flour and oil mixture between the palms and using your fingertips. Keep mixing until it oil is well incorporated in all of the flour mixture. This would take about 3-4 minutes."
+  - "@type": HowToStep
+    text: "At this point, the mixture should resemble crumbs and holds shape. To check, take some flour mixture between your palm and make a fist. If it holds the shape and not crumble then you have added enough fat. If the dough falls to pieces, that means you need to add some more oil/ghee."
+  - "@type": HowToStep
+    text: "Start by adding the water little by little and knead it into a firm dough. The dough should be hard yet pliable and smooth. I used around 6 tablespoons cup of water here. (The amount of water depends on the quality of the flours.)"
+  - "@type": HowToStep
+    text: "Cover the dough and let it rest for 20 minutes."
+- "@type": HowToSection
+  name: "How to make bhakarwadi filling:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat a heavy pan / Kadai. Once hot turn the heat settings to low."
+  - "@type": HowToStep
+    text: "Add 1 tablespoon cumin seeds and 1 tablespoon coriander seeds to the pan."
+  - "@type": HowToStep
+    text: "Roast for 1 minute on low heat."
+  - "@type": HowToStep
+    text: "Then add sesame seeds and dry roast for around 40 seconds."
+  - "@type": HowToStep
+    text: "Add poppy seeds and roast for few more seconds."
+  - "@type": HowToStep
+    text: "Next, add coconut and roast for 3-4 minutes or until it turns to a light golden. Keep stirring continuously."
+  - "@type": HowToStep
+    text: "Add coriander leaves and roast for 2 minutes on medium heat."
+  - "@type": HowToStep
+    text: "Turn off the heat and let the dry mixture cool down slightly."
+  - "@type": HowToStep
+    text: "Transfer dry mixture to a spice blending jar."
+  - "@type": HowToStep
+    text: "Add red chili powder, coriander powder, cumin powder, garam masala powder, salt, and sugar."
+  - "@type": HowToStep
+    text: "Blend into a coarse powder. Do not pulse too much, or else the seeds would releases oil."
+  - "@type": HowToStep
+    text: "Transfer stuffing to a bowl. Keep it aside."
+- "@type": HowToSection
+  name: "How to make Bhakarwadi spirals:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Once the dough has rested for 20 minutes, uncover it. Add a few drops of oil and knead again for a few seconds."
+  - "@type": HowToStep
+    text: "Divide the dough into 3-4 equal portions."
+  - "@type": HowToStep
+    text: "Take one portion of dough and roll between your palms to get to make a ball."
+  - "@type": HowToStep
+    text: "Flatten it and make more balls with the remaining dough."
+  - "@type": HowToStep
+    text: "Roll each ball into a thick roundel or circle which is slightly thicker than roti or chapati. Make sure that the dough is rolled uniformly."
+  - "@type": HowToStep
+    text: "Now add some tamarind chutney to the center."
+  - "@type": HowToStep
+    text: "Spread it evenly using fingers or a brush, leaving the sides."
+  - "@type": HowToStep
+    text: "Add about 2 tablespoons of stuffing to the center of the roundel."
+  - "@type": HowToStep
+    text: "Evenly spread masala on the dough roundel using a spoon or fingers, leaving the sides."
+  - "@type": HowToStep
+    text: "Also lightly press the masala layer with a spoon. This step would ensure that masala sticks well on the dough circle."
+  - "@type": HowToStep
+    text: "Now begin to tightly roll the dough from one side, making sure there is no space."
+  - "@type": HowToStep
+    text: "Apply some water on the other edge to seal the ends while rolling."
+  - "@type": HowToStep
+    text: "Roll it into a tight log or a cylinder."
+  - "@type": HowToStep
+    text: "Keep rolling further until the edges are sealed and you get a smooth log."
+  - "@type": HowToStep
+    text: "Trim the edges and cut the rolled log into 1.5 cm to 2 cm sized pieces pinwheels."
+  - "@type": HowToStep
+    text: "Now you will get spirals. Gently press and flatten each pinwheel on the top using the heels of your palms. This pressing helps layers and masala to be intact."
+  - "@type": HowToStep
+    text: "This way make bhakarwadi with the remaining dough. Once done, arrange them in a layer and cover them with a kitchen towel."
+- "@type": HowToSection
+  name: "How to deep-fry Bhakarwadi:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Heat enough oil in a broad pan over medium heat."
+  - "@type": HowToStep
+    text: "To test if the oil is hot enough, add a tiny piece of the dough ball to the oil and if it sizzles, and slowly comes on the surface, your oil is ready for frying."
+  - "@type": HowToStep
+    text: "Once the oil is hot, turn the heat to low."
+  - "@type": HowToStep
+    text: "Slide bhakarwadis into the hot oil. Do not overcrowd the pan with bhakarwadi."
+  - "@type": HowToStep
+    text: "Fry them at low to heat. Do not stir often."
+  - "@type": HowToStep
+    text: "Once the one side is lightly golden, flip the bhakarwadis with a slotted spoon and fry them from the other side."
+  - "@type": HowToStep
+    text: "Keep flipping and stirring occasionally till they turn golden brown and crisp."
+  - "@type": HowToStep
+    text: "Drain the fried bhakarwadi on a kitchen towel-lined plate to remove the excess oil."
+  - "@type": HowToStep
+    text: "Let them cool completely on a wooden or a wire rack."
+  - "@type": HowToStep
+    text: "Serve crispy bhakarwadi with some hot masala chai."
+  - "@type": HowToStep
+    text: "Or store them in an airtight container for up to 2-3 weeks."
+- "@type": HowToSection
+  name: "How to bake Bhakarwadi:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Preheat oven to 180 C."
+  - "@type": HowToStep
+    text: "Arrange the Bhakarwadi on a baking tray lined with parchment or wax paper."
+  - "@type": HowToStep
+    text: "Bake the Bhakarwadi for about 12 to 14 minutes or until brown and crispy."
+  - "@type": HowToStep
+    text: "Once baked, turn off the oven and let them stay in the oven for 5 minutes."
+  - "@type": HowToStep
+    text: "Let them cool down on a wire rack completely before storing it."
+  - "@type": HowToStep
+    text: "When cooled, store in an airtight container lined with kitchen tissue."
+  - "@type": HowToStep
+    text: "Serve crispy baked Bhakarwadi as an evening snack with a hot cup of Chai."
