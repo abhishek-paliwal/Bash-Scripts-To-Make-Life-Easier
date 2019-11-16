@@ -181,6 +181,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     ############# EXTRACTING THE META DESCRIPTION FROM THE WEBPAGE #############
     #### Description is Case-Sensitive. So, we need to look for both 'Description' and 'description'.
     META_DESCRIPTION = "No meta description found." ## INITIALIZING
+    META_DESCRIPTION_TMP = "No meta description found." ## INITIALIZING
     try:
         meta_desc = soup.find(attrs={'name':'description'})
         if meta_desc == None:
