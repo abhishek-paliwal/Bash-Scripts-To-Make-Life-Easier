@@ -69,7 +69,7 @@ curl -O https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-
 ## BEGIN: DEFINING THE MAIN FUNCTION FOR PARENT DIRECTORY
 ########################################################################################
 function RUN_AI_NLP_KEYWORDS_PYTHON_PROGRAM_FOR_PARENTFOLDER_PWD () {
-  START_TIME=$(date)
+  START_TIME=$(date '+%Y-%m-%dT%H:%M:%S')
   echo "CURRENT WORKING DIRECTORY: $(pwd)"
   echo;
   echo ">>>> Running underlying python program: "
@@ -82,7 +82,7 @@ function RUN_AI_NLP_KEYWORDS_PYTHON_PROGRAM_FOR_PARENTFOLDER_PWD () {
   echo ">>>> CHECK IT HERE ON WEB:"
   echo "https://vps.abhishekpaliwal.com/scripts-html-outputs/${HTML_OUTPUT_FILE_TO_USE}"
 
-  END_TIME=$(date)
+  END_TIME=$(date '+%Y-%m-%dT%H:%M:%S')
   echo "PROGRAM STARTED AT: $START_TIME"
   echo "PROGRAM FINISHED AT: $END_TIME"
   echo;
