@@ -593,7 +593,9 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         'NLP_FIRST_PUBLISHED_DATETIME',
         'META_FIRST_PUBLISHED_DATE',
         'META_LAST_MODIFIED_DATETIME',
-        'NLP_KEYWORDS']
+        'NLP_KEYWORDS',
+        'TITLE_TAG_VALUE',
+        'META_DESCRIPTION']
 
         writer = csv.DictWriter(csvfile1, fieldnames=fieldnames1)
 
@@ -607,7 +609,9 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
         'NLP_FIRST_PUBLISHED_DATETIME':str(NLP_ARTICLE_PUBLISH_DATE),
         'META_FIRST_PUBLISHED_DATE':str(META_PUBLISHED_DATETIME),
         'META_LAST_MODIFIED_DATETIME':str(META_MODIFIED_DATETIME),
-        'NLP_KEYWORDS':NLP_TOP_KEYWORDS_FOR_CSV })
+        'NLP_KEYWORDS':NLP_TOP_KEYWORDS_FOR_CSV,
+        'TITLE_TAG_VALUE':TITLE_TAG_VALUE,
+        'META_DESCRIPTION':META_DESCRIPTION_TMP })
 
 ################################################################################
 ################################################################################
@@ -690,7 +694,9 @@ with open(OUTPUT_CSV_FILE, 'w', newline='') as csvfile1:
     'NLP_FIRST_PUBLISHED_DATETIME',
     'META_FIRST_PUBLISHED_DATE',
     'META_LAST_MODIFIED_DATETIME',
-    'NLP_KEYWORDS']
+    'NLP_KEYWORDS',
+    'TITLE_TAG_VALUE',
+    'META_DESCRIPTION']
 
     writer = csv.DictWriter(csvfile1, fieldnames=fieldnames1)
 
@@ -704,7 +710,9 @@ with open(OUTPUT_CSV_FILE, 'w', newline='') as csvfile1:
     'NLP_FIRST_PUBLISHED_DATETIME':'NLP_FIRST_PUBLISHED_DATETIME',
     'META_FIRST_PUBLISHED_DATE':'META_FIRST_PUBLISHED_DATE',
     'META_LAST_MODIFIED_DATETIME':'META_LAST_MODIFIED_DATETIME',
-    'NLP_KEYWORDS':'NLP_KEYWORDS' })
+    'NLP_KEYWORDS':'NLP_KEYWORDS',
+    'TITLE_TAG_VALUE':'TITLE_TAG_VALUE',
+    'META_DESCRIPTION':'META_DESCRIPTION'})
 
 #################################################################################
 ## CALLING THE ABOVE MAIN FUNCTION ON EACH URL LINE FROM URL LINKS TEXT FILE
