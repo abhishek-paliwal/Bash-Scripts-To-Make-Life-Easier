@@ -94,14 +94,15 @@ function RUN_AI_NLP_KEYWORDS_PYTHON_PROGRAM_FOR_PARENTFOLDER_PWD () {
 #######################################################################################
 ## RUNNING THE MAIN FUNCTION UNDER ALL THE DIRECTORIES FOUND IN PWD
 #######################################################################################
-## Checking out the output from ls -d1 $PWD/*/
-ECHO; echo ">>>> LIST OF DIRECTORIES IN $PWD"
-ls -d1 $PWD/*/ | nl ;
+## Checking out the output from ls -d1 $PWD/601*/
+ECHO; echo ">>>> LIST OF DIRECTORIES IN $PWD (only those which start with characters 601... )"
+ls -d1 $PWD/601*/ | nl ;
 echo; echo;
 
 ########### BEGIN: MAIN FOR LOOP FOR SUBDIRS #################
 DIR_NUM=0
-for dirname in $(ls -d1 $PWD/*/); do
+## Perform furhter actions only on subdirectories starting with characters '601...'
+for dirname in $(ls -d1 $PWD/601*/); do
 ###########################################
   echo "//////////////////////////////////////////////////////////////////////////" ; echo;
   ((DIR_NUM++))
