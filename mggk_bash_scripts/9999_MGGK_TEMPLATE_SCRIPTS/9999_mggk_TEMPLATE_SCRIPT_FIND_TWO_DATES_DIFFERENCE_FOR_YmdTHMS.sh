@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################################
-THIS_PROGRAM_NAME="" ;
+THIS_PROGRAM_NAME="9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh" ;
 MAIN_FUNCION_NAME="FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS_on_MacOS_or_Linux" ;
 ################################################################################
 cat << EOF
@@ -85,4 +85,4 @@ TESTING_THE_MAIN_FUNCTION() {
 ##------------------------------------------------------------------------------
 ## Testing block
 ## (Uncomment for development and testing purposes. Otherwise, comment the following line when in production)
-TESTING_THE_MAIN_FUNCTION
+#TESTING_THE_MAIN_FUNCTION
