@@ -10,7 +10,8 @@ cat << EOF
   ## Just for reference, uname on Mac OS = "Darwin", and uname on Linux = "Linux"
   ## The only thing for you to remember is to format the input dates as: %Y-%m-%dT%H:%M:%S
   ################################################################################
-  ## USAGE: Call the function by assigning it to a variable:
+  ## USAGE -> ARGUMENTS EXPLANATION:
+  ## Call the function by assigning it to a variable:
   ## YOUR_OUTPUT_VAR=\$($MAIN_FUNCION_NAME \$1 \$2 \$3)
   #### where,
   #### \$1 (smaller date) and \$2 (bigger date) are two date variables,
@@ -18,6 +19,11 @@ cat << EOF
   #### \$3 = Any of "days" OR "minutes" OR "seconds"
   #### COMMAND EXAMPLE:
   #### YOUR_OUTPUT_VAR=\$($MAIN_FUNCION_NAME \$OLD_DATE \$NEW_DATE "seconds" \$uname)
+  ################################################################################
+  ## USAGE -> FROM ANOTHER BASH SCRIPT:
+  ## This function should be called from an another bash script. Run these commands for that:
+  ## >> source /path/to/9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh
+  ## >> DATE_DIFFERENCE=\$(FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS_on_MacOS_or_Linux \$OLD_DATE \$NEW_DATE "minutes")
   ################################################################################
   ## CREATED ON: November 16, 2019
   ## CREATED BY: Pali
