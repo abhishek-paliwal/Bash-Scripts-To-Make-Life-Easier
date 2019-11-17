@@ -92,3 +92,16 @@ TESTING_THE_MAIN_FUNCTION() {
 ## Testing block
 ## (Uncomment for development and testing purposes. Otherwise, comment the following line when in production)
 #TESTING_THE_MAIN_FUNCTION
+
+##------------------------------------------------------------------------------
+## For calling the main function from another bash script, test it by creating
+## a blank test.sh file and copy-paste the following code (and uncomment all lines there.)
+## ====================================
+#   #!/bin/bash
+#   source 9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh
+#   START_TIME=$(date '+%Y-%m-%dT%H:%M:%S') ;
+#   sleep 2s ;
+#   END_TIME=$(date '+%Y-%m-%dT%H:%M:%S') ;
+#   DURATION_RAN=$( FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS_on_MacOS_or_Linux $START_TIME $END_TIME "minutes") ;
+#   echo "  >> DURATION: $DURATION_RAN minutes" ;
+## =====================================
