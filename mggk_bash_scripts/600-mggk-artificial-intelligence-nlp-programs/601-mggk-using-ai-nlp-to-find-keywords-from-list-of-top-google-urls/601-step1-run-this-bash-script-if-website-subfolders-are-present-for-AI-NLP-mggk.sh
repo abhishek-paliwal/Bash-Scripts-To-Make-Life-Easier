@@ -57,6 +57,7 @@ echo "===================================" >> $TMP_LAST_RUN_SUMMARY_FILE
 #### DOWNLOADING THE PYTHON SCRIPT
 PYTHON_SCRIPT_TO_DOWNLOAD="601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls.py"
 STOPWORDS_TEXTFILE_TO_DOWNLOAD="601-MGGK-PYTHON-RAKE-SmartStoplist.txt"
+SCRIPT_FOR_USING_DATES_DIFFERENCE_FUNCTION="9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh"
 
 echo ">>>> DOWNLOADING => $PYTHON_SCRIPT_TO_DOWNLOAD" ; echo;
 curl -O https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls/$PYTHON_SCRIPT_TO_DOWNLOAD
@@ -64,6 +65,10 @@ curl -O https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-
 #### DOWNLOADING THE STOPWORDS LIST
 echo ">>>> DOWNLOADING => $STOPWORDS_TEXTFILE_TO_DOWNLOAD" ; echo;
 curl -O https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls/$STOPWORDS_TEXTFILE_TO_DOWNLOAD
+
+#### DOWNLOADING THE SCRIPT_FOR_USING_DATES_DIFFERENCE_FUNCTION
+echo ">>>> DOWNLOADING => $SCRIPT_FOR_USING_DATES_DIFFERENCE_FUNCTION" ; echo;
+curl -O https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/mggk_bash_scripts/9999_MGGK_TEMPLATE_SCRIPTS/$SCRIPT_FOR_USING_DATES_DIFFERENCE_FUNCTION
 
 ########################################################################################
 ## BEGIN: DEFINING THE MAIN FUNCTION FOR PARENT DIRECTORY
@@ -94,7 +99,7 @@ function RUN_AI_NLP_KEYWORDS_PYTHON_PROGRAM_FOR_PARENTFOLDER_PWD () {
 #######################################################################################
 ## RUNNING THE MAIN FUNCTION UNDER ALL THE DIRECTORIES FOUND IN PWD
 #######################################################################################
-## Checking out the output from ls -d1 $PWD/601*/
+## Checking which directories are output-ed from ls -d1 $PWD/601*/
 ECHO; echo ">>>> LIST OF DIRECTORIES IN $PWD (only those which start with characters 601... )"
 ls -d1 $PWD/601*/ | nl ;
 echo; echo;
@@ -119,7 +124,7 @@ for dirname in $(ls -d1 $PWD/601*/); do
   cp $MY_PWD/_OUTPUT_9999_SITEMAP_ALL_URLS.csv $MY_PWD/601-MGGK-REQUIREMENT-ALL-URLS-FOR-NLP.txt
 
   ## Running the main python function
-  START_TIME=$(date)
+  START_TIME=$(date '+%Y-%m-%dT%H:%M:%S')
   echo "CURRENT WORKING DIRECTORY: $(pwd)"
   echo;
   echo ">>>> Running underlying python program:"
@@ -143,9 +148,14 @@ for dirname in $(ls -d1 $PWD/601*/); do
   echo "$TOTAL_URLS_IN_CSV = TOTAL URLs IN CSV ($CSV_OUTPUT_FILE_TO_USE)" >> $TMP_LAST_RUN_SUMMARY_FILE
   echo "" >> $TMP_LAST_RUN_SUMMARY_FILE
 
-  END_TIME=$(date)
+  END_TIME=$(date '+%Y-%m-%dT%H:%M:%S')
   echo "  START_TIME: $START_TIME"  >> $TMP_LAST_RUN_SUMMARY_FILE
   echo "  END___TIME: $END_TIME" >> $TMP_LAST_RUN_SUMMARY_FILE
+
+  ## Getting the date difference function by sourcing an external bash script
+  source $SCRIPT_FOR_USING_DATES_DIFFERENCE_FUNCTION
+  DURATION_DIFFERENCE=$( FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS_on_MacOS_or_Linux $START_TIME $END_TIME "minutes" )
+  echo "  >> BLOCK COMPLETED IN: $DURATION_DIFFERENCE minutes"  >> $TMP_LAST_RUN_SUMMARY_FILE
   echo "=============================" >> $TMP_LAST_RUN_SUMMARY_FILE
   echo "" >> $TMP_LAST_RUN_SUMMARY_FILE
   echo;
