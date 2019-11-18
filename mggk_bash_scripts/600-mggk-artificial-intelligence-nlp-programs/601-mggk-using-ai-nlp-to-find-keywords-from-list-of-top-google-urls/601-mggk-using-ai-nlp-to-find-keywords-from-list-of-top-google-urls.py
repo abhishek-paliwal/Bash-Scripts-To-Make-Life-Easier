@@ -188,6 +188,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
             meta_desc = soup.find(attrs={'name':'Description'})
         ## PRINTING THE META CONTENT DESCRIPTION
         META_DESCRIPTION_TMP = meta_desc['content']
+        META_DESCRIPTION_TMP = META_DESCRIPTION_TMP.strip('\n') ## Stripping newline chars
         LEN_META_DESC = str(len(META_DESCRIPTION_TMP)) ## CONVERT INT TO STRING
         print(">> LENGTH OF META DESCRIPTION: ", LEN_META_DESC)
         ## Meta description should be less than 160 characters long, ideal for Google SERP. 155-160 is ideal.
@@ -327,6 +328,7 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     TITLE_TAG_VALUE = "No title tag value found."
     try:
         TITLE_TAG_VALUE = soup.find('title').get_text()
+        TITLE_TAG_VALUE = TITLE_TAG_VALUE.strip('\n') ## Stripping newline chars
         if title_value_tmp == None:
             TITLE_TAG_VALUE = "No title tag value found."
     except:
