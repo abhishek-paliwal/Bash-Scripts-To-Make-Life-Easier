@@ -154,8 +154,9 @@ for dirname in $(ls -d1 $PWD/601*/); do
 
   ## Getting the date difference function by sourcing an external bash script
   source $SCRIPT_FOR_USING_DATES_DIFFERENCE_FUNCTION
+  echo "" >> $TMP_LAST_RUN_SUMMARY_FILE
   DURATION_DIFFERENCE=$( FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS_on_MacOS_or_Linux $START_TIME $END_TIME "minutes" )
-  echo "  >> BLOCK COMPLETED IN: $DURATION_DIFFERENCE minutes"  >> $TMP_LAST_RUN_SUMMARY_FILE
+  echo "  >> EXTRACTION COMPLETED IN: $DURATION_DIFFERENCE minutes"  >> $TMP_LAST_RUN_SUMMARY_FILE
   echo "=============================" >> $TMP_LAST_RUN_SUMMARY_FILE
   echo "" >> $TMP_LAST_RUN_SUMMARY_FILE
   echo;
