@@ -158,6 +158,10 @@ for dirname in $(ls -d1 $PWD/601*/); do
   DURATION_DIFFERENCE=$( FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS_on_MacOS_or_Linux $START_TIME $END_TIME "minutes" )
   echo "  >> EXTRACTION COMPLETED IN: $DURATION_DIFFERENCE minutes"  >> $TMP_LAST_RUN_SUMMARY_FILE
   echo "=============================" >> $TMP_LAST_RUN_SUMMARY_FILE
+
+  EXCTRATION_TIME_PER_URL=$(echo "scale=3; ($DURATION_DIFFERENCE * 60)/$TOTAL_URLS_IN_CSV" | bc -l) ;
+  echo "  >> EXCTRATION TIME PER URL: $EXCTRATION_TIME_PER_URL seconds"  >> $TMP_LAST_RUN_SUMMARY_FILE  
+
   echo "" >> $TMP_LAST_RUN_SUMMARY_FILE
   echo;
 done
