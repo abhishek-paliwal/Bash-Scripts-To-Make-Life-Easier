@@ -42,7 +42,7 @@ case $song_dir in
     a) MY_SONG_DIR="$HOME/Desktop/_TMP_SONGS_" ;;
     b) MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/bollywood-music" ;;
     c) MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/royalty-free-music" ;;
-    c) MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/mggk-royalty-free-music-from-youtube" ;;
+    d) MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/mggk-royalty-free-music-from-youtube" ;;
     *) echo "Invalid option $song_dir" ;;
 esac
 
@@ -58,7 +58,7 @@ cat _TMP_LIST.TXT | sort -n | uniq -c | sort -k2nr ;
 
 ################################################
 ## Change these durations below as desired
-TIME_PER_IMAGE=2.5 ##TIME IN SECONDS PER SLIDE
+TIME_PER_IMAGE=3 ##TIME IN SECONDS PER SLIDE
 AUDIOFADE_DURATION=15 ##TIME IN SECONDS FOR AUDIO-FADE DURATION AT END
 ################################################
 
