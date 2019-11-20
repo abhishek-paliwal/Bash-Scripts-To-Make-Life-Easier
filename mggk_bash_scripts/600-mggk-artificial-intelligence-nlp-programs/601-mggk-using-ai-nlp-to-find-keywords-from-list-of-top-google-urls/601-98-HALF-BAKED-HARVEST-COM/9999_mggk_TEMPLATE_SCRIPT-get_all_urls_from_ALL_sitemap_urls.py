@@ -33,7 +33,7 @@ OUTPUT_CSV_FILE = '_OUTPUT_9999_SITEMAP_ALL_URLS.csv'
 ################################################################################
 
 ## VEGRECIPESOFINDIA.COM SITEMAPS (uncomment if running the following)
-sitemap_urls = [ 'https://www.vegrecipesofindia.com/post-sitemap1.xml', 'https://www.vegrecipesofindia.com/post-sitemap2.xml', 'https://www.vegrecipesofindia.com/page-sitemap.xml' ]
+sitemap_urls = [ 'https://www.halfbakedharvest.com/post-sitemap1.xml', 'https://www.halfbakedharvest.com/post-sitemap2.xml', 'https://www.halfbakedharvest.com/post-sitemap3.xml' ]
 
 ################################################################################
 xmlDict = {} ## initializing an empty dictionary
