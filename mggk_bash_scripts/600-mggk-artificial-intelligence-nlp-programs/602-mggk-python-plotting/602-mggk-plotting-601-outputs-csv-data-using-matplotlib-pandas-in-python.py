@@ -59,6 +59,8 @@ def FUNCTION_PRINT_ALL_INFO_FROM_CSV_VALUES(my_csv_file, print_all):
     df_number_cols = df.loc[:, ['NLP_READING_TIME_IN_MINS_212WPM',
            'BSOUP_NUMWORDS', 'NLP_NUMWORDS', 'META_YEARS_SINCE_FIRST_PUBLISHED',
            'META_YEARS_SINCE_LAST_MODIFIED','LENGTH_OF_TITLES','LENGTH_OF_META_DESCRIPTIONS']]
+    ## Printing dataframe dimensions as number of rows, number of columns
+    print('>>>> DIMENSIONS [#rows,#columns] = ' + str(df_number_cols.shape) ) ;
 
     ##------------------------------------------------------------------------------
     if print_all:
@@ -90,7 +92,7 @@ plt.close('all') ## IF already plot interface is open
 #### You can use html color names to use below
 myfig = df_number_cols.hist(color='Navy', alpha=1, bins=10, figsize=(20, 12))
 fig = myfig[0][0].get_figure() ##  We need to break the np.arrary for plots, into elements.
-fig.suptitle('CSV DATA FILE USED = ' + my_csv_file + ' // dimensions = ' + df_number_cols.shape )
+fig.suptitle('CSV DATA FILE USED = ' + my_csv_file + ' // Dimensions [#rows,#columns] = ' + str(df_number_cols.shape) )
 fig.savefig(MYPLOT_FILENAME)
 print(); print('>> SAVED, PNG FILE FOR PLOT FIGURE = ' + MYPLOT_FILENAME) ;
 ##------------------------------------------------------------------------------
