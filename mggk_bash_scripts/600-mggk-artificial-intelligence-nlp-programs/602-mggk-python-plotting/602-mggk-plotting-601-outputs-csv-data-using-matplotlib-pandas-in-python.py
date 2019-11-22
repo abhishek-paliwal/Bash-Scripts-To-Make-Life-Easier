@@ -90,7 +90,7 @@ plt.close('all') ## IF already plot interface is open
 #### You can use html color names to use below
 myfig = df_number_cols.hist(color='Navy', alpha=1, bins=10, figsize=(20, 12))
 fig = myfig[0][0].get_figure() ##  We need to break the np.arrary for plots, into elements.
-fig.suptitle('CSV DATA FILE USED = ' + my_csv_file)
+fig.suptitle('CSV DATA FILE USED = ' + my_csv_file + ' // dimensions = ' + df_number_cols.shape )
 fig.savefig(MYPLOT_FILENAME)
 print(); print('>> SAVED, PNG FILE FOR PLOT FIGURE = ' + MYPLOT_FILENAME) ;
 ##------------------------------------------------------------------------------
