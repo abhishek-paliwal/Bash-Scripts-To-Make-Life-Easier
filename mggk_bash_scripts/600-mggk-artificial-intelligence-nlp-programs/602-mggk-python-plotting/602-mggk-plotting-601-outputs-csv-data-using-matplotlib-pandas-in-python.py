@@ -36,7 +36,8 @@ Index(['URL_NUM', 'URL_NAME', 'NLP_READING_TIME_IN_MINS_212WPM',
        'NLP_KEYWORDS', 'TITLE_TAG_VALUE', 'META_DESCRIPTION'],
       dtype='object')
 '''
-
+## Printing CSV FILENAME
+print("CSV FILENAME = ", my_csv_file)
 ## Printing indexes
 print(df.index)
 ## Printing all column names
