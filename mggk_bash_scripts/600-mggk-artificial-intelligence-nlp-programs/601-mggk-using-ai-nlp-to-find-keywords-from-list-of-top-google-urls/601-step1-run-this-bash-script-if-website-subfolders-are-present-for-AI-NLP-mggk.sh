@@ -43,7 +43,7 @@ fi
 ## SETTING SOME FILENAME VARIABLES
 TODAY=$(date +%Y%m%d)
 HTML_OUTPUT_FILE_TO_USE="${TODAY}_TMP_601_MGGK_AI_NLP_HTML_OUTPUT.HTML"
-CSV_OUTPUT_FILE_TO_USE="${TODAY}_TMP_601_MGGK_AI_NLP_OUTPUT_FOR_FUTURE_ANALYSES.CSV"
+#CSV_OUTPUT_FILE_TO_USE="${TODAY}_TMP_601_MGGK_AI_NLP_OUTPUT_FOR_FUTURE_ANALYSES.CSV"
 TMP_LAST_RUN_SUMMARY_FILE="${TODAY}_TMP_SUMMARY_FOR_LAST_RUN.TXT"
 
 ## INITIALIZNG THE TMP SUMMARY FILE
@@ -88,7 +88,7 @@ function RUN_AI_NLP_KEYWORDS_PYTHON_PROGRAM_FOR_PARENTFOLDER_PWD () {
   echo "https://vps.abhishekpaliwal.com/scripts-html-outputs/${HTML_OUTPUT_FILE_TO_USE}"
 
   END_TIME=$(date '+%Y-%m-%dT%H:%M:%S')
-  echo "PROGRAM STARTED AT: $START_TIME"
+  echo "PROGRAM STARTED AT:  $START_TIME"
   echo "PROGRAM FINISHED AT: $END_TIME"
   echo;
 }
@@ -112,6 +112,8 @@ for dirname in $(ls -d1 $PWD/601*/); do
   echo "//////////////////////////////////////////////////////////////////////////" ; echo;
   ((DIR_NUM++))
   CURRENT_DIR=$(echo $dirname | sed 's|\/$||g') ## extracting everything from 1st char to secondlast
+  CURRENT_DIR_BASENAME=$(basename $CURRENT_DIR)
+  CSV_OUTPUT_FILE_TO_USE="${TODAY}_${CURRENT_DIR}_TMP_601_MGGK_AI_NLP_OUTPUT_FOR_FUTURE_ANALYSES.CSV"
 
   echo "[ DIR# $DIR_NUM ] => CURRENT_DIR = $CURRENT_DIR" ;
   echo;echo ">>>> RUNNING SITEMAP EXTRACTOR =>" ;
@@ -141,8 +143,8 @@ for dirname in $(ls -d1 $PWD/601*/); do
   echo;
 
   ## APPENDING THE LAST RUN SUMMARY FILE
-  echo "CURRENT DIR => $CURRENT_DIR" >> $TMP_LAST_RUN_SUMMARY_FILE
-  echo "CURRENT DIR BASENAME => $(basename $CURRENT_DIR)" >> $TMP_LAST_RUN_SUMMARY_FILE
+  #echo "CURRENT DIR => $CURRENT_DIR" >> $TMP_LAST_RUN_SUMMARY_FILE
+  echo "CURRENT DIR BASENAME => $CURRENT_DIR_BASENAME" >> $TMP_LAST_RUN_SUMMARY_FILE
   echo "" >> $TMP_LAST_RUN_SUMMARY_FILE
 
   TOTAL_URLS_IN_CSV=$(cat $CURRENT_DIR/$CSV_OUTPUT_FILE_TO_USE | grep 'http' | wc -l)
