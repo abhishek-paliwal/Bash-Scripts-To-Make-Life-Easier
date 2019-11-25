@@ -113,7 +113,7 @@ for dirname in $(ls -d1 $PWD/601*/); do
   ((DIR_NUM++))
   CURRENT_DIR=$(echo $dirname | sed 's|\/$||g') ## extracting everything from 1st char to secondlast
   CURRENT_DIR_BASENAME=$(basename $CURRENT_DIR)
-  CSV_OUTPUT_FILE_TO_USE="${TODAY}_${CURRENT_DIR}_TMP_601_MGGK_AI_NLP_OUTPUT_FOR_FUTURE_ANALYSES.CSV"
+  CSV_OUTPUT_FILE_TO_USE="${TODAY}_${CURRENT_DIR_BASENAME}_TMP_601_MGGK_AI_NLP_OUTPUT_FOR_FUTURE_ANALYSES.CSV"
 
   echo "[ DIR# $DIR_NUM ] => CURRENT_DIR = $CURRENT_DIR" ;
   echo;echo ">>>> RUNNING SITEMAP EXTRACTOR =>" ;
