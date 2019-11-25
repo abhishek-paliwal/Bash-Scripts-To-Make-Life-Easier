@@ -81,6 +81,16 @@ def FUNCTION_PRINT_ALL_INFO_FROM_CSV_VALUES(my_csv_file, print_all):
     return df_number_cols
 ############### END : MAIN FUNCTION ##########################################
 
+############## FUNCION: CHOOSE RANDOM COLOR FOR PLOT #########################
+def FUNCTION_CHOOSE_RANDOM_COLOR_FOR_PLOT():
+    import random
+    colors = ['#EB816D', '#E07B90', '#BD82AC', '#898CB7', '#5093AC', '#2C948E', '#408F68', '#618645', '#7F7931', '#976932','#A25A44', '#0000FF'] ;
+    random_color_index = random.randint( 1,len(colors) ) ;
+    chosen_random_color = colors[random_color_index-1] ;
+    return chosen_random_color ;
+################################################################################
+
+
 ## CALLING MAIN FUNCTION -------------------------------------------------------
 df_number_cols = FUNCTION_PRINT_ALL_INFO_FROM_CSV_VALUES(my_csv_file, print_all=False)
 
@@ -90,7 +100,8 @@ df_number_cols = FUNCTION_PRINT_ALL_INFO_FROM_CSV_VALUES(my_csv_file, print_all=
 plt.close('all') ## IF already plot interface is open
 ## CREATES A FIGURE WITH 2000x1200 PIXELS DIMENSIONS
 #### You can use html color names to use below
-myfig = df_number_cols.hist(color='Navy', alpha=1, bins=10, figsize=(20, 12))
+chosen_random_color = FUNCTION_CHOOSE_RANDOM_COLOR_FOR_PLOT() ;
+myfig = df_number_cols.hist(color=chosen_random_color, alpha=1, bins=10, figsize=(20, 12))
 fig = myfig[0][0].get_figure() ##  We need to break the np.arrary for plots, into elements.
 fig.suptitle('CSV DATA FILE USED = ' + my_csv_file + ' // Dimensions [#rows,#columns] = ' + str(df_number_cols.shape) )
 fig.savefig(MYPLOT_FILENAME)
