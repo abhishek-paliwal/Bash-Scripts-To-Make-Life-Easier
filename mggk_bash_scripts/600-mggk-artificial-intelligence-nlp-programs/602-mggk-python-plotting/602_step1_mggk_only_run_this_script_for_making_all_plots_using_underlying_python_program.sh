@@ -1,5 +1,5 @@
 #!/bin/bash
-THIS_SCRIPT_NAME="602_step0_mggk_only_run_this_script_for_making_all_plots_using_underlying_python_program.sh" ;
+THIS_SCRIPT_NAME="602_step1_mggk_only_run_this_script_for_making_all_plots_using_underlying_python_program.sh" ;
 ################################################################################
 cat << EOF
   ################################################################################
@@ -18,11 +18,25 @@ EOF
 
 GIT_REPO_PATH="https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/602-mggk-python-plotting/"
 PYTHON_SCRIPT_FILE="602-mggk-plotting-601-outputs-csv-data-using-matplotlib-pandas-in-python.py"
-##
+
 ## DOWNLOADING CURRENT PYTHON_SCRIPT_FILE FROM GITHUB REPORT
 echo ">>>> DOWNLOADING => $GIT_REPO_PATH/$PYTHON_SCRIPT_FILE" ; echo;
 curl -O $GIT_REPO_PATH/$PYTHON_SCRIPT_FILE
+
+################################################################################
+## GET THE CSV FILES FOR PLOTTING FROM ANOTHER FOLDER ON VPS (ONLY IF THE USER IS ubuntu)
+if [ $USER = "ubuntu" ]; then
+  BASEDIR="$HOME/scripts-made-by-pali/602-mggk-python-plotting"
+  CSVDIR="$HOME/scripts-made-by-pali/600-mggk-ai-nlp-scripts"
+  echo "USER = $USER // USER is ubuntu. Hence, CSVDIR will be: $CSVDIR " ;
+  ## Finding today's created CSV files in the CSVDIR and copying them to BASEDIR
+  find $CSVDIR/ -name $(date +%Y%m%d)*CSV -exec cp "{}" $BASEDIR/  \;
+else
+  MY_PWD="$(pwd)"
+  echo "USER = $USER // USER is not ubuntu. Hence, MY_PWD will be: $MY_PWD " ;
+fi
 ##------------------------------------------------------------------------------
+## PLOT PNG CREATION BEGINS
 for csvfile in *.CSV ; do
   python3 $PYTHON_SCRIPT_FILE $csvfile
 done
@@ -69,3 +83,14 @@ echo "   </div> <!-- END: main containter div -->
     <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
   </body>
 </html>" >> $HTML_OUTPUT_FILE
+
+################################################################################
+## COPY THE OUTPUT PNG + HTML FILES TO WWWDIR_602 ON VPS (MEANING, IF THE USER IS ubuntu)
+if [ $USER = "ubuntu" ]; then
+  WWWDIR_602="/var/www/vps.abhishekpaliwal.com/html/scripts-html-outputs/602-mggk-plotting-outputs"
+  #cp $BASEDIR/*.CSV $WWWDIR_602/
+  cp $BASEDIR/*.png $WWWDIR_602/
+  cp $BASEDIR/*.html $WWWDIR_602/
+else
+  echo "USER = $USER // USER is not ubuntu. Hence, no further processing is required." ;
+fi
