@@ -35,12 +35,19 @@ else
   MY_PWD="$(pwd)"
   echo "USER = $USER // USER is not ubuntu. Hence, MY_PWD will be: $MY_PWD " ;
 fi
+
 ##------------------------------------------------------------------------------
 ## PLOT PNG CREATION BEGINS
 for csvfile in *.CSV ; do
   python3 $PYTHON_SCRIPT_FILE $csvfile
 done
+## MOVING ALL TMP CSV FILES THUS GENERATED TO A DIFFERENT FOLDER
+## SO THAT THEY ARE NOT USED IN MAKING ANY PLOTS. THEY ARE JUST FOR REFERENCE.
+TMP_CSVDIR=_TMP_FINAL_CSVs
+mkdir $BASEDIR/$TMP_CSVDIR
+mv _TMP_FINAL*.CSV $BASEDIR/$TMP_CSVDIR
 ##------------------------------------------------------------------------------
+
 echo ">>>> WRITING TO HTML FILE OUTPUT ... " ;
 HTML_OUTPUT_FILE="_TMP_602_PYTHON_PLOTS_PROGRAM_OUTPUT.html"
 ##
