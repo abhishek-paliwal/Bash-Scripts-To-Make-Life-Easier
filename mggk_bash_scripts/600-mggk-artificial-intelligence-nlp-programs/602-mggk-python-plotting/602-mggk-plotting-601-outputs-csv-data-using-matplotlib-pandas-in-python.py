@@ -107,3 +107,11 @@ fig.suptitle('CSV DATA FILE USED = ' + my_csv_file + ' // Dimensions [#rows,#col
 fig.savefig(MYPLOT_FILENAME)
 print(); print('>> SAVED, PNG FILE FOR PLOT FIGURE = ' + MYPLOT_FILENAME) ;
 ##------------------------------------------------------------------------------
+
+################################################################################
+## WRITING THE NEW OUTPUT DATAFRAME TO A CSV FILE
+OUTPUT_CSVFILE = '_TMP_FINAL_' + my_csv_file
+df = pd.read_csv(my_csv_file)
+df_number_cols['URL_NAME'] = df['URL_NAME']
+df_number_cols.to_csv(path_or_buf=OUTPUT_CSVFILE,index=False)
+################################################################################
