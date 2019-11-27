@@ -56,11 +56,18 @@ echo "$NUM_MGGK_JSON_RECIPE_POSTS: NUMBER OF POSTS WITH MGGK_JSON_RECIPE BLOCK" 
 ## NUMBER OF POSTS WITH YOUTUBE_VIDEO_ID
 NUM_YOUTUBE_VIDEO_ID_POSTS=$(grep -irh 'youtube_video_id:' $HUGO_CONTENT_DIR/* | wc -l)
 echo "$NUM_YOUTUBE_VIDEO_ID_POSTS: NUMBER OF POSTS WITH YOUTUBE_VIDEO_ID" >> $FILE_OUTPUT_SITESTATS
+
+##------------------------------------------------------------------------------
+## LIST OF ALL URLS FOUND IN MD FILES
+echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
+LIST_OF_ALL_URLS=$(grep -irh '^url: ' $HUGO_CONTENT_DIR/* | sort| nl)
+echo "" >> $FILE_OUTPUT_SITESTATS
+echo "LIST OF ALL URLS FOUND IN MD FILES:" >> $FILE_OUTPUT_SITESTATS
+echo "$LIST_OF_ALL_URLS" >> $FILE_OUTPUT_SITESTATS
 ##------------------------------------------------------------------------------
 
-echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
-
 ## NUMBER OF POSTS BY MONTHS
+echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
 NUMBER_OF_POSTS_BY_MONTHS=$(grep -irh 'date: ' $HUGO_CONTENT_DIR/* | sed 's/date: //g' | cut -c1-7 | sort | uniq -c | awk '{print  }')
 echo "" >> $FILE_OUTPUT_SITESTATS
 echo "NUMBER OF POSTS BY MONTHS:" >> $FILE_OUTPUT_SITESTATS
