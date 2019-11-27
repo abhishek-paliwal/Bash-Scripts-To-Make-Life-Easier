@@ -14,6 +14,8 @@
 20191111,16:10:00,deeppink,Skating-Class
 20191118,16:10:00,deeppink,Skating-Class
 20191125,16:10:00,deeppink,Skating-Class
+20191130,09:40:00,deeppink,Skating-Class
+20191209,16:10:00,deeppink,Skating-Class
 ## SWIMMING CLASSES
 20191101,19:20:00,DeepSkyBlue,Swimming-Class (This class has been cancelled.)
 20191108,19:20:00,DeepSkyBlue,Swimming-Class (Ask from instructor session on this day. Ask how the child is doing in the class. See Email received on Oct 10 )
