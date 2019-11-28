@@ -1,10 +1,19 @@
 #/bin/bash
 ################################################################################
-THIS_SCRIPT_FILE=""
+THIS_SCRIPT_FILE="599-mggk-MAKE-VIDEO-SITEMAP-XML.sh"
 ################################################################################
-
-
-
+cat << EOF
+	################################################################################
+	## THIS SCRIPT CREATES VIDEO SITEMAP XML FILE FROM ALL THE MD FILES WHICH CONTAIN
+	## youtube_video_id TAG IN YAML FRONTMATTER.
+	## IT THEN SAVES IT IN HUGO STATIC DIRECTORY AS video-sitemap.xml
+	############################################
+	## USAGE: bash $THIS_SCRIPT_FILE
+	############################################
+	## CREATED ON: Thursday November 28, 2019
+	## CREATED BY: PALI
+	################################################################################
+EOF
 
 ################################################################################
 HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content"
