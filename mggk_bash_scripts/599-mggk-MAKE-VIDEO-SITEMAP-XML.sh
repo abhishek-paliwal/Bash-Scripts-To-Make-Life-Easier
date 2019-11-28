@@ -12,7 +12,7 @@ XML_OUTFILE="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/video-sitemap.x
 ################################################################################
 
 ######### BEGIN: FUNCTION - DOWNLOADING THE COVER IMAGE FROM YOUTUBE AND SAVING TO LOCAL DIR ##########
-function FUNCTION_DOWNLOAD_COVER_IMAGE_FROM_YOUTUBE () {
+FUNCTION_DOWNLOAD_COVER_IMAGE_FROM_YOUTUBE () {
 	video_youtube_id=$1 ; ## $1= current value of youtube_video_id
 	echo "	>> DOWNLOADING THE COVER IMAGE FROM YOUTUBE AND SAVING TO LOCAL DIR" ;
 	COVER_IMAGE_DOWNLOAD_DIR="$(pwd)/_TMP_599_DOWNLOADED_COVER_IMAGES" ;
