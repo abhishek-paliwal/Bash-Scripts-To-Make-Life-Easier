@@ -68,13 +68,13 @@ echo "$LIST_OF_ALL_URLS" >> $FILE_OUTPUT_SITESTATS
 
 ## NUMBER OF POSTS BY MONTHS
 echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
-NUMBER_OF_POSTS_BY_MONTHS=$(grep -irh 'date: ' $HUGO_CONTENT_DIR/* | sed 's/date: //g' | cut -c1-7 | sort | uniq -c | awk '{print  }')
+NUMBER_OF_POSTS_BY_MONTHS=$(grep -irh '^date: ' $HUGO_CONTENT_DIR/* | sed 's/date: //g' | cut -c1-7 | sort | uniq -c | awk '{print  }')
 echo "" >> $FILE_OUTPUT_SITESTATS
 echo "NUMBER OF POSTS BY MONTHS:" >> $FILE_OUTPUT_SITESTATS
 echo "$NUMBER_OF_POSTS_BY_MONTHS" >> $FILE_OUTPUT_SITESTATS
 
 ## NUMBER OF POSTS BY EACH DATE
-NUMBER_OF_POSTS_BY_EACH_DATE=$(grep -irh 'date: ' $HUGO_CONTENT_DIR/* | sed 's/date: //g' | cut -c1-10 | sort | uniq -c | awk '{ printf ("%s => %4d    ",$2,$1) ; p = $1 ; for(c=0;c<p;c++) printf "X"; print ":" }' )
+NUMBER_OF_POSTS_BY_EACH_DATE=$(grep -irh '^date: ' $HUGO_CONTENT_DIR/* | sed 's/date: //g' | cut -c1-10 | sort | uniq -c | awk '{ printf ("%s => %4d    ",$2,$1) ; p = $1 ; for(c=0;c<p;c++) printf "X"; print ":" }' )
 echo "" >> $FILE_OUTPUT_SITESTATS
 echo "NUMBER OF POSTS BY EACH DATE:" >> $FILE_OUTPUT_SITESTATS
 echo "$NUMBER_OF_POSTS_BY_EACH_DATE" >> $FILE_OUTPUT_SITESTATS
