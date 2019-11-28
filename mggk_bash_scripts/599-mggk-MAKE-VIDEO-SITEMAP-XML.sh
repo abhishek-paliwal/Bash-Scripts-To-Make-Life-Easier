@@ -34,6 +34,8 @@ FUNCTION_DOWNLOAD_COVER_IMAGE_FROM_YOUTUBE () {
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:video=\"http://www.google.com/schemas/sitemap-video/1.1\">" > $XML_OUTFILE
 
+echo "<?xml-stylesheet type=\"text/xsl\" href=\"https://www.mygingergarlickitchen.com/video-sitemap-mggk.xsl\"?>" >> $XML_OUTFILE
+
 ##------------------------------------------------------------------------------
 ## BEGIN: LOOPING THROUGH ALL MD FILES CONTAINING youtube_video_id
 TOTAL_VALID_FILES=$(grep -irl 'youtube_video_id:' $HUGO_CONTENT_DIR/* | wc -l)
