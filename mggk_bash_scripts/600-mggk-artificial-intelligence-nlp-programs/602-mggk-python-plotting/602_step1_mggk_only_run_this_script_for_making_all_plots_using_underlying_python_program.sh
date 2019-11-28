@@ -29,6 +29,9 @@ if [ $USER = "ubuntu" ]; then
   BASEDIR="$HOME/scripts-made-by-pali/602-mggk-python-plotting"
   CSVDIR="$HOME/scripts-made-by-pali/600-mggk-ai-nlp-scripts"
   echo "USER = $USER // USER is ubuntu. Hence, CSVDIR will be: $CSVDIR " ;
+  ## Removing all existing CSVs + PNGs
+  rm $BASEDIR/*.png
+  rm $BASEDIR/*.CSV 
   ## Finding today's created CSV files in the CSVDIR and copying them to BASEDIR
   find $CSVDIR/ -name $(date +%Y%m%d)*CSV -exec cp "{}" $BASEDIR/  \;
 else
