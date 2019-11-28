@@ -52,9 +52,15 @@ xmlDict = {} ## initializing an empty dictionary
 ####################
 ####################
 def get_all_urls_from_sitemaps(URL):
-    #r = requests.get("https://www.vegrecipesofindia.com/post-sitemap1.xml")
-    r = requests.get(URL)
+    #########################################################
+    ## BEGIN: GETTING SOME MORE DETAILS USING BeautifulSoup
+    #########################################################
+    ## FIRS YOU NEED TO SET HEADER PARAMETERS TO AVOID ANY HTTP 403, 406, ETC ERRORS
+    ## MAKE THIS ERROR DEFAULT IN EVERYTHING YOU DO WITH BEAUTIFUL SOUP
+    hdr = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A'}
 
+    URL = URL.strip() ## removes all unnecessary character in line (leading and trailing)
+    r = requests.get(URL,headers=hdr)
     xml = r.text
 
     soup = BeautifulSoup(xml, features="lxml")
