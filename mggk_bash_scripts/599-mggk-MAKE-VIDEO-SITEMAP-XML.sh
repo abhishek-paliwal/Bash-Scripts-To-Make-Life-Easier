@@ -43,21 +43,21 @@ for mdfile in $(grep -irl 'youtube_video_id:' $HUGO_CONTENT_DIR/*) ; do
 	echo ">> Currently processing File = $COUNT of $TOTAL_VALID_FILES" ;
 
 	## GETTING ALL VARIABLE VALUES + TRIMMING ALL LEADING + TRAILING WHITESPACES
-	video_title=$(grep -irh '^title:' $mdfile | sed -e 's/title: //g' -e 's/"//g' | awk '{$1=$1;print}')
+	video_title=$(grep -irh '^title:' $mdfile | sed -e 's/title: //g' -e 's/"//g' -e 's/&/and/g' | awk '{$1=$1;print}')
 	video_post_url=$(grep -irh '^url:' $mdfile | sed -e 's/url: //g' -e 's/"//g' | awk '{$1=$1;print}')
 	video_youtube_id=$(grep -irh 'youtube_video_id:' $mdfile | sed -e 's/youtube_video_id: //g' -e 's/"//g' | awk '{$1=$1;print}')
-	video_description=$(grep -irh 'yoast_description:' $mdfile | sed -e 's/yoast_description: //g' -e 's/"//g' | awk '{$1=$1;print}')
-	video_date=$(grep -irh '^date:' $mdfile | sed -e 's/date: //g' -e 's/"//g' | awk '{$1=$1;print}')
+	video_description=$(grep -irh 'yoast_description:' $mdfile | sed -e 's/yoast_description: //g' -e 's/"//g' -e 's/&/and/g' | awk '{$1=$1;print}')
 	video_cover_image=$(grep -irh '^featured_image:' $mdfile | sed -e 's/featured_image: //g' -e 's/"//g' | awk '{$1=$1;print}')
 	video_cover_image_official="https://www.mygingergarlickitchen.com/wp-content/youtube_video_cover_images/$video_youtube_id.jpg"
 	video_author=$(grep -irh '^author:' $mdfile | sed -e 's/author: //g' -e 's/"//g' | awk '{$1=$1;print}')
+	video_date=$(grep -irh '^date:' $mdfile | sed -e 's/date: //g' -e 's/"//g' -e 's/+00:00//g' | awk '{$1=$1;print}')
 
 	## WRITING ALL VALUES IN XML OUTPUT FILE
 	echo "	<url>
 			<loc>https://www.mygingergarlickitchen.com$video_post_url</loc>
 			<video:video>
 				<video:title>$video_title</video:title>
-				<video:publication_date>$video_date</video:publication_date>
+				<video:publication_date>$video_date+00:00</video:publication_date>
 				<video:description>$video_description</video:description>
 				<video:player_loc allow_embed=\"yes\">https://www.youtube.com/embed/$video_youtube_id</video:player_loc>
 				<video:thumbnail_loc>$video_cover_image_official</video:thumbnail_loc>
