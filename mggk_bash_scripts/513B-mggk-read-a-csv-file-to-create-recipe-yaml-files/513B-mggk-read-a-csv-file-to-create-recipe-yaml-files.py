@@ -297,7 +297,7 @@ for x in range(0, COUNT_ROWS):
         RECIPE_FILE.write('\n  description: \"' + RECIPE_DESCRIPTION + '\"')
         RECIPE_FILE.write('\n  thumbnailUrl:')
         RECIPE_FILE.write('\n    - ' + RECIPE_FEATURED_IMAGE )
-        RECIPE_FILE.write('\n    - https://i.ytimg.com/vi/'+ YOUTUBE_VIDEO_ID +'/maxresdefault.jpg')
+        RECIPE_FILE.write('\n    - https://www.mygingergarlickitchen.com/wp-content/youtube_video_cover_images/'+ YOUTUBE_VIDEO_ID +'.jpg')
         RECIPE_FILE.write('\n  contentUrl: \"https://youtu.be/'+ YOUTUBE_VIDEO_ID + '\"')
         RECIPE_FILE.write('\n  embedUrl: \"https://www.youtube.com/embed/'+ YOUTUBE_VIDEO_ID + '\"')
         RECIPE_FILE.write('\n  uploadDate: '+ RECIPE_DATE_MGGK)

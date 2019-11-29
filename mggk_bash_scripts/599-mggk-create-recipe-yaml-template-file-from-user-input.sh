@@ -64,7 +64,7 @@ description: "$RECIPE_DESCRIPTION"
 
 image:
   - $RECIPE_IMAGE_URL
-  - https://i.ytimg.com/vi/$YOUTUBE_ID/maxresdefault.jpg
+  - https://www.mygingergarlickitchen.com/wp-content/youtube_video_cover_images/$YOUTUBE_ID.jpg
 
 prepTime: PT40M
 cookTime: PT25M
@@ -98,7 +98,7 @@ video:
   name: "$RECIPE_NAME"
   description: "$RECIPE_DESCRIPTION"
   thumbnailUrl:
-    - https://i.ytimg.com/vi/$YOUTUBE_ID/maxresdefault.jpg
+    - https://www.mygingergarlickitchen.com/wp-content/youtube_video_cover_images/$YOUTUBE_ID.jpg
     - $RECIPE_IMAGE_URL
   contentUrl: https://youtu.be/$YOUTUBE_ID
   embedUrl: https://www.youtube.com/embed/$YOUTUBE_ID
