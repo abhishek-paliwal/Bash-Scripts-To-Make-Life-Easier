@@ -9,7 +9,7 @@ description: "Favorite Homemade Chicken Tikki Masala Pizza packs all the protein
 
 image:
   - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/06/favorite-homemade-chicken-tikki-masala-pizza-recipe-1.jpg
-  - https://i.ytimg.com/vi//maxresdefault.jpg
+  - https://www.mygingergarlickitchen.com/wp-content/youtube_video_cover_images/.jpg
 
 prepTime: PT40M
 cookTime: PT25M
@@ -43,7 +43,7 @@ video:
   name: "Favorite Homemade Chicken Tikki Masala Pizza Recipe"
   description: "Favorite Homemade Chicken Tikki Masala Pizza packs all the protein and flavor of a BBQ Chicken recipe but eliminates the controversial sweet BBQ sauce in favor of something spicier and savorier – which generally work better on pizza that sugary sweet."
   thumbnailUrl:
-    - https://i.ytimg.com/vi//maxresdefault.jpg
+    - https://www.mygingergarlickitchen.com/wp-content/youtube_video_cover_images/.jpg
     - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/06/favorite-homemade-chicken-tikki-masala-pizza-recipe-1.jpg
   contentUrl: https://youtu.be/
   embedUrl: https://www.youtube.com/embed/

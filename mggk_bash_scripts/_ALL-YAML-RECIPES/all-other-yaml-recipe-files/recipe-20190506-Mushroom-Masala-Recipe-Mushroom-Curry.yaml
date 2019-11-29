@@ -9,7 +9,7 @@ description: "This Mushroom Masala Recipe | Mushroom Curry is a classic, tasty, 
 
 image:
   - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/05/instant-pot-mushroom-masala-recipe-ginger-garlic-kitchen-2.jpg
-  - https://i.ytimg.com/vi/IMQcf_1IAjM/maxresdefault.jpg
+  - https://www.mygingergarlickitchen.com/wp-content/youtube_video_cover_images/IMQcf_1IAjM.jpg
 
 prepTime: PT10M
 cookTime: PT10M
@@ -41,7 +41,7 @@ video:
   name: "Mushroom Masala Recipe | Mushroom Curry (Instant Pot + Pressure Cooker + Pan)"
   description: "This Mushroom Masala Recipe | Mushroom Curry is a classic, tasty, spicy vegetarian side dish made with mushrooms, onions, tomatoes, spices & herbs. It is quite simple to make & tastes delectable. This effortless yet delicious curry can be made in 20 minutes. This curry is a delight for all the mushroom lovers."
   thumbnailUrl:
-    - https://i.ytimg.com/vi/IMQcf_1IAjM/maxresdefault.jpg
+    - https://www.mygingergarlickitchen.com/wp-content/youtube_video_cover_images/IMQcf_1IAjM.jpg
     - https://www.mygingergarlickitchen.com/wp-content/uploads/2019/05/instant-pot-mushroom-masala-recipe-ginger-garlic-kitchen-2.jpg
   contentUrl: https://youtu.be/IMQcf_1IAjM
   embedUrl: https://www.youtube.com/embed/IMQcf_1IAjM
