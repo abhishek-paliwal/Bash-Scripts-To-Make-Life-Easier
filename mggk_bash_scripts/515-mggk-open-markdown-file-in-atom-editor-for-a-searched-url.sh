@@ -30,8 +30,16 @@ echo;
 ## PROMPT FOR USER TO ENTER THE URL
 read -p "Enter Your URL to search the MARKDOWN file: "  TMPURL
 
+##------------------------------------------------------------------------------
 ## CREATING SEARCH_URL FROM THE USER 1INPUT
 SEARCHURL=$(echo $TMPURL | sed 's|https://www.mygingergarlickitchen.com||g')
+
+## EXIT THE SCRIPT IF THE ENTERED URL IS NOT PROPER
+if [[ "$SEARCHURL" == "/" ]] || [[ "$SEARCHURL" == "" ]] ; then
+  echo; echo ">> ERROR: INVALID SEARCH URL. Please don't enter the URL of homepage. Any other page is okay." ;
+  exit 1; ## Exit this script if invalid url.
+fi
+##------------------------------------------------------------------------------
 
 echo;
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
