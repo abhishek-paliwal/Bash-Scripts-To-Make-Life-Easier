@@ -1,0 +1,134 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "Amritsari Chole - Authentic Punjabi Chole Masala Recipe "
+
+description: "Amritsari Chole is Punjabi style chickpea curry. This amazingly authentic curry tastes heavenly. This dish is sure to bring a flavor of Amritsar streets right into your home. It is so inviting and rich, spicy and full of awesome flavors."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2017/08/03-food-photography-of-How-To-Make-Authentic-Amritsari-Chole-Masala-by-my-ginger-garlic-kitchen-1x1.jpg
+
+prepTime: PT05M
+
+cookTime: PT40M
+
+totalTime: PT45M
+
+recipeCategory: Side
+
+recipeCuisine: Indian
+
+recipeYield: 4-6
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 52
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 202 calories
+  servingSize: 1 cup
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: "1. I have used dried chickpeas for this recipe because Amritsari chole taste best when cooked with dried chickpeas. But you can also make it using canned chickpeas. If using canned chickpeas, follow the same recipe of making onion tomato masala. Replace boiled chickpeas with canned chickpeas. Also, brew tea bags and add the tea mixture instead of water. Cover and cook until the chickpeas are soft and tender.<br>2. I have prepared Amritsari Chole in vegetable cooking oil, but they also taste great when cooked entirely in ghee or butter. You can either use butter or ghee for frying masala or use the combination of ghee and oil."
+
+keywords: "amritsari chole recipe, amritsari chole authentic recipe, amritsari chole masala, amritsari chole authentic, how to cook amritsari chole at home, how to make amritsari chole at home, amritsari chole calories, amritsari chole delhi style, easy amritsari chole, amritsari chole curry recipe, amritsari chana chole recipe, amritsari chole dish, amritsari chole recipe dhaba style, amritsari chole easy recipe, amritsari chole in english, amritsari chole with gravy"
+
+video:
+  "@type": "VideoObject"
+  name: "Amritsari Chole - Authentic Punjabi Chole Masala Recipe "
+  description: "Amritsari Chole is Punjabi style chickpea curry. This amazingly authentic curry tastes heavenly. This dish is sure to bring a flavor of Amritsar streets right into your home. It is so inviting and rich, spicy and full of awesome flavors."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2017/08/03-food-photography-of-How-To-Make-Authentic-Amritsari-Chole-Masala-by-my-ginger-garlic-kitchen-1x1.jpg
+    - https://www.mygingergarlickitchen.com/wp-content/youtube_video_cover_images/o0i9i-Y2rPQ.jpg
+  contentUrl: "https://youtu.be/o0i9i-Y2rPQ"
+  embedUrl: "https://www.youtube.com/embed/o0i9i-Y2rPQ"
+  uploadDate: 2019-12-02
+
+datePublished: 2019-12-02
+
+url: https://www.mygingergarlickitchen.com/amritsari-chole/
+
+recipeIngredient:
+  - "!!For Amritsari Chole"
+  - "2 cups chickpeas (Kabuli chana) cooked or dried (you can also substitute this with canned chickpeas)"
+  - "1 large sized red onion, finely chopped"
+  - "1/2 cup tomato puree"
+  - "2 tbsp channa masala powder"
+  - "1 teaspoon pomegranate seeds"
+  - "salt, as per taste"
+  - "1 teaspoon  red chili powder or per taste"
+  - "3-4 green chilies, deseeded and slit, or as per taste"
+  - "2 tablespoons tamarind pupl or paste"
+  - "3 tbsp oil"
+  - "1 bay leaf"
+  - "3-4 black cardamom"
+  - "5-6 cloves"
+  - "1 teaspoon anardana / pomegranate seeds"
+  - "1 teaspoon  dried mango powder"
+  - "1 teaspoon brown sugar or regular sugar"
+  - "2 tbsp kasuri methi"
+  - "5-6 pieces ginger, julienned (some more for garnishing)"
+  - "2 black tea bags soaked 3-4 minutes in ½ cup steaming hot water"
+  - "5-6 Onion rings"
+  - "1 tablespoons coriander leaves for garnishing"
+  - "!!For Serving:"
+  - "Bhature, Kulcha or Puri"
+  - "Sliced onions"
+  - "pickle"
+  - "Lemon wedges"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "How to cook Chickpeas (Chole / Kabuli Chana):"
+  itemListElement:
+  - "@type": HowToStep
+    text: "If using dried chickpeas then follow these steps:"
+  - "@type": HowToStep
+    text: "Rinse chickpeas 3-4 times and soak in enough water for 8-10 hours or overnight."
+  - "@type": HowToStep
+    text: "After 8-10 hours, drain out the excess water and rinse them again with fresh running water in the morning and set aside."
+  - "@type": HowToStep
+    text: "Add rinsed chickpeas to a pressure cooker along with salt."
+  - "@type": HowToStep
+    text: "Cover with the li and pressure cook chickpeas on medium heat for 6-7 whistles or until chickpeas are softened."
+  - "@type": HowToStep
+    text: "Let the pressure come off completely before opening the lid."
+- "@type": HowToSection
+  name: "How to make Amritsari Chole:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Steep 2 black tea bags and steep them for at least 4 minutes. Keep the tea aside."
+  - "@type": HowToStep
+    text: "Heat oil in a pan over medium heat."
+  - "@type": HowToStep
+    text: "Once hot, add bay leave, black cardamoms, and cloves to the oil."
+  - "@type": HowToStep
+    text: "Sauté them for few seconds or until they are fragrant."
+  - "@type": HowToStep
+    text: "Now add red onions, and sauté for 5 minutes or till they turn golden brown."
+  - "@type": HowToStep
+    text: "Add tomato puree, salt, slitted green chilies and red chili powder."
+  - "@type": HowToStep
+    text: "Mix well and cook covered for 5 minutes."
+  - "@type": HowToStep
+    text: "Add chana masala powder, dried mango powder, anardana, sugar, tamarind paste and mix well."
+  - "@type": HowToStep
+    text: "Remove tea bags and add tea to the masala (sauce). Mix well, and cook for 5 minutes."
+  - "@type": HowToStep
+    text: "Add cooked chickpeas, kasuri methi, sliced ginger and mix well. You can add more water if needed."
+  - "@type": HowToStep
+    text: "Cook covered for 20 minutes on medium-low heat."
+  - "@type": HowToStep
+    text: "Add sliced onions, and mix well. Remove from heat and cover for 5 minutes."
+  - "@type": HowToStep
+    text: "Amritsari chole are ready. Serve hot with bhature or any of your flatbread."
