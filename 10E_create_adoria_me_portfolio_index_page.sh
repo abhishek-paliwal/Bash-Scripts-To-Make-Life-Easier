@@ -312,3 +312,14 @@ echo "######## SM IMAGES Index Successfully created. ######### ";
 echo "####### DONE! File will now be opened in SAFARI. ########"
 open -a Safari $OUTPUT
 open -a Safari $SITEURL
+
+##------------------------------------------------------------------------------
+## Getting all image names for creating wordcloud in python (through 603-mggk-script....sh)
+WORDCLOUD_FILE="$DIRPATH/ADO_SITE_WORDCLOUD_for_using_with_603_mggk_script.csv"
+echo "TITLE_TAG_VALUE" > $WORDCLOUD_FILE ## We need to have this line as the first line.
+## The following command finds all files (case insensitive jpg, JPG, png, PNG)
+basename $(find . -iname '*.png') | sed -e 's/-/ /g' -e 's/_/ /g' -e 's/\./ /g' >> $WORDCLOUD_FILE
+basename $(find . -iname '*.jpg') | sed -e 's/-/ /g' -e 's/_/ /g' -e 's/\./ /g' >> $WORDCLOUD_FILE
+echo; echo ">> THIS WORDCLOUD FILE CREATED (use it with 603-mggk-wordcloud...sh script) => $WORDCLOUD_FILE" ;
+echo;
+##------------------------------------------------------------------------------
