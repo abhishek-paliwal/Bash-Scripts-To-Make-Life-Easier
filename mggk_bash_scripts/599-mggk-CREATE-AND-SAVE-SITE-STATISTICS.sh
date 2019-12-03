@@ -30,6 +30,10 @@ echo "$NUM_TITLE_POSTS: NUMBER OF POSTS WITH TITLE" >> $FILE_OUTPUT_SITESTATS
 NUM_DATE_POSTS=$(grep -irl '^date:' $HUGO_CONTENT_DIR/* |wc -l)
 echo "$NUM_DATE_POSTS: NUMBER OF POSTS WITH DATE" >> $FILE_OUTPUT_SITESTATS
 
+## NUMBER OF POSTS WITH FIRST_PUBLISHED_ON DATETIME VALUE
+NUM_FIRST_PUBLISHED_ON_POSTS=$(grep -irl '^first_published_on:' $HUGO_CONTENT_DIR/* |wc -l)
+echo "$NUM_FIRST_PUBLISHED_ON_POSTS: NUMBER OF POSTS WITH FIRST_PUBLISHED_ON DATETIME VALUE" >> $FILE_OUTPUT_SITESTATS
+
 ## NUMBER OF POSTS WITH URL TAGS
 NUM_URL_POSTS=$(grep -irl '^url:' $HUGO_CONTENT_DIR/* |wc -l)
 echo "$NUM_URL_POSTS: NUMBER OF POSTS WITH URL TAGS" >> $FILE_OUTPUT_SITESTATS
@@ -65,6 +69,13 @@ echo "" >> $FILE_OUTPUT_SITESTATS
 echo "LIST OF ALL URLS FOUND IN MD FILES:" >> $FILE_OUTPUT_SITESTATS
 echo "$LIST_OF_ALL_URLS" >> $FILE_OUTPUT_SITESTATS
 ##------------------------------------------------------------------------------
+
+## NUMBER OF POSTS BY FIRST_PUBLISHING_YEAR
+echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
+NUMBER_OF_POSTS_BY_FIRST_PUBLISHING_YEAR=$(grep -irh '^first_published_on: ' $HUGO_CONTENT_DIR/* | sed 's/first_published_on: //g' | cut -c1-4 | sort | uniq -c | awk '{print  }')
+echo "" >> $FILE_OUTPUT_SITESTATS
+echo "NUMBER OF POSTS BY FIRST_PUBLISHING_YEAR:" >> $FILE_OUTPUT_SITESTATS
+echo "$NUMBER_OF_POSTS_BY_FIRST_PUBLISHING_YEAR" >> $FILE_OUTPUT_SITESTATS
 
 ## NUMBER OF POSTS BY MONTHS
 echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
