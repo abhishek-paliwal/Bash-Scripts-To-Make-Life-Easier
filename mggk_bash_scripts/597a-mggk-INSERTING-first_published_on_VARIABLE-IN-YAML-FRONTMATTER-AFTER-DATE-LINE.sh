@@ -1,4 +1,11 @@
 #!/bin/bash
+################################################################################
+## THIS PROGRAM SHOULD NEVER BE RUN AGAIN, EVER. SO, DISPLAYING ERROR MESSAGE.
+echo ">>>> THIS SCRIPT SHOULD NEVER BE RUN AGAIN, NOT EVEN BY MISTAKE. ITS JOB IS DONE." ;
+echo ">>>> HENCE, THE PROGRAM WILL EXIT NOW."
+exit 1;
+################################################################################
+
 ###############################################################################
 THIS_SCRIPT_NAME="597a-mggk-INSERTING-first_published_on_VARIABLE-IN-YAML-FRONTMATTER-AFTER-DATE-LINE.sh"
 ###############################################################################
@@ -21,6 +28,7 @@ cat << EOF
   ###############################################################################
 EOF
 
+################################################################################
 ################################################################################
 DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content"
 ################################################################################
@@ -53,12 +61,11 @@ do
     ## IN-FILE REPLACEMENT // SED IN-FILE MULTILINE REPLACEMENT ON MAC OS
     #### Interesting thing to note here is that you need to add \\ at the end of each line in sed -i
     #### command on MAC OS version of sed, in order to add line breaks at certain places. Knowing this
-    #### is very important.
+    #### is very important. Also, keep the following block non-indented, as it is.
 sed -i '' "s|$date_var|$date_var\\
 $OUR_NEW_VAR\\
 |" $x
-
-fi
+  fi
 
 echo;
 done
