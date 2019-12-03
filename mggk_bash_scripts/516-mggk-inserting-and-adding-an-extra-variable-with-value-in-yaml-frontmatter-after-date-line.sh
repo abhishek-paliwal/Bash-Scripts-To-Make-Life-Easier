@@ -1,16 +1,27 @@
 #!/bin/bash
-###############################################################################
-## This program adds (inserts) an extra yaml frontmatter variable of your choice, in markdown files.
-#### To do this, it first finds the 'date' frontmatter line using grep, and then replaces
-#### it with itself + one more yaml frontmatter variable at the end.
-#### This is to make sure that our newly added frontmatter variable always
-#### appears after the date frontmatter variable line.
-###############################################################################
-## CREATED ON: Thursday September 26, 2019
-## CREATED BY: PALI
-###############################################################################
+################################################################################
+## THIS PROGRAM SHOULD NEVER BE RUN AGAIN, EVER. SO, DISPLAYING ERROR MESSAGE.
+echo ">>>> THIS SCRIPT SHOULD NEVER BE RUN AGAIN, NOT EVEN BY MISTAKE. ITS JOB IS DONE." ;
+echo ">>>> HENCE, THE PROGRAM WILL EXIT NOW."
+exit 1;
+################################################################################
 
+cat << EOF
+  ###############################################################################
+  ## This program adds (inserts) an extra yaml frontmatter variable of your choice, in markdown files.
+  #### To do this, it first finds the 'date' frontmatter line using grep, and then replaces
+  #### it with itself + one more yaml frontmatter variable at the end.
+  #### This is to make sure that our newly added frontmatter variable always
+  #### appears after the date frontmatter variable line.
+  ###############################################################################
+  ## CREATED ON: Thursday September 26, 2019
+  ## CREATED BY: PALI
+  ###############################################################################
+EOF
+
+################################################################################
 DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content"
+################################################################################
 
 ## => md files with no featured_image
 ## Printing out all the filenames which don't have the 'featured_image' keyword in them
