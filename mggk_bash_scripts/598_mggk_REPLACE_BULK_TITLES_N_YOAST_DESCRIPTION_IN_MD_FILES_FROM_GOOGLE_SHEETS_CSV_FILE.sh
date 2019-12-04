@@ -1,6 +1,6 @@
 #!/bin/bash
-#echo "It's dangerous to run this script. Edit the original script if you want to execute it." ;
-#exit 1
+echo "It's dangerous to run this script. Edit the original script if you want to execute it." ;
+exit 1
 
 ################################################################################
 ################################################################################
