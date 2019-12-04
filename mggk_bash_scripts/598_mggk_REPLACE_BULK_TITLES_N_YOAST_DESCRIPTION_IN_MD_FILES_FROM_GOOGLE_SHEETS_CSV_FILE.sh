@@ -1,6 +1,6 @@
 #!/bin/bash
-echo "It's dangerous to run this script. Edit the original script if you want to execute it." ;
-exit 1
+#echo "It's dangerous to run this script. Edit the original script if you want to execute it." ;
+#exit 1
 
 ################################################################################
 ################################################################################
@@ -53,14 +53,27 @@ GET_MD_FILENAME_WITH_THIS_URL () {
   ## (WHERE, $1 = An MGGK URL, SUCH AS http://www.mygingergarlickitchen.com/example/)
   ## MY_MDFILENAME=$(GET_MD_FILENAME_WITH_THIS_URL MY_URL)
   TMPURL=$1
-  SEARCHURL=$(echo "$TMPURL" | sed 's|https://www.mygingergarlickitchen.com||g')
-  ## EXIT THE SCRIPT IF THE ENTERED URL IS NOT PROPER
+  SEARCHURL=$(echo "$TMPURL" | sed 's|https://www.mygingergarlickitchen.com||g');
+
+  ## Check, how many files with this url are returned.
+  NUM_FILES=$(grep -irl "^url: $SEARCHURL" $HUGO_CONTENT_DIR | wc -l | tr -d '[:space:]') ;
+  ## Check whether this number is exactly 1.
+  if [[ "$NUM_FILES" -eq 1 ]] ; then
+    #echo ">>>>>> SUCCESS! Only 1 md file is found for this url. Good work :-)" ;
+    MY_MDFILENAME=$(grep -irl "^url: $SEARCHURL" $HUGO_CONTENT_DIR) ;
+  else
+    #echo ">>>>>> ERROR: INVALID MGGK URL. Program found either zero, or more than 1 md files containing this URL." ;
+    MY_MDFILENAME="" ; ## is blank.
+  fi
+
+  ## CHECK IF THE ENTERED URL IS NOT PROPER ( PROPER-URL = /some-text-here/ )
   if [[ "$SEARCHURL" == "/" ]] || [[ "$SEARCHURL" == "" ]] ; then
     MY_MDFILENAME="" ; ## is blank.
-  else
-    MY_MDFILENAME=$(grep -irl "^url: $SEARCHURL" $HUGO_CONTENT_DIR | head -1)
   fi
-  echo "$MY_MDFILENAME"
+
+  ## RETURNING FINAL MY_MDFILENAME VAR VALUE.
+  ## THIS SHOULD BE THE ONLY VALID ECHO OUTPUT IN WHOLE FUNCTION
+  echo "$MY_MDFILENAME" ;
 }
 
 ## FUNCION_2 => REPLACES ORIGINAL TITLE IN MD FILE WITH NEW VALUE
@@ -127,6 +140,7 @@ while read line; do
     #echo $CSVTITLE
     #echo $CSVYOASTDESC
     MY_MDFILENAME=$(GET_MD_FILENAME_WITH_THIS_URL "$CSVURL")
+    MY_MDFILENAME=$(echo "$MY_MDFILENAME" | tr -d '[:space:]') ; ## leading + trailing spaces removed.
     ########
     if [[ "$MY_MDFILENAME" != "" ]] ; then
       REPLACE_ORIGINAL_TITLE_IN_THIS_MD_FILE_WITH_THIS_TITLE "$MY_MDFILENAME" "$CSVTITLE"
