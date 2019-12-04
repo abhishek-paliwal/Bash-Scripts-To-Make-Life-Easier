@@ -1,4 +1,8 @@
 #!/bin/bash
+echo "It's dangerous to run this script. Edit the original script if you want to execute it." ;
+exit 1
+
+################################################################################
 ################################################################################
 THIS_SCRIPT_NAME="598_mggk_REPLACE_BULK_TITLES_N_YOAST_DESCRIPTION_IN_MD_FILES_FROM_GOOGLE_SHEETS_CSV_FILE.sh"
 REQUIREMENTS_FILE="598_MGGK_REQUIREMENT_FILE_CSV_FROM_GOOGLE_SHEETS.CSV"
@@ -126,7 +130,7 @@ while read line; do
     ########
     if [[ "$MY_MDFILENAME" != "" ]] ; then
       REPLACE_ORIGINAL_TITLE_IN_THIS_MD_FILE_WITH_THIS_TITLE "$MY_MDFILENAME" "$CSVTITLE"
-      #REPLACE_ORIGINAL_METADESC_IN_MD_FILE_WITH_THIS_METADESC "$MY_MDFILENAME" "$CSVYOASTDESC"
+      REPLACE_ORIGINAL_METADESC_IN_MD_FILE_WITH_THIS_METADESC "$MY_MDFILENAME" "$CSVYOASTDESC"
       echo "\"$MY_MDFILENAME\",\"$COUNT\", \"$CSVURL\", \"$CSVTITLE\", \"$CSVYOASTDESC\"" >> $TMP_OUTPUT_CSVFILE
     fi
     ########
