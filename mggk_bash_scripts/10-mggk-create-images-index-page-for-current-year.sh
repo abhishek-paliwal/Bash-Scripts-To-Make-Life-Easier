@@ -17,6 +17,8 @@ DIRPATH="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/uploads/
 
 MAIN_IMAGES_FOLDER="$CURRENT_MONTH" ## the current month is the main_images_folder
 ROOT="$DIRPATH/$MAIN_IMAGES_FOLDER"
+## Changing all image permissions to be viewed by whole world.
+chmod -R 644 $ROOT/**
 
 FINALFILENAME="index-of-mggk-images-for-current-year.html"
 OUTPUT="$DIRPATH/$FINALFILENAME" ##Output filename
