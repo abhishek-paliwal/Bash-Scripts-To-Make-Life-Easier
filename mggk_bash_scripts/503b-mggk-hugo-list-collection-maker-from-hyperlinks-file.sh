@@ -24,7 +24,7 @@ cat << EOF
     #### OR
     #### sh 503b-mggk-hugo-list-collection-maker-from-hyperlinks-file.sh \$1
     ###############################################################################
-    ## NOTE: REQUIREMENTS_FILE should be present in $HOME/Desktop/Y
+    ## NOTE: REQUIREMENTS_FILE should be present in => $HOME/Desktop/Y
     ## REQUIREMENTS_FILE="503b_mylinks.txt"
     ## OR
     ## REQUIREMENTS_FILE="\$1"
@@ -129,7 +129,17 @@ echo ""  >> $OUTPUT_HTML_FILE;
 
         ## EXTRACTING META DESCRIPTION
         #### (long descriptions will be trimmed after 200 chars, so that all will have equal length)
-        META_DESCRIPTION=$( cat $TMP_CURL_FILE | grep -i 'og:description' | sed 's/<meta property=\"og:description\" content=\"//g'  | sed 's/\" \/>//g' | cut -c1-200 ) ;
+        META_DESCRIPTION=$( cat $TMP_CURL_FILE | grep -i 'og:description' | sed 's/<meta property=\"og:description\" content=\"//g'  | sed 's/\" \/>//g' | cut -c1-180 ) ;
+
+        LENGTH_METADESC=$(echo $META_DESCRIPTION | awk '{print length}') ;
+        echo "===========> LENGTH_METADESC = $LENGTH_METADESC" ;
+        ## ADD TRHEE DOTS IF LENGTH_METADESC IS > 170
+        if [[ "$LENGTH_METADESC" -lt 170 ]] ; then
+          META_DESCRIPTION=$META_DESCRIPTION
+        else
+          META_DESCRIPTION="$META_DESCRIPTION..." ;
+        fi
+
         echo "META_DESCRIPTION = $META_DESCRIPTION " ;
 
         ## EXTRACTING URL
@@ -159,7 +169,7 @@ echo ""  >> $OUTPUT_HTML_FILE;
         echo ""  >> $OUTPUT_HTML_FILE;
         echo "      <div class='col-7 col-sm-7 col-md-12 col-lg-12 col-xl-12' style='margin-top: 10px;'>
         <p style='font-family: sans-serif ; font-size: 0.9rem ; font-weight: 700;'>
-        <a href='$URL'>$COUNT.) $TITLE</a></p><p style='font-family: sans-serif ; font-size: 0.9rem ; '>$META_DESCRIPTION...<a href='$URL'> &rarr;</a>
+        <a href='$URL'>$COUNT.) $TITLE</a></p><p style='font-family: sans-serif ; font-size: 0.9rem ; '>$META_DESCRIPTION<a href='$URL'> &rarr;</a>
         </p>
         </div>" >> $OUTPUT_HTML_FILE;
 
