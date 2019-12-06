@@ -1,0 +1,109 @@
+---
+"@context": http://schema.org/
+
+"@type": Recipe
+
+name: "How to Make Paneer (Step-by-Step-Video)"
+
+description: "This two ingredient Paneer is a fresh, unsalted Indian cottage cheese which is widely used in Indian cooking especially in curries."
+
+image:
+  - https://www.mygingergarlickitchen.com/wp-content/uploads/2017/01/recipes-how-to-make-fresh-paneer-at-home-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+
+prepTime: PT45M
+
+cookTime: PT15M
+
+totalTime: PT60M
+
+recipeCategory: Main
+
+recipeCuisine: Indian
+
+recipeYield: 4
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 4.8
+  ratingCount: 26
+
+nutrition:
+  "@type": NutritionInformation
+  calories: 97 calories
+  servingSize: 100 grams
+
+author:
+  "@type": Person
+  name: Anupama Paliwal
+  brand: My Ginger Garlic Kitchen
+  url: https://www.MyGingerGarlicKitchen.com
+
+recipeNotes: "1. Soak paneer in water, cover it and keep it in the refrigerator for up to 3-4 days. Or you can freeze paneer up to 2 months.<br>2. Milk will not curdle properly if the acidic agent is not sufficient. In that case, instantly add little more yogurt/lemon juice/vinegar. Do not add too much acidic agent, use just as needed. <br>3. Do not overcook the paneer after curdling, or it may turn hard."
+
+keywords: "homemade paneer recipe video, recipe for homemade paneer, homemade paneer, paneer recipe easy, how to make paneer at home, how to make paneer from milk, indian cottage cheese recipe, how to make indian cottage cheese at home, indian cottage cheese homemade with milk and lemon juice, how to make paneer cheese, how to make paneer at home in usa, how to make paneer at home with citric acid, how to make paneer at home with vinegar, how to make paneer at home video"
+
+video:
+  "@type": "VideoObject"
+  name: "How to Make Paneer (Step-by-Step-Video)"
+  description: "This two ingredient Paneer is a fresh, unsalted Indian cottage cheese which is widely used in Indian cooking especially in curries."
+  thumbnailUrl:
+    - https://www.mygingergarlickitchen.com/wp-content/uploads/2017/01/recipes-how-to-make-fresh-paneer-at-home-anupama-paliwal-my-ginger-garlic-kitchen-FI.jpg
+    - https://www.mygingergarlickitchen.com/wp-content/youtube_video_cover_images/0uAXdgs_BTQ.jpg
+  contentUrl: "https://youtu.be/0uAXdgs_BTQ"
+  embedUrl: "https://www.youtube.com/embed/0uAXdgs_BTQ"
+  uploadDate: 2019-12-04
+
+datePublished: 2019-12-04
+
+url: https://www.mygingergarlickitchen.com/how-to-make-paneer-at-home-homemade-paneer/
+
+recipeIngredient:
+  - "!!For making paneer:"
+  - "Full-fat milk - 1 liter"
+  - "!!Choose any of the curdling agents below:"
+  - "1 cup natural yogurt (in this video i have used yogurt)"
+  - "2 cups buttermilk"
+  - "3-4 tablespoons vinegar, or as needed"
+  - "3-4 tablespoons lemon juice, or as needed"
+  - "1 tablespoon citric acid"
+
+
+recipeInstructions:
+- "@type": HowToSection
+  name: "How to make Paneer:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "Pour milk into a pan and bring it to a boil."
+  - "@type": HowToStep
+    text: "Reduce the heat to medium and add yogurt or any of the other citric/acidic agent, and stir slowly."
+  - "@type": HowToStep
+    text: "The milk should start to curdle straight away. If it doesn't curdle immediately then you can add some more curdling agent. The whole curdling process might take 2-3 minutes."
+  - "@type": HowToStep
+    text: "When the milk is fully curdled and completely separate the curds and greenish whey, then remove it from the heat."
+  - "@type": HowToStep
+    text: "Line a colander with a large piece of muslin cloth or cheesecloth and place it over a large pan or a bowl."
+  - "@type": HowToStep
+    text: "Carefully pour the mixture into the colander to collect the curds in the cheesecloth."
+  - "@type": HowToStep
+    text: "Pour ice cold water to get rid of any left-over whey or rinse it under the cold running water."
+  - "@type": HowToStep
+    text: "Take all the ends of the cloth together and twist the cloth so that the curdles milk takes the shape of a ball."
+  - "@type": HowToStep
+    text: "Squeeze out the excess liquid. The curdled milk is cool enough to handle at this point, so you can easily squeeze."
+  - "@type": HowToStep
+    text: "Leave the muslin cloth in the colander and put some weight on it."
+  - "@type": HowToStep
+    text: "Leave it like this for at least 1 hour. This process will drain all the water and you will get the soft yet firm paneer."
+- "@type": HowToSection
+  name: "How to store Paneer:"
+  itemListElement:
+  - "@type": HowToStep
+    text: "To refrigerate, pour 1 cup cold water into a large freezer safe bowl. Add a pinch of salt and stir well."
+  - "@type": HowToStep
+    text: "Once pressed for 1 hour, your paneer is finished and ready to use. Remove fresh disc shaped paneer from cheesecloth and place paneer into the water."
+  - "@type": HowToStep
+    text: "Cover and refrigerate for up to 3-4 days. You can also use it immediately."
+  - "@type": HowToStep
+    text: "Cut into desired pieces before use."
+  - "@type": HowToStep
+    text: "Your creamy, firm and light Paneer is ready to use in your favorite dish."
