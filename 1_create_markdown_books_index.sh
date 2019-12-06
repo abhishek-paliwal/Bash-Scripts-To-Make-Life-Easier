@@ -3,6 +3,7 @@
 ROOT="$HOME/Dropbox/Public/_TO_SYNC_downloads.concepro.com/dropbox-public-files/0000-WORDS-OF-WISDOM-WITH-MARKDOWN"
 HTTP="https://downloads.concepro.com/dropbox-public-files/0000-WORDS-OF-WISDOM-WITH-MARKDOWN"
 OUTPUT="$ROOT/Index-Of-All-Markdown-Books.html"
+PANDOC_TMP_FILE="$HOME/Desktop/_TMP_Automator_results_/_tmp_pandoc_file.txt"
 
 cat > $OUTPUT <<- EOM
 <!DOCTYPE html>
@@ -42,7 +43,7 @@ EOM
 
 echo "<h1>Index of Books Created by Markdown // by Abhishek Paliwal</h1>" >> $OUTPUT
 echo "<h2>Page last updated: "`date`"</h2>" >> $OUTPUT
-echo "<h2>Reading times are approximated at 200 words per minute.</h2>" >> $OUTPUT
+echo "<h2>Reading times are approximated at 212 words per minute.</h2>" >> $OUTPUT
 
 #### Calculations begin for HTML files ####
 i=0
@@ -54,13 +55,19 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
   for i in `find "$filepath" -maxdepth 1 -mindepth 1 -type f| sort | egrep -i '.html|.HTML'`; do
     file=`basename "$i"`
 
+    # Using PANDOC to convert html to plain-text, and then using it to count the reading speed ...
+    rm $PANDOC_TMP_FILE ## Remove file if already exists.
+    pandoc "$filepath/$file" -s -o "$PANDOC_TMP_FILE" ;
+    echo ">>>> PANDOC TMP TXT FILE CREATED FOR THIS => $file" ;
+
     filemd=`echo $file | cut -d "." -f 1`   ## Getting the MarkDown Filename without extension, from the HTML file.
     filemd+=".md"; ## Appending the .md extension at the end of the extracted filename.
 
     fontawesomeiconhtml="<i class='fa fa-html5 fa-2x'></i>  "
     fontawesomeiconmdcode="<i class='fa fa-file-code-o fa-lg'></i>  "
 
-    echo "    <LI id='t1'>$fontawesomeiconhtml<a href=\"$HTTP/$path/$file\">$file</a> | $fontawesomeiconmdcode<a href=\"$HTTP/$path/$filemd\">Source MarkDown</a><br>( `wc -w $filepath/$filemd | awk 'BEGIN{FS=" "} {printf("%.0f %s\n", ($1/200), "minutes reading")}'` )</LI>" >> $OUTPUT
+    #echo "    <LI id='t1'>$fontawesomeiconhtml <a href=\"$HTTP/$path/$file\">$file</a> | $fontawesomeiconmdcode <a href=\"$HTTP/$path/$filemd\">Source MarkDown</a><br>( `wc -w $filepath/$filemd | awk 'BEGIN{FS=" "} {printf("%.0f %s\n", ($1/212), "minutes reading")}'` )</LI>" >> $OUTPUT
+    echo "    <LI id='t1'>$fontawesomeiconhtml <a href=\"$HTTP/$path/$file\">$file</a> ( `wc -w $PANDOC_TMP_FILE | awk 'BEGIN{FS=" "} {printf("%.0f %s %d %s\n", ($1/212), "minutes reading // ", $1, "words")}'` )</LI>" >> $OUTPUT
   done
   echo "  </OL>" >> $OUTPUT
 done
@@ -103,4 +110,4 @@ echo "</OL>" >> $OUTPUT
 echo "</body>" >> $OUTPUT
 echo "</html>" >> $OUTPUT
 
-echo "######## Index Successfully created. ######### ";
+echo "######## Marrkdown + HTML files Index Successfully created. ######### ";
