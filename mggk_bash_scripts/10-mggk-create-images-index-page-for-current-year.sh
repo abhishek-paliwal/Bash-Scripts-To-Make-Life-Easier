@@ -270,7 +270,7 @@ for filepath in `find "$ROOT" -maxdepth 0 -mindepth 0 -type d| sort -nr`; do
 
 ## Printing the image dimensions for everything, except GIFs because they produce LOOOOONG outputs for all GIF frames. ##
     if [ "$filetype" != 'GIF' ]; then
-      echo "<div class='col-6 col-sm-4 col-md-3 col-lg-2'><div class='pali'><a href='$path/$file'><img src='$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><textarea>https://www.mygingergarlickitchen.com/$file</textarea><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: deeppink; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
+      echo "<div class='col-6 col-sm-4 col-md-3 col-lg-2'><div class='pali'><a href='$path/$file'><img src='$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><textarea>https://www.mygingergarlickitchen.com/wp-content/uploads/$CURRENT_YEAR/$file</textarea><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: deeppink; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
     else
       echo "<div class='col-6 col-sm-4 col-md-3 col-lg-2'><div class='pali'><a href='$path/$file'><img src='$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: deeppink ; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
     fi
