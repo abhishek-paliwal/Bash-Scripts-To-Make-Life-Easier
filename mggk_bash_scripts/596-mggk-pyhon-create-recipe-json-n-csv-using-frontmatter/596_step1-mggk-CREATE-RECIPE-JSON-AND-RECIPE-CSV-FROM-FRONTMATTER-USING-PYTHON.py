@@ -1,3 +1,12 @@
+THIS_PYTHON_SCRIPT_INFO = """
+  ## THIS PYTHON SCRIPT TAKES AN MD_FILENAME AS COMMAND LINE ARGUMENT, THEN EXTRACTS
+  ## THE mggk_json_recipe YAML FRONTMATTER CONTENT, PARSES IT AND FINALLY CREATES
+  ## A RECIPE JSON AND A RECIPE CSV FILE. THIS CSV FILE
+  ## IS THEN TO BE READ BY 513B SCRIPT FOR MAKING THE RECIPE JSON AND HTML BLOCKS.
+"""
+print(THIS_PYTHON_SCRIPT_INFO)
+################################################################################
+
 import frontmatter
 import io
 import sys
