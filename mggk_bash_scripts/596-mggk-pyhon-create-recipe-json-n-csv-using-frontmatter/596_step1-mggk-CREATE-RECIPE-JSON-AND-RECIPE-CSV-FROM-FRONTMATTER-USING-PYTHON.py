@@ -131,6 +131,7 @@ recipeIngredient = recipeIngredient.replace('[', '')
 recipeIngredient = recipeIngredient.replace(']', '')
 recipeIngredient = recipeIngredient.replace('\',' , '\'\n')
 recipeIngredient = recipeIngredient.replace('!!', '\n!!')
+recipeIngredient = recipeIngredient.replace('\'', '')
 MY_INGREDIENTS_FINAL = recipeIngredient
 print(MY_INGREDIENTS_FINAL)
 print("==============================================================")
@@ -157,6 +158,7 @@ recipeInstructions = recipeInstructions.replace('},', '')
 recipeInstructions = recipeInstructions.replace('}', '')
 recipeInstructions = recipeInstructions.replace('\',', '')
 recipeInstructions = recipeInstructions.replace('!!', '\n!!')
+recipeInstructions = recipeInstructions.replace('\'', '')
 MY_INSTRUCTIONS_FINAL = recipeInstructions
 
 print('AFTER: ' + MY_INSTRUCTIONS_FINAL)
