@@ -37,8 +37,10 @@ fi
 TODAY=$(date +%Y%m%d) ;
 TMP_LOGFILE="$MY_PWD/${TODAY}_TMP_PROGRAM_LOGFILE_517_SCRIPT.TXT" ;
 ## INITILIZING TMP_LOGFILE
-echo "FILE CREATED AT: $(date)" > $TMP_LOGFILE
-echo "FILE CREATED BY: $THIS_SCRIPT_NAME" >> $TMP_LOGFILE
+echo "==================================================" > $TMP_LOGFILE
+echo "PROGRAM LOG DETAILS: See which CSV files are deleted." >> $TMP_LOGFILE
+echo "LOGFILE CREATED AT: $(date)" >> $TMP_LOGFILE
+echo "LOGFILE CREATED BY: $THIS_SCRIPT_NAME" >> $TMP_LOGFILE
 echo "==================================================" >> $TMP_LOGFILE
 
 ################################################################################
