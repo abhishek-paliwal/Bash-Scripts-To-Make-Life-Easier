@@ -10,14 +10,13 @@
 ## SKATING CLASSES
 20191209,16:10:00,deeppink,Skating-Class
 ## SWIMMING CLASSES
-20191213,19:20:00,DeepSkyBlue,Swimming-Class
 20191216,19:20:00,DeepSkyBlue,Swimming-Class (Replacement for class which was cancelled on Nov 1 2019)
+20191217,09:00:00,DeepSkyBlue,Swimming-Class Booking
 ## OTHER EVENTS
 20191225,00:00:00,Red,Christmas Eve
 20191231,11:59:00,Red,New Year Eve
 20200114,00:00:00,orange,Makar Sankranti
 ## ADO EVENTS
-20191210,13:15:00,yellow, Meeting as school with Teacher
 20191218,14:30:00,yellow, Last english class of 2019
 20200108,14:30:00,yellow, First english class of 2020
 20191212,08:15:00,red, CHRISTMAS PARTY AT SCHOOL WITH PARENTS
