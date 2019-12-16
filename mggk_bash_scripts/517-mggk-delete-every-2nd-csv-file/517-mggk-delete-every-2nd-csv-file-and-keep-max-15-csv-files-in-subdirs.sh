@@ -23,7 +23,7 @@ EOF
 ## ASSIGNING THE MAIN PWD DEPENDING UPON WHETHER THIS PROGRAM IS RUN: ON VPS SERVER
 ## OR ELSEWHERE LOCALLY
 if [ $USER = "ubuntu" ]; then
-  MY_PWD="$HOME/scripts-made-by-pali/600-mggk-ai-nlp-scripts"
+  MY_PWD="$HOME/scripts-made-by-pali/517-mggk-delete-every-2nd-csv-file"
   echo "USER = $USER // USER is ubuntu. Hence, MY_PWD will be: $MY_PWD " ;
 else
   MY_PWD="$HOME/Desktop/X"
