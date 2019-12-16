@@ -24,9 +24,11 @@ EOF
 ## OR ELSEWHERE LOCALLY
 if [ $USER = "ubuntu" ]; then
   MY_PWD="$HOME/scripts-made-by-pali/517-mggk-delete-every-2nd-csv-file"
+  CSVDIR="$HOME/scripts-made-by-pali/600-mggk-ai-nlp-scripts"
   echo "USER = $USER // USER is ubuntu. Hence, MY_PWD will be: $MY_PWD " ;
 else
   MY_PWD="$HOME/Desktop/X"
+  CSVDIR="$HOME/Desktop/X"
   echo "USER = $USER // USER is not ubuntu. Hence, MY_PWD will be: $MY_PWD " ;
 fi
 ##------------------------------------------------------------------------------
@@ -55,7 +57,7 @@ FUNC_DELETE_EVERY_2ND_CSVFILE () {
 
 ################################################################################
 ## GOING THROUGH ALL THE DIRECTORIES STARTING WITH 601*
-for dirname in $(ls -d1 $MY_PWD/601*/); do
+for dirname in $(ls -d1 $CSVDIR/601*/); do
   echo "" | tee -a $TMP_LOGFILE
   echo; echo "#######################################################################";
   echo "=> CURRENT DIRECTORY = $dirname" ;
