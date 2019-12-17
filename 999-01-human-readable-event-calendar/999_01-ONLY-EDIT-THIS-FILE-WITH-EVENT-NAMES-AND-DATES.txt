@@ -7,11 +7,26 @@
 #### DATE AS YYYYMMDD,TIME_OF_EVENT,HIGHLIGHT_COLOR,EVENT-NAME(CAN HAVE SPACES)
 ##############################################################################
 ##############################################################################
-## SKATING CLASSES
-20191209,16:10:00,deeppink,Skating-Class
 ## SWIMMING CLASSES
-20191216,19:20:00,DeepSkyBlue,Swimming-Class (Replacement for class which was cancelled on Nov 1 2019)
-20191217,09:00:00,DeepSkyBlue,Swimming-Class Booking
+20200107,16:45:00,DeepSkyBlue,Swimming-Class
+20200114,16:45:00,DeepSkyBlue,Swimming-Class
+20200121,16:45:00,DeepSkyBlue,Swimming-Class
+20200128,16:45:00,DeepSkyBlue,Swimming-Class
+20200204,16:45:00,DeepSkyBlue,Swimming-Class
+20200211,16:45:00,DeepSkyBlue,Swimming-Class
+20200225,16:45:00,DeepSkyBlue,Swimming-Class
+20200303,16:45:00,DeepSkyBlue,Swimming-Class
+20200310,16:45:00,DeepSkyBlue,Swimming-Class
+20200317,16:45:00,DeepSkyBlue,Swimming-Class
+20200324,16:45:00,DeepSkyBlue,Swimming-Class
+20200331,16:45:00,DeepSkyBlue,Swimming-Class
+20200407,16:45:00,DeepSkyBlue,Swimming-Class
+20200414,16:45:00,DeepSkyBlue,Swimming-Class
+20200421,16:45:00,DeepSkyBlue,Swimming-Class
+20200428,16:45:00,DeepSkyBlue,Swimming-Class
+20200505,16:45:00,DeepSkyBlue,Swimming-Class
+20200512,16:45:00,DeepSkyBlue,Swimming-Class
+20200519,16:45:00,DeepSkyBlue,Swimming-Class
 ## OTHER EVENTS
 20191225,00:00:00,Red,Christmas Eve
 20191231,11:59:00,Red,New Year Eve
@@ -19,5 +34,4 @@
 ## ADO EVENTS
 20191218,14:30:00,yellow, Last english class of 2019
 20200108,14:30:00,yellow, First english class of 2020
-20191212,08:15:00,red, CHRISTMAS PARTY AT SCHOOL WITH PARENTS
 ## HOME EVENTS
