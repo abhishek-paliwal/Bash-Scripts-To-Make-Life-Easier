@@ -124,12 +124,12 @@ echo ""  >> $OUTPUT_HTML_FILE;
         curl -s $line > $TMP_CURL_FILE ;
 
         ## EXTRACTING TITLE
-        TITLE=$( cat $TMP_CURL_FILE | grep -i 'og:title' | sed 's/<meta property=\"og:title\" content=\"//g'  | sed 's/\" \/>//g' ) ;
+        TITLE=$( cat $TMP_CURL_FILE | grep -i 'og:title' | sed 's/<meta property=\"og:title\" content=\"//g'  | sed 's/\" \/>//g' | sed 's|">||g') ;
         echo "TITLE = $TITLE " ;
 
         ## EXTRACTING META DESCRIPTION
         #### (long descriptions will be trimmed after 200 chars, so that all will have equal length)
-        META_DESCRIPTION=$( cat $TMP_CURL_FILE | grep -i 'og:description' | sed 's/<meta property=\"og:description\" content=\"//g'  | sed 's/\" \/>//g' | cut -c1-180 ) ;
+        META_DESCRIPTION=$( cat $TMP_CURL_FILE | grep -i 'og:description' | sed 's/<meta property=\"og:description\" content=\"//g'  | sed 's/\" \/>//g' | sed 's|">||g' | cut -c1-180 ) ;
 
         LENGTH_METADESC=$(echo $META_DESCRIPTION | awk '{print length}') ;
         echo "===========> LENGTH_METADESC = $LENGTH_METADESC" ;
@@ -143,11 +143,11 @@ echo ""  >> $OUTPUT_HTML_FILE;
         echo "META_DESCRIPTION = $META_DESCRIPTION " ;
 
         ## EXTRACTING URL
-        URL=$( cat $TMP_CURL_FILE | grep -i 'og:url' | sed 's/<meta property=\"og:url\" content=\"//g'  | sed 's/\" \/>//g' ) ;
+        URL=$( cat $TMP_CURL_FILE | grep -i 'og:url' | sed 's/<meta property=\"og:url\" content=\"//g'  | sed 's/\" \/>//g'  | sed 's|">||g') ;
         echo "PAGE URL = $URL " ;
 
         ## EXTRACTING IMAGE URL
-        IMAGE=$( cat $TMP_CURL_FILE | grep -i 'og:image:secure_url' | sed 's/<meta property=\"og:image:secure_url\" content=\"//g'  | sed 's/\" \/>//g' ) ;
+        IMAGE=$( cat $TMP_CURL_FILE | grep -i 'og:image:secure_url' | sed 's/<meta property=\"og:image:secure_url\" content=\"//g'  | sed 's/\" \/>//g'  | sed 's|">||g') ;
         echo "IMAGE = $IMAGE " ;
 
           ## DOWNLOADING THE IMAGE INTO A SPECIFIC FOLDER (folder will be created if not present already)
