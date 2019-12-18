@@ -198,6 +198,7 @@ title: $REQUIREMENTS_FILE (2019 edition)
 author: Anupama Paliwal
 type: post
 date: $DATEVAR
+first_published_on: $DATEVAR
 url: /$REQUIREMENTS_FILE/
 featured_image:
 
