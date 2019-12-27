@@ -1,4 +1,6 @@
 2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/uploads
 2019-HUGO-MGGK-WEBSITE-OFFICIAL/public
+2019-HUGO-MGGK-WEBSITE-OFFICIAL/.git
 ZZ-HUGO-TEST/static/wp-content/uploads
 ZZ-HUGO-TEST/public
+ZZ-HUGO-TEST/.git
