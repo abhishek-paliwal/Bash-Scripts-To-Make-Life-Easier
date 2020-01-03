@@ -283,7 +283,7 @@ for filepath in `find "$ROOT" -maxdepth 0 -mindepth 0 -type d| sort -nr`; do
 done
 
 #### Calculations end ####
-echo "<footer class='theEndFooter'><p>&copy; My Ginger Garlic Kitchen 2019</p></footer>" >> $OUTPUT
+echo "<footer class='theEndFooter'><p>&copy; My Ginger Garlic Kitchen 2020</p></footer>" >> $OUTPUT
 
 echo "</div><!-- Container DIV ENDS -->" >> $OUTPUT
 
