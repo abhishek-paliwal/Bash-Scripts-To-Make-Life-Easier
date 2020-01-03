@@ -269,7 +269,7 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort -nr`; do
 done
 
 #### Calculations end ####
-echo "<footer class='theEndFooter'><p>&copy; Adoria 2019</p></footer>" >> $OUTPUT
+echo "<footer class='theEndFooter'><p>&copy; Adoria 2020</p></footer>" >> $OUTPUT
 
 echo "</div><!-- Container DIV ENDS -->" >> $OUTPUT
 
