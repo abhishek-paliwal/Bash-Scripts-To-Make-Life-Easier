@@ -63,8 +63,15 @@ rm _tmp_*.txt ;
 
 for x in *mp3;
     do
-        ## Putting the duration of this audio file in tmp file, through AFINFO built-in command
-        afinfo $x | grep -i 'duration' | cut -d ':' -f 2 > _tmp_song.txt ;
+        ## Putting the duration of this audio file in tmp file, through AFINFO built-in command (ON MAC OS)
+        ## OR on linux based machines, we will use ffmpeg's ffprobe command to get length in seconds.
+        ## (but first check, whether this computer is raspberry pi)
+        if [ "$USER" == "pi" ]
+        then
+          ffprobe -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$x" 2>/dev/null > _tmp_song.txt ;
+        else
+          afinfo $x | grep -i 'duration' | cut -d ':' -f 2 > _tmp_song.txt ;
+        fi
 
         ## Extracting the first part before dot
         SONG_LENGTH=`cut -d '.' -f 1 _tmp_song.txt` ;
@@ -110,7 +117,14 @@ cat $SONG_DIR/_tmp_chosen_sorted.txt
 ## Choose one random line finally: Use gshuf tools from Homebrew coreutils
 ## This file will then be used for making video for FFMPEG
 ## The idea here is to choose an audio file which has a duration longer than the video itself
-MY_RANDOM_SONG=`gshuf -n 1 $SONG_DIR/_tmp_chosen_sorted.txt`
+## (but first check, whether this computer is raspberry pi)
+if [ "$USER" == "pi" ]
+then
+  MY_RANDOM_SONG=$(shuf -n 1 $SONG_DIR/_tmp_chosen_sorted.txt) ;
+else
+  MY_RANDOM_SONG=$(gshuf -n 1 $SONG_DIR/_tmp_chosen_sorted.txt) ;
+fi
+
 echo; echo "(IN-PROGRAM) Chosen random file: "$MY_RANDOM_SONG ; echo ;
 
 ## Open Directory to see status
