@@ -8,6 +8,7 @@
 
 PWD=`pwd`;
 cd $PWD ; ## CD to present working directory
+START_TIME=$(date) ;
 
 ######################################################################
 ## Check if PWD is not $HOME . Only then, it will run.
@@ -38,18 +39,32 @@ d) mggk-royalty-free-music-from-youtube
 echo "Enter your choice (a/b/c/d): " ;
 read song_dir
 
+## ASSIGNING MUSIC DIRECTORIES (but first check, whether this computer is raspberry pi)
+if [ "$USER" == "pi" ];
+then
+  MUSIC_PATH="/home/_AUDIOJUNGLE_MUSIC" ;
+else
+  MUSIC_PATH="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC" ;
+fi
+
+## CASES
 case $song_dir in
     a) MY_SONG_DIR="$HOME/Desktop/_TMP_SONGS_" ;;
-    b) MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/bollywood-music" ;;
-    c) MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/royalty-free-music" ;;
-    d) MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/mggk-royalty-free-music-from-youtube" ;;
+    b) MY_SONG_DIR="$MUSIC_PATH/bollywood-music" ;;
+    c) MY_SONG_DIR="$MUSIC_PATH/royalty-free-music" ;;
+    d) MY_SONG_DIR="$MUSIC_PATH/mggk-royalty-free-music-from-youtube" ;;
     *) echo "Invalid option $song_dir" ;;
 esac
 
 echo "Chosen MY_SONG_DIR is: $MY_SONG_DIR " ; echo;
 
-## THIS FILE HAS TO BE PRESENT FOR FIRST TMP VIDEO
-DEMO_AUDIO_FILE="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/00_ffmpeg_demo_audio.mp3"
+## THIS FILE HAS TO BE PRESENT FOR FIRST TMP VIDEO (but first check, whether this computer is raspberry pi)
+if [ "$USER" == "pi" ];
+then
+  DEMO_AUDIO_FILE="$MUSIC_PATH/00_ffmpeg_demo_audio.mp3" ;
+else
+  DEMO_AUDIO_FILE="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/00_ffmpeg_demo_audio.mp3" ;
+fi
 
 ## NOW PRINTING THE DIMENSIONS OF ALL IMAGES WITH HOW MANY IMAGES THEY CORRESPOND
 echo; echo "Now printing the dimensions of all images with how many images they correspond to: ";
@@ -208,8 +223,16 @@ FINAL_VIDEO_FILENAME="$AUDIO_LENGTH_INTEGER""-sec-""$OUTPUT_VIDEO_FINAL" ;
 ## Choose a random audio file which has a duration longer than the video itself
 ## First, run the script to sort the audio files based on duration
 ## this will create a tmp txt file. That file will be used below with gshuf
-sh $HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/201_sorting_mp3_files_by_duration.sh "$AUDIO_LENGTH_INTEGER" "$MY_SONG_DIR"
-AUDIO_FILE=`gshuf -n 1 $MY_SONG_DIR/_tmp_chosen_sorted.txt`
+#### But first, checking whether this program is running on raspberry pi
+if [ "$USER" == "pi" ];
+then
+  bash $MUSIC_PATH/201_sorting_mp3_files_by_duration.sh "$AUDIO_LENGTH_INTEGER" "$MY_SONG_DIR"
+  AUDIO_FILE=$(shuf -n 1 $MY_SONG_DIR/_tmp_chosen_sorted.txt)
+else
+  sh $HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/201_sorting_mp3_files_by_duration.sh "$AUDIO_LENGTH_INTEGER" "$MY_SONG_DIR"
+  AUDIO_FILE=$(gshuf -n 1 $MY_SONG_DIR/_tmp_chosen_sorted.txt)
+fi
+
 echo; echo "(REAL) Chosen random file: "$AUDIO_FILE ; echo ;
 #############################################################################
 
@@ -238,20 +261,27 @@ echo "=======> DONE: Moving FINAL VIDEO file to original parent directory ...." 
 touch _tmp_variables.txt ## Create an empty tmp file
 rm _tmp_variables.txt ## Delete if file exists
 
+END_TIME=$(date) ;
+
 echo "
-\n OUTPUT_DIR: $OUTPUT_DIR
-\n AUDIO_FILE: $AUDIO_FILE
-\n TMP_OUTPUT_VIDEO: $TMP_OUTPUT_VIDEO
-\n OUTPUT_VIDEO_FINAL: $OUTPUT_VIDEO_FINAL
-\n TIME_PER_IMAGE: $TIME_PER_IMAGE
-\n AUDIO_LENGTH: $AUDIO_LENGTH
-\n AUDIO_LENGTH_INTEGER: $AUDIO_LENGTH_INTEGER
-\n AUDIOFADE_DURATION=: $AUDIOFADE_DURATION
-\n AUDIO_LENGTH_MINUS_FADE: $AUDIO_LENGTH_MINUS_FADE
-\n FINAL_VIDEO_FILENAME: $FINAL_VIDEO_FILENAME
-\n FULL_COVER_TEXT: $FULL_COVER_TEXT
-\n FINAL_VIDEO_FILENAME_NEW: $FINAL_VIDEO_FILENAME_NEW
+OUTPUT_DIR: $OUTPUT_DIR
+AUDIO_FILE: $AUDIO_FILE
+TMP_OUTPUT_VIDEO: $TMP_OUTPUT_VIDEO
+OUTPUT_VIDEO_FINAL: $OUTPUT_VIDEO_FINAL
+TIME_PER_IMAGE: $TIME_PER_IMAGE
+AUDIO_LENGTH: $AUDIO_LENGTH
+AUDIO_LENGTH_INTEGER: $AUDIO_LENGTH_INTEGER
+AUDIOFADE_DURATION=: $AUDIOFADE_DURATION
+AUDIO_LENGTH_MINUS_FADE: $AUDIO_LENGTH_MINUS_FADE
+FINAL_VIDEO_FILENAME: $FINAL_VIDEO_FILENAME
+FULL_COVER_TEXT: $FULL_COVER_TEXT
+FINAL_VIDEO_FILENAME_NEW: $FINAL_VIDEO_FILENAME_NEW
+START_TIME: $START_TIME
+END_TIME:   $END_TIME
 " > _tmp_variables.txt
+
+echo ; echo ">>>> PRINTING PROGRAM SUMMARY: " ; echo ;
+cat _tmp_variables.txt
 
 ## CLEANING UP AND REMOVING UNNECESSARY FILES
 #rm $TMP_OUTPUT_VIDEO
