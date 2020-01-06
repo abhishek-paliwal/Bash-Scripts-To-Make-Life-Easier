@@ -31,7 +31,7 @@ cat _TMP_LIST.TXT | sort -n | uniq -c | sort -k2nr ;
 
 ## NOW PRINTING IMAGE WIDTH TO HEIGHT RATIOS FOR ALL IMAGES
 echo; echo "Now Printing Image Width:Height Ratios For All Images (jpg, png, JPG, PNG): [... wait a couple of seconds, it takes a while to calculate ratios ...]";
-find . -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.JPG -o -iname \*.PNG \) -maxdepth 1 -exec magick "{}" -format "%[fx:w/h]\n" info: \; | sort -n | uniq -c | sort -nr
+find . -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.JPG -o -iname \*.PNG \) -maxdepth 1 -exec magick "{}" -format "%[fx:w/h]\n" info: \; | sort -n | awk '{printf "%.2f\n",$1}' | uniq -c | sort -nr
 
 ########################################################
 
