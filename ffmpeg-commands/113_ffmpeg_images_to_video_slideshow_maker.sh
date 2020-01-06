@@ -8,7 +8,6 @@
 
 PWD=`pwd`;
 cd $PWD ; ## CD to present working directory
-START_TIME=$(date +%Y-%m-%dT%H:%M:%S) ;
 
 ######################################################################
 ## Check if PWD is not $HOME . Only then, it will run.
@@ -106,11 +105,15 @@ esac
 echo "Chosen VIDEO_RES is: $VIDEO_RES " ; echo;
 ################################################
 
-OUTPUT_DIR="_delete_this_folder"
-mkdir $OUTPUT_DIR
+##------------------------------------------------------------------------------
+## ASSIGNING CURRENT TIME AS PROGRAM'S START_TIME
+START_TIME=$(date +%Y-%m-%dT%H:%M:%S) ;
+##------------------------------------------------------------------------------
 
 TMP_OUTPUT_VIDEO="video_slideshow.mp4"
 OUTPUT_VIDEO_FINAL="video_slideshow_with_audiofade.mp4"
+OUTPUT_DIR="_delete_this_folder"
+mkdir $OUTPUT_DIR
 
 ###########################################
 ## NOW, WE'LL DUPLICATE THE FIRST IMAGE, AND THEN CREATE A COVER IMAGE FROM IT
@@ -261,14 +264,16 @@ echo "=======> DONE: Moving FINAL VIDEO file to original parent directory ...." 
 touch _tmp_variables.txt ## Create an empty tmp file
 rm _tmp_variables.txt ## Delete if file exists
 
+##------------------------------------------------------------------------------
 ## ASSIGNING CURRENT TIME AS PROGRAM'S END_TIME
 END_TIME=$(date +%Y-%m-%dT%H:%M:%S) ;
+##------------------------------------------------------------------------------
 
 ## FINDING HOW MUCH TIME DID THE PROGRAM TOOK TO RUN
 #### But first, checking whether this program is running on raspberry pi
 if [ "$USER" == "pi" ];
 then
-  source $MUSIC_PATH/9999_MGGK_TEMPLATE_SCRIPTS/9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh ;
+  source $MUSIC_PATH/9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh ;
   DATE_DIFFERENCE_MINS=$(FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS_on_MacOS_or_Linux $START_TIME $END_TIME "minutes") ;
 else
   source $HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/9999_MGGK_TEMPLATE_SCRIPTS/9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh ;
