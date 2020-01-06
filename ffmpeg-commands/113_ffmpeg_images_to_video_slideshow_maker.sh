@@ -8,7 +8,7 @@
 
 PWD=`pwd`;
 cd $PWD ; ## CD to present working directory
-START_TIME=$(date) ;
+START_TIME=$(date +%Y-%m-%dT%H:%M:%S) ;
 
 ######################################################################
 ## Check if PWD is not $HOME . Only then, it will run.
@@ -261,23 +261,23 @@ echo "=======> DONE: Moving FINAL VIDEO file to original parent directory ...." 
 touch _tmp_variables.txt ## Create an empty tmp file
 rm _tmp_variables.txt ## Delete if file exists
 
-END_TIME=$(date) ;
+END_TIME=$(date +%Y-%m-%dT%H:%M:%S) ;
 
 echo "
-OUTPUT_DIR: $OUTPUT_DIR
-AUDIO_FILE: $AUDIO_FILE
-TMP_OUTPUT_VIDEO: $TMP_OUTPUT_VIDEO
-OUTPUT_VIDEO_FINAL: $OUTPUT_VIDEO_FINAL
-TIME_PER_IMAGE: $TIME_PER_IMAGE
-AUDIO_LENGTH: $AUDIO_LENGTH
-AUDIO_LENGTH_INTEGER: $AUDIO_LENGTH_INTEGER
-AUDIOFADE_DURATION=: $AUDIOFADE_DURATION
-AUDIO_LENGTH_MINUS_FADE: $AUDIO_LENGTH_MINUS_FADE
-FINAL_VIDEO_FILENAME: $FINAL_VIDEO_FILENAME
-FULL_COVER_TEXT: $FULL_COVER_TEXT
+OUTPUT_DIR              : $OUTPUT_DIR
+AUDIO_FILE              : $AUDIO_FILE
+TMP_OUTPUT_VIDEO        : $TMP_OUTPUT_VIDEO
+OUTPUT_VIDEO_FINAL      : $OUTPUT_VIDEO_FINAL
+TIME_PER_IMAGE          : $TIME_PER_IMAGE
+AUDIO_LENGTH            : $AUDIO_LENGTH seconds
+AUDIO_LENGTH_INTEGER    : $AUDIO_LENGTH_INTEGER
+AUDIOFADE_DURATION=     : $AUDIOFADE_DURATION seconds
+AUDIO_LENGTH_MINUS_FADE : $AUDIO_LENGTH_MINUS_FADE
+FINAL_VIDEO_FILENAME    : $FINAL_VIDEO_FILENAME
+FULL_COVER_TEXT         : $FULL_COVER_TEXT
 FINAL_VIDEO_FILENAME_NEW: $FINAL_VIDEO_FILENAME_NEW
-START_TIME: $START_TIME
-END_TIME:   $END_TIME
+START_TIME              : $START_TIME
+END_TIME                : $END_TIME
 " > _tmp_variables.txt
 
 echo ; echo ">>>> PRINTING PROGRAM SUMMARY: " ; echo ;
