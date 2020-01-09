@@ -1,6 +1,6 @@
 #!/bin/bash
-#echo "It's dangerous to run this script. Edit this original script if you want to execute it." ;
-#exit 1
+echo "It's dangerous to run this script. Edit this original script if you want to execute it." ;
+exit 1
 
 ################################################################################
 ################################################################################
@@ -129,22 +129,31 @@ REPLACE_ORIGINAL_METADESC_IN_MD_FILE_WITH_THIS_METADESC () {
 COUNT=0
 while read line; do
   ((COUNT++))
+  ## EXTRACT 1ST COLUMN, IF 1ST COLUMN VALUE IS A URL
   CSVURL=$(echo "$line" | csvcut -c 1) ## getting first_column
+
+  ## EXTRACT 1ST COLUMN, IF 1ST COLUMN VALUE IS THE MD FILENAME FULL PATH (uncomment the following 3 lines if needed)
+  #FILENAME_COL_VALUE=$(echo "$line" | csvcut -c 1) ; ## getting first_column
+  #CSVURL_TMP=$(basename $FILENAME_COL_VALUE | sed 's/.md//g' | cut -c 20- ) ;
+  #CSVURL="/$CSVURL_TMP/" ;
+
+  ## EXTRACT 2ND AND 3RD COLUMNS
   CSVTITLE=$(echo "$line" | csvcut -c 2 | sed -e 's/"//g' -e 's/&/and/g') ## getting second_column
   CSVYOASTDESC=$(echo "$line" | csvcut -c 3 | sed -e 's/"//g' -e 's/&/and/g') ## getting third_column
 
   if [[ $CSVTITLE != "#N/A" ]]; then
     #echo
     echo "Currently working with line => $COUNT" ;
-    #echo $CSVURL
+    echo ">>>> CSV_URL = $CSVURL" ;
     #echo $CSVTITLE
     #echo $CSVYOASTDESC
+
     MY_MDFILENAME=$(GET_MD_FILENAME_WITH_THIS_URL "$CSVURL")
     MY_MDFILENAME=$(echo "$MY_MDFILENAME" | tr -d '[:space:]') ; ## leading + trailing spaces removed.
     ########
     if [[ "$MY_MDFILENAME" != "" ]] ; then
       REPLACE_ORIGINAL_TITLE_IN_THIS_MD_FILE_WITH_THIS_TITLE "$MY_MDFILENAME" "$CSVTITLE"
-      #REPLACE_ORIGINAL_METADESC_IN_MD_FILE_WITH_THIS_METADESC "$MY_MDFILENAME" "$CSVYOASTDESC"
+      REPLACE_ORIGINAL_METADESC_IN_MD_FILE_WITH_THIS_METADESC "$MY_MDFILENAME" "$CSVYOASTDESC"
       echo "\"$MY_MDFILENAME\",\"$COUNT\", \"$CSVURL\", \"$CSVTITLE\", \"$CSVYOASTDESC\"" >> $TMP_OUTPUT_CSVFILE
     fi
     ########
