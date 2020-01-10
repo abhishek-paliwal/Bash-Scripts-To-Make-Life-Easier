@@ -110,6 +110,9 @@ except:
 ######################################################################
 ## PROCESSING SOME VARIABLES FURTHER
 ######################################################################
+## MODIFYING RECIPE DATE
+RECIPE_DATE = RECIPE_DATE.replace('\'', '') ;
+
 ## MODIFYING YOUTUBE_VIDEO_ID
 YOUTUBE_VIDEO_ID = str(YOUTUBE_VIDEO_ID).replace('https://www.youtube.com/embed/', '')
 
