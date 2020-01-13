@@ -148,9 +148,18 @@ BASENAME_FOLDER=`echo $tmp_varname | sed 's/\ /-/g' | sed 's/-/ /g' | sed 's/_/ 
 FULL_COVER_TEXT="$BASENAME_FOLDER\n$NUM_FILES photos // $LENGTH_OF_SLIDESHOW_IN_MINUTES // $VIDEO_RES" ;
 echo "FULL COVER TEXT: $FULL_COVER_TEXT" ;
 
-## now writing text onto the image using imagemagick composite
-## get list of font names by running: convert -list font | grep "Font:"
-convert -background '#00000085' -fill white -font /Users/abhishek/Library/Fonts/BebasNeue\ Regular.ttf -gravity center -size ${width}x360 caption:"$FULL_COVER_TEXT" $COVER_IMAGE +swap -gravity south -composite $NEW_COVER_IMAGE ;
+## Now writing text onto the image using imagemagick composite
+## Get list of font names by running: convert -list font | grep "Font:"
+
+## THIS FILE HAS TO BE PRESENT FOR FIRST TMP VIDEO (but first check, whether this computer is raspberry pi)
+FONT_TO_USE="Times\ New\ Roman.ttf" ## Default Font
+## Changing the default font based upon which machine it's being run on.
+if [ "$USER" == "pi" ]; then FONT_TO_USE="/home/_AUDIOJUNGLE_MUSIC/Montserrat-Regular.ttf" ; fi
+if [ "$USER" == "abhishek" ]; then FONT_TO_USE="/Users/$USER/Library/Fonts/BebasNeue\ Regular.ttf" ; fi
+if [ "$USER" == "anu" ]; then FONT_TO_USE="/Users/$USER/Library/Fonts/Mission-Script.otf" ; fi
+
+## Creating title slide
+convert -background '#00000085' -fill white -font $FONT_TO_USE -gravity center -size ${width}x360 caption:"$FULL_COVER_TEXT" $COVER_IMAGE +swap -gravity south -composite $NEW_COVER_IMAGE ;
 
 echo "========> DONE: TEXT WRITTEN TO COVER IMAGE." ;
 rm $COVER_IMAGE ; #delete old and unnecessary cover image tmp file#
