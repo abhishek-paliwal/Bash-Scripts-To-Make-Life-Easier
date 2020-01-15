@@ -1,0 +1,307 @@
+Output produced by cronjob at: 20200114T05:00:01
+##################################################
+/home/pi
+├── Desktop
+├── Documents
+├── Downloads
+├── MagPi
+├── Music
+├── pali_personal
+│   └── my-pi-scripts
+│       ├── 999-imagemagick-collages-by-concatenating-images.sh
+│       ├── create_pi_backup.sh
+│       ├── my-pi-temp.sh
+│       ├── _output_data_from_scripts
+│       │   ├── 20200113-pi01-data_temperature_output.csv
+│       │   ├── 20200113-pi02-print-directory-structure-to-file-output.txt
+│       │   ├── 20200114-pi01-data_temperature_output.csv
+│       │   ├── 20200114-pi02-print-directory-structure-to-file-output.txt
+│       │   └── crontab_backup_for_user.txt
+│       ├── pi00-copy-important-files-to-output-dir.sh
+│       ├── pi01-temperature_plot_data_creator.sh
+│       ├── pi02-print-directory-structure-to-file.sh
+│       └── screen-lock.sh
+├── Pictures
+├── Public
+├── Templates
+└── Videos
+
+12 directories, 12 files
+##################################################
+/home/_AUDIOJUNGLE_MUSIC
+├── 00_ffmpeg_demo_audio.mp3
+├── 113_ffmpeg_images_to_video_slideshow_maker.sh
+├── 201_sorting_mp3_files_by_duration.sh
+├── 9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh
+├── bollywood-music
+│   ├── 02m-43s+tere-naal-nachna.mp3
+│   ├── 03m-04s+dilbar.mp3
+│   ├── 03m-04s+patola.mp3
+│   ├── 03m-06s+tareefan.mp3
+│   ├── 03m-20s+tseries-mixtape-ambarsariya-suit-song-kanika-kapoor.mp3
+│   ├── 03m-30s+sanu-ek-pal-chain.mp3
+│   ├── 03m-33s+alan-waker-faded-instrumenta-version.mp3
+│   ├── 03m-42s+aashiq-banaya-aapne.mp3
+│   ├── 03m-42s+jitni-dafa.mp3
+│   ├── 03m-46s+tseries-mixtape-pee-oon-ishq-sufiyana-neha.mp3
+│   ├── 03m-47s+nazm-nazm.mp3
+│   ├── 03m-48s+nit-khair-manga.mp3
+│   ├── 03m-50s+lae-dooba.mp3
+│   ├── 03m-55s+dil-meri-na-sune.mp3
+│   ├── 03m-56s+gazab-ka-hai-din-128-kbps.mp3
+│   ├── 03m-56s+paniyon-sa.mp3
+│   ├── 03m-59s+tseries-mixtape-mera-mann-yahin-hoon-main.mp3
+│   ├── 04m-00s+tseries-mixtape-car-nachdi-hornn-bow-video.mp3
+│   ├── 04m-01s+nazm-nazm-sumedha-karmahe-version.mp3
+│   ├── 04m-04s+coldpay-viva-a-vida-instrumental.mp3
+│   ├── 04m-09s+tu-banja-gali-benaras-ki.mp3
+│   ├── 04m-11s+o-saathi.mp3
+│   ├── 04m-23s+tseries-mixtape-tose-naina-tum-jo-aaye.mp3
+│   ├── 04m-25s+tseries-mixtape-high-rated-gabru-ban-ja.mp3
+│   ├── 04m-28s+tseries-mixtape-gazab-ka-hai-din-bawara.mp3
+│   ├── 04m-31s+tseries-mixtape-agar-tum-saath-ho-maahi.mp3
+│   ├── 04m-33s+jogi.mp3
+│   ├── 04m-33s+tseries-mixtape-roke-na-ruke-mast-magan.mp3
+│   ├── 04m-36s+baarish.mp3
+│   ├── 04m-37s+subah-subah.mp3
+│   ├── 04m-42s+ghar-se-nikalte-hi-feat.-armaan.mp3
+│   ├── 04m-42s+lo-safar.mp3
+│   ├── 04m-43s+tseries-mixtape-shirey-setia-jubin-nautiya-tu.mp3
+│   ├── 04m-48s+tseries-mixtape-sunn-raha-hai-rozana-shreya.mp3
+│   ├── 04m-53s+tum-mere-ho.mp3
+│   ├── 05m-08s+sanam-re.mp3
+│   ├── 05m-09s+hua-hain-aaj-pehli-baar.mp3
+│   ├── 05m-10s+tera-fitoor.mp3
+│   ├── 05m-15s+mohabbat-nasha-hai-duet.mp3
+│   ├── 05m-15s+tseries-mixtape-dua-saware-neeti-mohan-saim.mp3
+│   ├── 05m-18s+tseries-mixtape-neha-kakkar-kabira-naina-mohd.mp3
+│   ├── 05m-26s+gazab-ka-hai-yeh-din.mp3
+│   ├── 05m-36s+kya-tujhe-ab-ye-dil-bataye.mp3
+│   ├── 05m-59s+cokestudio-muntazir-by-danyal-and-momina.mp3
+│   ├── 06m-01s+chef-tere-mere-with-yrics-saif-ai.mp3
+│   ├── 06m-10s+love-mashup-atif-asam-and-arijit-singh.mp3
+│   ├── 06m-37s+bollywood-mix-nachde-and-suit-suit.mp3
+│   ├── 06m-46s+joined-2-dilbar-aashiq-banaya-aapne.mp3
+│   ├── 07m-06s+joined-2-nazm-nazm-tseries-mixtape-ambarsariya-suit-song-kanika-kapoor.mp3
+│   ├── 07m-36s+joined-2-nazm-nazm-lae-dooba.mp3
+│   ├── 07m-42s+joined-2-aashiq-banaya-aapne-tseries-mixtape-mera-mann-yahin-hoon-main.mp3
+│   ├── 08m-02s+joined-2-sanu-ek-pal-chain-jogi.mp3
+│   ├── 08m-03s+joined-2-dil-meri-na-sune-tu-banja-gali-benaras-ki.mp3
+│   ├── 08m-06s+joined-2-tseries-mixtape-pee-oon-ishq-sufiyana-neha-mohabbat-nasha-hai-duet.mp3
+│   ├── 08m-07s+joined-2-tseries-mixtape-gazab-ka-hai-din-bawara-tseries-mixtape-roke-na-ruke-mast-magan.mp3
+│   ├── 08m-26s+joined-2-tseries-mixtape-gazab-ka-hai-din-bawara-tum-mere-ho.mp3
+│   ├── 08m-29s+joined-2-dilbar-gazab-ka-hai-yeh-din.mp3
+│   ├── 08m-32s+joined-2-gazab-ka-hai-din-128-kbps-subah-subah.mp3
+│   ├── 08m-37s+joined-2-lo-safar-paniyon-sa.mp3
+│   ├── 08m-39s+joined-2-tseries-mixtape-shirey-setia-jubin-nautiya-tu-gazab-ka-hai-din-128-kbps.mp3
+│   ├── 08m-45s+joined-2-tseries-mixtape-roke-na-ruke-mast-magan-o-saathi.mp3
+│   ├── 08m-50s+joined-2-hua-hain-aaj-pehli-baar-jitni-dafa.mp3
+│   ├── 08m-50s+joined-2-tseries-mixtape-dua-saware-neeti-mohan-saim-tseries-mixtape-gazab-ka-hai-din-bawara.mp3
+│   ├── 08m-56s+joined-2-nazm-nazm-tera-fitoor.mp3
+│   ├── 09m-07s+joined-2-tseries-mixtape-agar-tum-saath-ho-maahi-baarish.mp3
+│   ├── 09m-10s+joined-2-mohabbat-nasha-hai-duet-gazab-ka-hai-din-128-kbps.mp3
+│   ├── 09m-12s+shaahid-ye-ishq-hai-double.mp3
+│   ├── 09m-13s+joined-2-dil-meri-na-sune-tseries-mixtape-neha-kakkar-kabira-naina-mohd.mp3
+│   ├── 09m-15s+joined-2-lo-safar-tseries-mixtape-roke-na-ruke-mast-magan.mp3
+│   ├── 09m-16s+joined-2-nazm-nazm-sumedha-karmahe-version-tseries-mixtape-dua-saware-neeti-mohan-saim.mp3
+│   ├── 09m-19s+joined-2-ghar-se-nikalte-hi-feat.-armaan-subah-subah.mp3
+│   ├── 09m-20s+joined-2-dil-meri-na-sune-gazab-ka-hai-yeh-din.mp3
+│   ├── 09m-20s+joined-2-gazab-ka-hai-yeh-din-dil-meri-na-sune.mp3
+│   ├── 09m-21s+joined-2-gazab-ka-hai-yeh-din-paniyon-sa.mp3
+│   ├── 09m-29s+joined-2-tseries-mixtape-sunn-raha-hai-rozana-shreya-lo-safar.mp3
+│   ├── 09m-41s+joined-2-aashiq-banaya-aapne-cokestudio-muntazir-by-danyal-and-momina.mp3
+│   ├── 10m-17s+joined-2-gazab-ka-hai-yeh-din-tum-mere-ho.mp3
+│   ├── 10m-21s+joined-3-sanu-ek-pal-chain-tere-naal-nachna-tu-banja-gali-benaras-ki.mp3
+│   ├── 10m-23s+joined-2-mohabbat-nasha-hai-duet-hua-hain-aaj-pehli-baar.mp3
+│   ├── 10m-34s+joined-2-cokestudio-muntazir-by-danyal-and-momina-baarish.mp3
+│   ├── 10m-42s+joined-2-lo-safar-chef-tere-mere-with-yrics-saif-ai.mp3
+│   ├── 10m-42s+joined-2-tseries-mixtape-shirey-setia-jubin-nautiya-tu-cokestudio-muntazir-by-danyal-and-momina.mp3
+│   ├── 11m-10s+joined-3-dilbar-o-saathi-dil-meri-na-sune.mp3
+│   ├── 11m-40s+joined-3-tseries-mixtape-car-nachdi-hornn-bow-video-jitni-dafa-tum-mere-ho.mp3
+│   ├── 11m-43s+joined-3-lo-safar-paniyon-sa-tareefan.mp3
+│   ├── 12m-10s+joined-2-chef-tere-mere-with-yrics-saif-ai-love-mashup-atif-asam-and-arijit-singh.mp3
+│   ├── 12m-17s+joined-3-nit-khair-manga-tseries-mixtape-shirey-setia-jubin-nautiya-tu-tseries-mixtape-pee-oon-ishq-sufiyana-neha.mp3
+│   ├── 12m-36s+joined-3-kya-tujhe-ab-ye-dil-bataye-paniyon-sa-patola.mp3
+│   ├── 12m-43s+joined-3-sanam-re-tere-naal-nachna-tum-mere-ho.mp3
+│   ├── 13m-18s+joined-3-tere-naal-nachna-gazab-ka-hai-yeh-din-tera-fitoor.mp3
+│   ├── 14m-08s+joined-3-tere-naal-nachna-tseries-mixtape-dua-saware-neeti-mohan-saim-love-mashup-atif-asam-and-arijit-singh.mp3
+│   ├── 14m-23s+joined-3-tseries-mixtape-mera-mann-yahin-hoon-main-mohabbat-nasha-hai-duet-tera-fitoor.mp3
+│   ├── 16m-55s+Romantic-Bollywood-Mashup-2018.mp3
+│   ├── 16m-56s+love-mashup-2018-march-nonstop-remix-vdj-mahe.mp3
+│   └── 33m-56s+love-mashup-top-romantic-hindi-songs-dj-shilpi-sharma.mp3
+├── mggk-royalty-free-music-from-youtube
+│   ├── 02m-07s+east-lahar.mp3
+│   ├── 02m-07s+joined-4-02m-07s-east-lahar-02m-39s-until-youre-gone-forever-johny-grimes-02m.mp3
+│   ├── 02m-14s+introspection-mona-wonderlick.mp3
+│   ├── 02m-24s+nature-kv.mp3
+│   ├── 02m-30s+sprinkles-johny-grimes.mp3
+│   ├── 02m-33s+pure-kv.mp3
+│   ├── 02m-37s+jungle-mood-peyruis.mp3
+│   ├── 02m-38s+pink-sky-amine-maxwell.mp3
+│   ├── 02m-39s+memories-inossi.mp3
+│   ├── 02m-39s+until-you're-gone-forever-johny-grimes.mp3
+│   ├── 02m-43s+landscape-lover-vendredi.mp3
+│   ├── 02m-45s+poolside-liqwyd.mp3
+│   ├── 02m-48s+doing-nothing-sakura-hz.mp3
+│   ├── 02m-52s+keep-the-groove-pold.mp3
+│   ├── 02m-55s+blessings-vendredi.mp3
+│   ├── 03m-00s+alabia-seoul-june.mp3
+│   ├── 03m-04s+euphoria-peyruis.mp3
+│   ├── 03m-04s+flash-peyruis.mp3
+│   ├── 03m-04s+serenity-jayjen.mp3
+│   ├── 03m-05s+affect-vishmak.mp3
+│   ├── 03m-08s+patience-jay-someday.mp3
+│   ├── 03m-11s+puzzle-declan-dp.mp3
+│   ├── 03m-14s+flying-high-declan-dp.mp3
+│   ├── 03m-15s+want-you-vendredi-&-sterkøl.mp3
+│   ├── 03m-22s+time-goes-by-declan-dp.mp3
+│   ├── 03m-25s+floral-nights-artificial.music.mp3
+│   ├── 03m-26s+the-perpetual-ticking-of-time-artificial.music.mp3
+│   ├── 03m-33s+oxygen-scandinavianz.mp3
+│   ├── 03m-46s+green-monster-is-so-refresh-seoul-june.mp3
+│   ├── 04m-00s+blue-declan-dp.mp3
+│   ├── 04m-00s+joined-5-04m-00s-blue-declan-dp-02m-39s-until-youre-gone-forever-johny-grimes.mp3
+│   ├── 05m-10s+joined-2-02m-37s-jungle-mood-peyruis-02m-33s-pure-kv.mp3
+│   ├── 08m-24s+joined-3-02m-43s-landscape-lover-vendredi-02m-48s-doing-nothing-sakura-hz-02m-52s.mp3
+│   ├── 08m-39s+joined-3-03m-04s-serenity-jayjen-02m-48s-doing-nothing-sakura-hz-02m-45s-poolside.mp3
+│   ├── 08m-46s+joined-3-02m-52s-keep-the-groove-pold-02m-45s-poolside-liqwyd-03m-08s-patience.mp3
+│   ├── 08m-55s+joined-3-03m-14s-flying-high-declan-dp-02m-33s-pure-kv-03m-08s-patience.mp3
+│   ├── 10m-16s+joined-4-02m-07s-east-lahar-03m-04s-euphoria-peyruis-02m-39s-memories-inossi-02m.mp3
+│   ├── 11m-27s+joined-4-03m-22s-time-goes-by-feat.-joanna-pastel-declan-dp-02m.mp3
+│   ├── 11m-35s+joined-4-02m-30s-sprinkles-johny-grimes-03m-05s-affect-vishmak-03m-46s-green-monster.mp3
+│   ├── 11m-35s+joined-4-02m-30s-sprinkles-johny-grimes-03m-26s-the-perpetual-ticking-of-time-artificial.music.mp3
+│   ├── 13m-11s+joined-4-02m-38s-pink-sky-amine-maxwell-declan-dp-04m-00s-blue-declan-dp.mp3
+│   ├── 13m-21s+joined-5-02m-55s-blessings-vendredi-02m-38s-pink-sky-amine-maxwell-02m-07s-east.mp3
+│   ├── 13m-21s+joined-5-03m-14s-flying-high-declan-dp-02m-24s-nature-kv-02m-48s-doing.mp3
+│   ├── 15m-50s+joined-5-03m-46s-green-monster-is-so-refresh-seoul-june-03m-04s-flash-peyruis.mp3
+│   ├── 17m-40s+joined-6-02m-14s-introspection-mona-wonderlick-03m-04s-flash-peyruis-03m-22s-time-goes.mp3
+│   ├── 17m-57s+joined-6-03m-11s-puzzle-declan-dp-03m-00s-alabia-seoul-june-02m-55s-blessings.mp3
+│   ├── 20m-34s+joined-6-03m-22s-time-goes-by-declan-dp-04m-00s-blue-declan-dp-02m.mp3
+│   ├── 20m-49s+joined-7-03m-05s-affect-vishmak-02m-45s-poolside-liqwyd-03m-22s-time-goes-by.mp3
+│   ├── 22m-13s+joined-7-03m-14s-flying-high-declan-dp-02m-52s-keep-the-groove-pold-02m.mp3
+│   ├── _tmp_chosen_sorted.txt
+│   ├── _tmp_chosen.txt
+│   ├── _tmp_renamed_songs
+│   ├── _tmp_song_lengths_in_minutes_sorted.txt
+│   ├── _tmp_song_lengths_in_minutes.txt
+│   ├── _tmp_song_lengths_sorted.txt
+│   ├── _tmp_song_lengths.txt
+│   └── _tmp_song.txt
+├── Montserrat-Regular.ttf
+├── royalty-free-music
+│   ├── 01m-13s+Royalty-Free-Track-Arpeggio.mp3
+│   ├── 01m-23s+audiojungle-Freak-Valse.mp3
+│   ├── 01m-25s+Royalty-Free-Track-Whimsical-3.mp3
+│   ├── 01m-26s+bensound-playdate.mp3
+│   ├── 01m-36s+bensound-Get-Happy.mp3
+│   ├── 01m-39s+bensound-Flying-High.mp3
+│   ├── 01m-45s+Undo-Plz-jp.mp3
+│   ├── 01m-46s+Shadow-Man-jp.mp3
+│   ├── 01m-46s+WISTIA-cayuga-summer.mp3
+│   ├── 01m-47s+Eternally-Yours-jp.mp3
+│   ├── 01m-50s+Royalty-Free-Track-Sailor-Theme.mp3
+│   ├── 01m-54s+Fragments-jp.mp3
+│   ├── 01m-55s+bensound-daybreak.mp3
+│   ├── 01m-59s+Audiojungle-Because-I-Am-Happy.mp3
+│   ├── 02m-02s+WISTIA-interlaken-crossroad.mp3
+│   ├── 02m-05s+audiojungle-upbeat-energetic-pop-full.mp3
+│   ├── 02m-11s+audiojungle-Bright-New-Start-main-file-wav.mp3
+│   ├── 02m-12s+Royalty-Free-Track-Whimsical-with-Interlude.mp3
+│   ├── 02m-13s+WISTIA-merluzzo.mp3
+│   ├── 02m-14s+audiojungle-151462-chance.mp3
+│   ├── 02m-14s+Royalty-Free-Track-Relaxing-Melody.mp3
+│   ├── 02m-17s+audiojungle-noir-jazz.mp3
+│   ├── 02m-17s+WISTIA-wingspan.mp3
+│   ├── 02m-22s+WISTIA-lennys-song.mp3
+│   ├── 02m-23s+Royalty-Free-Track-Advertisement.mp3
+│   ├── 02m-24s+audiojungle-11793678-sport.mp3
+│   ├── 02m-24s+WISTIA-new-juno.mp3
+│   ├── 02m-25s+Royalty-Free-Track-Rock-2.mp3
+│   ├── 02m-26s+bensound-ukulele.mp3
+│   ├── 02m-27s+audiojungle-1965929-tech-world-unite.mp3
+│   ├── 02m-27s+WISTIA-davis-square-shuffle.mp3
+│   ├── 02m-37s+WISTIA-oaklawn-dreams.mp3
+│   ├── 02m-38s+Contagious-Instr-jp.mp3
+│   ├── 02m-46s+When-We-Owned-The-Weekend-jp.mp3
+│   ├── 02m-49s+bensound-littleidea.mp3
+│   ├── 02m-57s+O86-jp.mp3
+│   ├── 03m-02s+kevin-Loopster.mp3
+│   ├── 03m-13s+WISTIA-broken-shovel.mp3
+│   ├── 03m-14s+bensound-cute.mp3
+│   ├── 03m-19s+Ak-Sentimental.mp3
+│   ├── 03m-22s+Almost-New.mp3
+│   ├── 03m-33s+bensound-inspire.mp3
+│   ├── 03m-37s+bensound-summer.mp3
+│   ├── 03m-45s+audiojungle-1126483-better-days-ahead.mp3
+│   ├── 03m-50s+bensound-memories.mp3
+│   ├── 03m-56s+Denmark-v1-jp.mp3
+│   ├── 03m-59s+Tornado.mp3
+│   ├── 04m-16s+Psyched-Up-jp.mp3
+│   ├── 04m-20s+Pump-It-004-jp.mp3
+│   ├── 04m-21s+bensound-happiness.mp3
+│   ├── 04m-37s+Buns-Hon-jp.mp3
+│   ├── 04m-38s+Royalty-Free-Track-Hard.mp3
+│   ├── 04m-39s+Dance-Yourself-Clean-jp.mp3
+│   ├── 04m-45s+audiojungle-6590080-glorious-day.mp3
+│   ├── 04m-48s+audiojungle-1525773-soaring-high.mp3
+│   ├── 05m-10s+youtube-cinematic-music-1.mp3
+│   ├── 05m-12s+audiojungle-Envato-Corporate-Optimistic-Background-Long.mp3
+│   ├── 05m-13s+youtube-cinematic-music-2.mp3
+│   ├── 05m-17s+bensound-Twisting.mp3
+│   ├── 05m-26s+audiojungle-Missing-You.mp3
+│   ├── 06m-06s+joined-2-shadow-man-pump-it.mp3
+│   ├── 06m-41s+Youtube-Ennja-Let-Go.mp3
+│   ├── 07m-17s+coldplay-miracles-instrumental.mp3
+│   ├── 07m-40s+Youtube-Aurosonic-Frainbreeze-All-I-Need.mp3
+│   ├── 07m-42s+the-cinematic-orchestra-arrival-of-the-birds.mp3
+│   ├── 07m-42s+youtube-cinematic-music-3.mp3
+│   ├── 08m-29s+Youtube-Most-Beautiful-Music-Ever-Everdream.mp3
+│   ├── 08m-54s+joined-3-Eternally-Yours-Pump-It-When-We-Owned-The-Weekend.mp3
+│   ├── 10m-00s+Youtube-Background-Music-Yt.mp3
+│   ├── 10m-12s+Youtube-Beautiful-Movie-Piano-Soundtracks.mp3
+│   ├── 11m-01s+Youtube-Chill-Music.mp3
+│   ├── 11m-29s+Youtube-Happy-Background-Music-Melody.mp3
+│   ├── 11m-58s+Youtube-New-Dawn-Background-Music.mp3
+│   ├── 12m-27s+Youtube-Motivational-Music-Where-Dreams-Begin.mp3
+│   ├── 13m-15s+Youtube-Stress-Relief-Music-Relax.mp3
+│   ├── 14m-42s+joined-4-Tornado-Pump-It-Undo-Plz-Buns-Hon.mp3
+│   ├── 14m-42s+joined-5-Undo-Plz-Eternally-Yours-Buns-Hon-Dance-Yourself-Clean-Fragments.mp3
+│   ├── 15m-03s+Youtube-Best-Gaming-Background-Music.mp3
+│   ├── 15m-16s+Youtube-Happy-Background-Music-15m.mp3
+│   ├── 15m-18s+Youtube-Background-Music-15m.mp3
+│   ├── 20m-06s+sleep-soothing-music-calm-and-relaxing-piano.mp3
+│   ├── 24m-47s+indian-meditation-music-indian-flute.mp3
+│   ├── 30m-01s+deep-sleep-music-calming-music-relaxing-music.mp3
+│   ├── cover.jpg
+│   ├── _tmp_chosen_sorted.txt
+│   ├── _tmp_chosen.txt
+│   ├── _tmp_renamed_songs
+│   ├── _tmp_song_lengths_in_minutes_sorted.txt
+│   ├── _tmp_song_lengths_in_minutes.txt
+│   ├── _tmp_song_lengths_sorted.txt
+│   ├── _tmp_song_lengths.txt
+│   └── _tmp_song.txt
+├── _TMP_SLIDESHOW_IMAGES_FOR_TESTING_ON_RASPBERRY-PI
+│   ├── _demo_image_111.jpg
+│   ├── _demo_image_112.jpg
+│   ├── _demo_image_113.jpg
+│   ├── _demo_image_114.jpg
+│   ├── _demo_image_115.jpg
+│   ├── _demo_image_116.jpg
+│   ├── _demo_image_117.jpg
+│   ├── _demo_image_118.jpg
+│   ├── _demo_image_119.jpg
+│   ├── _demo_image_120.jpg
+│   ├── _demo_image_121.jpg
+│   ├── _demo_image_122.jpg
+│   ├── _demo_image_123.jpg
+│   ├── _demo_image_124.jpg
+│   ├── _demo_image_125.jpg
+│   ├── _demo_image_126.jpg
+│   ├── _demo_image_127.jpg
+│   ├── _demo_image_128.jpg
+│   ├── _demo_image_129.jpg
+│   └── _demo_image_130.jpg
+└── youtube-cover.jpg
+
+6 directories, 268 files
