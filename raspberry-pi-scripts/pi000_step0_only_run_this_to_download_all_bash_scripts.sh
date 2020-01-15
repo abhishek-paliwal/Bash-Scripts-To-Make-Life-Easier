@@ -31,6 +31,11 @@ curl -O https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-
 
 curl -O https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/mggk_bash_scripts/9999_MGGK_TEMPLATE_SCRIPTS/9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh
 
+## MOVE ALL THESE SCRIPTS TO MY_PWD
+mv 113_ffmpeg_images_to_video_slideshow_maker.sh $MY_PWD/
+mv 201_sorting_mp3_files_by_duration.sh $MY_PWD/
+mv 9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh $MY_PWD/
+
 ## CREATING LOGFILE...
-echo "## THIS SCRIPT => pi000_step0_only_run_this_to_download_all_bash_scripts.sh" > $MY_PWD/_TMP_LOGFILE_PI000_SCRIPT.TXT
-echo "## Last ran at: $(date)" >> $MY_PWD/_TMP_LOGFILE_PI000_SCRIPT.TXT
+echo "## THIS SCRIPT RAN => pi000_step0_only_run_this_to_download_all_bash_scripts.sh" ;
+echo "## Last ran at: $(date)" ;
