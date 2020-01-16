@@ -9,13 +9,16 @@
 
 import pandas as pd
 import numpy as np
-import scipy as sp
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from pandas import read_csv
 from matplotlib import pyplot
+
 ################################################################################
-CSV_FILE='20200115-pi01-data_temperature_output.csv' ;
+## PARSING COMMAND LINE ARGUMETNS
+import sys
+#CSV_FILE='20200115-pi01-data_temperature_output.csv' ;
+CSV_FILE = sys.argv[1] ## THE CSV FILE is the first argument
 
 ## SEPARATING THE CSV FILENAME AND EXTENSION PARTS
 import os
