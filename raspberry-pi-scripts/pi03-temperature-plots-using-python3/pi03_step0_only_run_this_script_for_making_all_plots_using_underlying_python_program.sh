@@ -14,12 +14,17 @@ cat << EOF
 EOF
 ################################################################################
 
-GIT_REPO_PATH="https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/raspberry-pi-scripts/pi03-temperature-plots-using-python3/"
+GIT_REPO_PATH="https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/raspberry-pi-scripts/pi03-temperature-plots-using-python3"
 PYTHON_SCRIPT_FILE="pi03_step1_temperature_plots_using_python.py"
 
 ## DOWNLOADING CURRENT PYTHON_SCRIPT_FILE FROM GITHUB REPO
 echo ">>>> DOWNLOADING => $GIT_REPO_PATH/$PYTHON_SCRIPT_FILE" ; echo;
 curl -O $GIT_REPO_PATH/$PYTHON_SCRIPT_FILE
+
+## NOW CREATE A REQUIERMENTS FILE FOR THIS PYTHON PROJECT (USES A TOOL = pipreqs)
+## INSTALL IT BY > pip3 install pipreqs
+## THEN USE AS:
+pipreqs $(pwd)
 
 ################################################################################
 ## GET THE CSV FILES FOR PLOTTING FROM ANOTHER FOLDER ON VPS (ONLY IF THE USER IS ubuntu)
@@ -30,7 +35,7 @@ if [ $USER = "pi" ]; then
   ## Removing all existing CSVs + PNGs
   rm $BASEDIR/*.png
   rm $BASEDIR/*.csv
-  ## Finding today's created CSV files in the CSVDIR and copying them to BASEDIR
+  ## Finding CSV files in the CSVDIR and copying them to BASEDIR
   find $CSVDIR/ -name *pi01-data_temperature_output.csv -exec cp "{}" $BASEDIR/  \;
 else
   MY_PWD="$(pwd)"
@@ -40,7 +45,7 @@ fi
 ##------------------------------------------------------------------------------
 ## PLOT PNG CREATION BEGINS
 for csvfile in *.csv ; do
-  python3 $PYTHON_SCRIPT_FILE $csvfile
+  python3 $BASEDIR/$PYTHON_SCRIPT_FILE $csvfile
 done
 ##------------------------------------------------------------------------------
 
@@ -59,20 +64,20 @@ echo "<!doctype html>
 
     <title>PI03 Plotting - Program output</title>
   </head>
-  <body>
+  <body style='background: #efefef;'>
   <div class='container'><!-- BEGIN: main containter div -->" > $HTML_OUTPUT_FILE
 ##------------------------------------------------------------------------------
 echo "<div class='row' style='color: grey;'> Webpage created: $(date) </div>" >> $HTML_OUTPUT_FILE
 echo "<hr style='background-color: grey; height: 3px;' >" >> $HTML_OUTPUT_FILE
-echo "<div class='row'> <h1>List of CSV Files Used For Plotting:</h1> </div>" >> $HTML_OUTPUT_FILE
-for csvfile in *.csv ; do
+echo "<div class='row'> <h1>List of CSV Files Used For Plotting (latest first):</h1> </div>" >> $HTML_OUTPUT_FILE
+for csvfile in $(ls *.csv | sort -rn) ; do
   csvfile_data=$(cat $csvfile | wc -l)
   echo "<div class='row'>$csvfile_data = Number of Temperature data-points // CSV-FILE = $csvfile</div>" >> $HTML_OUTPUT_FILE
 done
 echo "<hr style='background-color: grey; height: 3px;' >" >> $HTML_OUTPUT_FILE
 ##
 echo "<div class='row'> <h2>LIST OF PLOTS:</h2> </div>" >> $HTML_OUTPUT_FILE
-for plotfile in *.png ; do
+for plotfile in $(ls *.png | sort -rn) ; do
   echo "<div class='row'> <strong>CURRENT IMAGE = $plotfile</strong> </div>" >> $HTML_OUTPUT_FILE
   echo "<div class='row'> <img src='$plotfile' width='100%'></img> </div>" >> $HTML_OUTPUT_FILE
   echo "<hr style='background-color: grey; height: 3px;' >" >> $HTML_OUTPUT_FILE
