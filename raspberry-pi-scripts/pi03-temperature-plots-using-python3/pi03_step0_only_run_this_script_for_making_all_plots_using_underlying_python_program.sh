@@ -14,21 +14,10 @@ cat << EOF
 EOF
 ################################################################################
 
-GIT_REPO_PATH="https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/raspberry-pi-scripts/pi03-temperature-plots-using-python3"
-PYTHON_SCRIPT_FILE="pi03_step1_temperature_plots_using_python.py"
-
-## DOWNLOADING CURRENT PYTHON_SCRIPT_FILE FROM GITHUB REPO
-echo ">>>> DOWNLOADING => $GIT_REPO_PATH/$PYTHON_SCRIPT_FILE" ; echo;
-curl -O $GIT_REPO_PATH/$PYTHON_SCRIPT_FILE
-
-## NOW CREATE A REQUIERMENTS FILE FOR THIS PYTHON PROJECT (USES A TOOL = pipreqs)
-## INSTALL IT BY > pip3 install pipreqs
-## THEN USE AS:
-pipreqs $(pwd)
-
 ################################################################################
 ## GET THE CSV FILES FOR PLOTTING FROM ANOTHER FOLDER ON VPS (ONLY IF THE USER IS ubuntu)
 if [ $USER = "pi" ]; then
+  MY_PWD="$HOME/pali_personal/my-pi-scripts/pi03-temperature-plots-using-python3"
   BASEDIR="$HOME/pali_personal/my-pi-scripts/pi03-temperature-plots-using-python3"
   CSVDIR="$HOME/pali_personal/my-pi-scripts/_output_data_from_scripts"
   echo "USER = $USER // USER is pi. Hence, CSVDIR will be: $CSVDIR " ;
@@ -41,6 +30,24 @@ else
   MY_PWD="$(pwd)"
   echo "USER = $USER // USER is not pi. Hence, MY_PWD will be: $MY_PWD " ;
 fi
+################################################################################
+
+cd $MY_PWD ;
+
+GIT_REPO_PATH="https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/raspberry-pi-scripts/pi03-temperature-plots-using-python3"
+PYTHON_SCRIPT_FILE="pi03_step1_temperature_plots_using_python.py"
+
+## DOWNLOADING CURRENT PYTHON_SCRIPT_FILE FROM GITHUB REPO
+echo ">>>> DOWNLOADING => $GIT_REPO_PATH/$PYTHON_SCRIPT_FILE" ; echo;
+curl -O $GIT_REPO_PATH/$PYTHON_SCRIPT_FILE
+
+## MOVING THE PYTHON SCRIPT TO PROPER DIRECTORY (IN CASE THIS IS RUN FROM CRONJOB)
+mv $PYTHON_SCRIPT_FILE $MY_PWD/
+
+## NOW CREATE A REQUIERMENTS FILE FOR THIS PYTHON PROJECT (USES A TOOL = pipreqs)
+## INSTALL IT BY > pip3 install pipreqs
+## THEN USE AS:
+pipreqs $(pwd)
 
 ##------------------------------------------------------------------------------
 ## PLOT PNG CREATION BEGINS
@@ -50,7 +57,7 @@ done
 ##------------------------------------------------------------------------------
 
 echo ">>>> WRITING TO HTML FILE OUTPUT ... " ;
-HTML_OUTPUT_FILE="_TMP_PI03_PYTHON_TEMPERATURE_PLOTS_PROGRAM_OUTPUT.html"
+HTML_OUTPUT_FILE="$MY_PWD/_TMP_PI03_PYTHON_TEMPERATURE_PLOTS_PROGRAM_OUTPUT.html" ;
 ##
 echo "<!doctype html>
 <html lang='en'>
@@ -58,6 +65,7 @@ echo "<!doctype html>
     <!-- Required meta tags -->
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <meta http-equiv='refresh' content='60'> <!-- Refresh every 60 seconds -->
 
     <!-- Bootstrap CSS -->
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
