@@ -28,7 +28,9 @@ if [ $USER = "pi" ]; then
   find $CSVDIR/ -name *pi01-data_temperature_output.csv -exec cp "{}" $BASEDIR/  \;
 else
   MY_PWD="$(pwd)"
-  echo "USER = $USER // USER is not pi. Hence, MY_PWD will be: $MY_PWD " ;
+  BASEDIR="$(pwd)"
+  CSVDIR="$(pwd)"
+  echo "USER = $USER // USER is not pi. Hence, MY_PWD = BASEDIR = CSVDIR => will be: $MY_PWD " ;
 fi
 ################################################################################
 
@@ -107,6 +109,7 @@ if [ $USER = "pi" ]; then
   #cp $BASEDIR/*.csv $WWWDIR_PI03/
   cp $BASEDIR/*.png $WWWDIR_PI03/
   cp $BASEDIR/*.html $WWWDIR_PI03/
+  echo "USER = $USER // USER is pi. Hence, files are copied to $WWWDIR_PI03." ;
 else
-  echo "USER = $USER // USER is not pi. Hence, no further processing is required." ;
+  echo "USER = $USER // USER is not pi. Hence, no files are copied to WWW-DIR." ;
 fi
