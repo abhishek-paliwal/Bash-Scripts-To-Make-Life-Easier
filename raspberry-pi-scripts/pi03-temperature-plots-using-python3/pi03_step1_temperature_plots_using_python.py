@@ -15,10 +15,15 @@ from pandas import read_csv
 from matplotlib import pyplot
 
 ################################################################################
-## PARSING COMMAND LINE ARGUMETNS
+## TRY TO READ THE CLI ARGUMENT. IF FAILS, RAISE EXCEPTION AND EXIT.
 import sys
-#CSV_FILE='20200115-pi01-data_temperature_output.csv' ;
-CSV_FILE = sys.argv[1] ## THE CSV FILE is the first argument
+try:
+    #CSV_FILE='20200115-pi01-data_temperature_output.csv' ;
+    CSV_FILE = sys.argv[1] ## THE CSV FILE is the first argument
+except:
+    print("ERROR: No CSV file is provided as CLI argument. Hence, the program will stop here and exit.");
+    sys.exit(1) ;
+################################################################################
 
 ## SEPARATING THE CSV FILENAME AND EXTENSION PARTS
 import os
