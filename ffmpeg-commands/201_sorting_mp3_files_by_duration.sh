@@ -128,4 +128,4 @@ fi
 echo; echo "(IN-PROGRAM) Chosen random file: "$MY_RANDOM_SONG ; echo ;
 
 ## Open Directory to see status
-open $SONG_DIR
+#open $SONG_DIR
