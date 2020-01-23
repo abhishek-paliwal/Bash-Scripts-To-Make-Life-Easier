@@ -6,7 +6,10 @@ import shutil
 directory = sys.argv[1]
 
 skip = ["a", "an", "the", "and", "but", "or", "nor", "at", "by", "for", "from", "in", "into", "of", "off", "on", "onto", "out", "over", "to", "up", "with", "as"]
-replace = [["(", "["], [")", "]"], ["{", "["], ["}", "]"]]
+## REPLACE UNWANTED CHARACTERS WITH HYPHENS
+#replace = [ ["(", "["], [")", "]"], ["{", "["], ["}", "]"], [" ","-"], ["_","-"] ]
+replace = [ ["(", "-"], [")", "-"], ["{", "-"], ["}", "-"], ["[","-"],["]","-"] ,[" ","-"], ["_","-"], ["--","-"] ]
+
 def exclude_words(name):
     for item in skip:
         name = name.replace(" "+item.title()+" ", " "+item.lower()+" ")
