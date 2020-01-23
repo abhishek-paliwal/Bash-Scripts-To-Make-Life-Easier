@@ -3,7 +3,7 @@
 ## THIS PROGRAM CHANGES THE ID3 MUSIC TAGS OF AUDIO MP3 FILES THRU COMMAND LINE
 ## THIS PROGRAM USES 'MUTAGEN' PYTHON API TOOLS, AND SPECIFICALLY mid3v2 cli TOOL FROM MUTAGEN
 ###################################################
-## Installing Mutagen Tools on OSX = Run 'sudo pip install mutagen' in OS X.
+## Installing Mutagen Tools on OSX = Run 'sudo pip3 install mutagen' in OS X.
 ## See full tutorial here: http://mutagen.readthedocs.io/en/latest/man/mid3v2.html
 ## Created: Tuesday July 17, 2018
 ## By: Pali
