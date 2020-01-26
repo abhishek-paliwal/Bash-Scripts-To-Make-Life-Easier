@@ -154,9 +154,9 @@ echo "FULL COVER TEXT: $FULL_COVER_TEXT" ;
 ## THIS FILE HAS TO BE PRESENT FOR FIRST TMP VIDEO (but first check, whether this computer is raspberry pi)
 FONT_TO_USE="Times New Roman.ttf" ## Default Font
 ## Changing the default font based upon which machine it's being run on.
-if [ "$USER" == "pi" ]; then FONT_TO_USE="/home/_AUDIOJUNGLE_MUSIC/ambroise-francois-regular.otf" ; FONTCOLOR="yellow" ; fi
-if [ "$USER" == "abhishek" ]; then FONT_TO_USE="/Users/$USER/Library/Fonts/LeagueGothic-Regular.otf" ; FONTCOLOR="white" ; fi
-if [ "$USER" == "anu" ]; then FONT_TO_USE="/Users/$USER/Library/Fonts/Mission-Script.otf" ; FONTCOLOR="lime" ; fi
+if [ "$USER" == "pi" ]; then FONT_TO_USE="/home/_AUDIOJUNGLE_MUSIC/ambroise-francois-regular.otf" ; FONTCOLOR="lime" ; fi
+if [ "$USER" == "abhishek" ]; then FONT_TO_USE="/Users/$USER/Library/Fonts/LeagueGothic-Regular.otf" ; FONTCOLOR="yellow" ; fi
+if [ "$USER" == "anu" ]; then FONT_TO_USE="/Users/$USER/Library/Fonts/Mission-Script.otf" ; FONTCOLOR="cyan" ; fi
 
 ## Creating title slide
 convert -background '#00000085' -fill "$FONTCOLOR" -font "$FONT_TO_USE" -gravity center -size ${width}x360 caption:"$FULL_COVER_TEXT" $COVER_IMAGE +swap -gravity south -composite $NEW_COVER_IMAGE ;
