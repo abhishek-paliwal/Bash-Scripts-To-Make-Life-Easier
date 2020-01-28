@@ -11,6 +11,7 @@ INPUT_RAW="1_INPUT_RAW";
 INPUT_FFMPEG_ENCODED="2_INPUT_FFMPEG_ENCODED";
 OUTPUT="3_OUTPUT_FFMPEG";
 TMP_FILE="tmp_filenames.txt"
+NAME_FOR_FILE=$(basename $PWD) ;
 
 ## Deleting filenames if exists
 rm $FILENAMES
@@ -29,7 +30,7 @@ for i in $INPUT_RAW/*.mp4 ; do
 done
 
 ## ACTUAL FFMPEG COMMAND RUNS BELOW, and concatenates all files in reading order
-ffmpeg -f concat -i $TMP_FILE -c copy $OUTPUT/`date +%Y%m%d_%H%M%S-`output.mp4
+ffmpeg -f concat -i $TMP_FILE -c copy $OUTPUT/$NAME_FOR_FILE.mp4
 
 ## Open the working Directory
 open $PWD
