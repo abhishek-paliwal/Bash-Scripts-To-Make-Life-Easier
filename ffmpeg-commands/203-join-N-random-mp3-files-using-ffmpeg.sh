@@ -26,6 +26,10 @@ read how_many_mp3 ;
 ## AND THEN SAVING THOSE TO ANOTHER TEXT FILES
 gshuf -n $how_many_mp3 _TMP_MP3_LIST_ALL.TXT > _TMP_MP3_LIST_RANDOM.TXT
 
+echo ">>>> THESE $how_many_mp3 RANDOM SONGS ARE CHOSEN..."
+cat _TMP_MP3_LIST_RANDOM.TXT ;
+echo; echo; 
+
 ## CREATING A NAME FOR THE OUTPUT FILE BASED UPON THE INPUT FILES
 NEW_FILENAME=`cat _TMP_MP3_LIST_RANDOM.TXT | sed 's/file //g' | sed "s/\'//g" | sed "s/.\///g" | sed 's/\.mp3//g' | tr '\n' '-'` ;
 

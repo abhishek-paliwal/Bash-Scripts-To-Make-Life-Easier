@@ -5,6 +5,8 @@ PWD=`pwd` ;
 cd $PWD ;
 echo "Present working directory: $PWD" ; echo ;
 
+echo ">>>> NOTE: Make sure that the existing filenames don't have any spaces with them, and words are separated by hyphens." ;
+
 mkdir _TMP_DIR ;
 
 echo "How many words do you want to remove from beginning: " ;
