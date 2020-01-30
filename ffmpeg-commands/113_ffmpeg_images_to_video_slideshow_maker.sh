@@ -33,9 +33,10 @@ a) Desktop/_TMP_SONGS_
 b) bollywood-music
 c) royalty-free-music
 d) mggk-royalty-free-music-from-youtube
+e) 202001-romantic-bollywood
 " ;
 
-echo "Enter your choice (a/b/c/d): " ;
+echo "Enter your choice (a/b/c/d/e): " ;
 read song_dir
 
 ## ASSIGNING MUSIC DIRECTORIES (but first check, whether this computer is raspberry pi)
@@ -52,6 +53,7 @@ case $song_dir in
     b) MY_SONG_DIR="$MUSIC_PATH/bollywood-music" ;;
     c) MY_SONG_DIR="$MUSIC_PATH/royalty-free-music" ;;
     d) MY_SONG_DIR="$MUSIC_PATH/mggk-royalty-free-music-from-youtube" ;;
+    e) MY_SONG_DIR="$MUSIC_PATH/202001-romantic-bollywood" ;;
     *) echo "Invalid option $song_dir" ;;
 esac
 
