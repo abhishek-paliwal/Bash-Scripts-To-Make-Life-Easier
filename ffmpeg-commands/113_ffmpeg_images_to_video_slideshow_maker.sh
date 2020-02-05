@@ -43,6 +43,9 @@ read song_dir
 if [ "$USER" == "pi" ];
 then
   MUSIC_PATH="/home/_AUDIOJUNGLE_MUSIC" ;
+elif [ "$USER" == "ubuntu" ];
+then
+  MUSIC_PATH="$HOME_WINDOWS/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC" ;
 else
   MUSIC_PATH="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC" ;
 fi
@@ -63,6 +66,9 @@ echo "Chosen MY_SONG_DIR is: $MY_SONG_DIR " ; echo;
 if [ "$USER" == "pi" ];
 then
   DEMO_AUDIO_FILE="$MUSIC_PATH/00_ffmpeg_demo_audio.mp3" ;
+  elif [ "$USER" == "ubuntu" ];
+then
+  DEMO_AUDIO_FILE="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/00_ffmpeg_demo_audio.mp3" ;
 else
   DEMO_AUDIO_FILE="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/00_ffmpeg_demo_audio.mp3" ;
 fi
@@ -157,6 +163,7 @@ echo "FULL COVER TEXT: $FULL_COVER_TEXT" ;
 FONT_TO_USE="Times New Roman.ttf" ## Default Font
 ## Changing the default font based upon which machine it's being run on.
 if [ "$USER" == "pi" ]; then FONT_TO_USE="/home/_AUDIOJUNGLE_MUSIC/ambroise-francois-regular.otf" ; FONTCOLOR="lime" ; fi
+if [ "$USER" == "ubuntu" ]; then FONT_TO_USE="$HOME/Github/Bash-Scripts-To-Make-Life-Easier/_fonts/Roboto_Slab/RobotoSlab-Regular.ttf" ; FONTCOLOR="orange" ; fi
 if [ "$USER" == "abhishek" ]; then FONT_TO_USE="/Users/$USER/Library/Fonts/LeagueGothic-Regular.otf" ; FONTCOLOR="yellow" ; fi
 if [ "$USER" == "anu" ]; then FONT_TO_USE="/Users/$USER/Library/Fonts/Mission-Script.otf" ; FONTCOLOR="cyan" ; fi
 
@@ -242,6 +249,10 @@ if [ "$USER" == "pi" ];
 then
   bash $MUSIC_PATH/201_sorting_mp3_files_by_duration.sh "$AUDIO_LENGTH_INTEGER" "$MY_SONG_DIR"
   AUDIO_FILE=$(shuf -n 1 $MY_SONG_DIR/_tmp_chosen_sorted.txt)
+elif [ "$USER" == "ubuntu" ];
+then
+  bash $MUSIC_PATH/201_sorting_mp3_files_by_duration.sh "$AUDIO_LENGTH_INTEGER" "$MY_SONG_DIR"
+  AUDIO_FILE=$(shuf -n 1 $MY_SONG_DIR/_tmp_chosen_sorted.txt)  
 else
   sh $HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/201_sorting_mp3_files_by_duration.sh "$AUDIO_LENGTH_INTEGER" "$MY_SONG_DIR"
   AUDIO_FILE=$(gshuf -n 1 $MY_SONG_DIR/_tmp_chosen_sorted.txt)
@@ -285,6 +296,10 @@ END_TIME=$(date +%Y-%m-%dT%H:%M:%S) ;
 if [ "$USER" == "pi" ];
 then
   source $MUSIC_PATH/9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh ;
+  DATE_DIFFERENCE_MINS=$(FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS_on_MacOS_or_Linux $START_TIME $END_TIME "minutes") ;
+elif [ "$USER" == "ubuntu" ];
+then
+  source $HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/9999_MGGK_TEMPLATE_SCRIPTS/9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh ;
   DATE_DIFFERENCE_MINS=$(FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS_on_MacOS_or_Linux $START_TIME $END_TIME "minutes") ;
 else
   source $HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/9999_MGGK_TEMPLATE_SCRIPTS/9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh ;

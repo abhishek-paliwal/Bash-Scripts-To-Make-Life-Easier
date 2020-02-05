@@ -69,6 +69,9 @@ for x in *mp3;
         if [ "$USER" == "pi" ]
         then
           ffprobe -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$x" 2>/dev/null > _tmp_song.txt ;
+        elif [ "$USER" == "ubuntu" ]
+        then 
+          ffprobe -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$x" 2>/dev/null > _tmp_song.txt ;
         else
           afinfo $x | grep -i 'duration' | cut -d ':' -f 2 > _tmp_song.txt ;
         fi
@@ -119,6 +122,9 @@ cat $SONG_DIR/_tmp_chosen_sorted.txt
 ## The idea here is to choose an audio file which has a duration longer than the video itself
 ## (but first check, whether this computer is raspberry pi)
 if [ "$USER" == "pi" ]
+then
+  MY_RANDOM_SONG=$(shuf -n 1 $SONG_DIR/_tmp_chosen_sorted.txt) ;
+elif [ "$USER" == "ubuntu" ]
 then
   MY_RANDOM_SONG=$(shuf -n 1 $SONG_DIR/_tmp_chosen_sorted.txt) ;
 else
