@@ -14,11 +14,10 @@
 ## BY: PALI
 ############################################################################
 
-#FILE_TRANSFER_DIR="$HOME/OneDrive/Apps2Sync/dotfiles_backups/"
-FILE_TRANSFER_DIR="$HOME/Dropbox/_MY_BASH_SCRIPTS/_bash_aliases_compilation_outputs/"
+FILE_TRANSFER_DIR="$HOME_WINDOWS/Dropbox/_MY_BASH_SCRIPTS/_bash_aliases_compilation_outputs/"
 ALIASES_FILE_USER1="bash-aliases-abhishek.txt"
 ALIASES_FILE_USER2="bash-aliases-anu.txt"
-ALIASES_FILE_MERGED="bash-aliases-MERGED.txt"
+ALIASES_FILE_MERGED="bash-aliases-MERGED-abhishek-anu.txt"
 
 ## CD to the desired directory
 cd $FILE_TRANSFER_DIR;
