@@ -126,8 +126,8 @@ mkdir $OUTPUT_DIR
 ###########################################
 ## NOW, WE'LL DUPLICATE THE FIRST IMAGE, AND THEN CREATE A COVER IMAGE FROM IT
 ## DUPLICATION (COPYING ONLY THE FIRST FILE, THEN BREAK THE LOOP):
-COVER_IMAGE="0_cover_tmp.jpg" ;
-NEW_COVER_IMAGE="0_cover_final.jpg" ;
+COVER_IMAGE="0000_cover_tmp.jpg" ;
+NEW_COVER_IMAGE="0000_cover_final.jpg" ;
 
 for f in *.jpg ; do cp "$f" $COVER_IMAGE ; break ; done
 
