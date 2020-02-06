@@ -339,5 +339,11 @@ echo "=====================================================" ;
 echo "=====================================================" ;
 
 ## Opening PWD
-open -j $PWD
-say 'Video is done.' ;
+if [ "$USER" == "ubuntu" ];
+then
+  explorer.exe $PWD ;
+  echo "Video is done."
+else
+  open -j $PWD
+  say 'Video is done.' ;
+fi
