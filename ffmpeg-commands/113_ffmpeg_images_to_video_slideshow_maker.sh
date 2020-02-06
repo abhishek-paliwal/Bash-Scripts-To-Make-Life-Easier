@@ -341,7 +341,7 @@ echo "=====================================================" ;
 ## Opening PWD
 if [ "$USER" == "ubuntu" ];
 then
-  explorer.exe $PWD ;
+  explorer.exe . ; ## Opens PWD in windows explorer.
   echo "Video is done."
 else
   open -j $PWD
