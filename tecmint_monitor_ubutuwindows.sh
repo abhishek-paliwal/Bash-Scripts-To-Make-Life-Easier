@@ -91,7 +91,7 @@ echo -e '\E[32m'"Swap Usages :" $tecreset
 cat /tmp/ramcache | grep -v "Mem"
 
 # Check Disk Usages
-df -h| grep 'Filesystem\|/dev/root\|/dev/vda*' > /tmp/diskusage
+df -h| grep 'Filesystem\|/mnt/c\|/dev/vda*' > /tmp/diskusage
 echo -e '\E[32m'"Disk Usages :" $tecreset
 cat /tmp/diskusage
 
