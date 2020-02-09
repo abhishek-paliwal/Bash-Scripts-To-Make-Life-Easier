@@ -34,5 +34,6 @@
 ## ADO EVENTS
 20191218,14:30:00,yellow, Last english class of 2019
 20200108,14:30:00,yellow, First english class of 2020
+20200228,08:15:00,yellow, Skating class from school
 ## HOME EVENTS
 20200214,10:00:00,Red,Valentines-Day
