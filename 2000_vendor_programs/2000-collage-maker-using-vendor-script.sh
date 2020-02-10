@@ -23,7 +23,7 @@ echo ;
 
 ################################################################################
 ## LOOPTING THROUGH ALL CHILD DIRECTORIES
-for DIRNAME in $(find $CWD -type d -depth 1) ; do
+for DIRNAME in $(find "$CWD" -maxdepth 1 -type d) ; do
   cd $DIRNAME ;
   MYDIR=$(basename $DIRNAME);
   echo "##------------------------------------------------------------------------------" ;
