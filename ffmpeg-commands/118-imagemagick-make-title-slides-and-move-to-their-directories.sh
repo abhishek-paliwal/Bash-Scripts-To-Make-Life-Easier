@@ -13,10 +13,10 @@ cd $PWD ;
 
 ######################################################
 
-# LISTING ALL FOLDERS, ONE PER LINE
-titles=`ls -d1 */ | sort -n | sed -e 's/\///g' ` ;
+# LISTING ALL FOLDERS AND FILES, ONE PER LINE
+titles=$(ls -1 */ | sort -n | sed -e 's/\///g' -e 's/://g' -e 's/.mp4//g' -e 's/.mov//g' -e 's/.m4v//g') ;
 
-echo "All valid folders in PWD: " ;
+echo "All valid files and folders in PWD: " ;
 echo -e "$titles" ; echo ;
 
 echo "#################################################" ;
@@ -34,7 +34,8 @@ while read line; do
     line_new=`echo $line | sed -e 's/-/\\\\n/g' ` ; ##Imagemagick needs '\\\\n' to enter \n
     echo "LINE_NEW: $line_new " ;
 
-    convert -background $random_color_background -fill $random_color_text -font "$HOME/Library/Fonts/Sortdecai Brush Script.otf" -size 1920x1080 -gravity center label:"$line_new" __TITLE_$line.jpg
+    #convert -background $random_color_background -fill $random_color_text -font "$HOME/Library/Fonts/Sortdecai Brush Script.otf" -size 1920x1080 -gravity center label:"$line_new" __TITLE_$line.jpg
+    convert -background $random_color_background -fill $random_color_text -font "$DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/_fonts/Roboto_Slab/RobotoSlab-Black.ttf" -size 1920x1080 -gravity center label:"$line_new" __TITLE_$line.jpg
 
     echo "  IMAGEMAGICK: TITLE SLIDE CREATED for: $line" ;
     echo ;
@@ -48,4 +49,9 @@ echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>< <<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ; echo ;
 
 ######################################################
 echo "Now opening $PWD" ;
-open $PWD ;
+if [ "$USER" = "ubuntu" ] ; then
+    explorer.exe .
+else
+    open $PWD ;
+fi
+
