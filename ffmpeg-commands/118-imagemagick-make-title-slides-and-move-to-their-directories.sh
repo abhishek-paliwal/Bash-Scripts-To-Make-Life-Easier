@@ -14,7 +14,7 @@ cd $PWD ;
 ######################################################
 
 # LISTING ALL FOLDERS AND FILES, ONE PER LINE
-titles=$(ls -1 */ | sort -n | sed -e 's/\///g' -e 's/://g' -e 's/.mp4//g' -e 's/.mov//g' -e 's/.m4v//g') ;
+titles=$(ls -1 */ | sort -n | sed -e 's/\///g' -e 's/://g' -e 's/.mp4//g' -e 's/.mov//g' -e 's/.m4v//g' -e 's/.avi//g') ;
 
 echo "All valid files and folders in PWD: " ;
 echo -e "$titles" ; echo ;
