@@ -9,8 +9,8 @@ cat << EOF
   ################################################################################
 EOF
 
-HUGO_CONTENT_DIR="$HOME/GitHub/2019-NOTES-HUGO-WEBSITE-PALI/content"
-FILE_OUTPUT_SITESTATS="$HOME/GitHub/2019-NOTES-HUGO-WEBSITE-PALI/static/sitestats.html"
+HUGO_CONTENT_DIR="$DIR_GITHUB/2019-NOTES-HUGO-WEBSITE-PALI/content"
+FILE_OUTPUT_SITESTATS="$DIR_GITHUB/2019-NOTES-HUGO-WEBSITE-PALI/static/sitestats.html"
 
 ##------------------ DO NOT CHANGE ANYTHING BELOW ------------------------------
 ## OUTPUT FILE CREATED AT (+ initializing the output file):
