@@ -12,7 +12,7 @@ cat << EOF
 EOF
 
 ## CD to temporary directory on desktop
-PWD="$HOME/Desktop/Y"
+PWD="$HOME_WINDOWS/Desktop/Y"
 cd $PWD ;
 echo ">>>> PWD is $PWD" ;
 
