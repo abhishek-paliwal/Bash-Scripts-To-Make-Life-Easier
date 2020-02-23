@@ -5,43 +5,19 @@
 shopt -s expand_aliases ## for BASH: This has to be done, else, aliases are not expanded in scripts.
 source $HOME/.bash_profile ## Then, this also has to be done to use aliases in this script.
 source $HOME/.bash_aliases ## Then, this also has to be done to use aliases in this script.
+source $HOME/.profile ## Then, this also has to be done to use aliases in this script.
+source $HOME/.zshrc ## Then, this also has to be done to use aliases in this script.
+
 ##############################################################################
 ##############################################################################
 
 ####### only run this bash script to make ALL the indexes and backups on PALI's Macbook #########
 BASEPATH="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier";
 
-echo "creating markdown books index in dropbox......"
-sh $BASEPATH/1_create_markdown_books_index.sh
-
-echo "creating wallpapers index in github......"
-sh $BASEPATH/2_create_wallpapers_index.sh
-
-echo "creating logos index in dropbox......"
-sh $BASEPATH/10D_create_OUR_LOGOS_indexes.sh
-
-echo "creating LOW POLY backgrounds index in dropbox......"
-sh $BASEPATH/10C_create_LOWPOLY_indexes.sh
-
-echo "creating JSON Wallpaper Templates index file in dropbox......"
-sh $BASEPATH/10A_create_JSON_plus_image_indexes.sh
-
-echo "creating SOCIAL MEDIA images index file in dropbox......"
-sh $BASEPATH/10B_create_SOCIAL_MEDIA_image_indexes.sh
-
-echo "creating ADORIA.ME portfolio index file in dropbox......"
-sh $BASEPATH/10E_create_adoria_me_portfolio_index_page.sh
-
 #### BACKUPS of our MACs ####
 echo "creating backup of MACFILES in Onedrive......"
 sh $BASEPATH/5-abhishek_create_MACFILES_backup.sh
 
-#######################################################
-#### CREATING SITEMAPS ####
-echo "CREATING SITEMAPS..."
-sh $BASEPATH/11-sitemap-for-website-generator.sh
-echo ;
-#######################################################
 
 ########## KEEP THIS BLOCK AT THE END TO BACKUP ALL FILES TO SERVERS ############
 ########## ONLY RUN THE SSH SCP BACKUP BLOCK WHEN $USER = "abhishek"
@@ -54,6 +30,36 @@ echo;
 
 if [[ "$USER" == "abhishek" ]] ;
 then
+
+    echo "creating markdown books index in dropbox......"
+    sh $BASEPATH/1_create_markdown_books_index.sh
+
+    echo "creating wallpapers index in github......"
+    sh $BASEPATH/2_create_wallpapers_index.sh
+
+    echo "creating logos index in dropbox......"
+    sh $BASEPATH/10D_create_OUR_LOGOS_indexes.sh
+
+    echo "creating LOW POLY backgrounds index in dropbox......"
+    sh $BASEPATH/10C_create_LOWPOLY_indexes.sh
+
+    echo "creating JSON Wallpaper Templates index file in dropbox......"
+    sh $BASEPATH/10A_create_JSON_plus_image_indexes.sh
+
+    echo "creating SOCIAL MEDIA images index file in dropbox......"
+    sh $BASEPATH/10B_create_SOCIAL_MEDIA_image_indexes.sh
+
+    echo "creating ADORIA.ME portfolio index file in dropbox......"
+    sh $BASEPATH/10E_create_adoria_me_portfolio_index_page.sh
+
+
+    #######################################################
+    #### CREATING SITEMAPS ####
+    echo "CREATING SITEMAPS..."
+    sh $BASEPATH/11-sitemap-for-website-generator.sh
+    echo ;
+    #######################################################
+
 
     #### BACKUP TO-AND-FROM DREAMCOMPUTE SERVER ####
     #### Actual backup command aliases below ##
