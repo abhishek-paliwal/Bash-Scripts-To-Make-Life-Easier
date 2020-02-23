@@ -3,10 +3,15 @@
 ############ EXPANDING ALIASES ON NON-INTERATIVE SHELL SCRIPTS ###############
 ## For Running system commands (as Aliases from .bash_profile)
 shopt -s expand_aliases ## for BASH: This has to be done, else, aliases are not expanded in scripts.
-source $HOME/.bash_profile ## Then, this also has to be done to use aliases in this script.
+
+## IF THE HOME USER IS UBUNTU, CHANGE SOME DEFAULT VARIABLES (BCOZ WE ARE USING WSL)
+if [ "$USER"=="ubuntu" ] ; then 
+    source $HOME/.profile ## Then, this also has to be done to use aliases in this script.
+else 
+    source $HOME/.bash_profile ## Then, this also has to be done to use aliases in this script.
+fi 
+
 source $HOME/.bash_aliases ## Then, this also has to be done to use aliases in this script.
-source $HOME/.profile ## Then, this also has to be done to use aliases in this script.
-source $HOME/.zshrc ## Then, this also has to be done to use aliases in this script.
 
 ##############################################################################
 ##############################################################################
@@ -15,8 +20,8 @@ source $HOME/.zshrc ## Then, this also has to be done to use aliases in this scr
 BASEPATH="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier";
 
 #### BACKUPS of our MACs ####
-echo "creating backup of MACFILES in Onedrive......"
-sh $BASEPATH/5-abhishek_create_MACFILES_backup.sh
+echo "creating backup of MACFILES + Important DOTFILES in Onedrive......"
+bash $BASEPATH/5-abhishek_create_MACFILES_backup.sh
 
 
 ########## KEEP THIS BLOCK AT THE END TO BACKUP ALL FILES TO SERVERS ############
