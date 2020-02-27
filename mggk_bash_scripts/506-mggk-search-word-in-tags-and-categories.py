@@ -27,13 +27,28 @@ for filename in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
     print(filename)
 ##############################################################################
 
-## CREATING TWO EMPTY LISTS TO BE POPULATED LATER
+print("\n\n////////////////////// REAL MAGIC HAPPENS BELOW //////////////////\n\n" )
+
+## CREATING TWO EMPTY LISTS TO BE POPULATED LATER AND A FUNCION
 finalTags=[]
 finalCategories=[]
 
-print("\n\n////////////////////// REAL MAGIC HAPPENS BELOW //////////////////\n\n" )
+## ++++++++++++++++++++++++ BEGIN : FUNCION DEFINITIONS ++++++++++++++++++++++++
+## To prevent future errors related to empty values, let's first check whether
+## a tag or category value is empty, meaning is of None type.
+## Since, NoneType can not be compared via type, only it's variable value can be compared as None.
+## SO WE WILL PUT THIS ALL LOGIC NICELY IN A FUNCTION DEFINITION
+## If any valid empty values are found, the program will exit immediately for easy debugging.
+def func_findNoneValuesInFile(myList,currentFileName) :
+    for element in myList:
+        if element is None:
+            print(''); print(40*"=/=") ;
+            print("     >>>> MGGK ERROR NOTE: This file ==> " + fname + " ==> has one or more blank values for tags or categories. Please remove it or fix it and re-run. This program will exit now.") ;
+            print(40*"=/=") ;
+            exit();
+## ++++++++++++++++++++++++ END: FUNCION DEFINITIONS +++++++++++++++++++++++++++
 
-# LOOPING THROUGH ALL MARKDOWN FILES
+# BEGIN: LOOPING THROUGH ALL MARKDOWN FILES
 for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
     with io.open(fname, 'r') as f:
         # Parse file's front matter
@@ -44,7 +59,7 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         MYKEYS = ["title","author","date","url","featured_image","yoast_description","youtube_video_id","mggk_json_recipe","tags","categories"]
 
         for p in MYKEYS:
-            if post.get(p) == None:
+            if post.get(p) is None:
                 post[p] = ['ZZZZ - NOTHING FOUND for ' + p]
         ######################################################################
 
@@ -67,15 +82,26 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         print("TAGS: " + str(post['tags'])) ## printing tags found in frontmatter
 
         ######### APPENDING TO ALL TAGS/CATEGORIES list
-        finalTags = finalTags + post['tags']
-        finalCategories = finalCategories + post['categories']
+        listOfTags =  post['tags']
+        listOfCategories =  post['categories']
+
+        finalTags = finalTags + listOfTags
+        finalCategories = finalCategories + listOfCategories
+
+        ## Calling function for finding valid empty values
+        func_findNoneValuesInFile (listOfTags,fname)
+        func_findNoneValuesInFile(listOfCategories,fname)
+        #########
+
+# END: LOOPING THROUGH ALL MARKDOWN FILES
 
 ###############################################################################
 ########################### FOR TAGS
 ###############################################################################
 ##### CONVERTING TO SET FOR UNIQUE VALUES + FINAL PRINTING
-## converting to lowercase
-finalTags = [x.lower() for x in finalTags ]
+
+## converting all tags to lowercase
+finalTags = [x.lower() for x in finalTags]
 ## converting to a set for getting the unique values
 finalTagsUniq = list(sorted(set(finalTags)))
 
@@ -87,6 +113,7 @@ for t in finalTagsUniq:
 ########################### FOR CATEGORIES
 ###############################################################################
 ##### CONVERTING TO SET FOR UNIQUE VALUES + FINAL PRINTING
+
 ## converting to lowercase
 finalCategories = [x.lower() for x in finalCategories ]
 ## converting to a set for getting the unique values
