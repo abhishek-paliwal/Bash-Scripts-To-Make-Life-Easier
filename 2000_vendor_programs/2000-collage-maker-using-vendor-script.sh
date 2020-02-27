@@ -23,6 +23,7 @@ echo ;
 
 ################################################################################
 ## LOOPTING THROUGH ALL CHILD DIRECTORIES
+MY_DIR_GITHUB="/home/ubuntu/GitHub" ;
 for DIRNAME in $(find "$CWD" -maxdepth 1 -type d) ; do
   cd $DIRNAME ;
   MYDIR=$(basename $DIRNAME);
@@ -31,13 +32,13 @@ for DIRNAME in $(find "$CWD" -maxdepth 1 -type d) ; do
   echo ">>>> NOTE: Collages will be made in => $CWD" ;
   echo "##------------------------------------------------------------------------------" ;
   ######
-  python3 $HOME/Github/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/2000-python_collage_maker.py -f $DIRNAME -w 8000 -i 900 -o $CWD/$MYDIR-collage-8k.jpg ;
+  python3 $MY_DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/2000-python_collage_maker.py -f $DIRNAME -w 8000 -i 900 -o $CWD/$MYDIR-collage-8k.jpg ;
   ######
-  python3 $HOME/Github/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/2000-python_collage_maker.py -f $DIRNAME -w 6000 -i 1200 -o $CWD/$MYDIR-collage-6k.jpg
+  python3 $MY_DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/2000-python_collage_maker.py -f $DIRNAME -w 6000 -i 1200 -o $CWD/$MYDIR-collage-6k.jpg
   ######
-  python3 $HOME/Github/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/2000-python_collage_maker.py -f $DIRNAME -w 4000 -i 1500 -o $CWD/$MYDIR-collage-4k.jpg
+  python3 $MY_DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/2000-python_collage_maker.py -f $DIRNAME -w 4000 -i 1500 -o $CWD/$MYDIR-collage-4k.jpg
   ######
-  python3 $HOME/Github/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/2000-python_collage_maker.py -f $DIRNAME -w 3000 -i 600 -o $CWD/$MYDIR-collage-3k.jpg
+  python3 $MY_DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/2000-python_collage_maker.py -f $DIRNAME -w 3000 -i 600 -o $CWD/$MYDIR-collage-3k.jpg
   ######
   echo ">>>> THESE COLLAGES ARE CREATED:" ;
   ls -1 $CWD/$MYDIR-collage-*.jpg ;
