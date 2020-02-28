@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################################
-THIS_SCRIPT_NAME="599-palinotes-RENAME-ALL-MD-FILES-BASED-UPON-DATE-URL-YAML-FRONTMATTER-VALUES.sh"
+THIS_SCRIPT_NAME="1599-palinotes-RENAME-ALL-MD-FILES-BASED-UPON-DATE-URL-YAML-FRONTMATTER-VALUES.sh"
 ################################################################################
 cat << EOF
   ###############################################################################
@@ -25,14 +25,15 @@ EOF
 
 ## VARIABLE SETTING
 ################################################################################
-HUGO_CONTENT_DIR="$HOME/Github/2019-NOTES-HUGO-WEBSITE-PALI/content" ;
+HUGO_CONTENT_DIR="$DIR_GITHUB/2019-NOTES-HUGO-WEBSITE-PALI/content" ;
 #HUGO_CONTENT_DIR="$HOME/Desktop/Z/content"
-OUTPUT_DIR="$HOME/Desktop/Y/"
+OUTPUT_DIR="$HOME/Desktop/Y"
 OUTPUT_HTML_FILE="$OUTPUT_DIR/_TMP_1599_OUTPUT_FILE.HTML"
 OUTPUT_HTML_FILE_RENAMED_ONLY="$OUTPUT_DIR/_TMP_1599_OUTPUT_FILE_RENAMED_ONLY.HTML"
+TMP_LOGFILE="$OUTPUT_DIR/_TMP_1599_LOGFILE.TXT"
 
 ## DELETE HTML FILES IF ALREADY EXISTS
-rm $OUTPUT_HTML_FILE_RENAMED_ONLY $OUTPUT_HTML_FILE
+rm $OUTPUT_HTML_FILE_RENAMED_ONLY $OUTPUT_HTML_FILE $TMP_LOGFILE
 
 ################################################################################
 #################### DON'T CHANGE ANYTHING BELOW THIS LINE #####################
@@ -150,6 +151,9 @@ cd $d
       ## creating the output html file for a review
       echo "<tr class='table-danger'><th scope='row'>$counter</th> <td>$f</td> <td>$new_name</td></tr>" | tee -a  $OUTPUT_HTML_FILE_RENAMED_ONLY $OUTPUT_HTML_FILE ;
 
+      ## Wrinting the changed filenames to a logfile
+      echo "RENAMED: $counter // $f ==> $new_name" | tee -a $TMP_LOGFILE
+
       ## ACTUAL FILE RENAMING
       mv $f $new_name ;
     fi
@@ -193,5 +197,15 @@ echo "</div> <!-- END: main containter div -->
 </html>" | tee -a $OUTPUT_HTML_FILE_RENAMED_ONLY $OUTPUT_HTML_FILE
 
 ## REVIEW RESULTS (following command only works on MAC OS)
-open $OUTPUT_HTML_FILE
-open $OUTPUT_HTML_FILE_RENAMED_ONLY
+FINAL_MSG=">>>> THE PROGRAM IS DONE NOW. FOLLOWING FILENAMES ARE CHANGED. LOGFILE WILL BE SHOWN NOW. Note that the logfile will only be created if there is atleast one file renamed." ;
+## If user is ubuntu on WSL ...
+if [ "$USER" == "ubuntu" ] ; then
+  echo; echo "$FINAL_MSG";
+  echo; cat $TMP_LOGFILE ;
+else
+  echo; echo "$FINAL_MSG";
+  echo; cat $TMP_LOGFILE ;
+  open $OUTPUT_HTML_FILE
+  open $OUTPUT_HTML_FILE_RENAMED_ONLY
+fi
+
