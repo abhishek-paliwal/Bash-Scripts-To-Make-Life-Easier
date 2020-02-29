@@ -201,7 +201,7 @@ echo "<div class='site-wrapper'>
 echo "<div class='container-fluid'>" >> $OUTPUT
 
 echo "<h3 class='thin'>Total Images On This Page (Recursive) = $totalimagefiles</h3>" >> $OUTPUT
-echo "<h3 class='thin'>Page last updated: "`date`"</h3>" >> $OUTPUT
+echo "<h3 class='thin'>Page last updated in month: $(date +%Y%m)</h3>" >> $OUTPUT
 
 ##### CREATING THE HREF-NAME LINKS FOR ALL THE FOLDERS #####
 echo "<hr>" >> $OUTPUT

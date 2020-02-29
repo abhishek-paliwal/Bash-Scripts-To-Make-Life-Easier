@@ -44,7 +44,7 @@ h2 {
 EOM
 
 echo "<h1>Index of Javascript Wallpaper Creators // by Abhishek Paliwal</h1>" >> $OUTPUT
-echo "<h2>Page last updated: "`date`"</h2>" >> $OUTPUT
+echo "<h2>Page last updated in month: $(date + %y%m)</h2>" >> $OUTPUT
 
 #### Calculations begin ####
 i=0
