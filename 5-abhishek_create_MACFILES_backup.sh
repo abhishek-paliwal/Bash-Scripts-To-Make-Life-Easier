@@ -8,7 +8,7 @@
 ##################################################################################
 ## VARIABLE INITIALIZATION
 ## IF THE HOME USER IS UBUNTU, CHANGE THE HOME PATH (BCOZ WE ARE USING WSL)
-if [ "$USER"=="ubuntu" ] ; then 
+if [ "$USER"="ubuntu" ] ; then 
 	BACKUP_HOMEDIR="$HOME/Desktop/00_BACKUPS_WSL/$USER" ;
 	mkdir -p $BACKUP_HOMEDIR ;
 else 
@@ -65,9 +65,13 @@ FUNC_BACKUP_GITHUB_DIR () {
 
 ##################################################################################
 echo; echo ">>>> BACKING UP THE INSTALLED APPS LIST FOR VARIOUS PACKAGE MANAGERS (homebrew, node, gem, python, etc.)" ; echo ;
+echo ">> Brew bundle dump ... running" ;
 brew bundle dump --force --file="$DIR_PACKAGES/BREW_INSTALLS_FILENAME.TXT"
+echo ">> Pip3 freeze ... running" ;
 pip3 freeze > "$DIR_PACKAGES/PIP3_INSTALLED_requirements.txt"
+echo ">> NPM package listing ... running" ;
 npm -g ls --long --depth=0 > "$DIR_PACKAGES/NODE_NPM_GLOBALLY_INSTALLED_MODULES.txt"
+echo ">> All package listings backups created."
 
 ##################################################################################
 
