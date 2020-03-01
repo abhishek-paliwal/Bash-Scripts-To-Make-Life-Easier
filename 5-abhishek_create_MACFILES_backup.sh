@@ -16,7 +16,9 @@ else
 fi 
 
 BACKUP_SUBDIR="$BACKUP_HOMEDIR/latest-rsync-MAC-backups" ;
-echo "Since, the user is $USER, the HOME will be set as $HOME AND HOME_WINDOWS will be set as $HOME_WINDOWS" ;
+
+CHOSEN_HOMEDIR_MSG="=====> Since, the user is $USER, the HOME is set as $HOME AND HOME_WINDOWS will be set as $HOME_WINDOWS"
+echo  $CHOSEN_HOMEDIR_MSG;
 ##################################################################################
 
 ## BEFORE MAKING ANY BACKUPS, LET'S FIRST MAKE THE REQUIRED BACKUP DIRECTORIES
@@ -120,3 +122,4 @@ fi
 ## Printing final directory tree
 echo ; echo "##################################################################################" ;
 echo ">>>> SHOWING DIRECTORY TREE FOR => $BACKUP_HOMEDIR" ; tree $BACKUP_HOMEDIR ;
+echo  $CHOSEN_HOMEDIR_MSG;
