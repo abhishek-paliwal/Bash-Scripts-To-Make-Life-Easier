@@ -5,6 +5,16 @@
 ## FULL BACKUP OF IMPORTANT MAC FILES             ####
 ######################################################
 
+#------------------------------------------------------------------------------
+echo "Currently sourcing the bash color script, which outputs chosen texts in various colors ..." ;
+
+source $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.bash
+
+info "This enables use of keywords for coloring, such as: debug, info, error, success, warn, highlight." ;
+debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.bash -h"
+#------------------------------------------------------------------------------
+
+
 ##################################################################################
 ## VARIABLE INITIALIZATION
 ## IF THE HOME USER IS UBUNTU, CHANGE THE HOME PATH (BCOZ WE ARE USING WSL)
@@ -18,7 +28,7 @@ fi
 BACKUP_SUBDIR="$BACKUP_HOMEDIR/latest-rsync-MAC-backups" ;
 
 CHOSEN_HOMEDIR_MSG="=====> Since, the user is $USER, the HOME is set as $HOME AND HOME_WINDOWS will be set as $HOME_WINDOWS"
-echo  $CHOSEN_HOMEDIR_MSG;
+warn  $CHOSEN_HOMEDIR_MSG;
 ##################################################################################
 
 ## BEFORE MAKING ANY BACKUPS, LET'S FIRST MAKE THE REQUIRED BACKUP DIRECTORIES
@@ -122,4 +132,4 @@ fi
 ## Printing final directory tree
 echo ; echo "##################################################################################" ;
 echo ">>>> SHOWING DIRECTORY TREE FOR => $BACKUP_HOMEDIR" ; tree $BACKUP_HOMEDIR ;
-echo  $CHOSEN_HOMEDIR_MSG;
+warn  $CHOSEN_HOMEDIR_MSG;
