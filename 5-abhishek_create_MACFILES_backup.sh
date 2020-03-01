@@ -28,7 +28,7 @@ fi
 BACKUP_SUBDIR="$BACKUP_HOMEDIR/latest-rsync-MAC-backups" ;
 
 CHOSEN_HOMEDIR_MSG="=====> Since, the user is $USER, the HOME is set as $HOME AND HOME_WINDOWS will be set as $HOME_WINDOWS"
-warn  $CHOSEN_HOMEDIR_MSG;
+echo; warn  "$CHOSEN_HOMEDIR_MSG" ; echo; 
 ##################################################################################
 
 ## BEFORE MAKING ANY BACKUPS, LET'S FIRST MAKE THE REQUIRED BACKUP DIRECTORIES
@@ -77,13 +77,13 @@ FUNC_BACKUP_GITHUB_DIR () {
 
 ##################################################################################
 echo; echo ">>>> BACKING UP THE INSTALLED APPS LIST FOR VARIOUS PACKAGE MANAGERS (homebrew, node, gem, python, etc.)" ; echo ;
-echo ">> Brew bundle dump ... running" ;
+info ">> Brew bundle dump ... running" ;
 brew bundle dump --force --file="$DIR_PACKAGES/BREW_INSTALLS_FILENAME.TXT"
-echo ">> Pip3 freeze ... running" ;
+info ">> Pip3 freeze ... running" ;
 pip3 freeze > "$DIR_PACKAGES/PIP3_INSTALLED_requirements.txt"
-echo ">> NPM package listing ... running" ;
+info ">> NPM package listing ... running" ;
 npm -g ls --long --depth=0 > "$DIR_PACKAGES/NODE_NPM_GLOBALLY_INSTALLED_MODULES.txt"
-echo ">>>> ALL PACKAGE LISTINGS BACKUPS CREATED."
+success ">>>> ALL PACKAGE LISTINGS BACKUPS CREATED." ; echo ; 
 
 ##################################################################################
 
@@ -132,4 +132,4 @@ fi
 ## Printing final directory tree
 echo ; echo "##################################################################################" ;
 echo ">>>> SHOWING DIRECTORY TREE FOR => $BACKUP_HOMEDIR" ; tree $BACKUP_HOMEDIR ;
-warn  $CHOSEN_HOMEDIR_MSG;
+echo; warn  "$CHOSEN_HOMEDIR_MSG" ; echo; 
