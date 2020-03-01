@@ -71,7 +71,7 @@ echo ">> Pip3 freeze ... running" ;
 pip3 freeze > "$DIR_PACKAGES/PIP3_INSTALLED_requirements.txt"
 echo ">> NPM package listing ... running" ;
 npm -g ls --long --depth=0 > "$DIR_PACKAGES/NODE_NPM_GLOBALLY_INSTALLED_MODULES.txt"
-echo ">> All package listings backups created."
+echo ">>>> ALL PACKAGE LISTINGS BACKUPS CREATED."
 
 ##################################################################################
 
