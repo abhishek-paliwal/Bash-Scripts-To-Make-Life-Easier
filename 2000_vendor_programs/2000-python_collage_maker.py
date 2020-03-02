@@ -9,9 +9,9 @@ import os
 import random
 from PIL import Image
 
-print("\n>>>> USAGE (use JPG for output as it gives reasonalbe file size): p3 python_collage_maker.py -f FOLDER_PATH -w 6000 -i 1050 -o collage_output.jpg") ;
-print("\n>>>> NOTE: Make sure that no images have height less than that specified in '-i init_height' argument.") ;
-print("################################################################################");
+print("\n>>>> USAGE (use JPG for output as it gives reasonalbe file size): p3 python_collage_maker.py -f FOLDER_PATH -w 6000 -i 1050 -o collage_output.jpg") 
+print("\n>>>> NOTE: Make sure that no images have height less than that specified in '-i init_height' argument.") 
+print("################################################################################")
 
 def make_collage(images, filename, width, init_height):
     """
