@@ -18,7 +18,7 @@ debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-
 ##################################################################################
 ## VARIABLE INITIALIZATION
 ## IF THE HOME USER IS UBUNTU, CHANGE THE HOME PATH (BCOZ WE ARE USING WSL)
-if [ "$USER"="ubuntu" ] ; then 
+if [ "$USER" == "ubuntu" ] ; then 
 	BACKUP_HOMEDIR="$HOME/Desktop/00_BACKUPS_WSL/$USER" ;
 	mkdir -p $BACKUP_HOMEDIR ;
 else 
@@ -123,7 +123,7 @@ if [ "$USER"=="ubuntu" ] ; then
 	echo; echo ">>>> Rsync'ing this backup directory (=> $BACKUP_HOMEDIR )to the Onedrive directory (=> $ONEDRIVE_DIR ) ..." ; echo ; 
 	rsync -avzP $BACKUP_HOMEDIR $ONEDRIVE_DIR
 	echo ; echo "##################################################################################" ;
-	echo ">>>> SHOWING DIRECTORY TREE FOR => $ONEDRIVE_DIR" ; tree $ONEDRIVE_DIR ;
+	success ">>>> SHOWING DIRECTORY TREE FOR => $ONEDRIVE_DIR" ; tree $ONEDRIVE_DIR ;
 	#explorer.exe . 
 else 
 	open $BACKUP_HOMEDIR;
@@ -131,5 +131,5 @@ fi
 
 ## Printing final directory tree
 echo ; echo "##################################################################################" ;
-echo ">>>> SHOWING DIRECTORY TREE FOR => $BACKUP_HOMEDIR" ; tree $BACKUP_HOMEDIR ;
+success ">>>> SHOWING DIRECTORY TREE FOR => $BACKUP_HOMEDIR" ; tree $BACKUP_HOMEDIR ;
 echo; warn  "$CHOSEN_HOMEDIR_MSG" ; echo; 
