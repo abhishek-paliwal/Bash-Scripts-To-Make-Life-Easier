@@ -129,20 +129,22 @@ print('\n///////////////////////////////////////////////////////////////////////
 #### <meta property="article:published_time" content="2014-03-16T23:10:22+00:00" />
 #### <meta property="article:modified_time" content="2014-03-16T23:10:22+00:00" />
 meta_published_time_tmp = soup.find(attrs={'property': 'article:published_time'})
-META_PUBLISHED_DATETIME = "1970-01-01T00:00:00+00:00"
+META_PUBLISHED_DATETIME = "1970-01-01T00:00:00"
 #####
 try:
     META_PUBLISHED_DATETIME = str(meta_published_time_tmp['content'])
+    META_PUBLISHED_DATETIME = META_PUBLISHED_DATETIME.replace('+00:00', '')
 except:
     META_PUBLISHED_DATETIME = META_PUBLISHED_DATETIME
 ######
 print(">>>> META_PUBLISHED_DATETIME: ", META_PUBLISHED_DATETIME)
 
 meta_modified_time_tmp = soup.find(attrs={'property': 'article:modified_time'})
-META_MODIFIED_DATETIME = "1970-01-01T00:00:00+00:00"
+META_MODIFIED_DATETIME = "1970-01-01T00:00:00"
 ####
 try:
     META_MODIFIED_DATETIME = str(meta_modified_time_tmp['content'])
+    META_MODIFIED_DATETIME = META_MODIFIED_DATETIME.replace('+00:00', '')
 except:
     META_MODIFIED_DATETIME = META_MODIFIED_DATETIME
 ####
@@ -151,9 +153,9 @@ print(">>>> META_MODIFIED_DATETIME: ", META_MODIFIED_DATETIME)
 ## CONVERTING OBTAINED DATE STRINGS INTO PYTHON DATE OBJECTS FOR CALCULATIONS
 #### a.) converting string to corresponding date format (by using strptime)
 date_post_published_tmp = datetime.strptime(
-    META_PUBLISHED_DATETIME, "%Y-%m-%dT%H:%M:%S%z")
+    META_PUBLISHED_DATETIME, "%Y-%m-%dT%H:%M:%S")
 date_post_modified_tmp = datetime.strptime(
-    META_MODIFIED_DATETIME, "%Y-%m-%dT%H:%M:%S%z")
+    META_MODIFIED_DATETIME, "%Y-%m-%dT%H:%M:%S")
 #### b.) converting thus created date into desired format for printing (by using strftime)
 date_post_published = datetime.strftime(date_post_published_tmp, '%Y-%m-%d')
 date_post_modified = datetime.strftime(date_post_modified_tmp, '%Y-%m-%d')
