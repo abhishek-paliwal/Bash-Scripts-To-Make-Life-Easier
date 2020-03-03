@@ -43,4 +43,10 @@ echo;
 
 ###########
 echo "Opening DIR = $FILE_TRANSFER_DIR" ;
-open $FILE_TRANSFER_DIR ;
+
+if [ "$USER" == "ubuntu" ] ; then
+    cd $FILE_TRANSFER_DIR ;
+    explorer.exe .
+else
+    open $FILE_TRANSFER_DIR ;
+fi
