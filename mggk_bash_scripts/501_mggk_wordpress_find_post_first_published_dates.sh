@@ -1,5 +1,10 @@
 #!/bin/bash
-cat << EOF
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
     ############################################################################
     # MADE FOR MGGK:
     # THIS PROGRAM EXTRACTS THE first publishedDate OF AN ARTICLE THROUGH curl
@@ -24,9 +29,15 @@ cat << EOF
     # │   │   └── YOURWEBSITENAME_sitemap2.csv
     # │   └── _output
     ############################################################################
-    ############################## BEGIN #######################################
-EOF
+EOM
 
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+############################## BEGIN #######################################
 ## DECLARING SOME VARIABLES
 INPUT_DIR="_input" ;
 OUTPUT_DIR="_output" ;

@@ -1,6 +1,22 @@
 #!/bin/bash
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
 ## BOOTSTRAP FRAMEWORK : THIS SCRIPT CREATES AN HTML FILE WITH...
 ## ...ALL THE IMAGES IN WORKING DIRECTORY + RECURSIVELY
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 echo "#################" #Blank line
 ROOT="$HOME/GitHub/abhishek-paliwal.github.io/wallpaper_creators/JSON-templates-for-design"
 echo "CURRENT WORKING DIRECTORY: " $ROOT ##check the present working directory

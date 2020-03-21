@@ -1,11 +1,23 @@
 #! /bin/bash
 
-cat << EOF
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
     ##################################################################################
     ## Insert PaliNOTES - HUGO frontmatter with proper dates
     ## IMPORTANT NOTE: This script needs a command line argument to run.
     ##################################################################################
-EOF
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 BASEDIR="$HOME/Desktop/Y"

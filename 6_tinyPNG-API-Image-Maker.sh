@@ -1,10 +1,26 @@
 #!/bin/bash
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
 #############################################################################
 ## Using tinyPNG/tinyJPG server API to create compressed images. AWESOME!!!
 ## Created by: Abhishek Paliwal on Thursday January 5, 2017
 ## STEPS: Open the Terminal. Go to desired directory. Run this bash script.
 ## Run as > /PATH/TO/FILE/sh _tinyPNG-Image-Maker.sh
 #############################################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 
 ## Getting tinyPNG API KEY: #####
 ## Reading a private CONFIG Key JSON file locally, through Python Version 2: ####

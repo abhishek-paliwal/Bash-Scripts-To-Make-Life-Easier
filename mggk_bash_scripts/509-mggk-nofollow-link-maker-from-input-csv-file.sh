@@ -2,30 +2,42 @@
 THIS_FILENAME="509-nofollow-link-maker-from-input-csv-file.sh" ;
 REQUIRED_FILE1="509-REQUIREMENT-FILE-COMMA_SEPARATED.CSV" ;
 
-################################################################################
-cat <<EOF
-################################################################################
-## FILENAME = $THIS_FILENAME
-################################################################################
-## REQUIREMENTS :
-#### FILE = $REQUIRED_FILE1 should be present in PWD.
-################################################################################
-## THIS FILE CREATES READYMADE NOFOLLOW LINKS TEXT FROM AN INPUT CSV FILE.
-## USAGE:
-#### > sh $THIS_FILENAME
-################################################################################
-######### STRUCTURE OF MYFILE_COMMA_SEPARATED.CSV ##############################
-## NOTE: This in a csv file with 3 columns => [md_filename, anchorText, anchorText_URL]
-#### ...
-#### ...
-#### 2018-03-19-gut-friendly-delicious-indian-kanji-for-your-tummy.md, Google is great, http://www.google.com
-#### 2018-03-30-things-to-consider-for-the-right-cold-brew.md, Yahoo is great, http://www.google.com
-#### 2018-04-02-examples-of-regional-dishes-in-south-france.md, Goto Concepro Website, https://www.concepro.com
-#### ...
-#### ...
-################################################################################
-EOF
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ################################################################################
+    ## FILENAME = $THIS_FILENAME
+    ################################################################################
+    ## REQUIREMENTS :
+    #### FILE = $REQUIRED_FILE1 should be present in PWD.
+    ################################################################################
+    ## THIS FILE CREATES READYMADE NOFOLLOW LINKS TEXT FROM AN INPUT CSV FILE.
+    ## USAGE:
+    #### > sh $THIS_FILENAME
+    ################################################################################
+    ######### STRUCTURE OF MYFILE_COMMA_SEPARATED.CSV ##############################
+    ## NOTE: This in a csv file with 3 columns => [md_filename, anchorText, anchorText_URL]
+    #### ...
+    #### ...
+    #### 2018-03-19-gut-friendly-delicious-indian-kanji-for-your-tummy.md, Google is great, http://www.google.com
+    #### 2018-03-30-things-to-consider-for-the-right-cold-brew.md, Yahoo is great, http://www.google.com
+    #### 2018-04-02-examples-of-regional-dishes-in-south-france.md, Goto Concepro Website, https://www.concepro.com
+    #### ...
+    #### ...
+    ################################################################################
+EOM
 
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+##################################################################################
 PWD=$(pwd);
 echo;
 echo ">>>> PRESENT WORKING DIRECTORY = $PWD" ;

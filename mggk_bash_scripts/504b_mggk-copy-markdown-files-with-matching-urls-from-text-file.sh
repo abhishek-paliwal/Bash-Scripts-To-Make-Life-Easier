@@ -2,7 +2,13 @@
 ################################################################################
 THIS_FILENAME="504b_mggk-copy-markdown-files-with-matching-urls-from-text-file.sh"
 ################################################################################
-cat << EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ##############################################################################
   ## FILENAME: $THIS_FILENAME
   #### USAGE: > sh $THIS_FILENAME.sh \$1
@@ -26,7 +32,13 @@ cat << EOF
   ## CODED ON: April 17, 2019
   ## BY: PALI
   ##############################################################################
-EOF
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ################################################################################
 INPUT_FILE="$1" ; ## getting the first argument from command line

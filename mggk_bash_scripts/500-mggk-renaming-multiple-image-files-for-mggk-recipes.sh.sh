@@ -1,5 +1,11 @@
 #!bin/bash
-cat << EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
     ##############################################################################
     ## FILENAME: 500-mggk-renaming-multiple-image-files-for-mggk-recipes.sh
     ## USAGE: (\$1 = directory location where images are stored)
@@ -12,8 +18,15 @@ cat << EOF
     ## Coded on: Friday March 17, 2017
     ## By: Pali
     ##############################################################################
-EOF
+EOM
 
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
 echo ">>>> Present working directory: $(pwd)" ;
 
 ## User confirmation to continue

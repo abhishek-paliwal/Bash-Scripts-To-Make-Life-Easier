@@ -1,5 +1,11 @@
 #!/bin/bash
-cat << EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
     #############################################################################
     ## FILENAME: 999-mggk-opening-hyperlinks-in-browser-for-checking.sh
     #############################################################################
@@ -20,8 +26,15 @@ cat << EOF
     ## CODED ON: Wednesday April 10, 2019
     ## BY: Pali
     #############################################################################
-EOF
+EOM
 
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
 ## SOME VARIABLES
 IN_DIR="$HOME/Desktop/_TMP_Automator_results_" ;
 input_filename="$IN_DIR/tmp_links_checker.txt"

@@ -1,5 +1,11 @@
 #!/bin/bash
-cat << EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
     #####################################################################
     ## THIS PROGRAM FINDS OUT THE URL, FEATURED IMAGE AND TITLE FROM ALL THE *.MD (MARKDOWN)
     ## FILES PRESENT IN THE PRESENT WORKING DIRECTORY AND CREATES A NUMBERED LIST WITH
@@ -13,7 +19,14 @@ cat << EOF
     FILENAME='_delete_this_after_taking_results/0-FINAL.html'
     STARTCOUNT=1 ## RESET THE STARTCOUNT TO 1 FOR NORMAL USE
     #####################################################################
-EOF
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 ############ Do not change anything below this line #################
 #####################################################################

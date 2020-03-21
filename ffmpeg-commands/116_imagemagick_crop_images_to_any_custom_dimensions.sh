@@ -1,12 +1,33 @@
 #/bin/bash
-#########################################
-## THIS PROGRAM RESIZES THEN CROPS IMAGES ...
-## FROM THE SUPPLIED COMMAND LINE ARGUMENTS AS $1 $2 $3, where $3 is optional
-## USING IMAGES PRESENT IN A FOLDER
-## NAME: 116_imagemagick_crop_images_to_any_custom_dimensions.sh
-## CODED BY: Pali
-## DATE: Friday August 24, 2018
-##########################################
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    #########################################
+    ## THIS PROGRAM RESIZES THEN CROPS IMAGES ...
+    ## FROM THE SUPPLIED COMMAND LINE ARGUMENTS AS \$1 \$2 \$3, where \$3 is optional
+    ## USING IMAGES PRESENT IN A FOLDER
+    ######################
+    ## USE-HOWTO:
+    ## (uses 3 arguments, 3rd is optional): sh program.sh \$1 \$2 \$3"
+    ## \$1 is width in PX // \$2 is height in PX. // \$3 is Image-File-List.txt (optional)
+    ######################
+    ## NAME: 116_imagemagick_crop_images_to_any_custom_dimensions.sh
+    ## CODED BY: Pali
+    ## DATE: Friday August 24, 2018
+    ##########################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
 echo ; echo "USAGE (uses 3 arguments, 3rd is optional): sh program.sh \$1 \$2 \$3" ;
 echo "\$1 is width in PX // \$2 is height in PX. // \$3 is Image-File-List.txt (optinal) ";
 echo ;

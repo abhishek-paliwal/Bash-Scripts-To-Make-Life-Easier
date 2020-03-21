@@ -4,7 +4,13 @@ THIS_FILENAME="512-mggk-get-all-page-links-from-local-sitemap-xml-file.sh"
 TMP_OUTPUT_FILE="_512_TMP_OUTPUT.TXT"
 REQUIRED_FILE="sitemap.xml"
 ################################################################################
-cat <<EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   #################################################################################
   ## THIS FILENAME = $THIS_FILENAME
   ## USAGE: > sh $THIS_FILENAME
@@ -21,7 +27,14 @@ cat <<EOF
   ## CODED ON: MAY 7, 2019
   ## CODED BY: PALI
   ###############################################################################
-EOF
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 ################################################################################
 PWD=$(pwd) ;

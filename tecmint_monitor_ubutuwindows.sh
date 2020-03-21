@@ -1,12 +1,26 @@
-####################################################################################################
-#                                        Tecmint_monitor.sh
-# Written for Tecmint.com for the post: www.tecmint.com/linux-server-health-monitoring-script/
-# RUN AS => bash THIS_SCRIPT_NAME
-####################################################################################################
-#! /bin/bash
-# unset any variable which system may be using
+#!/bin/bash
 
-# clear the screen
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+  ####################################################################################################
+  #                                        Tecmint_monitor.sh
+  # Written for Tecmint.com for the post: www.tecmint.com/linux-server-health-monitoring-script/
+  # RUN AS => bash THIS_SCRIPT_NAME
+  ####################################################################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+# UNSET ANY VARIABLE WHICH SYSTEM MAY BE USING
+# CLEAR THE SCREEN
 clear
 
 unset tecreset os architecture kernelrelease internalip externalip nameserver loadaverage

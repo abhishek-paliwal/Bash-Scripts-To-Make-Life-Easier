@@ -1,11 +1,26 @@
 #!/bin/bash
-######################################################
-## THIS PROGRAM LISTS ALL FOLDERS IN PWD, AND THEN
-## BASED UPON THEIR NAMES, CREATES A TITLE SLIDE USING IMAGEMAGICK
-## MADE BY: PALI
-## CRAFTED ON: Saturday September 15, 2018
-######################################################
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ######################################################
+    ## THIS PROGRAM LISTS ALL FOLDERS IN PWD, AND THEN
+    ## BASED UPON THEIR NAMES, CREATES A TITLE SLIDE USING IMAGEMAGICK
+    ## MADE BY: PALI
+    ## CRAFTED ON: Saturday September 15, 2018
+    ######################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
 PWD=`pwd` ;
 echo "Present working directory: $pwd" ; echo ;
 

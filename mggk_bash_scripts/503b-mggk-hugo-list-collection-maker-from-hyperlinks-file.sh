@@ -12,7 +12,12 @@ else
 fi
 ################################################################################
 
-cat << EOF
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
     ###############################################################################
     ## THIS SCRIPT CREATES AN HTML FILE FROM A TEXT FILE CONTAINING A LIST OF
     ## MGGK URLs, TO MAKE A FINAL COLLECTION. IT NEEDS AN ARGUMENT, ELSE THE DEFAULT
@@ -32,8 +37,15 @@ cat << EOF
     ## DATE: March 18 2019
     ## MADE BY: PALI
     ###############################################################################
-    ###############################################################################
-EOF
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+###############################################################################
 
 ## CD to temporary directory on desktop
 myPWD="$HOME/Desktop/Y" ;

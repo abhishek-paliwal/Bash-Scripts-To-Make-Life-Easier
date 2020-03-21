@@ -1,14 +1,29 @@
 #!/bin/bash
-################################################################################
-## THIS PROGRAM PERFORMS THESE IN STEPS FROM MULTIPLE TEXT FILES:
-#### First, finds all the URLs recursively in multiple text/md files, then:
-#### STEP 1: EXTRACTS THE INDIVIDUAL URLS AND SAVE EACH IN A VARIABLE
-#### STEP 2: FIND THE CREATION DATE OF THE DOMAIN OF THAT URL
-#### STEP 3: THROUGH CLI, FIND THE DOMAIN AUTHORITY (DA) OR DOMAIN RANK (DR) OR PAGERANK
-################################################################################
-## DATE: Monday September 2, 2019
-## CREATED BY: Pali
-################################################################################
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ################################################################################
+    ## THIS PROGRAM PERFORMS THESE IN STEPS FROM MULTIPLE TEXT FILES:
+    #### First, finds all the URLs recursively in multiple text/md files, then:
+    #### STEP 1: EXTRACTS THE INDIVIDUAL URLS AND SAVE EACH IN A VARIABLE
+    #### STEP 2: FIND THE CREATION DATE OF THE DOMAIN OF THAT URL
+    #### STEP 3: THROUGH CLI, FIND THE DOMAIN AUTHORITY (DA) OR DOMAIN RANK (DR) OR PAGERANK
+    ################################################################################
+    ## DATE: Monday September 2, 2019
+    ## CREATED BY: Pali
+    ################################################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 ################################################################################
 
 ## VARIABLES SETUP

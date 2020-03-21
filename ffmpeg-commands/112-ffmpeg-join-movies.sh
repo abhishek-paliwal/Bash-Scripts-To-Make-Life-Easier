@@ -1,7 +1,22 @@
 #!/bin/bash
 
-## THIS BASH FILE CONCATENATES THE VIDEO FILES, ALL MP4 FILES PRESENT IN A DIRECTORY.
-## BEORE RUNNING THIS, MAKE SURE THAT THE MP4 FILES ARE CORRECTLY ENCODED BY ADOBE ENCODER, ALL WITH THE SAME SPECS
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ## THIS BASH FILE CONCATENATES THE VIDEO FILES, ALL MP4 FILES PRESENT IN A DIRECTORY.
+    ## BEORE RUNNING THIS, MAKE SURE THAT THE MP4 FILES ARE CORRECTLY ENCODED BY ADOBE ENCODER, ALL WITH THE SAME SPECS
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
 
 PWD=`pwd` ;
 cd $PWD ;

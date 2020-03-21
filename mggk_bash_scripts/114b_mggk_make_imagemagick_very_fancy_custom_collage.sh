@@ -3,7 +3,13 @@
 THIS_SCRIPT_NAME="114b_mggk_make_imagemagick_very_fancy_custom_collage.sh"
 REQUIREMENTS_FILE="_collageformat.txt"
 ################################################################################
-cat << EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ################################################################################
   ## THIS PROGRAM MAKES A COLLAGE BY MAKING ROWS OF SUBCOLLAGES ...
   ## USING IMAGES PRESENT IN A FOLDER. IF NO DIMENSIONS ARE PROVIDED, IT WILL USE
@@ -18,7 +24,14 @@ cat << EOF
   #### IMPORTANT NOTE:
   #### REQUIREMENTS_FILE (=$REQUIREMENTS_FILE) SHOULD BE IN $(pwd)
   ###############################################################################
-EOF
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 #################################################################################
 ## COLLAGE FORMAT STRING FOR TESTING (edit as needed)

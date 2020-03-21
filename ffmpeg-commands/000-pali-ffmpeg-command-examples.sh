@@ -1,7 +1,22 @@
 #!/bin/bash
-############################
-## FFMPEG VIDEO CONVERSION
-############################
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ##############################################
+    ## FFMPEG VIDEO CONVERSION - Some Example Commands
+    ##############################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 ## Converting video to H264, and audio to mp3, keeping the same video resolution
 ## Simple command to convert using given codecs

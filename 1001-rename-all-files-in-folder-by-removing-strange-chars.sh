@@ -1,10 +1,25 @@
 #!/bin/bash
-## FILENAME: 1001-rename-all-files-in-folder-by-removing-strange-chars.sh
-## THIS PROGRAM RENAMES ALL FILES IN PWD THRU COMMAND LINE BY REMOVING ALL STRANGE CHARS
-###################################################
-## Created: Tuesday July 29, 2018
-## By: Pali
-###################################################
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+    USAGE: $(basename $0)
+    ## FILENAME: 1001-rename-all-files-in-folder-by-removing-strange-chars.sh
+    ## THIS PROGRAM RENAMES ALL FILES IN PWD THRU COMMAND LINE BY REMOVING ALL STRANGE CHARS
+    ###################################################
+    ## Created: Tuesday July 29, 2018
+    ## By: Pali
+    ###################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 ## Starting in the present working directory
 MAIN_DIR=`pwd` ;

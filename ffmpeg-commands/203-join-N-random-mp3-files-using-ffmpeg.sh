@@ -1,11 +1,26 @@
 #!/bin/bash
-#################################################
-## THIS PROGRAM CONCATENATES N MP3 FILES.
-## WHERE, N = AN INTEGER PROVIDED BY USER
-## DATE: Sunday August 12, 2018
-## MADE BY: PALI
-#################################################
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    #################################################
+    ## THIS PROGRAM CONCATENATES N MP3 FILES.
+    ## WHERE, N = AN INTEGER PROVIDED BY USER
+    ## DATE: Sunday August 12, 2018
+    ## MADE BY: PALI
+    #################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
 PWD=`pwd` ;
 cd $PWD ;
 

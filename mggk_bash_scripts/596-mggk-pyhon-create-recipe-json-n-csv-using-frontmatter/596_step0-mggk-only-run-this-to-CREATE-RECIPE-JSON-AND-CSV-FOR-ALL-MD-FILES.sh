@@ -13,7 +13,12 @@ HUGO_CONTENT_SUBDIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/popula
 PYTHON_SCRIPT_NAME="$HOME/Github/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/596-mggk-pyhon-create-recipe-json-n-csv-using-frontmatter/596_step1-mggk-CREATE-RECIPE-JSON-AND-RECIPE-CSV-FROM-FRONTMATTER-USING-PYTHON.py" ;
 
 ################################################################################
-cat << EOF
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ################################################################################
   ## THIS BASH SCRIPT PREPROCESSES USER INPUT DATA AND THEN INVOKES
   ## THIS PYTHON SCRIPT => $PYTHON_SCRIPT_NAME
@@ -34,8 +39,14 @@ cat << EOF
   ## CREATED ON: Sunday December 15, 2019
   ## CREATED BY: Pali
   ################################################################################
-EOF
-################################################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 ################################################################################
 #### BEGIN: DEFINING MAIN FUNCTIONS ############################################

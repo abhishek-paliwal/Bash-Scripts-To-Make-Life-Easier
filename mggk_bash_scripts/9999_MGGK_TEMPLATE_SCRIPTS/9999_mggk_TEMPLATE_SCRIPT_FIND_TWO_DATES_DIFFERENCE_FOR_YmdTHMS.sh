@@ -3,7 +3,13 @@
 THIS_PROGRAM_NAME="9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh" ;
 MAIN_FUNCION_NAME="FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS_on_MacOS_or_Linux" ;
 ################################################################################
-cat << EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ################################################################################
   ## THIS PROGRAM CALCULATES THE DIFFERENCE BETWEEN TWO DATES.
   ## Whether the program is being run on Mac OS or Linux, it works accordingly.
@@ -28,8 +34,15 @@ cat << EOF
   ## CREATED ON: November 16, 2019
   ## CREATED BY: Pali
   ################################################################################
-EOF
+EOM
 
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
 ##------------------------------------------------------------------------------
 ## BEGIN: MAIN FUNCTION DEFINITION
 ##------------------------------------------------------------------------------

@@ -1,14 +1,29 @@
 #!/bin/bash
-## FILENAME: 202-change-id3-tags-info-for-mp3.sh
-## THIS PROGRAM CHANGES THE ID3 MUSIC TAGS OF AUDIO MP3 FILES THRU COMMAND LINE
-## THIS PROGRAM USES 'MUTAGEN' PYTHON API TOOLS, AND SPECIFICALLY mid3v2 cli TOOL FROM MUTAGEN
-###################################################
-## Installing Mutagen Tools on OSX = Run 'sudo pip3 install mutagen' in OS X.
-## See full tutorial here: http://mutagen.readthedocs.io/en/latest/man/mid3v2.html
-## Created: Tuesday July 17, 2018
-## By: Pali
-###################################################
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ## FILENAME: 202-change-id3-tags-info-for-mp3.sh
+    ## THIS PROGRAM CHANGES THE ID3 MUSIC TAGS OF AUDIO MP3 FILES THRU COMMAND LINE
+    ## THIS PROGRAM USES 'MUTAGEN' PYTHON API TOOLS, AND SPECIFICALLY mid3v2 cli TOOL FROM MUTAGEN
+    ###################################################
+    ## Installing Mutagen Tools on OSX = Run 'sudo pip3 install mutagen' in OS X.
+    ## See full tutorial here: http://mutagen.readthedocs.io/en/latest/man/mid3v2.html
+    ## Created: Tuesday July 17, 2018
+    ## By: Pali
+    ###################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
 ## Starting in the present working directory
 MAIN_DIR=`pwd` ;
 echo ; echo "Working directory: $MAIN_DIR" ;

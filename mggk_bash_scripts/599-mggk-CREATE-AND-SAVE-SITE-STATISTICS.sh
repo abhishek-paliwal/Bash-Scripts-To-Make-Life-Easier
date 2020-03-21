@@ -1,12 +1,27 @@
 #!/bin/bash
 THIS_SCRIPT_NAME="599-mggk-create-and-save-site-statistics.sh"
-################################################################################
-## THIS SCRIPT GATHERS IMPORTANT SITE STATS USING HUGO MD FILES, AND
-## SAVES THEM TO AN OUTPUT FILE IN HUGO STATIC DIRECTORY
-## USAGE:
-#### bash $THIS_SCRIPT_NAME
-################################################################################
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ################################################################################
+    ## THIS SCRIPT GATHERS IMPORTANT SITE STATS USING HUGO MD FILES, AND
+    ## SAVES THEM TO AN OUTPUT FILE IN HUGO STATIC DIRECTORY
+    ## USAGE:
+    #### bash $THIS_SCRIPT_NAME
+    ################################################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
 HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content"
 FILE_OUTPUT_SITESTATS="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/sitestats.html"
 

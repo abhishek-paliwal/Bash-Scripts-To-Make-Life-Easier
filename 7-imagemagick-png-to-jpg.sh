@@ -1,10 +1,26 @@
 #!bin/bash
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
 ##########################################################
 ## This script convert all the PNG images in the current directory to JPGs,
 ## and puts them in a separate folder.
 ## This tool uses ImageMagick (Mogrify / Convert) installed onto the system.
 ## Mogrify is used for batch operations, while convert is used for one image.
 ##########################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 
 #### Asking for user inputs
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>> ===== <<<<<<<<<<<<<<<<<<<<<<<<<<<<<"

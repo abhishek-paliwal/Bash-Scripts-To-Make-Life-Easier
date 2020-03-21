@@ -2,7 +2,13 @@
 ################################################################################
 THIS_SCRIPT_NAME="601-step1-run-this-bash-script-if-website-subfolders-are-present-for-AI-NLP-mggk.sh"
 ################################################################################
-cat << EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ################################################################################
   ## This is the only script in this folder that you need to run for running the
   ## underlying python program and for after-program housecleaning.
@@ -23,7 +29,13 @@ cat << EOF
   # USAGE (run the following command):
   # > bash $THIS_SCRIPT_NAME
   ############################################################################
-EOF
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ################################################################################
 
 ################################################################################

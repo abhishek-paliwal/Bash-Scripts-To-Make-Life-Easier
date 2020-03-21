@@ -1,12 +1,26 @@
 #!/bin/bash
-########################################################
-## THIS PROGRAM SEPARATES PHOTOS AND VIDOES INTO TWO SEPARATE FOLDERS.
-## IT DOES IT BY CREATING TWO NEW FOLDERS BASED UPON THE BASEDIRECTORY NAME, AND THEN
-## MOVES ALL LOWERCASE PHOTO FILES (jpg, png) INTO PHOTOS FOLDER, AND ALL LOWERCASE VIDEO
-## FILES (mp4, mov, m4v, 3gp) INTO VIDEOS FOLDER.
-## CREATED ON: 05-02-2020 16:38
-## CREATED BY: PALI
-#########################################################
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ########################################################
+    ## THIS PROGRAM SEPARATES PHOTOS AND VIDOES INTO TWO SEPARATE FOLDERS.
+    ## IT DOES IT BY CREATING TWO NEW FOLDERS BASED UPON THE BASEDIRECTORY NAME, AND THEN
+    ## MOVES ALL LOWERCASE PHOTO FILES (jpg, png) INTO PHOTOS FOLDER, AND ALL LOWERCASE VIDEO
+    ## FILES (mp4, mov, m4v, 3gp) INTO VIDEOS FOLDER.
+    ## CREATED ON: 05-02-2020 16:38
+    ## CREATED BY: PALI
+    #########################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 CWD=$(pwd); 
 

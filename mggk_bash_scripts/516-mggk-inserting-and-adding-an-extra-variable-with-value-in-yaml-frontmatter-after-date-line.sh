@@ -6,7 +6,12 @@ echo ">>>> HENCE, THE PROGRAM WILL EXIT NOW."
 exit 1;
 ################################################################################
 
-cat << EOF
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ###############################################################################
   ## This program adds (inserts) an extra yaml frontmatter variable of your choice, in markdown files.
   #### To do this, it first finds the 'date' frontmatter line using grep, and then replaces
@@ -17,7 +22,14 @@ cat << EOF
   ## CREATED ON: Thursday September 26, 2019
   ## CREATED BY: PALI
   ###############################################################################
-EOF
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 ################################################################################
 DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content"

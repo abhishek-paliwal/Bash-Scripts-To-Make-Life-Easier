@@ -1,13 +1,25 @@
 #!/bin/bash
 ################################################################################
-cat << EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ##----------------------------------------------------------------------------
   ## IMPORTANT NOTE: ONLY RUN THIS SCRIPT IN THIS DIRECTORY TO CREATE ALL PYTHON PLOTS
   ## USING ALL THE CSV FILES IN THIS DIRECTORY.
   ## CREATED ON: Monday November 25, 2019
   ## CREATED BY: PALI
   ##----------------------------------------------------------------------------
-EOF
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ################################################################################
 ## ASSIGNING THE MAIN PWD DEPENDING UPON WHETHER THIS PROGRAM IS RUN ON VPS SERVER

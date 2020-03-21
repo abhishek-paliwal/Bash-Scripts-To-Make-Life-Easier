@@ -1,10 +1,25 @@
 #!/bin/bash
-########################################################################################
-# THIS PROGRAM USES IMAGEMAGICK TO CREATE A TITLE AFTER READING INPUTS FROM COMMAND LINE
-# THEN, CREATES A COLALGE USING ALL THE IMAGES IN THE FOLDER
-# CREATED BY: PALI
-# CREATED ON: Thursday August 2, 2018
-########################################################################################
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+      ########################################################################################
+      # THIS PROGRAM USES IMAGEMAGICK TO CREATE A TITLE AFTER READING INPUTS FROM COMMAND LINE
+      # THEN, CREATES A COLALGE USING ALL THE IMAGES IN THE FOLDER
+      # CREATED BY: PALI
+      # CREATED ON: Thursday August 2, 2018
+      ########################################################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 PWD=`pwd`;
 echo "Current parent directory: $PWD" ;

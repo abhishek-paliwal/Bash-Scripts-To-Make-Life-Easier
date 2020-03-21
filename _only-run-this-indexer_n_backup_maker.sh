@@ -1,4 +1,21 @@
 #!bin/bash
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+ONLY RUN THIS SCRIPT TO MAKE ALL BACKUPS ON LINUX OR MAC.
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 ##############################################################################
 ############ EXPANDING ALIASES ON NON-INTERATIVE SHELL SCRIPTS ###############
 ## For Running system commands (as Aliases from .bash_profile)

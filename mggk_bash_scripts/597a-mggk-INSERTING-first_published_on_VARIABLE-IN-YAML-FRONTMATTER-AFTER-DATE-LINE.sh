@@ -10,7 +10,12 @@ exit 1;
 THIS_SCRIPT_NAME="597a-mggk-INSERTING-first_published_on_VARIABLE-IN-YAML-FRONTMATTER-AFTER-DATE-LINE.sh"
 ###############################################################################
 
-cat << EOF
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ###############################################################################
   ## This program adds (inserts) an extra yaml frontmatter
   ## variable => first_published_on, in all markdown files.
@@ -26,6 +31,14 @@ cat << EOF
   ## CREATED ON: Monday December 2, 2019
   ## CREATED BY: PALI
   ###############################################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 EOF
 
 ################################################################################

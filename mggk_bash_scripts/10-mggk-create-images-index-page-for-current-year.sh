@@ -1,14 +1,27 @@
 #!/bin/bash
-CAT << EOF
-    ###############################################################################
-    ## BOOTSTRAP FRAMEWORK : THIS SCRIPT CREATES AN HTML FILE WITH
-    ## ALL THE IMAGES IN WORKING DIRECTORY + NON-RECURSIVELY
-    ###############################################################################
-    ## Coded by: PALI
-    ## On: April 13, 2019
-    ###############################################################################
-EOF
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+  ###############################################################################
+  ## BOOTSTRAP FRAMEWORK : THIS SCRIPT CREATES AN HTML FILE WITH
+  ## ALL THE IMAGES IN WORKING DIRECTORY + NON-RECURSIVELY
+  ###############################################################################
+  ## Coded by: PALI
+  ## On: April 13, 2019
+  ###############################################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
 echo "#################################################" #Blank line
 
 CURRENT_YEAR="$(date +%Y)"

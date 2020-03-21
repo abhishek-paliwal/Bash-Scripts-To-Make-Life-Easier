@@ -1,5 +1,11 @@
 #!/bin/bash
-cat << EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
 	###############################################################################
 	## THIS PROGRAM PARSES THE INDEX.XML RSS FEED FILE FROM MGGK URL, AND CREATES
 	## AN HTML FILE READY TO BE SENT THRU EMAIL TO EMAIL SUBSCRIBERS, AFTER COPYING
@@ -9,8 +15,15 @@ cat << EOF
 	## MADE BY: PALI
 	## DATE: MARCH 17 2019
 	###############################################################################
-EOF
+EOM
 
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
 ## CD to temporary directory on desktop
 PWD="$HOME_WINDOWS/Desktop/Y"
 cd $PWD ;

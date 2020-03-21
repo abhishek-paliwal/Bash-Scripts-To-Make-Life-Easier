@@ -1,12 +1,27 @@
 #!/bin/bash
-##############################################################################
-## THIS PROGRAM USES IMAGEMAGICK TO CREATE A SLIDESHOW TITLE SLIDE FROM
-## IMAGES IN PRESENT WORKING DIRECTORY, USING TWO LINES OF TEXT AND
-## SPECIFIED NUMBER OF IMAGES PRESENT IN THAT FOLDER
-## MADE BY: PALI
-## CRAFTED ON: Sunday October 14, 2018
-##############################################################################
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ##############################################################################
+    ## THIS PROGRAM USES IMAGEMAGICK TO CREATE A SLIDESHOW TITLE SLIDE FROM
+    ## IMAGES IN PRESENT WORKING DIRECTORY, USING TWO LINES OF TEXT AND
+    ## SPECIFIED NUMBER OF IMAGES PRESENT IN THAT FOLDER
+    ## MADE BY: PALI
+    ## CRAFTED ON: Sunday October 14, 2018
+    ##############################################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
 PWD=`pwd` ;
 echo "Present working directory: $pwd" ; echo ;
 

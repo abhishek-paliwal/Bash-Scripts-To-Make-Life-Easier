@@ -1,5 +1,21 @@
 #!/bin/bash
-## THIS PROGRAM RENAMES ALL FILES IN A FOLDER BY KEEPING THE FIRST N-WORDS, REMOVING EVERYTHING AFTER THAT
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+## THIS PROGRAM RENAMES ALL FILES IN A FOLDER BY
+## KEEPING THE FIRST N-WORDS, REMOVING EVERYTHING AFTER THAT
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 PWD=`pwd` ;
 cd $PWD ;

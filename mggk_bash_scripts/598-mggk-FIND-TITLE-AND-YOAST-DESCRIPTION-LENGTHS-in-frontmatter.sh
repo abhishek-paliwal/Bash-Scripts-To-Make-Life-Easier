@@ -13,7 +13,12 @@ MAX_LENGTH_TITLE=57;
 MAX_LENGTH_YOAST_DESC=157;
 ################################################################################
 
-cat << EOF
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ################################################################################
   ## THIS BASH SCRIPT FINDS LENGHTS OF TITLES AND YOAST_DESCRIPTION IN ALL MD FILES,
   ## PRESENT IN ORIGINAL $HUGO_CONTENT_DIR, AND SAVES THEM TO A CSV FILE.
@@ -26,9 +31,16 @@ cat << EOF
   ## CREATED ON: Sunday December 8, 2019
   ## CREATED BY: Pali
   ################################################################################
-EOF
-################################################################################
+EOM
 
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+################################################################################
 echo "Current working directory = $MY_PWD" ;
 
 ## Removing output files if already exists

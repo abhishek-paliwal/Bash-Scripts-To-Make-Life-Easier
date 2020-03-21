@@ -6,11 +6,12 @@ THIS_SCRIPT_NAME="599-mggk-CHANGE-RECIPE-HTML-LD-JSON-DATES-BASED-ON-FRONTMATTER
 HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content" ;
 TMP_OUTPUT_FILE="_TMP_OUTPUT_599_MGGK_DATE_REPLACEMENT.TXT" ;
 
-################################################################################
-#################### DON'T CHANGE ANYTHING BELOW THIS LINE #####################
-################################################################################
-
-cat << EOF
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ###############################################################################
   ## THIS PROGRAM CHANGES THE POST DATES IN THE HTML AND LD-JSON RECIPE CODES OF
   ## THOSE POSTS WHICH HAVE THE RECIPE HTML AND LD-JSON CODE IN THEM. IT FINDS
@@ -32,10 +33,19 @@ cat << EOF
   # USAGE (run the following command):
   # > bash $THIS_SCRIPT_NAME
   ############################################################################
-EOF
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ################################################################################
+#################### DON'T CHANGE ANYTHING BELOW THIS LINE #####################
+################################################################################
 
+################################################################################
 PWD=$(pwd) ;
 echo; echo ">>>> Present working directory: $PWD" ;
 echo;

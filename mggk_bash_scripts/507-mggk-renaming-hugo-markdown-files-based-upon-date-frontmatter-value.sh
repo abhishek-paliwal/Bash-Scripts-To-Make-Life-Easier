@@ -1,5 +1,11 @@
 #!/bin/bash
-cat << EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
     ###############################################################################
     ## THIS BASH SCRIPT RENAMES AND COPIES THE MGGK HUGO MARKDOWN FILES BASED UPON
     ## THE DATE VALUE FOUND IN THE YAML FRONTMATTER
@@ -7,7 +13,13 @@ cat << EOF
     ## CODED ON: Thursday April 4, 2019
     ## BY: PALI
     ###############################################################################
-EOF
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 echo "Present working directory: $(pwd) " ;
 echo ;

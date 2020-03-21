@@ -14,7 +14,12 @@ TMP_OUTPUT_CSVFILE="_TMP_OUTPUT_597b_MGGK_VALID_URLS.CSV"
 echo "MY_MDFILENAME, COUNT, CSVURL, CSV_PUBLISHED_DATETIME" > $TMP_OUTPUT_CSVFILE
 ################################################################################
 
-cat << EOF
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ################################################################################
   ## THIS BASH SCRIPT REPLACES FIRST_PUBLISHED_ON TAG VALUES IN ORIGINAL MD FILES,
   ## USING A CSV FILE (REQUIREMENTS_FILE). THIS CSV
@@ -34,8 +39,15 @@ cat << EOF
   ## CREATED ON: Monday December 2, 2019
   ## CREATED BY: Pali
   ################################################################################
-EOF
+EOM
 
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
 ## GETTING COLUMN NAMES FROM CSV FILE:
 echo "Following column names are found in CSV FILE => $REQUIREMENTS_FILE" ;
 csvcut -n $REQUIREMENTS_FILE

@@ -14,7 +14,12 @@ rm $TMP_OUTPUT_CSVFILE ## remove if already exists.
 rm $INPUT_OUTPUT_DIR/*.png ## Remove all PNG wordcloud images, if exists.
 ################################################################################
 
-cat << EOF
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ################################################################################
   ## THIS BASH SCRIPT CREATES A WORDCLOUD IMAGES USING CSV FILES PRESENT IN PWD.
   ## THESE CSV FILES SHOULD HAVE A COLUMN_NAME = NLP_KEYWORDS
@@ -32,8 +37,15 @@ cat << EOF
   ## CREATED ON: Monday December 3, 2019
   ## CREATED BY: Pali
   ################################################################################
-EOF
+EOM
 
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
 ##------------------------------------------------------------------------------
 ## BEGIN: MAIN FUNCTION DEFINITION
 MAKE_WORDCLOUD_FROM_THIS_CSVFILE () {

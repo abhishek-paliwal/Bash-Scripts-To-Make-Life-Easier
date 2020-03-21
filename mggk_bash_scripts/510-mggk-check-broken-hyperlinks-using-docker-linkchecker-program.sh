@@ -1,6 +1,12 @@
 #!/bin/bash
 ###############################################################################
-cat <<EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ###############################################################################
   ## THIS SCRIPT CHECKS BROKEN HYPERLINKS IN ANY GIVEN SITE.
   ## THIS SCRIPT USES DOCKER. SO, RUN DOCKER BEFORE RUNNING IT.
@@ -18,9 +24,16 @@ cat <<EOF
   ## >>>>>>>>> PRINTS HELP MESSAGE ABOUT HOW TO RUN THIS IMAGE <<<<<<<<<<<
   ## docker run --rm -it -u \$(id -u):\$(id -g) -v "\$PWD":/mnt linkchecker/linkchecker --help
   ###############################################################################
-EOF
-###############################################################################
+EOM
 
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+###############################################################################
 ## VARIABLES
 MY_SITE="https://www.mygingergarlickitchen.com" ;
 

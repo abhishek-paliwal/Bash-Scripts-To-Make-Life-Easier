@@ -2,7 +2,13 @@
 ################################################################################
 THIS_SCRIPT_NAME="517-mggk-delete-every-2nd-csv-file-and-keep-max-15-csv-files-in-subdirs.sh"
 ################################################################################
-cat << EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ################################################################################
   ## THIS SCRIPT RUNS AS CRONJOB EVERYDAY, AND DELETES EVERY Nth CSV FILE PRESENT
   ## UNDER ALL SUBDIRS INSIDE A DIRECTORY. THIS IS TO ENSURE THAT WE DON'T PILE UP
@@ -17,8 +23,15 @@ cat << EOF
   CREATED ON: Monday December 16, 2019
   CREATED BY: PALI
   ################################################################################
-EOF
+EOM
 
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
 ##------------------------------------------------------------------------------
 ## ASSIGNING THE MAIN PWD DEPENDING UPON WHETHER THIS PROGRAM IS RUN: ON VPS SERVER
 ## OR ELSEWHERE LOCALLY

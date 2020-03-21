@@ -1,4 +1,11 @@
 #!/bin/bash
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
 ######################################################
 ## THIS SCRIPT CREATES NESTED FOLDERS IN THE PWD
 ## TAKING THE FOLDERNAMES FROM FOLDERNAMES.TXT
@@ -6,6 +13,14 @@
 ## FIRST CREATED ON: Friday March 10, 2017
 ## LAST MODIFIED ON: Friday March 10, 2017
 ######################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 echo #Blank line
 echo '======================================'
 echo 'CHECK CAREFULLY: Make sure you sure you want to create folders in this directory:'

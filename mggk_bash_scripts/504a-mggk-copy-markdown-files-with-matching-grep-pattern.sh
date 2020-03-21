@@ -1,5 +1,11 @@
 #!/bin/bash
-cat << EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
     ######################################################################
     ## THIS BASH PROGRAM TAKES AN INPUT DIRECTORY AND SEARCHES FOR A GREP
     ## PATTERN IN THE CONTENT OF ALL THE MARKDOWN FILES. THEN COPIES ALL THE
@@ -11,8 +17,15 @@ cat << EOF
     ## USAGE: sh 504-mggk-move-markdown-files-with-matching-grep-pattern $1
     ## where, $1 is the search term, such as 'tips and tricks'
     ######################################################################
-    ######################################################################
-EOF
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+######################################################################
 
 ## FILES WILL BE MOVED FROM INPUT FOLDER TO OUTPUT FOLDER
 DATE_VAR=$(date "+%Y%m%d_%H%M%S") ;

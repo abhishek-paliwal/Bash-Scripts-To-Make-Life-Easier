@@ -1,7 +1,13 @@
 #!/bin/bash
 THIS_SCRIPT_NAME="602_step1_mggk_only_run_this_script_for_making_all_plots_using_underlying_python_program.sh" ;
 ################################################################################
-cat << EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ################################################################################
   ## RUN THIS SCRIPT FOR MAKING PLOTS USING THE UNDERLYING 602... PYTHON FILE.
   ## IT WILL USE ALL THE CSV FILES FOR THE DATA, AND MAKE ONE PLOT FOR EACH CSV FILE.
@@ -11,9 +17,15 @@ cat << EOF
   ## CREATED ON: Friday November 22, 2019
   ## CREATED BY: Pali
   ################################################################################
-EOF
-################################################################################
+EOM
 
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+################################################################################
 #PYTHON_SCRIPT_FILE="$HOME/Github/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/602-mggk-python-plotting/602-mggk-plotting-601-outputs-csv-data-using-matplotlib-pandas-in-python.py"
 
 GIT_REPO_PATH="https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/602-mggk-python-plotting/"

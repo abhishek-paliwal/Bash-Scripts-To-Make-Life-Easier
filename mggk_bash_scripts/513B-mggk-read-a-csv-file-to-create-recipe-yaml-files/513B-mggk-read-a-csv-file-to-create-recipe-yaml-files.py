@@ -1,4 +1,3 @@
-#!/anaconda3/bin/python3
 ##############################################################################
 ## THIS PYTHON SCRIPT READS A CSV FILE OBTAINED FROM GOOGLE SHEETS.
 ## THAT CSV CONTAINS THE NECESSARY TEXT CONTENT FOR EACH MGGK URL

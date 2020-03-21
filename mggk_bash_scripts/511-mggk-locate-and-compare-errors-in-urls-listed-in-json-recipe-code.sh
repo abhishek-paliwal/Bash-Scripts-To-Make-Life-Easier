@@ -3,7 +3,13 @@
 THIS_FILENAME="511-mggk-locate-and-compare-errors-in-urls-listed-in-json-recipe-code.sh" ;
 SEARCH_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/" ;
 ###############################################################################
-cat<<EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ###############################################################################
   ## FILENAME: $THIS_FILENAME
   ## USAGE: sh $THIS_FILENAME
@@ -27,7 +33,14 @@ cat<<EOF
   ## CODED ON: APRIL 25, 2019
   ## CODED BY: PALI
   ###############################################################################
-EOF
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 ###############################################################################
 

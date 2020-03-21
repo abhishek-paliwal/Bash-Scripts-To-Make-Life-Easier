@@ -1,10 +1,25 @@
 #!/bin/bash
-# Some credit to https://github.com/maxtsepkov/bash_colors/blob/master/bash_colors.sh
-#
-# Constants and functions for terminal colors. Not using tput
-# Author: Steve Wyckoff
-# This script is downloaded from: https://github.com/swyckoff/color-logger-bash
-##################################################################################
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+  # Some credit to https://github.com/maxtsepkov/bash_colors/blob/master/bash_colors.sh
+  #
+  # Constants and functions for terminal colors. Not using tput
+  # Author: Steve Wyckoff
+  # This script is downloaded from: https://github.com/swyckoff/color-logger-bash
+  ##################################################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 COLOR_SCRIPT=color-logger.bash
 COLOR_VERSION=0.9.0

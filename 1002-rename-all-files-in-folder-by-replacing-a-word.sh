@@ -1,10 +1,25 @@
 #!/bin/bash
-## FILENAME: 1002-rename-all-files-in-folder-by-replacing-a-word.sh
-## THIS PROGRAM RENAMES ALL FILES IN PWD THRU COMMAND LINE BY REPLACING USER CHOSEN WORD WITH A DESIRED ONE.
-###################################################
-## Created: 2020-02-14
-## By: Pali
-###################################################
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ## FILENAME: 1002-rename-all-files-in-folder-by-replacing-a-word.sh
+    ## THIS PROGRAM RENAMES ALL FILES IN PWD THRU COMMAND LINE BY REPLACING USER CHOSEN WORD WITH A DESIRED ONE.
+    ###################################################
+    ## Created: 2020-02-14
+    ## By: Pali
+    ###################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 ## Starting in the present working directory
 MAIN_DIR=`pwd` ;

@@ -1,13 +1,26 @@
 #!/bin/bash
 THIS_SCRIPT_NAME="1599-palinotes-CREATE-AND-SAVE-SITE-STATISTICS.sh"
-cat << EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ################################################################################
   ## THIS SCRIPT GATHERS IMPORTANT SITE STATS USING HUGO MD FILES, AND
   ## SAVES THEM TO AN OUTPUT FILE IN HUGO STATIC DIRECTORY
   ## USAGE:
   #### bash $THIS_SCRIPT_NAME
   ################################################################################
-EOF
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 HUGO_CONTENT_DIR="$DIR_GITHUB/2019-NOTES-HUGO-WEBSITE-PALI/content"
 FILE_OUTPUT_SITESTATS="$DIR_GITHUB/2019-NOTES-HUGO-WEBSITE-PALI/static/sitestats.html"

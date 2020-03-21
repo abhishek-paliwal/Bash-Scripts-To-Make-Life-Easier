@@ -1,7 +1,21 @@
 #!/bin/bash
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
 ## BEFORE AND AFTER IMAGE DIFFERENCES - CHECKER SCRIPT
 ## THIS SCRIPT CREATES A 2-COLUMN BEFORE-AND-AFTER HTML FILE WITH...
 ## ...ALL THE IMAGES TAKEN FROM THE ORIGINAL AND EDITED FOLDERS IN WORKING DIRECTORY
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 BASE_FOLDER=`pwd`
 EDITED_IMAGE_FOLDER="$BASE_FOLDER/edited";

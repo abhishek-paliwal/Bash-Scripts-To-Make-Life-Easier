@@ -1,6 +1,22 @@
 #!/bin/bash
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
 ## BOOTSTRAP FRAMEWORK : THIS SCRIPT CREATES AN HTML FILE WITH...
 ## ...ALL THE IMAGES IN WORKING DIRECTORY + RECUSRSIVELY
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 echo "#################" #Blank line
 ROOT="$HOME/Dropbox/Public/_TO_SYNC_downloads.concepro.com/_BRAND-CONCEPRO/concepro-08-social/sharing"
 echo "CURRENT WORKING DIRECTORY: " $ROOT ##check the present working directory

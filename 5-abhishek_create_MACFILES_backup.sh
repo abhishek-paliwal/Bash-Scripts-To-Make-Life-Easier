@@ -1,6 +1,21 @@
 #!/bin/bash
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
 ## This bash script creates the backups of all the important files on our Macs. ##
 ## Just run this script on any Mac, and it will create that $USER's backup folder automatically.
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 ######################################################
 ## FULL BACKUP OF IMPORTANT MAC FILES             ####
 ######################################################

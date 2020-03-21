@@ -2,7 +2,13 @@
 ################################################################################
 THIS_SCRIPT_NAME="599-mggk-RENAME-ALL-MD-FILES-BASED-UPON-DATE-URL-YAML-FRONTMATTER-VALUES.sh"
 ################################################################################
-cat << EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ###############################################################################
   ## THIS PROGRAM RENAMES ALL MD FILES FOUND IN HUGO_CONTENT_DIR BASED UPON THE
   ## VALUES OF date AND url FRONTMATTER VARIABLE VALUES.
@@ -21,7 +27,15 @@ cat << EOF
   # USAGE (run the following command):
   # > bash $THIS_SCRIPT_NAME
   ############################################################################
-EOF
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
 
 ## VARIABLE SETTING
 ################################################################################

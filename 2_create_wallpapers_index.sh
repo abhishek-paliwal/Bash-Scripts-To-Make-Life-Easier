@@ -1,5 +1,21 @@
 #!/bin/bash
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+## THIS SCRIPT CREATES WALLPAPER INDEX.
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 ROOT="$HOME/GitHub/abhishek-paliwal.github.io"
 HTTP="https://abhishek-paliwal.github.io"
 OUTPUT="$ROOT/wallpapers-index.html"

@@ -1,7 +1,23 @@
 #!/bin/bash
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
 ## THIS SCRIPT AUTOMATICALLY ADDS 'CREATION TIME' PREFIX TO IMAGE FILES.
 ## Created By: Abhishek
 ## Creation Date: Monday April 3, 2017
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 #################################
 cd `pwd`
 echo "CURRENT WORKING DIRECTORY: "`pwd`

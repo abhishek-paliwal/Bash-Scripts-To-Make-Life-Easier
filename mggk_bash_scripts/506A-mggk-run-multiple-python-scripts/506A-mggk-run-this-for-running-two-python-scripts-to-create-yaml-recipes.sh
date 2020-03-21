@@ -3,7 +3,13 @@
 THIS_FILENAME="506A-mggk-run-this-for-running-two-python-scripts-to-create-yaml-recipes.sh" ;
 REQUIREMENT_FILE="_STEP2-INPUT-MGGK-GOOGLE-SHEETS-CSV.CSV"
 ###############################################################################
-cat<<EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ###############################################################################
   ## FILENAME: $THIS_FILENAME
   ## USAGE: sh $THIS_FILENAME
@@ -18,7 +24,13 @@ cat<<EOF
   ## CODED ON: MAY 10, 2019
   ## CODED BY: PALI
   ###############################################################################
-EOF
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ###############################################################################
 

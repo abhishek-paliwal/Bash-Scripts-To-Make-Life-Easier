@@ -1,8 +1,24 @@
 #!/bin/bash
-## CREATED by Pali on Friday April 6, 2018 - 6:10 PM
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
 ## THIS PROGRAM CHANGES THE CREATION/MODIFICATION TIME OF ANY FILE WHOSE NAME MATCHES ##
 ## THE NAMING AS yyyymmdd-filename-is-anything.fileextension, such as 20180401-video-file.mp4, etc. ##
+## CREATED by Pali
+## DATE: Friday April 6, 2018
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 
 PWD=`pwd`;
 cd $PWD ; ## CD to present working directory

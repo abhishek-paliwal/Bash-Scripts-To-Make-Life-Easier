@@ -1,17 +1,32 @@
 #!/bin/bash
-##############################
-## USAGE COMMAND: sh 201_sorting_mp3_files_by_duration.sh "INTEGER_ARGUMENT" "SONG_DIRECTORY"
-## IMPORTANT NOTE: ALWAYS USE AN ARGUMENT WITH THIS SCRIPT
-##############################
-## THIS PROGRAM GOES THROUGH A FOLDER CONTAINING MP3 Files
-## THEN, FINDS THEIR DURATION, AND SORTS THEM IN A TEXT File
-## IT THEN MAKES ANOTHER TXT FILE WHERE DURATION ARE GREATER THAN CERTAIN VALUE.
-## FINALLY, CHOOSES A RANDOM MP3 FILE LONGER THAN THE SUPPLIED ARGUMENT ...
-## ... FROM THAT SORTED FILE FOR FFMPEG VIDEO
-## DATE: Tuesday July 3, 2018
-## BY: PALI
-##############################
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ##############################
+    ## USAGE COMMAND: sh 201_sorting_mp3_files_by_duration.sh "INTEGER_ARGUMENT" "SONG_DIRECTORY"
+    ## IMPORTANT NOTE: ALWAYS USE AN ARGUMENT WITH THIS SCRIPT
+    ##############################
+    ## THIS PROGRAM GOES THROUGH A FOLDER CONTAINING MP3 Files
+    ## THEN, FINDS THEIR DURATION, AND SORTS THEM IN A TEXT File
+    ## IT THEN MAKES ANOTHER TXT FILE WHERE DURATION ARE GREATER THAN CERTAIN VALUE.
+    ## FINALLY, CHOOSES A RANDOM MP3 FILE LONGER THAN THE SUPPLIED ARGUMENT ...
+    ## ... FROM THAT SORTED FILE FOR FFMPEG VIDEO
+    ## DATE: Tuesday July 3, 2018
+    ## BY: PALI
+    ##############################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
 ## Checks if arguments are supplied at all
 if [ $# -eq 0 ] ; then echo; echo "------> ERROR: NO ARGUMENTS SUPPLIED ON COMMAND LINE. <------"; echo ; fi
 echo "------> \$1 should be an integer value in seconds. \$2 should be song directory path. <------"

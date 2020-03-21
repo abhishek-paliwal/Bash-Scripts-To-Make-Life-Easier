@@ -1,4 +1,11 @@
 #!/bin/bash
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
 ########################################################
 ## THIS PROGRAM RENAMES ALL FILES IN A DIRECTORY
 ## BY PREFIXING THE ORIGINAL FILENAME WITH THE CREATION DATE OF THE FILE IN YYYYMMDD FORMAT
@@ -6,6 +13,14 @@
 ## CREATED ON: Thursday July 19, 2018
 ## CREATED BY: PALI
 #########################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 PWD=`pwd` ;
 cd $PWD ;
 RENAME_DIR='__TMP_renamed_files_with_date' ;

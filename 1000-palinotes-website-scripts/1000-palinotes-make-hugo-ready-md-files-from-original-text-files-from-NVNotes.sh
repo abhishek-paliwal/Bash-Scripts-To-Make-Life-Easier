@@ -1,11 +1,24 @@
 #!/bin/bash
-################################################################################
-## THIS SCRIPT PARSES EXPORTED TXT FILES FROM NVNOTES IN A FORMAT READY TO BE
-## USED IN HUGO STATIC SITE GENERATOR. IT GENERATES MARKDOWN (MD) FILES AT A RESULT
-## FOR EACH TXT FILE ENCOUNTERED. JUST PUT THOSE OUTPUT MD FILES INTO
-## HUGO'S CONTENT/POSTS/ DIRECTORY.
-################################################################################
-################################################################################
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ################################################################################
+    ## THIS SCRIPT PARSES EXPORTED TXT FILES FROM NVNOTES IN A FORMAT READY TO BE
+    ## USED IN HUGO STATIC SITE GENERATOR. IT GENERATES MARKDOWN (MD) FILES AT A RESULT
+    ## FOR EACH TXT FILE ENCOUNTERED. JUST PUT THOSE OUTPUT MD FILES INTO
+    ## HUGO'S CONTENT/POSTS/ DIRECTORY.
+    ################################################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ####################### REAL MAGIC BELOW #######################################
 ################################################################################

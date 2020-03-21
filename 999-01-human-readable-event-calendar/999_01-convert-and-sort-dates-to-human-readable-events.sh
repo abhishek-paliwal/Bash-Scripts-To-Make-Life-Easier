@@ -2,24 +2,37 @@
 #################################################################################
 REQUIREMENTS_FILE="999_01-ONLY-EDIT-THIS-FILE-WITH-EVENT-NAMES-AND-DATES.txt"
 #################################################################################
-cat << EOF
-###############################################################################
-## THIS PROGRAM READS A TEXT FILE CONTAINING DATES AND EVENTS IN SPECIFIED
-## FORMAT, THEN PARSES THEM AND MAKES AN HTML EVENTS INDEX HTML FILE USING
-## JAVASCRIPT MOMENT LIBRARY
-#### REQUIREMENTS FILE = $REQUIREMENTS_FILE
-#################### FORMAT OF REQUIREMENTS FILE: #############################
-# 20190902,16:10:00,deeppink,Skating-Class
-# 20190909,16:10:00,deeppink,Skating-Class
-# 20190916,16:10:00,deeppink,Skating-Class
-# 20190923,16:10:00,deeppink,Skating-Class
-# ...
-# ...
-##############################################################################
-## CODED BY: PALI
-## DATE: SEPTEMBER 04 2019
-###############################################################################
-EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+	###############################################################################
+	## THIS PROGRAM READS A TEXT FILE CONTAINING DATES AND EVENTS IN SPECIFIED
+	## FORMAT, THEN PARSES THEM AND MAKES AN HTML EVENTS INDEX HTML FILE USING
+	## JAVASCRIPT MOMENT LIBRARY
+	#### REQUIREMENTS FILE = $REQUIREMENTS_FILE
+	#################### FORMAT OF REQUIREMENTS FILE: #############################
+	# 20190902,16:10:00,deeppink,Skating-Class
+	# 20190909,16:10:00,deeppink,Skating-Class
+	# 20190916,16:10:00,deeppink,Skating-Class
+	# 20190923,16:10:00,deeppink,Skating-Class
+	# ...
+	# ...
+	##############################################################################
+	## CODED BY: PALI
+	## DATE: SEPTEMBER 04 2019
+	###############################################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 ## CD to a chosen directory on desktop
 #PWD="$HOME/Desktop/Y"

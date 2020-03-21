@@ -1,10 +1,26 @@
 #!/bin/bash
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
 ##################################################
 ## THIS PROGRAM MAKES AN INDEX HTML PAGE WITH ALL THE IMAGES
 ## IN THE PRESENT WORKIND DIRECTORY
 ## DATE: Friday August 01, 2019
 ## By: Pali
 ##################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 PWD=`pwd` ;
 cd $PWD ;
 echo "Present working directory: $PWD" ;
