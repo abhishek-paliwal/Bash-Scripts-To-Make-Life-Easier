@@ -1,5 +1,18 @@
 #! /bin/bash
-## Insert MGGK - HUGO frontmatter with proper dates // §frontm
+
+cat << EOF
+    ##################################################################################
+    ## Insert MGGK - HUGO frontmatter with proper dates
+    ## IMPORTANT NOTE: This script needs a command line argument to run.
+    ##################################################################################
+EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+BASEDIR="$HOME/Desktop/Y"
+cd $BASEDIR
+
+echo ">>>> Current working directory is: $BASEDIR" ;
+echo ">>>> IMPORTANT NOTE: This script needs a command line argument to run." ;
 
 DATE=$(date +%Y-%m-%dT%H:%M:%S)
 PUBDATE=$(date +%Y-%m-%d)
@@ -69,3 +82,8 @@ mggk_json_recipe: \"\"
 
 printf '%s' "$FRONTMATTER"
 
+
+## FINAL WRITING TO FILE, AND OPENING FILE IN CODE EDITOR
+FILENAME="$BASEDIR/$(date +%Y%m%d-%H%M%S)-generated-file-mggk.md" 
+printf '%s' "$FRONTMATTER" > $FILENAME
+code $FILENAME ;

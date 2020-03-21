@@ -1,7 +1,18 @@
 #! /bin/bash
-## Insert PaliNOTES - HUGO frontmatter with proper dates // §frontp
 
-echo ">>>> IMPORTANT NOTE: This script needs a command line argument to run."
+cat << EOF
+    ##################################################################################
+    ## Insert PaliNOTES - HUGO frontmatter with proper dates
+    ## IMPORTANT NOTE: This script needs a command line argument to run.
+    ##################################################################################
+EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+BASEDIR="$HOME/Desktop/Y"
+cd $BASEDIR
+
+echo ">>>> Current working directory is: $BASEDIR" ;
+echo ">>>> IMPORTANT NOTE: This script needs a command line argument to run." ;
 
 DATE=$(date +%Y-%m-%dT%H:%M:%S)
 PUBDATE=$(date +%Y-%m-%d)
@@ -28,4 +39,7 @@ tags: [ tag1, tag2 ]
 
 "
 
-printf '%s' "$FRONTMATTER"
+## FINAL WRITING TO FILE, AND OPENING FILE IN CODE EDITOR
+FILENAME="$BASEDIR/$(date +%Y%m%d-%H%M%S)-generated-file-palinotes.md" 
+printf '%s' "$FRONTMATTER" > $FILENAME
+code $FILENAME ;
