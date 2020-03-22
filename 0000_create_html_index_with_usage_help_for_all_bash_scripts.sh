@@ -73,7 +73,7 @@ for x in $(find $PATHDIR -type f -name '*.sh') ; do
     ((count++))
     script_name=$(echo $x | sed 's|/home/ubuntu/GitHub/Bash-Scripts-To-Make-Life-Easier/||g')
     echo; echo; 
-    echo ">>>><<<< ========================================= $x ===========================================" ; 
+    echo ">>>><<<< ===================== $x =======================" ; 
     #bash $x --help ; 
     usage_found=$( cat $x | grep -i 'usage()' )
     ## IF usage function is found in bash script ...
