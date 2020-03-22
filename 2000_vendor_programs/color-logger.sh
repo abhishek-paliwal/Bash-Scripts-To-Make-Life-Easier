@@ -1,5 +1,4 @@
 #!/bin/bash
-
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
 usage()
@@ -17,7 +16,7 @@ EOM
 exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 }
 ## Calling the usage function
-if [ "$1" == "--help" ] ; then usage ; fi
+if [ "$1" = "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 

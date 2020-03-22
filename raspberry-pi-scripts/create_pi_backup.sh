@@ -1,5 +1,22 @@
 #!/bin/bash
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ## This script makes backup of the home folder
+    ## on raspberry pi computer in BACKUP_DIR.
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 IN_DIR="/home/pi" ;
 BACKUP_DIR='/home/00-BACKUPS' ;
 

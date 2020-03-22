@@ -1,12 +1,27 @@
 #!/bin/bash
-##########################################################################################
-## Only run this script on Raspberry Pi4, and it will take care of everything in sequence.
-## This script will download the freshest copies of the bash scripts from GitHub repo,
-## necessary to make the video slideshow from photos.
-##########################################################################################
-## Created on: Wednesday January 15, 2020
-## Coded by: Pali
-#########################################################################################
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+  ##########################################################################################
+  ## Only run this script on Raspberry Pi4, and it will take care of everything in sequence.
+  ## This script will download the freshest copies of the bash scripts from GitHub repo,
+  ## necessary to make the video slideshow from photos.
+  ##########################################################################################
+  ## Created on: Wednesday January 15, 2020
+  ## Coded by: Pali
+  #########################################################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 ################################################################################
 ## ASSIGNING THE MAIN PWD DEPENDING UPON WHETHER THIS PROGRAM IS RUN ON VPS SERVER

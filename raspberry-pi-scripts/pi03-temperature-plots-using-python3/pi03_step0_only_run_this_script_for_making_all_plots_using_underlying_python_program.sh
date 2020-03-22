@@ -1,7 +1,13 @@
 #!/bin/bash
 THIS_SCRIPT_NAME="pi03_step0_only_run_this_script_for_making_all_plots_using_underlying_python_program.sh" ;
 ################################################################################
-cat << EOF
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
   ################################################################################
   ## RUN THIS SCRIPT FOR MAKING PLOTS USING THE UNDERLYING pi03... PYTHON FILE.
   ## IT WILL USE ALL THE CSV FILES FOR THE DATA, AND MAKE ONE PLOT FOR EACH CSV FILE.
@@ -11,8 +17,13 @@ cat << EOF
   ## CREATED ON: January 16, 2020
   ## CREATED BY: Pali
   ################################################################################
-EOF
-################################################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ################################################################################
 ## GET THE CSV FILES FOR PLOTTING FROM ANOTHER FOLDER ON VPS (ONLY IF THE USER IS ubuntu)
