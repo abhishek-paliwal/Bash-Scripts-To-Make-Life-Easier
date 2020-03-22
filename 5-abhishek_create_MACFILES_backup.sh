@@ -23,10 +23,10 @@ if [ "$1" == "--help" ] ; then usage ; fi
 #------------------------------------------------------------------------------
 echo "Currently sourcing the bash color script, which outputs chosen texts in various colors ..." ;
 
-source $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.bash
+source $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.sh
 
 info "This enables use of keywords for coloring, such as: debug, info, error, success, warn, highlight." ;
-debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.bash -h"
+debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.sh -h"
 #------------------------------------------------------------------------------
 
 

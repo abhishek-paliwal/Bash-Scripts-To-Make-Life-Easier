@@ -21,7 +21,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-COLOR_SCRIPT=color-logger.bash
+COLOR_SCRIPT=color-logger.sh
 COLOR_VERSION=0.9.0
 
 COLOR_ESC="\x1B["
@@ -126,7 +126,7 @@ NAME
   $COLOR_SCRIPT - Add color logging to bash scripts.
 
 SYNOPSIS
-  color-logger.bash [-hcv] logger_function
+  color-logger.sh [-hcv] logger_function
 
 DESCRIPTION
   Ideal use is to "source $COLOR_SCRIPT" and then use a logger_function directly in script.
