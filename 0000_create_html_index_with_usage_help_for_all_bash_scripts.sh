@@ -67,26 +67,28 @@ echo "<table class='table'>
   </thead>
   <tbody>" >> $outfile ;
 
+##------------------------------------------------------------------------------
 PATHDIR="$DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier"
 count=0;
-for x in $(find $PATHDIR -type f -name '*.sh') ; do
+## Print the bash script where usage funcion is not found.
+for x in $(grep -irL --include \*.sh 'usage()' $PATHDIR/) ; do
     ((count++))
     script_name=$(echo $x | sed 's|/home/ubuntu/GitHub/Bash-Scripts-To-Make-Life-Easier/||g')
-    echo; echo; 
-    echo ">>>><<<< ===================== $x =======================" ; 
-    #bash $x --help ; 
-    usage_found=$( cat $x | grep -i 'usage()' )
-    ## IF usage function is found in bash script ...
-    if [ "$usage_found" == "usage()" ] ; then
-        echo "<tr class='table-primary'> <th scope='row'>$count</th> <td>$script_name</td> <td> </td> </tr>" >> $outfile ;
-    else 
-        echo "<tr class='table-danger'> <th scope='row'>$count</th> <td>$script_name</td> <td>USAGE FUNCTION NOT FOUND</td> </tr>" >> $outfile ;
-    fi
-
+    echo "-- USAGE FUNCTION NOT FOUND IN ==> $x" ; 
+    echo "<tr class='table-danger'> <th scope='row'>$count</th> <td>$script_name</td> <td>Usage function not found</td> </tr>" >> $outfile ;
 done
 
-echo "</tbody></table>" >> $outfile
+echo;echo;
+## Print the bash script where usage funcion is found.
+for x in $(grep -irl --include \*.sh 'usage()' $PATHDIR/) ; do
+    ((count++))
+    script_name=$(echo $x | sed 's|/home/ubuntu/GitHub/Bash-Scripts-To-Make-Life-Easier/||g')
+    echo "++ USAGE FUNCTION FOUND IN ==> $x" ; 
+    echo "<tr class='table-primary'> <th scope='row'>$count</th> <td>$script_name</td> <td>Usage function found</td> </tr>" >> $outfile ;
+done
+##------------------------------------------------------------------------------
 
+echo "</tbody></table>" >> $outfile
 
 echo "</div> <!-- END: main containter div -->
  <!-- Optional Bootstrap JavaScript -->
