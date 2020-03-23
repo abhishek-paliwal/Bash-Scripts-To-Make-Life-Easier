@@ -18,7 +18,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 
 echo "#################" #Blank line
-DIRPATH="$HOME/Dropbox/Public/_TO_SYNC_adoria.me"
+DIRPATH="$HOME_WINDOWS/Dropbox/Public/_TO_SYNC_adoria.me"
 MAIN_IMAGES_FOLDER="drawings"
 ROOT="$DIRPATH/$MAIN_IMAGES_FOLDER"
 
@@ -325,12 +325,17 @@ echo "</body>" >> $OUTPUT
 echo "</html>" >> $OUTPUT
 
 echo "######## SM IMAGES Index Successfully created. ######### ";
-echo "####### DONE! File will now be opened in SAFARI. ########"
-open -a Safari $OUTPUT
-open -a Safari $SITEURL
+
+## IF on MAC, then open webpage
+if [ "$USER" != "ubuntu" ] ; then 
+  echo "####### DONE! File will now be opened in SAFARI. ########"
+  open -a Safari $OUTPUT
+  open -a Safari $SITEURL
+fi
 
 ##------------------------------------------------------------------------------
-## Getting all image names for creating wordcloud in python (through 603-mggk-script....sh)
+## Getting all image names for creating wordcloud in python
+echo; echo ">>>> Getting all image names for creating wordcloud in python (through 603-mggk-script....sh)"
 WORDCLOUD_FILE="$DIRPATH/ADO_SITE_WORDCLOUD_for_using_with_603_mggk_script.csv"
 echo "TITLE_TAG_VALUE" > $WORDCLOUD_FILE ## We need to have this line as the first line.
 ## The following command finds all files (case insensitive jpg, JPG, png, PNG)
