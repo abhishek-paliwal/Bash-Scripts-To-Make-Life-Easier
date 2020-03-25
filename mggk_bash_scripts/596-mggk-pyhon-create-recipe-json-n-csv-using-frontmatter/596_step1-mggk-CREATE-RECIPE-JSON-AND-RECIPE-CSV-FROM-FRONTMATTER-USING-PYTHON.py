@@ -1,3 +1,35 @@
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## USAGE FOR PYTHON
+## Print this help as >> this_script_name --help
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+import sys
+####
+def usage():
+    print('## USAGE: ' + sys.argv[0])
+    HELP_TEXT = """
+    ##############################################################################
+    ## THIS PYTHON SCRIPT TAKES AN MD_FILENAME AS COMMAND LINE ARGUMENT, THEN EXTRACTS
+    ## THE mggk_json_recipe YAML FRONTMATTER CONTENT, PARSES IT AND FINALLY CREATES
+    ## A RECIPE JSON AND A RECIPE CSV FILE. THIS CSV FILE
+    ## IS THEN TO BE READ BY 513B SCRIPT FOR MAKING THE RECIPE JSON AND HTML BLOCKS.
+    ##############################################################################
+    """
+    print(HELP_TEXT)
+####
+## Calling the usage function
+## First checking if there are more than one argument on CLI .
+print()
+if (len(sys.argv) > 1) and (sys.argv[1] == "--help"):
+    print('## USAGE HELP IS PRINTED BELOW. SCRIPT WILL EXIT AFTER THAT.')
+    usage()
+    ## EXITING IF ONLY USAGE IS NEEDED
+    quit()
+else:
+    print('## USAGE HELP IS PRINTED BELOW. NORMAL PROGRAM RUN WILL CONTINE AFTER THAT.')
+    usage()  # Printing normal help and continuing script run.
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 THIS_PYTHON_SCRIPT_INFO = """
   ## THIS PYTHON SCRIPT TAKES AN MD_FILENAME AS COMMAND LINE ARGUMENT, THEN EXTRACTS
   ## THE mggk_json_recipe YAML FRONTMATTER CONTENT, PARSES IT AND FINALLY CREATES

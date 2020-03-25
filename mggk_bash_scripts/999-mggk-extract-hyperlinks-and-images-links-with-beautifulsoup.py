@@ -1,10 +1,36 @@
-################################################################################
-## THIS PROGRAM EXPECTS A USER INPUT AS A URL, SO THAT IT CAN EXTRACT THE LINKS FROM IT.
-## THIS PROGRAM USER PYTHON PACKAGE BEAUTIFULSOUP TO EXTRACT ALL RELEVANT INFORMATION.
-## MADE BY: PALI
-## CODED ON: 2020-03-03
-################################################################################
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## USAGE FOR PYTHON
+## Print this help as >> this_script_name --help
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+import sys
+####
+def usage():
+    print('## USAGE: ' + sys.argv[0])
+    HELP_TEXT = """
+    ##############################################################################
+    ## THIS PROGRAM EXPECTS A USER INPUT AS A URL, SO THAT IT CAN EXTRACT THE LINKS FROM IT.
+    ## THIS PROGRAM USER PYTHON PACKAGE BEAUTIFULSOUP TO EXTRACT ALL RELEVANT INFORMATION.
+    ## MADE BY: PALI
+    ## CODED ON: 2020-03-03
+    ##############################################################################
+    """
+    print(HELP_TEXT)
+####
+## Calling the usage function
+## First checking if there are more than one argument on CLI .
+print()
+if (len(sys.argv) > 1) and (sys.argv[1] == "--help"):
+    print('## USAGE HELP IS PRINTED BELOW. SCRIPT WILL EXIT AFTER THAT.')
+    usage()
+    ## EXITING IF ONLY USAGE IS NEEDED
+    quit()
+else:
+    print('## USAGE HELP IS PRINTED BELOW. NORMAL PROGRAM RUN WILL CONTINE AFTER THAT.')
+    usage()  # Printing normal help and continuing script run.
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+################################################################################
+################################################################################
 from newspaper import Article
 from bs4 import BeautifulSoup
 import urllib.request

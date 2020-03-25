@@ -64,6 +64,7 @@ echo "<table class='table'>
       <th scope='col'>#</th>
       <th scope='col'>Script_Name</th>
       <th scope='col'>Usage_Function_Found or Not</th>
+      <th scope='col'>HELP_BLOCK_OUTPUT</th>
     </tr>
   </thead>
   <tbody>" >> $outfile ;
@@ -71,24 +72,25 @@ echo "<table class='table'>
 ##------------------------------------------------------------------------------
 PATHDIR="$DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier"
 count=0;
-## Print the bash script where usage funcion is not found.
-echo "<tr class='table-dark'> <th scope='row'>#</th> <td>SCRIPTS WHERE USAGE FUNCTION IS NOT FOUND (red rows)</td> <td>They need fixing.</td> </tr>" >> $outfile ;
+## Print the bash script where usage function is not found.
+echo "<tr class='table-dark'> <th scope='row'>#</th> <td>SCRIPTS WHERE USAGE FUNCTION IS NOT FOUND (red rows)</td> <td>They need fixing.</td> <td>usage_output</td> </tr>" >> $outfile ;
 echo "<tr> <th scope='row'>#</th> <td>Row left blank intentionally.</td> <td></td> </tr>" >> $outfile ;
 for x in $(grep -irL --include \*.sh --include \*.py 'usage()' $PATHDIR/) ; do
     ((count++))
-    script_name=$(echo $x | sed 's|/home/ubuntu/GitHub/Bash-Scripts-To-Make-Life-Easier/||g')
+    script_name=$(echo $x | sed 's|/home/ubuntu/GitHub/Bash-Scripts-To-Make-Life-Easier/||g') ;
     echo "-- USAGE FUNCTION NOT FOUND IN ==> $x" ; 
-    echo "<tr class='table-danger'> <th scope='row'>$count</th> <td>$script_name</td> <td>Usage function not found. Fix it.</td> </tr>" >> $outfile ;
+    echo "<tr class='table-danger'> <th scope='row'>$count</th> <td>$script_name</td> <td>Usage function not found. Fix it.</td> <td>usage_output not found.</td> </tr>" >> $outfile ;
 done
 
 echo;echo;
-## Print the bash script where usage funcion is found.
-echo "<tr class='table-dark'> <th scope='row'>#</th> <td>SCRIPTS WHERE USAGE FUNCTION IS FOUND (blue rows)</td> <td>They are good.</td> </tr>" >> $outfile ;
+## Print the bash script where usage function is found.
+echo "<tr class='table-dark'> <th scope='row'>#</th> <td>SCRIPTS WHERE USAGE FUNCTION IS FOUND (blue rows)</td> <td>They are good.</td> <td>usage_output</td> </tr>" >> $outfile ;
 for x in $(grep -irl --include \*.sh --include \*.py 'usage()' $PATHDIR/) ; do
     ((count++))
-    script_name=$(echo $x | sed 's|/home/ubuntu/GitHub/Bash-Scripts-To-Make-Life-Easier/||g')
+    script_name=$(echo $x | sed 's|/home/ubuntu/GitHub/Bash-Scripts-To-Make-Life-Easier/||g') ;
+    usage_output=$(bash $x --help | sed 's/</&lt;/g' | sed 's/>/&gt;/g') ;
     echo "++ USAGE FUNCTION FOUND IN ==> $x" ; 
-    echo "<tr class='table-primary'> <th scope='row'>$count</th> <td>$script_name</td> <td>Usage function found</td> </tr>" >> $outfile ;
+    echo "<tr class='table-primary'> <th scope='row'>$count</th> <td>$script_name</td> <td>Usage function found</td> <td> <pre><code>$usage_output</code></pre> </td> </tr>" >> $outfile ;
 done
 ##------------------------------------------------------------------------------
 

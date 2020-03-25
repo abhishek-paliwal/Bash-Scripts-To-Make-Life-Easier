@@ -1,31 +1,46 @@
-################################################################################
-THIS_PROGRAM_DETAILS = """
-################################################################################
-THIS_SCRIPT_NAME : 601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls.py
-################################################################################
-REQUIREMENTS_FILE  = 601-MGGK-REQUIREMENT-ALL-URLS-FOR-NLP.txt
-(Note: This file should be present in the Present Working Directory)
-################################################################################
-USAGE: python3 THIS_SCRIPT_NAME
-################################################################################
-################################################################################
-THIS SCRIPT USES NATURAL LANGUAGE PROCESSING (NLP + AI), Newspaper3k, and BeautifulSoup 4
-OVER AN EXTERNAL TEXT FILE CONTAINING URLS FOR KEYWORDS ANALYSIS, AND PRODUCES
-A DETAILED HTML FILE WITH ALL THE EXTRACTED DATA FOR EACH URL PRESENT IN
-THE REQUIREMENTS_FILE.
-################################################################################
-THIS SCRIPT ALSO PRODUCES SOME CSV FILES FOR LATER ANALYSES (OR FOR PLOTTING).
-################################################################################
-CREATED ON: November 5, 2019
-CREATED BY: Pali
-################################################################################
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## USAGE FOR PYTHON
+## Print this help as >> this_script_name --help
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+import sys
+####
+def usage():
+    print('## USAGE: ' + sys.argv[0])
+    HELP_TEXT = """
+    ##############################################################################
+    THIS SCRIPT USES NATURAL LANGUAGE PROCESSING (NLP + AI), Newspaper3k, and BeautifulSoup 4
+    OVER AN EXTERNAL TEXT FILE CONTAINING URLS FOR KEYWORDS ANALYSIS, AND PRODUCES
+    A DETAILED HTML FILE WITH ALL THE EXTRACTED DATA FOR EACH URL PRESENT IN
+    THE REQUIREMENTS_FILE.
+    ################################################################################
+    THIS SCRIPT ALSO PRODUCES SOME CSV FILES FOR LATER ANALYSES (OR FOR PLOTTING).
+    ################################################################################
+    REQUIREMENTS_FILE  = 601-MGGK-REQUIREMENT-ALL-URLS-FOR-NLP.txt
+    (Note: This file should be present in the Present Working Directory)
+    ################################################################################
+    USAGE: python3 THIS_SCRIPT_NAME
+    ################################################################################
+    CREATED ON: November 5, 2019
+    CREATED BY: Pali
+    ##############################################################################
+    """
+    print(HELP_TEXT)
+####
+## Calling the usage function
+## First checking if there are more than one argument on CLI .
+print()
+if (len(sys.argv) > 1) and (sys.argv[1] == "--help"):
+    print('## USAGE HELP IS PRINTED BELOW. SCRIPT WILL EXIT AFTER THAT.')
+    usage()
+    ## EXITING IF ONLY USAGE IS NEEDED
+    quit()
+else:
+    print('## USAGE HELP IS PRINTED BELOW. NORMAL PROGRAM RUN WILL CONTINE AFTER THAT.')
+    usage()  # Printing normal help and continuing script run.
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-"""
-
 ################################################################################
-print(THIS_PROGRAM_DETAILS)
 ################################################################################
-
 ## IMPORTING MODULES
 from newspaper import Article
 from bs4 import BeautifulSoup

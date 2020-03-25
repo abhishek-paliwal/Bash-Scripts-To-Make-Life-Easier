@@ -1,25 +1,46 @@
-################################################################################
-THIS_PYTHON_PROGRAM_DETAILS = """
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## USAGE FOR PYTHON
+## Print this help as >> this_script_name --help
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+import sys
+####
+
+
+def usage():
+    print('## USAGE: ' + sys.argv[0])
+    HELP_TEXT = """
     ################################################################################
-    THIS_SCRIPT_NAME_TEMPLATE_SCRIPT-get_all_urls_from_ALL_sitemap_urls.py
-    ################################################################################
+    THIS SCRIPT EXTRACTS URLS AND LASTMOD TIMES FROM A LIST OF SITEMAP URLS, AND
+    SAVES THEM TO A OUTPUT CSV FILE.
+    ##############################################################################
     REQUIREMENTS_FILE  = NONE
     ################################################################################
     USAGE: python3 THIS_SCRIPT_NAME
     ################################################################################
-    ################################################################################
-    THIS SCRIPT EXTRACTS URLS AND LASTMOD TIMES FROM A LIST OF SITEMAP URLS, AND
-    SAVES THEM TO A OUTPUT CSV FILE.
-    ################################################################################
     CREATED ON: November 6, 2019
     CREATED BY: Pali
-    ################################################################################
-"""
+    ##############################################################################
+    """
+    print(HELP_TEXT)
+
+
+####
+## Calling the usage function
+## First checking if there are more than one argument on CLI .
+print()
+if (len(sys.argv) > 1) and (sys.argv[1] == "--help"):
+    print('## USAGE HELP IS PRINTED BELOW. SCRIPT WILL EXIT AFTER THAT.')
+    usage()
+    ## EXITING IF ONLY USAGE IS NEEDED
+    quit()
+else:
+    print('## USAGE HELP IS PRINTED BELOW. NORMAL PROGRAM RUN WILL CONTINE AFTER THAT.')
+    usage()  # Printing normal help and continuing script run.
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 ################################################################################
-print(THIS_PYTHON_PROGRAM_DETAILS)
 ################################################################################
-
 ## IMPORTING MODULES
 from bs4 import BeautifulSoup
 import requests

@@ -1,12 +1,36 @@
-################################################################################
-"""
-## THIS PROGRAM USES CSV OUTPUTS CREATED FROM PI03... PYTHON SCRIPT, AND CREATE
-## VARIOUS PLOTS USING PYTHON pandas AND matplotlib packages.
-## Created on: January 16, 2020
-## Created by: Pali
-"""
-################################################################################
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## USAGE FOR PYTHON
+## Print this help as >> this_script_name --help
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+import sys
+####
+def usage():
+    print('## USAGE: ' + sys.argv[0])
+    HELP_TEXT = """
+    ##############################################################################
+    ## THIS PROGRAM USES CSV OUTPUTS CREATED FROM PI03... PYTHON SCRIPT, AND CREATE
+    ## VARIOUS PLOTS USING PYTHON pandas AND matplotlib packages.
+    ## Created on: January 16, 2020
+    ## Created by: Pali
+    ##############################################################################
+    """
+    print(HELP_TEXT)
+####
+## Calling the usage function
+## First checking if there are more than one argument on CLI .
+print()
+if (len(sys.argv) > 1) and (sys.argv[1] == "--help"):
+    print('## USAGE HELP IS PRINTED BELOW. SCRIPT WILL EXIT AFTER THAT.')
+    usage()
+    ## EXITING IF ONLY USAGE IS NEEDED
+    quit()
+else:
+    print('## USAGE HELP IS PRINTED BELOW. NORMAL PROGRAM RUN WILL CONTINE AFTER THAT.')
+    usage()  # Printing normal help and continuing script run.
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+################################################################################
+################################################################################
 import pandas as pd
 import numpy as np
 import matplotlib as mpl
