@@ -49,7 +49,7 @@ echo "<!doctype html>
      <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
       <!-- Bootstrap CSS -->
        <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
-        <title>Program output</title>
+        <title>0000 HELP-USAGE SCRIPT OUTPUT // Help Usage Bash and Python Scripts</title>
          </head>
           <body>
            <div class='container-fluid'><!-- BEGIN: main containter div -->" > $outfile

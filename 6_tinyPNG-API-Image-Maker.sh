@@ -8,9 +8,12 @@ cat <<EOM
 USAGE: $(basename $0)
 #############################################################################
 ## Using tinyPNG/tinyJPG server API to create compressed images. AWESOME!!!
-## Created by: Abhishek Paliwal on Thursday January 5, 2017
-## STEPS: Open the Terminal. Go to desired directory. Run this bash script.
-## Run as > /PATH/TO/FILE/sh _tinyPNG-Image-Maker.sh
+## Created by: Abhishek Paliwal
+## Created on: Thursday January 5, 2017
+#########################################
+## STEPS:
+## >> Open the Terminal. Go to desired directory. Run this bash script.
+## >> Run on CLI as > bash $0
 #############################################################################
 EOM
 
@@ -21,18 +24,20 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-
 ## Getting tinyPNG API KEY: #####
 ## Reading a private CONFIG Key JSON file locally, through Python Version 2: ####
 export PYTHONIOENCODING=utf8
-API_KEY=`cat $HOME/Dropbox/_by_ABHISHEK/__palis_private_keys_and_configs/1_palis-personal-private-API-keys.json | python -c "import sys, json; print json.load(sys.stdin)['tinyPNG_API_key_apxapx']"`
+echo; echo ">> Getting tinyPNG API KEY: PARSING API KEY ..." ;
+API_KEY=$(cat $HOME_WINDOWS/Dropbox/docs_encrypted/IT-usernames-passwords-server-details/__PALIS_PRIVATE_KEYS_AND_CONFIGS_unencrypted/1_palis-personal-private-API-keys.json | python -c "import sys, json; print json.load(sys.stdin)['tinyPNG_API_key_apxapx']") ;
+echo ">> API KEY PARSED AS => $API_KEY" ;
 ##### PYTHON block ends ######
 
 ## DEFINING VARIABLES:
-PWD=`pwd`
+PWD=$(pwd);
 OUTPUT_FOLDER="_tinyPNG-API-output-folder";
 
 ## Show begins:
+echo; 
 echo "-->> What do you want to do, choose option #:
       ==================
       1 = NORMAL Compression (output as original dimesions). THIS IS DEFAULT.
@@ -45,26 +50,26 @@ read whichOption;
 echo "==================";
 
 ##### Setting Defaults
-if [[ "$whichOption" == "" ]] ; then $whichOption = "1"; fi
+if [ "$whichOption" == "" ] ; then whichOption = "1"; fi
 #####
 
-if [[ "$whichOption" == "2" ]] ; then
+if [ "$whichOption" == "2" ] ; then
       echo "Enter OUTPUT_IMAGE_WIDTH in pixels; DEFAULT IS 800 [simply press ENTER to use defaults]: ";
       read OUTPUT_IMAGE_WIDTH;
-      if [[ "$OUTPUT_IMAGE_WIDTH" == "" ]] ; then  OUTPUT_IMAGE_WIDTH=800; fi
+      if [ "$OUTPUT_IMAGE_WIDTH" == "" ] ; then  OUTPUT_IMAGE_WIDTH=800; fi
 
       echo "Enter OUTPUT_IMAGE_HEIGHT in pixels; DEFAULT IS 1200 [simply press ENTER to use defaults]: ";
       read OUTPUT_IMAGE_HEIGHT;
-      if [[ "$OUTPUT_IMAGE_HEIGHT" == "" ]] ; then  OUTPUT_IMAGE_HEIGHT=1200; fi
+      if [ "$OUTPUT_IMAGE_HEIGHT" == "" ] ; then  OUTPUT_IMAGE_HEIGHT=1200; fi
 
-      echo "Output WIDTH X HEIGHT = $OUTPUT_IMAGE_WIDTH X $OUTPUT_IMAGE_HEIGHT "
-      echo ""
+      echo "Output WIDTH X HEIGHT = $OUTPUT_IMAGE_WIDTH X $OUTPUT_IMAGE_HEIGHT " ;
+      echo "" ;
 fi
 
-if [[ "$whichOption" == "3" ]] ; then
+if [ "$whichOption" == "3" ] ; then
       echo "Enter OUTPUT_IMAGE_WIDTH/HEIGHT in pixels; DEFAULT IS 800 [simply press ENTER to use defaults]: ";
       read OUTPUT_IMAGE_DIMEN;
-      if [[ "$OUTPUT_IMAGE_DIMEN" == "" ]] ; then  OUTPUT_IMAGE_DIMEN="800"; fi
+      if [ "$OUTPUT_IMAGE_DIMEN" == "" ] ; then  OUTPUT_IMAGE_DIMEN="800"; fi
 
       echo "Output WIDTH X HEIGHT = $OUTPUT_IMAGE_DIMEN X $OUTPUT_IMAGE_DIMEN "
       echo ""
@@ -77,42 +82,52 @@ mkdir $OUTPUT_FOLDER
 rm $PWD/_tmp_TinyPNG*
 
 ## Now looping over all the image files ##
+echo; echo "## Now looping over all the image files ##" ;
 for i in `find . -maxdepth 1 -type f | sort | egrep -i '\.(jpg|png|PNG|JPG)$' | sed 's/\.\///g' `; do
 
-      echo "------------> CURRENT FILE: $i <----------------"
+      echo; echo "------------> CURRENT FILE: $i <----------------"
 
       ## Uploading to tinyPNG server for compression
+      echo ">> Uploading to tinyPNG server for compression ..." ;
       curl https://api.tinify.com/shrink \
            --user api:$API_KEY \
            --data-binary @$i \
            --dump-header _tmp_TinyPNG0.txt
 
+      echo ">> Uploading done..." ;
+
       ## Extracting the file URL from TEXT output
       ## Then, downloading from the so obtained URL to desired output folder
-      cat _tmp_TinyPNG0.txt | grep -i 'Location' | sed 's/Location: //g' | tr -d '\r\n' > _tmp_TinyPNG1.txt
+      
+      cat _tmp_TinyPNG0.txt | grep -i 'location' | sed 's/location: //ig' | tr -d '\r\n' > _tmp_TinyPNG1.txt
 
       ## Finally Downloading through CURL
-      if [[ "$whichOption" == "1" ]] ; then
+      if [ "$whichOption" == "1" ] ; then
             ## COMPRESSING WITH ORIGINAL DIMENSIONS:
+            echo ">> COMPRESSING WITH ORIGINAL DIMENSIONS and downloading via curl command ..." ;
             curl `cat _tmp_TinyPNG1.txt` \
             --user api:$API_KEY \
             --output $OUTPUT_FOLDER/normalTiny_$i
             echo "=====>> Regular compression and download done."
       fi
 
-      if [[ "$whichOption" == "2" ]] ; then
+      if [ "$whichOption" == "2" ] ; then
             ## RESIZING TO GIVEN DIMENSIONS:
-            curl `cat _tmp_TinyPNG1.txt` \
-            --user api:$API_KEY \
-            --header "Content-Type: application/json" \
-            --data '{ "resize": { "method": "cover", "width": '$OUTPUT_IMAGE_WIDTH', "height": '$OUTPUT_IMAGE_HEIGHT' } }' \
-            --dump-header /dev/stdout --silent \
-            --output $OUTPUT_FOLDER/resizedTiny_$i
+            echo; 
+            echo ">> RESIZING TO GIVEN DIMENSIONS [ $OUTPUT_IMAGE_WIDTH x $OUTPUT_IMAGE_HEIGHT ] and downloading via curl command ..." ;
+
+            MYCOMMAND="curl '$(cat _tmp_TinyPNG1.txt|head -1)' --user api:$API_KEY --header \"Content-Type: application/json\" --data '{ \"resize\": { \"method\": \"cover\", \"width\": $OUTPUT_IMAGE_WIDTH, \"height\": $OUTPUT_IMAGE_HEIGHT } }' --dump-header /dev/stdout --silent --output $OUTPUT_FOLDER/resizedTiny_$i " ;
+
+            echo ">> Running this command => " ;
+            echo "$MYCOMMAND" ;
+            eval "${MYCOMMAND}" ;      
+
             echo "=====>> Compression & resizing to dimensions - done."
       fi
 
-      if [[ "$whichOption" == "3" ]] ; then
+      if [ "$whichOption" == "3" ] ; then
             ## SQUARE CROPPING
+            echo ">> SQUARE CROPPING and downloading via curl command ..." ;
              curl `cat _tmp_TinyPNG1.txt` \
               --user api:$API_KEY \
               --header "Content-Type: application/json" \
@@ -128,9 +143,14 @@ for i in `find . -maxdepth 1 -type f | sort | egrep -i '\.(jpg|png|PNG|JPG)$' | 
       ls $i  >> _tmp_TinyPNG_final.txt
       echo "===================" >> _tmp_TinyPNG_final.txt
       cat _tmp_TinyPNG0.txt _tmp_TinyPNG1.txt >> _tmp_TinyPNG_final.txt
+      echo >> _tmp_TinyPNG_final.txt ;
       echo "##########################################" >> _tmp_TinyPNG_final.txt
 done
 
 #############################################################################
-## Opening the output directory through Finder
-open $OUTPUT_FOLDER
+## Opening the output directory through Finder on Mac.
+if [ "$(uname)" == "Darwin" ] ; then
+      open $OUTPUT_FOLDER ; 
+else
+      echo "Output has been saved in: $OUTPUT_FOLDER" ;
+fi
