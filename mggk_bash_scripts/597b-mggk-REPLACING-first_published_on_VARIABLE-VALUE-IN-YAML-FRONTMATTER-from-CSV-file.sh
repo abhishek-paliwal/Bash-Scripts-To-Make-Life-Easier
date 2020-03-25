@@ -3,16 +3,6 @@
 THIS_SCRIPT_NAME="597b-mggk-REPLACING-first_published_on_VARIABLE-VALUE-IN-YAML-FRONTMATTER-from-CSV-file.sh"
 REQUIREMENTS_FILE="597b_MGGK_REQUIREMENT_FILE_CSV.CSV"
 ################################################################################
-HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content"
-MY_PWD="$HOME/Desktop/X/"
-cd $MY_PWD ;
-echo "Current working directory = $MY_PWD" ;
-################################################################################
-## SETTING VARIABLES
-TMP_OUTPUT_CSVFILE="_TMP_OUTPUT_597b_MGGK_VALID_URLS.CSV"
-## INITIALIZING TMP OUTPUT CSV FILE
-echo "MY_MDFILENAME, COUNT, CSVURL, CSV_PUBLISHED_DATETIME" > $TMP_OUTPUT_CSVFILE
-################################################################################
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
@@ -26,7 +16,7 @@ USAGE: $(basename $0)
   ## FILE SHOULD BE PRESENT IN $(pwd) AND SHOULD ONLY HAVE TWO COLUMNS.
   ## COLUMNS = (URL, PUBLISHED_DATETIME)
   ##------------------------------------------------------------------------------
-  ## THE REQUIREMENTS_FILE IS $REQUIREMENTS_FILE
+  ## REQUIREMENTS_FILE = $REQUIREMENTS_FILE
   ##------------------------------------------------------------------------------
   ## USAGE:
   ## bash $THIS_SCRIPT_NAME
@@ -46,6 +36,19 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 ## Calling the usage function
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
+##################################################################################
+HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content"
+MY_PWD="$HOME/Desktop/X/"
+cd $MY_PWD ;
+echo "Current working directory = $MY_PWD" ;
+################################################################################
+## SETTING VARIABLES
+TMP_OUTPUT_CSVFILE="_TMP_OUTPUT_597b_MGGK_VALID_URLS.CSV"
+## INITIALIZING TMP OUTPUT CSV FILE
+echo "MY_MDFILENAME, COUNT, CSVURL, CSV_PUBLISHED_DATETIME" > $TMP_OUTPUT_CSVFILE
+################################################################################
 
 ##################################################################################
 ## GETTING COLUMN NAMES FROM CSV FILE:

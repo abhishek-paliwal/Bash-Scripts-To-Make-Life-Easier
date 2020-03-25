@@ -1,16 +1,4 @@
 #!/bin/bash
-################################################################################
-## DEFINE REQUIREMENTS_FILE VARIABLE BASED UPON WHETHER CLI ARGUMENT IS PRESENT OR NOT ...
-################################################################################
-if [ -z "$1" ]
-then
-  echo "\$1 is EMPTY. Hence, REQUIREMENTS_FILE will be assigned as = 503b_mylinks.txt)." ;
-  REQUIREMENTS_FILE="503b_mylinks.txt" ;
-else
-  echo "\$1 is NOT EMPTY. Hence, REQUIREMENTS_FILE will be assigned as = $1)." ;
-  REQUIREMENTS_FILE="$1" ;
-fi
-################################################################################
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
@@ -44,6 +32,19 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 ## Calling the usage function
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+################################################################################
+## DEFINE REQUIREMENTS_FILE VARIABLE BASED UPON WHETHER CLI ARGUMENT IS PRESENT OR NOT ...
+################################################################################
+if [ -z "$1" ]
+then
+  echo "\$1 is EMPTY. Hence, REQUIREMENTS_FILE will be assigned as = 503b_mylinks.txt)." ;
+  REQUIREMENTS_FILE="503b_mylinks.txt" ;
+else
+  echo "\$1 is NOT EMPTY. Hence, REQUIREMENTS_FILE will be assigned as = $1)." ;
+  REQUIREMENTS_FILE="$1" ;
+fi
+################################################################################
 
 ###############################################################################
 

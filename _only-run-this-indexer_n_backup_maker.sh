@@ -6,7 +6,9 @@ usage()
 {
 cat <<EOM
 USAGE: $(basename $0)
-ONLY RUN THIS SCRIPT TO MAKE ALL BACKUPS ON LINUX OR MAC.
+    ##############################################################################
+    ONLY RUN THIS SCRIPT TO MAKE ALL BACKUPS ON LINUX OR MAC.
+    ##############################################################################
 EOM
 
 exit 0 ## EXITING IF ONLY USAGE IS NEEDED

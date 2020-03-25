@@ -1,18 +1,9 @@
 #!/bin/bash
 ################################################################################
 THIS_SCRIPT_NAME="596_step0-only-run-this-to-CREATE-RECIPE-JSON-AND-CSV-FOR-ALL-MD-FILES.sh"
-################################################################################
 MY_PWD="$HOME/Desktop/X/"
-cd $MY_PWD ;
-echo "Current working directory = $MY_PWD" ;
 ################################################################################
-## VARIABLE DEFINITIONS
-HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content" ;
-HUGO_CONTENT_SUBDIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/popular-posts" ;
 
-PYTHON_SCRIPT_NAME="$HOME/Github/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/596-mggk-pyhon-create-recipe-json-n-csv-using-frontmatter/596_step1-mggk-CREATE-RECIPE-JSON-AND-RECIPE-CSV-FROM-FRONTMATTER-USING-PYTHON.py" ;
-
-################################################################################
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
 usage()
@@ -47,8 +38,19 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
 ################################################################################
+################################################################################
+cd $MY_PWD ;
+echo "Current working directory = $MY_PWD" ;
+################################################################################
+## VARIABLE DEFINITIONS
+HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content" ;
+HUGO_CONTENT_SUBDIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/popular-posts" ;
+
+PYTHON_SCRIPT_NAME="$HOME/Github/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/596-mggk-pyhon-create-recipe-json-n-csv-using-frontmatter/596_step1-mggk-CREATE-RECIPE-JSON-AND-RECIPE-CSV-FROM-FRONTMATTER-USING-PYTHON.py" ;
+################################################################################
+################################################################################
+
 #### BEGIN: DEFINING MAIN FUNCTIONS ############################################
 ## FUNCION_1 => OUTPUTS A MD FILENAME FROM AN ARGUMENT URL
 FUNC_GET_MD_FILENAME_WITH_THIS_URL () {

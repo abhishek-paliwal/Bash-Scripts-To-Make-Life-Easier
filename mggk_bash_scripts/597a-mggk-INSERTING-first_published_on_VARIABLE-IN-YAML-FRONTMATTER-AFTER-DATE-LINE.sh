@@ -1,8 +1,9 @@
 #!/bin/bash
 ################################################################################
 ## THIS PROGRAM SHOULD NEVER BE RUN AGAIN, EVER. SO, DISPLAYING ERROR MESSAGE.
+echo "VERY IMPORTANT NOTE: " ;
 echo ">>>> THIS SCRIPT SHOULD NEVER BE RUN AGAIN, NOT EVEN BY MISTAKE. ITS JOB IS DONE." ;
-echo ">>>> HENCE, THE PROGRAM WILL EXIT NOW."
+echo ">>>> IT'S DANGEROUS TO RUN THIS SCRIPT. HENCE, THE PROGRAM WILL EXIT NOW."
 exit 1;
 ################################################################################
 

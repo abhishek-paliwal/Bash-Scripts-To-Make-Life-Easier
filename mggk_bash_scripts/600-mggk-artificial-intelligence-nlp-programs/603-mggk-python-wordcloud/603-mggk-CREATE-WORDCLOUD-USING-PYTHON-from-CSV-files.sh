@@ -1,18 +1,4 @@
 #!/bin/bash
-###############################################################################
-THIS_SCRIPT_NAME="603-mggk-CREATE-WORDCLOUD-USING-PYTHON-from-CSV-files.sh"
-################################################################################
-MY_PWD="$HOME/Desktop/X/"
-cd $MY_PWD ;
-echo "Current working directory = $MY_PWD" ;
-################################################################################
-## SETTING VARIABLES
-INPUT_OUTPUT_DIR="$MY_PWD/_603_mggk_outputs"
-mkdir $INPUT_OUTPUT_DIR
-TMP_OUTPUT_CSVFILE="_TMP_OUTPUT_603_MGGK.CSV"
-rm $TMP_OUTPUT_CSVFILE ## remove if already exists.
-rm $INPUT_OUTPUT_DIR/*.png ## Remove all PNG wordcloud images, if exists.
-################################################################################
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
@@ -25,7 +11,7 @@ USAGE: $(basename $0)
   ## THESE CSV FILES SHOULD HAVE A COLUMN_NAME = NLP_KEYWORDS
   ##------------------------------------------------------------------------------
   ## USAGE:
-  ## bash $THIS_SCRIPT_NAME
+  ## bash $(basename $0)
   ##------------------------------------------------------------------------------
   ## IMPORTANT NOTE:
   ## This bash program uses two python command-line utilities: 'csvkit' and 'wordcloud_cli',
@@ -44,6 +30,20 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 ## Calling the usage function
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+################################################################################
+################################################################################
+MY_PWD="$HOME/Desktop/X/"
+cd $MY_PWD ;
+echo "Current working directory = $MY_PWD" ;
+################################################################################
+## SETTING VARIABLES
+INPUT_OUTPUT_DIR="$MY_PWD/_603_mggk_outputs"
+mkdir $INPUT_OUTPUT_DIR
+TMP_OUTPUT_CSVFILE="_TMP_OUTPUT_603_MGGK.CSV"
+rm $TMP_OUTPUT_CSVFILE ## remove if already exists.
+rm $INPUT_OUTPUT_DIR/*.png ## Remove all PNG wordcloud images, if exists.
+################################################################################
 
 ##################################################################################
 ##------------------------------------------------------------------------------
