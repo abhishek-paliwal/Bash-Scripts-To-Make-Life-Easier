@@ -79,7 +79,7 @@ echo "<table class='table'>
 PATHDIR="$DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier"
 count=0;
 ## Print the bash script where usage function is not found.
-echo "<tr class='table-dark'> <th scope='row'>#</th> <td>SCRIPTS WHERE USAGE FUNCTION IS NOT FOUND (red rows)</td> <td>They need fixing.</td> <td>usage_output</td> </tr>" >> $outfile ;
+echo "<tr class='table-dark'> <th scope='row'>#</th> <td>SCRIPTS WHERE USAGE FUNCTION IS NOT FOUND (red rows)</td> <td>They need fixing.</td> <td>Usage_Function_Output</td> </tr>" >> $outfile ;
 echo "<tr> <th scope='row'>#</th> <td>Row left blank intentionally.</td> <td></td> </tr>" >> $outfile ;
 for x in $(grep -irL --include \*.sh --include \*.py 'usage()' $PATHDIR/) ; do
     ((count++))
@@ -90,7 +90,7 @@ done
 
 echo;echo;
 ## Print the bash script where usage function is found.
-echo "<tr class='table-dark'> <th scope='row'>#</th> <td>SCRIPTS WHERE USAGE FUNCTION IS FOUND (blue rows)</td> <td>They do not need fixing.</td> <td>usage_output</td> </tr>" >> $outfile ;
+echo "<tr class='table-dark'> <th scope='row'>#</th> <td>SCRIPTS WHERE USAGE FUNCTION IS FOUND (blue/green rows)</td> <td>They do not need fixing.</td> <td>Usage_Function_Output</td> </tr>" >> $outfile ;
 for x in $(grep -irl --include \*.sh --include \*.py 'usage()' $PATHDIR/) ; do
     ((count++))
     ## Get file extension (sh OR py)
@@ -124,3 +124,6 @@ echo "</div> <!-- END: main containter div -->
      <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
       </body>
        </html>" >> $outfile
+
+## PRINTING OUTPUT DIRECTORY FULL PATH
+echo; echo "OUTPUT_DIRECTORY => $OUTPUT_DIR" ; echo ;   
