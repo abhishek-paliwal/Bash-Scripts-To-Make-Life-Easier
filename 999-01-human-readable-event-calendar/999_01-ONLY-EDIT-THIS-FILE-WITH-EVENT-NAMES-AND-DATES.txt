@@ -8,12 +8,6 @@
 ##############################################################################
 ##############################################################################
 ## SWIMMING CLASSES
-20200310,16:45:00,DeepSkyBlue,Swimming-Class
-20200317,16:45:00,DeepSkyBlue,Swimming-Class
-20200324,16:45:00,DeepSkyBlue,Swimming-Class
-20200331,16:45:00,DeepSkyBlue,Swimming-Class
-20200407,16:45:00,DeepSkyBlue,Swimming-Class
-20200414,16:45:00,DeepSkyBlue,Swimming-Class
 20200421,16:45:00,DeepSkyBlue,Swimming-Class
 20200428,16:45:00,DeepSkyBlue,Swimming-Class
 20200505,16:45:00,DeepSkyBlue,Swimming-Class
@@ -24,12 +18,9 @@
 20200114,00:00:00,orange,Makar Sankranti
 ######################
 ## ADO EVENTS
-20200228,08:15:00,yellow, Skating class from school
+20200421,10:00:00,yellow, Tove hangouts meeting
+20200424,10:00:00,yellow, Tove hangouts meeting
 #######################
 ## HOME EVENTS
-20200418,12:00:00,pink,AN-Bday 
-20200422,12:00:00,pink,AD-Bday 
-20200714,12:00:00,pink,AB-Bday 
-20200405,12:00:00,orange,Chacha-Bday
-20200410,12:00:00,orange,Easter-GoodFriday 
-20200413,12:00:00,orange,Easter-Monday
+20200422,12:00:00,deeppink,AD-Bday 
+20200714,12:00:00,deeppink,AB-Bday 
