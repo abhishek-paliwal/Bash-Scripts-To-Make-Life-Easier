@@ -261,13 +261,15 @@ FINAL_VIDEO_FILENAME="$AUDIO_LENGTH_INTEGER""-sec-""$OUTPUT_VIDEO_FINAL" ;
 ## First, run the script to sort the audio files based on duration
 ## this will create a tmp txt file. That file will be used below with gshuf
 #### But first, checking whether this program is running on raspberry pi
+echo; echo ">>>>  NOW RUNNING 201 SCRIPT TO CHOOSE A RANDOM AUDIO FILE FOR THE SLIDESHOW." ; echo;
+
 if [ "$USER" == "pi" ];
 then
   bash $MUSIC_PATH/201_sorting_mp3_files_by_duration.sh "$AUDIO_LENGTH_INTEGER" "$MY_SONG_DIR"
   AUDIO_FILE=$(shuf -n 1 $MY_SONG_DIR/_tmp_chosen_sorted.txt)
 elif [ "$USER" == "ubuntu" ];
 then
-  bash sh $HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/201_sorting_mp3_files_by_duration.sh "$AUDIO_LENGTH_INTEGER" "$MY_SONG_DIR"
+  bash $HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/201_sorting_mp3_files_by_duration.sh "$AUDIO_LENGTH_INTEGER" "$MY_SONG_DIR"
   AUDIO_FILE=$(shuf -n 1 $MY_SONG_DIR/_tmp_chosen_sorted.txt)  
 else
   sh $HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/201_sorting_mp3_files_by_duration.sh "$AUDIO_LENGTH_INTEGER" "$MY_SONG_DIR"
