@@ -179,7 +179,7 @@ echo "FULL COVER TEXT: $FULL_COVER_TEXT" ;
 FONT_TO_USE="Times New Roman.ttf" ## Default Font
 ## Changing the default font based upon which machine it's being run on.
 if [ "$USER" == "pi" ]; then FONT_TO_USE="/home/_AUDIOJUNGLE_MUSIC/ambroise-francois-regular.otf" ; FONTCOLOR="cyan" ; fi
-if [ "$USER" == "ubuntu" ]; then FONT_TO_USE="$HOME/Github/Bash-Scripts-To-Make-Life-Easier/_fonts/Roboto_Slab/RobotoSlab-Regular.ttf" ; FONTCOLOR="lime" ; fi
+if [ "$USER" == "ubuntu" ]; then FONT_TO_USE="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/_fonts/Roboto_Slab/RobotoSlab-Regular.ttf" ; FONTCOLOR="lime" ; fi
 if [ "$USER" == "abhishek" ]; then FONT_TO_USE="/Users/$USER/Library/Fonts/LeagueGothic-Regular.otf" ; FONTCOLOR="yellow" ; fi
 if [ "$USER" == "anu" ]; then FONT_TO_USE="/Users/$USER/Library/Fonts/Mission-Script.otf" ; FONTCOLOR="white" ; fi
 
@@ -267,7 +267,7 @@ then
   AUDIO_FILE=$(shuf -n 1 $MY_SONG_DIR/_tmp_chosen_sorted.txt)
 elif [ "$USER" == "ubuntu" ];
 then
-  bash sh $HOME/Github/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/201_sorting_mp3_files_by_duration.sh "$AUDIO_LENGTH_INTEGER" "$MY_SONG_DIR"
+  bash sh $HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/201_sorting_mp3_files_by_duration.sh "$AUDIO_LENGTH_INTEGER" "$MY_SONG_DIR"
   AUDIO_FILE=$(shuf -n 1 $MY_SONG_DIR/_tmp_chosen_sorted.txt)  
 else
   sh $HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/ffmpeg-commands/201_sorting_mp3_files_by_duration.sh "$AUDIO_LENGTH_INTEGER" "$MY_SONG_DIR"
