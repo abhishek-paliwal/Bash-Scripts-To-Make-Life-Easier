@@ -1,11 +1,31 @@
 #!/bin/bash
-######################################################
-## THIS PROGRAM MAKES TWO COLLAGES FROM COMMAND LINE INPUTS
-## USING IMAGEMAGICK
-## MADE ON: Friday OCTOBER 5, 2018
-## MADE BY: PALI
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## USAGE FOR BASH 
+## Print this help as >> this_script_name --help
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ######################################################
+    ## THIS PROGRAM MAKES TWO COLLAGES BY CONCATENATING IMAGES
+    ## IN PRESENT WORKING DIRECTORY USING IMAGEMAGICK.
+    ## ONE COLLAGE IS VERTICAL, AND ONE HORIZONTAL.
+    ######################################################
+    ## MADE ON: Friday OCTOBER 5, 2018
+    ## MADE BY: PALI
+    ######################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 echo "THIS PROGRAM MAKES TWO COLLAGES FROM COMMAND LINE INPUTS USING IMAGEMAGICK" ; echo ;
-######################################################
 
 PWD=$(pwd);
 TMP_DIR="_TMP_COLLAGE_DIR_CONCATENATE" ;

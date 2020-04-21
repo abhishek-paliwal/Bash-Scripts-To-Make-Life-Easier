@@ -1,14 +1,30 @@
 #!/bin/bash
-###########################################################
-## THIS PROGRAM COPIES N-RANDOM FILES TO TMP DIRECTORIES
-## FROM ALL THE FILES IN A GIVEN DIRECTORY USING 2 DIFFERENT APPROACHES
-## 1. BY SELECTING EVERY Nth FILE (eg., will select every 5th file after 'ls' from a list of 100 files, etc.)
-## 2. BY DOING A SHUFFLE COMMAND (TOTALLY RANDOM FILES)
-## MADE BY: PALI
-## MADE ON: Thursday September 27, 2018
-###########################################################
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## USAGE FOR BASH 
+## Print this help as >> this_script_name --help
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ###########################################################
+    ## THIS PROGRAM COPIES N-RANDOM FILES TO TMP DIRECTORIES
+    ## FROM ALL THE FILES IN A GIVEN DIRECTORY USING 2 DIFFERENT APPROACHES
+    ## 1. BY SELECTING EVERY Nth FILE (eg., will select every 5th file after 'ls' from a list of 100 files, etc.)
+    ## 2. BY DOING A SHUFFLE COMMAND (TOTALLY RANDOM FILES)
+    ## MADE BY: PALI
+    ## MADE ON: Thursday September 27, 2018
+    ###########################################################
+EOM
 
-PWD=`pwd` ;
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+PWD=$(pwd) ;
 echo; echo "Current working directory: $PWD " ;
 cd $PWD ;
 
@@ -46,12 +62,21 @@ cp $(ls -1 *.* | awk "NR == 1 || NR % $NUM_RANDOM_FILES == 0") $TMP_DIR/ ;
 
 ###########################################################
 ## 2. COMMAND BLOCK TO COPY TOTALLY RANDOM FILES
-MY_COMMAND_RANDOM="ls -1 *.* | gshuf -n$HOW_MANY_FILES_TO_SELECT" ;
+if [ $(uname) = "Darwin" ] ; then
+    MY_COMMAND_RANDOM="ls -1 *.* | gshuf -n$HOW_MANY_FILES_TO_SELECT" ;
+else 
+    MY_COMMAND_RANDOM="ls -1 *.* | shuf -n$HOW_MANY_FILES_TO_SELECT" ;
+fi 
 echo "MY_COMMAND_RANDOM: $MY_COMMAND_RANDOM" ;
 
 ## ACTUAL COMMAND DOING ALL THE MAGIC
 echo "=======> TOTALLY RANDOM: NOW COPYING $HOW_MANY_FILES_TO_SELECT FILES (--TO-->) $TMP_DIR" ; echo ;
-cp $(ls -1 *.* | gshuf -n$HOW_MANY_FILES_TO_SELECT) $TMP_DIR_RANDOM/ ;
+if [ $(uname) = "Darwin" ] ; then
+    cp $(ls -1 *.* | gshuf -n$HOW_MANY_FILES_TO_SELECT) $TMP_DIR_RANDOM/ ;
+else 
+    cp $(ls -1 *.* | shuf -n$HOW_MANY_FILES_TO_SELECT) $TMP_DIR_RANDOM/ ;
+fi 
+
 ###########################################################
 
 ## FINALLY OPENING PWD (works on MAC OS)
