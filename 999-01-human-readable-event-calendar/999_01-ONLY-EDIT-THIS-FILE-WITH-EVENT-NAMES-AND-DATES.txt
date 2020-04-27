@@ -8,8 +8,6 @@
 ##############################################################################
 ##############################################################################
 ## SWIMMING CLASSES
-20200421,16:45:00,DeepSkyBlue,Swimming-Class
-20200428,16:45:00,DeepSkyBlue,Swimming-Class
 20200505,16:45:00,DeepSkyBlue,Swimming-Class
 20200512,16:45:00,DeepSkyBlue,Swimming-Class
 20200519,16:45:00,DeepSkyBlue,Swimming-Class
@@ -18,10 +16,9 @@
 20200114,00:00:00,orange,Makar Sankranti
 ######################
 ## ADO EVENTS
-20200421,10:00:00,yellow, Tove hangouts meeting
-20200424,10:00:00,yellow, Tove hangouts meeting
-20200422,10:00:00,yellow, Tove hangouts meeting for Ad's birthday
-20200422,14:00:00,yellow, Millie hangouts meeting
+20200504,10:00:00,yellow, Tove hangouts meeting
+20200430,10:00:00,yellow, Tove hangouts meeting
+20200429,14:00:00,yellow, Millie hangouts meeting
 
 #######################
 ## HOME EVENTS
