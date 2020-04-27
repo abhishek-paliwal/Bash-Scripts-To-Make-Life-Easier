@@ -18,7 +18,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 
 echo "#################" #Blank line
-ROOT="$HOME/Dropbox/Public/_TO_SYNC_downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds"
+ROOT="$HOME_WINDOWS/Dropbox/Public/_TO_SYNC_downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds"
 echo "CURRENT WORKING DIRECTORY: " $ROOT ##check the present working directory
 echo "#################" #Blank line
 
@@ -249,7 +249,16 @@ echo "<!-- Bootstrap core JavaScript ================================ -->
 echo "</body>" >> $OUTPUT
 echo "</html>" >> $OUTPUT
 
-echo "######## SM IMAGES Index Successfully created. ######### ";
-echo "####### DONE! File will now be opened in SAFARI. ########"
-open -a Safari $SITEURL
-open -a Safari $OUTPUT
+## PRINTING FILEPATHS
+echo;echo "######## SM IMAGES Index Successfully created. ######### ";
+echo "SITE URL = $SITEURL" ;
+echo "OUTPUT = $OUTPUT" ;
+
+## If this machine is a MAC
+if [ "$(uname)" = "Darwin" ] ; then
+  echo "####### DONE! File will now be opened in SAFARI. ########" ;
+  open -a Safari $SITEURL ;
+  open -a Safari $OUTPUT ;
+fi
+
+
