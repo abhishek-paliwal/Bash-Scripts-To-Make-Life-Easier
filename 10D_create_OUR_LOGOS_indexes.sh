@@ -18,7 +18,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 
 echo "#################" #Blank line
-ROOT="$HOME/Dropbox/Public/_TO_SYNC_downloads.concepro.com/dropbox-public-files/logos"
+ROOT="$HOME_WINDOWS/Dropbox/Public/_TO_SYNC_downloads.concepro.com/dropbox-public-files/logos"
 echo "CURRENT WORKING DIRECTORY: " $ROOT ##check the present working directory
 echo "#################" #Blank line
 
