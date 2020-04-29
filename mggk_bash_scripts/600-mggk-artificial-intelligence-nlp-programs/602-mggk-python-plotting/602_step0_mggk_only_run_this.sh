@@ -36,7 +36,7 @@ fi
 cd $MY_PWD ;
 
 ################################################################################
-GIT_REPO_PATH="https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/602-mggk-python-plotting/"
+GIT_REPO_PATH="https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/602-mggk-python-plotting"
 BASH_SCRIPT_FILE="602_step1_mggk_only_run_this_script_for_making_all_plots_using_underlying_python_program.sh"
 ##
 ## DOWNLOADING CURRENT BASH_SCRIPT_FILE FROM GITHUB REPORT
