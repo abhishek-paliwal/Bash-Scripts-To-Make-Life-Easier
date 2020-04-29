@@ -28,7 +28,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ################################################################################
 #PYTHON_SCRIPT_FILE="$HOME/Github/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/602-mggk-python-plotting/602-mggk-plotting-601-outputs-csv-data-using-matplotlib-pandas-in-python.py"
 
-GIT_REPO_PATH="https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/602-mggk-python-plotting/"
+GIT_REPO_PATH="https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/602-mggk-python-plotting"
 PYTHON_SCRIPT_FILE="602-mggk-plotting-601-outputs-csv-data-using-matplotlib-pandas-in-python.py"
 
 ## DOWNLOADING CURRENT PYTHON_SCRIPT_FILE FROM GITHUB REPORT
