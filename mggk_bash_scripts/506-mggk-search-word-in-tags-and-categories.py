@@ -78,6 +78,9 @@ def func_findNoneValuesInFile(myList,currentFileName) :
 
 # BEGIN: LOOPING THROUGH ALL MARKDOWN FILES
 for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
+    print("\n########################################\n")  # prints divider line
+    print("CURRENT FILENAME = " + str(fname) )
+
     with io.open(fname, 'r') as f:
         # Parse file's front matter
         post = frontmatter.load(f)
@@ -92,7 +95,6 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         ######################################################################
 
         ## PRINTING PRIMARY STUFF
-        print("\n#########################\n") ## prints line
         print("FILENAME: " + fname) ## printing filename
         print("SORTED-KEYS-FOUND: " + str(sorted(post.keys()))) ## prints all metadata keys
 
