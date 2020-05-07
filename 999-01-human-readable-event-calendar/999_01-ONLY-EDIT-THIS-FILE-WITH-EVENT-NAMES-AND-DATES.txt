@@ -16,9 +16,8 @@
 20200114,00:00:00,orange,Makar Sankranti
 ######################
 ## ADO EVENTS
-20200505,10:00:00,lime, Tove hangouts meeting
-20200506,14:00:00,lime, Millie hangouts meeting
-
+20200513,14:00:00,lime, Millie hangouts meeting
+20200511,10:00:00,lime, Tove hangouts meeting
 #######################
 ## HOME EVENTS
 20200422,12:00:00,deeppink,AD-Bday 
