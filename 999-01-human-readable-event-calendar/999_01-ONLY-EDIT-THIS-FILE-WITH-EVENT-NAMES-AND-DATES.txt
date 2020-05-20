@@ -16,8 +16,8 @@
 20200114,00:00:00,orange,Makar Sankranti
 ######################
 ## ADO EVENTS
-20200520,14:00:00,lime, Millie hangouts meeting
-20200527,14:00:00,lime, Millie - Last english class
+20200520,14:00:00,lime, Millie hangouts meeting // 15:30 to 15:50 meet.google.com/ocy-brhg-ufu
+20200528,15:30:00,lime, Millie - Last english class // 15:30 to 15:50 meet.google.com/xxf-nsic-cea 
 20200529,11:00:00,lime, Last School Day
 #######################
 ## HOME EVENTS
