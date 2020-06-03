@@ -7,18 +7,23 @@
 #### DATE AS YYYYMMDD,TIME_OF_EVENT,HIGHLIGHT_COLOR,EVENT-NAME(CAN HAVE SPACES)
 ##############################################################################
 ##############################################################################
-## SWIMMING CLASSES
-20200505,16:45:00,DeepSkyBlue,Swimming-Class
-20200512,16:45:00,DeepSkyBlue,Swimming-Class
-20200519,16:45:00,DeepSkyBlue,Swimming-Class
+## SWIMMING CLASSES (Thursdays)
+20200611,19:10:00,DeepSkyBlue,Swimming-Class (till 19:45) 
+20200625,19:10:00,DeepSkyBlue,Swimming-Class (till 19:45)
+20200702,19:10:00,DeepSkyBlue,Swimming-Class (till 19:45)
+20200709,19:10:00,DeepSkyBlue,Swimming-Class (till 19:45)
+## SWIMMING CLASSES (Saturdays)
+20200613,15:50:00,DeepSkyBlue,Swimming-Class (till 16:25)
+20200627,15:50:00,DeepSkyBlue,Swimming-Class (till 16:25)
+20200704,15:50:00,DeepSkyBlue,Swimming-Class (till 16:25)
+20200711,15:50:00,DeepSkyBlue,Swimming-Class (till 16:25)
+20200713,15:50:00,DeepSkyBlue,Swimming-Class (till 16:25)
 ######################
 ## OTHER FESTIVALS
 20200114,00:00:00,orange,Makar Sankranti
 ######################
 ## ADO EVENTS
 20200520,14:00:00,lime, Millie hangouts meeting // 15:30 to 15:50 meet.google.com/ocy-brhg-ufu
-20200528,15:30:00,lime, Millie - Last english class // 15:30 to 15:50 meet.google.com/xxf-nsic-cea 
-20200529,11:00:00,lime, Last School Day
 #######################
 ## HOME EVENTS
 20200422,12:00:00,deeppink,AD-Bday 
