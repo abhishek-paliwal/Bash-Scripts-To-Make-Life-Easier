@@ -498,7 +498,7 @@ RECIPE_NAME=$(cat $YAML_FILE | yq .name ) ;
 echo "<h3>$COUNT: $RECIPE_NAME</h3>
 <p><a target='_blank' href='$recipe_file'>YAML (Original)</a>
 <br><a target='_blank' href='$YAML_FILE'>YAML (Copied, without recipeNotes)</a>
-<br><a target='_blank' href='$JSON_OUTPUT1'>JSON-ORIGINAL</a> // (Test this code on <a a target='_blank' href='https://search.google.com/structured-data/testing-tool'>Google LD JSON Testing-Tool</a>)
+<br><a target='_blank' href='$JSON_OUTPUT1'>JSON-ORIGINAL</a> // (Test this code on <a a target='_blank' href='https://search.google.com/test/rich-results'>Google LD JSON Testing-Tool</a>)
 <br>
 <br><button type='button' class='btn btn-warning'><a target='_blank' href='$RECIPE_HTML_FILE'>RECIPE-HTML-OUTPUT</a></button>
 <br> &Rarr; <a target='_blank' href='$JSON_OUTPUT2'>JSON-MODIFIED-FOR-COPY-PASTING</a>
