@@ -8,14 +8,8 @@
 ##############################################################################
 ##############################################################################
 ## SWIMMING CLASSES (Thursdays)
-20200611,19:10:00,DeepSkyBlue,Swimming-Class (till 19:45) 
-20200625,19:10:00,DeepSkyBlue,Swimming-Class (till 19:45)
-20200702,19:10:00,DeepSkyBlue,Swimming-Class (till 19:45)
 20200709,19:10:00,DeepSkyBlue,Swimming-Class (till 19:45)
 ## SWIMMING CLASSES (Saturdays)
-20200613,15:50:00,DeepSkyBlue,Swimming-Class (till 16:25)
-20200627,15:50:00,DeepSkyBlue,Swimming-Class (till 16:25)
-20200704,15:50:00,DeepSkyBlue,Swimming-Class (till 16:25)
 20200711,15:50:00,DeepSkyBlue,Swimming-Class (till 16:25)
 20200713,15:50:00,DeepSkyBlue,Swimming-Class (till 16:25)
 ######################
