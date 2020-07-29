@@ -24,6 +24,9 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 ##################################################################################
 
+echo ">> Now creating index for all food photography images." ;
+say "Now creating index for all food photography images." ;
+
 echo "#################################################" #Blank line
 
 CURRENT_YEAR="$(date +%Y)"
@@ -351,4 +354,5 @@ open -a Safari $OUTPUT
 open -a Safari $SITEURL
 
 ## EXTRA message, just in case this script needs a password after successful run
-say "Enter password on the command prompt if needed, else the program is done."
+echo ">> Food photography index file has been created." ;
+say "Food photography index file has been created." ;
