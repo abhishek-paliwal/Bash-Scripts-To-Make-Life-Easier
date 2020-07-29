@@ -23,21 +23,25 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ##################################################################################
+
 echo "#################################################" #Blank line
 
 CURRENT_YEAR="$(date +%Y)"
 CURRENT_MONTH="$(date +%m)"
-DIRPATH="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/uploads/$CURRENT_YEAR"
-URL_PREFIX="https://www.mygingergarlickitchen.com/wp-content/uploads/$CURRENT_YEAR/$CURRENT_MONTH"
+DIRPATH="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/food-photography"
+URL_PREFIX="https://www.mygingergarlickitchen.com/food-photography"
 
-MAIN_IMAGES_FOLDER="$CURRENT_MONTH" ## the current month is the main_images_folder
-ROOT="$DIRPATH/$MAIN_IMAGES_FOLDER"
+MAIN_IMAGES_FOLDER="$DIRPATH" 
+
+#ROOT="$DIRPATH/$MAIN_IMAGES_FOLDER"
+ROOT="$DIRPATH"
+
 ## Changing all image permissions to be viewed by whole world.
 chmod -R 644 $ROOT/**
 
-FINALFILENAME="index-of-mggk-images-for-current-year.html"
+FINALFILENAME="food-photography.html"
 OUTPUT="$DIRPATH/$FINALFILENAME" ##Output filename
-SITEURL="https://www.MyGingerGarlicKitchen.com/wp-content/uploads/$CURRENT_YEAR/$FINALFILENAME"
+SITEURL="https://www.MyGingerGarlicKitchen.com/food-photography/$FINALFILENAME"
 
 #####################
 cd $ROOT
@@ -60,7 +64,7 @@ echo "<html lang='en'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <link rel='icon' href='https://www.MyGingerGarlicKitchen.com/favicon.ico'>
 
-    <title>MGGK - Images Index</title>
+    <title>Food Photography | My Ginger Garlic Kitchen</title>
 
     <!-- Bootstrap core CSS -->
     <link href='https://adoria.me/_static_code_files/bootstrap-alpha6-js-css/bootstrap.min.css' rel='stylesheet'>
@@ -138,7 +142,7 @@ div.heading {
     text-align: center;
     color : white;
     /* This website Colored Background Gradient */
-    background : linear-gradient(0deg, rgba(220,30,100,1.0), rgba(220,30,100,0.2) ) ;
+    /* background : linear-gradient(0deg, rgba(220,30,100,1.0), rgba(220,30,100,0.2) ) ; */
     border : 0px solid white ;
 		box-shadow: 0px 0px 0px #999 ;
 		border-radius : 0px ;
@@ -206,10 +210,14 @@ hr {clear:both;}
 
 echo "</head><body>" >> $OUTPUT
 
+## ADDING PINTEREST PINIT BUTTON ON EVERY IMAGE
+echo "<script async defer data-pin-hover='true' data-pin-tall='true' data-pin-lang='en' data-pin-save='true' src='https://assets.pinterest.com/js/pinit.js'></script>" >> $OUTPUT
+
+
 echo "<nav class='navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top'>
   <a class='navbar-brand' href='https://www.MyGingerGarlicKitchen.com'>
   <img src='https://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/mggk-new-logo-transparent-150px.png' style='width: 30px; '>
-  <span style='font-weight: 700; color: #F81894;'>MGGK</span> | Images Index
+  <span style='font-weight: 700; color: #F81894;'>My Ginger Garlic Kitchen</span> | Food Photography Images
   </a>
 </nav>" >> $OUTPUT
 
@@ -221,10 +229,14 @@ echo "<div class='site-wrapper'>
 <div class='site-wrapper-inner'>
 
 <!-- HEADING DIV STARTS --> <div class='heading'>
-<!-- TOP LOGO --> <img src='https://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/mggk-new-logo-transparent-150px.png' style='width: 100px; '>
-<h1 class='heading'>MGGK - IMAGES INDEX<br>FOR CURRENT MONTH<br>// $CURRENT_YEAR/$CURRENT_MONTH //<br>&bull;&bull;&bull;&bull;&bull;</h1>
+<!-- TOP LOGO --> 
+<a href='https://www.MyGingerGarlicKitchen.com' target='_blank'><img src='https://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/mggk-new-logo-transparent-150px.png' style='width: 100px; '> </a>
 
+<!--
+<h1 class='heading'>FOOD PHOTOGRAPHY IMAGES <br>&bull;&bull;&bull;&bull;&bull;</h1>
 <h2 class='heading'><font color='#FFFF00'>Designed by</font> <a href='https://www.MyGingerGarlicKitchen.com'><font color='#50c878'>My Ginger Garlic Kitchen</font></a></h2>
+-->
+
 <!-- HEADING DIV ENDS --> </div>
 
 </div></div> <!-- site wrapper ends -->"  >> $OUTPUT
@@ -234,18 +246,10 @@ echo "<div class='container-fluid'>" >> $OUTPUT
 
 echo "<h3 class='thin'>Total Images On This Page (Non-Recursive) = $totalimagefiles</h3>" >> $OUTPUT
 echo "<h3 class='thin'>Page last updated: "$(date)"</h3>" >> $OUTPUT
-echo "<h3 style='color: #cd1c62;'>&bull; &bull; &bull;<br> IMAGES ARE SORTED BY LATEST FIRST <br>&bull; &bull; &bull;</h3>" >> $OUTPUT
 
-##### CREATING THE HREF-NAME LINKS FOR ALL THE FOLDERS #####
-echo "<hr>" >> $OUTPUT
-echo "<div class='toc'>&bull; Table of Contents &bull;</div>" >> $OUTPUT
+#echo "<h3 style='color: #cd1c62;'>&bull; &bull; &bull;<br> IMAGES ARE SORTED BY LATEST FIRST <br>&bull; &bull; &bull;</h3>" >> $OUTPUT
+#echo "<hr>" >> $OUTPUT
 
-for foldername in `find "$ROOT" -maxdepth 0 -mindepth 0 -type d| sort -nr`; do
-  folder=`basename "$foldername"`
-  echo ">>>> FOLDER-NAME (For TOC) = $folder" ;
-  echo "<div class='toc'><a href='#$folder'>MONTH: $folder</a></div> " >> $OUTPUT
-done
-#### Link Creation Ends #####
 
 #### Calculations begin ####
 x=0
@@ -256,7 +260,7 @@ for filepath in `find "$ROOT" -maxdepth 0 -mindepth 0 -type d| sort -nr`; do
   echo ">>> PATH = BASENAME(FILEPATH) = $path" ;
   echo;
 
-  echo " <hr> <h2 class='p1'> <a name='$path'>MONTH: $path</a> <a href='#' style='color: lime ;'>( &uarr; Go to top )</a></h2>" >> $OUTPUT
+  #echo " <h2 class='p1'> <a name='$path'>MONTH: $path</a> <a href='#' style='color: lime ;'>( &uarr; Go to top )</a></h2>" >> $OUTPUT
 
   ## UNCOMMENT THE FOLLOWING LINE IF YOU WANT PACKERY TYPE LOADING OF IMAGES
   #### AND INSTEAD OF USING <div class='col-6 col-sm-2'> FOR INDIVIDUAL IMAGES,
@@ -272,11 +276,13 @@ for filepath in `find "$ROOT" -maxdepth 0 -mindepth 0 -type d| sort -nr`; do
     file=`basename "$x"`
 
     ## Finding the image dimensions using ImageMagick's identify command.
-    imagedimen="`identify $DIRPATH/$path/$file | awk '{FS=" "; print "WxH= " $3 " - " $7 ;}'`";
+    
+    #imagedimen="`identify $DIRPATH/$path/$file | awk '{FS=" "; print "WxH= " $3 " - " $7 ;}'`";
+    imagedimen="`identify $DIRPATH/$file | awk '{FS=" "; print "WxH= " $3 " - " $7 ;}'`";
 
     ## Finding the FileType for the current file.
-    filetype="`file $DIRPATH/$path/$file | awk '{FS=" "; print $2}'`";
-    echo $filetype " - " $DIRPATH/$path/$file "............DONE!";
+    filetype="`file $DIRPATH/$file | awk '{FS=" "; print $2}'`";
+    echo $filetype " - " $DIRPATH/$file "............DONE!";
     echo "IMAGE-DIMENSIONS - " $imagedimen "\n";
 
 
@@ -285,9 +291,10 @@ for filepath in `find "$ROOT" -maxdepth 0 -mindepth 0 -type d| sort -nr`; do
 
 ## Printing the image dimensions for everything, except GIFs because they produce LOOOOONG outputs for all GIF frames. ##
     if [ "$filetype" != 'GIF' ]; then
-      echo "<div class='col-6 col-sm-4 col-md-3 col-lg-2'><div class='pali'><a href='$path/$file'><img src='$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><textarea>$URL_PREFIX/$file</textarea><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: deeppink; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
+      #echo "<div class='col-6 col-sm-4 col-md-3 col-lg-2'><div class='pali'><a href='$file'><img src='$file' width='100%'></img><span class='thin'>$file</span></a><br><span class='thin'>$imagedimen</span><br><br></div></div>" >> $OUTPUT
+      echo "<div class='col-6 col-sm-4 col-md-3 col-lg-2'><div class='pali'><a href='$file'><img src='$file' width='100%'></img></a></div></div>" >> $OUTPUT
     else
-      echo "<div class='col-6 col-sm-4 col-md-3 col-lg-2'><div class='pali'><a href='$path/$file'><img src='$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: deeppink ; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
+      echo "<div class='col-6 col-sm-4 col-md-3 col-lg-2'><div class='pali'><a href='$file'><img src='$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: deeppink ; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
     fi
 
   done
@@ -338,6 +345,8 @@ echo "</html>" >> $OUTPUT
 
 echo "######## SM IMAGES Index Successfully created. ######### ";
 echo "####### DONE! File will now be opened in SAFARI. ########"
+
+echo "Final website URL => $SITEURL"
 open -a Safari $OUTPUT
 open -a Safari $SITEURL
 
