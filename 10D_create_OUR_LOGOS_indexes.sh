@@ -71,7 +71,7 @@ body {
     padding: 5px;
     margin-bottom : 20px;
     text-align: left;
-    background-color: white ;
+    background-color: #e0e0e0 ;
     border : 1px solid white ;
 		box-shadow: 0px 0px 5px #999 ;
 		border-radius : 1px ;
