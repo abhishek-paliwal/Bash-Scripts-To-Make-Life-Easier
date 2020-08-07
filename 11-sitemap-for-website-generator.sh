@@ -23,10 +23,10 @@ if [ "$1" == "--help" ] ; then usage ; fi
 #####################################################################
 
 ####### DIR 1 ########
-sitemapDir="$HOME/Dropbox/Public/_TO_SYNC_cdn.mygingergarlickitchen.com"
+sitemapDir="$HOME/Dropbox/Public/_TO_SYNC_downloads.mygingergarlickitchen.com"
 cd $sitemapDir
 echo '===>>>>>>>> BEGINNING : TREE Sitemap Creation at '$sitemapDir
-tree -C -H 'https://cdn.mygingergarlickitchen.com' -T 'SITEMAP for cdn.mygingergarlickitchen.com' --sort=name  > sitemap.html
+tree -C -H 'https://downloads.mygingergarlickitchen.com' -T 'SITEMAP for downloads.mygingergarlickitchen.com' --sort=name  > sitemap.html
 echo '===>>>>>>>> DONE : TREE Sitemap Creation at '$sitemapDir
 echo '<hr>Sitemap created on: ' `date` >> sitemap.html
 echo 'Opening '$sitemapDir

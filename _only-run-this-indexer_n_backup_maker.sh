@@ -109,9 +109,9 @@ then
 
     ####
     echo ;
-    echo "     >>>>>>>> BEGINNING: Backup [TO] cdn.mygingergarlickitchen.com <<<<<<<" ;
+    echo "     >>>>>>>> BEGINNING: Backup [TO] downloads.mygingergarlickitchen.com <<<<<<<" ;
     1_backup_to_mggk_cdn ;
-    echo "     >>>>>>>> DONE: Backup [TO] cdn.mygingergarlickitchen.com <<<<<<<" ;
+    echo "     >>>>>>>> DONE: Backup [TO] downloads.mygingergarlickitchen.com <<<<<<<" ;
     echo ;
 
     ####
