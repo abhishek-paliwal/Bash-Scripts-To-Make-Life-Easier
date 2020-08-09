@@ -73,8 +73,8 @@ then
     echo "creating SOCIAL MEDIA images index file in dropbox......"
     sh $BASEPATH/10B_create_SOCIAL_MEDIA_image_indexes.sh
 
-    echo "creating ADORIA.ME portfolio index file in dropbox......"
-    sh $BASEPATH/10E_create_adoria_me_portfolio_index_page.sh
+    echo "creating ADORIA.XYZ portfolio index file in dropbox......"
+    sh $BASEPATH/10E_create_adoria_xyz_portfolio_index_page.sh
 
 
     #######################################################
@@ -116,9 +116,9 @@ then
 
     ####
     echo ;
-    echo "     >>>>>>>> BEGINNING: Backup [TO] https://adoria.me <<<<<<<" ;
-    1_backup_to_adoria_me ;
-    echo "     >>>>>>>> DONE: Backup [TO] https://adoria.me <<<<<<<" ;
+    echo "     >>>>>>>> BEGINNING: Backup [TO] https://adoria.xyz <<<<<<<" ;
+    1_backup_to_adoria_xyz ;
+    echo "     >>>>>>>> DONE: Backup [TO] https://adoria.xyz <<<<<<<" ;
     echo ;
 
 else

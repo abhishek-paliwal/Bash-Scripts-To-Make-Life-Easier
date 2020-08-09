@@ -18,7 +18,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 
 echo "#################" #Blank line
-DIRPATH="$HOME_WINDOWS/Dropbox/Public/_TO_SYNC_adoria.me"
+DIRPATH="$HOME_WINDOWS/Dropbox/Public/_TO_SYNC_adoria.xyz"
 MAIN_IMAGES_FOLDER="drawings"
 ROOT="$DIRPATH/$MAIN_IMAGES_FOLDER"
 
@@ -31,7 +31,7 @@ echo "#################" #Blank line
 
 FINALFILENAME="index.html"
 OUTPUT="$DIRPATH/$FINALFILENAME" ##Output filename
-SITEURL="https://adoria.me/$FINALFILENAME"
+SITEURL="https://adoria.xyz/$FINALFILENAME"
 
 ##### UNCOMMENT the following three lines for custom image size #######
 # echo -n "Enter the size of the DIV to use (300 works best) [ENTER]: "
@@ -56,7 +56,7 @@ echo "<html lang='en'>
 <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-    <link rel='icon' href='https://adoria.me/favicon.ico'>
+    <link rel='icon' href='https://adoria.xyz/favicon.ico'>
 
     <title>Portfolio of Adoria's Drawings</title>
 
@@ -211,7 +211,7 @@ hr {clear:both;}
 echo "</head><body>" >> $OUTPUT
 
 echo "<nav class='navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top'>
-  <a class='navbar-brand' href='https://adoria.me'>
+  <a class='navbar-brand' href='https://adoria.xyz'>
   <img src='./drawings/0-logos/site-logo-transparent-1000px-lowres.png' style='width: 30px; '>
   <span style='font-weight: 700; color: #F81894;'>adoria</span> | a personal portfolio
   </a>
@@ -227,7 +227,7 @@ echo "<div class='site-wrapper'>
 <!-- TOP LOGO --> <img src='./drawings/0-logos/site-logo-transparent-1000px-lowres.png' style='width: 300px; '>
 <h1 class='heading'>Personal Portfolio of Adoria's Drawings<br>&bull;&bull;&bull;&bull;&bull;</h1>
 
-<h2 class='heading'><font color='#FFFF00'>Designed by</font> <a href='https://adoria.me'><font color='#50c878'>Adoria</font></a></h2>
+<h2 class='heading'><font color='#FFFF00'>Designed by</font> <a href='https://adoria.xyz'><font color='#50c878'>Adoria</font></a></h2>
 <!-- HEADING DIV ENDS --> </div>
 
 </div></div> <!-- site wrapper ends -->"  >> $OUTPUT
