@@ -29,13 +29,14 @@ FILE_OUTPUT_SITESTATS="$DIR_GITHUB/2020-LEELA-RECIPES/static/sitestats.html"
 ## OUTPUT FILE CREATED AT (+ initializing the output file):
 echo "<pre>" > $FILE_OUTPUT_SITESTATS
 echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
-echo "## MGGK Site Statistics last updated at:" >> $FILE_OUTPUT_SITESTATS
+echo "## LEELARECIPES.COM Site Statistics last updated at:" >> $FILE_OUTPUT_SITESTATS
 echo "## $(date)" >> $FILE_OUTPUT_SITESTATS
 echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
 
 ## NUMBER OF ALL MD POSTS
 NUM_MD_POSTS=$(find $HUGO_CONTENT_DIR/ -type f | grep '.md'| wc -l)
 echo "$NUM_MD_POSTS: NUMBER OF ALL MD POSTS" >> $FILE_OUTPUT_SITESTATS
+echo "        >>>> $NUM_MD_POSTS: NUMBER OF ALL MD POSTS"
 
 ## NUMBER OF POSTS WITH TITLE
 NUM_TITLE_POSTS=$(grep -irl '^title:' $HUGO_CONTENT_DIR/* |wc -l)
@@ -75,7 +76,8 @@ echo "$NUM_YOUTUBE_VIDEO_ID_POSTS: NUMBER OF POSTS WITH YOUTUBE_VIDEO_ID" >> $FI
 ##------------------------------------------------------------------------------
 ## LIST OF ALL URLS FOUND IN MD FILES
 echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
-LIST_OF_ALL_URLS=$(grep -irh '^url: ' $HUGO_CONTENT_DIR/* | sort| nl)
+LIST_OF_ALL_URLS=$(fd 'md' $HUGO_CONTENT_DIR/ | sed 's|/home/ubuntu/GitHub/2020-LEELA-RECIPES/content/||ig' | sort| nl)
+#LIST_OF_ALL_URLS=$(grep -irh '^url: ' $HUGO_CONTENT_DIR/* | sort| nl)
 echo "" >> $FILE_OUTPUT_SITESTATS
 echo "LIST OF ALL URLS FOUND IN MD FILES:" >> $FILE_OUTPUT_SITESTATS
 echo "$LIST_OF_ALL_URLS" >> $FILE_OUTPUT_SITESTATS
