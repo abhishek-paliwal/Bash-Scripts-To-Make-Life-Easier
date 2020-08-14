@@ -76,8 +76,8 @@ echo "$NUM_YOUTUBE_VIDEO_ID_POSTS: NUMBER OF POSTS WITH YOUTUBE_VIDEO_ID" >> $FI
 ##------------------------------------------------------------------------------
 ## LIST OF ALL URLS FOUND IN MD FILES
 echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
-LIST_OF_ALL_URLS=$(fd 'md' $HUGO_CONTENT_DIR/ | sed 's|/home/ubuntu/GitHub/2020-LEELA-RECIPES/content/||ig' | sort| nl)
-#LIST_OF_ALL_URLS=$(grep -irh '^url: ' $HUGO_CONTENT_DIR/* | sort| nl)
+#LIST_OF_ALL_URLS=$(fd 'md' $HUGO_CONTENT_DIR/ | sed 's|/home/ubuntu/GitHub/2020-LEELA-RECIPES/content/||ig' | sort| nl)
+LIST_OF_ALL_URLS=$(grep -irh '^url: ' $HUGO_CONTENT_DIR/* | sort| nl)
 echo "" >> $FILE_OUTPUT_SITESTATS
 echo "LIST OF ALL URLS FOUND IN MD FILES:" >> $FILE_OUTPUT_SITESTATS
 echo "$LIST_OF_ALL_URLS" >> $FILE_OUTPUT_SITESTATS
