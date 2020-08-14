@@ -78,7 +78,7 @@ pathlib.Path(MY_YAML_DIR).mkdir(parents=True, exist_ok=True)
 ##############################################################################
 ##############################################################################
 ## READING 1ST CSV FILE
-data = pd.read_csv("513B-REQUIREMENT-2019-MGGK-YAML-RECIPE-MAKER-TEMPLATE.csv")
+data = pd.read_csv("513B-REQUIREMENT-2019-MGGK-YAML-RECIPE-MAKER-TEMPLATE - Sheet-1.csv")
 ## adding an extra columns with row numbers minus 1 = index_value
 data['index_data'] = data.reset_index().index
 print(data)
