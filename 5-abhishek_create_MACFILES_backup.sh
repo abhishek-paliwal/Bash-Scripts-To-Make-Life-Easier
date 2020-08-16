@@ -64,7 +64,7 @@ mkdir -p $DIR_DOTFILES $DIR_PACKAGES $DIR_ZIPS ;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## Backing up important dotfiles and directories
-declare -a DOTFILES_TO_BACKUP=("$HOME/.bashrc" "$HOME/.profile" "$HOME/.bash_profile" "$HOME/.bash_aliases" "$HOME/.zshrc" "$HOME/.vimrc" "$HOME/.tmux.conf" "$HOME/.p10k.zsh" "$HOME/.config/nvim/init.vim" "$HOME/.gitconfig") ;
+declare -a DOTFILES_TO_BACKUP=("$HOME/.bashrc" "$HOME/.profile" "$HOME/.bash_profile" "$HOME/.bash_aliases" "$HOME/.zshrc" "$HOME/.vimrc" "$HOME/.tmux.conf" "$HOME/.p10k.zsh" "$HOME/.config/nvim/init.vim" "$HOME/.gitconfig" "$HOME/.aspell.en.pws") ;
 
 for file in "${DOTFILES_TO_BACKUP[@]}"; do 
 	echo ">>>> Currently working with => $file" ;
