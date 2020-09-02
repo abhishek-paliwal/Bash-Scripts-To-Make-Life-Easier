@@ -71,7 +71,7 @@ NUM_MGGK_JSON_RECIPE_POSTS=$(grep -irh 'mggk_json_recipe:' $HUGO_CONTENT_DIR/* |
 echo "$NUM_MGGK_JSON_RECIPE_POSTS: NUMBER OF POSTS WITH JSON_RECIPE BLOCK" >> $FILE_OUTPUT_SITESTATS
 
 ## NUMBER OF POSTS WITH YOUTUBE_VIDEO_ID
-NUM_YOUTUBE_VIDEO_ID_POSTS=$(grep -irh '{{< youtube' $HUGO_CONTENT_DIR/* | wc -l)
+NUM_YOUTUBE_VIDEO_ID_POSTS=$(grep -irh 'youtube_video_id:' $HUGO_CONTENT_DIR/* | wc -l)
 echo "$NUM_YOUTUBE_VIDEO_ID_POSTS: NUMBER OF POSTS WITH YOUTUBE_VIDEO_ID" >> $FILE_OUTPUT_SITESTATS
 
 ##------------------------------------------------------------------------------
