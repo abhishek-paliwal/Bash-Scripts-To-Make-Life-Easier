@@ -30,6 +30,16 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ################################################################################
 HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content"
 XML_OUTFILE="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/video-sitemap.xml" ;
+HUGO_CURRENT_YOUTUBE_IMAGE_COVERS_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/youtube_video_cover_images" ;
+CURRENT_VIDEO_COVER_IMAGES_TXTFILE="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/video-cover-images-current.txt"
+################################################################################
+
+## LISTING AND SAVING ALL CURRENTLY EXISTING YOUTUBE COVER IMAGES
+for myImage in $(ls $HUGO_CURRENT_YOUTUBE_IMAGE_COVERS_DIR/*.jpg | sort) ; do echo "$(basename $myImage)" ; done > $CURRENT_VIDEO_COVER_IMAGES_TXTFILE 
+## Printing
+echo; echo ">>>> LISTING CURRENT IMAGES IN: $HUGO_CURRENT_YOUTUBE_IMAGE_COVERS_DIR" ;
+cat $CURRENT_VIDEO_COVER_IMAGES_TXTFILE | nl ;
+echo; 
 ################################################################################
 
 ######### BEGIN: FUNCTION - DOWNLOADING THE COVER IMAGE FROM YOUTUBE AND SAVING TO LOCAL DIR ##########
