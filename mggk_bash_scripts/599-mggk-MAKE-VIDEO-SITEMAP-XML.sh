@@ -44,13 +44,16 @@ echo;
 ################################################################################
 
 ##################################################################################
-############ PART 1 = FINDING WHICH IMAGES ARE NOT PRESENT IN VIDEO SITEMAP AND DOWNLOADING THEM
+############ PART 1 = FINDING MISSING YOUTUBE VIDEO COVER IMAGES AND DOWNLOADING THEM
 ##################################################################################
 ## GETTING ALL THE IMAGES FOR LIVE VIDEO SITEMAP
-wget -qO- https://www.mygingergarlickitchen.com/video-sitemap.xml | grep '<video:thumbnail_loc>' | sed 's!<video:thumbnail_loc>https://www.mygingergarlickitchen.com/wp-content/youtube_video_cover_images/!!ig' | sed 's!.jpg</video:thumbnail_loc>!!ig' | tr -d "[:blank:]" | sort > $TMPDIR/_tmp_599_sorted_youtube_id_from_video_sitemap.txt
+#wget -qO- https://www.mygingergarlickitchen.com/video-sitemap.xml | grep '<video:thumbnail_loc>' | sed 's!<video:thumbnail_loc>https://www.mygingergarlickitchen.com/wp-content/youtube_video_cover_images/!!g' | sed 's!.jpg</video:thumbnail_loc>!!g' | tr -d "[:blank:]" | sort > $TMPDIR/_tmp_599_sorted_youtube_id_from_video_sitemap.txt
+
+## GETTING ALL YOUTUBE VIDEO IDs FROM ALL MARKDOWN FILES
+grep -irh 'youtube_video_id:' $HUGO_CONTENT_DIR | sed 's/youtube_video_id://g' | sed 's/"//g' | tr -d "[:blank:]" | sort > $TMPDIR/_tmp_599_sorted_youtube_id_from_video_sitemap.txt
 
 ## GETTING ALL THE IMAGES FOR CURRENT YOUTUBE VIDEO COVER IMAGES PRESENT LOCALLY
-cat "$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/video-cover-images-current.txt" | sed 's/.jpg//ig' | tr -d "[:blank:]" | sort > $TMPDIR/_tmp_599_sorted_youtube_covers_currently_present.txt
+cat "$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/video-cover-images-current.txt" | sed 's/.jpg//g' | tr -d "[:blank:]" | sort > $TMPDIR/_tmp_599_sorted_youtube_covers_currently_present.txt
 
 ## PRINTING ONLY THE DIFFERENCES BETWEEN THE TWO
 comm -23 $TMPDIR/_tmp_599_sorted_youtube_id_from_video_sitemap.txt $TMPDIR/_tmp_599_sorted_youtube_covers_currently_present.txt > $TMPDIR/_tmp_599_final_images_to_download_from_youtube.txt
@@ -65,21 +68,24 @@ cat "$TMPDIR/_tmp_599_final_images_to_download_from_youtube.txt" | sort | nl ;
 ######### BEGIN: FUNCTION - DOWNLOADING THE COVER IMAGE FROM YOUTUBE AND SAVING TO LOCAL DIR ##########
 FUNCTION_DOWNLOAD_COVER_IMAGE_FROM_YOUTUBE () {
 	video_youtube_id=$1 ; ## $1= current value of youtube_video_id
-	echo "	>> DOWNLOADING THE COVER IMAGE FROM YOUTUBE AND SAVING TO LOCAL DIR" ;
-	COVER_IMAGE_DOWNLOAD_DIR="$(pwd)/_TMP_599_DOWNLOADED_COVER_IMAGES" ;
-	mkdir $COVER_IMAGE_DOWNLOAD_DIR ;
-	wget "https://i.ytimg.com/vi/$video_youtube_id/maxresdefault.jpg" -O "$COVER_IMAGE_DOWNLOAD_DIR/$video_youtube_id.jpg" ;
+	echo "	>> DOWNLOADING THE COVER IMAGE FROM YOUTUBE AND SAVING TO LOCAL YOUTUBE COVERS DIRECTORY..." ;
+	##
+	wget "https://i.ytimg.com/vi/$video_youtube_id/maxresdefault.jpg" -O "$HUGO_CURRENT_YOUTUBE_IMAGE_COVERS_DIR/$video_youtube_id.jpg" ;
 }
 ######### END: FUNCTION - DOWNLOADING THE COVER IMAGE FROM YOUTUBE AND SAVING TO LOCAL DIR ##########
 
 ## DOWNLOADING EACH MISSING IMAGE FILE FROM YOUTUBE
 while IFS= read -r line
 do
-    echo "== $line"
+    echo; echo ">>>> CURRENTLY READING = $line"; echo;
     ## CALLING THE FUNCTION TO DOWNLOAD ALL COVER IMAGES FROM YOUTUBE
     FUNCTION_DOWNLOAD_COVER_IMAGE_FROM_YOUTUBE "$line" ;
 done < "$TMPDIR/_tmp_599_final_images_to_download_from_youtube.txt"
 ##------------------------------------------------------------------------------
+
+##################################################################################
+############ PART 2 = CREATING THE ACTUAL XML SITEMAP
+##################################################################################
 
 ## WRITING FIRST LINE IN VIDEO SITEMAP XML_OUTFILE
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
