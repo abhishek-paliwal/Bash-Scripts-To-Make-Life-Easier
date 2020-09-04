@@ -32,6 +32,7 @@ HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content"
 XML_OUTFILE="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/video-sitemap.xml" ;
 HUGO_CURRENT_YOUTUBE_IMAGE_COVERS_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/youtube_video_cover_images" ;
 CURRENT_VIDEO_COVER_IMAGES_TXTFILE="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/video-cover-images-current.txt"
+TMPDIR="$HOME/Desktop/Y"
 ################################################################################
 
 ## LISTING AND SAVING ALL CURRENTLY EXISTING YOUTUBE COVER IMAGES
@@ -42,6 +43,25 @@ cat $CURRENT_VIDEO_COVER_IMAGES_TXTFILE | nl ;
 echo; 
 ################################################################################
 
+##################################################################################
+############ PART 1 = FINDING WHICH IMAGES ARE NOT PRESENT IN VIDEO SITEMAP AND DOWNLOADING THEM
+##################################################################################
+## GETTING ALL THE IMAGES FOR LIVE VIDEO SITEMAP
+wget -qO- https://www.mygingergarlickitchen.com/video-sitemap.xml | grep '<video:thumbnail_loc>' | sed 's!<video:thumbnail_loc>https://www.mygingergarlickitchen.com/wp-content/youtube_video_cover_images/!!ig' | sed 's!.jpg</video:thumbnail_loc>!!ig' | tr -d "[:blank:]" | sort > $TMPDIR/_tmp_599_sorted_youtube_id_from_video_sitemap.txt
+
+## GETTING ALL THE IMAGES FOR CURRENT YOUTUBE VIDEO COVER IMAGES PRESENT LOCALLY
+cat "$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/video-cover-images-current.txt" | sed 's/.jpg//ig' | tr -d "[:blank:]" | sort > $TMPDIR/_tmp_599_sorted_youtube_covers_currently_present.txt
+
+## PRINTING ONLY THE DIFFERENCES BETWEEN THE TWO
+comm -23 $TMPDIR/_tmp_599_sorted_youtube_id_from_video_sitemap.txt $TMPDIR/_tmp_599_sorted_youtube_covers_currently_present.txt > $TMPDIR/_tmp_599_final_images_to_download_from_youtube.txt
+
+## WHICH IMAGES WILL BE DOWNLOADED 
+echo;echo ">>>> THESE IMAGES WILL BE DOWNLOADED (FOR THE FOLLOWING YOUTUBE VIDEO IDs):" ;
+cat "$TMPDIR/_tmp_599_final_images_to_download_from_youtube.txt" | sort | nl ;
+##################################################################################
+
+##------------------------------------------------------------------------------
+######### FUNCTION DEFINITION #########
 ######### BEGIN: FUNCTION - DOWNLOADING THE COVER IMAGE FROM YOUTUBE AND SAVING TO LOCAL DIR ##########
 FUNCTION_DOWNLOAD_COVER_IMAGE_FROM_YOUTUBE () {
 	video_youtube_id=$1 ; ## $1= current value of youtube_video_id
@@ -52,7 +72,16 @@ FUNCTION_DOWNLOAD_COVER_IMAGE_FROM_YOUTUBE () {
 }
 ######### END: FUNCTION - DOWNLOADING THE COVER IMAGE FROM YOUTUBE AND SAVING TO LOCAL DIR ##########
 
-## WRITING FIRST LINE IN XML_OUTFILE
+## DOWNLOADING EACH MISSING IMAGE FILE FROM YOUTUBE
+while IFS= read -r line
+do
+    echo "== $line"
+    ## CALLING THE FUNCTION TO DOWNLOAD ALL COVER IMAGES FROM YOUTUBE
+    FUNCTION_DOWNLOAD_COVER_IMAGE_FROM_YOUTUBE "$line" ;
+done < "$TMPDIR/_tmp_599_final_images_to_download_from_youtube.txt"
+##------------------------------------------------------------------------------
+
+## WRITING FIRST LINE IN VIDEO SITEMAP XML_OUTFILE
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <?xml-stylesheet type=\"text/xsl\" href=\"https://www.mygingergarlickitchen.com/video-sitemap-mggk.xsl\"?>
 <urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:video=\"http://www.google.com/schemas/sitemap-video/1.1\">" > $XML_OUTFILE
