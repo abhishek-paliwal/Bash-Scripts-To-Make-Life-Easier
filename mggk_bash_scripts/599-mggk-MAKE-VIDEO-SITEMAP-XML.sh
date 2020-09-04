@@ -81,8 +81,8 @@ for mdfile in $(grep -irl 'youtube_video_id:' $HUGO_CONTENT_DIR/*) ; do
 			</video:video>
 	</url>" >> $XML_OUTFILE ;
 
-	## CALLING THE FUNCTION
-	#FUNCTION_DOWNLOAD_COVER_IMAGE_FROM_YOUTUBE "$video_youtube_id" ;
+	## CALLING THE FUNCTION TO DOWNLOAD ALL COVER IMAGES FROM YOUTUBE
+	FUNCTION_DOWNLOAD_COVER_IMAGE_FROM_YOUTUBE "$video_youtube_id" ;
 
 done
 ## END: LOOPING THROUGH ALL MD FILES CONTAINING youtube_video_id
