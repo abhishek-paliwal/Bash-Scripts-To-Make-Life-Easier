@@ -14,7 +14,7 @@
 20200803,00:12:00,orange,Rakhi
 ######################
 ## ADO EVENTS
-20200902,15:15:00,lime, Millie hangouts meeting // 15:15 to 15:30 meet.google.com/ami-tbyr-rir
+20200909,15:15:00,lime, Millie hangouts meeting // 15:15 to 15:30 meet.google.com/ami-tbyr-rir
 #######################
 ## HOME EVENTS
 20200714,12:00:00,deeppink,AB-Bday 
