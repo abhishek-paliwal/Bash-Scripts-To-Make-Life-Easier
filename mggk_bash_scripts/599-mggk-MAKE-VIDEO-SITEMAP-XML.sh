@@ -45,6 +45,7 @@ echo;
 
 ##################################################################################
 ############ PART 1 = FINDING MISSING YOUTUBE VIDEO COVER IMAGES AND DOWNLOADING THEM
+echo ">>>> PART 1 = FINDING MISSING YOUTUBE VIDEO COVER IMAGES AND DOWNLOADING THEM >>>>" ; echo; 
 ##################################################################################
 ## GETTING ALL THE IMAGES FOR LIVE VIDEO SITEMAP
 #wget -qO- https://www.mygingergarlickitchen.com/video-sitemap.xml | grep '<video:thumbnail_loc>' | sed 's!<video:thumbnail_loc>https://www.mygingergarlickitchen.com/wp-content/youtube_video_cover_images/!!g' | sed 's!.jpg</video:thumbnail_loc>!!g' | tr -d "[:blank:]" | sort > $TMPDIR/_tmp_599_sorted_youtube_id_from_video_sitemap.txt
@@ -61,6 +62,8 @@ comm -23 $TMPDIR/_tmp_599_sorted_youtube_id_from_video_sitemap.txt $TMPDIR/_tmp_
 ## WHICH IMAGES WILL BE DOWNLOADED 
 echo;echo ">>>> THESE IMAGES WILL BE DOWNLOADED (FOR THE FOLLOWING YOUTUBE VIDEO IDs):" ;
 cat "$TMPDIR/_tmp_599_final_images_to_download_from_youtube.txt" | sort | nl ;
+echo ">>>> Images to be downloaded = $(cat $TMPDIR/_tmp_599_final_images_to_download_from_youtube.txt | wc -l)" ;
+echo; 
 ##################################################################################
 
 ##------------------------------------------------------------------------------
@@ -84,7 +87,8 @@ done < "$TMPDIR/_tmp_599_final_images_to_download_from_youtube.txt"
 ##------------------------------------------------------------------------------
 
 ##################################################################################
-############ PART 2 = CREATING THE ACTUAL XML SITEMAP
+############ PART 2 = CREATING THE ACTUAL XML SITEMAP ############
+echo ">>>> PART 2 = CREATING THE ACTUAL XML SITEMAP >>>>" ; echo; 
 ##################################################################################
 
 ## WRITING FIRST LINE IN VIDEO SITEMAP XML_OUTFILE
