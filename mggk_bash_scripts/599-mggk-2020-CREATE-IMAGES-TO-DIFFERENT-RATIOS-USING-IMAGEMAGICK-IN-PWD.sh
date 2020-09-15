@@ -91,14 +91,23 @@ function CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS () {
     echo;
 }
 
-##################################################################################
+##------------------------------------------------------------------------------
 ## PROCESSING IMAGES ONE BY ONE AND SAVING IN DIFFERENT RATIOS AND DIMENSIONS
 echo;
+## BEGIN: FOR LOOP ##
+COUNT=1;
+TOTAL_IMAGES=$(ls $IMAGEDIR/ | wc -l) ;
 for this_image in $(ls $IMAGEDIR/) ;
 do 
-    echo "Reading this image => $this_image"; 
+    echo "Reading this image ($COUNT of $TOTAL_IMAGES) => $this_image"; 
     ## Calling the function with its parameters
     CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS "$this_image" "1x1" "800x800" ;
     CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS "$this_image" "4x3" "800x600" ;
     CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS "$this_image" "16x9" "800x450" ;
-done 
+    
+    ## Updating the running counter
+    COUNT=$((COUNT+1))
+done
+## END: FOR LOOP ##
+##------------------------------------------------------------------------------
+ 
