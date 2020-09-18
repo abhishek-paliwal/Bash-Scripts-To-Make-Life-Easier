@@ -127,5 +127,5 @@ echo;
 echo "################################################################################" ;
 echo ">>>> VERY IMPORTANT MESSAGE:" ;
 echo "  >>>> Before running this program, MAKE VERY SURE that the input images have been renamed based upon the URL of the page on which they will be published under Guided Recipes." ;
-echo "  >>>> As an example, if the URL is https://www.mygingergarlickitchen.com/this-is-page-url/ , then the input image should be renamed as this-is-page-url.jpg, before running this program." ;   
+echo "  >>>> As an example, if the URL is https://www.YOURSITE.com/this-is-page-url/ , then the input image should be renamed as this-is-page-url.jpg, before running this program." ;   
 echo "################################################################################" ;
