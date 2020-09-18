@@ -122,10 +122,40 @@ done
 ## END: FOR LOOP ##
 ##------------------------------------------------------------------------------
  
+
+################################################################################
+## SHOWING THE DISPLAY MESSAGE FOR THE CHOSEN IMAGE Upload directory DEPENDING UPON
+## WHETHER THIS PROGRAM IS RUN BY WHICH USER (Mac or Windows WSL)
+################################################################################
+
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+if [ $USER = "ubuntu" ]; then
+    DIR_TO_UPLOAD="$DIR_GITHUB/2020-LEELA-RECIPES/static/rich-markup-images" ;
+    echo "USER = $USER // USER is ubuntu on WSL. Hence, you will need to move images to this directory: $DIR_TO_UPLOAD" ;
+else
+    DIR_TO_UPLOAD="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/rich-markup-images" ;
+    echo "USER = $USER // USER is NOT ubuntu on WSL. Hence, you will need to move images to this directory: $DIR_TO_UPLOAD" ;
+fi
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+###### 
+## DISPLAYING THE COMMANDS TO COPY-PASTE BY THE USER
+echo;
+echo "=========================== TO DO THIS => Move all the chosen 1x1, 4x3, 16x9 images to $(pwd)" ;
+echo "=========================== Then Copy-paste the following commands to move all images to corresponding hugo directory" ;
+echo;    
+echo "mv $(pwd)/1x1*.jpg $DIR_TO_UPLOAD/1x1/" ;
+echo "mv $(pwd)/4x3*.jpg $DIR_TO_UPLOAD/4x3/" ;
+echo "mv $(pwd)/16x9*.jpg $DIR_TO_UPLOAD/16x9/" ;
+echo "mv $(pwd)/*.jpg $DIR_TO_UPLOAD/original_copied/" ;
+echo ;
+
 ## VERY IMPORTANT MESSAGE
 echo;
 echo "################################################################################" ;
-echo ">>>> VERY IMPORTANT MESSAGE:" ;
-echo "  >>>> Before running this program, MAKE VERY SURE that the input images have been renamed based upon the URL of the page on which they will be published under Guided Recipes." ;
-echo "  >>>> As an example, if the URL is https://www.YOURSITE.com/this-is-page-url/ , then the input image should be renamed as this-is-page-url.jpg, before running this program." ;   
+echo "###################### VERY IMPORTANT MESSAGE ##################################" ;
 echo "################################################################################" ;
+echo "=> 1. Before running this program, MAKE VERY SURE that the input images have been renamed based upon the URL of the page on which they will be published under Guided Recipes." ;
+echo "=> 2. As an example, if the URL is https://www.YOURSITE.com/this-is-page-url/ , then the input image should be renamed as this-is-page-url.jpg, before running this program." ;   
+echo "################################################################################" ;
+echo "################################################################################" ;
+
