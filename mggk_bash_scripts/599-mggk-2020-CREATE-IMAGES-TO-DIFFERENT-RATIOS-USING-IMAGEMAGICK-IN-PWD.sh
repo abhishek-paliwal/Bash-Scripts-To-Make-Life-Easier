@@ -12,8 +12,11 @@ USAGE: $(basename $0)
     ################################################################################
     ## THIS SCRIPT READS ALL .jpg IMAGES IN THE WORKING DIRECTORY AND
     ## CREATES VARIOUS VERSIONS WITH DIFFERENT RATIOS AND DIMENSIONS AND
-    ## SAVES THEM TO A TEMPORARY OUTPUT DIRECTORY WITH PREFIXES. 
+    ## SAVES THEM TO A TEMPORARY OUTPUT DIRECTORY WITH PREFIXES.
+    ######################################### 
     ## THIS SCRIPT USES imagemagick / mogrify / convert commands on CLI.
+    ## IT CREATES THE FINAL IMAGE BY COMPOSITING ONE IMAGE OVER ANOTHER BY BLURRING
+    ## THE BOTTOM IMAGE.
     ################################################################################
     ## CREATED ON: 2020-09-15
     ## CREATED BY: PALI
@@ -53,11 +56,12 @@ echo ">>>>>>>>>>>>>>>>> GOOD TO GO ... >>>>>>>>>>>>>>>>>>>>" ;
 IMAGEDIR="$(pwd)" ;
 WORKINGDIR="$HOME_WINDOWS/Desktop/Y"
 TMP_OUTPUT_DIR="$WORKINGDIR/_tmp_output_$THIS_SCRIPT_NAME_WITHOUT_EXTENSION" ;
-TMP_OUTPUT_DIR_FINAL="$WORKINGDIR/_tmp_final_output_$THIS_SCRIPT_NAME_WITHOUT_EXTENSION" ;
+TMP_OUTPUT_DIR_FINAL="$WORKINGDIR/_tmp_final_COMPOSITE_output_$THIS_SCRIPT_NAME_WITHOUT_EXTENSION" ;
+TMP_OUTPUT_DIR_FINAL_CENTERCROPPED="$WORKINGDIR/_tmp_final_CENTERCROPPED_output_$THIS_SCRIPT_NAME_WITHOUT_EXTENSION" ;
 
 ## Creating output directories
 echo ">>>> Creating temporary output directories ..." ;
-mkdir $TMP_OUTPUT_DIR $TMP_OUTPUT_DIR_FINAL ;
+mkdir $TMP_OUTPUT_DIR $TMP_OUTPUT_DIR_FINAL $TMP_OUTPUT_DIR_FINAL_CENTERCROPPED ;
 
 ##################################################################################
 ## DEFINING MAIN FUNCTION WHICH WILL DO ALL MAGIC
@@ -71,11 +75,13 @@ function CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS () {
     image_step0="$TMP_OUTPUT_DIR/$myimage"
     image_step1="$TMP_OUTPUT_DIR/blurred_$myimage"
     image_stepFinal="$TMP_OUTPUT_DIR_FINAL/$myratio-$myimage" 
-
+    image_stepCenterCropped="$TMP_OUTPUT_DIR_FINAL_CENTERCROPPED/$myratio-$myimage"
+    
+    ##------------------------------------------------------------------------------
     ## STEP 0 = creating a copy of original image to fit in given dimensions (unforced)
     magick $image_original -resize $mydimensions $image_step0
 
-    ## STEP 1 = creting blurred image from original
+    ## STEP 1 = creating blurred image from original
     convert $image_original -blur 0x7 $image_step1
 
     ## STEP 2 = resizing images to 1x1 dimensions (forced on both dimensions // notice the exclamation sign)
@@ -83,22 +89,43 @@ function CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS () {
 
     ## STEP 3 = compositing step0 image over blurred image
     magick composite -gravity center $image_step0 $image_step1 $image_stepFinal ;
+    ##------------------------------------------------------------------------------
+    
+    ## EXTRA STEP = Center cropping the image without compositing ##
+    convert $image_original -gravity center -crop $mydimensions+0+0 +repage $image_stepCenterCropped
 
     ## FINAL MESSAGE PRINTING ON CLI.
     echo "  >>>> Image saved // Ratio = $myratio // Dimensions = $mydimensions" ;
     echo "  >>>> Saved_As = $image_stepFinal" ;
-    echo "      >> Next step: Please move this new image to $myratio directory." ;
+    echo "  >>>> Center Cropped Image Saved_As = $image_stepCenterCropped" ;
+    echo "      >> Next step: Please move this new image to proper $myratio directory." ;
     echo;
 }
 
-##################################################################################
+##------------------------------------------------------------------------------
 ## PROCESSING IMAGES ONE BY ONE AND SAVING IN DIFFERENT RATIOS AND DIMENSIONS
 echo;
+## BEGIN: FOR LOOP ##
+COUNT=1;
+TOTAL_IMAGES=$(ls $IMAGEDIR/ | wc -l) ;
 for this_image in $(ls $IMAGEDIR/) ;
 do 
-    echo "Reading this image => $this_image"; 
+    echo "Reading this image ($COUNT of $TOTAL_IMAGES) => $this_image"; 
     ## Calling the function with its parameters
     CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS "$this_image" "1x1" "800x800" ;
     CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS "$this_image" "4x3" "800x600" ;
     CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS "$this_image" "16x9" "800x450" ;
-done 
+    
+    ## Updating the running counter
+    COUNT=$((COUNT+1))
+done
+## END: FOR LOOP ##
+##------------------------------------------------------------------------------
+ 
+## VERY IMPORTANT MESSAGE
+echo;
+echo "################################################################################" ;
+echo ">>>> VERY IMPORTANT MESSAGE:" ;
+echo "  >>>> Before running this program, MAKE VERY SURE that the input images have been renamed based upon the URL of the page on which they will be published under Guided Recipes." ;
+echo "  >>>> As an example, if the URL is https://www.mygingergarlickitchen.com/this-is-page-url/ , then the input image should be renamed as this-is-page-url.jpg, before running this program." ;   
+echo "################################################################################" ;
