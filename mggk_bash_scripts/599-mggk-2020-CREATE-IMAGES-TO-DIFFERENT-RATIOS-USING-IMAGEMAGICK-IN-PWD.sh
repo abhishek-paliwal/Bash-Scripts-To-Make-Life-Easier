@@ -39,8 +39,12 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ################################################################################
 PWD=$(pwd) ;
 echo; echo ">>>> Present working directory: $PWD" ;
-echo; echo ">>>> IMPORTANT NOTE: Don't put any images directly in $HOME_WINDOWS/Desktop/Y "
-echo ">>>> Instead make a sub-directory and put images there. Any other directory is OKAY. It's because while processing, the program will also read the temporary folders thus created, and throw errors." ;
+echo; echo "##------------------------------------------------------------------------------" ;
+echo ">>>> IMPORTANT NOTE:" ; 
+echo "##------------------------------------------------------------------------------" ;
+echo "=> Don't put any images directly in $HOME_WINDOWS/Desktop/Y "
+echo "=> Instead make a sub-directory and put images there. Any other directory is OKAY. It's because while processing, the program will also read the temporary folders thus created, and throw errors." ;
+echo "##------------------------------------------------------------------------------" ;
 
 echo ">>>> Following images found in PWD. These Images will be read for further processing ..." ;
 echo;
@@ -75,13 +79,15 @@ function CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS () {
     image_step0="$TMP_OUTPUT_DIR/$myimage"
     image_step1="$TMP_OUTPUT_DIR/blurred_$myimage"
     image_stepFinal="$TMP_OUTPUT_DIR_FINAL/$myratio-$myimage" 
+
+    image_stepCenterCropped_tmp="$TMP_OUTPUT_DIR_FINAL_CENTERCROPPED/_tmp_$myratio-$myimage"
     image_stepCenterCropped="$TMP_OUTPUT_DIR_FINAL_CENTERCROPPED/$myratio-$myimage"
     
     ##------------------------------------------------------------------------------
     ## STEP 0 = creating a copy of original image to fit in given dimensions (unforced)
     magick $image_original -resize $mydimensions $image_step0
 
-    ## STEP 1 = creating blurred image from original
+    ## STEP 1 = creating blurred image from original, for the background image.
     convert $image_original -blur 0x7 $image_step1
 
     ## STEP 2 = resizing images to 1x1 dimensions (forced on both dimensions // notice the exclamation sign)
@@ -89,16 +95,19 @@ function CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS () {
 
     ## STEP 3 = compositing step0 image over blurred image
     magick composite -gravity center $image_step0 $image_step1 $image_stepFinal ;
+
     ##------------------------------------------------------------------------------
-    
-    ## EXTRA STEP = Center cropping the image without compositing ##
-    convert $image_original -gravity center -crop $mydimensions+0+0 +repage $image_stepCenterCropped
+    ## EXTRA STEP = Resizing and Center cropping the image without compositing ##
+    ## => In this step, big images will be made smaller, and smaller images will be enlarged ##
+    ## => For that, smaller dimension will be considered always (notice the ^ sign) ##
+    convert $image_original -resize $mydimensions^ -gravity center -extent $mydimensions $image_stepCenterCropped
+    ##------------------------------------------------------------------------------
 
     ## FINAL MESSAGE PRINTING ON CLI.
-    echo "  >>>> Image saved // Ratio = $myratio // Dimensions = $mydimensions" ;
-    echo "  >>>> Saved_As = $image_stepFinal" ;
-    echo "  >>>> Center Cropped Image Saved_As = $image_stepCenterCropped" ;
-    echo "      >> Next step: Please move this new image to proper $myratio directory." ;
+    echo "  // Image saved // Ratio = $myratio // Dimensions = $mydimensions" ;
+    echo "  // Composite image saved = $(basename $image_stepFinal)" ;
+    echo "  // Center-Cropped image saved = $(basename $image_stepCenterCropped)" ;
+    #echo "  // Next step: Please move this new image to proper $myratio directory." ;
     echo;
 }
 
