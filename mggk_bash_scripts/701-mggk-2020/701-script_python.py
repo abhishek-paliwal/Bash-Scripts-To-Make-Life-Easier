@@ -60,23 +60,40 @@ iterate_multidimensional(my_dict)
 
 my_dict1 = newdata['recipeIngredient']
 print(my_dict1)
+print('recipeIngredient:') ;
 for x in my_dict1:
-    print('==> ' + x)
+    #print('==> ' + x)
+    x = x.replace('"','\"') ;
+    x = x.replace(':',' //') ;
+    lookforthis="!!"
+    if lookforthis in x:
+        print ( '  - recipeIngredientTitle: "' + x.replace('!!','') + '"' ) ;
+        print ( '    recipeIngredientList: ')
+    else:
+        print ( '    - "' + x + '"') ;
+
 
 
 #############
 recipeInstructions = newdata['recipeInstructions']
-print(recipeInstructions)
+#print(recipeInstructions)
 print("////////////////////////////////////////////////") ;
+print('recipeInstructions:') ;
 for HowToSection in recipeInstructions:
     #iterate_multidimensional(HowToSection)
     nameOfSection = HowToSection['name']
-    print('XXXX ' + nameOfSection)
+    nameOfSection = nameOfSection.replace('"','\"')
+    nameOfSection = nameOfSection.replace(":"," //")
+    print('  - recipeInstructionsTitle: "' + nameOfSection + '"')
+    print('    recipeInstructionsList: ')
     itemListElement = HowToSection['itemListElement']
     for HowToStep in itemListElement:
         #print(HowToStep) ; print() ;
         HowToStepText = HowToStep['text']
-        print('======> ' + HowToStepText); print() ;
+        HowToStepText = HowToStepText.replace('"','\"') ;
+        HowToStepText = HowToStepText.replace(':',' //') ;
+        print('    - "' + HowToStepText + '"');
+        #print() ;
 
     
 

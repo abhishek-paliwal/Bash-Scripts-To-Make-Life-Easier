@@ -4,7 +4,7 @@
 MY_SCRIPT_PYTHON3="$DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/701-mggk-2020/701-script_python.py" ;
 
 ## Assigning working directory and going to it
-WORKDIR="$HOME_WINDOWS/Desktop/Y" ;
+WORKDIR="$HOME_WINDOWS/Desktop/X" ;
 cd $WORKDIR ;
 
 ##
