@@ -159,6 +159,9 @@ for y in nutritionElements:
 
 ##########################
 list_all_ingredients = newdata['recipeIngredient']
+## The same ingredients list but without the empty elements
+list_all_ingredients = [ var for var in list_all_ingredients if var ]
+
 print(list_all_ingredients)
 print('recipeIngredient:') ;
 f.write('\nrecipeIngredient:') ;
@@ -170,8 +173,15 @@ f.write ( '\n    recipeIngredientList: ') ;
 f.write ( '\n    - \"Following are all the ingredients\"') ;
 
 for x in list_all_ingredients:
+    x = x.strip() ; ## removing leading + trailing whitespaces
     x = x.replace('"','\"') ;
     x = x.replace(':',' //') ;
+    x = x.replace('<h4>','!!') ;
+    x = x.replace('</h4>','') ;
+
+    if x[:3] == "For":
+        ## only the first occurence is replaced       
+        x = x.replace('For','!!For', 1) ;
 
     lookforthis="!!"
 
@@ -225,6 +235,8 @@ f.write('\n---\n') ;
 
 f.write('\n') ; 
 f.write('This is just a test line.') ; 
+f.write('\n') ; 
+f.write('{{< mggk-INSERT-RECIPE-HTML-BLOCK >}}') ;
 f.close() ;
 ####################################################
 ## END: WRITING CHOSEN VARIABLES TO A YAML FILE

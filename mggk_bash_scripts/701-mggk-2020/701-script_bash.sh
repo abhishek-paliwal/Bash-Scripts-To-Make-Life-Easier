@@ -16,7 +16,7 @@ do
     step1_json_file_input="_tmp_step1-$x" ;
     step1_json_file_output="_tmp_step2-$x" ;
     ####
-    cat $x | sed 's/\\"/"/g' | tr -d "\n\r" > $step1_json_file_input ;
+    cat $x | sed 's/\\"/"/g' | tr -d "\n\r" | sed 's/\t//ig' | sed 's+https://www.mygingergarlickitchen.com++ig' > $step1_json_file_input ;
     cat $step1_json_file_input ;
     python3 $MY_SCRIPT_PYTHON3 "$step1_json_file_input" "$step1_json_file_output" ;
 done
@@ -32,3 +32,16 @@ echo ">>>> PRINTING WORD COUNT IN ALL FILES - YAML: " ;
 echo "##---------------------------------------------" ;
 wc *.yaml
 ##
+
+
+#### BEGIN: COMMENT THIS WHOLE BLOCK ####
+# Move YAML files to specific directory
+YAMLDIR="_00_yaml" ;
+mkdir $YAMLDIR ;
+for yamlfile in *.yaml ; 
+do
+    mv $yamlfile $yamlfile.md 
+    mv *.md _00_yaml/
+done 
+#### END: COMMENT THIS WHOLE BLOCK ####
+

@@ -24,19 +24,21 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 ##------------------------------------------------------------------------------
 DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content" ;
+PYTHON_FILE="$DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/700-mggk-2020/700-mggk-step1-EXTRACT_LD_JSON_BLOCKS_FROM_MGGK_URLS.py" ;
 WORKDIR="$HOME_WINDOWS/Desktop/Y" ;
 cd $WORKDIR ;
 echo ">>>> CURRENT WORKING DIRECTORY => $WORKDIR "
 ##------------------------------------------------------------------------------
 
 ## looping through all md files with valid mggk_json_recipe tags
-for mdfile in $(grep -irl 'mggk_json_recipe:' $DIR/ | head -3) ;
+#for mdfile in $(grep -irl 'mggk_json_recipe:' $DIR/ | head -10) ;
+for mdfile in $(grep -irl 'mggk_json_recipe:' $DIR/) ;
 do
     #echo ">>>> CURRENT FILE: $mdfile" ;
     MYURL=$(grep 'url: ' $mdfile| sed 's+url: ++g') ;
     echo "      >>>> URL found:  $MYURL" ;
     ## Feeding this url to the python script for exctrating ld+json blocks
-    python3 $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/700-mggk/700-mggk-step1-EXTRACT_LD_JSON_BLOCKS_FROM_MGGK_URLS.py $MYURL $WORKDIR ;
+    python3 $PYTHON_FILE $MYURL $WORKDIR ;
 done    
 
 echo "##------------------------------------------------------------------------------" ;
