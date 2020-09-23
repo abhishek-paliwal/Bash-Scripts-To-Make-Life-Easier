@@ -36,12 +36,12 @@ wc *.yaml
 
 #### BEGIN: COMMENT THIS WHOLE BLOCK ####
 # Move YAML files to specific directory
-YAMLDIR="_00_yaml" ;
+YAMLDIR="/home/ubuntu/GitHub/ZZ-HUGO-TEST/content/223x-no-howtosection-recipes" ;
 mkdir $YAMLDIR ;
 for yamlfile in *.yaml ; 
 do
-    mv $yamlfile $yamlfile.md 
-    mv *.md _00_yaml/
+    mv $yamlfile $YAMLDIR/$yamlfile.md  ;
 done 
+echo ">>>> All md files moved to $YAMLDIR" ;
 #### END: COMMENT THIS WHOLE BLOCK ####
 

@@ -28,6 +28,8 @@ RecipeUrl = RecipeUrl.replace('https://www.mygingergarlickitchen.com','') ;
 RecipeDescription = str(data['description']) ;
 RecipeDescription = RecipeDescription.replace('"','') ;
 
+RecipeCodeImage =  '/wp-content/rich-markup-images/1x1/1x1-' + RecipeUrl.replace('/','') + '.jpg' ;
+
 ####################################################
 
 ###############################
@@ -133,7 +135,7 @@ f.write('  - \"demoTags\"\n')
 ##>>>>> END : tags to comment later
 
 
-f.write("\nrecipe_code_image: \"" + RecipeImage + '\"\n')
+f.write("\nrecipe_code_image: \"" + RecipeCodeImage + '\"\n')
 
 f.write("\nprepTime: " + prepTime + '\n')
 f.write("cookTime: " + cookTime + '\n')
@@ -223,7 +225,10 @@ if list_or_not == True:
 else:
     f.write('\n  - recipeInstructionsTitle: List of Instructions') ;
     f.write('\n    recipeInstructionsList: ') ;
-    f.write('\n    - \"' + str(recipeInstructions) + '\"' ) ;
+    recipeInstructionsNew = str(recipeInstructions) ;
+    recipeInstructionsNew = recipeInstructionsNew.replace('<h4>','!!') ;
+    recipeInstructionsNew = recipeInstructionsNew.replace('</h4>',' //') ;
+    f.write('\n    - \"' + recipeInstructionsNew + '\"' ) ;
 
 ##########################
 
@@ -231,18 +236,19 @@ f.write("\n")
 f.write('\nrecipeNotes: \n')
 f.write('  - \"No notes.\"\n')
 
+##>>>>> BEGIN: tags to comment later
 f.write('\n---\n') ; 
-
 f.write('\n') ; 
+f.write('{{< mggk-button-block-for-recipe-here-link >}}') ;
+f.write('\n') ;
 f.write('This is just a test line.') ; 
-f.write('\n') ; 
+f.write('\n') ;
 f.write('{{< mggk-INSERT-RECIPE-HTML-BLOCK >}}') ;
+##>>>>> END: tags to comment later
+
 f.close() ;
 ####################################################
 ## END: WRITING CHOSEN VARIABLES TO A YAML FILE
 ####################################################
 
-
-## yaml2json_pretty
-#print(json.dumps(yaml.safe_load(data_yaml), indent=2, sort_keys=False))
 
