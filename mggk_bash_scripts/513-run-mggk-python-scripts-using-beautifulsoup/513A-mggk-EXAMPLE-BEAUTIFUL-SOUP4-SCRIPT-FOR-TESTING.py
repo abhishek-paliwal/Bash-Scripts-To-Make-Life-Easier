@@ -40,8 +40,10 @@ from datetime import datetime
 import math
 ################################################################################
 
+################################################################################
 #### FUNCTION DEFINITIONS: CREATE AUTOMATIC HEADING BLOCK ######################
-## THE FOLLOWING FUNCION WRAPS TEXT AFTER CERTAIN NUMBER OF CHARACTERS
+################################################################################
+## THE FOLLOWING FUNCTION WRAPS TEXT AFTER CERTAIN NUMBER OF CHARACTERS
 def wrap_text_after(MYSTRING, RULERCHAR, NUMCHARS=70):
     MYSTRING_NEW = "\n" ;
     MYSTRING = MYSTRING.upper()
@@ -80,7 +82,7 @@ headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML
 ## SET WHICH URL TO FETCH, and ACTUALLY FETCH CONTENT
 ################################################################################
 #req_url ="https://www.mygingergarlickitchen.com/instant-mawa-modak/"
-req_url = "https://www.lifehack.org/444291/100-motivational-quotes-that-will-guide-you-to-massive-success"
+req_url = "https://www.mygingergarlickitchen.com/masala-mathri-2-ways-baked-masala-mathri-recipe-video-spicy-indian-crackers/"
 req = Request(url=req_url, headers=headers)
 content = urlopen(req).read()
 #print(content)
@@ -93,8 +95,9 @@ soup = BeautifulSoup(content, 'html.parser' )
 
 make_heading("printing the recipe block html output", RULERCHAR="+")
 
-mainDiv=soup.find('div',class_="article-content")
+mainDiv=soup.find('div',class_="mggk-main-article-content")
 print(mainDiv.prettify())
+
 
 allH2s=mainDiv.find_all('h2') ## it will be a list, so later we will have to loop over it to get individual elements
 print(allH2s)
@@ -106,4 +109,21 @@ for x in allH2s:
 #easyrecipe_block=soup.find_all('h2').prettify()
 #print(easyrecipe_block)
 
+
+## Getting all the json ld blocks on the webpage
+## Since, we don't know how many they would be, we are going for upto 10
+##
+for x in range(0,10):
+    try:
+        ld_json_block = soup.select("[type='application/ld+json']")[x] ;
+        print(ld_json_block) ;
+        print('++++++++++++++++++++++++++++++++++++++++++++++++') ;
+        print() ;
+    except:
+        print ( str(x) + " >>>> NOTE: No more indexes found. >>>>") ;
+
+
+##################################################################################
 make_heading("program ends", RULERCHAR="/")
+
+
