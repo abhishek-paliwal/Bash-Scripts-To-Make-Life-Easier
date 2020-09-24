@@ -36,7 +36,8 @@ wc *.yaml
 
 #### BEGIN: COMMENT THIS WHOLE BLOCK ####
 # Move YAML files to specific directory
-YAMLDIR="/home/ubuntu/GitHub/ZZ-HUGO-TEST/content/223x-no-howtosection-recipes" ;
+#YAMLDIR="/home/ubuntu/GitHub/ZZ-HUGO-TEST/content/223x-no-howtosection-recipes" ;
+YAMLDIR='/home/ubuntu/GitHub/ZZ-HUGO-TEST/content/374x-yes-howtosection-recipes' ;
 mkdir $YAMLDIR ;
 for yamlfile in *.yaml ; 
 do
