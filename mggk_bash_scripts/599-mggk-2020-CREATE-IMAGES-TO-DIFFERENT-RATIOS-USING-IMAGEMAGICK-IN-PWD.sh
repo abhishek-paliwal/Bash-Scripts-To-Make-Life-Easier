@@ -155,7 +155,7 @@ echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ###### 
 ## DISPLAYING THE COMMANDS TO COPY-PASTE BY THE USER
 echo;
-echo "=========================== TO DO THIS => Move all the chosen 1x1, 4x3, 16x9 images to $(pwd)" ;
+echo "=========================== TO DO THIS => Move all the chosen 1x1, 4x3, 16x9 images to $IMAGEDIR" ;
 echo "=========================== Then Copy-paste the following commands to move all images to corresponding hugo directory" ;
 echo;    
 echo "mv $IMAGEDIR/1x1*.jpg $DIR_TO_UPLOAD/1x1/" ;
