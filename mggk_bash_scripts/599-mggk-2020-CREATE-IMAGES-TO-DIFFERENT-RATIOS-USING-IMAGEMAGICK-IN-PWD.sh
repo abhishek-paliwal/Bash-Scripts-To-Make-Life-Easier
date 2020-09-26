@@ -37,16 +37,29 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ################################################################################
-PWD=$(pwd) ;
+#PWD=$(pwd) ;
+##
+PWD="$HOME_WINDOWS/Desktop/_LROOM" ;
+cd $PWD ;
+##
 echo; echo ">>>> Present working directory: $PWD" ;
 echo; echo "##------------------------------------------------------------------------------" ;
 echo ">>>> IMPORTANT NOTE:" ; 
 echo "##------------------------------------------------------------------------------" ;
 echo "=> Don't put any images directly in $HOME_WINDOWS/Desktop/Y "
-echo "=> Instead make a sub-directory and put images there. Any other directory is OKAY. It's because while processing, the program will also read the temporary folders thus created, and throw errors." ;
+echo "=> Put all your images in => $PWD. It's because while processing, the program will also read the temporary folders thus created, and throw errors." ;
 echo "##------------------------------------------------------------------------------" ;
 
-echo ">>>> Following images found in PWD. These Images will be read for further processing ..." ;
+################################################################################
+## SETTING SOME VARIABLES
+IMAGEDIR="$PWD" ;
+WORKINGDIR="$HOME_WINDOWS/Desktop/Y"
+TMP_OUTPUT_DIR="$WORKINGDIR/_tmp_output_$THIS_SCRIPT_NAME_WITHOUT_EXTENSION" ;
+TMP_OUTPUT_DIR_FINAL="$WORKINGDIR/_tmp_final_COMPOSITE_output_$THIS_SCRIPT_NAME_WITHOUT_EXTENSION" ;
+TMP_OUTPUT_DIR_FINAL_CENTERCROPPED="$WORKINGDIR/_tmp_final_CENTERCROPPED_output_$THIS_SCRIPT_NAME_WITHOUT_EXTENSION" ;
+
+################################################################################
+echo ">>>> Following images found in $PWD. These Images will be read for further processing ..." ;
 echo;
 ls $IMAGEDIR | nl; 
 echo; 
@@ -55,13 +68,6 @@ echo;
 read -p "CAUTION: If PWD is correct, then please press ENTER to continue ..." ;
 echo ">>>>>>>>>>>>>>>>> GOOD TO GO ... >>>>>>>>>>>>>>>>>>>>" ;
 ################################################################################
-
-## SETTING SOME VARIABLES
-IMAGEDIR="$(pwd)" ;
-WORKINGDIR="$HOME_WINDOWS/Desktop/Y"
-TMP_OUTPUT_DIR="$WORKINGDIR/_tmp_output_$THIS_SCRIPT_NAME_WITHOUT_EXTENSION" ;
-TMP_OUTPUT_DIR_FINAL="$WORKINGDIR/_tmp_final_COMPOSITE_output_$THIS_SCRIPT_NAME_WITHOUT_EXTENSION" ;
-TMP_OUTPUT_DIR_FINAL_CENTERCROPPED="$WORKINGDIR/_tmp_final_CENTERCROPPED_output_$THIS_SCRIPT_NAME_WITHOUT_EXTENSION" ;
 
 ## Creating output directories
 echo ">>>> Creating temporary output directories ..." ;
@@ -152,10 +158,10 @@ echo;
 echo "=========================== TO DO THIS => Move all the chosen 1x1, 4x3, 16x9 images to $(pwd)" ;
 echo "=========================== Then Copy-paste the following commands to move all images to corresponding hugo directory" ;
 echo;    
-echo "mv $(pwd)/1x1*.jpg $DIR_TO_UPLOAD/1x1/" ;
-echo "mv $(pwd)/4x3*.jpg $DIR_TO_UPLOAD/4x3/" ;
-echo "mv $(pwd)/16x9*.jpg $DIR_TO_UPLOAD/16x9/" ;
-echo "mv $(pwd)/*.jpg $DIR_TO_UPLOAD/original_copied/" ;
+echo "mv $IMAGEDIR/1x1*.jpg $DIR_TO_UPLOAD/1x1/" ;
+echo "mv $IMAGEDIR/4x3*.jpg $DIR_TO_UPLOAD/4x3/" ;
+echo "mv $IMAGEDIR/16x9*.jpg $DIR_TO_UPLOAD/16x9/" ;
+echo "mv $IMAGEDIR/*.jpg $DIR_TO_UPLOAD/original_copied/" ;
 echo ;
 
 ## VERY IMPORTANT MESSAGE
@@ -167,4 +173,3 @@ echo "=> 1. Before running this program, MAKE VERY SURE that the input images ha
 echo "=> 2. As an example, if the URL is https://www.YOURSITE.com/this-is-page-url/ , then the input image should be renamed as this-is-page-url.jpg, before running this program." ;   
 echo "################################################################################" ;
 echo "################################################################################" ;
-
