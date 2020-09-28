@@ -1,7 +1,7 @@
 import sys
 import yaml 
 import json 
-
+import re
 
 ############ JSON 
 
@@ -114,8 +114,10 @@ yaml.safe_load(data_yaml)
 ####################################################
 f = open(myfile_yaml, "w") ;
 
+f.write('---') ; 
+
+"""
 ##>>>>> BEGIN: tags to comment later
-f.write('---\n') ; 
 f.write('title: \"' + RecipeName + '\"\n')
 
 f.write("\ndate: \"" + RecipeDate + '\"\n')
@@ -133,6 +135,8 @@ f.write('  - \"demoCategory\"\n')
 f.write('\ntags: \n')
 f.write('  - \"demoTags\"\n')
 ##>>>>> END : tags to comment later
+
+"""
 
 f.write('\nmy_custom_variable: \"custom_variable_value\"\n')
 
@@ -228,19 +232,34 @@ if list_or_not == True:
 else:
     f.write('\n  - recipeInstructionsTitle: List of Instructions') ;
     f.write('\n    recipeInstructionsList: ') ;
-    recipeInstructionsNew = str(recipeInstructions) ;
+    ## Replacing prefix digits such as 1. .2 .3 .... 11. 12. etc, with newlines
+    recipeInstructionsNew = re.sub('\d{1,2}\.','\n', str(recipeInstructions) ) ;
+    recipeInstructionsNew = recipeInstructionsNew.replace('1.','') ;   
     recipeInstructionsNew = recipeInstructionsNew.replace('<h4>','!!') ;
     recipeInstructionsNew = recipeInstructionsNew.replace('</h4>',' //') ;
-    f.write('\n    - \"' + recipeInstructionsNew + '\"' ) ;
+    ## converting it to array
+    recipeInstructionsNewArray = recipeInstructionsNew.split('\n') ;
+    for instructions_text in recipeInstructionsNewArray:
+        f.write('\n    - \"' + instructions_text.strip() + '\"' ) ;
 
 ##########################
 
+
+       
 f.write("\n")
 f.write('\nrecipeNotes: \n')
-f.write('  - \"No notes.\"\n')
+notes_file = sys.argv[3] ;
+notes_file = notes_file.strip() ;
+with open(notes_file) as fp:
+   for line in fp:
+       line = line.replace('"','') ;
+       line = re.sub('\d{1,2}\.','', str(line) ) ;
+       f.write('  - ' + line )
+#f.write('  - \"No notes.\"\n')
 
+"""
 ##>>>>> BEGIN: tags to comment later
-f.write('\n---\n') ; 
+f.write('\n\n---\n') ; 
 f.write('\n') ; 
 f.write('{{< mggk-button-block-for-recipe-here-link >}}') ;
 f.write('\n') ;
@@ -248,6 +267,8 @@ f.write('This is just a test line.') ;
 f.write('\n') ;
 f.write('{{< mggk-INSERT-RECIPE-HTML-BLOCK >}}') ;
 ##>>>>> END: tags to comment later
+"""
+f.write('\n\nXYZXYZXYZ') ;
 
 f.close() ;
 ####################################################
