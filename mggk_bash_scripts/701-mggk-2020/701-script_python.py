@@ -134,6 +134,9 @@ f.write('\ntags: \n')
 f.write('  - \"demoTags\"\n')
 ##>>>>> END : tags to comment later
 
+f.write('\nmy_custom_variable: \"custom_variable_value\"\n')
+
+f.write('\nsteps_images_present: \"no\"\n')
 
 f.write("\nrecipe_code_image: \"" + RecipeCodeImage + '\"\n')
 
