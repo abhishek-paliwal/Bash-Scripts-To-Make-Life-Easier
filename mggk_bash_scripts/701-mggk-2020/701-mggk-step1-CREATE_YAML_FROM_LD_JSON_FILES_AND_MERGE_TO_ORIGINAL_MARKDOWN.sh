@@ -3,7 +3,6 @@
 ## Assigning working directory and going to it
 WORKDIR="$HOME_WINDOWS/Desktop/X" ;
 cd $WORKDIR ;
-echo ">>>> CURRENT WORKING DIRECTORY => $WORKDIR "
 ##
 VALID_NOTES_DIR="$WORKDIR/valid_notes"
 YAMLDIR='/home/ubuntu/GitHub/ZZ-HUGO-TEST/content/597x-tocheck-$(date +%Y-%m-%d)' ;
@@ -40,6 +39,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ##
+echo ">>>> CURRENT WORKING DIRECTORY => $WORKDIR "
 ## Removing all temporary files in Working directory
 rm $WORKDIR/_tmp_*.*
 
