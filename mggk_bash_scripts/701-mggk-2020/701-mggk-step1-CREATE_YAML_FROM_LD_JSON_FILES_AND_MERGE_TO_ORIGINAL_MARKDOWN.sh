@@ -18,10 +18,11 @@ cat <<EOM
 USAGE: $(basename $0)
     ##################################################################################
     ## THIS BASH SCRIPTS READS MANY LD-JSON FILES LOCATED IN extracted-json FOLDER IN WORKDIR = $WORKDIR
-    ## AND THEN CREATES YAML FILES FROM IT BY CALLING AN EXTERNAL PYTHON SCRIPT = $MY_SCRIPT_PYTHON3 .
+    ## AND THEN CREATES YAML FILES FROM IT BY CALLING THIS PYTHON SCRIPT
+    ## => $(basename $MY_SCRIPT_PYTHON3) .
     ########################################
     ## IT THEN MERGES THOSE YAML FILES WITH THE EXTRACTED RECIPE-NOTES FILES, PRESENT IN $VALID_NOTES_DIR AND 
-    ## ORIGINAL MARKDOWN FILES WHICH ARE ALL BASED UPON THE SAME URL.
+    ## ORIGINAL MARKDOWN FILES STORED IN $WORKDIR, WHICH ARE ALL BASED UPON THE SAME URL.
     ## FINALLY, IT MOVES THOSE MERGED MARKDOWN FILES IN ZZ_HUGO DIRECTORY FOR CHECKING.
     ##################################################################################
     ## IMPORTANT NOTE: See the 701-MGGK-README.txt file for the folder structure for the
