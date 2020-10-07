@@ -4,7 +4,7 @@
 ## SOME VARIABLES (CHANGE THE SOURCE DIR IF NEEDED)
 #SOURCE_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-501-END" ;
 SOURCE_DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/594x" ;
-DIR_TO_MOVE="$HOME_WINDOWS/Desktop/Y/_TMP_md_files_moved" ;
+DIR_TO_MOVE="$HOME_WINDOWS/Desktop/Y/_TMP_md_files_moved-$(basename $SOURCE_DIR)" ;
 ##################################################################################
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
