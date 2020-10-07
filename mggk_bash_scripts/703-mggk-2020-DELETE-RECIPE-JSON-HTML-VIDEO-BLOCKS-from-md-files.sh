@@ -38,7 +38,6 @@ CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-51-100" ;
 #CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-301-400" ;
 #CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-401-500" ;
 #CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-501-END" ;
-#CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-01-50" ;
 
 PWD="$HOME_WINDOWS/Desktop/Y" ;
 ##################################################################################
