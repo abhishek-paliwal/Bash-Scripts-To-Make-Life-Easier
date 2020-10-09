@@ -87,13 +87,14 @@ fi
 for recipe_mdfile in $(find $HUGO_CONTENT_DIR/ -type f -name '*.md' ) ;
 do
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    faqs_json_file="$(basename $recipe_mdfile)-faq.json" ;
+    myURL=$(grep -irh 'url: ' $recipe_mdfile | sed 's/url: //g' | tr -d '/') ;
+    faqs_json_file="${myURL}.FAQS.json" ;
 
     echo; 
     echo "##------------------------------------------------------------------------------" ;
     echo ">>>> CURRENT RECIPE MD FILE = > $(basename $recipe_mdfile)" ; echo; 
     ## GETTING ALL HEADING LEVEL 2 LINES WITH QUESTION MARKS IN THEM
-    grep -ir '^##.*?' $recipe_mdfile > $tmp_faqs_file
+    grep -ir '^## .*?' $recipe_mdfile > $tmp_faqs_file
         
     ## CALLING THE FUNCTION TO EXTRACT FAQS FOR THIS RECIPE MD FILE
     extract_content_between_two_successive_faqs $recipe_mdfile $faqs_json_file
@@ -104,5 +105,3 @@ done
 ##################################################################################
 echo; echo ">>>> DELETING ALL TMP UNNECESSARY FILES" ;
 rm $WORKDIR/*.tmp*
-
-
