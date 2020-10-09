@@ -1,8 +1,8 @@
 #/bin/bash
 
 
-HUGO_CONTENT_DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/blog/100-new-HTML-JSON-format-recipes"
-#HUGO_CONTENT_DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content"
+#HUGO_CONTENT_DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/blog/100-new-HTML-JSON-format-recipes"
+HUGO_CONTENT_DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/_FIXED"
 
 WORKDIR="$HOME_WINDOWS/Desktop/Y/_tmp_faqs" ;
 mkdir $WORKDIR ;
@@ -92,6 +92,7 @@ do
     echo; 
     echo "##------------------------------------------------------------------------------" ;
     echo ">>>> CURRENT RECIPE MD FILE = > $(basename $recipe_mdfile)" ; echo; 
+    ## GETTING ALL HEADING LEVEL 2 LINES WITH QUESTION MARKS IN THEM
     grep -ir '^##.*?' $recipe_mdfile > $tmp_faqs_file
         
     ## CALLING THE FUNCTION TO EXTRACT FAQS FOR THIS RECIPE MD FILE
