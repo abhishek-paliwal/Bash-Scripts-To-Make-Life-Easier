@@ -8,7 +8,8 @@ cat <<EOM
 USAGE: $(basename $0)
     ##################################################################################
     ## Insert MGGK - HUGO frontmatter with proper dates
-    ## IMPORTANT NOTE: This script needs a command line argument to run.
+    ## IMPORTANT NOTE: This script needs a command line argument to run if the user is ubuntu.
+    ##### Else, if run on MAC OS, it just takes its input from the last copied item from Clipboard.
     ##################################################################################
 EOM
 
