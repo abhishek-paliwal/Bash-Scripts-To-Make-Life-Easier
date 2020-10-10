@@ -9,7 +9,11 @@ USAGE: $(basename $0)
     ##############################################################################
     ## THIS PROGRAM USES IMAGEMAGICK TO CREATE A SLIDESHOW TITLE SLIDE FROM
     ## IMAGES IN PRESENT WORKING DIRECTORY, USING TWO LINES OF TEXT AND
-    ## SPECIFIED NUMBER OF IMAGES PRESENT IN THAT FOLDER
+    ## FIRST 8 IMAGES PRESENT IN THAT FOLDER (WIDE IMAGES WORK BEST)
+    ##########################################
+    ## IMPORTANT NOTE:
+    ## All the image names should start with lowercase 'a', such as a101.jpg, a102.jpg, etc.
+    ##########################################
     ## MADE BY: PALI
     ## CRAFTED ON: Sunday October 14, 2018
     ##############################################################################
