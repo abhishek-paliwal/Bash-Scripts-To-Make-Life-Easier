@@ -18,6 +18,11 @@ function extract_content_between_two_successive_faqs () {
     faqs_json_file=$2 ;
     recipe_file_basename=$(basename $recipe_mdfile) ;
 
+    recipe_url_tmp=$(grep -irh 'url: ' $recipe_mdfile | sed 's/url: //g') ;
+    recipe_url_final="https://www.mygingergarlickitchen.com/$recipe_url_tmp" ;
+    
+    recipe_name=$(grep -irh 'title: ' $recipe_mdfile | sed 's/title: //g') ;
+
     num_lines=$(cat $tmp_faqs_file | wc -l | bc -l) ; 
     number_of_faqs_found=$(($num_lines + 0)) ;
     
@@ -54,11 +59,13 @@ if [ $number_of_faqs_found -ne 0 ] ; then
         ## PREFIXING EACH LINE WITH HTML LINE BREAK
         sed -e 's+^+<br><br>+' $faq_file.tmp3 > $faq_file_final
 
+        #echo "<p><strong>Recommended Next Step: </strong> To get answers to all your questions about this recipe, such as cooking method, tips and tricks, and best ways to to serve it, go to full recipe description of <a href='$recipe_url_final'>$recipe_name</a></p>" >> $faq_file_final
+
         echo " >> FAQ FILE CREATED =>  $faq_file_final" ;
 
-        data_to_insert=$(cat $faq_file_final | sed 's+"+\\\"+ig' | sed 's/\*//ig' ) ;
+        data_to_insert=$(cat $faq_file_final | sed 's+"+\\\"+g' | sed 's/\*//g' ) ;
         
-        faq_name_modified=$(echo $this_faq | sed 's/## //ig')
+        faq_name_modified=$(echo $this_faq | sed 's/## //g')
 
 cat << EOF >> $faqs_json_file
 {"@type": "Question",
@@ -78,7 +85,7 @@ printf "," >> $faqs_json_file ;
     echo "]} </script>" >> $faqs_json_file
 
     ## FINALLY CHANGING THE LAST LINE TO MAKE IT VALID JSON FILE
-    cat $faqs_json_file  | sed s+,]}+]}+ig > $faqs_json_file 
+    cat $faqs_json_file  | sed s+,]}+]}+g > $faqs_json_file 
 fi
 }
 ##------------------------------------------------------------------------------
