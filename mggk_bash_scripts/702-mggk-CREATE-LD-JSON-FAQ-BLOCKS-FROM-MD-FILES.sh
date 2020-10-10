@@ -21,7 +21,7 @@ function extract_content_between_two_successive_faqs () {
     recipe_url_tmp=$(grep -irh 'url: ' $recipe_mdfile | sed 's/url: //g') ;
     recipe_url_final="https://www.mygingergarlickitchen.com/$recipe_url_tmp" ;
     
-    recipe_name=$(grep -irh 'title: ' $recipe_mdfile | sed 's/title: //g') ;
+    recipe_name=$(grep -rh '^title: ' $recipe_mdfile | sed 's/title: //g') ;
 
     num_lines=$(cat $tmp_faqs_file | wc -l | bc -l) ; 
     number_of_faqs_found=$(($num_lines + 0)) ;
@@ -59,7 +59,7 @@ if [ $number_of_faqs_found -ne 0 ] ; then
         ## PREFIXING EACH LINE WITH HTML LINE BREAK
         sed -e 's+^+<br><br>+' $faq_file.tmp3 > $faq_file_final
 
-        #echo "<p><strong>Recommended Next Step: </strong> To get answers to all your questions about this recipe, such as cooking method, tips and tricks, and best ways to to serve it, go to full recipe description of <a href='$recipe_url_final'>$recipe_name</a></p>" >> $faq_file_final
+        echo "<p><strong>Recommended Next Step: </strong>To get answers to more of your questions about this recipe, such as cooking method, tips and tricks, and best ways to to serve it, go to full recipe details of <a href='$recipe_url_final'>$recipe_name</a></p>" >> $faq_file_final
 
         echo " >> FAQ FILE CREATED =>  $faq_file_final" ;
 
