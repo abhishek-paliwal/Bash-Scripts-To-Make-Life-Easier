@@ -21,7 +21,9 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 ##################################################################################
 
-BASEDIR="$HOME/Desktop/Y"
+#BASEDIR="$HOME_WINDOWS/Desktop/Y"
+BASEDIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/blog"
+
 cd $BASEDIR
 
 echo ">>>> Current working directory is: $BASEDIR" ;
@@ -70,13 +72,48 @@ youtube_video_id: \"\"
 
 yoast_description: \"\"
 
-mggk_json_recipe: \"\"
+prepTime: PT
+cookTime: PT
+totalTime: PT
 
+recipeCategory: xyz
+recipeCuisine: xyz
+recipeYield: xyz xyz
+
+aggregateRating:
+  ratingValue: 4.9
+  ratingCount: 3
+
+nutrition:
+  calories: xyz calories
+  servingSize: 1
+
+recipe_code_image: /wp-content/uploads/$YEAR/$MONTH/YOUR-IMAGE.JPG
+
+recipe_keywords: \"xyz\"
+
+recipeIngredient:
+  - recipeIngredientTitle: \"\"
+    recipeIngredientList:
+    - xyz
+    - xyz
+
+recipeInstructions:
+  - recipeInstructionsTitle: \"\"
+    recipeInstructionsList:
+    - xyz
+    - xyz
+
+recipeNotes: 
+  - xyz 
+  - xyz
+   
 ---
 
 <!--more-->
 
 {{< mggk-button-block-for-recipe-here-link >}}
+
 
 
 {{< mggk-hugo-google-ad-1 >}}
@@ -85,18 +122,20 @@ mggk_json_recipe: \"\"
 
 
 {{< mggk-print-recipe-button >}}
-{{< mggkrecipeHTMLcode >}}
 
-{{< /mggkrecipeHTMLcode >}}
+{{< mggk-INSERT-RECIPE-HTML-BLOCK >}}
 
-{{< mggk-youtube-video-embed >}}
+{{< mggk-YouMayAlsoLike-HTMLcode >}}
 
-"
+
+{{< /mggk-YouMayAlsoLike-HTMLcode >}}
+
+" ;
 
 printf '%s' "$FRONTMATTER"
 
 
 ## FINAL WRITING TO FILE, AND OPENING FILE IN CODE EDITOR
-FILENAME="$BASEDIR/$(date +%Y%m%d-%H%M%S)-generated-file-mggk.md" 
+FILENAME="$BASEDIR/$(date +%Y%m%d-%H%M%S)-frontm-generated-recipe.md" 
 printf '%s' "$FRONTMATTER" > $FILENAME
 code $FILENAME ;
