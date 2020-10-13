@@ -31,8 +31,8 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##################################################################################
 
 #CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-01-50" ;
-CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-51-100" ;
-#CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-101-150" ;
+#CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-51-100" ;
+CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-101-150" ;
 #CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-151-200" ;
 #CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-201-300" ;
 #CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-301-400" ;
@@ -81,7 +81,17 @@ for x in $CONTENT_DIR/* ; do
 
     ## Delete mggk youtube shortcode 
     echo "  >> DELETING =  mggk youtube shortcode " ;
-    sed '/{{< mggk-youtube-video-embed >}}/,/$/d' _tmp2 > $file_basename
+    sed '/{{< mggk-youtube-video-embed >}}/,/$/d' _tmp2 > _tmp3
+
+    ## Delete mggk print button + new html recipe block 
+    sed '/{{< mggk-print-recipe-button >}}/,/$/d' _tmp3 > _tmp4
+    sed '/{{< mggk-INSERT-RECIPE-HTML-BLOCK >}}/,/$/d' _tmp4 > $file_basename
+
+    echo "{{< mggk-print-recipe-button >}}" >> $file_basename
+    echo "" >> $file_basename
+    echo "{{< mggk-INSERT-RECIPE-HTML-BLOCK >}}" >> $file_basename
+
+
     ##################################################################################
 done 
 
