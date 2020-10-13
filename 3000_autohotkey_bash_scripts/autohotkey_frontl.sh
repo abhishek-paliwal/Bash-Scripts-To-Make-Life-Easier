@@ -57,7 +57,7 @@ image: \"images/youtube_video_cover_images/YOUTUBE_ID.jpg\"
 
 url: /$(printf '%s' "$URL")/
 
-youtube_video_id: \"\"
+youtube_video_id: \"YOUTUBE_ID\"
 
 categories: 
   - \"Breakfast\"
@@ -65,9 +65,9 @@ categories:
 tags:
   - \"Vegetarian\"
 
-prepTime: PT0M
-cookTime: PT0M
-totalTime: PT0M
+prepTime: PTHM
+cookTime: PTHM
+totalTime: PTHM
 
 recipeCategory: Breakfast
 recipeCuisine: International
@@ -75,24 +75,22 @@ recipeYield: 4
 
 aggregateRating:
   ratingValue: 4.9
-  ratingCount: 3
+  ratingCount: 4
 
 nutrition:
   calories: xyz calories
   servingSize: 1
 
-recipe_code_image: /wp-content/uploads/$YEAR/$MONTH/YOUR-IMAGE.JPG
-
-recipe_keywords: \"xyz\"
+recipe_keywords: \"$CLIPBOARD\"
 
 recipeIngredient:
-  - recipeIngredientTitle: \"\"
+  - recipeIngredientTitle: \"For $CLIPBOARD\"
     recipeIngredientList:
     - xyz
     - xyz
 
 recipeInstructions:
-  - recipeInstructionsTitle: \"\"
+  - recipeInstructionsTitle: \"For making $CLIPBOARD\"
     recipeInstructionsList:
     - xyz
     - xyz
@@ -109,9 +107,7 @@ LONG_TEXT_HERE
 
 > LONG_TEXT_HERE
 
-
 {{< figure src=\"https://www.leelasrecipes.com/images/masonary-post/2020/$URL-1.jpg\" alt=\"Image of $CLIPBOARD\" >}}
-
 
 {{< figure src=\"https://www.leelasrecipes.com/images/masonary-post/2020/$URL-2.jpg\" alt=\"Image of $CLIPBOARD\" >}}
 
