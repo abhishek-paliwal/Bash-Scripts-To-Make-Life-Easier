@@ -99,10 +99,13 @@ if [ $number_of_faqs_found -ne 0 ] ; then
         fi
 
         ## DELETING EMPTY LINES + MARKDOWN SPECIFIC HYPERLINKS SYNTAX BRACKETS LINES + IMG lines
-        awk 'NF' $faq_file.tmp2 | sed 's/\*//g' | grep -iv '\<img' | grep -v '\[[0-9]*\]\s*$' | grep -iv '^\s*\[[0-9]*\]' | grep -iv '<script'> $faq_file.tmp3 ;
+        cat $faq_file.tmp2 | sed 's/\*//g' | grep -iv '\<img' | grep -v '\[[0-9]*\]\s*$' | grep -iv '^\s*\[[0-9]*\]' | grep -iv '<script'> $faq_file.tmp3 ;
+
+        ## RUNNNING PANDOC TO CONVERT WHOLE TEXT TO PLAIN TEXT
+        pandoc --from markdown --to html5 $faq_file.tmp3 >  $faq_file.tmp4
 
         ## PREFIXING EACH LINE WITH HTML LINE BREAK
-        sed -e 's+^+<br><br>+' $faq_file.tmp3 > $faq_file_final ;
+        cat $faq_file.tmp4 > $faq_file_final
 
         echo "<p><strong>Recommended Next Step: </strong>To get answers to all your questions about this recipe, such as cooking method, tips and tricks, and best ways to serve it, go to  <a href='$recipe_url_final'>${recipe_name}</a></p>" >> $faq_file_final ;
 
@@ -214,4 +217,4 @@ echo ">>>> Moved SUMMARY file to => $DIR_TO_MOVE_SUMMARY_FILE/" ;
 ## KEEP THIS SECTION AT THE BOTTOM OF THIS SCRIPT
 ##################################################################################
 echo; echo ">>>> DELETING ALL TMP UNNECESSARY FILES" ;
-#rm $WORKDIR/*.tmp*
+rm $WORKDIR/*.tmp*
