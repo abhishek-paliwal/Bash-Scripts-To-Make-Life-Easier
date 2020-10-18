@@ -76,7 +76,7 @@ function FUNCTION_step2_rename_steps_thumbnails () {
     mkdir $parentDir_to_create ;
 
     COUNT=1;
-    for thisImage in $(find $thisDir -type f -name "*.jpg") ; do 
+    for thisImage in $(find $thisDir -type f -name "*.jpg" | sort) ; do 
         newImage="$(basename $thisDir)-$COUNT.jpg" ;
         echo "COPYING ... $thisImage => $parentDir_to_create/$newImage" ; 
         cp $thisImage $parentDir_to_create/$newImage ;
