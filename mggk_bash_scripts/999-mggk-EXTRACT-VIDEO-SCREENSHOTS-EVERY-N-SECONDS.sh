@@ -22,6 +22,8 @@ USAGE: $(basename $0)
   ## THIS PROGRAM RENAMES STEP IMAGES SEQUENTIALLY, ACCORDING
   ## TO THE STEP DIRECTORY THEY ARE PRESENT IN. MAKE SURE THAT STEP-XX DIRECTORIES
   ## ARE NOT EMPTY.
+  #### For renaming, it uses the 'rename' command. If your system does not have it ...
+  #### Install rename command using homebrew by running > brew install raname 
   ###############################################################################
   ## Coded by: PALI
   ## On: October 13, 2020
@@ -75,11 +77,16 @@ function FUNCTION_step2_rename_steps_thumbnails () {
     echo " >> CREATING THIS DIRECTORY NOW => $parentDir_to_create" ;
     mkdir $parentDir_to_create ;
 
+    ## First renaming all files by removing spaces, using rename command
+    ## Install rename command using homebrew by running > brew install raname
+    find $thisDir -type f -name "*.jpg" | rename 's/ /_/g' ; 
+    ##
     COUNT=1;
     for thisImage in $(find $thisDir -type f -name "*.jpg" | sort) ; do 
         newImage="$(basename $thisDir)-$COUNT.jpg" ;
-        echo "COPYING ... $thisImage => $parentDir_to_create/$newImage" ; 
-        cp $thisImage $parentDir_to_create/$newImage ;
+        echo; 
+        echo "COPYING ... '$thisImage' => $parentDir_to_create/$newImage" ; 
+        cp "$thisImage" $parentDir_to_create/$newImage ;
         ((COUNT++));
     done
     ##--------------------------------------------------------------------
