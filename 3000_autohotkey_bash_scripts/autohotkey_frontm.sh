@@ -49,8 +49,14 @@ URL=$(echo "$CLIPBOARD" | awk '{for (i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) s
 
 
 FRONTMATTER="---
+my_custom_variable: \"custom_variable_value\"
+
+steps_images_present: \"no\"
+
 title: \"$CLIPBOARD\"
+
 author: Anupama Paliwal
+
 type: post
 
 date: $DATE
