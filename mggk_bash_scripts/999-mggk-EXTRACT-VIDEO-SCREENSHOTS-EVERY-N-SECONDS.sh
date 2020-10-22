@@ -3,7 +3,7 @@
 ##################################################################################
 ## SOME VARIABLES (CHANGE THE DIRs IF NEEDED)
 WORKDIR="$HOME_WINDOWS/Desktop/Y" ;
-DIR_WHICH_YOUTUBE_VIDEOS="/Users/abhishek/GitHub/ZZ-HUGO-TEST/content/popular-posts" ;
+DIR_WHICH_YOUTUBE_VIDEOS="/Users/abhishek/GitHub/ZZ-HUGO-TEST/content/readers-favorite" ;
 ##################################################################################
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -127,7 +127,7 @@ echo "What do you want to do? Select your option =======>
 3) FUNCTION_step3_download_videos_using_youtube-dl_program (from this DIR = $DIR_WHICH_YOUTUBE_VIDEOS)
 " ;
 
-echo "Enter your choice (1/2): " ;
+echo "Enter your choice (1/2/3): " ;
 read which_function_to_run
 
 if [ "$which_function_to_run" == "1" ]; then
