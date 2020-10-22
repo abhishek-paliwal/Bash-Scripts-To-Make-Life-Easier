@@ -62,8 +62,9 @@ function FUNCTION_step1_video_thumbnails_extraction () {
         for y in $(seq 1 8); do 
             mkdir $dir_thumbs/${x_name}-step-$y ; 
         done; 
-        ## Finally running ffmpeg magic to extract screenshots
-        ffmpeg -i $x -vf fps=1/2 $dir_thumbs/${x_name}_thumb%3d.jpg ; 
+        ## Finally running ffmpeg magic to extract 1 frame every 1/3 second(s) of video
+        ## (eg. fps=2, 1/2, 1/30, 1/60 for every 0.5, 2, 30, and 60 seconds respectively)
+        ffmpeg -i $x -vf fps=3 $dir_thumbs/${x_name}_thumb%3d.jpg ; 
     done
 }
 
