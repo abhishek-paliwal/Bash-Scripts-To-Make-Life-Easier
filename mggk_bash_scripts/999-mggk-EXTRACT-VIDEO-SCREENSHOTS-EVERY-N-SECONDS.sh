@@ -64,7 +64,7 @@ function FUNCTION_step1_video_thumbnails_extraction () {
         done; 
         ## Finally running ffmpeg magic to extract 1 frame every 1/3 second(s) of video
         ## (eg. fps=2, 1/2, 1/30, 1/60 for every 0.5, 2, 30, and 60 seconds respectively)
-        ffmpeg -i $x -vf fps=3 $dir_thumbs/${x_name}_thumb%3d.jpg ; 
+        ffmpeg -i $x -vf fps=3 $dir_thumbs/${x_name}_thumb%4d.jpg ; 
     done
 }
 
