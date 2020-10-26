@@ -3,7 +3,7 @@
 ##################################################################################
 ## SOME VARIABLES (CHANGE THE DIRs IF NEEDED)
 WORKDIR="$HOME_WINDOWS/Desktop/Y" ;
-DIR_WHICH_YOUTUBE_VIDEOS="/Users/abhishek/GitHub/ZZ-HUGO-TEST/content/top-51-100" ;
+DIR_WHICH_YOUTUBE_VIDEOS="/home/ubuntu/GitHub/2020-LEELA-RECIPES/content" ;
 ##################################################################################
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
