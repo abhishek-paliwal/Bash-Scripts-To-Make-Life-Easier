@@ -26,7 +26,7 @@ USAGE: $(basename $0)
   #### For renaming, it uses the 'rename' command. If your system does not have it ...
   #### Install rename command using homebrew by running > brew install raname 
   ###########################################
-  ## IF YOU CHOOSE OPTION 3 WHEN ASKED FOR USER INPUT => 
+  ## IF YOU CHOOSE OPTION 0 WHEN ASKED FOR USER INPUT => 
   ## THIS PROGRAM DOWNLOADS ALL VIDEOS FROM YOUTUBE FOUND IN AN ALREADY SPECIFIED DIRECTORY.
   ## CURRENT SPECIFIED DIRECTORY = $DIR_WHICH_YOUTUBE_VIDEOS
   ## IF NEEDED, CHANGE SPECIFIED DIRECTORY BY CHANGING THIS
@@ -45,9 +45,14 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 ##################################################################################
 echo; echo ">> Working directory: $WORKDIR" ;
-echo; echo ">> Following mkv and mp4 files for processing ..." ;
-ls *.mkv
-ls *.mp4 
+echo "------------------------------------------------------" ;  
+echo ">> Found following mkv files for processing ..." ;
+echo "------------------------------------------------------" ;  
+ls -1 *.mkv | nl
+echo "------------------------------------------------------" ;  
+echo ">> Found following mp4 files for processing ..." ;
+echo "------------------------------------------------------" ;  
+ls -1 *.mp4 | nl
 
 ##################################################################################
 ##
@@ -107,8 +112,8 @@ function FUNCTION_step2_rename_steps_thumbnails () {
     done
 }
 ##
-function FUNCTION_step3_download_videos_using_youtube-dl_program () {
-    echo "RUNNING STEP 3 = Downloading + Renaming Videos in chosen DIR_WHICH_YOUTUBE_VIDEOS = $DIR_WHICH_YOUTUBE_VIDEOS ..." ; echo; 
+function FUNCTION_step0_download_videos_using_youtube-dl_program () {
+    echo "RUNNING STEP 0 = Downloading + Renaming Videos in chosen DIR_WHICH_YOUTUBE_VIDEOS = $DIR_WHICH_YOUTUBE_VIDEOS ..." ; echo; 
     for mymdfile in $(grep -irl 'youtube_video_id:' $DIR_WHICH_YOUTUBE_VIDEOS/ ) ; do 
         ## Extracting url without slashes to use for filename later
         url_var=$(grep -irh 'url:' $mymdfile | tr -d ' ' | sed 's/url://g' | sed 's+/++g') ;
@@ -129,12 +134,12 @@ function FUNCTION_step3_download_videos_using_youtube-dl_program () {
 ## CALLING THE FUNCTIONS, DEPENDING UPON THE OPTION CHOSEN BY THE USER
 echo; echo; 
 echo "What do you want to do? Select your option =======>
+0) FUNCTION_step0_download_videos_using_youtube-dl_program (from this DIR = $DIR_WHICH_YOUTUBE_VIDEOS)
 1) FUNCTION_step1_video_thumbnails_extraction
 2) FUNCTION_step2_rename_steps_thumbnails
-3) FUNCTION_step3_download_videos_using_youtube-dl_program (from this DIR = $DIR_WHICH_YOUTUBE_VIDEOS)
 " ;
 
-echo "Enter your choice (1/2/3): " ;
+echo "Enter your choice (0/1/2): " ;
 read which_function_to_run
 
 if [ "$which_function_to_run" == "1" ]; then
@@ -145,10 +150,10 @@ elif [ "$which_function_to_run" == "2" ]; then
     echo ">> Your chosen step is: $which_function_to_run" ;
     echo ">> Hence, this will run => FUNCTION_step2_rename_steps_thumbnails" ;
     FUNCTION_step2_rename_steps_thumbnails ;
-elif [ "$which_function_to_run" == "3" ]; then
+elif [ "$which_function_to_run" == "0" ]; then
     echo ">> Your chosen step is: $which_function_to_run" ;
     echo ">> Hence, this will run => FUNCTION_step3_download_videos_using_youtube-dl_program" ;
-    FUNCTION_step3_download_videos_using_youtube-dl_program ;
+    FUNCTION_step0_download_videos_using_youtube-dl_program ;
 else 
     echo ">> Your chosen step is INVALID = $which_function_to_run // TRY AGAIN." ;
 fi
