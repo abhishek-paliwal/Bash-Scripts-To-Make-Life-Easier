@@ -64,7 +64,7 @@ function FUNCTION_step1_video_thumbnails_extraction () {
         done; 
         ## Finally running ffmpeg magic to extract 1 frame every 1/3 second(s) of video
         ## (eg. fps=2, 1/2, 1/30, 1/60 for every 0.5, 2, 30, and 60 seconds respectively)
-        ffmpeg -i $x -vf fps=3 $dir_thumbs/${x_name}_thumb%4d.jpg ; 
+        ffmpeg -i $x -vf fps=3 $dir_thumbs/${x_name}_thumb%5d.jpg ; 
     done
 }
 
@@ -86,11 +86,17 @@ function FUNCTION_step2_rename_steps_thumbnails () {
     mkdir $parentDir_to_create ;
 
     ## First renaming all files by removing spaces, using rename command
-    ## Install rename command using homebrew by running > brew install raname
-    find $thisDir -type f -name "*.jpg" | rename 's/ /_/g' ; 
+    ## Install rename command on MAC OS using homebrew by running > brew install raname
+    ## Install rename command on Linux using by running > sudo apt-get install raname
+    if [ $USER = "ubuntu" ]; then
+        find $thisDir -type f -name "*.jpg" | /usr/bin/rename 's/ /_/g' ;
+    else
+        find $thisDir -type f -name "*.jpg" | rename 's/ /_/g' ; 
+    fi
+
     ##
     COUNT=1;
-    for thisImage in $(find $thisDir -type f -name "*.jpg" | sort) ; do 
+    for thisImage in $(find $thisDir -type f -name "*.jpg" | sort -k 2n) ; do 
         newImage="$(basename $thisDir)-$COUNT.jpg" ;
         echo; 
         echo "COPYING ... '$thisImage' => $parentDir_to_create/$newImage" ; 
