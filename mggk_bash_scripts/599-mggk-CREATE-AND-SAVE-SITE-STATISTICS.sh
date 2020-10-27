@@ -25,6 +25,11 @@ if [ "$1" == "--help" ] ; then usage ; fi
 HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content"
 FILE_OUTPUT_SITESTATS="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/sitestats.html"
 
+echo "##------------------------------------------------------------------------------" ;
+echo ">> GATHERING IMPORTANT SITE STATS FOR MGGK HUGO WEBSITE ..." ;
+echo "##------------------------------------------------------------------------------" ;
+
+
 ##------------------ DO NOT CHANGE ANYTHING BELOW ------------------------------
 ## OUTPUT FILE CREATED AT (+ initializing the output file):
 echo "<pre>" > $FILE_OUTPUT_SITESTATS
@@ -100,6 +105,61 @@ echo "$NUM_CURRENT_16x9_IMAGES: NUMBER OF CURRENT IMAGES PRESENT IN 16x9 DIRECTO
 NUM_CURRENT_ORIGINAL_COPIED_IMAGES=$(ls $HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/rich-markup-images/original_copied/*.* | wc -l)
 echo "$NUM_CURRENT_ORIGINAL_COPIED_IMAGES: NUMBER OF CURRENT IMAGES PRESENT IN original_copied DIRECTORY" >> $FILE_OUTPUT_SITESTATS
 
+################################################################################
+################################################################################
+echo "##------------------------------------------------------------------------------" >> $FILE_OUTPUT_SITESTATS 
+echo ">> FINDING WHICH URLS ARE NOT PRESENT AS VALID IMAGES IN 1X1, 4X3, 16X9 DIRECTORIES ..." >> $FILE_OUTPUT_SITESTATS
+echo ">> ... OR IF ANY INVALID IMAGES ARE PRESENT IN 1X1, 4X3, 16X9 DIRECTORIES WHICH ..." >> $FILE_OUTPUT_SITESTATS
+echo ">> ... DO NOT HAVE CORRESPONDING VALID URLS." >> $FILE_OUTPUT_SITESTATS
+echo "##------------------------------------------------------------------------------" >> $FILE_OUTPUT_SITESTATS
+################################################################################
+DIR_HUGO_MAIN="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL" ; 
+DIR_OUTPUT="$HOME/Desktop/Y" ;
+####
+DIR_ALL_URLS="$DIR_HUGO_MAIN/content" ;
+DIR_ORIG_COPIED="$DIR_HUGO_MAIN/static/wp-content/rich-markup-images/original_copied" ;
+DIR_1x1="$DIR_HUGO_MAIN/static/wp-content/rich-markup-images/1x1" ;
+DIR_4x3="$DIR_HUGO_MAIN/static/wp-content/rich-markup-images/4x3" ;
+DIR_16x9="$DIR_HUGO_MAIN/static/wp-content/rich-markup-images/16x9" ;
+####
+FILE_ALL_URLS="$DIR_OUTPUT/_tmplist_ALL_URLS.txt" ;
+FILE_ORIG_COPIED="$DIR_OUTPUT/_tmplist_00_ORIG_COPIED.txt" ;
+FILE_1x1="$DIR_OUTPUT/_tmplist_1x1.txt" ;
+FILE_4x3="$DIR_OUTPUT/_tmplist_4x3.txt" ;
+FILE_16x9="$DIR_OUTPUT/_tmplist_16x9.txt" ;
+####
+rm $DIR_OUTPUT/_tmplist*.txt ; ## removing existing temporary files
+####
+## Getting all names from jpg images
+ls $DIR_ORIG_COPIED/ | tr -d ' ' | sed 's/.jpg//g' | sort > $FILE_ORIG_COPIED
+ls $DIR_1x1/ | tr -d ' ' | sed 's/1x1-//g' | sed 's/.jpg//g'  | sort > $FILE_1x1
+ls $DIR_4x3/ | tr -d ' ' | sed 's/4x3-//g' | sed 's/.jpg//g' | sort > $FILE_4x3
+ls $DIR_16x9/ | tr -d ' ' | sed 's/16x9-//g' | sed 's/.jpg//g'  | sort > $FILE_16x9
+
+## Getting all urls in hugo main directory
+TMPFILE1="$DIR_OUTPUT/_tmp1.txt" ;
+TMPFILE2="$DIR_OUTPUT/_tmp2.txt" ;
+grep -irh 'url: ' $DIR_ALL_URLS/*  | grep -v '"' | tr -d ' ' | sed 's/url://g'| sed 's+/++g' | sort > $TMPFILE1 ;
+## Adding 'index' word to compensate for the base site url which only contained slashes, hence came out blank.
+echo "index" > $TMPFILE2 ;
+cat $TMPFILE1 $TMPFILE2 | sort > $FILE_ALL_URLS
+
+## Counting lines in all _tmplist files
+wc -l $DIR_OUTPUT/_tmplist*.txt >> $FILE_OUTPUT_SITESTATS
+
+## Finding which urls are not present as valid images
+FILENAME_ARRAY=("$FILE_ORIG_COPIED" "$FILE_1x1" "$FILE_4x3" "$FILE_16x9") ;
+for x in ${FILENAME_ARRAY[@]} ; do 
+    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" >> $FILE_OUTPUT_SITESTATS
+    echo ">> CURRENTLY COMPARING => $FILE_ALL_URLS -- AND -- $x" >> $FILE_OUTPUT_SITESTATS
+    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" >> $FILE_OUTPUT_SITESTATS
+    echo "      ## Lines unique to $FILE_ALL_URLS" >> $FILE_OUTPUT_SITESTATS
+    diff $FILE_ALL_URLS $x | grep '<' >> $FILE_OUTPUT_SITESTATS
+    echo "      ## Lines unique to $x" >> $FILE_OUTPUT_SITESTATS
+    diff $FILE_ALL_URLS $x | grep '>' >> $FILE_OUTPUT_SITESTATS
+done
+################################################################################
+################################################################################
 
 ##------------------------------------------------------------------------------
 ## LIST OF ALL URLS FOUND IN MD FILES
