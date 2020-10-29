@@ -3,12 +3,13 @@
 THIS_SCRIPT_NAME="599-mggk-ASSIGN-RANDOM-PUBLISHING-DATES-FOR-POSTS-IN-YAML-FRONTMATTER.sh"
 ################################################################################
 ## VARIABLE SETTING
-SHIFT_BY_NUMDAYS="100" ; ## 100 DAYS, ABOUT 4 MONTHS
+SHIFT_BY_NUMDAYS="40" ; ## 40 DAYS, ABOUT 1.33 MONTHS
 SUFFIX_STRING="d"; # d for days, w for weeks, m for months, y for years
 DATE_SHIFT_BY_NUMDAYS="$SHIFT_BY_NUMDAYS$SUFFIX_STRING" ;
 ################################################################################
-HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content" ;
 #HUGO_CONTENT_DIR="$HOME/GitHub/ZZ-HUGO-TEST/content" ;
+#HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content" ;
+HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/_FIXED/top-51-100" ;
 ################################################################################
 #################### DON'T CHANGE ANYTHING BELOW THIS LINE #####################
 ################################################################################
