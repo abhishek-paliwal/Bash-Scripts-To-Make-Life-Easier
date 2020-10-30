@@ -54,7 +54,7 @@ steps_images_present: \"no\"
 
 title: \"$CLIPBOARD\"
 date: $DATE
-description: \"\"
+description: \"POST_DESCRIPTION\"
 type: post
 image: \"images/youtube_video_cover_images/YOUTUBE_ID.jpg\"
 
