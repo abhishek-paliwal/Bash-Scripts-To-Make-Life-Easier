@@ -66,6 +66,8 @@ url: /$(printf '%s' "$URL")/
 
 featured_image: /wp-content/uploads/$YEAR/$MONTH/YOUR-IMAGE.JPG
 
+recipe_code_image: /wp-content/uploads/$YEAR/$MONTH/YOUR-IMAGE.JPG
+
 categories:
   - All-recipes
   -
@@ -75,13 +77,13 @@ tags:
   -
   -
 
-youtube_video_id: \"\"
+youtube_video_id: \"YOUTUBE_ID\"
 
-yoast_description: \"\"
+yoast_description: \"YOAST_DESCRIPTION\"
 
-prepTime: PT
-cookTime: PT
-totalTime: PT
+prepTime: PTHM
+cookTime: PTHM
+totalTime: PTHM
 
 recipeCategory: xyz
 recipeCuisine: xyz
@@ -95,18 +97,16 @@ nutrition:
   calories: xyz calories
   servingSize: 1
 
-recipe_code_image: /wp-content/uploads/$YEAR/$MONTH/YOUR-IMAGE.JPG
-
 recipe_keywords: \"xyz\"
 
 recipeIngredient:
-  - recipeIngredientTitle: \"\"
+  - recipeIngredientTitle: \"For $CLIPBOARD\"
     recipeIngredientList:
     - xyz
     - xyz
 
 recipeInstructions:
-  - recipeInstructionsTitle: \"\"
+  - recipeInstructionsTitle: \"For making $CLIPBOARD\"
     recipeInstructionsList:
     - xyz
     - xyz
@@ -122,10 +122,21 @@ recipeNotes:
 {{< mggk-button-block-for-recipe-here-link >}}
 
 
-
 {{< mggk-hugo-google-ad-1 >}}
 
 {{< mggk-hugo-google-ad-2 >}}
+
+{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-1.jpg\" alt=\"Image of $CLIPBOARD\" >}}
+
+{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-2.jpg\" alt=\"Image of $CLIPBOARD\" >}}
+
+{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-3.jpg\" alt=\"Image of $CLIPBOARD\" >}}
+
+{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-4.jpg\" alt=\"Image of $CLIPBOARD\" >}}
+
+{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-5.jpg\" alt=\"Image of $CLIPBOARD\" >}}
+
+{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-6.jpg\" alt=\"Image of $CLIPBOARD\" >}}
 
 
 {{< mggk-print-recipe-button >}}
