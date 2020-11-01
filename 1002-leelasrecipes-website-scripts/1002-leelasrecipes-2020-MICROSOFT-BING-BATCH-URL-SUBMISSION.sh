@@ -7,7 +7,7 @@ usage()
 cat <<EOM
 USAGE: $(basename $0)
   ###############################################################################
-  ## THIS PROGRAM EXTRACTS 490 TOP URLS FROM LIVE SITEMAP.XML WHICH ARE LATEST UPDATED, 
+  ## THIS PROGRAM EXTRACTS 8 TOP URLS FROM LIVE SITEMAP.XML WHICH ARE LATEST UPDATED, 
   ## AND SUBMITS THEM TO BING SEARCH USING BING WEBMASTER API, USING CURL.
   ###############################################################################
   ## Coded by: PALI
@@ -38,14 +38,14 @@ API_KEY="$(cat $API_FILEPATH | head -1) " ;
 ################################################################################
 function FUNCTION_BING_GETQUOTA () {
     echo; echo ">> BING WEBMASTER TOOLS (STEP 1) => Getting daily + monthly quota ..." ; echo; 
-    curl "https://ssl.bing.com/webmaster/api.svc/json/GetUrlSubmissionQuota?siteUrl=https://www.mygingergarlickitchen.com&apikey=$API_KEY"
+    curl "https://ssl.bing.com/webmaster/api.svc/json/GetUrlSubmissionQuota?siteUrl=https://www.leelasrecipes.com&apikey=$API_KEY"
 }
 ####
 function FUNCTION_BING_SUBMIT_BATCH () {
     echo; echo ">> BING WEBMASTER TOOLS (STEP 2) => Batch submitting URLs through CURL API ... " ; echo; 
     echo; echo ">> NOTE: d:null in JSON response means SUCCESSFUL SUBMISSION." ; echo; 
     TMP_BATCH_SUBMIT_TEXT_FINAL="$1" ;
-    curl -X POST "https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlBatch?apikey=$API_KEY" -H "Content-Type: application/json" -H "charset: utf-8" -d '{"siteUrl":"https://www.mygingergarlickitchen.com", "urlList":['"$TMP_BATCH_SUBMIT_TEXT_FINAL"']}'
+    curl -X POST "https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlBatch?apikey=$API_KEY" -H "Content-Type: application/json" -H "charset: utf-8" -d '{"siteUrl":"https://www.leelasrecipes.com", "urlList":['"$TMP_BATCH_SUBMIT_TEXT_FINAL"']}'
 }
 ################################################################################
 ## END: FUNCTION DEFINITIONS
@@ -58,14 +58,14 @@ echo "------------------------------------------------------" ;
 ##------------------------------------------------------------------------------
 ## EXTRACTING LATEST UPDATED URLs FROM CURRENT SITEMAP.XML FROM LIVE WEBSITE.
 ## Because Bing API can only submit 500 URLs at a time, so ...
-## ... we will take the first (latest updated) 490 URLs at this time.
+## ... we will take the first (latest updated) 8 URLs at this time.
 #### Downloading sitemap 
-wget https://www.mygingergarlickitchen.com/sitemap.xml -O $FILE_TMP_0 ;
+wget https://www.leelasrecipes.com/sitemap.xml -O $FILE_TMP_0 ;
 #### Extracting top urls
-cat $FILE_TMP_0 | grep -i '<loc>' | sed 's+<loc>++g' | sed 's+</loc>++g' | tr -d ' ' | grep -v '/tags/' | grep -v '/categories/' | head -490 > $FILE_TMP_1 ;
+cat $FILE_TMP_0 | grep -i '<loc>' | sed 's+<loc>++g' | sed 's+</loc>++g' | tr -d ' ' | grep -v '/tags/' | grep -v '/categories/' | head -8 > $FILE_TMP_1 ;
 ## Creating a text variable required for Bing's batch submission
 cat $FILE_TMP_1 | sed 's/^/"/g' | sed 's/$/"/g' | tr '\n' ',' > $FILE_TMP_2 ;
-echo "\"https://www.mygingergarlickitchen.com/\"" >> $FILE_TMP_2  ;
+echo "\"https://www.leelasrecipes.com/\"" >> $FILE_TMP_2  ;
 ##------------------------------------------------------------------------------
 
 ## CALLING FUNCTIONS
