@@ -30,8 +30,8 @@ cd $BASEDIR
 echo ">>>> Current working directory is: $BASEDIR" ;
 echo ">>>> IMPORTANT NOTE: This script needs a command line argument to run." ;
 
-DATE=$(date +%Y-%m-%dT%H:%M:%S)
-PUBDATE=$(date +%Y-%m-%d)
+DATE=$(date -v -12H +%Y-%m-%dT%H:%M:%S) ;
+PUBDATE=$DATE ;
 
 YEAR=$(date +%Y)
 MONTH=$(date +%m)
