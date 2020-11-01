@@ -56,12 +56,22 @@ echo "####################################################################" >> $
 diff --line-format %L $ALIASES_FILE_USER1 $ALIASES_FILE_USER2 >> $ALIASES_FILE_MERGED
 echo;
 
-###########
-echo "Opening DIR = $FILE_TRANSFER_DIR" ;
+##################################################################################
+echo "##++++++++++++++++++++++++++++++++++++++++++++" ;
+echo "Listing all FILES in the DIR = $FILE_TRANSFER_DIR" ;
+ls -al $FILE_TRANSFER_DIR/ ;
+echo "##++++++++++++++++++++++++++++++++++++++++++++" ;
+##################################################################################
 
-if [ "$USER" == "ubuntu" ] ; then
-    cd $FILE_TRANSFER_DIR ;
-    explorer.exe .
-else
-    open $FILE_TRANSFER_DIR ;
-fi
+function FUNCTION_OPEN_DIR () {
+    echo "Opening the DIR = $FILE_TRANSFER_DIR" ;
+    if [ "$USER" == "ubuntu" ] ; then
+        cd $FILE_TRANSFER_DIR ;
+        explorer.exe .
+    else
+        open $FILE_TRANSFER_DIR ;
+    fi
+}
+## Calling this fuction (Uncomment if needed)
+#FUNCTION_OPEN_DIR
+##################################################################################
