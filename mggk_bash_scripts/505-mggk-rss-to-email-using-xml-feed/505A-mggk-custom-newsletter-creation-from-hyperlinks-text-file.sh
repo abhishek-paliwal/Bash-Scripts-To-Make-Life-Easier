@@ -1,5 +1,5 @@
 #!/bin/bash
-
+THIS_SCRIPT_NAME="$(basename $0)" ;
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
 usage()
@@ -32,10 +32,10 @@ echo ">>>> PWD is $PWD" ;
 ## DEFINE SOME VARIABLE FILENAMES
 REQUIREMENTS_FILE="$(ls -1 $PWD/*.txt | head -1)" ;  ## first text file
 REQUIREMENTS_FILE_BASENAME="$(basename $REQUIREMENTS_FILE)" ; 
-LINKS_FILE_OUTPUT="_TMP_MYLINKS.txt" ;
-OUTPUT_HTML_FILE="_TMP_505_NEWSLETTER_FINAL_OUTPUT-$REQUIREMENTS_FILE_BASENAME.html"
-TMP_CURL_FILE="_TMP_mycurlfile.txt" ;
-MD_FILENAME="_TMP-$REQUIREMENTS_FILE_BASENAME.md";
+LINKS_FILE_OUTPUT="$PWD/_TMP_MYLINKS.txt" ;
+OUTPUT_HTML_FILE="$PWD/_TMP_505A_NEWSLETTER_FINAL_OUTPUT-$REQUIREMENTS_FILE_BASENAME.html"
+TMP_CURL_FILE="$PWD/_TMP_mycurlfile.txt" ;
+MD_FILENAME="$PWD/_TMP-$REQUIREMENTS_FILE_BASENAME.md";
 ###############################################################################
 
 ########### CREATING THE TMP LINKS FILES #############
