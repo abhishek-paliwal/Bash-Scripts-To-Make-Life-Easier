@@ -8,9 +8,12 @@ cat <<EOM
 USAGE: $(basename $0)
 	###############################################################################
 	## THIS PROGRAM READS TEXT FILES IN PWD CONTAINING HYPERLINKS AND CREATES 
-    ## CUSTOM NEWSLETTER BY CREATING A
-	## HTML FILE READY TO BE SENT THRU EMAIL TO EMAIL SUBSCRIBERS, AFTER COPYING
-	## AND PASTING ITS SOURCE CODE INTO ANY EMAIL PROGRAM (SENDY, MAILCHIMP, ETC.)
+  ## CUSTOM NEWSLETTER BY CREATING A HTML FILE READY TO BE SENT THRU EMAIL TO
+  ## EMAIL SUBSCRIBERS, AFTER COPYING AND PASTING ITS SOURCE CODE INTO ANY
+  ## EMAIL PROGRAM (SENDY, MAILCHIMP, ETC.)
+  ##############################################################################
+  ## REQUIREMENTS => 
+  ## THIS SCRIPT NEEDS A TEXT FILE IN PWD, CONTAINING HYPERLINKS.
 	##############################################################################
 	## MADE BY: PALI
 	## DATE: NOV 01, 2020
@@ -52,11 +55,7 @@ echo; echo ">> PRINTING URLs AFTER REMOVING DUPLICATES >>" ;
 cat $LINKS_FILE_OUTPUT | nl
 echo;
 
-
-## Now run the for loop over all item node values (8 top entries are chosen because
-## this particular rss feed file contains only 8 entries)
-echo "Initializing the HTML file : $OUTPUT_HTML_FILE " ;
-
+## Initializing the HTML file
 echo "<!doctype html>
 <html lang='en'>
   <head>
@@ -69,10 +68,11 @@ echo "<!doctype html>
 		<title>Latest delicious recipes from My Ginger Garlic Kitchen</title>
 	</head>
 	<body>
-	<div class='container'>" > $OUTPUT_HTML_FILE ;
+	<div class='container'>" > $OUTPUT_HTML_FILE ; ## Initializing the HTML file
 
-echo "<p>Hello [Name,fallback=]</p><p><strong>🍴Here are the latest recipes from <a href='https://www.mygingergarlickitchen.com/' target='_blank'>our blog</a> and recipe videos from <a href='https://www.youtube.com/user/anupamabhishek/' target='_blank'>our youtube channel</a> directly to your inbox.</strong></p><p>Simply click the buttons below to watch the how-to videos and to download recipes.</p>
-<p style='text-align: center; color: #cd1c62; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ; ## WRITING THE FIRST EMPTY LINE, THEN APPENDING LATER
+echo "<p>Hello [Name,fallback=]</p><p><strong>🍴Here are the latest recipes from <a href='https://www.mygingergarlickitchen.com/' target='_blank'>our blog</a> and recipe videos from <a href='https://www.youtube.com/user/anupamabhishek/' target='_blank'>our youtube channel</a> directly to your inbox.</strong></p><p>Simply click the buttons below to watch the how-to videos and to download recipes.</p>" >> $OUTPUT_HTML_FILE ;
+
+echo "<p style='text-align: center; color: #cd1c62; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ;
 
 echo "<center>" >> $OUTPUT_HTML_FILE; 
 
@@ -178,6 +178,7 @@ cat $OUTPUT_HTML_FILE | sed 's/&lt;/</g' | sed 's/&gt;/>/g' | sed 's/&amp;lsquo;
 
 ## Opening directory = PWD
 # This command works only on mac
-echo ">>>> OPENING HTML FILE IN BROWSER ..." ;
-open $myPWD ;
+echo; echo;
+echo ">>>> OPENING THIS HTML FILE IN BROWSER ... (This works only on MAC OS) => $OUTPUT_HTML_FILE" ;
+open $PWD ;
 open $OUTPUT_HTML_FILE ;
