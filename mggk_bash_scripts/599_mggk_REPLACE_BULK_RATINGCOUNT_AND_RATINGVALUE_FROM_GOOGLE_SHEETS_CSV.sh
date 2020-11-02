@@ -1,7 +1,8 @@
 #!/bin/bash
 ################################################################################
 THIS_SCRIPT_NAME="$(basename $0)" ;
-REQUIREMENTS_FILE="599_MGGK_RATING_REQUIREMENT_FILE_CSV_FROM_GOOGLE_SHEETS.csv" ;
+REQUIREMENTS_FILE_DIR="$DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/_REQUIREMENT_FILES_MGGK" ;
+REQUIREMENTS_FILE="$REQUIREMENTS_FILE_DIR/599_MGGK_RATING_REQUIREMENT_FILE_CSV_FROM_GOOGLE_SHEETS.csv" ;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
@@ -12,7 +13,7 @@ USAGE: $(basename $0)
   ################################################################################
   ## THIS BASH SCRIPT REPLACES RATING COUNT AND RATING VALUE IN ORIGINAL MD FILES,
   ## USING A CSV FILE DOWNLOADED FROM GOOGLE SHEETS (REQUIREMENTS_FILE). THIS CSV
-  ## FILE SHOULD BE PRESENT IN $(pwd) AND SHOULD ONLY HAVE TWO COLUMNS.
+  ## FILE SHOULD BE PRESENT IN REQUIREMENTS_DIRECTORY AND SHOULD ONLY HAVE TWO COLUMNS.
   ## COLUMNS = (URL, UNIQUE_PAGEVIEWS_PER_90_DAYS)
   ##------------------------------------------------------------------------------
   ## IMPORTANT NOTE:
@@ -47,9 +48,11 @@ HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content" ;
 MY_PWD="$HOME_WINDOWS/Desktop/Y"
 cd $MY_PWD ;
 echo "Current working directory = $MY_PWD" ;
+echo;echo;
 ################################################################################
 ## SETTING VARIABLES
-TMP_OUTPUT_CSVFILE="$MY_PWD/_TMP_OUTPUT_SUMMARY_599_MGGK_RATING_VALID_URLS.csv"
+DATEVAR="$(date +%Y%m%d-%H%M%S)";
+TMP_OUTPUT_CSVFILE="$MY_PWD/_TMP_OUTPUT_SUMMARY_599_MGGK_RATING_VALID_URLS-$DATEVAR.csv"
 ## INITIALIZING TMP OUTPUT CSV FILE
 echo "MY_MDFILENAME, COUNT, CSVURL, 90DAYS_PAGEVIEWS, EXISTING_CSVRATINGCOUNT, NEW_RATINGCOUNT_INCREASED_BY, NEW_RATINGCOUNT, EXISTING_CSVRATINGVALUE, NEW_RATINGVALUE" > $TMP_OUTPUT_CSVFILE
 ################################################################################
@@ -60,13 +63,13 @@ NEW_RATINGVALUE_CHANGE_FACTOR="4.7" ; ## Let's say that average rating by new us
 ################################################################################
 
 ## GETTING COLUMN NAMES FROM CSV FILE:
-echo "Following column names are found in CSV FILE => $REQUIREMENTS_FILE" ;
+echo; echo; echo "Following column names are found in CSV FILE => $REQUIREMENTS_FILE" ;
 csvcut -n $REQUIREMENTS_FILE
 ################################################################################
 
 ##------------------------------------------------------------------------------
 #### BEGIN: DEFINING MAIN FUNCTIONS ############################################
-## FUNCION_1 => OUTPUTS A MD FILENAME FROM AN ARGUMENT URL
+## FUNCTION_1 => OUTPUTS A MD FILENAME FROM AN ARGUMENT URL
 GET_MD_FILENAME_WITH_THIS_URL () {
   ## USAGE: THIS_FUNCION_NAME $1
   ## (WHERE, $1 = An MGGK URL, SUCH AS http://www.mygingergarlickitchen.com/example/)
@@ -106,9 +109,9 @@ REPLACE_ORIGINAL_RATINGCOUNT_RATINGVALUE_IN_THIS_MD_FILE_WITH_NEW_VALUES () {
   EXISTING_RATINGCOUNT="$(grep -irh 'ratingCount: ' $mdfile | sed 's/ratingCount: //g')" ;
   NEW_RATINGCOUNT_TMP="$2" ;
 
-  CALCULATING_RATINGCOUNT_INCREASED_BY="(($NEW_RATINGCOUNT_TMP * $DAYS_SINCE_WEBSITE_LAST_UPDATED * $PERCENTAGE_OF_USERS_WHO_RATED) / $NUM_DAYS_DATA_IN_REQUIREMENTS_CSVFILE)" ;
+  CALCULATING_RATINGCOUNT_INCREASED_BY="(($NEW_RATINGCOUNT_TMP * $DAYS_SINCE_WEBSITE_LAST_UPDATED * $PERCENTAGE_OF_USERS_WHO_RATED) / $NUM_DAYS_DATA_IN_REQUIREMENTS_CSVFILE) + $DAYS_WEIGHT_VARIABLE" ; ## adding weights at the end ...
   echo "CALCULATING_RATINGCOUNT_INCREASED_BY = $CALCULATING_RATINGCOUNT_INCREASED_BY" ;
-  NEW_RATINGCOUNT_INCREASED_BY=$(echo "$CALCULATING_RATINGCOUNT_INCREASED_BY"  | bc ) ;
+  NEW_RATINGCOUNT_INCREASED_BY=$(echo "scale=0; ($CALCULATING_RATINGCOUNT_INCREASED_BY)"  | bc ) ;
   NEW_RATINGCOUNT=$(echo "$EXISTING_RATINGCOUNT + $NEW_RATINGCOUNT_INCREASED_BY"  | bc ) ;
 
   echo "    mdfile => $mdfile" ;
@@ -117,6 +120,7 @@ REPLACE_ORIGINAL_RATINGCOUNT_RATINGVALUE_IN_THIS_MD_FILE_WITH_NEW_VALUES () {
   echo "    NEW_RATINGCOUNT => $NEW_RATINGCOUNT" ;
   ##
   echo "    >>>> Updating new ratingCount value ..." ;
+  NEW_RATINGCOUNT=$(echo $NEW_RATINGCOUNT | tr -d [:space:]) ;
   ## Check the OS // MacOS (=Darwin) as well as Linux (=ubuntu)
   OS_NAME=$(uname) ;
   if [[ "$OS_NAME" == "Darwin" ]] ; then
@@ -143,6 +147,7 @@ REPLACE_ORIGINAL_RATINGCOUNT_RATINGVALUE_IN_THIS_MD_FILE_WITH_NEW_VALUES () {
   echo "    NEW_RATINGVALUE => $NEW_RATINGVALUE" ;
   ##
   echo "    >>>> Updating new ratingValue value ..." ;
+  NEW_RATINGVALUE=$(echo $NEW_RATINGVALUE | tr -d [:space:]) ;
   ## Check the OS // MacOS (=Darwin) as well as Linux (=ubuntu)
   OS_NAME=$(uname) ;
   if [[ "$OS_NAME" == "Darwin" ]] ; then
@@ -163,18 +168,39 @@ REPLACE_ORIGINAL_RATINGCOUNT_RATINGVALUE_IN_THIS_MD_FILE_WITH_NEW_VALUES () {
 
 ##################################################################################
 ## USER INPUT FOR THE TIME WHEN LAST TIME SITE WAS MADE
-echo "##################################################################################" ;
+echo; echo "##################################################################################" ;
+echo "####################### ENTER USER INPUT ####################################" ; echo; 
 say "Updating Rating Count and Rating Value ... How many days ago did you make the website last time (ENTER an integer) ... " ;
 echo ">> Now updating Rating Count and Rating Value ..." ;
 echo ">>>> How many days ago did you make the website last time (ENTER an integer) [0=today, 1=yesterday, 2=2 days ago, etc.]:" ;
 read DAYS_SINCE_WEBSITE_LAST_UPDATED
 ## Exit this script if zero entered
-if [ $DAYS_SINCE_WEBSITE_LAST_UPDATED == 0 ] ; then 
+if [ "$DAYS_SINCE_WEBSITE_LAST_UPDATED" == 0 ] || [ "$DAYS_SINCE_WEBSITE_LAST_UPDATED" == "" ] ; then 
   echo ">>> NO CHANGE WILL BE DONE. This script will exit now."; 
   exit 1 ; 
 fi
 ##################################################################################
 
+## CREATING A WEIGHT VARIABLE DEPENDING UPON THE DAYS PASSED SINCE OCT 30 2020
+## WE CHOSE OCT 30 2020, BECAUSE AFTER THIS DATE, THE RATINGS SHOULD AUTOUPDATE.
+## THIS WEIGHT VARIABLE WILL INCREASE RATING BY 1 FOR ALL POSTS, EVERY 15 DAYS.
+## WE ARE ADDING THIS VARIABLE BECAUSE WE WANT ALL POSTS MODIFIED EVENTUALLY.
+DIR_SCRIPT="$DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/9999_MGGK_TEMPLATE_SCRIPTS"
+source $DIR_SCRIPT/9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh ;
+OLD_DATE="2020-10-30T12:00:00" ;
+NEW_DATE="$(date +%Y-%m-%dT%H:%M:%S)" ;
+DATE_DIFFERENCE_IN_DAYS_SINCE_OCT30_2020=$(FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS_on_MacOS_or_Linux $OLD_DATE $NEW_DATE "days") ;
+DAYS_WEIGHT_VARIABLE=$(echo "scale=2; ($DATE_DIFFERENCE_IN_DAYS_SINCE_OCT30_2020 % 15)" | bc) ;
+if [ $DAYS_WEIGHT_VARIABLE -ge 13 ] ; then 
+  DAYS_WEIGHT_VARIABLE=1;
+else 
+  DAYS_WEIGHT_VARIABLE=0;
+fi 
+##  
+echo;
+echo ">>>> FROM TODAY: DATE_DIFFERENCE_IN_DAYS_SINCE_OCT30_2020 => $DATE_DIFFERENCE_IN_DAYS_SINCE_OCT30_2020" ;
+echo ">>>> THUS, DAYS_WEIGHT_VARIABLE => $DAYS_WEIGHT_VARIABLE" ; 
+echo ;
 
 ##------------------------------------------------------------------------------
 ## READING REQUIREMENTS CSV FILE LINE-BY-LINE AND REPLACING RATINGCOUNT AND
