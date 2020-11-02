@@ -28,8 +28,14 @@ USAGE: $(basename $0)
   ################################################################################
   ## USAGE -> FROM ANOTHER BASH SCRIPT:
   ## This function should be called from an another bash script. Run these commands for that:
-  ## >> source /path/to/9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh
-  ## >> DATE_DIFFERENCE=\$(FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS_on_MacOS_or_Linux \$OLD_DATE \$NEW_DATE "minutes")
+  ## >>>>
+  ## DIR_SCRIPT="\$DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/9999_MGGK_TEMPLATE_SCRIPTS"
+  ## source \$DIR_SCRIPT/9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh ;
+  ## OLD_DATE="2020-10-30T12:00:00" ; ## Example past date ...
+  ## NEW_DATE="\$(date +%Y-%m-%dT%H:%M:%S)" ;
+  ## DATE_DIFFERENCE_IN_MINUTES=\$(FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS_on_MacOS_or_Linux \$OLD_DATE \$NEW_DATE "minutes")
+  ## DATE_DIFFERENCE_IN_SECONDS=\$(FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS_on_MacOS_or_Linux \$OLD_DATE \$NEW_DATE "seconds")
+  ## DATE_DIFFERENCE_IN_DAYS=\$(FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS_on_MacOS_or_Linux \$OLD_DATE \$NEW_DATE "days")
   ################################################################################
   ## CREATED ON: November 16, 2019
   ## CREATED BY: Pali
