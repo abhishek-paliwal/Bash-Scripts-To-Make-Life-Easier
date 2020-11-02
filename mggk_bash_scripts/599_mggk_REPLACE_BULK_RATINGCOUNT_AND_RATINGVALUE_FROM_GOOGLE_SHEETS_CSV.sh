@@ -1,30 +1,7 @@
 #!/bin/bash
-
-#echo "VERY IMPORTANT NOTE: It's dangerous to run this script. Edit this original script if you want to execute it." ;
-#exit 1
-
-################################################################################
 ################################################################################
 THIS_SCRIPT_NAME="$(basename $0)" ;
 REQUIREMENTS_FILE="598_MGGK_RATING_REQUIREMENT_FILE_CSV_FROM_GOOGLE_SHEETS.csv" ;
-############
-## CALCULATION VARIABLES (CHANGE AS NEEDED)
-############
-NUM_DAYS_DATA_IN_REQUIREMENTS_CSVFILE="90" ;
-PERCENTAGE_OF_USERS_WHO_RATED="0.04" ; ## Let's say that 4% users provided rating out of total users
-NEW_RATINGVALUE_CHANGE_FACTOR="4.6" ; ## Let's say that average rating by new users is 4.5
-################################################################################
-#HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/_FIXED" ;
-HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content" ;
-MY_PWD="$HOME_WINDOWS/Desktop/Y"
-cd $MY_PWD ;
-echo "Current working directory = $MY_PWD" ;
-################################################################################
-## SETTING VARIABLES
-TMP_OUTPUT_CSVFILE="$MY_PWD/_TMP_OUTPUT_598_MGGK_RATING_VALID_URLS.csv"
-## INITIALIZING TMP OUTPUT CSV FILE
-echo "MY_MDFILENAME, COUNT, CSVURL, CSVRATINGCOUNT, CSVRATINGVALUE" > $TMP_OUTPUT_CSVFILE
-################################################################################
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
@@ -37,6 +14,12 @@ USAGE: $(basename $0)
   ## USING A CSV FILE DOWNLOADED FROM GOOGLE SHEETS (REQUIREMENTS_FILE). THIS CSV
   ## FILE SHOULD BE PRESENT IN $(pwd) AND SHOULD ONLY HAVE TWO COLUMNS.
   ## COLUMNS = (URL, UNIQUE_PAGEVIEWS_PER_90_DAYS)
+  ##------------------------------------------------------------------------------
+  ## IMPORTANT NOTE:
+  ## MAKE SURE TO DOWNLOAD THE LATEST CSV FILE FROM GOOGLE ANALYTICS EVERY MONTH
+  ## TO UPDATE THE VALUES, CONTAINING DATA FOR LAST 90 DAYS.
+  ## UPDATE DATA IN THIS GOOGLE SHEET ONLINE, THEN DOWNLOAD (AND RENAME) REQUIREMENTS CSV: 
+  ## _For_script_598_MGGK-Analytics-last-90-days#2020_Aug03-Nov01
   ##------------------------------------------------------------------------------
   ## THE REQUIREMENTS_FILE IS $REQUIREMENTS_FILE
   ##------------------------------------------------------------------------------
@@ -58,6 +41,24 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 ## Calling the usage function
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+################################################################################
+#HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/_FIXED" ;
+HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content" ;
+MY_PWD="$HOME_WINDOWS/Desktop/Y"
+cd $MY_PWD ;
+echo "Current working directory = $MY_PWD" ;
+################################################################################
+## SETTING VARIABLES
+TMP_OUTPUT_CSVFILE="$MY_PWD/_TMP_OUTPUT_598_MGGK_RATING_VALID_URLS.csv"
+## INITIALIZING TMP OUTPUT CSV FILE
+echo "MY_MDFILENAME, COUNT, CSVURL, CSVRATINGCOUNT, CSVRATINGVALUE" > $TMP_OUTPUT_CSVFILE
+################################################################################
+## CALCULATION VARIABLES (CHANGE AS NEEDED)
+NUM_DAYS_DATA_IN_REQUIREMENTS_CSVFILE="90" ;
+PERCENTAGE_OF_USERS_WHO_RATED="0.04" ; ## Let's say that 4% users provided rating out of total users
+NEW_RATINGVALUE_CHANGE_FACTOR="4.6" ; ## Let's say that average rating by new users is 4.5
+################################################################################
 
 ## GETTING COLUMN NAMES FROM CSV FILE:
 echo "Following column names are found in CSV FILE => $REQUIREMENTS_FILE" ;
@@ -96,14 +97,16 @@ GET_MD_FILENAME_WITH_THIS_URL () {
 }
 
 ## FUNCTION_2 => REPLACES ORIGINAL RATINGCOUNT IN MD FILE WITH NEW VALUE
-REPLACE_ORIGINAL_RATINGCOUNT_IN_THIS_MD_FILE_WITH_THIS_RATINGCOUNT () {
+REPLACE_ORIGINAL_RATINGCOUNT_RATINGVALUE_IN_THIS_MD_FILE_WITH_NEW_VALUES () {
   ## USAGE: THIS_FUNCION_NAME $1 $2
   ## (WHERE, $1 = MD_FILENAME // $2 = NEW_RATINGCOUNT)
+  ##
+  ################## RATING COUNT CALCULATIONS #######################
   echo;
   mdfile="$1" ;
   EXISTING_RATINGCOUNT="$(grep -irh 'ratingCount: ' $mdfile | sed 's/ratingCount: //g')" ;
   NEW_RATINGCOUNT_TMP="$2" ;
-  NEW_RATINGCOUNT_INCREASED_BY=$(echo "(($NEW_RATINGCOUNT_TMP * $DAYSDIFF_FROM_OCT30_2020 * $PERCENTAGE_OF_USERS_WHO_RATED) / $NUM_DAYS_DATA_IN_REQUIREMENTS_CSVFILE)"  | bc ) ;
+  NEW_RATINGCOUNT_INCREASED_BY=$(echo "(($NEW_RATINGCOUNT_TMP * $DAYS_SINCE_WEBSITE_LAST_UPDATED * $PERCENTAGE_OF_USERS_WHO_RATED) / $NUM_DAYS_DATA_IN_REQUIREMENTS_CSVFILE)"  | bc ) ;
   NEW_RATINGCOUNT=$(echo "$EXISTING_RATINGCOUNT + $NEW_RATINGCOUNT_INCREASED_BY"  | bc ) ;
 
   echo "    mdfile => $mdfile" ;
@@ -114,18 +117,16 @@ REPLACE_ORIGINAL_RATINGCOUNT_IN_THIS_MD_FILE_WITH_THIS_RATINGCOUNT () {
   #sed -i .bak "s|ratingCount: .*$|ratingCount: $NEW_RATINGCOUNT|" $mdfile ;
   #rm $mdfile.bak ;
   echo;
-}
-
-## FUNCTION_3 => REPLACES ORIGINAL RATINGVALUE IN MD FILE WITH NEW VALUE
-REPLACE_ORIGINAL_RATINGVALUE_IN_THIS_MD_FILE_WITH_THIS_RATINGVALUE () {
-  ## USAGE: THIS_FUNCION_NAME $1 $2
-  ## (WHERE, $1 = MD_FILENAME // $2 = NEW_RATINGVALUE)
-  echo;
-  mdfile="$1" ;
+  ##
+  ################## RATING VALUE CALCULATIONS #######################
   EXISTING_RATINGVALUE="$(grep -irh 'ratingValue: ' $mdfile | sed 's/ratingValue: //g')" ;
-  NEW_RATINGVALUE_TMP="$2" ;
-  NEW_RATINGVALUE=$(echo "scale=1; ($EXISTING_RATINGVALUE + $NEW_RATINGVALUE_CHANGE_FACTOR) / 2"  | bc ) ;
-
+  ## Only change ratingValue when there is a change in ratingCount
+  if [ $NEW_RATINGCOUNT_INCREASED_BY != 0 ]; then
+    NEW_RATINGVALUE=$(echo "scale=1; ($EXISTING_RATINGVALUE + $NEW_RATINGVALUE_CHANGE_FACTOR) / 2"  | bc ) ;
+  else 
+    NEW_RATINGVALUE="$EXISTING_RATINGVALUE" ;
+  fi 
+  ##
   echo "    mdfile => $mdfile" ;
   echo "    EXISTING_RATINGVALUE => $EXISTING_RATINGVALUE" ;
   echo "    NEW_RATINGVALUE => $NEW_RATINGVALUE" ;
@@ -139,13 +140,13 @@ REPLACE_ORIGINAL_RATINGVALUE_IN_THIS_MD_FILE_WITH_THIS_RATINGVALUE () {
 ##------------------------------------------------------------------------------
 
 ##################################################################################
-## FINDING THE DATES DIFFERENCE IN DAYS FROM OCT 30 2020 12PM TO THE PROGRAM RUNTIME ...
-source $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/9999_MGGK_TEMPLATE_SCRIPTS/9999_mggk_TEMPLATE_SCRIPT_FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS.sh ;
-OLD_DATE="2020-10-30T12:00:00" ;
-NEW_DATE="$(date +%Y-%m-%dT%H:%M:%S)" ;
-DAYSDIFF_FROM_OCT30_2020=$(FIND_TWO_DATES_DIFFERENCE_FOR_YmdTHMS_on_MacOS_or_Linux $OLD_DATE $NEW_DATE "days") ;
-echo ">>>> NUMBER OF DAYS PASSED SINCE OCT_30_2020 => $DAYSDIFF_FROM_OCT30_2020" ;
+## USER INPUT FOR THE TIME WHEN LAST TIME SITE WAS MADE
+echo ">> Now updating Rating Count and Rating Value ..." ;
+echo ">>>> How many days ago did you make the website last time (ENTER an integer) [0=today, 1=yesterday, 2=2 days ago, etc.]:" ;
+say "How many days ago did you make the website last time (ENTER an integer) ... " ;
+read DAYS_SINCE_WEBSITE_LAST_UPDATED
 ##################################################################################
+
 
 ##------------------------------------------------------------------------------
 ## READING REQUIREMENTS CSV FILE LINE-BY-LINE AND REPLACING RATINGCOUNT AND
@@ -172,8 +173,7 @@ while read line; do
     ########
     if [[ "$MY_MDFILENAME" != "" ]] ; then
         echo "  >>>> RUNNING FUNCTIONS ..." ;
-        REPLACE_ORIGINAL_RATINGCOUNT_IN_THIS_MD_FILE_WITH_THIS_RATINGCOUNT "$MY_MDFILENAME" "$CSVRATINGCOUNT"
-        REPLACE_ORIGINAL_RATINGVALUE_IN_THIS_MD_FILE_WITH_THIS_RATINGVALUE "$MY_MDFILENAME" "$CSVRATINGVALUE"
+        REPLACE_ORIGINAL_RATINGCOUNT_RATINGVALUE_IN_THIS_MD_FILE_WITH_NEW_VALUES "$MY_MDFILENAME" "$CSVRATINGCOUNT"
         echo "\"$MY_MDFILENAME\",\"$COUNT\", \"$CSVURL\", \"$CSVRATINGCOUNT\", \"$CSVRATINGVALUE\"" >> $TMP_OUTPUT_CSVFILE
     fi
     ########
