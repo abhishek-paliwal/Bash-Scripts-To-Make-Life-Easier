@@ -1,7 +1,7 @@
 #!/bin/bash
 ################################################################################
 THIS_SCRIPT_NAME="$(basename $0)" ;
-REQUIREMENTS_FILE="598_MGGK_RATING_REQUIREMENT_FILE_CSV_FROM_GOOGLE_SHEETS.csv" ;
+REQUIREMENTS_FILE="599_MGGK_RATING_REQUIREMENT_FILE_CSV_FROM_GOOGLE_SHEETS.csv" ;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
@@ -19,7 +19,7 @@ USAGE: $(basename $0)
   ## MAKE SURE TO DOWNLOAD THE LATEST CSV FILE FROM GOOGLE ANALYTICS EVERY MONTH
   ## TO UPDATE THE VALUES, CONTAINING DATA FOR LAST 90 DAYS.
   ## UPDATE DATA IN THIS GOOGLE SHEET ONLINE, THEN DOWNLOAD (AND RENAME) REQUIREMENTS CSV: 
-  ## _For_script_598_MGGK-Analytics-last-90-days#2020_Aug03-Nov01
+  ## _For_script_599_MGGK-Analytics-last-90-days#2020_Aug03-Nov01
   ##------------------------------------------------------------------------------
   ## THE REQUIREMENTS_FILE IS $REQUIREMENTS_FILE
   ##------------------------------------------------------------------------------
@@ -44,7 +44,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 ################################################################################
 #HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/_FIXED" ;
-HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content" ;
+HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/popular-posts" ;
 MY_PWD="$HOME_WINDOWS/Desktop/Y"
 cd $MY_PWD ;
 echo "Current working directory = $MY_PWD" ;
@@ -113,9 +113,9 @@ REPLACE_ORIGINAL_RATINGCOUNT_RATINGVALUE_IN_THIS_MD_FILE_WITH_NEW_VALUES () {
   echo "    EXISTING_RATINGCOUNT => $EXISTING_RATINGCOUNT" ;
   echo "    NEW_RATINGCOUNT_INCREASED_BY => $NEW_RATINGCOUNT_INCREASED_BY" ;
   echo "    NEW_RATINGCOUNT => $NEW_RATINGCOUNT" ;
-  #echo "    >>>> Updating new ratingCount value ..." ;
-  #sed -i .bak "s|ratingCount: .*$|ratingCount: $NEW_RATINGCOUNT|" $mdfile ;
-  #rm $mdfile.bak ;
+  echo "    >>>> Updating new ratingCount value ..." ;
+  sed -i .bak "s|ratingCount: .*$|ratingCount: $NEW_RATINGCOUNT|" $mdfile ;
+  rm $mdfile.bak ;
   echo;
   ##
   ################## RATING VALUE CALCULATIONS #######################
