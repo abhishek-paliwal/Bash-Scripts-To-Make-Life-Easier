@@ -233,3 +233,9 @@ while read line; do
 
 done < $REQUIREMENTS_FILE;
 ##------------------------------------------------------------------------------
+
+###################################################################
+## OUTPUTTTING TIME TO SUMMARY FILE
+SUMMARY_DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/_mggk_summary_files" ;
+SUMMARY_FILE="$SUMMARY_DIR/_mggk_summary_rating_last_updated.txt" ;
+echo "RATING_LAST_UPDATED: $(date +%Y-%m-%dT%H:%M:%S)" > $SUMMARY_FILE
