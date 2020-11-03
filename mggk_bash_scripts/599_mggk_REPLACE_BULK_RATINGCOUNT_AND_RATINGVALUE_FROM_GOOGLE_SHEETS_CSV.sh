@@ -3,7 +3,10 @@
 THIS_SCRIPT_NAME="$(basename $0)" ;
 REQUIREMENTS_FILE_DIR="$DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/_REQUIREMENT_FILES_MGGK" ;
 REQUIREMENTS_FILE="$REQUIREMENTS_FILE_DIR/599_MGGK_RATING_REQUIREMENT_FILE_CSV_FROM_GOOGLE_SHEETS.csv" ;
-
+##
+SUMMARY_DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/_mggk_summary_files" ;
+SUMMARY_FILE="$SUMMARY_DIR/_mggk_summary_rating_last_updated.txt" ;
+##
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
 usage()
@@ -182,9 +185,14 @@ REPLACE_ORIGINAL_RATINGCOUNT_RATINGVALUE_IN_THIS_MD_FILE_WITH_NEW_VALUES () {
 ## USER INPUT FOR THE TIME WHEN LAST TIME SITE WAS MADE
 echo; echo "##################################################################################" ;
 echo "####################### ENTER USER INPUT ####################################" ; echo; 
-say "Updating Rating Count and Rating Value ... How many days ago did you make the website last time (ENTER an integer) ... " ;
-echo ">> Now updating Rating Count and Rating Value ..." ;
-echo ">>>> How many days ago did you make the website last time (ENTER an integer) [0=today, 1=yesterday, 2=2 days ago, etc.]:" ;
+say "Updating Rating Count and Rating Value ... How many days ago did you make the website last time (ENTER an integer, Or simply press ENTER key for no rating update) ... " ;
+echo ">> Now updating Rating Count and Rating Value ..." ; echo;
+##
+echo ">>> $(cat $SUMMARY_FILE | sed 's///g' | head -1) = [INFO // RATINGS LAST UPDATED ON]" ; 
+echo ">>> $(date +%Y-%m-%d) = DATE RIGHT NOW" ; echo; 
+##
+echo ">>>> [SEE ABOVE INFO] How many days ago did you make the website last time (ENTER an integer // 0=EXIT THIS SCRIPT) [0=today, 1=yesterday, 2=2 days ago, etc.]:" ;
+echo ">>>> Press 0 then ENTER key, or simply ENTER key to MAKE NO CHANGE TO EXISTING RATINGS ... " ;
 read DAYS_SINCE_WEBSITE_LAST_UPDATED
 ## Exit this script if zero entered
 if [ "$DAYS_SINCE_WEBSITE_LAST_UPDATED" == 0 ] || [ "$DAYS_SINCE_WEBSITE_LAST_UPDATED" == "" ] ; then 
@@ -227,6 +235,4 @@ done < $REQUIREMENTS_FILE;
 
 ###################################################################
 ## OUTPUTTTING TIME TO SUMMARY FILE
-SUMMARY_DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/_mggk_summary_files" ;
-SUMMARY_FILE="$SUMMARY_DIR/_mggk_summary_rating_last_updated.txt" ;
 echo "RATING_LAST_UPDATED: $(date +%Y-%m-%dT%H:%M:%S)" > $SUMMARY_FILE
