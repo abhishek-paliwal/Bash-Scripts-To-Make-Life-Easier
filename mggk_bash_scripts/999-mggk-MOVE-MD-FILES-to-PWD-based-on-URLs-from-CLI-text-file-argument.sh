@@ -41,25 +41,25 @@ input="$1"
 ## READING THIS FILE LINE BY LINE
 while IFS= read -r line
 do
-#########################################
-echo; 
-echo "FOUND LINE => $line" ;
+  #########################################
+  echo; 
+  echo "FOUND LINE => $line" ;
 
-## Reomving the domain name part from each line
-line=$(echo $line | sed 's+http://localhost:1313++g' | sed 's+https://www.mygingergarlickitchen.com++g' ) ;
+  ## Reomving the domain name part from each line
+  line=$(echo $line | sed 's+http://localhost:1313++g' | sed 's+https://www.mygingergarlickitchen.com++g' ) ;
 
-####
-for mdfile in $SOURCE_DIR/*.md ; do
-  url=$(grep -irh 'url: ' $mdfile | sed 's/url: //g') ;
-  if [ "$url" = "$line" ] ; then 
-    echo; 
-    echo ">>>> $line = LINE IN URLS FILE" ;
-    echo ">>>> $url = URL FOUND IN $mdfile" ;
-    mv $mdfile $DIR_TO_MOVE/
-    echo ">>>> This MDFILE is moved to => $DIR_TO_MOVE" ;
-  fi
-done
-#########################################
+  ####
+  for mdfile in $SOURCE_DIR/*.md ; do
+    url=$(grep -irh 'url: ' $mdfile | sed 's/url: //g') ;
+    if [ "$url" = "$line" ] ; then 
+      echo; 
+      echo ">>>> $line = LINE IN URLS FILE" ;
+      echo ">>>> $url = URL FOUND IN $mdfile" ;
+      mv $mdfile $DIR_TO_MOVE/
+      echo ">>>> This MDFILE is moved to => $DIR_TO_MOVE" ;
+    fi
+  done
+  #########################################
 done < "$input"
 
 ################################################################################
