@@ -3,7 +3,7 @@
 ##################################################################################
 ## SOME VARIABLES (CHANGE THE SOURCE DIR IF NEEDED)
 #SOURCE_DIR="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/_FIXED/top-01-50" ;
-SOURCE_DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/594x" ;
+SOURCE_DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content" ;
 DIR_TO_MOVE="$HOME_WINDOWS/Desktop/Y/_TMP_md_files_moved-$(basename $SOURCE_DIR)" ;
 ##################################################################################
 
@@ -73,7 +73,6 @@ cat $input | sed 's+http://localhost:1313++g' | sed 's+https://www.mygingergarli
 ## Finding the differences between the 2 tmp files
 echo; 
 echo "##------------------------------------------------------------------------------" ;
-echo ">> FOLLOWING LINES IN INPUT TXT FILE (= $1) ARE NOT FOUND AS VALID ..." ;
-echo ">> ... RECIPE MD FILES PRESENT IN GIVEN SOURCE DIRECTORY = $SOURCE_DIR" ;
+echo ">> FOLLOWING LINES IN INPUT TXT FILE (= $1) ARE NOT FOUND AS VALID RECIPE MD FILES PRESENT IN GIVEN SOURCE DIRECTORY = $SOURCE_DIR" ;
 diff _tmp1.txt _tmp2.txt  | grep -i '>' | nl
 echo "##------------------------------------------------------------------------------" ;
