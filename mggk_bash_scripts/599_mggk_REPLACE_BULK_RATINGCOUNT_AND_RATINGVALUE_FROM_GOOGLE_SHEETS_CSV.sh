@@ -188,7 +188,7 @@ echo "####################### ENTER USER INPUT #################################
 say "Updating Rating Count and Rating Value ... How many days ago did you make the website last time (ENTER an integer, Or simply press ENTER key for no rating update) ... " ;
 echo ">> Now updating Rating Count and Rating Value ..." ; echo;
 ##
-echo ">>> $(cat $SUMMARY_FILE | sed 's///g' | head -1) = [INFO // RATINGS LAST UPDATED ON]" ; 
+echo ">>> $(cat $SUMMARY_FILE | sed 's/RATING_LAST_UPDATED://g' | head -1) = [INFO // RATINGS LAST UPDATED ON]" ; 
 echo ">>> $(date +%Y-%m-%d) = DATE RIGHT NOW" ; echo; 
 ##
 echo ">>>> [SEE ABOVE INFO] How many days ago did you make the website last time (ENTER an integer // 0=EXIT THIS SCRIPT) [0=today, 1=yesterday, 2=2 days ago, etc.]:" ;
