@@ -17,7 +17,9 @@ USAGE: $(basename $0)
   ## THIS SCRIPT TAKES A TEXT FILE CONTAINING URLs AS COMMAND LINE ARGUMENT
   ## INPUT AND READS IT LINE BY LINE.
   ## BASED ON THOSE LINES, IT MOVES ALL MD FILES FROM A GIVEN SOURCE DIRECTORY TO CWD.
-  ## Example: SOURCE_DIR (change this if needed) => $SOURCE_DIR 
+  ## >> CURRENT GIVEN SOURCE DIRECTORY = $SOURCE_DIR
+  ## >> CURRENT DIRECTORY TO MOVE FILES TO = $SOURCE_DIR
+  ## Example: SOURCE_DIR (change this if needed) => $DIR_TO_MOVE 
   ###############################################################################
   ## USAGE: bash THIS_SCRIPT_NAME \$1
   ###############################################################################
@@ -47,18 +49,22 @@ do
 
   ## Reomving the domain name part from each line
   line=$(echo $line | sed 's+http://localhost:1313++g' | sed 's+https://www.mygingergarlickitchen.com++g' ) ;
+  echo ">>>> READING CURRENT LINE = $line" ; echo; 
 
   ####
-  for mdfile in $SOURCE_DIR/*.md ; do
+  ## Looping through all md files found in SOURCE_DIR
+  for mdfile in $(find $SOURCE_DIR/ -type f -name "*.md") ; do
     url=$(grep -irh 'url: ' $mdfile | sed 's/url: //g') ;
+    #echo ">>>> CURRENT URL FOUND: $url" ; 
     if [ "$url" = "$line" ] ; then 
       echo; 
       echo ">>>> $line = LINE IN URLS FILE" ;
       echo ">>>> $url = URL FOUND IN $mdfile" ;
       mv $mdfile $DIR_TO_MOVE/
-      echo ">>>> This MDFILE is moved to => $DIR_TO_MOVE" ;
+      echo ">>>> SUCCESS: This MDFILE is moved to => $DIR_TO_MOVE" ;
     fi
   done
+  ####
   #########################################
 done < "$input"
 
