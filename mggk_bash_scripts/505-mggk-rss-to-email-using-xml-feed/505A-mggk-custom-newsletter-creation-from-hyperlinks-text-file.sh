@@ -68,11 +68,17 @@ echo "<!doctype html>
 		<title>Latest delicious recipes from My Ginger Garlic Kitchen</title>
 	</head>
 	<body>
-	<div class='container'>" > $OUTPUT_HTML_FILE ; ## Initializing the HTML file
+  
+  <div class='container'>" > $OUTPUT_HTML_FILE ; ## Initializing the HTML file
 
-echo "<p>Hello [Name,fallback=]</p><p><strong>🍴Here are the latest recipes from <a href='https://www.mygingergarlickitchen.com/' target='_blank'>our blog</a> and recipe videos from <a href='https://www.youtube.com/user/anupamabhishek/' target='_blank'>our youtube channel</a> directly to your inbox.</strong></p><p>Simply click the buttons below to watch the how-to videos and to download recipes.</p>" >> $OUTPUT_HTML_FILE ;
+echo "<p style='font-size: 18px'; >Hello [Name,fallback=]</p>
+<p style='font-size: 18px'; ><strong>🍴Here are the latest recipes from <a href='https://www.mygingergarlickitchen.com/' target='_blank'>our blog</a> and recipe videos from <a href='https://www.youtube.com/user/anupamabhishek/' target='_blank'>our youtube channel</a> directly to your inbox.</strong></p>
+<p style='font-size: 18px'; >Simply click the buttons below to watch the how-to videos and to download recipes.</p>" >> $OUTPUT_HTML_FILE ;
 
-echo "<p style='text-align: center; color: #cd1c62; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ;
+echo "<p style='font-size: 18px;'>I hope you will love them.<br><br>Best wishes,</p>
+<p style='font-size: 18px;'><img align='none' height='35' src='https://gallery.mailchimp.com/126a7c0d8271b7ec930c15e67/images/623b3f2b-7d5f-426d-857a-2c3175fdd285.png' style='width: 110px; height: 35px;'></p>" >> $OUTPUT_HTML_FILE ;
+
+echo "<p style='font-size: 18px; text-align: center; color: #cd1c62; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ;
 
 echo "<center>" >> $OUTPUT_HTML_FILE; 
 
@@ -124,9 +130,9 @@ echo ""  >> $OUTPUT_HTML_FILE;
 
 
         ## PRINTING TO HTML
-        echo "<h3><a style='color: #cd1c62;' href='$URL'>$COUNT.) $TITLE</a></h3>" >> $OUTPUT_HTML_FILE;
-        echo "<p>$META_DESCRIPTION</p>" >> $OUTPUT_HTML_FILE ;
-        echo "<p><a href='$URL'><img src='$IMAGE' alt='$TITLE' width='400' height='600' /></a></p>" >> $OUTPUT_HTML_FILE;  
+        echo "<h3 style='font-size:24px;'><a style='color: #cd1c62;' href='$URL'>$COUNT.) $TITLE</a></h3>" >> $OUTPUT_HTML_FILE;
+        echo "<p style='font-size: 18px'; >$META_DESCRIPTION</p>" >> $OUTPUT_HTML_FILE ;
+        echo "<p style='font-size: 18px'; ><a href='$URL'><img src='$IMAGE' alt='$TITLE' width='400' height='600' /></a></p>" >> $OUTPUT_HTML_FILE;  
 
         echo "<div style='background-color: #cd1c62;
         border: 2px solid #cd1c62;
@@ -137,7 +143,7 @@ echo ""  >> $OUTPUT_HTML_FILE;
         display: inline-block;'>
         <a style='color: white;' href='$URL' target='_blank'>Check out full post &rarr;</a></div>" >> $OUTPUT_HTML_FILE ;
         
-        echo "<p style='text-align: center; color: #cd1c62; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ;
+        echo "<p style='font-size: 18px; text-align: center; color: #cd1c62; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ;
 
         (( COUNT++ ))
 
@@ -147,17 +153,13 @@ echo ""  >> $OUTPUT_HTML_FILE;
 ###############################################################################
 
 ################################################################################
-echo "<hr>
-<strong>I hope you will love them.<br><br>Best wishes,</strong>
-<br>
-<img align='none' height='35' src='https://gallery.mailchimp.com/126a7c0d8271b7ec930c15e67/images/623b3f2b-7d5f-426d-857a-2c3175fdd285.png' style='width: 110px; height: 35px;'>
 
-<!-- Google Analytics Image -->
-<img src='http://www.google-analytics.com/collect?v=1&amp;tid=UA-48712319-2&amp;cid=mggkmailchimp&amp;t=event&amp;ec=dailyemailmailChimp&amp;ea=open&amp;el=dailyemailmailChimp&amp;cs=gmail-inbox&amp;cm=email&amp;cn=dailyemailmailChimp' style='border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;height: auto !important;'>" >> $OUTPUT_HTML_FILE ;
 
 
 echo "<hr>" >> $OUTPUT_HTML_FILE ;
-echo "<p>&nbsp;</p>" >> $OUTPUT_HTML_FILE ;
+echo "<p><!-- Google Analytics Image -->
+<img src='http://www.google-analytics.com/collect?v=1&amp;tid=UA-48712319-2&amp;cid=mggkmailchimp&amp;t=event&amp;ec=dailyemailmailChimp&amp;ea=open&amp;el=dailyemailmailChimp&amp;cs=gmail-inbox&amp;cm=email&amp;cn=dailyemailmailChimp' style='border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;height: auto !important;'></p>" >> $OUTPUT_HTML_FILE ;
+
 echo "<webversion>View web version</webversion> // <unsubscribe>Unsubscribe</unsubscribe>" >> $OUTPUT_HTML_FILE ;
 echo "<p><a href='https://www.mygingergarlickitchen.com' target='_blank'><img src='https://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/mggk-new-logo-transparent-150px.png' width='100px' ;></img></a></p>" >> $OUTPUT_HTML_FILE ;
 
