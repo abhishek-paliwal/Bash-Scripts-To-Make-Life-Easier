@@ -68,7 +68,7 @@ pali_spellings_check_in_this_directory
 999-mggk-convert-each-line-in-text-file-to-HTML-hyperlinks
 999-mggk-opening-hyperlinks-in-browser-for-checking
 999-mggk-2020-MICROSOFT-BING-BATCH-URL-SUBMISSION
-999-mggk-PERSONAL-COMMANDS-FOR-ANU.sh ) ;
+my_commands_for_ANU) ;
 
 ## PRINTING ALL ELEMENTS OF THE COMMAND ARRAY
 echo;
