@@ -25,7 +25,17 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+##################################################################################
+## ONLY RUN THIS SCRIPT ON UBUNTU MACHINE, AND NOT ON MAC OS
+## Because the sed command on MAC OS returns a different output
+if [ $(uname) = "Darwin" ] ; then
+    echo "IMPORTANT NOTE: This is MAC OS. This script will exit now. Run this program only from a Linux (ubuntu) Machine." ;
+    echo ; 
+    exit 1 ;
+fi 
+##################################################################################
 
+## SETTING VARIABLES
 HUGO_CONTENT_DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/_FIXED" ;
 DIR_TO_MOVE_FAQS_FILES="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/FAQS" ;
 DIR_TO_MOVE_SUMMARY_FILE="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
