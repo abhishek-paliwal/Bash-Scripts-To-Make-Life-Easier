@@ -9,13 +9,15 @@ usage()
 cat <<EOM
 USAGE: $(basename $0)
     ################################################################################
-    ## FILENAME = $THIS_SCRIPT_NAME
     ## USAGE:
-    #### > bash $THIS_SCRIPT_NAME
+    #### > bash $THIS_SCRIPT_NAME \$1
+    #### WHERE, \$1 CAN BE ONE OF (anu, pali, leela)
     ################################################################################
-    ## THIS SCRIPT SHOWS A LIST OF PERSONAL COMMANDS TO BE USED REGARDING MGGK WEBSITE 
+    ## THIS SCRIPT SHOWS A LIST OF PERSONAL COMMANDS TO BE USED BY DIFFERENT USERS 
     ## AND ASKS FOR USER INPUT ABOUT WHICH COMMAND THE USER WANTS TO RUN FROM THAT 
     ## LIST. FINALLY, IT RUNS THE CHOSEN COMMAND.
+    ################################################################################
+    ## REQUIREMENT: THIS SCRIPT NEEDS A CLI ARGUMENT TO RUN.
     ################################################################################
     ## CREATED BY: PALI
     ## CREATED ON: NOV 05, 2020
@@ -28,30 +30,47 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-##################################################################################
-WORKING_DIR="$HOME_WINDOWS/Desktop/Y" ;
-PWD=$(pwd);
-echo;
-echo "## PRESENT WORKING DIRECTORY = $PWD" ;
-
 ##############################################################################
-############ EXPANDING ALIASES ON NON-INTERATIVE SHELL SCRIPTS ###############
-## For Running system commands (as Aliases from .bash_profile)
+############ BEGIN: EXPANDING ALIASES ON NON-INTERATIVE SHELL SCRIPTS ########
 shopt -s expand_aliases ## for BASH: This has to be done, else, aliases are not expanded in scripts.
 ##
 ## IF THE HOME USER IS UBUNTU, CHANGE SOME DEFAULT VARIABLES (BCOZ WE ARE USING WSL)
-if [ "$USER"=="ubuntu" ] ; then 
-    source $HOME/.profile
-    source $HOME/.bash_aliases ## Then, this also has to be done to use aliases in this script.
-else 
-    source $HOME/.bash_profile
-    source $HOME/.bash_aliases ## Then, this also has to be done to use aliases in this script.
+echo; 
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+echo "IMPORTANT NOTE: This OS is $(uname) ... aliases and profile will be sourced now." ; 
+echo "IMPORTANT NOTE: YOU CAN DISREGARD THIS ERROR BELOW: alias: bash: not found" ; 
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+echo; 
+if [ "$(uname)" == "Linux" ] ; then 
+    source $HOME/.profile ;
+    source $HOME/.bash_aliases ; ## Then, this also has to be done to use aliases in this script.
+else
+    source $HOME/.bash_profile ;
+    source $HOME/.bash_aliases ; ## Then, this also has to be done to use aliases in this script.
 fi 
+############ END: EXPANDING ALIASES ON NON-INTERATIVE SHELL SCRIPTS ##########
 ##############################################################################
 
+WORKING_DIR="$DIR_Y" ;
+PWD=$WORKING_DIR ;
+echo ;
+echo "################################################################################" ; 
+echo "## PRESENT WORKING DIRECTORY = $PWD" ;
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## GET THE USER FROM THE CLI ARGUMENT:
+WHICH_USER=$1;
+if [ -z "$WHICH_USER" ] ; then 
+  echo; 
+  echo ">>>> FAILURE: No CLI argument given. Please provide one." ; 
+  exit 1 ; 
+echo;  
+fi 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 ##############################################################################
-## DECLARING COMMAND LIST ARRAY, ONE COMMAND PER LINE (NO COMMAS)
-MY_COMMANDS_ARRAY=(makesite_mggk
+## DECLARING COMMAND LIST ARRAYS FOR EACH USER, ONE COMMAND PER LINE (NO COMMAS)
+ANU_COMMANDS_ARRAY=(makesite_mggk
 frontm
 algolia_search_for_this_phrase
 pali_spellings_check_in_this_directory
@@ -68,6 +87,38 @@ pali_spellings_check_in_this_directory
 999-mggk-convert-each-line-in-text-file-to-HTML-hyperlinks
 999-mggk-opening-hyperlinks-in-browser-for-checking
 999-mggk-2020-MICROSOFT-BING-BATCH-URL-SUBMISSION) ;
+
+##
+PALI_COMMANDS_ARRAY=(palinotes_makesite_hugo
+frontp
+1_all_backup_indexes_maker
+pali_0000_create_html_index_with_usage_help_for_all_bash_scripts
+pali_copy_aspell_personal_words_for_this_user
+pali_countfiles
+pali_filepath_printing
+pali_imagesinfo
+pali_move_videos_and_photos_to_separate_folders
+pali_move_videos_and_photos_to_separate_folders_win
+pali_pathlength_printing
+pali_print_video_and_image_dimensions_using_ffprobe
+pali_spellings_add_in_personal_words
+pali_spellings_check_in_this_directory
+pali_takeout_google_unzip_all_sequential_zip_files) ;
+
+##
+LEELA_COMMANDS_ARRAY=(leelasrecipes_makesite_hugo
+frontl
+leelasrecipes-MOVE-ALL-PWD-IMAGES-TO-PROPER-WEBSITE-FOLDER
+leelasrecipes_check_spellings
+leelasrecipes_rename_images-with-custom-prefix-and-counters
+leelasrecipes-CREATE-AND-SAVE-SITE-STATISTICS
+leelasrecipes-MAKE-VIDEO-SITEMAP-XML) ;
+
+## Assign the corresponding user array to the new array variable
+if [ "$WHICH_USER" == "anu" ] ; then MY_COMMANDS_ARRAY=( "${ANU_COMMANDS_ARRAY[@]}" ) ; fi
+if [ "$WHICH_USER" == "pali" ] ; then MY_COMMANDS_ARRAY=( "${PALI_COMMANDS_ARRAY[@]}" ) ; fi
+if [ "$WHICH_USER" == "leela" ] ; then MY_COMMANDS_ARRAY=( "${LEELA_COMMANDS_ARRAY[@]}" ) ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ## PRINTING ALL ELEMENTS OF THE COMMAND ARRAY
 echo;
