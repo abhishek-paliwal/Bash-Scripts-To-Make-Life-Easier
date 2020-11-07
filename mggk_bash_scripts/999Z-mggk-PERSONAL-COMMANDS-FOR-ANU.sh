@@ -67,8 +67,7 @@ pali_spellings_check_in_this_directory
 999-mggk-MOVE-MD-FILES-to-PWD-based-on-URLs-from-CLI-text-file-argument
 999-mggk-convert-each-line-in-text-file-to-HTML-hyperlinks
 999-mggk-opening-hyperlinks-in-browser-for-checking
-999-mggk-2020-MICROSOFT-BING-BATCH-URL-SUBMISSION
-my_commands_for_ANU) ;
+999-mggk-2020-MICROSOFT-BING-BATCH-URL-SUBMISSION) ;
 
 ## PRINTING ALL ELEMENTS OF THE COMMAND ARRAY
 echo;
