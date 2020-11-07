@@ -107,7 +107,7 @@ pali_takeout_google_unzip_all_sequential_zip_files) ;
 
 ##
 LEELA_COMMANDS_ARRAY=(leelasrecipes_makesite_hugo
-frontl
+frontl_leelasrecipes
 leelasrecipes-MOVE-ALL-PWD-IMAGES-TO-PROPER-WEBSITE-FOLDER
 leelasrecipes_check_spellings
 leelasrecipes_rename_images-with-custom-prefix-and-counters
