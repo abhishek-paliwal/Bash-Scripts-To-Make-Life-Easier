@@ -88,8 +88,7 @@ pali_spellings_check_in_this_directory
 999-mggk-opening-hyperlinks-in-browser-for-checking
 999-mggk-2020-MICROSOFT-BING-BATCH-URL-SUBMISSION
 999A-mggk-MATCH-WORDS-IN-MD-FILE-WITH-EXISTING-URLS-LIKE-WORDPRESS
-999B-mggk-CREATE-SEARCH-ENGINE-LINKS-FOR-ALL-URLS
-pali_mggk_RSYNC_REPOS_MGGK_AND_ZZMGGK) ;
+999B-mggk-CREATE-SEARCH-ENGINE-LINKS-FOR-ALL-URLS) ;
 
 ##
 PALI_COMMANDS_ARRAY=(palinotes_makesite_hugo
