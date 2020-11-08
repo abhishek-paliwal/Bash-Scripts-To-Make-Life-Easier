@@ -88,7 +88,8 @@ pali_spellings_check_in_this_directory
 999-mggk-opening-hyperlinks-in-browser-for-checking
 999-mggk-2020-MICROSOFT-BING-BATCH-URL-SUBMISSION
 999A-mggk-MATCH-WORDS-IN-MD-FILE-WITH-EXISTING-URLS-LIKE-WORDPRESS
-999B-mggk-CREATE-SEARCH-ENGINE-LINKS-FOR-ALL-URLS) ;
+999B-mggk-CREATE-SEARCH-ENGINE-LINKS-FOR-ALL-URLS
+pali_mggk_RSYNC_REPOS_MGGK_AND_ZZMGGK) ;
 
 ##
 PALI_COMMANDS_ARRAY=(palinotes_makesite_hugo
@@ -106,7 +107,8 @@ pali_print_video_and_image_dimensions_using_ffprobe
 pali_spellings_add_in_personal_words
 pali_spellings_check_in_this_directory
 pali_takeout_google_unzip_all_sequential_zip_files
-pali_git_status_for_all_repos) ;
+pali_git_status_for_all_repos
+pali_mggk_RSYNC_REPOS_MGGK_AND_ZZMGGK) ;
 
 ##
 LEELA_COMMANDS_ARRAY=(leelasrecipes_makesite_hugo
