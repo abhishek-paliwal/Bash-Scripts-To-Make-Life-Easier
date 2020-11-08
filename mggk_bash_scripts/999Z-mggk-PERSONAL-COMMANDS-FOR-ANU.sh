@@ -86,7 +86,9 @@ pali_spellings_check_in_this_directory
 999-mggk-MOVE-MD-FILES-to-PWD-based-on-URLs-from-CLI-text-file-argument
 999-mggk-convert-each-line-in-text-file-to-HTML-hyperlinks
 999-mggk-opening-hyperlinks-in-browser-for-checking
-999-mggk-2020-MICROSOFT-BING-BATCH-URL-SUBMISSION) ;
+999-mggk-2020-MICROSOFT-BING-BATCH-URL-SUBMISSION
+999A-mggk-MATCH-WORDS-IN-MD-FILE-WITH-EXISTING-URLS-LIKE-WORDPRESS
+999B-mggk-CREATE-SEARCH-ENGINE-LINKS-FOR-ALL-URLS) ;
 
 ##
 PALI_COMMANDS_ARRAY=(palinotes_makesite_hugo
@@ -109,6 +111,7 @@ pali_git_status_for_all_repos) ;
 ##
 LEELA_COMMANDS_ARRAY=(leelasrecipes_makesite_hugo
 frontl_leelasrecipes
+1x1
 leelasrecipes-MOVE-ALL-PWD-IMAGES-TO-PROPER-WEBSITE-FOLDER
 leelasrecipes_check_spellings
 leelasrecipes_rename_images-with-custom-prefix-and-counters
