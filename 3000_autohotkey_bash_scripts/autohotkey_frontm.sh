@@ -30,7 +30,12 @@ cd $BASEDIR
 echo ">>>> Current working directory is: $BASEDIR" ;
 echo ">>>> IMPORTANT NOTE: This script needs a command line argument to run." ;
 
-DATE=$(date -v -12H +%Y-%m-%dT%H:%M:%S) ;
+if [ "$(uname)" == "Linux" ] ; then 
+    DATE=$(date -d '12 hour ago' +%Y-%m-%dT%H:%M:%S) ;
+else
+    DATE=$(date -v -12H +%Y-%m-%dT%H:%M:%S) ;
+fi 
+
 PUBDATE=$DATE ;
 
 YEAR=$(date +%Y)
