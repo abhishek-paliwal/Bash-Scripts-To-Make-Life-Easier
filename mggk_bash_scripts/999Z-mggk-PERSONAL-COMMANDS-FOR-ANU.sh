@@ -76,6 +76,8 @@ algolia_search_for_this_phrase
 pali_spellings_check_in_this_directory
 1x1
 10-mggk-create-images-index-page-for-current-year
+505_mggk-rss-to-email-xml-feed-parser
+505A-mggk-custom-newsletter-creation-from-hyperlinks-text-file
 506-mggk-search-word-in-tags-and-categories
 599_mggk_REPLACE_BULK_RATINGCOUNT_AND_RATINGVALUE_FROM_GOOGLE_SHEETS_CSV
 599-mggk-CREATE-AND-SAVE-SITE-STATISTICS
