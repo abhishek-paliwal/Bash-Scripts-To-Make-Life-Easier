@@ -23,7 +23,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 ##################################################################################
 HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content"
-FILE_OUTPUT_SITESTATS="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/sitestats.html"
+FILE_OUTPUT_SITESTATS="$DIR_DROPBOX_SCRIPTS_OUTPUT/sitestats.html"
 
 echo "##------------------------------------------------------------------------------" ;
 echo ">> GATHERING IMPORTANT SITE STATS FOR MGGK HUGO WEBSITE ..." ;
