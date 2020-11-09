@@ -108,8 +108,8 @@ pali_print_video_and_image_dimensions_using_ffprobe
 pali_spellings_add_in_personal_words
 pali_spellings_check_in_this_directory
 pali_takeout_google_unzip_all_sequential_zip_files
-pali_git_status_for_all_repos
-pali_mggk_RSYNC_REPOS_MGGK_AND_ZZMGGK) ;
+pali_mggk_RSYNC_REPOS_MGGK_AND_ZZMGGK
+pali_git_status_for_all_repos) ;
 
 ##
 LEELA_COMMANDS_ARRAY=(leelasrecipes_makesite_hugo
