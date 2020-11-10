@@ -23,7 +23,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 ##################################################################################
 HUGO_CONTENT_DIR="$REPO_MGGK/content" ;
-FILE_OUTPUT_SITESTATS="$REPO_MGGK/static/sitestats.html" ;
+FILE_OUTPUT_SITESTATS="$REPO_MGGK_SUMMARY/mggk-sitestats.html" ;
 
 
 echo "##------------------------------------------------------------------------------" ;
@@ -200,3 +200,5 @@ echo "</pre>" >> $FILE_OUTPUT_SITESTATS
 echo;
 echo ">> SUMMARY >> " ;
 echo ">> STATISTICS FILE SAVED AS => $FILE_OUTPUT_SITESTATS" ;
+## COPY this file to Dropbox dir
+cp $FILE_OUTPUT_SITESTATS $DIR_DROPBOX_SCRIPTS_OUTPUT/

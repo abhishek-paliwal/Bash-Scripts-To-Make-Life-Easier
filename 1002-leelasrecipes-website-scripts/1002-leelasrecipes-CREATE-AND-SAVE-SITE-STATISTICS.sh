@@ -21,9 +21,9 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-HUGO_BASE_DIR="$DIR_GITHUB/2020-LEELA-RECIPES"
-HUGO_CONTENT_DIR="$DIR_GITHUB/2020-LEELA-RECIPES/content"
-FILE_OUTPUT_SITESTATS="$DIR_GITHUB/2020-LEELA-RECIPES/static/sitestats.html"
+HUGO_BASE_DIR="$REPO_LEELA"
+HUGO_CONTENT_DIR="$REPO_LEELA/content"
+FILE_OUTPUT_SITESTATS="$REPO_LEELA_SUMMARY/leelasrecipes-sitestats.html"
 
 ##------------------ DO NOT CHANGE ANYTHING BELOW ------------------------------
 ## OUTPUT FILE CREATED AT (+ initializing the output file):
@@ -126,3 +126,10 @@ echo "$NUMBER_OF_POSTS_BY_EACH_DATE" >> $FILE_OUTPUT_SITESTATS
 
 echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
 echo "</pre>" >> $FILE_OUTPUT_SITESTATS
+
+##################################################################################
+echo;
+echo ">> SUMMARY >> " ;
+echo ">> STATISTICS FILE SAVED AS => $FILE_OUTPUT_SITESTATS" ;
+## COPY this file to Dropbox dir
+cp $FILE_OUTPUT_SITESTATS $DIR_DROPBOX_SCRIPTS_OUTPUT/
