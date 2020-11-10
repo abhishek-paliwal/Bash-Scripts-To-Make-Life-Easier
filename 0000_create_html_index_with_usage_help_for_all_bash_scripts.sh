@@ -1,6 +1,6 @@
 #/bin/bash
 ##################################################################################
-OUTPUT_DIR="$HOME_WINDOWS/Dropbox/Public/_TO_SYNC_downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs"
+OUTPUT_DIR="$DIR_DROPBOX_SCRIPTS_OUTPUT"
 ##################################################################################
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -39,7 +39,7 @@ echo ">> PWD = $(pwd)"
 
 ##################################################################################
 ##################################################################################
-outfile="$OUTPUT_DIR/_TMP_OUTPUT_0000_create_html_index_with_usage_help.html" ;
+outfile="$OUTPUT_DIR/OUTPUT_0000_create_html_index_with_usage_help.html" ;
 
 echo "<!doctype html>
  <html lang='en'>

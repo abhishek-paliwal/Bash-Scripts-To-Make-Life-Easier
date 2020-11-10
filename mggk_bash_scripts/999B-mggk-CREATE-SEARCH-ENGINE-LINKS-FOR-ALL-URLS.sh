@@ -7,7 +7,7 @@ SCRIPT_NAME_SANS_EXTENSION=$(basename $0 | sed 's/.sh//g') ;
 SEARCHDIR="$REPO_MGGK/content" ;
 WORKDIR="$DIR_Y" ;
 FILE_ALL_URLS="$WORKDIR/_tmp_all_urls_$SCRIPT_NAME_SANS_EXTENSION.txt" ;
-OUTPUT_HTML="$DIR_DROPBOX_SCRIPTS_OUTPUT/TMP_OUTPUT_HTML_$SCRIPT_NAME_SANS_EXTENSION.html" ;
+OUTPUT_HTML="$DIR_DROPBOX_SCRIPTS_OUTPUT/OUTPUT_HTML_$SCRIPT_NAME_SANS_EXTENSION.html" ;
 
 ################################################################################ 
 
