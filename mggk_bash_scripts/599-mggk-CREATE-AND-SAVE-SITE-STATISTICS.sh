@@ -22,8 +22,9 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ##################################################################################
-HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content"
-FILE_OUTPUT_SITESTATS="$DIR_DROPBOX_SCRIPTS_OUTPUT/sitestats.html"
+HUGO_CONTENT_DIR="$REPO_MGGK/content" ;
+FILE_OUTPUT_SITESTATS="$REPO_MGGK/static/sitestats.html" ;
+
 
 echo "##------------------------------------------------------------------------------" ;
 echo ">> GATHERING IMPORTANT SITE STATS FOR MGGK HUGO WEBSITE ..." ;
@@ -194,3 +195,8 @@ echo "$NUMBER_OF_POSTS_BY_EACH_DATE" >> $FILE_OUTPUT_SITESTATS
 
 echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
 echo "</pre>" >> $FILE_OUTPUT_SITESTATS
+
+##################################################################################
+echo;
+echo ">> SUMMARY >> " ;
+echo ">> STATISTICS FILE SAVED AS => $FILE_OUTPUT_SITESTATS" ;
