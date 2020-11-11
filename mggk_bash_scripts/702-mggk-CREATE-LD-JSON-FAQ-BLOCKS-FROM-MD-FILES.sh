@@ -40,6 +40,8 @@ HUGO_CONTENT_DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/_FIXED" ;
 DIR_TO_MOVE_FAQS_FILES="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/FAQS" ;
 #DIR_TO_MOVE_SUMMARY_FILE="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
 DIR_TO_MOVE_SUMMARY_FILE="$DIR_DROPBOX_SCRIPTS_OUTPUT" ;
+SUMMARY_FILE_VALID_FAQS="_summary_for_faqs_found_and_notfound.html" ;
+
 
 TMPDIR="$HOME_WINDOWS/Desktop/Y"
 WORKDIR="$TMPDIR/_tmp_faqs" ;
@@ -175,7 +177,6 @@ done
 ##################################################################################
 ## BEGIN: CREATING SUMMARY FILE FOR NUMBER OF FAQS FOUND IN EACH MD FILE
 ##################################################################################
-SUMMARY_FILE_VALID_FAQS="_summary_for_faqs_found_and_notfound.html" ;
 echo "<pre>" > $SUMMARY_FILE_VALID_FAQS
 ##############
 echo "This file is autocreated by the FAQS bash script." >> $SUMMARY_FILE_VALID_FAQS ;
@@ -222,7 +223,7 @@ echo "##########################################################################
 mv $TMPDIR/$SUMMARY_FILE_VALID_FAQS $DIR_TO_MOVE_SUMMARY_FILE/ ;
 mv $TMPDIR/*.FAQS.json $DIR_TO_MOVE_FAQS_FILES/ ; 
 echo ">>>> Moved FAQS JSON files to => $DIR_TO_MOVE_FAQS_FILES/" ;
-echo ">>>> Moved SUMMARY file to => $DIR_TO_MOVE_SUMMARY_FILE/" ;
+echo ">>>> Saved SUMMARY file as => $DIR_TO_MOVE_SUMMARY_FILE/$SUMMARY_FILE_VALID_FAQS" ;
 
 ##################################################################################
 ## KEEP THIS SECTION AT THE BOTTOM OF THIS SCRIPT
