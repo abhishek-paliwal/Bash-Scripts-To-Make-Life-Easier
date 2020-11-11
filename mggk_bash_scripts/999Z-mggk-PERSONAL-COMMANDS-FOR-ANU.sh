@@ -76,10 +76,12 @@ algolia_search_for_this_phrase
 pali_spellings_check_in_this_directory
 1x1
 10-mggk-create-images-index-page-for-current-year
+114b_mggk_make_imagemagick_very_fancy_custom_collage
 505_mggk-rss-to-email-xml-feed-parser
 505A-mggk-custom-newsletter-creation-from-hyperlinks-text-file
 506-mggk-search-word-in-tags-and-categories
 599_mggk_REPLACE_BULK_RATINGCOUNT_AND_RATINGVALUE_FROM_GOOGLE_SHEETS_CSV
+599-mggk-2020-CREATE-IMAGES-TO-DIFFERENT-RATIOS-USING-IMAGEMAGICK-IN-PWD
 599-mggk-CREATE-AND-SAVE-SITE-STATISTICS
 599-mggk-MAKE-VIDEO-SITEMAP-XML
 601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls
@@ -96,6 +98,7 @@ pali_spellings_check_in_this_directory
 PALI_COMMANDS_ARRAY=(palinotes_makesite_hugo
 frontp
 1_all_backup_indexes_maker
+999-make-imagemagick-collage-vertically-and-horizontally
 pali_0000_create_html_index_with_usage_help_for_all_bash_scripts
 pali_copy_aspell_personal_words_for_this_user
 pali_countfiles
@@ -115,16 +118,41 @@ pali_GIT_STATUS_FOR_ALL_REPOS) ;
 LEELA_COMMANDS_ARRAY=(leelasrecipes_makesite_hugo
 frontl_leelasrecipes
 1x1
+leelasrecipes_rename_images-with-custom-prefix-and-counters
 leelasrecipes-MOVE-ALL-PWD-IMAGES-TO-PROPER-WEBSITE-FOLDER
 leelasrecipes_check_spellings
-leelasrecipes_rename_images-with-custom-prefix-and-counters
 leelasrecipes-CREATE-AND-SAVE-SITE-STATISTICS
 leelasrecipes-MAKE-VIDEO-SITEMAP-XML) ;
+
+##
+IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY=(1_imagemagick_maker
+111_ffmpeg_convert_opus_to_mp3
+112_ffmpeg_join_movies
+113_ffmpeg_images_to_video_slideshow_maker
+114_make_imagemagick_collage_with_title
+114a_make_imagemagick_very_fancy_custom_collage
+114b_mggk_make_imagemagick_very_fancy_custom_collage
+115_imagemagick_print_custom_label_text_onto_images
+116_imagemagick_crop_images_to_any_custom_dimensions
+117-imagemagick-sort-images-long-and-wide
+118-imagemagick-make-title-slides-and-move-to-their-directories
+119-imagemagick-make-video-slideshow-title-using-collage-n-text
+1x1
+201_sorting_mp3_files_by_duration
+202_change_id3_tags_info_for_mp3
+203-join-N-random-mp3-files-using-ffmpeg
+599-mggk-2020-CREATE-IMAGES-TO-DIFFERENT-RATIOS-USING-IMAGEMAGICK-IN-PWD
+999-make-imagemagick-collage-vertically-and-horizontally
+dockerrun
+ffmpeg_extract_audio_from_mp4_video
+mggk_shortcode_collection_maker
+webp_to_jpg)
 
 ## Assign the corresponding user array to the new array variable
 if [ "$WHICH_USER" == "anu" ] ; then MY_COMMANDS_ARRAY=( "${ANU_COMMANDS_ARRAY[@]}" ) ; fi
 if [ "$WHICH_USER" == "pali" ] ; then MY_COMMANDS_ARRAY=( "${PALI_COMMANDS_ARRAY[@]}" ) ; fi
 if [ "$WHICH_USER" == "leela" ] ; then MY_COMMANDS_ARRAY=( "${LEELA_COMMANDS_ARRAY[@]}" ) ; fi
+if [ "$WHICH_USER" == "imagemagick_ffmpeg" ] ; then MY_COMMANDS_ARRAY=( "${IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY[@]}" ) ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ## PRINTING ALL ELEMENTS OF THE COMMAND ARRAY
