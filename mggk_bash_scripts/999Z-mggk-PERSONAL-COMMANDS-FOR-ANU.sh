@@ -73,6 +73,7 @@ fi
 ANU_COMMANDS_ARRAY=(makesite_mggk
 frontm
 algolia_search_for_this_phrase
+mggk_shortcode_collection_maker
 pali_spellings_check_in_this_directory
 1x1
 10-mggk-create-images-index-page-for-current-year
@@ -128,8 +129,7 @@ leelasrecipes-CREATE-AND-SAVE-SITE-STATISTICS
 leelasrecipes-MAKE-VIDEO-SITEMAP-XML) ;
 
 ##
-IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY=(1x1
-1_imagemagick_maker
+IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY=(1_imagemagick_maker
 1_tinypng_maker
 111_ffmpeg_convert_opus_to_mp3
 112_ffmpeg_join_movies
