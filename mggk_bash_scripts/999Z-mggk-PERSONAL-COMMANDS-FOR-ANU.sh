@@ -146,7 +146,12 @@ IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY=(1_imagemagick_maker
 dockerrun
 ffmpeg_extract_audio_from_mp4_video
 mggk_shortcode_collection_maker
-webp_to_jpg)
+webp_to_jpg
+youtube-download-all-formats
+youtube-download-best-audio-only
+youtube-download-best-overall-version
+youtube-list-formats
+youtube-update-downloader-program)
 
 ## Assign the corresponding user array to the new array variable
 if [ "$WHICH_USER" == "anu" ] ; then MY_COMMANDS_ARRAY=( "${ANU_COMMANDS_ARRAY[@]}" ) ; fi
