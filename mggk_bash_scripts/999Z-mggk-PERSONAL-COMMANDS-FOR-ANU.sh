@@ -128,7 +128,9 @@ leelasrecipes-CREATE-AND-SAVE-SITE-STATISTICS
 leelasrecipes-MAKE-VIDEO-SITEMAP-XML) ;
 
 ##
-IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY=(1_imagemagick_maker
+IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY=(1x1
+1_imagemagick_maker
+1_tinypng_maker
 111_ffmpeg_convert_opus_to_mp3
 112_ffmpeg_join_movies
 113_ffmpeg_images_to_video_slideshow_maker
@@ -140,16 +142,23 @@ IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY=(1_imagemagick_maker
 117-imagemagick-sort-images-long-and-wide
 118-imagemagick-make-title-slides-and-move-to-their-directories
 119-imagemagick-make-video-slideshow-title-using-collage-n-text
-1x1
+2000-python_collage_maker
 201_sorting_mp3_files_by_duration
 202_change_id3_tags_info_for_mp3
 203-join-N-random-mp3-files-using-ffmpeg
 599-mggk-2020-CREATE-IMAGES-TO-DIFFERENT-RATIOS-USING-IMAGEMAGICK-IN-PWD
 999-make-imagemagick-collage-vertically-and-horizontally
-dockerrun
+bordercolor
 ffmpeg_extract_audio_from_mp4_video
+gif_to_png_frames
+jpg2webp
 mggk_shortcode_collection_maker
+pali_move_videos_and_photos_to_separate_folders
+png2webp
+unsplash_wallpaper_download
+webp_animation_to_png_first_frame
 webp_to_jpg
+webp_to_png
 youtube-download-all-formats
 youtube-download-best-audio-only
 youtube-download-best-overall-version
