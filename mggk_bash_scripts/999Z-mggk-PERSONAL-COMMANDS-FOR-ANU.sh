@@ -97,8 +97,11 @@ pali_spellings_check_in_this_directory
 ##
 PALI_COMMANDS_ARRAY=(palinotes_makesite_hugo
 frontp
+0000_create_NEW_BASH_SCRIPT_FROM_TEMPLATE
 1_all_backup_indexes_maker
 999-make-imagemagick-collage-vertically-and-horizontally
+edit_0000_BASHSCRIPT_CREATION_TEMPLATE_FILE
+edit_999Z_script
 pali_0000_create_html_index_with_usage_help_for_all_bash_scripts
 pali_copy_aspell_personal_words_for_this_user
 pali_countfiles

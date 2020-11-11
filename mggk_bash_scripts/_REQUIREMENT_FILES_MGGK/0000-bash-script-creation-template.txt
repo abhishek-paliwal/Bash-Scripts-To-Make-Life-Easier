@@ -1,0 +1,112 @@
+#!/bin/bash
+THIS_SCRIPT_NAME="$(basename $0)" ;
+THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
+REQUIREMENTS_FILE="$REPO_SCRIPTS_MGGK/_REQUIREMENT_FILES_MGGK/$THIS_SCRIPT_NAME_SANS_EXTENSION-requirements.txt" ;
+##
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ################################################################################
+    ## USAGE:
+    #### > bash $THIS_SCRIPT_NAME \$1
+    #### WHERE, \$1 IS ...
+    ################################################################################
+    ##  
+    ## 
+    ## 
+    ################################################################################
+    ## REQUIREMENT:  $REQUIREMENTS_FILE
+    ################################################################################
+    ## CREATED BY: PALI
+    ## CREATED ON: NOV 11, 2020
+    ################################################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##############################################################################
+## SETTING VARIABLES
+WORKING_DIR="$DIR_Y" ;
+OUTPUT_HTML="$WORKING_DIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.html" ;
+OUTPUT_TXT="$WORKING_DIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+echo ;
+echo "################################################################################" ; 
+echo "## PRESENT WORKING DIRECTORY = $WORKING_DIR" ;
+echo; 
+read -p "Press Enter key if OKAY ..." ; 
+##############################################################################
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## USER INPUT:
+echo; 
+echo ">>>> PLEASE PROVIDE USER INPUT (press ENTER key to exit) =>" ;
+read USER_INPUT_VARIABLE
+echo;
+
+## Check for validity if no input is given
+## -z (= test if exists), -n (=test if exists and var is not empty string)
+if [ -z "$USER_INPUT_VARIABLE" ]
+then
+  echo "*** INVALID USER INPUT. PROGRAM WILL EXIT NOW. ***" ;
+  exit 1 ; 
+elif [ -n "$USER_INPUT_VARIABLE" ]
+then
+  echo ">>>> Variable value is valid and is not empty. " ;
+  echo ">>>> USER_INPUT_VARIABLE value is = $USER_INPUT_VARIABLE" ;
+  echo; 
+fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##############################################################################
+HTML_BOOTSTRAP_HEADER="<!doctype html>
+<html lang='en'>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
+    <title>$SCRIPT_NAME_SANS_EXTENSION - OUTPUT</title>
+  </head>
+  <body><div class='container'>" ;
+
+HTML_BOOTSTRAP_FOOTER="<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous'></script>
+  </div>  
+  </body>
+</html>" ;
+
+##################################################################################
+## CREATING HTML OUTPUT
+##################################################################################
+echo "$HTML_BOOTSTRAP_HEADER" > $OUTPUT_HTML ; ## Initializing HTML output
+echo "<h1>HTML OUTPUT - $THIS_SCRIPT_NAME_SANS_EXTENSION</h1>" >> $OUTPUT_HTML ;
+echo "<p>Page last updated: $(date)" >> $OUTPUT_HTML ;
+echo "<br>Page updated by script: $THIS_SCRIPT_NAME</p><hr>" >> $OUTPUT_HTML ;
+echo "$HTML_BOOTSTRAP_FOOTER" >> $OUTPUT_HTML ;
+##################################################################################
+## CREATING TXT OUTPUT
+##################################################################################
+echo "HTML OUTPUT - $THIS_SCRIPT_NAME_SANS_EXTENSION" >> $OUTPUT_TXT ;
+echo "Page last updated: $(date)" >> $OUTPUT_TXT ;
+echo "Page updated by script: $THIS_SCRIPT_NAME" >> $OUTPUT_TXT ;
+echo "##---------------------------------------------------------" >> $OUTPUT_TXT ;
+##################################################################################
+
+
+################################ FINAL SUMMARY ####################################
+echo "## SUMMARY PRINTING #########################################################" ;
+echo "##---------------------------------------------------------------------------"
+echo ">>>> SUCCESS // SUMMARY: OUTPUT HTML FILE CREATED AT => $OUTPUT_HTML" ;
+echo ">>>> SUCCESS // SUMMARY: OUTPUT TXT FILE CREATED AT => $OUTPUT_TXT" ;
+echo "################################################################################" ;
