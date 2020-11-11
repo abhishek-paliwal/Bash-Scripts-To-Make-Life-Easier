@@ -37,8 +37,12 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##################################################################################
 HUGODIR="$REPO_MGGK/content" ; 
 FILE_WITH_WORDS_TO_DISCARD="$REPO_SCRIPTS_MGGK/_REQUIREMENT_FILES_MGGK/999A-MGGK-WORDS-TO-DISCARD.txt" ;
+
 FILE1=$(basename $(find $WORKDIR/ -type f -name "recipe*.txt" | head -1)) ;
 echo; echo ">> THIS TEXT FILE WILL BE USED FOR RECIPE WRITEUP = $FILE1" ; echo;
+echo ">> Currently looking for words to match with URLs ... wait for some seconds ..." ;
+echo; 
+
 FILE2A="$WORKDIR/_tmp_urls0.txt" ;
 FILE2="$WORKDIR/_tmp_urls1.txt" ;
 FILE3="$WORKDIR/_tmp_ALL_URLS.txt" ;
@@ -77,6 +81,7 @@ comm -13 $FILE_WITH_WORDS_TO_DISCARD $FILE2A > $FILE2
 
 ####################################################
 function FUNCTION_FIND_COMMON_WORDS_IN_URLS () {
+    ##
     file_input=$1; 
     file_with_urls=$2 ;
     file_tmp0="$WORKDIR/_tmp0.txt"
@@ -90,7 +95,7 @@ function FUNCTION_FIND_COMMON_WORDS_IN_URLS () {
         grep -i "$WORD" $file_with_urls > $file_tmp0 ;
         grep -i "$WORD" $FILE3 > $file_tmp1 ;
         lines_matched=$(cat $file_tmp0 | wc -l | tr -d ' ') ;
-        ## Register matches if 1 <= matches <= 5, because too many ...
+        ## Register matches if 1 <= matches <= 200, because too many ...
         ## matches mean general words are being matched.
         if [ $lines_matched -le 200 ] && [ $lines_matched -ge 1 ]  ; then
             ((COUNT++)) 
@@ -98,11 +103,13 @@ function FUNCTION_FIND_COMMON_WORDS_IN_URLS () {
             echo "<hr>" >> $FILE_FINAL ;
             echo "<h2>$COUNT // $WORD</h2>" >> $FILE_FINAL ;
             echo "<hr>" >> $FILE_FINAL ;
-            echo "<strong>Matched URLs:</strong>" >> $FILE_FINAL ;
-            cat $file_tmp1 | sed 's/^/<br>/g' | sed "s+$WORD+<span style='color:blue;'><strong>$WORD</strong></span>+g" >> $FILE_FINAL ;
-            echo "<br><br>" >> $FILE_FINAL ;
             echo "<strong>Matched Recipe Text Lines (in file = $FILE1):</strong>" >> $FILE_FINAL ;
             cat $file_tmp0 | sed 's/^/<br>/g' | sed "s+$WORD+<span style='color:red;'><strong>$WORD</strong></span>+g" >> $FILE_FINAL ;
+            echo "<br><br>" >> $FILE_FINAL ;
+            echo "<strong>Matched URLs:</strong>" >> $FILE_FINAL ;
+            cat $file_tmp1 | sed 's/^/<br>/g' | sed "s+$WORD+<span style='color:blue;'><strong>$WORD</strong></span>+g" >> $FILE_FINAL ;
+            ##
+            echo "... found a matching word ... $COUNT // $WORD" ;
         fi
     ####    
     done < $file_input
