@@ -47,7 +47,7 @@ OUTPUT_HTML="$WORKING_DIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.html" ;
 OUTPUT_TXT="$WORKING_DIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 echo ;
 echo "################################################################################" ; 
-echo "## PRESENT WORKING DIRECTORY = $WORKING_DIR" ;
+warn "## PRESENT WORKING DIRECTORY = $WORKING_DIR" ;
 echo; 
 read -p "Press Enter key if OKAY ..." ; 
 ##############################################################################
@@ -55,7 +55,7 @@ read -p "Press Enter key if OKAY ..." ;
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## USER INPUT:
 echo; 
-echo ">>>> PLEASE PROVIDE USER INPUT (press ENTER key to exit) =>" ;
+warn ">>>> PLEASE PROVIDE USER INPUT (press ENTER key to exit) =>" ;
 read USER_INPUT_VARIABLE
 echo;
 
@@ -63,7 +63,7 @@ echo;
 ## -z (= test if exists), -n (=test if exists and var is not empty string)
 if [ -z "$USER_INPUT_VARIABLE" ]
 then
-  echo "*** INVALID USER INPUT. PROGRAM WILL EXIT NOW. ***" ;
+  error "*** INVALID USER INPUT. PROGRAM WILL EXIT NOW. ***" ;
   exit 1 ; 
 elif [ -n "$USER_INPUT_VARIABLE" ]
 then
@@ -116,6 +116,6 @@ echo "##---------------------------------------------------------" >> $OUTPUT_TX
 ################################ FINAL SUMMARY ####################################
 echo "## SUMMARY PRINTING #########################################################" ;
 echo "##---------------------------------------------------------------------------"
-echo ">>>> SUCCESS // SUMMARY: OUTPUT HTML FILE CREATED AT => $OUTPUT_HTML" ;
-echo ">>>> SUCCESS // SUMMARY: OUTPUT TXT FILE CREATED AT => $OUTPUT_TXT" ;
+success ">>>> SUCCESS // SUMMARY: OUTPUT HTML FILE CREATED AT => $OUTPUT_HTML" ;
+success ">>>> SUCCESS // SUMMARY: OUTPUT TXT FILE CREATED AT => $OUTPUT_TXT" ;
 echo "################################################################################" ;
