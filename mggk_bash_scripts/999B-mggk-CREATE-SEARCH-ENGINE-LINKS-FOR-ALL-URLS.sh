@@ -3,6 +3,31 @@
 SCRIPT_NAME=$(basename $0) ;
 SCRIPT_NAME_SANS_EXTENSION=$(basename $0 | sed 's/.sh//g') ;
 ################################################################################ 
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ################################################################################
+    ## THIS PROGRAM CREATES AN HTML FILE WITH ALL THE SEARCH ENGINE LINKS 
+    ## FOR ALL THE MGGK URLS. THE USER CAN THEN CHECK THE PAGE TITLES SEARCHES ON
+    ## THOSE SEARCH ENGINES.
+    ################################################################################
+    ## CREATED BY: PALI
+    ## CREATED ON: NOV 06, 2020
+    ################################################################################
+EOM
+
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##############################################################################
+## SETTING VARIABLES
 SEARCHDIR="$REPO_MGGK/content" ;
 WORKDIR="$DIR_Y" ;
 FILE_ALL_URLS="$WORKDIR/_tmp_all_urls_$SCRIPT_NAME_SANS_EXTENSION.txt" ;
@@ -59,4 +84,5 @@ echo "<!-- Optional JavaScript -->
 #################################### SUMMARY ####################################
 echo "################################################################################" ;
 echo ">>>> SUCCESS // SUMMARY: OUTPUT HTML FILE CREATED AT => $OUTPUT_HTML" ;
+echo ">>>> You can check it online here: https://downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs/OUTPUT_HTML_999B-mggk-CREATE-SEARCH-ENGINE-LINKS-FOR-ALL-URLS.html" 
 echo "################################################################################" ;
