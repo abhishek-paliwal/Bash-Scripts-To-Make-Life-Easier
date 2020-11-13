@@ -30,6 +30,15 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+####################### ADDING COLOR TO OUTPUT ON CLI ##########################
+echo "Currently sourcing the bash color script, which outputs chosen texts in various colors ..." ;
+
+source $REPO_SCRIPTS/2000_vendor_programs/color-logger.sh
+
+info "This enables use of keywords for coloring, such as: debug, info, error, success, warn, highlight." ;
+debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.sh -h"
+##############################################################################
+
 ##############################################################################
 ############ BEGIN: EXPANDING ALIASES ON NON-INTERATIVE SHELL SCRIPTS ########
 shopt -s expand_aliases ## for BASH: This has to be done, else, aliases are not expanded in scripts.
@@ -55,14 +64,14 @@ WORKING_DIR="$DIR_Y" ;
 PWD=$WORKING_DIR ;
 echo ;
 echo "################################################################################" ; 
-echo "## PRESENT WORKING DIRECTORY = $PWD" ;
+info "## PRESENT WORKING DIRECTORY = $PWD" ;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## GET THE USER FROM THE CLI ARGUMENT:
 WHICH_USER=$1;
 if [ -z "$WHICH_USER" ] ; then 
   echo; 
-  echo ">>>> FAILURE: No CLI argument given. Please provide one." ; 
+  error ">>>> FAILURE: No CLI argument given. Please provide one." ; 
   exit 1 ; 
 echo;  
 fi 
@@ -175,8 +184,8 @@ if [ "$WHICH_USER" == "imagemagick_ffmpeg" ] ; then MY_COMMANDS_ARRAY=( "${IMAGE
 ## PRINTING ALL ELEMENTS OF THE COMMAND ARRAY
 echo;
 echo "##------------------------------------------------------------------------------"; 
-echo "TOTAL NUMBEER OF COMMANDS FOUND: ${#MY_COMMANDS_ARRAY[*]}" ; echo; 
-echo ">>>> MY COMMAND LIST >>>> "; echo; 
+info "TOTAL NUMBEER OF COMMANDS FOUND: ${#MY_COMMANDS_ARRAY[*]}" ; echo; 
+info ">>>> MY COMMAND LIST >>>> "; echo; 
 for index in ${!MY_COMMANDS_ARRAY[*]}
 do
     printf "%4d: %s\n" $index ${MY_COMMANDS_ARRAY[$index]}
@@ -186,23 +195,24 @@ echo "##------------------------------------------------------------------------
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## USER INPUT:
 echo; 
-echo ">>>> SELECT THE NUMBER OF THE COMMAND TO RUN (press ENTER key to exit) =>" ;
+info ">>>> SELECT THE NUMBER OF THE COMMAND TO RUN (press ENTER key to exit) =>" ;
 read WHICH_COMMAND_TO_RUN
 echo;
 
 # Check for validity if no input is given
 if [ -z $WHICH_COMMAND_TO_RUN ]
 then
-  echo "*** INVALID USER INPUT. PROGRAM WILL EXIT NOW. ***" ;
+  error "*** INVALID USER INPUT. PROGRAM WILL EXIT NOW. ***" ;
   exit 1 ; 
 elif [ -n $WHICH_COMMAND_TO_RUN ]
 then
   echo ">>>> Are you sure, you want to run this command: " ;
-  echo "${MY_COMMANDS_ARRAY[$WHICH_COMMAND_TO_RUN]}" ; 
+  warn "${MY_COMMANDS_ARRAY[$WHICH_COMMAND_TO_RUN]}" ; 
   echo; 
   read -p "Press Enter key if OKAY ..." ; 
   # run the chosen command
-  echo; echo ">>>> RUNNING THE CHOSEN COMMAND" ; echo ; 
+  echo; 
+  info ">>>> RUNNING THE CHOSEN COMMAND" ; echo ; 
   eval ${MY_COMMANDS_ARRAY[$WHICH_COMMAND_TO_RUN]} ;
 fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
