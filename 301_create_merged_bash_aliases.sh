@@ -1,4 +1,6 @@
 #!/bin/bash
+THIS_SCRIPT_NAME="$(basename $0)" ;
+THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
@@ -28,16 +30,25 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+####################### ADDING COLOR TO OUTPUT ON CLI ##########################
+echo "Currently sourcing the bash color script, which outputs chosen texts in various colors ..." ;
+source $REPO_SCRIPTS/2000_vendor_programs/color-logger.sh
+#info "This enables use of keywords for coloring, such as: debug, info, error, success, warn, highlight." ;
+#debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.sh -h"
+##############################################################################
 
+echo;
+warn ">> Currently running this script => $THIS_SCRIPT_NAME" ; 
+##
 FILE_TRANSFER_DIR="$HOME_WINDOWS/Dropbox/_MY_BASH_SCRIPTS/_bash_aliases_compilation_outputs/"
 ALIASES_FILE_USER1="bash-aliases-abhishek.txt"
-ALIASES_FILE_USER2="bash-aliases-anu.txt"
-ALIASES_FILE_MERGED="bash-aliases-MERGED-abhishek-anu.txt"
+ALIASES_FILE_USER2="bash-aliases-ubuntu.txt"
+ALIASES_FILE_MERGED="bash-aliases-MERGED-abhishek-ubuntu.txt"
 
 ## CD to the desired directory
 cd $FILE_TRANSFER_DIR;
 
-echo ">>>> PWD = $(pwd)" ;
+info ">>>> PWD = $(pwd)" ;
 echo;
 
 ## Saving a copy of the current bash_aliases file present for this user
@@ -47,18 +58,18 @@ cp $HOME/.bash_aliases $FILE_TRANSFER_DIR/bash-aliases-$USER.txt ;
 
 ## FINALLY, some DIFF merging magic
 ## 1. Display on CLI
-diff --line-format %L $ALIASES_FILE_USER1 $ALIASES_FILE_USER2 ;
+#diff --line-format %L $ALIASES_FILE_USER1 $ALIASES_FILE_USER2 ;
 ## 2. Save to file
 echo ;
 echo ">>>> NOW SAVING MERGED-bash-aliases file ..." ;
-echo "## MERGED ALIASES FILE CREATED ON: $(date)" > $ALIASES_FILE_MERGED ## Initializing with first line
+warn "## MERGED ALIASES FILE CREATED ON: $(date)" > $ALIASES_FILE_MERGED ## Initializing with first line
 echo "####################################################################" >> $ALIASES_FILE_MERGED
 diff --line-format %L $ALIASES_FILE_USER1 $ALIASES_FILE_USER2 >> $ALIASES_FILE_MERGED
 echo;
 
 ##################################################################################
 echo "##++++++++++++++++++++++++++++++++++++++++++++" ;
-echo "Listing all FILES in the DIR = $FILE_TRANSFER_DIR" ;
+info "Listing all FILES in the DIR = $FILE_TRANSFER_DIR" ;
 ls -lt $FILE_TRANSFER_DIR/ ;
 echo "##++++++++++++++++++++++++++++++++++++++++++++" ;
 ##################################################################################
