@@ -26,12 +26,24 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+####################### ADDING COLOR TO OUTPUT ON CLI ##########################
+echo "Currently sourcing the bash color script, which outputs chosen texts in various colors ..." ;
+
+source $REPO_SCRIPTS/2000_vendor_programs/color-logger.sh
+
+info "This enables use of keywords for coloring, such as: debug, info, error, success, warn, highlight." ;
+debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.sh -h"
+##############################################################################
+
 ##############################################################################
 ## SETTING VARIABLES
 SEARCHDIR="$REPO_MGGK/content" ;
 WORKDIR="$DIR_Y" ;
-FILE_ALL_URLS="$WORKDIR/_tmp_all_urls_$SCRIPT_NAME_SANS_EXTENSION.txt" ;
 OUTPUT_HTML="$DIR_DROPBOX_SCRIPTS_OUTPUT/OUTPUT_HTML_$SCRIPT_NAME_SANS_EXTENSION.html" ;
+##
+echo ;
+warn "## PRESENT WORKING DIRECTORY = $WORKING_DIR" ;
+##############################################################################
 
 ################################################################################ 
 
@@ -47,22 +59,26 @@ echo "<!doctype html>
   </head>
   <body><div class='container'>" > $OUTPUT_HTML
 
-echo "<h1>All MGGK post titles and their search engines URLs</h1>" >> $OUTPUT_HTML ;
-echo "<p>Page last updated: $(date)" >> $OUTPUT_HTML ;
-echo "<br>Page updated by script: $SCRIPT_NAME</p><hr>" >> $OUTPUT_HTML ;
-
-
-## Getting all URLS
-grep -irh '^title:' $SEARCHDIR/** | sort | sed 's/title://g' | sed 's/"//g' | sed "s+'++g"  > $FILE_ALL_URLS
+echo "<h1>All MGGK URLs + Post Titles with their search engines URLs</h1>" >> $OUTPUT_HTML ;
+echo "<br>Page updated by script: $SCRIPT_NAME</p>" >> $OUTPUT_HTML ;
+echo "<p>Page last updated: $(date)<hr>" >> $OUTPUT_HTML ;
 
 #SEARCH_ENGINES
 COUNT=0 ;
-while IFS= read -r line
+#while IFS= read -r line
+for mdfile in $(find $SEARCHDIR -type f -name "*.md")
 do
     (( COUNT++ )) ;
-    echo "<h5>$COUNT) $line</h5>" >> $OUTPUT_HTML
+    echo ">> $COUNT => Currently working with => $(basename $mdfile)" ; 
     ##
-    SEARCHTERM="$line" ;
+    ## Getting Post URL + Title
+    mytitle=$( grep -irh '^title:' $mdfile | sed 's/title://g' | sed 's/"//g' | sed "s+'++g" ) ;
+    myurl=$( grep -irh '^url:' $mdfile | tr -d [[:space:]] | sed 's+url:+https://www.mygingergarlickitchen.com+g' | sed 's/"//g' ) ;
+    ##
+    SEARCHTERM="$mytitle" ;
+    ##
+    echo "<h5>$COUNT) $mytitle</h5>" >> $OUTPUT_HTML
+    echo "<p><a target='_blank' href='$myurl'>$myurl</a></p>" >> $OUTPUT_HTML
     ##
     echo "<p>" >> $OUTPUT_HTML
     echo "<a class='btn btn-primary' role='button' target='_blank' href='https://www.google.com/search?q=$SEARCHTERM'>Google</a>" >> $OUTPUT_HTML
@@ -70,7 +86,7 @@ do
     echo "// <a class='btn btn-primary' role='button' target='_blank' href='https://www.bing.com/search?q=$SEARCHTERM'>Bing</a>" >> $OUTPUT_HTML
     echo "// <a class='btn btn-primary' role='button' target='_blank' href='https://www.youtube.com/search?q=$SEARCHTERM'>YouTube</a>" >> $OUTPUT_HTML
     echo "</p>" >> $OUTPUT_HTML
-done < "$FILE_ALL_URLS"
+done
 
 echo "<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -82,7 +98,9 @@ echo "<!-- Optional JavaScript -->
 </html>"  >> $OUTPUT_HTML ;
 
 #################################### SUMMARY ####################################
-echo "################################################################################" ;
-echo ">>>> SUCCESS // SUMMARY: OUTPUT HTML FILE CREATED AT => $OUTPUT_HTML" ;
-echo ">>>> You can check it online here: https://downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs/OUTPUT_HTML_999B-mggk-CREATE-SEARCH-ENGINE-LINKS-FOR-ALL-URLS.html" 
+echo;
+echo "################################## SUMMARY #####################################" ;
+success ">>>> SUCCESS // OUTPUT HTML FILE CREATED AT => $OUTPUT_HTML" ;
+echo;
+success ">>>> You can check it online here: https://downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs/OUTPUT_HTML_999B-mggk-CREATE-SEARCH-ENGINE-LINKS-FOR-ALL-URLS.html" ;
 echo "################################################################################" ;
