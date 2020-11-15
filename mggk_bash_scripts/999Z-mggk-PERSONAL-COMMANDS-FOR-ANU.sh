@@ -112,6 +112,7 @@ frontp
 999-make-imagemagick-collage-vertically-and-horizontally
 edit_0000_BASHSCRIPT_CREATION_TEMPLATE_FILE
 edit_999Z_script
+edit_lce_index_html
 pali_0000_create_html_index_with_usage_help_for_all_bash_scripts
 pali_copy_aspell_personal_words_for_this_user
 pali_countfiles
