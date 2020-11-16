@@ -112,6 +112,7 @@ frontp
 999-make-imagemagick-collage-vertically-and-horizontally
 edit_0000_BASHSCRIPT_CREATION_TEMPLATE_FILE
 edit_999Z_script
+edit_lce_index_html
 pali_0000_create_html_index_with_usage_help_for_all_bash_scripts
 pali_copy_aspell_personal_words_for_this_user
 pali_countfiles
@@ -152,6 +153,7 @@ IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY=(1_imagemagick_maker
 118-imagemagick-make-title-slides-and-move-to-their-directories
 119-imagemagick-make-video-slideshow-title-using-collage-n-text
 2000-python_collage_maker
+2000-collage-maker-using-vendor-script
 201_sorting_mp3_files_by_duration
 202_change_id3_tags_info_for_mp3
 203-join-N-random-mp3-files-using-ffmpeg

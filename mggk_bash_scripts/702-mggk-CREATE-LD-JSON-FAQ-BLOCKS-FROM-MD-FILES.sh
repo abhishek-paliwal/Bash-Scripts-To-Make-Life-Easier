@@ -40,7 +40,8 @@ HUGO_CONTENT_DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/_FIXED" ;
 DIR_TO_MOVE_FAQS_FILES="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/FAQS" ;
 #DIR_TO_MOVE_SUMMARY_FILE="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
 DIR_TO_MOVE_SUMMARY_FILE="$DIR_DROPBOX_SCRIPTS_OUTPUT" ;
-SUMMARY_FILE_VALID_FAQS="mggk_summary_for_faqs_found_and_notfound.html" ;
+SUMMARY_FILE_VALID_FAQS="_tmp_mggk_summary_for_faqs_found_and_notfound.html" ;
+SUMMARY_FILE_VALID_FAQS_FINAL="mggk_summary_for_faqs_found_and_notfound.html" ;
 
 
 TMPDIR="$HOME_WINDOWS/Desktop/Y"
@@ -220,10 +221,13 @@ echo "##########################################################################
 echo "## SUMMARY: " ;
 echo "## IMPORTANT NOTE: Make sure that there are no slashes in the FAQs in MD files. Replace / or \ characters with brackets before running this program." ;
 echo "##################################################################################" ;
-mv $TMPDIR/$SUMMARY_FILE_VALID_FAQS $DIR_TO_MOVE_SUMMARY_FILE/ ;
+## Formatting output file for pretty output
+fold -sw 80 $TMPDIR/$SUMMARY_FILE_VALID_FAQS > $TMPDIR/$SUMMARY_FILE_VALID_FAQS_FINAL ;
+## Moving this file to proper directories
+mv $TMPDIR/$SUMMARY_FILE_VALID_FAQS_FINAL $DIR_TO_MOVE_SUMMARY_FILE/ ;
 mv $TMPDIR/*.FAQS.json $DIR_TO_MOVE_FAQS_FILES/ ; 
 echo ">>>> Moved FAQS JSON files to => $DIR_TO_MOVE_FAQS_FILES/" ;
-echo ">>>> Saved SUMMARY file as => $DIR_TO_MOVE_SUMMARY_FILE/$SUMMARY_FILE_VALID_FAQS" ;
+echo ">>>> Saved SUMMARY file as => $DIR_TO_MOVE_SUMMARY_FILE/$SUMMARY_FILE_VALID_FAQS_FINAL" ;
 
 ##################################################################################
 ## KEEP THIS SECTION AT THE BOTTOM OF THIS SCRIPT
