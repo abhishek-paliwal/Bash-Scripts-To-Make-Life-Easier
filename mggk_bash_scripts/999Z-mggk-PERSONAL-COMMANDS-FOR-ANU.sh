@@ -82,6 +82,7 @@ fi
 ANU_COMMANDS_ARRAY=(makesite_mggk
 frontm
 algolia_search_for_this_phrase
+hugo_mggk_enable_featured_posts
 mggk_shortcode_collection_maker
 pali_spellings_check_in_this_directory
 1x1
