@@ -38,6 +38,10 @@ if [ "$1" == "--help" ] ; then usage ; fi
 HUGODIR="$REPO_MGGK/content" ; 
 FILE_WITH_WORDS_TO_DISCARD="$REPO_SCRIPTS_MGGK/_REQUIREMENT_FILES_MGGK/999A-MGGK-WORDS-TO-DISCARD.txt" ;
 
+echo "################################################################################"
+echo "## IMPORTANT REQUIREMENT: Make sure to rename your text file with prefix 'recipe' in the format => recipe-ANY_FILENAME.txt"
+echo "################################################################################"
+
 FILE1=$(basename $(find $WORKDIR/ -type f -name "recipe*.txt" | head -1)) ;
 echo; echo ">> THIS TEXT FILE WILL BE USED FOR RECIPE WRITEUP = $FILE1" ; echo;
 echo ">> Currently looking for words to match with URLs ... wait for some seconds ..." ;
