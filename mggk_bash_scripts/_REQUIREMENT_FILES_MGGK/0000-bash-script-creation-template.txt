@@ -82,18 +82,45 @@ HTML_BOOTSTRAP_HEADER="<!doctype html>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <!-- Bootstrap CSS -->
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
-    <title>$SCRIPT_NAME_SANS_EXTENSION - OUTPUT</title>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.css' />
+    <script type='text/javascript' src='https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.js'></script>
+    <script>
+        \$(document).ready(function () {
+            \$('#mytable').DataTable();
+        });
+    </script>
+
+    <title>OUTPUT - $THIS_SCRIPT_NAME_SANS_EXTENSION</title>
   </head>
   <body><div class='container'>" ;
 
-HTML_BOOTSTRAP_FOOTER="<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous'></script>
-    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous'></script>
-  </div>  
-  </body>
-</html>" ;
+HTML_BOOTSTRAP_FOOTER="</div></body></html>" ;
+
+DATATABLE_HEADER="<table class='table table-striped' id='mytable' class='display' style='width:100%'>
+    <thead>
+        <tr>
+            <th>Count</th>
+            <th>Recipe Title</th>
+            <th>URL</th>
+        </tr>
+    </thead>
+    <tbody>"
+
+
+DATATABLE_CONTENT_ROWS="<tr>
+            <td>1</td>
+            <td>Demo recipe title 1 </td>
+            <td>demo recipe url link 1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Demo recipe title 2</td>
+            <td>demo recipe url link 2</td>
+        </tr>"
+
+DATATABLE_FOOTER="</tbody></table>"
 
 ##################################################################################
 ## CREATING HTML OUTPUT
@@ -102,6 +129,11 @@ echo "$HTML_BOOTSTRAP_HEADER" > $OUTPUT_HTML ; ## Initializing HTML output
 echo "<h1>HTML OUTPUT - $THIS_SCRIPT_NAME_SANS_EXTENSION</h1>" >> $OUTPUT_HTML ;
 echo "<p>Page last updated: $(date)" >> $OUTPUT_HTML ;
 echo "<br>Page updated by script: $THIS_SCRIPT_NAME</p><hr>" >> $OUTPUT_HTML ;
+##
+echo "$DATATABLE_HEADER"  >> $OUTPUT_HTML ;
+echo "$DATATABLE_CONTENT_ROWS"  >> $OUTPUT_HTML ;
+echo "$DATATABLE_FOOTER"  >> $OUTPUT_HTML ;
+##
 echo "$HTML_BOOTSTRAP_FOOTER" >> $OUTPUT_HTML ;
 ##################################################################################
 ## CREATING TXT OUTPUT

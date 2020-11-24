@@ -55,13 +55,38 @@ echo "<!doctype html>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <!-- Bootstrap CSS -->
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.css' />
+    <script type='text/javascript' src='https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.js'></script>
+    <script>
+        \$(document).ready(function () {
+            \$('#mytable').DataTable();
+        });
+    </script>
+
     <title>$SCRIPT_NAME_SANS_EXTENSION - OUTPUT</title>
   </head>
-  <body><div class='container'>" > $OUTPUT_HTML
+  <body>" > $OUTPUT_HTML
 
-echo "<h1>All MGGK URLs + Post Titles with their search engines URLs</h1>" >> $OUTPUT_HTML ;
-echo "<br>Page updated by script: $SCRIPT_NAME</p>" >> $OUTPUT_HTML ;
-echo "<p>Page last updated: $(date)<hr>" >> $OUTPUT_HTML ;
+echo "<div class='jumbotron jumbotron-fluid'>
+        <div class='container'>
+          <h1>All MGGK URLs + Post Titles with their search engines URLs</h1>
+          <br>Page updated by script: $SCRIPT_NAME
+          <br>Page last updated: $(date)
+        </div>
+      </div> <div class='container-fluid'> " >> $OUTPUT_HTML ;
+
+echo "<table class='table table-striped' id='mytable' class='display' style='width:100%'>
+    <thead>
+        <tr>
+            <th>Count</th>
+            <th>Recipe Title</th>
+            <th>URL</th>
+            <th>Search Engine Links</th>
+        </tr>
+    </thead>
+    <tbody>"  >> $OUTPUT_HTML ;
 
 #SEARCH_ENGINES
 COUNT=0 ;
@@ -77,25 +102,26 @@ do
     ##
     SEARCHTERM="$mytitle" ;
     ##
-    echo "<h5>$COUNT) $mytitle</h5>" >> $OUTPUT_HTML
-    echo "<p><a target='_blank' href='$myurl'>$myurl</a></p>" >> $OUTPUT_HTML
+    echo "<tr>" >> $OUTPUT_HTML
     ##
-    echo "<p>" >> $OUTPUT_HTML
-    echo "<a class='btn btn-primary' role='button' target='_blank' href='https://www.google.com/search?q=$SEARCHTERM'>Google</a>" >> $OUTPUT_HTML
-    echo "// <a class='btn btn-primary' role='button' target='_blank' href='https://duckduckgo.com/?q=$SEARCHTERM'>DuckDuckGo</a>" >> $OUTPUT_HTML
-    echo "// <a class='btn btn-primary' role='button' target='_blank' href='https://www.bing.com/search?q=$SEARCHTERM'>Bing</a>" >> $OUTPUT_HTML
-    echo "// <a class='btn btn-primary' role='button' target='_blank' href='https://www.youtube.com/search?q=$SEARCHTERM'>YouTube</a>" >> $OUTPUT_HTML
-    echo "</p>" >> $OUTPUT_HTML
+    echo "<td>$COUNT</td>" >> $OUTPUT_HTML
+    echo "<td><strong>$mytitle</strong></td>" >> $OUTPUT_HTML
+    echo "<td><a target='_blank' href='$myurl'>$myurl</a></td>" >> $OUTPUT_HTML
+    ##
+    echo "<td>" >> $OUTPUT_HTML
+    echo "<a class='btn btn-success' role='button' target='_blank' href='https://www.google.com/search?q=$SEARCHTERM'>Google</a>" >> $OUTPUT_HTML
+    echo "<br><a class='btn btn-warning' role='button' target='_blank' href='https://duckduckgo.com/?q=$SEARCHTERM'>DuckDuckGo</a>" >> $OUTPUT_HTML
+    echo "<br><a class='btn btn-primary' role='button' target='_blank' href='https://www.bing.com/search?q=$SEARCHTERM'>Bing</a>" >> $OUTPUT_HTML
+    echo "<br><a class='btn btn-danger' role='button' target='_blank' href='https://www.youtube.com/search?q=$SEARCHTERM'>YouTube</a>" >> $OUTPUT_HTML
+    echo "</td>" >> $OUTPUT_HTML
+    ##
+    echo "</tr>" >> $OUTPUT_HTML
+
 done
 
-echo "<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous'></script>
-    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous'></script>
-  </div>  
-  </body>
-</html>"  >> $OUTPUT_HTML ;
+echo "</tbody></table>" >> $OUTPUT_HTML ;
+
+echo "</body></html>"  >> $OUTPUT_HTML ;
 
 #################################### SUMMARY ####################################
 echo;
