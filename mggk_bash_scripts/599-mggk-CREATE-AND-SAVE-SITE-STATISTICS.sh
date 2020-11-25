@@ -193,6 +193,10 @@ echo "$NUMBER_OF_POSTS_BY_EACH_DATE" >> $FILE_OUTPUT_SITESTATS
 
 ## NUMBER OF WORDS IN ALL MD FILES WITH THEIR FULL PATHS
 function FIND_NUMBER_OF_WORDS_IN_ALL_MD_FILES () { 
+    echo;
+    echo "################################################################################" ;
+    echo ">> FINDING NUMBER OF WORDS IN ALL MD FILES: " ;
+    echo "################################################################################" ;
     for mydir in $(fd . $REPO_MGGK/content/ -t d) ; do 
         echo; echo "== DIR ==> $mydir" ; 
         find $mydir/ -name "*.md" -exec wc -w {} \;  | sort -n ; 
