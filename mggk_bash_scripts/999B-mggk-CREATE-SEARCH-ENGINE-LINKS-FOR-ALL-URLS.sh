@@ -105,7 +105,7 @@ do
     echo "<tr>" >> $OUTPUT_HTML
     ##
     echo "<td>$COUNT</td>" >> $OUTPUT_HTML
-    echo "<td><strong>$mytitle</strong></td>" >> $OUTPUT_HTML
+    echo "<td><strong><a target='_blank' href='$myurl'>$mytitle</a></strong></td>" >> $OUTPUT_HTML
     echo "<td><a target='_blank' href='$myurl'>$myurl</a></td>" >> $OUTPUT_HTML
     ##
     echo "<td>" >> $OUTPUT_HTML
