@@ -85,6 +85,7 @@ algolia_search_for_this_phrase
 hugo_mggk_enable_featured_posts
 mggk_shortcode_collection_maker
 pali_spellings_check_in_this_directory
+video_cutting_in_1_minute_equal_parts_using_ffmpeg
 1x1
 10-mggk-create-images-index-page-for-current-year
 114b_mggk_make_imagemagick_very_fancy_custom_collage
@@ -168,6 +169,7 @@ mggk_shortcode_collection_maker
 pali_move_videos_and_photos_to_separate_folders
 png2webp
 unsplash_wallpaper_download
+video_cutting_in_1_minute_equal_parts_using_ffmpeg
 webp_animation_to_png_first_frame
 webp_to_jpg
 webp_to_png
