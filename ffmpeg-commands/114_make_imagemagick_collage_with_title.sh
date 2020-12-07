@@ -78,8 +78,8 @@ read background_color ;
 total_num_images=`cat _TMP_LIST.TXT | wc -l | sed 's/ //g' ` ;
 echo "======> TOTAL NUMBER OF IMAGES: $total_num_images " ;
 
-## FOLLOWING ARE THE CALCUATIONS DONE FOR 15 MEGAPIXEL COLLAGE = 5000x3125 (change if you want to)
-height_auto=`echo "scale=0; sqrt(5000*3125/$total_num_images/1.5)" | bc -l ` ;
+## FOLLOWING ARE THE CALCULATIONS DONE FOR 4K COLLAGE = 3820x2160 (change if you want to)
+height_auto=`echo "scale=0; sqrt(3820x2160/$total_num_images/1.5)" | bc -l ` ;
 width_auto=`echo "scale=0; $height_auto*3/2" | bc -l ` ;
 sep="x" ;
 
@@ -142,7 +142,7 @@ fi
 
 ## STEP 2: Using IMAGEMAGICK to resize ALL images to Full-HD with padding to keep FULL-HD aspect ratio
 echo "=======> ImageMagick currently resizing all images to $collage_dimensions ...."
-mogrify -resize $collage_dimensions -background black -gravity center -extent $collage_dimensions *
+mogrify -resize $collage_dimensions -background $background_color -gravity center -extent $collage_dimensions *
 echo "=======> ImageMagick resizing done ...."
 
 ## STEP 3A: CHECKING IF BACKGROUND_COLOR VARIABLE IS NOT EMPTY.
