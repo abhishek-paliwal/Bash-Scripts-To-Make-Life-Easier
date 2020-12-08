@@ -85,6 +85,7 @@ algolia_search_for_this_phrase
 hugo_mggk_enable_featured_posts
 mggk_shortcode_collection_maker
 pali_spellings_check_in_this_directory
+search_mggk_url_and_open_mdfile_in_code
 video_cutting_in_1_minute_equal_parts_using_ffmpeg
 1x1
 10-mggk-create-images-index-page-for-current-year
