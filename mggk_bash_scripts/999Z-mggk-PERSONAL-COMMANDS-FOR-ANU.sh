@@ -82,6 +82,7 @@ fi
 ANU_COMMANDS_ARRAY=(makesite_mggk
 frontm
 algolia_search_for_this_phrase
+gif_maker_from_jpgs
 hugo_mggk_enable_featured_posts
 mggk_shortcode_collection_maker
 pali_spellings_check_in_this_directory
@@ -164,6 +165,7 @@ IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY=(1_imagemagick_maker
 999-make-imagemagick-collage-vertically-and-horizontally
 bordercolor
 ffmpeg_extract_audio_from_mp4_video
+gif_maker_from_jpgs
 gif_to_png_frames
 jpg2webp
 mggk_shortcode_collection_maker
