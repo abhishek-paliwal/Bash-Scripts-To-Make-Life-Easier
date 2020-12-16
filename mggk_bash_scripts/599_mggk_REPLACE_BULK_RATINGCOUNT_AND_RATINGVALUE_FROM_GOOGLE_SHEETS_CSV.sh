@@ -7,6 +7,7 @@ REQUIREMENTS_FILE="$REQUIREMENTS_FILE_DIR/599_MGGK_RATING_REQUIREMENT_FILE_CSV_F
 SUMMARY_DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/_mggk_summary_files" ;
 SUMMARY_FILE="$SUMMARY_DIR/_mggk_summary_rating_last_updated.txt" ;
 ##
+
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
 usage()
@@ -45,6 +46,29 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 ## Calling the usage function
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+##################################################################################
+DIR_OLD="$DIR_Y/content_OLD" ;
+DIR_NEW="$DIR_Y/content_NEW" ;
+OUTPUT_TMP="$DIR_Y/_tmp_output_RATING_PROGRAM.html" ;
+##
+mkdir $DIR_OLD
+mkdir $DIR_NEW
+##################################################################################
+function FUNCTION_COPY_MD_FILES_OLD () {
+    for mdFile in $(fd . $REPO_MGGK/content -t f); do cp $mdFile $DIR_OLD/ ; done
+    echo ">> All OLD md files copied to => $DIR_OLD" ; 
+}
+####
+function FUNCTION_COPY_MD_FILES_NEW () {
+    for mdFile in $(fd . $REPO_MGGK/content -t f); do cp $mdFile $DIR_NEW/ ; done
+    echo ">> All NEW md files copied to => $DIR_NEW" ; 
+}
+##################################################################################
+## Copying old files ...
+FUNCTION_COPY_MD_FILES_OLD
+##################################################################################
 
 ################################################################################
 HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content" ;
@@ -237,6 +261,25 @@ while read line; do
 
 done < $REQUIREMENTS_FILE;
 ##------------------------------------------------------------------------------
+
+##################################################################################
+## Finding differences between NEW (updated) and OLD markdown files
+##################################################################################
+## Copying new files ...
+FUNCTION_COPY_MD_FILES_NEW
+##
+MY_MESSAGE=">> Finding differences between NEW (updated) and OLD markdown files" ;
+echo "$MY_MESSAGE" ;
+echo "<h1>$MY_MESSAGE</h1>" > $OUTPUT_TMP ;
+echo "<h3>Last updated: $(date)</h3>" >> $OUTPUT_TMP ;
+echo "<pre>" >> $OUTPUT_TMP ;
+##
+for x in $(fd . $DIR_OLD -t f) ; do 
+    FILENAME=$(basename $x) ;
+    diff $DIR_OLD/$FILENAME $DIR_NEW/$FILENAME  >> $OUTPUT_TMP ;
+done
+echo "</pre>" >> $OUTPUT_TMP ;
+##################################################################################
 
 ###################################################################
 ## OUTPUTTTING TIME TO SUMMARY FILE
