@@ -47,28 +47,42 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
-##################################################################################
+##------------------------------------------------------------------------------
 DIR_OLD="$DIR_Y/content_OLD" ;
 DIR_NEW="$DIR_Y/content_NEW" ;
-OUTPUT_TMP="$DIR_Y/_tmp_output_RATING_PROGRAM.html" ;
+OUTPUT_TMP="$DIR_Y/_tmp_output_RATING_DIFFERENCES_BEFORE_N_AFTER.html" ;
 ##
 mkdir $DIR_OLD
 mkdir $DIR_NEW
-##################################################################################
+#############################################################
 function FUNCTION_COPY_MD_FILES_OLD () {
     for mdFile in $(fd . $REPO_MGGK/content -t f); do cp $mdFile $DIR_OLD/ ; done
     echo ">> All OLD md files copied to => $DIR_OLD" ; 
 }
 ####
-function FUNCTION_COPY_MD_FILES_NEW () {
+function FUNCTION_COPY_MD_FILES_NEW_AND_FIND_DIFFERENCES () {
     for mdFile in $(fd . $REPO_MGGK/content -t f); do cp $mdFile $DIR_NEW/ ; done
     echo ">> All NEW md files copied to => $DIR_NEW" ; 
+    ########################################
+    ## Finding differences between NEW (updated) and OLD markdown files
+    ########################################
+    MY_MESSAGE=">> Finding differences between NEW (updated) and OLD markdown files" ;
+    echo "$MY_MESSAGE" ;
+    echo "<h1>$MY_MESSAGE</h1>" > $OUTPUT_TMP ;
+    echo "<h3>Last updated: $(date)</h3>" >> $OUTPUT_TMP ;
+    echo "<pre>" >> $OUTPUT_TMP ;
+    ##
+    for x in $(fd . $DIR_OLD -t f) ; do 
+        FILENAME=$(basename $x) ;
+        diff $DIR_OLD/$FILENAME $DIR_NEW/$FILENAME  >> $OUTPUT_TMP ;
+    done
+    echo "</pre>" >> $OUTPUT_TMP ;
 }
-##################################################################################
+#############################################################
 ## Copying old files ...
 FUNCTION_COPY_MD_FILES_OLD
-##################################################################################
+##------------------------------------------------------------------------------
+
 
 ################################################################################
 HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content" ;
@@ -262,24 +276,10 @@ while read line; do
 done < $REQUIREMENTS_FILE;
 ##------------------------------------------------------------------------------
 
-##################################################################################
-## Finding differences between NEW (updated) and OLD markdown files
-##################################################################################
-## Copying new files ...
-FUNCTION_COPY_MD_FILES_NEW
-##
-MY_MESSAGE=">> Finding differences between NEW (updated) and OLD markdown files" ;
-echo "$MY_MESSAGE" ;
-echo "<h1>$MY_MESSAGE</h1>" > $OUTPUT_TMP ;
-echo "<h3>Last updated: $(date)</h3>" >> $OUTPUT_TMP ;
-echo "<pre>" >> $OUTPUT_TMP ;
-##
-for x in $(fd . $DIR_OLD -t f) ; do 
-    FILENAME=$(basename $x) ;
-    diff $DIR_OLD/$FILENAME $DIR_NEW/$FILENAME  >> $OUTPUT_TMP ;
-done
-echo "</pre>" >> $OUTPUT_TMP ;
-##################################################################################
+#######################################
+## Run function to find differences between NEW (updated) and OLD markdown files
+#######################################
+FUNCTION_COPY_MD_FILES_NEW_AND_FIND_DIFFERENCES
 
 ###################################################################
 ## OUTPUTTTING TIME TO SUMMARY FILE
