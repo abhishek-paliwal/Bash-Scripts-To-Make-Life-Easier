@@ -90,6 +90,25 @@ echo "$NUM_CURRENT_YOUTUBE_COVER_IMAGES: NUMBER OF CURRENT YOUTUBE COVER IMAGES 
 MGGK_RECIPE_HERE_BUTTON_BLOCKS=$(grep -irh '{{< mggk-button-block-for-recipe-here-link >}}' $HUGO_CONTENT_DIR/* | wc -l)
 echo "$MGGK_RECIPE_HERE_BUTTON_BLOCKS: NUMBER OF POSTS WITH MGGK_RECIPE_HERE_BUTTON_BLOCKS" >> $FILE_OUTPUT_SITESTATS
 
+## NUMBER OF POSTS WITH steps_images_present: "yes"
+MGGK_steps_images_present_YES=$(grep -irl 'steps_images_present: "yes"' $HUGO_CONTENT_DIR/* | sort | uniq | wc -l)
+echo "$MGGK_steps_images_present_YES: NUMBER OF POSTS WITH steps_images_present = yes" >> $FILE_OUTPUT_SITESTATS
+
+##
+## NUMBER OF POSTS WITH VAR prepTime + recipeIngredient + recipeInstructions + recipeNotes
+MGGK_VAR_prepTime=$(grep -irl 'prepTime' $HUGO_CONTENT_DIR/* | wc -l)
+MGGK_VAR_recipeIngredient=$(grep -irl 'recipeIngredient' $HUGO_CONTENT_DIR/* | wc -l)
+MGGK_VAR_recipeInstructions=$(grep -irl 'recipeInstructions' $HUGO_CONTENT_DIR/* | wc -l)
+MGGK_VAR_recipeNotes=$(grep -irl 'recipeNotes' $HUGO_CONTENT_DIR/* | wc -l)
+
+echo "$MGGK_VAR_prepTime: NUMBER OF POSTS WITH VAR prepTime" >> $FILE_OUTPUT_SITESTATS
+echo "$MGGK_VAR_recipeIngredient: NUMBER OF POSTS WITH VAR recipeIngredient" >> $FILE_OUTPUT_SITESTATS
+echo "$MGGK_VAR_recipeInstructions: NUMBER OF POSTS WITH VAR recipeInstructions" >> $FILE_OUTPUT_SITESTATS
+echo "$MGGK_VAR_recipeNotes: NUMBER OF POSTS WITH VAR recipeNotes" >> $FILE_OUTPUT_SITESTATS
+##
+
+################################################################################
+################################################################################
 ## NUMBER OF CURRENT IMAGES PRESENT IN 1x1 DIRECTORY
 NUM_CURRENT_1x1_IMAGES=$(ls $HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/rich-markup-images/1x1/*.jpg | wc -l)
 echo "$NUM_CURRENT_1x1_IMAGES: NUMBER OF CURRENT IMAGES PRESENT IN 1x1 DIRECTORY" >> $FILE_OUTPUT_SITESTATS
@@ -106,7 +125,6 @@ echo "$NUM_CURRENT_16x9_IMAGES: NUMBER OF CURRENT IMAGES PRESENT IN 16x9 DIRECTO
 NUM_CURRENT_ORIGINAL_COPIED_IMAGES=$(ls $HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/rich-markup-images/original_copied/*.* | wc -l)
 echo "$NUM_CURRENT_ORIGINAL_COPIED_IMAGES: NUMBER OF CURRENT IMAGES PRESENT IN original_copied DIRECTORY" >> $FILE_OUTPUT_SITESTATS
 
-################################################################################
 ################################################################################
 echo "##------------------------------------------------------------------------------" >> $FILE_OUTPUT_SITESTATS 
 echo ">> FINDING WHICH URLS ARE NOT PRESENT AS VALID IMAGES IN 1X1, 4X3, 16X9 DIRECTORIES ..." >> $FILE_OUTPUT_SITESTATS
@@ -198,8 +216,11 @@ function FIND_NUMBER_OF_WORDS_IN_ALL_MD_FILES () {
     echo ">> FINDING NUMBER OF WORDS IN ALL MD FILES: " ;
     echo "################################################################################" ;
     for mydir in $(fd . $REPO_MGGK/content/ -t d) ; do 
-        echo; echo "== DIR ==> $mydir" ; 
-        find $mydir/ -name "*.md" -exec wc -w {} \;  | sort -n ; 
+        echo "========================================" ; 
+        echo ">> DIRECTORY ==> $mydir" ; 
+        echo "========================================" ; 
+        #find $mydir/ -name "*.md" -exec wc -w {} \;  | sort -n ; 
+        for x in $(fd . $mydir/ -t f --exact-depth 1) ; do wc -w $x ; done | sort -n ;
     done
 }
 FIND_NUMBER_OF_WORDS_IN_ALL_MD_FILES >> $FILE_OUTPUT_SITESTATS
