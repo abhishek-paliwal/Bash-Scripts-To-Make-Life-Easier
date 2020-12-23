@@ -84,10 +84,6 @@ frontm
 algolia_search_for_this_phrase
 gif_maker_from_jpgs
 hugo_mggk_enable_featured_posts
-mggk_shortcode_collection_maker
-mggk_calculate_length_of_yoast_description
-mggk_calculate_length_of_titles
-mggk_calculate_length_of_urls
 pali_spellings_check_in_this_directory
 search_mggk_url_and_open_mdfile_in_code
 video_cutting_in_1_minute_equal_parts_using_ffmpeg
@@ -110,7 +106,11 @@ video_cutting_in_1_minute_equal_parts_using_ffmpeg
 999-mggk-opening-hyperlinks-in-browser-for-checking
 999-mggk-2020-MICROSOFT-BING-BATCH-URL-SUBMISSION
 999A-mggk-MATCH-WORDS-IN-MD-FILE-WITH-EXISTING-URLS-LIKE-WORDPRESS
-999B-mggk-CREATE-SEARCH-ENGINE-LINKS-FOR-ALL-URLS) ;
+999B-mggk-CREATE-SEARCH-ENGINE-LINKS-FOR-ALL-URLS
+mggk_shortcode_collection_maker
+mggk_calculate_length_of_yoast_description
+mggk_calculate_length_of_titles
+mggk_calculate_length_of_urls) ;
 
 ##
 PALI_COMMANDS_ARRAY=(palinotes_makesite_hugo
