@@ -144,7 +144,10 @@ leelasrecipes_rename_images-with-custom-prefix-and-counters
 leelasrecipes-MOVE-ALL-PWD-IMAGES-TO-PROPER-WEBSITE-FOLDER
 leelasrecipes_check_spellings
 leelasrecipes-CREATE-AND-SAVE-SITE-STATISTICS
-leelasrecipes-MAKE-VIDEO-SITEMAP-XML) ;
+leelasrecipes-MAKE-VIDEO-SITEMAP-XML
+leelasrecipes_calculate_length_of_description
+leelasrecipes_calculate_length_of_titles
+leelasrecipes_calculate_length_of_urls) ;
 
 ##
 IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY=(1_imagemagick_maker
