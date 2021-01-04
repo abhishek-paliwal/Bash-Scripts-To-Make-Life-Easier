@@ -123,7 +123,7 @@ function FUNCTION_step0_download_videos_using_youtube-dl_program () {
         ## PRINTING
         echo; echo "YOUTUBE_ID = $youtube_id // URL_VAR= $url_var" ;
         ## DOWNLOADING YOUTUBE VIDEO USING youtube-dl program
-        youtube-dl --id $youtube_id ;
+        youtube-dl --id "https://youtu.be/$youtube_id" ;
         ## RENAMING YOUTUBE VIDEO WITH URL_VAR
         mv $youtube_id.mkv  $url_var.mkv ;
         mv $youtube_id.mp4  $url_var.mp4 ;
