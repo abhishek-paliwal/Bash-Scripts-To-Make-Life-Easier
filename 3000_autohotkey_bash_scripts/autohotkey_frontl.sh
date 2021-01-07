@@ -188,7 +188,7 @@ cookTime: PTHM
 totalTime: PTHM
 
 recipeCategory: Breakfast
-recipeCuisine: International
+recipeCuisine: Indian
 recipeYield: 4
 
 aggregateRating:
