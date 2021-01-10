@@ -211,11 +211,11 @@ LONG_TEXT_HERE
 
 > LONG_TEXT_HERE
 
-{{< figure src=\"https://www.leelasrecipes.com/images/masonary-post/2020/$URL-1.jpg\" alt=\"Image of $CLIPBOARD\" >}}
+{{< figure src=\"https://www.leelasrecipes.com/images/masonary-post/2021/$URL-1.jpg\" alt=\"Image of $CLIPBOARD\" >}}
 
-{{< figure src=\"https://www.leelasrecipes.com/images/masonary-post/2020/$URL-2.jpg\" alt=\"Image of $CLIPBOARD\" >}}
+{{< figure src=\"https://www.leelasrecipes.com/images/masonary-post/2021/$URL-2.jpg\" alt=\"Image of $CLIPBOARD\" >}}
 
-{{< figure src=\"https://www.leelasrecipes.com/images/masonary-post/2020/$URL-3.jpg\" alt=\"Image of $CLIPBOARD\" >}}
+{{< figure src=\"https://www.leelasrecipes.com/images/masonary-post/2021/$URL-3.jpg\" alt=\"Image of $CLIPBOARD\" >}}
 
 {{< leelasrecipes-INSERT-RECIPE-HTML-BLOCK >}}
 

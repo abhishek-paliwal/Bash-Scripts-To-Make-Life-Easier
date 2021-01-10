@@ -22,7 +22,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ## VARIABLE SETTING = Image directory to move files to
-IMGDIR="$DIR_GITHUB/2020-LEELA-RECIPES/static/images/masonary-post/2020/" ; 
+IMGDIR="$DIR_GITHUB/2020-LEELA-RECIPES/static/images/masonary-post/2021/" ; 
 echo; echo ">>>> IMPORTANT NOTE: All images will be moved from $(pwd) => $IMGDIR" ;
 
 echo; echo ">> BEFORE MOVING- Current images found in = $IMGDIR"; echo;
