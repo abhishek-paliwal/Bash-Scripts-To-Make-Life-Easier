@@ -3,7 +3,7 @@
 ##################################################################################
 ## SOME VARIABLES (CHANGE THE DIRs IF NEEDED)
 WORKDIR="$HOME_WINDOWS/Desktop/Y" ;
-DIR_WHICH_YOUTUBE_VIDEOS="/Users/abhishek/GitHub/ZZ-HUGO-TEST/content/top-151-200" ;
+DIR_WHICH_YOUTUBE_VIDEOS="/Users/abhishek/GitHub/ZZ-HUGO-TEST/content/top-201-300" ;
 #DIR_WHICH_YOUTUBE_VIDEOS="$DIR_Y" ;
 ##################################################################################
 
