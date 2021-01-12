@@ -230,6 +230,7 @@ echo "##########################################################################
 
 ##------------------------------------------------------------------------------
 ## COUNT AND PRINT THE NUMBER OF FILES (IMAGES) PRESENT IN recipe-steps-images DIRECTORY ...
+echo " " >> $FILE_OUTPUT_SITESTATS
 echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" >> $FILE_OUTPUT_SITESTATS
 echo "## COUNT AND PRINT THE NUMBER OF FILES (IMAGES) PRESENT IN recipe-steps-images DIRECTORY ..." >> $FILE_OUTPUT_SITESTATS
 echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" >> $FILE_OUTPUT_SITESTATS
