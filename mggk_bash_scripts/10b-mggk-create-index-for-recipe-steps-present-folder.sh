@@ -23,9 +23,6 @@ MAIN_IMAGES_FOLDER="drawings"
 #ROOT="$DIRPATH/$MAIN_IMAGES_FOLDER"
 ROOT="$DIRPATH"
 
-GTRACK_URL1="?utm_source=homepage&utm_medium=image_clicked"
-GTRACK_URL2="?utm_source=homepage&utm_medium=enlarge_button_clicked"
-
 cd $ROOT
 echo "CURRENT WORKING DIRECTORY: " $ROOT ##check the present working directory
 echo "#################" #Blank line
@@ -212,7 +209,7 @@ hr {clear:both;}
 echo "</head><body>" >> $OUTPUT
 
 echo "<nav class='navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top'>
-  <a class='navbar-brand' href='https://adoria.xyz'>
+  <a class='navbar-brand' href='https://www.mygingergarlickitchen.com'>
   <img src='https://www.mygingergarlickitchen.com/logos/mggk-new-logo-transparent-150px.png' style='width: 30px; '>
   <span style='font-weight: 700; color: #F81894;'>MGGK</span> | Recipe Steps Images
   </a>
@@ -274,9 +271,9 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort -nr`; do
 
 ## Printing the image dimensions for everything, except GIFs because they produce LOOOOONG outputs for all GIF frames. ##
     if [ "$filetype" != 'GIF' ]; then
-      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file$GTRACK_URL1'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: deeppink; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file$GTRACK_URL2'>Enlarge</a></strong></div></div>" >> $OUTPUT
+      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: deeppink; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
     else
-      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file$GTRACK_URL1'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: deeppink ; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file$GTRACK_URL2'>Enlarge</a></strong></div></div>" >> $OUTPUT
+      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: deeppink ; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file'>Enlarge</a></strong></div></div>" >> $OUTPUT
     fi
 
   done
@@ -333,15 +330,3 @@ if [ "$USER" != "ubuntu" ] ; then
   open -a Safari $OUTPUT
   open -a Safari $SITEURL
 fi
-
-##------------------------------------------------------------------------------
-## Getting all image names for creating wordcloud in python
-echo; echo ">>>> Getting all image names for creating wordcloud in python (through 603-mggk-script....sh)"
-WORDCLOUD_FILE="$DIRPATH/ADO_SITE_WORDCLOUD_for_using_with_603_mggk_script.csv"
-echo "TITLE_TAG_VALUE" > $WORDCLOUD_FILE ## We need to have this line as the first line.
-## The following command finds all files (case insensitive jpg, JPG, png, PNG)
-basename $(find . -iname '*.png') | sed -e 's/-/ /g' -e 's/_/ /g' -e 's/\./ /g' >> $WORDCLOUD_FILE
-basename $(find . -iname '*.jpg') | sed -e 's/-/ /g' -e 's/_/ /g' -e 's/\./ /g' >> $WORDCLOUD_FILE
-echo; echo ">> THIS WORDCLOUD FILE CREATED (use it with 603-mggk-wordcloud...sh script) => $WORDCLOUD_FILE" ;
-echo;
-##------------------------------------------------------------------------------
