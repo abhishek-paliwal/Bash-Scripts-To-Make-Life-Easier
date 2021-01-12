@@ -226,6 +226,17 @@ function FIND_NUMBER_OF_WORDS_IN_ALL_MD_FILES () {
 FIND_NUMBER_OF_WORDS_IN_ALL_MD_FILES >> $FILE_OUTPUT_SITESTATS
 
 ##------------------------------------------------------------------------------
+echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
+
+##------------------------------------------------------------------------------
+## COUNT AND PRINT THE NUMBER OF FILES (IMAGES) PRESENT IN recipe-steps-images DIRECTORY ...
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" >> $FILE_OUTPUT_SITESTATS
+echo "## COUNT AND PRINT THE NUMBER OF FILES (IMAGES) PRESENT IN recipe-steps-images DIRECTORY ..." >> $FILE_OUTPUT_SITESTATS
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" >> $FILE_OUTPUT_SITESTATS
+DIR_FOR_COUNT="$REPO_MGGK/static/wp-content/recipe-steps-images"
+bash $REPO_SCRIPTS/999-count-number-of-files-in-directories-recursively.sh $DIR_FOR_COUNT | sed 's+/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/recipe-steps-images+\.+g' >> $FILE_OUTPUT_SITESTATS
+##------------------------------------------------------------------------------
+
 
 echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
 echo "</pre>" >> $FILE_OUTPUT_SITESTATS
