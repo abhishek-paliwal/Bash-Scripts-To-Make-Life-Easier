@@ -34,7 +34,6 @@ shopt -s nullglob
 echo > /tmp/tmp.txt
 
 ## CHECK IF THE CLI HAS ARGUMENTS GIVEN
-echo;
 echo "##--------------------------------------" ;
 if [ $# -eq 0 ]; then
 	DIRPATH=$(pwd) ;
