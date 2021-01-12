@@ -228,7 +228,7 @@ echo "<div class='site-wrapper'>
 <!-- TOP LOGO --> <img src='https://www.mygingergarlickitchen.com/logos/mggk-new-logo-transparent-150px.png' style='width: 300px; '>
 <h1 class='heading'>Index of MGGK - Recipe Steps Images<br>&bull;&bull;&bull;&bull;&bull;</h1>
 
-<h2 class='heading'><font color='#FFFF00'>Designed by</font> <a href='https://adoria.xyz'><font color='#50c878'>Adoria</font></a></h2>
+<h2 class='heading'><font color='#FFFF00'>Designed by</font> <a href='https://www.mygingergarlickitchen.com/'><font color='#50c878'>MGGK</font></a></h2>
 <!-- HEADING DIV ENDS --> </div>
 
 </div></div> <!-- site wrapper ends -->"  >> $OUTPUT
@@ -286,7 +286,7 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort -nr`; do
 done
 
 #### Calculations end ####
-echo "<footer class='theEndFooter'><p>&copy; Adoria 2020</p></footer>" >> $OUTPUT
+echo "<footer class='theEndFooter'><p>&copy; My Ginger Garlic Kitchen 2021</p></footer>" >> $OUTPUT
 
 echo "</div><!-- Container DIV ENDS -->" >> $OUTPUT
 
