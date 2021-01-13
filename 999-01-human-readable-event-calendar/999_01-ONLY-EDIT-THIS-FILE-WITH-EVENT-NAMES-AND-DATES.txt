@@ -11,10 +11,14 @@
 20200711,15:50:00,DeepSkyBlue,Swimming-Class (till 16:25)
 ######################
 ## OTHER FESTIVALS
-20200803,00:12:00,orange,Rakhi
+20210114,12:00:00,orange,Makar Sankranti
 ######################
 ## ADO EVENTS
-20200909,15:15:00,lime, Millie hangouts meeting // 15:15 to 15:30 meet.google.com/ami-tbyr-rir
+20210113,15:20:00,lime, Millie hangouts meeting // 15:15 to 15:30 meet.google.com/ami-tbyr-rir
 #######################
 ## HOME EVENTS
-20200714,12:00:00,deeppink,AB-Bday 
+20210130,12:00:00,deeppink,PA-Bday 
+20210128,12:00:00,deeppink,EV-Bday 
+20210418,12:00:00,deeppink,AN-Bday 
+20210422,12:00:00,deeppink,AD-Bday 
+20210714,12:00:00,deeppink,AB-Bday 
