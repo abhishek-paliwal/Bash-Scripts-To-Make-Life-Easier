@@ -110,7 +110,8 @@ video_cutting_in_1_minute_equal_parts_using_ffmpeg
 mggk_shortcode_collection_maker
 mggk_calculate_length_of_yoast_description
 mggk_calculate_length_of_titles
-mggk_calculate_length_of_urls) ;
+mggk_calculate_length_of_urls
+10b-mggk-create-index-for-recipe-steps-present-folder) ;
 
 ##
 PALI_COMMANDS_ARRAY=(palinotes_makesite_hugo
