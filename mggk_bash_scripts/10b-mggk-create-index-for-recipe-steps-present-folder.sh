@@ -6,9 +6,38 @@ MGGK_URL="https://www.mygingergarlickitchen.com" ;
 MAIN_INDEX_HTMLFILE_URL="$BASE_URL/index-recipe-steps-images.html" ;
 ##
 main_index_htmlfile="$REPO_MGGK/static/wp-content/recipe-steps-images/index-recipe-steps-images.html" ;
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+html_header="<html lang='en' >
+<head>
+    <!-- Required meta tags -->
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+	<meta http-equiv='refresh' content='60'> <!-- Refresh every 60 seconds -->
+	<!-- Loading moment.js from CDN -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
+	<title>INDEX OF RECIPE STEPS IMAGES</title>
+  </head>
+<body>" ;
+
+date_var=$(date +%Y%m%d" "%H:%M:%S) ;
+
+html_body_script_footer="<!-- BEGIN: Scripts will load below -->
+<script type='text/javascript'>
+    // format TODAY
+    let today = moment().format('MMMM Do YYYY, h:mm:ss a') ;
+    document.getElementById('currentDateDisplay').innerHTML = today;
+    // formatting: list of Event dates below, relative time from today
+    let time_from_now = moment(\"$date_var\", \"YYYYMMDD h:mm:dd\").fromNow() ;
+    document.getElementById('printTimeFromNow').innerHTML = time_from_now ;
+</script>"
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 ## Initializing main_index_htmlfile
-echo "<h1>INDEX OF ALL HTML INDEX FILES IN DIR => recipe-steps-images</h1>" > $main_index_htmlfile ;
-echo "Page Updated: $(date +%Y-%m-%d-T-%H:%M:%S)<hr>" >> $main_index_htmlfile ;
+echo "$html_header" > $main_index_htmlfile ;
+##
+echo "<h1>INDEX OF ALL HTML INDEX FILES IN DIR => recipe-steps-images</h1>" >> $main_index_htmlfile ;
+echo "Page Updated: <strong><span id='printTimeFromNow'></span></strong>, at $(date +%Y-%m-%d-T%H:%M:%S) // Currently it's <span id='currentDateDisplay'></span><hr>" >> $main_index_htmlfile ;
 
 num_files=$(fd . $MAIN_DIR -t d | wc -l)
 echo "<strong>Number of sub-directories found => $num_files</strong>" >> $main_index_htmlfile ;
@@ -47,3 +76,5 @@ for x in $(fd . $MAIN_DIR -t d); do
 done
 
 echo "</table>" >> $main_index_htmlfile ;
+##
+echo "$html_body_script_footer</body></html>" >> $main_index_htmlfile ;
