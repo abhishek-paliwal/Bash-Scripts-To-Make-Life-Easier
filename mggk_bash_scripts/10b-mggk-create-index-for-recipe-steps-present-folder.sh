@@ -25,7 +25,8 @@ for x in $(fd . $MAIN_DIR -t d); do
     thisdir_index_htmlfile="index-$this_dirname.html" ; 
     htmlfile="$x/$thisdir_index_htmlfile" ; 
 
-    echo "$this_dirname // $htmlfile" ; 
+    #echo "$this_dirname // $htmlfile" ; 
+    echo "  >> Creating HTML index file (recipe steps images directory) = $COUNT of $num_files " ;
 
     ## Initializing htmlfile
     num_files_in_this_dir=$(fd . $x -e jpg | wc -l) ;
