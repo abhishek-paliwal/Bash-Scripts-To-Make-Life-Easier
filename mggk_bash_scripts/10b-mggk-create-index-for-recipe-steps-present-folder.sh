@@ -1,5 +1,34 @@
 #!/bin/bash
+THIS_SCRIPT_NAME="$(basename $0)" ;
+THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
+##
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+usage()
+{
+cat <<EOM
+USAGE: $(basename $0)
+    ################################################################################
+    ## USAGE:
+    #### > bash $THIS_SCRIPT_NAME
+    ################################################################################
+    ## THIS SCRIPT MAKES AN INDEX HTML FILE FROM RECIPE-STEPS-IMAGES DIRECTORY. THIS 
+    ## CONTAINS LINKS TO OTHER INDEX FILES CORRESPONDING TO SUB-DIRECTORIES. THESE INDEX
+    ## HTML FILES SHOWS ALL JPG IMAGES IN THOSE SUB-DIRECTORIES, FOR CHECKING. 
+    ################################################################################
+    ## CREATED BY: PALI
+    ## CREATED ON: JAN 13, 2021
+    ################################################################################
+EOM
 
+exit 0 ## EXITING IF ONLY USAGE IS NEEDED
+}
+## Calling the usage function
+if [ "$1" == "--help" ] ; then usage ; fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
+## SETTING VARIABLES
 MAIN_DIR="$REPO_MGGK/static/wp-content/recipe-steps-images" ;
 BASE_URL="https://www.mygingergarlickitchen.com/wp-content/recipe-steps-images" ;
 MGGK_URL="https://www.mygingergarlickitchen.com" ;
@@ -7,7 +36,9 @@ MAIN_INDEX_HTMLFILE_URL="$BASE_URL/index-recipe-steps-images.html" ;
 ##
 main_index_htmlfile="$REPO_MGGK/static/wp-content/recipe-steps-images/index-recipe-steps-images.html" ;
 
+
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## SETTING HTML HEADER AND FOOTER
 html_header="<html lang='en' >
 <head>
     <!-- Required meta tags -->
@@ -46,6 +77,7 @@ echo "<hr>" >> $main_index_htmlfile ;
 echo "<table border='0' width='100%'>" >> $main_index_htmlfile ;
 echo "<tr> <td>#</td> <td>SUB-DIRECTORY (HTML INDEX FILE LINKED)</td> <td>NUMBER OF JPG IMAGES FOUND IN SUB-DIR</td> <td>GOTO MGGK PAGE</td> </tr>" >> $main_index_htmlfile ;
 
+##+++++++++++++++++++++++++++++++++++++++++
 COUNT=1;
 ## Looping through all directories present in MAIN_DIR
 for x in $(fd . $MAIN_DIR -t d); do 
@@ -74,7 +106,15 @@ for x in $(fd . $MAIN_DIR -t d); do
     ((COUNT++)) ;
  ##
 done
+##+++++++++++++++++++++++++++++++++++++++++
 
 echo "</table>" >> $main_index_htmlfile ;
-##
 echo "$html_body_script_footer</body></html>" >> $main_index_htmlfile ;
+
+##################################################################################
+echo;
+echo ">> SUMMARY: " ;
+echo ">> INDEX HTML FILE SAVED AS => $main_index_htmlfile" ;
+## COPY this file to Dropbox dir
+cp $main_index_htmlfile $DIR_DROPBOX_SCRIPTS_OUTPUT/ ;
+echo ">> INDEX HTML ALSO COPIED TO => $DIR_DROPBOX_SCRIPTS_OUTPUT" ;
