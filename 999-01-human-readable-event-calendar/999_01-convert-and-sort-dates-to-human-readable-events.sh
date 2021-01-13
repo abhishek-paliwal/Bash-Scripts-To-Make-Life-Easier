@@ -95,7 +95,7 @@ echo "<!DOCTYPE html>
 
 		<meta http-equiv='refresh' content='60'> <!-- Refresh every 60 seconds -->
 	  <!-- Loading moment.js from CDN -->
-	  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
+	  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
 
 		<style>
 		.bgtheme1 {background: rgb(18,18,18) ; padding: 15px; }
