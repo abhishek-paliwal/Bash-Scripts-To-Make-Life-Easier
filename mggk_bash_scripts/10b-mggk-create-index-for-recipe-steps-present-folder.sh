@@ -3,7 +3,8 @@
 MAIN_DIR="$REPO_MGGK/static/wp-content/recipe-steps-images" ;
 BASE_URL="https://www.mygingergarlickitchen.com/wp-content/recipe-steps-images" ;
 MGGK_URL="https://www.mygingergarlickitchen.com" ;
-
+MAIN_INDEX_HTMLFILE_URL="$BASE_URL/index-recipe-steps-images.html" ;
+##
 main_index_htmlfile="$REPO_MGGK/static/wp-content/recipe-steps-images/index-recipe-steps-images.html" ;
 ## Initializing main_index_htmlfile
 echo "<h1>INDEX OF ALL HTML INDEX FILES IN DIR => recipe-steps-images</h1>" > $main_index_htmlfile ;
@@ -29,7 +30,7 @@ for x in $(fd . $MAIN_DIR -t d); do
     ## Initializing htmlfile
     num_files_in_this_dir=$(fd . $x -e jpg | wc -l) ;
     echo "<h1>JPG images in this sub-directory = $num_files_in_this_dir <pre>$this_dirname</pre></h1>" > $htmlfile ;
-    echo "Page updated: $(date +%Y-%m-%d-T-%H:%M:%S)<hr>" >> $htmlfile ;
+    echo "Page updated: The same time when the main index page is updated. (<a href='$MAIN_INDEX_HTMLFILE_URL'>See here</a>)<hr>" >> $htmlfile ;
 
     ## Making links for all jpg files in current directory
     for fname in $(fd . $x -e jpg); do 
