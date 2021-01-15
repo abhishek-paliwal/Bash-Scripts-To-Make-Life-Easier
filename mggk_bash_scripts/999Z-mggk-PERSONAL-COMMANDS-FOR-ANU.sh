@@ -135,7 +135,8 @@ pali_spellings_add_in_personal_words
 pali_spellings_check_in_this_directory
 pali_takeout_google_unzip_all_sequential_zip_files
 pali_mggk_RSYNC_REPOS_MGGK_AND_ZZMGGK
-pali_GIT_STATUS_FOR_ALL_REPOS) ;
+pali_GIT_STATUS_FOR_ALL_REPOS
+pali_imagemagick_fixed_resize_images_by_width_or_height) ;
 
 ##
 LEELA_COMMANDS_ARRAY=(leelasrecipes_makesite_hugo
@@ -188,7 +189,8 @@ youtube-download-all-formats
 youtube-download-best-audio-only
 youtube-download-best-overall-version
 youtube-list-formats
-youtube-update-downloader-program)
+youtube-update-downloader-program
+pali_imagemagick_fixed_resize_images_by_width_or_height)
 
 ## Assign the corresponding user array to the new array variable
 if [ "$WHICH_USER" == "anu" ] ; then MY_COMMANDS_ARRAY=( "${ANU_COMMANDS_ARRAY[@]}" ) ; fi
