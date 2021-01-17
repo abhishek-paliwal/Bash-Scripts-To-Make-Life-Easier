@@ -84,6 +84,7 @@ echo ">> BASH COMMAND TO RUN = $MY_COMMAND" ;
 echo;echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
 echo ">> THIS MARKDOWN FILE IS FOUND FOR THE ENTERED SEARCH URL: "
 #grep -irl 'url: /the-best-juice-combinations-to-try-out-this-year/' $HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content
+## THE MAIN MAGIC OF FINDING THE MD FILE
 eval $MY_COMMAND
 
 
@@ -91,3 +92,31 @@ eval $MY_COMMAND
 echo;echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
 echo ">> FINAL STEP: OPENING THIS FILE IN EDITOR: $(eval $MY_COMMAND)" ;
 code $(eval $MY_COMMAND) ;
+
+################################################################################
+################################################################################
+## OPTIONAL: COPY-PASTE THE FOLLOWING FUNCTION BLOCK IN OTHER EXTERNAL BASH SCRIPTS IF
+## YOU JUST WANT TO OUTPUT THE FULL PATH TO THE MARKDOWN FILE WITH CORRESPONDING
+## MGGK URL
+##+++++++++++++++++++++++ Copy-paste from below ++++++++++++++++++++++++++++++
+##------------------------------------------------------------------------------
+## BEGIN: FUNCTION TO OUTPUT THE MARKDOWN FILE PATH FOR AN ENTERED MGGK URL
+## AS COMMAND LINE ARGUMENT
+function FUNCTION_OUTPUT_MDFILE_FULLPATH () {
+  SEARCHDIR="$REPO_MGGK/content" ;
+  ## CREATING SEARCH_URL FROM THE USER INPUT
+  SEARCHURL=$(echo $1 | sed 's|https://www.mygingergarlickitchen.com||g')
+  ## EXIT THE SCRIPT IF THE ENTERED URL IS NOT PROPER
+  if [[ "$SEARCHURL" == "/" ]] || [[ "$SEARCHURL" == "" ]] ; then exit 1; fi
+  ## COUNT THE NUMBER OF FILES WITH CURRENT URL IN YAML FRONTMATTER.
+  ## THE ANSWER SHOULD ONLY BE 1. BUT JUST TO MAKE SURE, RUN THE FOLLOWING COMMAND.
+  NUM_FILES=$(grep -irl "url: $SEARCHURL" $SEARCHDIR | wc -l | tr -d '[:space:]') ;
+  ## Check, how many files with this url are returned. Exit, if more than 1.
+  if [[ "$NUM_FILES" -eq 0 ]] || [[ "$NUM_FILES" -gt 1 ]] ; then exit 1; fi 
+  ## SEARCH FOR THE MD FILE WHERE THE URL LIES IN THE YAML FRONTMATTER
+  grep -irl "url: $SEARCHURL" $SEARCHDIR | head -1 ;
+}
+## END: FUNCTION
+MDFILE_WITH_CHOSEN_URL=$(FUNCTION_OUTPUT_MDFILE_FULLPATH "YOUR-CHOSEN-URL") ;
+##------------------------------------------------------------------------------
+##+++++++++++++++++++++++ Copy-paste from above ++++++++++++++++++++++++++++++
