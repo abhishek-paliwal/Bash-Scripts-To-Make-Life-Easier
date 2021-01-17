@@ -68,7 +68,8 @@ fi
 ###############################################################################
 ## DEFINE SOME VARIABLE FILENAMES
 LINKS_FILE_OUTPUT="$PWD/_TMP_MYLINKS.txt" ;
-OUTPUT_HTML_FILE="$PWD/_TMP_505A_NEWSLETTER_FINAL_OUTPUT-$REQUIREMENTS_FILE_BASENAME.html"
+OUTPUT_HTML_FILE="$PWD/_TMP_505A_NEWSLETTER_TMP_OUTPUT-$REQUIREMENTS_FILE_BASENAME.html"
+OUTPUT_HTML_FILE_FINAL="$PWD/_TMP_505A_NEWSLETTER_FINAL_OUTPUT-$REQUIREMENTS_FILE_BASENAME.html"
 TMP_CURL_FILE="$PWD/_TMP_mycurlfile.txt" ;
 MD_FILENAME="$PWD/_TMP-$REQUIREMENTS_FILE_BASENAME.md";
 ##
@@ -118,78 +119,83 @@ echo "<p style='font-size: 18px; text-align: center; color: #cd1c62; '>&bull; &b
 
 echo "<center>" >> $OUTPUT_HTML_FILE; 
 
+
+
+##------------------------------------------------------------------------------
+## BEGIN: FUNCTION TO OUTPUT THE MARKDOWN FILE PATH FOR AN ENTERED MGGK URL
+## AS COMMAND LINE ARGUMENT
+function FUNCTION_OUTPUT_MDFILE_FULLPATH () {
+  SEARCHDIR="$REPO_MGGK/content" ;
+  ## CREATING SEARCH_URL FROM THE USER INPUT
+  SEARCHURL=$(echo $1 | sed 's|https://www.mygingergarlickitchen.com||g')
+  ## EXIT THE SCRIPT IF THE ENTERED URL IS NOT PROPER
+  if [[ "$SEARCHURL" == "/" ]] || [[ "$SEARCHURL" == "" ]] ; then exit 1; fi
+  ## COUNT THE NUMBER OF FILES WITH CURRENT URL IN YAML FRONTMATTER.
+  ## THE ANSWER SHOULD ONLY BE 1. BUT JUST TO MAKE SURE, RUN THE FOLLOWING COMMAND.
+  NUM_FILES=$(grep -irl "url: $SEARCHURL" $SEARCHDIR | wc -l | tr -d '[:space:]') ;
+  ## Check, how many files with this url are returned. Exit, if more than 1.
+  if [[ "$NUM_FILES" -eq 0 ]] || [[ "$NUM_FILES" -gt 1 ]] ; then exit 1; fi 
+  ## SEARCH FOR THE MD FILE WHERE THE URL LIES IN THE YAML FRONTMATTER
+  grep -irl "url: $SEARCHURL" $SEARCHDIR | head -1 ;
+}
+## END: FUNCTION
+#MDFILE_WITH_CHOSEN_URL=$(FUNCTION_OUTPUT_MDFILE_FULLPATH "YOUR-CHOSEN-URL") ;
+##------------------------------------------------------------------------------
+
 ###############################################################################
 ########### USING THE TMP LINKS FILE AND FINDING CORRESPONDING MARKDOWN FILES #############
-
 ## NOW, FINDING THE MARKDOWN FILES WHICH HAVE THE LINES FROM THE ABOVE OUTPUT1 FILE
 echo ">>>> Beginning WHILE LOOP" ;
 echo "<div class='row'><div class='col-12'> <!--BEGIN: MAIN ROW+COLUMN -->" >> $OUTPUT_HTML_FILE ;
 echo ""  >> $OUTPUT_HTML_FILE;
 
-    COUNT=1;
-    while read -r line; do
-        echo ;
-        echo ">>> LINE NUMBER $COUNT = $line " # Reading each line
+COUNT=1;
+while read -r line; do
+    echo ;
+    echo ">>> LINE NUMBER $COUNT = $line " # Reading each line
 
-        ## SAving the url locally
-        curl -s $line > $TMP_CURL_FILE ;
+    MGGK_BASEURL="https://www.mygingergarlickitchen.com"
 
-        ## EXTRACTING TITLE
-        TITLE=$( cat $TMP_CURL_FILE | grep -i 'og:title' | sed 's/<meta property=\"og:title\" content=\"//g'  | sed 's/\" \/>//g' | sed 's|">||g') ;
-        echo "TITLE = $TITLE " ;
+    MDFILE_WITH_CHOSEN_URL=$(FUNCTION_OUTPUT_MDFILE_FULLPATH "$line") ;
+    echo "  >> Markdown file found => $MDFILE_WITH_CHOSEN_URL " ; 
+    echo;
+    
+    ## EXTRACTING NEEDED DETAILS FROM MD FILE THUS FOUND
+    TITLE=$(grep -irh '^title: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed 's/title: //g' ) ;
+    META_DESCRIPTION=$(grep -irh '^yoast_description: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed 's/yoast_description: //g' ) ;
+    URL=$(grep -irh '^url: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed "s+url: +$MGGK_BASEURL+g" ) ;
+    IMAGE=$(grep -irh '^featured_image: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed "s+featured_image: +$MGGK_BASEURL+g" ) ;
 
-        ## EXTRACTING META DESCRIPTION
-        #### (long descriptions will be trimmed after 200 chars, so that all will have equal length)
-        META_DESCRIPTION=$( cat $TMP_CURL_FILE | grep -i 'og:description' | sed 's/<meta property=\"og:description\" content=\"//g'  | sed 's/\" \/>//g' | sed 's|">||g' | cut -c1-180 ) ;
+    ## PRINTING THE VARIABLES
+    echo "TITLE = $TITLE " ;
+    echo "PAGE URL = $URL " ;
+    echo "META_DESCRIPTION = $META_DESCRIPTION " ;
+    echo "IMAGE = $IMAGE " ;
 
-        LENGTH_METADESC=$(echo $META_DESCRIPTION | awk '{print length}') ;
-        echo "===========> LENGTH_METADESC = $LENGTH_METADESC" ;
-        ## ADD TRHEE DOTS IF LENGTH_METADESC IS > 170
-        if [[ "$LENGTH_METADESC" -lt 170 ]] ; then
-          META_DESCRIPTION=$META_DESCRIPTION
-        else
-          META_DESCRIPTION="$META_DESCRIPTION..." ;
-        fi
+    ## PRINTING TO HTML
+    echo "<h3 style='font-size:24px;'><a style='color: #cd1c62;' href='$URL'>$COUNT.) $TITLE</a></h3>" >> $OUTPUT_HTML_FILE;
+    echo "<p style='font-size: 18px'; >$META_DESCRIPTION</p>" >> $OUTPUT_HTML_FILE ;
+    echo "<p style='font-size: 18px'; ><a href='$URL'><img src='$IMAGE' alt='$TITLE' width='400' height='600' /></a></p>" >> $OUTPUT_HTML_FILE;  
 
-        echo "META_DESCRIPTION = $META_DESCRIPTION " ;
+    echo "<div style='background-color: #cd1c62;
+    border: 2px solid #cd1c62;
+    padding: 10px;
+    color: white;
+    border-radius: 100px;
+    text-align: center;
+    display: inline-block;'>
+    <a style='color: white;' href='$URL' target='_blank'>Check out full post &rarr;</a></div>" >> $OUTPUT_HTML_FILE ;
+    
+    echo "<p style='font-size: 18px; text-align: center; color: #cd1c62; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ;
 
-        ## EXTRACTING URL
-        URL=$( cat $TMP_CURL_FILE | grep -i 'og:url' | sed 's/<meta property=\"og:url\" content=\"//g'  | sed 's/\" \/>//g'  | sed 's|">||g') ;
-        echo "PAGE URL = $URL " ;
+    (( COUNT++ ))
 
-        ## EXTRACTING IMAGE URL
-        IMAGE=$( cat $TMP_CURL_FILE | grep -i 'og:image:secure_url' | sed 's/<meta property=\"og:image:secure_url\" content=\"//g'  | sed 's/\" \/>//g'  | sed 's|">||g') ;
-        echo "IMAGE = $IMAGE " ;
+done < $LINKS_FILE_OUTPUT
 
-          ## DOWNLOADING THE IMAGE INTO A SPECIFIC FOLDER (folder will be created if not present already)
-          #wget -P _TMP_IMAGES_$REQUIREMENTS_FILE/ $IMAGE
-
-
-        ## PRINTING TO HTML
-        echo "<h3 style='font-size:24px;'><a style='color: #cd1c62;' href='$URL'>$COUNT.) $TITLE</a></h3>" >> $OUTPUT_HTML_FILE;
-        echo "<p style='font-size: 18px'; >$META_DESCRIPTION</p>" >> $OUTPUT_HTML_FILE ;
-        echo "<p style='font-size: 18px'; ><a href='$URL'><img src='$IMAGE' alt='$TITLE' width='400' height='600' /></a></p>" >> $OUTPUT_HTML_FILE;  
-
-        echo "<div style='background-color: #cd1c62;
-        border: 2px solid #cd1c62;
-        padding: 10px;
-        color: white;
-        border-radius: 100px;
-        text-align: center;
-        display: inline-block;'>
-        <a style='color: white;' href='$URL' target='_blank'>Check out full post &rarr;</a></div>" >> $OUTPUT_HTML_FILE ;
-        
-        echo "<p style='font-size: 18px; text-align: center; color: #cd1c62; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ;
-
-        (( COUNT++ ))
-
-    done < $LINKS_FILE_OUTPUT
-
-  echo "</div></div> <!-- END: ALL CONTENT COLUMN+ROW -->"  >> $OUTPUT_HTML_FILE ;
+echo "</div></div> <!-- END: ALL CONTENT COLUMN+ROW -->"  >> $OUTPUT_HTML_FILE ;
 ###############################################################################
 
 ################################################################################
-
 
 
 echo "<hr>" >> $OUTPUT_HTML_FILE ;
@@ -216,6 +222,6 @@ cat $OUTPUT_HTML_FILE | sed 's/&lt;/</g' | sed 's/&gt;/>/g' | sed 's/&amp;lsquo;
 ## Opening directory = PWD
 # This command works only on mac
 echo; echo;
-echo ">>>> OPENING THIS HTML FILE IN BROWSER ... (This works only on MAC OS) => $OUTPUT_HTML_FILE" ;
+echo ">>>> OPENING THIS HTML FILE IN BROWSER ... (This works only on MAC OS) => $OUTPUT_HTML_FILE_FINAL" ;
 open $PWD ;
-open $OUTPUT_HTML_FILE ;
+open $OUTPUT_HTML_FILE_FINAL ;
