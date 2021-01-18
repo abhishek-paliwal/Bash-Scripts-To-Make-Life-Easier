@@ -69,7 +69,7 @@ INSTRUCTION_2
 ##end_instructions
 
 ##begin_notes
-THIS_IS_NOTES_TEXT.
+No notes.
 ##end_notes" > $RECIPE_TEMPLATE ;
     ## EXIT THIS SCRIPT IN THIS CASE
     $EDITOR $RECIPE_TEMPLATE ## Open this file in current editor
