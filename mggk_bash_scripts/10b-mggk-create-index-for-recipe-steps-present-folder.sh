@@ -97,7 +97,7 @@ for x in $(fd . $MAIN_DIR -t d); do
     ## Making links for all jpg files in current directory
     for fname in $(fd . $x -e jpg); do 
         this_fname="$(basename $fname)" ;
-        echo "<img src='$BASE_URL/$this_dirname/$this_fname' width='300px'>" >> $htmlfile ;
+        echo "<img style='border: 2px solid #000000 ;' src='$BASE_URL/$this_dirname/$this_fname' width='300px'>" >> $htmlfile ;
     done
     ##
     ## FINALLY APPENDING THIS DIRECTORY'S INDEX FILE LOCATION IN THE MAIN HTML FILE INDEX
