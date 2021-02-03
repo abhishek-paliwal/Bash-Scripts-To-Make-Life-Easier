@@ -149,7 +149,8 @@ leelasrecipes-CREATE-AND-SAVE-SITE-STATISTICS
 leelasrecipes-MAKE-VIDEO-SITEMAP-XML
 leelasrecipes_calculate_length_of_description
 leelasrecipes_calculate_length_of_titles
-leelasrecipes_calculate_length_of_urls) ;
+leelasrecipes_calculate_length_of_urls
+999-mggk-EXTRACT-VIDEO-SCREENSHOTS-EVERY-N-SECONDS) ;
 
 ##
 IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY=(1_imagemagick_maker
