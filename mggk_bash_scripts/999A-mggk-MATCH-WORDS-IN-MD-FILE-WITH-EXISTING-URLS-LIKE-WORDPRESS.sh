@@ -86,7 +86,6 @@ for mdfile in $(grep -irl 'url: ' $HUGODIR/) ; do
   mytitle=$(grep -irh '^title: ' $mdfile | sed 's+title: ++g' | awk '{print tolower($0)}' | sed 's/"//g') ;
   myurl=$(grep -irh '^url: ' $mdfile | sed 's+url: +https://www.mygingergarlickitchen.com+g') ;
   ##
-  #echo "$mytitle ====> ( $myurl )" >> $FILE3 ;
   echo "<a target='_blank' href='$myurl'>$mytitle</a>" >> $FILE3 ;
 done 
 
@@ -118,7 +117,7 @@ function FUNCTION_FIND_COMMON_WORDS_IN_URLS () {
             echo "<h2>$COUNT // $WORD</h2>" >> $FILE_FINAL ;
             echo "<hr>" >> $FILE_FINAL ;
             ##
-            echo; echo "... found a matching word ... $COUNT // $WORD" ; echo;
+            echo "... found a matching word ... $COUNT // $WORD" ;
 
             #### Begin: collapsible bootstrap element   
             echo "<p>MATCHED TEXT LINES: <button class='btn btn-primary' type='button' data-toggle='collapse' data-target='#collapse_$WORD' aria-expanded='false' aria-controls='#collapse_$WORD'>Click to show all lines containing this word => $WORD</button></p>" >> $FILE_FINAL ;
