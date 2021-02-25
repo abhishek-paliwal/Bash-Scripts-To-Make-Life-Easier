@@ -23,6 +23,7 @@ USAGE: $(basename $0)
     ## REQUIREMENT: 
     ## Make sure to rename your text file with prefix 'recipe' ...
     ## ... in the format => recipe-ANY_FILENAME.txt
+    ## SCRIPT USES: GNU sed Utility => gsed (get it thru homebrew)
     ######
     ## ALSO, THIS FILE IS REQUIRED:
     ## FILE_WITH_WORDS_TO_DISCARD="$REPO_SCRIPTS_MGGK/_REQUIREMENT_FILES_MGGK/999A-MGGK-WORDS-TO-DISCARD.txt" ;
@@ -117,14 +118,13 @@ function FUNCTION_FIND_COMMON_WORDS_IN_URLS () {
             echo "<h2>$COUNT // $WORD</h2>" >> $FILE_FINAL ;
             echo "<hr>" >> $FILE_FINAL ;
             ##
-            echo "... found a matching word ... $COUNT // $WORD" ; echo;
+            echo; echo "... found a matching word ... $COUNT // $WORD" ; echo;
 
             #### Begin: collapsible bootstrap element   
             echo "<p>MATCHED TEXT LINES: <button class='btn btn-primary' type='button' data-toggle='collapse' data-target='#collapse_$WORD' aria-expanded='false' aria-controls='#collapse_$WORD'>Click to show all lines containing this word => $WORD</button></p>" >> $FILE_FINAL ;
             echo "<div class='collapse' id='collapse_$WORD'><div class='card card-body'><p>"  >> $FILE_FINAL ;
             ##------
-            cat $file_tmp0 | sed 's+^+<br><br>// +g' | sed "s+$WORD+<span style='color:red;'><strong>$WORD</strong></span>+g" >> $FILE_FINAL ;
-            cat $file_tmp0 ;
+            cat $file_tmp0 | gsed 's+^+<br><br>// +g' | gsed "s+$WORD+<span style='color:red;'><strong>$WORD</strong></span>+g" >> $FILE_FINAL ;
             ##------  
             echo "</p></div></div>" >> $FILE_FINAL ;
             #### End: collapsible bootstrap element   
@@ -150,6 +150,7 @@ echo "   <!-- Optional JavaScript; choose one of the two! -->
 
 ################################################################################ 
 ## SUMMARY
+echo; 
 echo "## SUMMARY ..." ;
 echo; 
 echo "  FILE1 = $FILE1" ;
