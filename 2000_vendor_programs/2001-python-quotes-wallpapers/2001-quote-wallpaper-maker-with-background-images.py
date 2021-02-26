@@ -111,7 +111,7 @@ def make_wallpaper_with_background_image(text, output_filename, background_img):
     draw = ImageDraw.Draw(img)
 
     # output
-    print(text)
+    print(text + " => " + output_filename)
     img.save(output_filename)
     return output_filename
 ##################################################################################
@@ -172,7 +172,7 @@ def make_wallpaper_with_background_color(text, output_filename):
     draw = ImageDraw.Draw(img)
     
     # output
-    print(text)
+    print(text + " => " + output_filename)
     img.save(output_filename)
     return output_filename
 ##------------------------------------------------------------------------------
