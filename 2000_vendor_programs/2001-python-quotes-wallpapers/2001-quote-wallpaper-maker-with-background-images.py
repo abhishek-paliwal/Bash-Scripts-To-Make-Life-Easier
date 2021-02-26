@@ -75,74 +75,18 @@ def wrap_text(text, w):
     new_text += "\n" + new_sentence
     return new_text
 
-##################################################################################
-def make_wallpaper_with_background_image(text, output_filename, background_img):
-    # setup
-    text = wrap_text(text, WRAP_TEXT_AT)
-    img = Image.new("RGBA", (IMAGE_WIDTH, IMAGE_HEIGHT), (255, 255, 255))
-
-    # GETTING AND PASTING background IMAGE
-    #back = Image.open(background_img, 'r')
-    back = resize_image_by_width(background_img, IMAGE_WIDTH)
-    img_w, img_h = back.size
-    bg_w, bg_h = img.size
-    offset = ( int((bg_w - img_w) / 2), int((bg_h - img_h) / 2) )
-    img.paste(back, offset)
-    
-    ## BEGIN: GETTING AND PASING LOGO IMAGE ##
-    logo_image = resize_image_by_width(LOGO_IMAGE, LOGO_WIDTH)
-    img.paste(logo_image, (LOGO_PADDING_LEFT, LOGO_PADDING_TOP), mask=logo_image)
-    ## END: GETTING AND PASING LOGO IMAGE ##
-
-    # text
-    font = ImageFont.truetype(FONT, FONT_SIZE)
-    draw = ImageDraw.Draw(img)
-    img_w, img_h = img.size
-    x = img_w / 2
-    y = img_h / 2
-    textsize = draw.multiline_textsize(text, font=IF, spacing=SPACING)
-    text_w, text_h = textsize
-    x -= text_w / 2
-    y -= text_h / 2
-    draw.multiline_text(align="center", xy=(x, y), text=text, fill=COLOR, font=font, spacing=SPACING)
-    ## FOOTER TEXT
+def insert_footer(draw):
+    font_footer = ImageFont.truetype(FONT, int(FONT_SIZE*2/3))
     draw.multiline_text(align="center", xy=(
-        LOGO_PADDING_LEFT, IMAGE_HEIGHT-LOGO_PADDING_BOTTOM), text=FOOTER_TEXT, fill=COLOR, font=font, spacing=SPACING)
-    ## FINAL PAINT
-    draw = ImageDraw.Draw(img)
+        LOGO_PADDING_LEFT, IMAGE_HEIGHT-LOGO_PADDING_BOTTOM), text=FOOTER_TEXT, fill=COLOR, font=font_footer, spacing=SPACING)
 
-    # output
-    print(text + " => " + output_filename)
-    img.save(output_filename)
-    return output_filename
-
-##################################################################################
-##################################################################################
-
-##################################################################################
-def make_wallpaper_with_background_color(text, output_filename):
-    # setup
-    text = wrap_text(text, WRAP_TEXT_AT)
-
-    # Random Background color
-    color_red = random.randint(0, 255)
-    color_green = random.randint(0, 255)
-    color_blue = random.randint(0, 255)
-    colors = [(color_red, color_green, color_blue)]
-    ## NOTE: You can enter your static brands color below instead of random colors from above.
-    ## colors = [(255,0,0), (51, 0, 51), (0,0,255), (0,0,0)]
-    ##
-    system_color = random.choice(colors)
-    img = Image.new("RGBA", (IMAGE_WIDTH, IMAGE_HEIGHT), (system_color[0], system_color[1], system_color[2]))
-
-    ## BEGIN: GETTING AND PASING LOGO IMAGE ##
+def paste_logo(img):
     logo_image = resize_image_by_width(LOGO_IMAGE, LOGO_WIDTH)
-    img.paste(logo_image, (LOGO_PADDING_LEFT, LOGO_PADDING_TOP), mask=logo_image)
-    ## END: GETTING AND PASING LOGO IMAGE ##
+    img.paste(logo_image, (LOGO_PADDING_LEFT,
+                           LOGO_PADDING_TOP), mask=logo_image)
 
-    # text
-    font = ImageFont.truetype(FONT, FONT_SIZE)
-    draw = ImageDraw.Draw(img)
+def insert_main_text(text,font,img,draw):
+    ## INSERTING MAIN TEXT
     img_w, img_h = img.size
     x = img_w / 2
     y = img_h / 2
@@ -152,13 +96,82 @@ def make_wallpaper_with_background_color(text, output_filename):
     y -= text_h / 2
     draw.multiline_text(align="center", xy=(x, y), text=text,
                         fill=COLOR, font=font, spacing=SPACING)
-    ## FOOTER TEXT
-    draw.multiline_text(align="center", xy=(
-        LOGO_PADDING_LEFT, IMAGE_HEIGHT-LOGO_PADDING_BOTTOM), text=FOOTER_TEXT, fill=COLOR, font=font, spacing=SPACING)
+
+def generate_random_rgb_color():
+    # Random Background color
+    color_red = random.randint(0, 255)
+    color_green = random.randint(0, 255)
+    color_blue = random.randint(0, 255)
+    colors = [(color_red, color_green, color_blue)]
+    ## NOTE: You can enter your static brands color below instead of random colors from above.
+    ## colors = [(255,0,0), (51, 0, 51), (0,0,255), (0,0,0)]
+    return colors
+
+
+##################################################################################
+##################################################################################
+def make_wallpaper_with_background_image(text, output_filename, background_img):
+    ## INTITIAL SETUP
+    colors = generate_random_rgb_color()
+    system_color = random.choice(colors)
+    img = Image.new("RGBA", (IMAGE_WIDTH, IMAGE_HEIGHT),
+                    (system_color[0], system_color[1], system_color[2]))
+    font = ImageFont.truetype(FONT, FONT_SIZE)
+    text = wrap_text(text, WRAP_TEXT_AT)
+    ## MAKE THE CANVAS EDITABLE
+    draw = ImageDraw.Draw(img)
+
+    # GETTING AND PASTING background IMAGE
+    #back = Image.open(background_img, 'r')
+    back = resize_image_by_width(background_img, IMAGE_WIDTH)
+    img_w, img_h = back.size
+    bg_w, bg_h = img.size
+    offset = ( int((bg_w - img_w) / 2), int((bg_h - img_h) / 2) )
+    img.paste(back, offset)
+    
+    ## PASTE LOGO
+    paste_logo(img)
+
+    ## INSERTING MAIN TEXT
+    insert_main_text(text, font, img, draw)
+
+    ## INSERTING FOOTER
+    insert_footer(draw)
+
     ## FINAL PAINT
     draw = ImageDraw.Draw(img)
-    
-    # output
+
+    ## OUTPUT
+    print(text + " => " + output_filename)
+    img.save(output_filename)
+    return output_filename
+
+##################################################################################
+##################################################################################
+
+def make_wallpaper_with_background_color(text, output_filename):
+    ## INTITIAL SETUP
+    colors = generate_random_rgb_color()
+    system_color = random.choice(colors)
+    img = Image.new("RGBA", (IMAGE_WIDTH, IMAGE_HEIGHT), (system_color[0], system_color[1], system_color[2]))
+    font = ImageFont.truetype(FONT, FONT_SIZE)
+    text = wrap_text(text, WRAP_TEXT_AT)
+    ## MAKE THE CANVAS EDITABLE
+    draw = ImageDraw.Draw(img)
+
+    ## PASTE LOGO
+    paste_logo(img)
+
+    ## INSERTING MAIN TEXT
+    insert_main_text(text, font, img, draw)
+
+    ## INSERTING FOOTER
+    insert_footer(draw)
+
+    ## FINAL PAINT
+    draw = ImageDraw.Draw(img)
+
+    ## OUTPUT
     print(text + " => " + output_filename)
     img.save(output_filename)
     return output_filename
@@ -167,7 +180,7 @@ def make_wallpaper_with_background_color(text, output_filename):
 ##################################################################################
 ##################################################################################
 #### CALLING THE MAIN FUNCTION TO PRINT OUT THE WALLPAPER QUOTE
-for x in range(5):
+for x in range(3): ## making 3 copies of each
     FONT = select_font()
     IF = ImageFont.truetype(FONT, FONT_SIZE)
     ## GETTING THE TEXT VALUE FOR THE QUOTE
@@ -180,3 +193,5 @@ for x in range(5):
     make_wallpaper_with_background_image(
         text, output_filename_image, background_img=select_background_image())
     make_wallpaper_with_background_color(text, output_filename_color)
+##################################################################################
+##################################################################################
