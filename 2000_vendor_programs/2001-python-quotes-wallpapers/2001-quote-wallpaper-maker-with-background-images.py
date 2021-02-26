@@ -5,6 +5,7 @@ from PIL import ImageFont
 from PIL import Image
 from PIL import ImageDraw
 
+##################################################################################
 # CHANGE THE FOLLOWING CONFIGURATION IF YOU HAVE TO
 FONTS_DIR = str(os.environ['REPO_SCRIPTS']) + \
     "/2000_vendor_programs/2001-python-quotes-wallpapers/fonts"
@@ -114,25 +115,11 @@ def make_wallpaper_with_background_image(text, output_filename, background_img):
     print(text + " => " + output_filename)
     img.save(output_filename)
     return output_filename
-##################################################################################
-
-#### CALLING THE MAIN FUNCTION TO PRINT OUT THE WALLPAPER QUOTE
-for x in range(2):
-    FONT = select_font()
-    IF = ImageFont.truetype(FONT, FONT_SIZE)
-    ## GETTING THE TEXT VALUE FOR THE QUOTE
-    text = "The only real limitation on your abilities is the level of your desires. If you want it badly enough, there are no limits on what you can achieve."
-    output_filename = OUTPUT_DIR + "/{}_image.png".format(int(time.time()))
-    ##
-    make_wallpaper_with_background_image(text, output_filename, background_img=select_background_image())
-
 
 ##################################################################################
 ##################################################################################
-##################################################################################
-##################################################################################
 
-##------------------------------------------------------------------------------
+##################################################################################
 def make_wallpaper_with_background_color(text, output_filename):
     # setup
     text = wrap_text(text, WRAP_TEXT_AT)
@@ -175,15 +162,21 @@ def make_wallpaper_with_background_color(text, output_filename):
     print(text + " => " + output_filename)
     img.save(output_filename)
     return output_filename
-##------------------------------------------------------------------------------
 ##################################################################################
 
+##################################################################################
+##################################################################################
 #### CALLING THE MAIN FUNCTION TO PRINT OUT THE WALLPAPER QUOTE
-for x in range(2):
+for x in range(5):
     FONT = select_font()
     IF = ImageFont.truetype(FONT, FONT_SIZE)
     ## GETTING THE TEXT VALUE FOR THE QUOTE
     text = "The only real limitation on your abilities is the level of your desires. If you want it badly enough, there are no limits on what you can achieve."
-    output_filename = OUTPUT_DIR + "/{}_color.png".format(int(time.time()))
+    output_filename_image = OUTPUT_DIR + \
+        "/{}_image.png".format(int(time.time()))
+    output_filename_color = OUTPUT_DIR + \
+        "/{}_color.png".format(int(time.time()))
     ##
-    make_wallpaper_with_background_color(text, output_filename)
+    make_wallpaper_with_background_image(
+        text, output_filename_image, background_img=select_background_image())
+    make_wallpaper_with_background_color(text, output_filename_color)
