@@ -126,47 +126,73 @@ echo ""  >> $OUTPUT_HTML_FILE;
 #echo "  </div>"  >> $OUTPUT_HTML_FILE ;
 echo ""  >> $OUTPUT_HTML_FILE;
 
-  echo "  <div class='col-12'><div class='row'> <!-- BEGIN: ALL CONTENT COLUMN+ROW -->"  >> $OUTPUT_HTML_FILE ;
+echo "  <div class='col-12'><div class='row'> <!-- BEGIN: ALL CONTENT COLUMN+ROW -->"  >> $OUTPUT_HTML_FILE ;
 
-    COUNT=1;
-    while read -r line; do
-        echo ;
-        echo ">>> LINE NUMBER $COUNT = $line " # Reading each line
+##------------------------------------------------------------------------------
+## BEGIN: FUNCTION TO OUTPUT THE MARKDOWN FILE PATH FOR AN ENTERED MGGK URL
+## AS COMMAND LINE ARGUMENT
+function FUNCTION_OUTPUT_MDFILE_FULLPATH () {
+  SEARCHDIR="$REPO_MGGK/content" ;
+  ## CREATING SEARCH_URL FROM THE USER INPUT
+  SEARCHURL=$(echo $1 | sed 's|https://www.mygingergarlickitchen.com||g')
+  ## EXIT THE SCRIPT IF THE ENTERED URL IS NOT PROPER
+  if [[ "$SEARCHURL" == "/" ]] || [[ "$SEARCHURL" == "" ]] ; then exit 1; fi
+  ## COUNT THE NUMBER OF FILES WITH CURRENT URL IN YAML FRONTMATTER.
+  ## THE ANSWER SHOULD ONLY BE 1. BUT JUST TO MAKE SURE, RUN THE FOLLOWING COMMAND.
+  NUM_FILES=$(grep -irl "url: $SEARCHURL" $SEARCHDIR | wc -l | tr -d '[:space:]') ;
+  ## Check, how many files with this url are returned. Exit, if more than 1.
+  if [[ "$NUM_FILES" -eq 0 ]] || [[ "$NUM_FILES" -gt 1 ]] ; then exit 1; fi 
+  ## SEARCH FOR THE MD FILE WHERE THE URL LIES IN THE YAML FRONTMATTER
+  grep -irl "url: $SEARCHURL" $SEARCHDIR | head -1 ;
+}
+## END: FUNCTION
+#MDFILE_WITH_CHOSEN_URL=$(FUNCTION_OUTPUT_MDFILE_FULLPATH "YOUR-CHOSEN-URL") ;
+##------------------------------------------------------------------------------
 
-        ## SAving the url locally
-        curl -s $line > $TMP_CURL_FILE ;
+COUNT=1;
+while read -r line; do
+    echo ; echo ;
+    echo ">>> LINE NUMBER $COUNT = $line " # Reading each line
 
-        ## EXTRACTING TITLE
-        TITLE=$( cat $TMP_CURL_FILE | grep -i 'og:title' | sed 's/<meta property=\"og:title\" content=\"//g'  | sed 's/\" \/>//g' | sed 's|">||g') ;
-        echo "TITLE = $TITLE " ;
+    MGGK_BASEURL="https://www.mygingergarlickitchen.com"
 
-        ## EXTRACTING META DESCRIPTION
-        #### (long descriptions will be trimmed after 200 chars, so that all will have equal length)
-        META_DESCRIPTION=$( cat $TMP_CURL_FILE | grep -i 'og:description' | sed 's/<meta property=\"og:description\" content=\"//g'  | sed 's/\" \/>//g' | sed 's|">||g' | cut -c1-180 ) ;
+    MDFILE_WITH_CHOSEN_URL=$(FUNCTION_OUTPUT_MDFILE_FULLPATH "$line") ;
+    echo "  >> Markdown file found => $MDFILE_WITH_CHOSEN_URL " ; 
+    echo;
+    
+    ## EXTRACTING NEEDED DETAILS FROM MD FILE THUS FOUND
+    TITLE=$(grep -irh '^title: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed 's/title: //g' ) ;
+    META_DESCRIPTION=$(grep -irh '^yoast_description: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed 's/yoast_description: //g' | cut -c1-180 ) ;
+    URL=$(grep -irh '^url: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed "s+url: +$MGGK_BASEURL+g" ) ;
+    IMAGE=$(grep -irh '^featured_image: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed "s+featured_image: +$MGGK_BASEURL+g" ) ;
+    IMAGE_TO_COPY=$(grep -irh '^featured_image: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed "s+featured_image: +$REPO_MGGK/static+g" ) ;  
 
-        LENGTH_METADESC=$(echo $META_DESCRIPTION | awk '{print length}') ;
-        echo "===========> LENGTH_METADESC = $LENGTH_METADESC" ;
-        ## ADD TRHEE DOTS IF LENGTH_METADESC IS > 170
-        if [[ "$LENGTH_METADESC" -lt 170 ]] ; then
-          META_DESCRIPTION=$META_DESCRIPTION
-        else
-          META_DESCRIPTION="$META_DESCRIPTION..." ;
-        fi
+    ## Further processing of IMAGE + META_DESCRIPTION
+    #### DOWNLOADING THE IMAGE INTO A SPECIFIC FOLDER (folder will be created if not present already)
+    TmpImageDir="$myPWD/_TMP_IMAGES_$REQUIREMENTS_FILE" ;
+    mkdir $TmpImageDir ;
+    echo "    >>>> Getting the image for this URL ..." ;
+    cp $IMAGE_TO_COPY $TmpImageDir/ ;
+    ##
+    #### Trimming description length to 170 characters
+    LENGTH_METADESC=$(echo $META_DESCRIPTION | awk '{print length}') ;
+    echo "===========> LENGTH_METADESC = $LENGTH_METADESC" ;
+    ###### ADD THREE DOTS IF LENGTH_METADESC IS > 170
+    if [[ "$LENGTH_METADESC" -lt 170 ]] ; then
+      META_DESCRIPTION=$META_DESCRIPTION
+    else
+      META_DESCRIPTION="$META_DESCRIPTION..." ;
+    fi
+    ##
 
-        echo "META_DESCRIPTION = $META_DESCRIPTION " ;
+    ## PRINTING THE VARIABLES
+    echo "TITLE = $TITLE " ;
+    echo "PAGE URL = $URL " ;
+    echo "META_DESCRIPTION = $META_DESCRIPTION " ;
+    echo "IMAGE = $IMAGE " ;
+    echo "IMAGE_TO_COPY = $IMAGE_TO_COPY " ;
 
-        ## EXTRACTING URL
-        URL=$( cat $TMP_CURL_FILE | grep -i 'og:url' | sed 's/<meta property=\"og:url\" content=\"//g'  | sed 's/\" \/>//g'  | sed 's|">||g') ;
-        echo "PAGE URL = $URL " ;
-
-        ## EXTRACTING IMAGE URL
-        IMAGE=$( cat $TMP_CURL_FILE | grep -i 'og:image:secure_url' | sed 's/<meta property=\"og:image:secure_url\" content=\"//g'  | sed 's/\" \/>//g'  | sed 's|">||g') ;
-        echo "IMAGE = $IMAGE " ;
-
-          ## DOWNLOADING THE IMAGE INTO A SPECIFIC FOLDER (folder will be created if not present already)
-          wget -P _TMP_IMAGES_$REQUIREMENTS_FILE/ $IMAGE
-
-        ## PRINTING RESPONSIVE GRID COLUMNS
+          ## PRINTING RESPONSIVE GRID COLUMNS
         echo ""  >> $OUTPUT_HTML_FILE;
         echo "<!-- Keep the column sizes intact below. Make sure to define all column view-port sizes explicitly, namely, sm, md ,lg and xl -->"  >> $OUTPUT_HTML_FILE;
 
@@ -192,9 +218,9 @@ echo ""  >> $OUTPUT_HTML_FILE;
 
         (( COUNT++ ))
 
-    done < $LINKS_FILE_OUTPUT
+done < $LINKS_FILE_OUTPUT
 
-  echo "   </div></div> <!-- END: ALL CONTENT COLUMN+ROW -->
+echo "   </div></div> <!-- END: ALL CONTENT COLUMN+ROW -->
   </div> <!--END: MAIN ROW -->"  >> $OUTPUT_HTML_FILE ;
 
 ###############################################################################
@@ -207,7 +233,7 @@ DATEVAR=$(date -v -12H +%Y-%m-%dT%H:%M:%S) ;
 
 ################ BEGIN: CREATE MD FILE BY DUMPING ALL TEXT
 echo "---
-title: $REQUIREMENTS_FILE (2019 edition)
+title: $REQUIREMENTS_FILE (2021 edition)
 author: Anupama Paliwal
 type: post
 date: $DATEVAR
