@@ -5,7 +5,6 @@
 import sys
 ####
 
-
 def usage():
     print('## USAGE: ' + sys.argv[0])
     HELP_TEXT = """
@@ -17,7 +16,7 @@ def usage():
     ################################################################################
     USAGE: python3 THIS_SCRIPT_NAME
     ################################################################################
-    CREATED ON: November 6, 2019
+    CREATED ON: March 30, 2021
     CREATED BY: Pali
     ##############################################################################
     """
@@ -53,14 +52,8 @@ import requests
 ## MYGINGERGARLICKITCHEN.COM SITEMAPS (uncomment if running the following)
 sitemap_urls = ['https://www.mygingergarlickitchen.com/sitemap.xml']
 
-## VEGRECIPESOFINDIA.COM SITEMAPS (uncomment if running the following)
-#sitemap_urls = [ 'https://www.vegrecipesofindia.com/post-sitemap1.xml', 'https://www.vegrecipesofindia.com/post-sitemap2.xml', 'https://www.vegrecipesofindia.com/page-sitemap.xml' ]
-
-## WP.MGGK.COM SITEMAPS (uncomment if running the following)
-#sitemap_urls = ['https://www.wp.mygingergarlickitchen.com/sitemap-1.xml']
-
-## COOKWITHMANALI.COM SITEMAPS (uncomment if running the following)
-#sitemap_urls = ['https://www.cookwithmanali.com/post-sitemap.xml', 'https://www.cookwithmanali.com/page-sitemap.xml']
+## EXAMPLE.COM SITEMAPS (uncomment if running the following)
+#sitemap_urls = ['https://www.example.com/post-sitemap.xml', 'https://www.example.com/page-sitemap.xml']
 
 ################################################################################
 ################################################################################
@@ -91,6 +84,8 @@ def get_all_urls_from_sitemaps(URL):
     print() ## Blank line
 
     for sitemap in sitemapTags:
+        #print(sitemap.findNext("loc").text)
+        #print(sitemap.findNext("lastmod").text)
         xmlDict[sitemap.findNext("loc").text] = sitemap.findNext("lastmod").text
 ####################
 ####################
