@@ -36,6 +36,8 @@ debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-
 if [ "$USER" == "ubuntu" ] ; then 
 	BACKUP_HOMEDIR="$HOME/Desktop/00_BACKUPS_WSL/$USER" ;
 	mkdir -p $BACKUP_HOMEDIR ;
+elif [ "$USER" == "abhishek" ] ; then 
+	BACKUP_HOMEDIR="$HOME/Dropbox/APPS-CONFIGS/_MAC_APPS/MBP15_dotfiles_backups/$USER" ;
 else 
 	BACKUP_HOMEDIR="$HOME/OneDrive/Apps2Sync/dotfiles_backups/$USER" ;
 fi 
