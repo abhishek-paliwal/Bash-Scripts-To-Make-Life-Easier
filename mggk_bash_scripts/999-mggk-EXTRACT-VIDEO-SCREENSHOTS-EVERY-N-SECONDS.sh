@@ -3,8 +3,8 @@
 ##################################################################################
 ## SOME VARIABLES (CHANGE THE DIRs IF NEEDED)
 WORKDIR="$HOME_WINDOWS/Desktop/Y" ;
-DIR_WHICH_YOUTUBE_VIDEOS="/Users/abhishek/GitHub/ZZ-HUGO-TEST/content/top-401-500" ;
-#DIR_WHICH_YOUTUBE_VIDEOS="$DIR_Y" ;
+DIR_WHICH_YOUTUBE_VIDEOS="$(pwd)" ;
+#DIR_WHICH_YOUTUBE_VIDEOS="/Users/abhishek/GitHub/ZZ-HUGO-TEST/content/top-401-500" ;
 ##################################################################################
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -16,7 +16,7 @@ USAGE: $(basename $0)
   ###############################################################################
   ## IF YOU CHOOSE OPTION 1 WHEN ASKED FOR USER INPUT => 
   ## THIS PROGRAM EXTRACTS VIDEO THUMBNAIL SCREENSHOTS FROM
-  ## ALL mkv OR mp4 FILES PRESENT IN $WORKDIR, AND SAVES THEM TO PROPER SUBDIRECTORIES. 
+  ## ALL mkv OR mp4 OR webm FILES PRESENT IN $WORKDIR, AND SAVES THEM TO PROPER SUBDIRECTORIES. 
   ## MAKE SURE THE VIDEOS ARE NAMED WITH THEIR CORRESPONDING MGGK URL.
   ## AFTER THIS STEP, YOU NEED TO MOVE THE RELEVANT STEPS IMAGES INTO THE STEP-XX SUBFOLDERS. THEN RUN STEP 2.
   ###########################################
@@ -54,13 +54,17 @@ echo "------------------------------------------------------" ;
 echo ">> Found following mp4 files for processing ..." ;
 echo "------------------------------------------------------" ;  
 ls -1 *.mp4 | nl
+echo "------------------------------------------------------" ;  
+echo ">> Found following webm files for processing ..." ;
+echo "------------------------------------------------------" ;  
+ls -1 *.webm | nl
 
 ##################################################################################
 ##
 function FUNCTION_step1_video_thumbnails_extraction () {
     echo; echo "RUNNING STEP 1 = Thumbnails extraction from Video ... " ; echo; 
-    for x in $(find $WORKDIR/ -type f \( -name '*.mp4' -o -name '*.mkv' \)) ; do 
-        x_name=$(echo $(basename $x) | sed 's+\.mkv++g'  | sed 's+\.mp4++g' ) ; 
+    for x in $(find $WORKDIR/ -type f \( -name '*.mp4' -o -name '*.mkv'  -o -name '*.webm' \)) ; do 
+        x_name=$(echo $(basename $x) | sed 's+\.mkv++g' | sed 's+\.mp4++g' | sed 's+\.webm++g'  ) ; 
         echo "=> CURRENT FILE UNDER PROCESSING: $x_name" ;
         dir_thumbs="${x_name}-thumbs" ; 
         mkdir $dir_thumbs ; 
@@ -127,7 +131,8 @@ function FUNCTION_step0_download_videos_using_youtube-dl_program () {
         ## RENAMING YOUTUBE VIDEO WITH URL_VAR
         mv $youtube_id.mkv  $url_var.mkv ;
         mv $youtube_id.mp4  $url_var.mp4 ;
-        echo; echo ">> VIDEO FILE RENAMED AS // IF MKV => $url_var.mkv // IF MP4 => $url_var.mp4" ; 
+        mv $youtube_id.webm  $url_var.webm ;
+        echo; echo ">> VIDEO FILE RENAMED AS // IF MKV => $url_var.mkv // IF MP4 => $url_var.mp4 // IF WEBM => $url_var.webm" ; 
     done 
 }
 ##################################################################################
