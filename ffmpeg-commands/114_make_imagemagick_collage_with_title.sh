@@ -79,12 +79,12 @@ total_num_images=`cat _TMP_LIST.TXT | wc -l | sed 's/ //g' ` ;
 echo "======> TOTAL NUMBER OF IMAGES: $total_num_images " ;
 
 ## FOLLOWING ARE THE CALCULATIONS DONE FOR 4K COLLAGE = 3820x2160 (change if you want to)
-height_auto=`echo "scale=0; sqrt(3820x2160/$total_num_images/1.5)" | bc -l ` ;
-width_auto=`echo "scale=0; $height_auto*3/2" | bc -l ` ;
+height_auto=$(echo "scale=0; sqrt(3820*2160/$total_num_images/1.5)" | bc -l) ;
+width_auto=$(echo "scale=0; $height_auto*3/2" | bc -l) ;
 sep="x" ;
 
 echo "Automatic dimensions have been calculated for TOTAL IMAGES: $total_num_images" ;
-echo "Automatic dimensions : $width_auto$sep$height_auto" ;
+echo "Automatic dimensions : $width_auto $sep $height_auto" ;
 
 ########################################################
 ## CHECKING IF $collage_dimensions WAS ENTERED OR NOT
