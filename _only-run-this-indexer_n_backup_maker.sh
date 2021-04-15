@@ -42,13 +42,13 @@ BASEPATH="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier";
 echo "creating backup of MACFILES + Important DOTFILES in Onedrive......"
 bash $BASEPATH/5-abhishek_create_MACFILES_backup.sh
 
-
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ########## KEEP THIS BLOCK AT THE END TO BACKUP ALL FILES TO SERVERS ############
 ########## ONLY RUN THE SSH SCP BACKUP BLOCK WHEN $USER = "abhishek"
-
 echo ;
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" ;
-echo ">> Checking if the user is 'abhishek'. If not, then nothing would run after this line." ;
+echo ">> Checking if the user is 'abhishek'. Only then it runs certain commands." ;
+echo "Else, it does not run certain commands for user abhishek." ; 
 echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ;
 echo;
 
@@ -76,54 +76,39 @@ then
     echo "creating ADORIA.XYZ portfolio index file in dropbox......"
     sh $BASEPATH/10E_create_adoria_xyz_portfolio_index_page.sh
 
-
     #######################################################
     #### CREATING SITEMAPS ####
     echo "CREATING SITEMAPS..."
     sh $BASEPATH/11-sitemap-for-website-generator.sh
-    echo ;
     #######################################################
 
+    ######################## BEGIN: BACKUPS TO CDN // SSH+SCP BLOCK ########################
+    echo; echo "     >>>>>>>> BEGINNING: Backup [TO] downloads.concepro.com <<<<<<<" ;
+    1_backup_to_concepro_cdn ;
 
-    #### BACKUP TO-AND-FROM DREAMCOMPUTE SERVER ####
+    echo; echo "     >>>>>>>> BEGINNING: Backup [TO] downloads.mygingergarlickitchen.com <<<<<<<" ;
+    1_backup_to_mggk_cdn ;
+
+    echo; echo "     >>>>>>>> BEGINNING: Backup [TO] https://adoria.xyz <<<<<<<" ;
+    1_backup_to_adoria_xyz ;
+    ######################## END: BACKUPS TO CDN // SSH+SCP BLOCK ########################
+else
+    #### FINALLY, BACKUP TO-AND-FROM DIGITALOCEAN SERVER IF NOT ON MAC ####
     #### Actual backup command aliases below ##
     echo ;
-    echo "     ++++++++ Getting backups to-and-from DREAMCOMPUTE and KVM ARCH Server......" ;
-
-    echo ;
-    echo "     >>>>>>>> BEGINNING: Backup [FROM] DIGITAL OCEAN Server DONE. <<<<<<<" ;
-    say "Enter password on command prompt:" ;
+    echo "     ++++++++ Getting backups to-and-from DIGITALOCEAN Server......" ;
+    echo "     >>>>>>>> BEGINNING: Backup [FROM] DIGITAL OCEAN Server. <<<<<<<" ;
+    echo "Enter password on command prompt:" ;
     1_backup_from_digitalocean_server ;
-    echo "     >>>>>>>> DONE: Backup [FROM] DIGITAL OCEAN Server DONE. <<<<<<<" ;
+    echo "     >>>>>>>> DONE: Backup [FROM] DIGITALOCEAN Server. <<<<<<<" ;
     echo ;
-
-    echo " = = = = > Now opening the DreamCompute + KVM ARCH VPS Backup directory..." ;
-    open $HOME/OneDrive/Apps2Sync/DreamCompute-VPS-Backup ; ## Don't forget to add semicolon at the end.
-
-    ######################## BACKUPS TO CDN ###################################
-    echo ;
-    echo "     >>>>>>>> BEGINNING: Backup [TO] downloads.concepro.com <<<<<<<" ;
-    1_backup_to_concepro_cdn ;
-    echo "     >>>>>>>> DONE: Backup [TO] downloads.concepro.com <<<<<<<" ;
-    echo ;
-
-    ####
-    echo ;
-    echo "     >>>>>>>> BEGINNING: Backup [TO] downloads.mygingergarlickitchen.com <<<<<<<" ;
-    1_backup_to_mggk_cdn ;
-    echo "     >>>>>>>> DONE: Backup [TO] downloads.mygingergarlickitchen.com <<<<<<<" ;
-    echo ;
-
-    ####
-    echo ;
-    echo "     >>>>>>>> BEGINNING: Backup [TO] https://adoria.xyz <<<<<<<" ;
-    1_backup_to_adoria_xyz ;
-    echo "     >>>>>>>> DONE: Backup [TO] https://adoria.xyz <<<<<<<" ;
-    echo ;
-
-else
+    echo " = = = = > Now opening the DIGITALOCEAN VPS Backup directory..." ;
+    open $HOME_WINDOWS/OneDrive/Apps2Sync/DreamCompute-VPS-Backup ; ## Don't forget to add semicolon at the end.
+    #####
     echo ">>>> 1. The USER is >>> $USER <<< , which is not 'abhishek'. Hence, no SSH/SCP backups are performed." ;
     echo ">>>> 2. NOTE: IF you want to execute the SSH/SCP backup block, then run this script as USER 'abhishek' on MBP15. " ;
+    #####
 fi
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ########################## SCRIPT ENDS ########################
