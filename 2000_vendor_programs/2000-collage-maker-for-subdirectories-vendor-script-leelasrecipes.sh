@@ -1,5 +1,5 @@
 #/bin/bash
-THIS_SCRIPT_NAME="2000-collage-maker-using-vendor-script.sh" ;
+THIS_SCRIPT_NAME="2000-collage-maker-using-vendor-script-leelasrecipes.sh" ;
 ################################################################################
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -46,10 +46,10 @@ for DIRNAME in $(find "$CWD" -maxdepth 1 -type d) ; do
   echo "##------------------------------------------------------------------------------" ;
   ####
   # DECLARING TWO ARRAYS FOR VARIOUS HEIGHTS AND WIDTHS
-  list_widths=(800 1000 1280 1500 1920 2000 3000 4000 6000 8000) ;
-  list_heights=(500 600 720 800 1000 1080 1200 1500 1600 1800 2000) ;
-  #list_widths=(1280 1920) ;
-  #list_heights=(720 1080) ;
+  #list_widths=(800 1000 1280 1500 1920 2000 3000 4000 6000 8000) ;
+  #list_heights=(500 600 720 800 1000 1080 1200 1500 1600 1800 2000) ;
+  list_widths=(1280 1920) ;
+  list_heights=(720 1080) ;
   ####
   for my_width in "${list_widths[@]}" ; do
     for my_height in "${list_heights[@]}" ; do

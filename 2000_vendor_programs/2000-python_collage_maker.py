@@ -66,6 +66,12 @@ def make_collage(images, filename, width, init_height):
                 x = 0
             x += img.size[0] + margin_size
             images_line.append(img_path)
+            ##------------------------------------------------------------------------------
+            print('>> begin: PRINTING COEFF LINES ...')
+            print(coefs_lines)
+            print('>> end: PRINTING COEFF LINES ...')
+            ##------------------------------------------------------------------------------
+
         # finally add the last line with images
         coefs_lines.append((float(x) / width, images_line))
 
@@ -75,6 +81,7 @@ def make_collage(images, filename, width, init_height):
         if any(map(lambda c: len(c[1]) <= 1, coefs_lines)):
             # reduce `init_height`
             init_height -= 10
+            print(' INIT HEIGHT NEW => ' + str(init_height) )
         else:
             break
 
@@ -96,15 +103,27 @@ def make_collage(images, filename, width, init_height):
             for img_path in imgs_line:
                 img = Image.open(img_path)
                 # if need to enlarge an image - use `resize`, otherwise use `thumbnail`, it's faster
-                k = (init_height / coef) / img.size[1]
+                k = (init_height / coef) / img.size[1] ;
                 if k > 1:
                     img = img.resize((int(img.size[0] * k), int(img.size[1] * k)), Image.ANTIALIAS)
                 else:
                     img.thumbnail((int(width / coef), int(init_height / coef)), Image.ANTIALIAS)
+                    ##------------------------------------------------------------------------------
+                    print( 'INITIAL HEIGHT => ' + str(init_height) + ' // COEFF => ' + str(coef) + ' K => ' + str(k) + ' // Image Size => ' + str(img.size) + ' // Image => ' + str(img_path))
+                    ##------------------------------------------------------------------------------
+                ##    
                 if collage_image:
                     collage_image.paste(img, (int(x), int(y)))
+                    print(' X => ' + str(x) + ' Y => ' + str(y))
                 x += img.size[0] + margin_size
             y += int(init_height / coef) + margin_size
+            ##------------------------------------------------------------------------------
+            print('Images => ' + str(images))
+            print('Output => ' + str(filename))
+            print('Width => ' + str(width))
+            print('Init Height => ' + str(init_height))
+            print(">>>>>> " + str(coef) + ' ====> ' + str(imgs_line))
+            ##------------------------------------------------------------------------------
     collage_image.save(filename)
     return True
 
@@ -134,7 +153,7 @@ def main():
     if args.shuffle:
         random.shuffle(images)
 
-    print('Making collage...')
+    print('Making collage ...')
     res = make_collage(images, args.output, args.width, args.init_height)
     if not res:
         print('Failed to create collage!')
