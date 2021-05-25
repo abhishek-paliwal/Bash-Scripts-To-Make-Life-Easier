@@ -67,9 +67,9 @@ def make_collage(images, filename, width, init_height):
             x += img.size[0] + margin_size
             images_line.append(img_path)
             ##------------------------------------------------------------------------------
-            print('>> begin: PRINTING COEFF LINES ...')
-            print(coefs_lines)
-            print('>> end: PRINTING COEFF LINES ...')
+            #print('>> begin: PRINTING COEFF LINES ...')
+            #print(coefs_lines)
+            #print('>> end: PRINTING COEFF LINES ...')
             ##------------------------------------------------------------------------------
 
         # finally add the last line with images
