@@ -55,12 +55,12 @@ for DIRNAME in $(find "$CWD" -maxdepth 1 -type d) ; do
     for my_height in "${list_heights[@]}" ; do
       echo ">> CURRENTLY RUN DIMENSIONS => $my_width X $my_height" ;
       sep="x" ;
-      python3 $MY_DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/2000-python_collage_maker.py -f $DIRNAME -w $my_width -i $my_height -o $CWD/$MYDIR-collage-$my_width$sep$my_height.jpg ;
+      python3 $MY_DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/2000-python_collage_maker.py -f $DIRNAME -w $my_width -i $my_height -o $CWD/$my_width$sep$my_height-collage-DIR-$MYDIR.jpg ;
     done
   done
   ####
   echo ">>>> THESE COLLAGES ARE CREATED:" ;
-  ls -1 $CWD/$MYDIR-collage-*.jpg ;
+  ls -1 $CWD/*.collage-*.jpg ;
   cd $CWD ;
   echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
 done
