@@ -76,7 +76,7 @@ done
 ## SINCE THE FOLLOWING DIRS HAVE SO MANY FILES, WHICH MAKES SYNCING TIME-CONSUMING, WE WILL
 ## MAKE A SINGLE TAR.GZ ARCHIVE FROM THOSE DIRECTORIES. ADD AS MANY DIRECTORIES AS YOU LIKE.
 echo ">>>> Currently making a tar.gz archive from muliple directories ..." ;
-tar -czvf $DIR_ZIPS/MULTIPLE_DIRECTORIES_BACKUP.tar.gz "$HOME/.oh-my-zsh/custom" "$HOME/.ssh" "$HOME/.config/ranger" 
+tar -czvf $DIR_ZIPS/MULTIPLE_DIRECTORIES_BACKUP.tar.gz "$HOME/.oh-my-zsh/custom" "$HOME/.ssh" "$HOME/.config/ranger" "$HOME/.config/rclone" 
 
 echo "BASH + ZSH Profiles + CONFIG_DIRS ....................... BACKUP DONE!"
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
