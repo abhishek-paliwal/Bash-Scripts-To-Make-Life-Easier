@@ -60,7 +60,7 @@ for DIRNAME in $(find "$CWD" -maxdepth 1 -type d) ; do
   done
   ####
   echo ">>>> THESE COLLAGES ARE CREATED:" ;
-  ls -1 $CWD/*.collage-*.jpg ;
+  ls -1 $CWD/*collage*.jpg ;
   cd $CWD ;
   echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
 done
