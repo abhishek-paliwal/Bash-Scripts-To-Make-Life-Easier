@@ -44,7 +44,6 @@ for DIRNAME in $(find "$CWD" -maxdepth 1 -type d) ; do
   echo ">>>> Making collages for photos in this dir => $MYDIR" ;
   echo ">>>> NOTE: Collages will be made in => $CWD" ;
   echo "##------------------------------------------------------------------------------" ;
-  ####
   # DECLARING TWO ARRAYS FOR VARIOUS HEIGHTS AND WIDTHS
   #list_widths=(800 1000 1280 1500 1920 2000 3000 4000 6000 8000) ;
   #list_heights=(500 600 720 800 1000 1080 1200 1500 1600 1800 2000) ;
@@ -59,6 +58,11 @@ for DIRNAME in $(find "$CWD" -maxdepth 1 -type d) ; do
     done
   done
   ####
+  ## MAKING VERTICAL AND HORIZONTAL COLLAGES WITH ALL IMAGES IN DIRNAME
+  python3 $MY_DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/2000-python_collage_maker_vertical_and_horizontal.py $DIRNAME $CWD ;
+  python3 $MY_DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/2000-python-collage-maker_with_symmetrical_even_odd_rows.py $DIRNAME $CWD ;
+  ####
+  echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
   echo ">>>> THESE COLLAGES ARE CREATED:" ;
   ls -1 $CWD/*collage*.jpg ;
   cd $CWD ;

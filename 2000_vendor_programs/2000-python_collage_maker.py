@@ -81,7 +81,7 @@ def make_collage(images, filename, width, init_height):
         if any(map(lambda c: len(c[1]) <= 1, coefs_lines)):
             # reduce `init_height`
             init_height -= 10
-            print(' INIT HEIGHT NEW => ' + str(init_height) )
+            #print(' INIT HEIGHT NEW => ' + str(init_height) )
         else:
             break
 
