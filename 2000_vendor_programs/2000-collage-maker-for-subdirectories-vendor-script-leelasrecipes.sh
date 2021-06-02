@@ -10,13 +10,14 @@ cat <<EOM
 USAGE: $(basename $0)
   ################################################################################
   ## THIS SCRIPT MAKES COLLAGES WITH VARIOUS RESOLUTIONS USING VENDOR PYTHON COLLAGE MAKER.
+  ## THIS SCRIPT MAKES COLLAGES FOR RECIPE STEPS IMAGES FOR LEELASRECIPES.
   ## >>>> NOTE: THIS SCRIPT SHOULD BE RUN FROM A DIRECTORY WHERE MANY FOLDERS ARE PRESENT, EACH
   ## >>>> CONTAINING SOME IMAGES.
   ################################################################################
   ## USAGE: bash $THIS_SCRIPT_NAME
   ################################################################################
   ## MADE BY: PALI
-  ## MADE ON: Thursday January 23, 2020
+  ## MADE ON: Thursday May 28, 2021
   ################################################################################
 EOM
 
@@ -59,8 +60,7 @@ for DIRNAME in $(find "$CWD" -maxdepth 1 -type d) ; do
   done
   ####
   ## MAKING VERTICAL AND HORIZONTAL COLLAGES WITH ALL IMAGES IN DIRNAME
-  python3 $MY_DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/2000-python_collage_maker_vertical_and_horizontal.py $DIRNAME $CWD ;
-  python3 $MY_DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/2000-python-collage-maker_with_symmetrical_even_odd_rows.py $DIRNAME $CWD ;
+  python3 $MY_DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/2000-python_collage_maker_vertical_and_horizontal_grid.py $DIRNAME $CWD ;
   ####
   echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
   echo ">>>> THESE COLLAGES ARE CREATED:" ;

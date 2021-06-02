@@ -65,15 +65,34 @@ def get_concat_v_multi_resize(im_list, resample=Image.BICUBIC):
     return dst
 
 ## JOINING HORIZONTAL AND VERTICAL COLLAGES IN ROWS
-def get_concat_tile_resize(im_list_2d, resample=Image.BICUBIC):
+def get_concat_tile_resize(im_list_2d, name_suffix, resample=Image.BICUBIC):
     im_list_v = [get_concat_h_multi_resize(
         im_list_h, resample=resample) for im_list_h in im_list_2d]
     #return get_concat_v_multi_resize(im_list_v, resample=resample)
     dst = get_concat_v_multi_resize(im_list_v, resample=resample)
-    final_image_name = 'collage-EVEN-ODD-ROWS-for-DIR-' + DIR_INPUT_BASENAME + '.jpg'
+    final_image_name = 'collage-EVEN-ODD-ROWS-for-DIR-' + DIR_INPUT_BASENAME + name_suffix + '.jpg'
     print('>> Making final even and odd rows collage => ' + final_image_name)
     dst.save(DIR_OUTPUT + '/' + final_image_name)
 
+## SPLIT THE LIST DIFFERENTLY DEPENDING UPON EVEN AND ODD NUMBER OF IMAGES
+#### For eg, if => max_images_in_single_row = 2, then:
+#### // if total images = even = 8, split rows will be [2,2,2,2]
+#### // if total images = odd =  7, split rows will be [2,2,2,1], etc.
+####
+def CREATE_2D_IMAGES_LIST(max_images_per_row):
+    max_images_in_single_row = max_images_per_row
+    total_rows = list_length // max_images_in_single_row
+    ##
+    print()
+    if list_length % max_images_in_single_row == 0:
+        print('>>>> List Length = EVEN Number = ' + str(list_length))
+        final_2d_list = split_list(
+            all_images_as_pil_objects, wanted_parts=total_rows)
+    else:
+        print('>>>> List Length = ODD Number = ' + str(list_length))
+        final_2d_list = split_list(
+            all_images_as_pil_objects, wanted_parts=total_rows+1)
+    return final_2d_list
 ##################################################################################
 ##################################################################################
 
@@ -82,25 +101,23 @@ PRINT_LIST_ELEMENTS_LINE_BY_LINE(all_images, list_desc='All images in chosen dir
 PRINT_LIST_ELEMENTS_LINE_BY_LINE(all_images_as_pil_objects, list_desc='All PIL image objects ...')
 ##################
 
-## SPLIT THE LIST DIFFERENTLY DEPENDING UPON EVEN AND ODD NUMBER OF IMAGES
-#### For eg, if => max_images_in_single_row = 2, then:
-#### // if total images = even = 8, split rows will be [2,2,2,2]
-#### // if total images = odd =  7, split rows will be [2,2,2,1], etc.
-print();
-if list_length % max_images_in_single_row == 0:
-    print('>>>> List Length = EVEN Number = ' + str(list_length))
-    final_2d_list = split_list(all_images_as_pil_objects, wanted_parts=total_rows)
-else:
-    print('>>>> List Length = ODD Number = ' + str(list_length))
-    final_2d_list = split_list(all_images_as_pil_objects, wanted_parts=total_rows+1)
-####
-PRINT_LIST_ELEMENTS_LINE_BY_LINE(final_2d_list, list_desc='All rows in 2D LIST of images ...')
+#========================================
+## CALLING THE MAIN COLLAGE MAKING FUNCTION VIA ANOTHER FUNCTION
+#========================================
+#############
+def MAKE_COLLAGE_WITH_CHOSEN_NUMBER_OF_IMAGES_PER_ROW(max_images_per_row):
+    print(); 
+    final_2d_list = CREATE_2D_IMAGES_LIST(max_images_per_row)
+    PRINT_LIST_ELEMENTS_LINE_BY_LINE(final_2d_list, list_desc='All rows in 2D LIST of images ...')
+    get_concat_tile_resize(final_2d_list, name_suffix='-' + str(max_images_per_row) + 'x-per-row')
+#############
 
+## Make these collage with desired rows (add more numbers as desired in the following list)
+#### Eg.; 1 = single row collage, list_length = single column collage
+max_images_per_row_list = [1,2,3,4,5,list_length]
+for x in max_images_per_row_list:
+    MAKE_COLLAGE_WITH_CHOSEN_NUMBER_OF_IMAGES_PER_ROW(max_images_per_row = x)
 #========================================
-## CALLING THE MAIN FUNCTION
-print()
-get_concat_tile_resize(final_2d_list)
-print('##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++') ;
-#========================================
+
+print('##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
 ##################################################################################
-
