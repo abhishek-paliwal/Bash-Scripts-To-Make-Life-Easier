@@ -1,6 +1,45 @@
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## USAGE FOR PYTHON
+## Print this help as >> this_script_name --help
+## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
+import sys
+####
+def usage():
+    print('## USAGE: ' + sys.argv[0])
+    HELP_TEXT = """
+    ################################################################################
+    ## THIS SCRIPT MAKES COLLAGES WITH VARIOUS NUMBER OF IMAGES PER ROW.
+    ## IT ALSO CREATES VERTICAL AND HORIZONTAL COLLAGES FROM ALL IMAGES FROM SUBDIRECTORIES.
+    ## >>>> NOTE: THIS SCRIPT SHOULD BE RUN FROM A DIRECTORY WHERE MANY FOLDERS ARE PRESENT, EACH
+    ## >>>> CONTAINING SOME IMAGES.
+    ################################################################################
+    ## USAGE: python3 THIS_SCRIPT_NAME ARG1 ARG2 
+    #### (where, ARG1 = images_input_directory // ARG2 = collage_output_directory)
+    ################################################################################
+    ## MADE BY: PALI
+    ## MADE ON: Thursday June 02, 2021
+    ################################################################################
+    """
+    print(HELP_TEXT)
+####
+## Calling the usage function
+## First checking if there are more than one argument on CLI .
+print()
+if (len(sys.argv) > 1) and (sys.argv[1] == "--help"):
+    print('## USAGE HELP IS PRINTED BELOW. SCRIPT WILL EXIT AFTER THAT.')
+    usage()
+    ## EXITING IF ONLY USAGE IS NEEDED
+    quit()
+else:
+    print('## USAGE HELP IS PRINTED BELOW. NORMAL PROGRAM RUN WILL CONTINE AFTER THAT.')
+    usage()  # Printing normal help and continuing script run.
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##################################################################################
+##################################################################################
+
 from PIL import Image
 import os
-import sys 
 
 ## GETTING VARIABLES FROM CLI ARGUMENTS
 DIR_INPUT = sys.argv[1]
