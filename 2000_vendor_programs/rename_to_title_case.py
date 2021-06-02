@@ -8,9 +8,11 @@ def usage():
     print('## USAGE: ' + sys.argv[0])
     HELP_TEXT = """
     ##############################################################################
-    THIS SCRIPT RENAMES ALL FILES AND FOLDERS RECURSIVELY WITH TITLE CASE.
-    >>>> NOTE: Files and directories will only be renamed if they atleast have one other joining characters between filename words, OTHER THAN HYPHENS.
-    >>>> It means if the filenames contains only hyphens between words, they will not be renamed to title case.
+    ## THIS SCRIPT RENAMES ALL FILES AND FOLDERS RECURSIVELY WITH TITLE CASE.
+    #### NOTE: Files and directories will only be renamed if they atleast have one other
+    #### joining characters between filename words, OTHER THAN HYPHENS.
+    #### It means if the filenames contains only hyphens between words, they will not 
+    #### be renamed to title case.
     ##############################################################################
     """
     print(HELP_TEXT)

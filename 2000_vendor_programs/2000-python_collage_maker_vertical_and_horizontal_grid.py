@@ -10,8 +10,8 @@ def usage():
     ################################################################################
     ## THIS SCRIPT MAKES COLLAGES WITH VARIOUS NUMBER OF IMAGES PER ROW.
     ## IT ALSO CREATES VERTICAL AND HORIZONTAL COLLAGES FROM ALL IMAGES FROM SUBDIRECTORIES.
-    ## >>>> NOTE: THIS SCRIPT SHOULD BE RUN FROM A DIRECTORY WHERE MANY FOLDERS ARE PRESENT, EACH
-    ## >>>> CONTAINING SOME IMAGES.
+    #### NOTE: THIS SCRIPT SHOULD BE RUN FROM A DIRECTORY WHERE MANY FOLDERS ARE PRESENT, EACH
+    #### CONTAINING SOME IMAGES.
     ################################################################################
     ## USAGE: python3 THIS_SCRIPT_NAME ARG1 ARG2 
     #### (where, ARG1 = images_input_directory // ARG2 = collage_output_directory)
