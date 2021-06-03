@@ -136,7 +136,8 @@ pali_spellings_check_in_this_directory
 pali_takeout_google_unzip_all_sequential_zip_files
 pali_mggk_RSYNC_REPOS_MGGK_AND_ZZMGGK
 pali_GIT_STATUS_FOR_ALL_REPOS
-pali_imagemagick_fixed_resize_images_by_width_or_height) ;
+pali_imagemagick_fixed_resize_images_by_width_or_height
+2000-python-image-resize) ;
 
 ##
 LEELA_COMMANDS_ARRAY=(leelasrecipes_makesite_hugo
@@ -153,7 +154,8 @@ leelasrecipes_calculate_length_of_urls
 999-mggk-EXTRACT-VIDEO-SCREENSHOTS-EVERY-N-SECONDS
 2000-collage-maker-using-vendor-script-leelasrecipes
 leelasrecipes_make_20_directories
-pali_imagemagick_fixed_resize_images_by_width_or_height) ;
+pali_imagemagick_fixed_resize_images_by_width_or_height
+2000-python-image-resize) ;
 
 ##
 IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY=(1_imagemagick_maker
@@ -194,7 +196,8 @@ youtube-download-best-audio-only
 youtube-download-best-overall-version
 youtube-list-formats
 youtube-update-downloader-program
-pali_imagemagick_fixed_resize_images_by_width_or_height)
+pali_imagemagick_fixed_resize_images_by_width_or_height
+2000-python-image-resize)
 
 ## Assign the corresponding user array to the new array variable
 if [ "$WHICH_USER" == "anu" ] ; then MY_COMMANDS_ARRAY=( "${ANU_COMMANDS_ARRAY[@]}" ) ; fi
