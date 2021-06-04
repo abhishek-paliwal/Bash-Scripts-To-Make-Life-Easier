@@ -52,9 +52,6 @@ function FUNC_CREATE_COLLAGE_WITH_GIVEN_COMBINATION_OF_DIMENSIIONS {
       done
     done
     ####
-    ## MAKING VERTICAL AND HORIZONTAL COLLAGES WITH ALL IMAGES IN DIRNAME
-    python3 $REPO_SCRIPTS/2000_vendor_programs/2000-python_collage_maker_vertical_and_horizontal_grid.py $DIRNAME $CWD ;
-    ####
   done
 }
 

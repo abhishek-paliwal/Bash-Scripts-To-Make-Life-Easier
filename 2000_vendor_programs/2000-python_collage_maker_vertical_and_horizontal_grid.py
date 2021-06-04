@@ -49,7 +49,9 @@ print('>> CURRENT INPUT DIRECTORY => ' + str(DIR_INPUT))
 print('>> CURRENT OUTPUT DIRECTORY => ' + str(DIR_OUTPUT))
 
 ## LISTING ALL IMAGES
-all_images = os.listdir(DIR_INPUT) ;
+#all_images = os.listdir(DIR_INPUT) ;
+all_images = [file for file in os.listdir(DIR_INPUT) if file.endswith(('jpeg', 'png', 'jpg'))]
+
 ## CREATING PIL IMAGE OBJECTS OF ALL IMAGES FOUND
 all_images_as_pil_objects = [Image.open(DIR_INPUT + '/' + x) for x in all_images]
 ##
@@ -153,7 +155,7 @@ def MAKE_COLLAGE_WITH_CHOSEN_NUMBER_OF_IMAGES_PER_ROW(max_images_per_row):
 
 ## Make these collage with desired rows (add more numbers as desired in the following list)
 #### Eg.; 1 = single row collage, list_length = single column collage
-max_images_per_row_list = [1,2,3,4,5,list_length]
+max_images_per_row_list = range(1,list_length+1)
 for x in max_images_per_row_list:
     MAKE_COLLAGE_WITH_CHOSEN_NUMBER_OF_IMAGES_PER_ROW(max_images_per_row = x)
 #========================================
