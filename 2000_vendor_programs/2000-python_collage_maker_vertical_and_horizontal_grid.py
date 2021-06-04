@@ -51,6 +51,7 @@ print('>> CURRENT OUTPUT DIRECTORY => ' + str(DIR_OUTPUT))
 ## LISTING ALL IMAGES
 #all_images = os.listdir(DIR_INPUT) ;
 all_images = [file for file in os.listdir(DIR_INPUT) if file.endswith(('jpeg', 'png', 'jpg'))]
+all_images.sort() ## sorting the list (this is very important step for collage)
 
 ## CREATING PIL IMAGE OBJECTS OF ALL IMAGES FOUND
 all_images_as_pil_objects = [Image.open(DIR_INPUT + '/' + x) for x in all_images]
