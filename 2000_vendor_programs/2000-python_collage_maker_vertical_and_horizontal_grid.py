@@ -60,6 +60,7 @@ all_images_as_pil_objects = [Image.open(DIR_INPUT + '/' + x) for x in all_images
 list_length = len(all_images_as_pil_objects)
 max_images_in_single_row = 2  # change this number if desired
 total_rows = list_length // max_images_in_single_row
+image_padding = 5
 
 ##################################################################################
 ## FUNCTION DEFINITIONS
@@ -85,11 +86,11 @@ def get_concat_h_multi_resize(im_list, resample=Image.BICUBIC):
     im_list_resize = [im.resize((int(im.width * min_height / im.height), min_height), resample=resample)
                       for im in im_list]
     total_width = sum(im.width for im in im_list_resize)
-    dst = Image.new('RGB', (total_width, min_height))
+    dst = Image.new('RGB', (total_width, min_height), (255, 255, 255) )
     pos_x = 0
     for im in im_list_resize:
         dst.paste(im, (pos_x, 0))
-        pos_x += im.width
+        pos_x += im.width + (image_padding*2)
     return dst
 
 ## JOINING IMAGES VERTICALLY
@@ -98,11 +99,11 @@ def get_concat_v_multi_resize(im_list, resample=Image.BICUBIC):
     im_list_resize = [im.resize((min_width, int(im.height * min_width / im.width)), resample=resample)
                       for im in im_list]
     total_height = sum(im.height for im in im_list_resize)
-    dst = Image.new('RGB', (min_width, total_height))
+    dst = Image.new('RGB', (min_width, total_height), (255, 255, 255) )
     pos_y = 0
     for im in im_list_resize:
         dst.paste(im, (0, pos_y))
-        pos_y += im.height
+        pos_y += im.height + image_padding
     return dst
 
 ## JOINING HORIZONTAL AND VERTICAL COLLAGES IN ROWS
@@ -111,7 +112,7 @@ def get_concat_tile_resize(im_list_2d, name_suffix, resample=Image.BICUBIC):
         im_list_h, resample=resample) for im_list_h in im_list_2d]
     #return get_concat_v_multi_resize(im_list_v, resample=resample)
     dst = get_concat_v_multi_resize(im_list_v, resample=resample)
-    final_image_name = 'collage-EVEN-ODD-ROWS-for-DIR-' + DIR_INPUT_BASENAME + name_suffix + '.jpg'
+    final_image_name = 'grid-collage-for-DIR-' + DIR_INPUT_BASENAME + name_suffix + '.jpg'
     print('>> Making final even and odd rows collage => ' + final_image_name)
     dst.save(DIR_OUTPUT + '/' + final_image_name)
 
@@ -150,7 +151,7 @@ def MAKE_COLLAGE_WITH_CHOSEN_NUMBER_OF_IMAGES_PER_ROW(max_images_per_row):
     print(); 
     final_2d_list = CREATE_2D_IMAGES_LIST(max_images_per_row)
     PRINT_LIST_ELEMENTS_LINE_BY_LINE(final_2d_list, list_desc='All rows in 2D LIST of images ...')
-    get_concat_tile_resize(final_2d_list, name_suffix='-' + str(max_images_per_row) + 'x-per-row')
+    get_concat_tile_resize(final_2d_list, name_suffix='-' + str(max_images_per_row) + 'x-images-per-row')
 #############
 
 ## Make these collage with desired rows (add more numbers as desired in the following list)

@@ -78,7 +78,7 @@ read -p ">>>> If OKAY, press Enter key to contunue ... Else, press CTRL+C to abo
 echo ;
 
 ## CALLING COLLAGE MAKING FUNCTIONS
-FUNC_CREATE_COLLAGE_WITH_GIVEN_COMBINATION_OF_DIMENSIIONS "$CWD"
+#FUNC_CREATE_COLLAGE_WITH_GIVEN_COMBINATION_OF_DIMENSIIONS "$CWD"
 FUNC_CREATE_COLLAGE_IN_GRID "$CWD"
 
 echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 

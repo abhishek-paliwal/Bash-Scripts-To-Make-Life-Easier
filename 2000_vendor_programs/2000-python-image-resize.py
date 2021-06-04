@@ -68,7 +68,7 @@ def resizing_images_in_current_working_dir(my_width, my_height):
         final_image_name = str(my_width) + "x" + \
             str(my_height) + "_RESIZED_" + image
         file_path = os.path.join( currentDirectory, final_image_name  ) 
-        print("====> " + currentDirectory + " XXXX " + final_image_name)
+        #print("====> " + currentDirectory + " XXXX " + final_image_name)
         img.save(file_path, optimize=True, quality=90)
         print('>> Resized image saved => ' + file_path)
 ####
@@ -81,9 +81,7 @@ print_image_dimensions_in_subdirs()
 #### Otherwise, it will first resize the subdirs images, then also resize them one more time
 #### at the time of running the current dirs resize function
 resizing_images_in_current_working_dir(1280,12000)
-resizing_images_in_current_working_dir(1920, 14000)
 ##
 resizing_images_in_subdirs(1280, 12000)
-resizing_images_in_subdirs(1920, 14000)
 ##
 print_image_dimensions_in_current_working_dir()
