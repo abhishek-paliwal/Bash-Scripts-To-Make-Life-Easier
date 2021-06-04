@@ -51,7 +51,7 @@ def resizing_images_in_subdirs(my_width, my_height):
         for image in images:
             img = Image.open(dir + '/' + image)
             img.thumbnail((my_width, my_height))
-            final_image_name = dir + "_resized_DIR_" + image
+            final_image_name = str(my_width) + "x" + str(my_height) + "_RESIZED_DIR_" + dir + '-' + image
             img.save(final_image_name, optimize=True, quality=90)
             print('>> Resized image saved => ' + final_image_name)
 ####
@@ -65,7 +65,8 @@ def resizing_images_in_current_working_dir(my_width, my_height):
     for image in images:
         img = Image.open(currentDirectory + '/' + image)
         img.thumbnail((my_width, my_height))
-        final_image_name =  "_resized_DIR_" + image
+        final_image_name = str(my_width) + "x" + \
+            str(my_height) + "_RESIZED_" + image
         file_path = os.path.join( currentDirectory, final_image_name  ) 
         print("====> " + currentDirectory + " XXXX " + final_image_name)
         img.save(file_path, optimize=True, quality=90)
@@ -75,8 +76,14 @@ def resizing_images_in_current_working_dir(my_width, my_height):
 ##################################################################################
 
 ## CALLING FUNCTIONS
-print_image_dimensions_in_current_working_dir()
 print_image_dimensions_in_subdirs()
-resizing_images_in_subdirs(1280,12000)
+## Keep the current working dirs resize function above the subdirs resizing function
+#### Otherwise, it will first resize the subdirs images, then also resize them one more time
+#### at the time of running the current dirs resize function
 resizing_images_in_current_working_dir(1280,12000)
+resizing_images_in_current_working_dir(1920, 14000)
+##
+resizing_images_in_subdirs(1280, 12000)
+resizing_images_in_subdirs(1920, 14000)
+##
 print_image_dimensions_in_current_working_dir()
