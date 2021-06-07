@@ -152,7 +152,14 @@ def MAKE_COLLAGE_WITH_CHOSEN_NUMBER_OF_IMAGES_PER_ROW(max_images_per_row):
     print(); 
     final_2d_list = CREATE_2D_IMAGES_LIST(max_images_per_row)
     PRINT_LIST_ELEMENTS_LINE_BY_LINE(final_2d_list, list_desc='All rows in 2D LIST of images ...')
-    get_concat_tile_resize(final_2d_list, name_suffix='-' + str(max_images_per_row) + 'x-images-per-row')
+    if ( list_length == 1 and max_images_per_row == 1 ) :
+        get_concat_tile_resize(final_2d_list, name_suffix='-' + str(max_images_per_row) + 'x-images-per-row')
+    elif ( list_length == 2 and max_images_per_row == 1 ) :
+        get_concat_tile_resize(final_2d_list, name_suffix='-' + str(max_images_per_row) + 'x-images-per-row')
+    elif ( list_length >= 3 and max_images_per_row == 2 ) :
+        get_concat_tile_resize(final_2d_list, name_suffix='-' + str(max_images_per_row) + 'x-images-per-row')
+    else:
+        get_concat_tile_resize(final_2d_list, name_suffix='-' + str(max_images_per_row) + 'x-images-per-row-NOT2TAKE')    
 #############
 
 ## Make these collage with desired rows (add more numbers as desired in the following list)
