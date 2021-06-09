@@ -24,7 +24,8 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##################################################################################
 HUGO_CONTENT_DIR="$REPO_MGGK/content" ;
 FILE_OUTPUT_SITESTATS="$REPO_MGGK_SUMMARY/mggk-sitestats.html" ;
-
+DIR_HUGO_MAIN="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL" ; 
+DIR_OUTPUT="$HOME/Desktop/Y" ;
 
 echo "##------------------------------------------------------------------------------" ;
 echo ">> GATHERING IMPORTANT SITE STATS FOR MGGK HUGO WEBSITE ..." ;
@@ -38,6 +39,17 @@ echo "##########################################################################
 echo "## MGGK Site Statistics last updated at:" >> $FILE_OUTPUT_SITESTATS
 echo "## $(date)" >> $FILE_OUTPUT_SITESTATS
 echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
+
+################################################################################ 
+## FINDING ALL DUPLICATE MD FILES WITH SAME URL
+echo;
+echo "##---------------------------------------"  >> $FILE_OUTPUT_SITESTATS ;
+echo ">> FINDING DUPLICATE MD FILES WITH SAME URL (AS COUNT, URL)" >> $FILE_OUTPUT_SITESTATS ;
+echo ">> Example output, only top 10 are printed below: (If COUNT = 1, means no duplicates found)" >> $FILE_OUTPUT_SITESTATS ;
+grep -irh "^url: " $HUGO_CONTENT_DIR/* | sort | uniq -c | sort -nr | head -10 >> $FILE_OUTPUT_SITESTATS
+echo "##---------------------------------------"  >> $FILE_OUTPUT_SITESTATS ;
+echo; 
+################################################################################ 
 
 ## NUMBER OF ALL MD POSTS
 NUM_MD_POSTS=$(find $HUGO_CONTENT_DIR/ -type f | grep '.md'| wc -l)
@@ -110,19 +122,19 @@ echo "$MGGK_VAR_recipeNotes: NUMBER OF POSTS WITH VAR recipeNotes" >> $FILE_OUTP
 ################################################################################
 ################################################################################
 ## NUMBER OF CURRENT IMAGES PRESENT IN 1x1 DIRECTORY
-NUM_CURRENT_1x1_IMAGES=$(ls $HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/rich-markup-images/1x1/*.jpg | wc -l)
+NUM_CURRENT_1x1_IMAGES=$(ls $DIR_HUGO_MAIN/static/wp-content/rich-markup-images/1x1/*.jpg | wc -l)
 echo "$NUM_CURRENT_1x1_IMAGES: NUMBER OF CURRENT IMAGES PRESENT IN 1x1 DIRECTORY" >> $FILE_OUTPUT_SITESTATS
 
 ## NUMBER OF CURRENT IMAGES PRESENT IN 4x3 DIRECTORY
-NUM_CURRENT_4x3_IMAGES=$(ls $HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/rich-markup-images/4x3/*.jpg | wc -l)
+NUM_CURRENT_4x3_IMAGES=$(ls $DIR_HUGO_MAIN/static/wp-content/rich-markup-images/4x3/*.jpg | wc -l)
 echo "$NUM_CURRENT_4x3_IMAGES: NUMBER OF CURRENT IMAGES PRESENT IN 4x3 DIRECTORY" >> $FILE_OUTPUT_SITESTATS
 
 ## NUMBER OF CURRENT IMAGES PRESENT IN 16x9 DIRECTORY
-NUM_CURRENT_16x9_IMAGES=$(ls $HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/rich-markup-images/16x9/*.jpg | wc -l)
+NUM_CURRENT_16x9_IMAGES=$(ls $DIR_HUGO_MAIN/static/wp-content/rich-markup-images/16x9/*.jpg | wc -l)
 echo "$NUM_CURRENT_16x9_IMAGES: NUMBER OF CURRENT IMAGES PRESENT IN 16x9 DIRECTORY" >> $FILE_OUTPUT_SITESTATS
 
 ## NUMBER OF CURRENT IMAGES PRESENT IN ORIGINAL_COPIED DIRECTORY
-NUM_CURRENT_ORIGINAL_COPIED_IMAGES=$(ls $HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/rich-markup-images/original_copied/*.* | wc -l)
+NUM_CURRENT_ORIGINAL_COPIED_IMAGES=$(ls $DIR_HUGO_MAIN/static/wp-content/rich-markup-images/original_copied/*.* | wc -l)
 echo "$NUM_CURRENT_ORIGINAL_COPIED_IMAGES: NUMBER OF CURRENT IMAGES PRESENT IN original_copied DIRECTORY" >> $FILE_OUTPUT_SITESTATS
 
 ################################################################################
@@ -132,8 +144,6 @@ echo ">> ... OR IF ANY INVALID IMAGES ARE PRESENT IN 1X1, 4X3, 16X9 DIRECTORIES 
 echo ">> ... DO NOT HAVE CORRESPONDING VALID URLS." >> $FILE_OUTPUT_SITESTATS
 echo "##------------------------------------------------------------------------------" >> $FILE_OUTPUT_SITESTATS
 ################################################################################
-DIR_HUGO_MAIN="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL" ; 
-DIR_OUTPUT="$HOME/Desktop/Y" ;
 ####
 DIR_ALL_URLS="$DIR_HUGO_MAIN/content" ;
 DIR_ORIG_COPIED="$DIR_HUGO_MAIN/static/wp-content/rich-markup-images/original_copied" ;
