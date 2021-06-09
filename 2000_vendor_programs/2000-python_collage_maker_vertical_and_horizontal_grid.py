@@ -141,7 +141,7 @@ def CREATE_2D_IMAGES_LIST(max_images_per_row):
 
 ##################
 PRINT_LIST_ELEMENTS_LINE_BY_LINE(all_images, list_desc='All images in chosen directory ...')
-PRINT_LIST_ELEMENTS_LINE_BY_LINE(all_images_as_pil_objects, list_desc='All PIL image objects ...')
+#PRINT_LIST_ELEMENTS_LINE_BY_LINE(all_images_as_pil_objects, list_desc='All PIL image objects ...')
 ##################
 
 #========================================
@@ -151,7 +151,9 @@ PRINT_LIST_ELEMENTS_LINE_BY_LINE(all_images_as_pil_objects, list_desc='All PIL i
 def MAKE_COLLAGE_WITH_CHOSEN_NUMBER_OF_IMAGES_PER_ROW(max_images_per_row):
     print(); 
     final_2d_list = CREATE_2D_IMAGES_LIST(max_images_per_row)
+    ##
     PRINT_LIST_ELEMENTS_LINE_BY_LINE(final_2d_list, list_desc='All rows in 2D LIST of images ...')
+    ##
     if ( list_length == 1 and max_images_per_row == 1 ) :
         get_concat_tile_resize(final_2d_list, name_suffix='-' + str(max_images_per_row) + 'x-images-per-row')
     elif ( list_length == 2 and max_images_per_row == 1 ) :
@@ -162,9 +164,16 @@ def MAKE_COLLAGE_WITH_CHOSEN_NUMBER_OF_IMAGES_PER_ROW(max_images_per_row):
         get_concat_tile_resize(final_2d_list, name_suffix='-' + str(max_images_per_row) + 'x-images-per-row-NOT2TAKE')    
 #############
 
+
 ## Make these collage with desired rows (add more numbers as desired in the following list)
 #### Eg.; 1 = single row collage, list_length = single column collage
-max_images_per_row_list = range(1,list_length+1)
+#### If there are more than 6 images, then we will only make collages till 7-images per row.
+list_length_max = 7 ;
+if list_length > list_length_max:
+    max_images_per_row_list = range(1, list_length_max+1)
+else:
+    max_images_per_row_list = range(1,list_length+1)
+####
 for x in max_images_per_row_list:
     MAKE_COLLAGE_WITH_CHOSEN_NUMBER_OF_IMAGES_PER_ROW(max_images_per_row = x)
 #========================================
