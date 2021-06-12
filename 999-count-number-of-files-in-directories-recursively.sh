@@ -42,11 +42,9 @@ else
 	DIRPATH="$1" ;
     echo "CLI Argument provided. Hence, DIRPATH => $DIRPATH " ;
 fi
-echo "	==> NOTE: OUTPUT IS NUMERICALLY SORTED."
-echo "##--------------------------------------" ;
 
 ## COUNTING FILES IN ALL SUBDIRECTORIES THROUGH LOOPING
-for dir in $(find $DIRPATH -type d) ; do
+for dir in $(find $DIRPATH -type d | sort) ; do
 	## creating an array with all filenames 
  	numfiles=($dir/*)
   	numfiles=${#numfiles[@]}
@@ -54,4 +52,12 @@ for dir in $(find $DIRPATH -type d) ; do
 done
 
 ## PRINTING FINAL SORTED OUTPUT
+echo "##--------------------------------------" ;
+echo "==> NOTE: OUTPUT IS NUMERICALLY SORTED (from HIGHER to LOWER)."
+echo "##--------------------------------------" ;
 cat /tmp/tmp.txt | sort -nr
+echo "##--------------------------------------" ;
+echo "##--------------------------------------" ;
+echo "==> OUTPUT SORTED ALPHABETICALLY BY DIRECTORY NAMES:"
+cat /tmp/tmp.txt
+
