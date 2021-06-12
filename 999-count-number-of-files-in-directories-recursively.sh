@@ -58,6 +58,6 @@ echo "##--------------------------------------" ;
 cat /tmp/tmp.txt | sort -nr
 echo "##--------------------------------------" ;
 echo "##--------------------------------------" ;
-echo "==> OUTPUT SORTED ALPHABETICALLY BY DIRECTORY NAMES:"
-cat /tmp/tmp.txt
+#echo "==> OUTPUT SORTED ALPHABETICALLY BY DIRECTORY NAMES:"
+#cat /tmp/tmp.txt
 
