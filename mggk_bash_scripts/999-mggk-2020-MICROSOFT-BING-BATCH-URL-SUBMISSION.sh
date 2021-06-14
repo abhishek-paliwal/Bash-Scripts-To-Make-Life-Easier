@@ -29,8 +29,7 @@ FILE_TMP_0="$WORKDIR/_tmp0_bing_sitemap.txt" ;
 FILE_TMP_1="$WORKDIR/_tmp1_bing_submission.txt" ;
 FILE_TMP_2="$WORKDIR/_tmp2_bing_submission.txt" ;
 ## API VARIABLES
-API_FILEPATH="$HOME_WINDOWS/Dropbox/docs_encrypted/IT-usernames-passwords-server-details/__PALIS_PRIVATE_KEYS_AND_CONFIGS_unencrypted/202010-bing-webmaster-api-key.txt" ;
-API_KEY="$(cat $API_FILEPATH | head -1) " ;
+API_KEY="$API_KEY_MICROSOFT_BING" ; ## from env variable
 ################################################################################
 
 ################################################################################
