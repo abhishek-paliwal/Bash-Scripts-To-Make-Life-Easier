@@ -8,7 +8,7 @@ cat <<EOM
 USAGE: $(basename $0)
 #############################################################################
 ## Using tinyPNG/tinyJPG server API to create compressed images. AWESOME!!!
-## Created by: Abhishek Paliwal
+## Created by: Pali
 ## Created on: Thursday January 5, 2017
 #########################################
 ## STEPS:
@@ -25,12 +25,10 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 
 ## Getting tinyPNG API KEY: #####
-## Reading a private CONFIG Key JSON file locally, through Python Version 2: ####
-export PYTHONIOENCODING=utf8
+## Reading the private CONFIG Key locally ####
 echo; echo ">> Getting tinyPNG API KEY: PARSING API KEY ..." ;
-API_KEY=$(cat $HOME_WINDOWS/Dropbox/docs_encrypted/IT-usernames-passwords-server-details/__PALIS_PRIVATE_KEYS_AND_CONFIGS_unencrypted/1_palis-personal-private-API-keys.json | python -c "import sys, json; print json.load(sys.stdin)['tinyPNG_API_key_apxapx']") ;
+API_KEY="$API_KEY_TINYPNG" ; ## taken from env variable
 echo ">> API KEY PARSED AS => $API_KEY" ;
-##### PYTHON block ends ######
 
 ## DEFINING VARIABLES:
 PWD=$(pwd);
