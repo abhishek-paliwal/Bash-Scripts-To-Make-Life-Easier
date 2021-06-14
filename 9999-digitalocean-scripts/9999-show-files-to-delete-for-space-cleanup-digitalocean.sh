@@ -41,3 +41,16 @@ echo; echo "cd /home/ubuntu/scripts-made-by-pali/602-mggk-python-plotting/_TMP_F
 echo; echo "cd /home/ubuntu/scripts-made-by-pali/517-mggk-delete-every-2nd-csv-file" ;
 echo; echo "cd /home/00-BACKUPS-BY-PALI" ;
 ################################################################################
+
+## DELETE ALL FILES WITH USER CONFIRMATION
+echo;
+echo ">> RUN THE FOLLOWING COMMAND TO DELETE ALL UNNCECESSARY FILES AT ONCE ..." ;
+echo "
+delete_CSVs_older_than_2_days ; 
+delete_LOG_files_older_than_2_days ; 
+delete_PNGs_older_than_2_days ; 
+delete_ZIPs_older_than_3_days ; 
+delete_TMPSUMMARY_files_older_than_2_days ;
+" ; 
+echo; echo;
+
