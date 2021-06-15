@@ -56,8 +56,19 @@ echo "##--------------------------------------" ;
 echo "==> NOTE: OUTPUT IS NUMERICALLY SORTED (from HIGHER to LOWER)."
 echo "##--------------------------------------" ;
 cat /tmp/tmp.txt | sort -nr
-echo "##--------------------------------------" ;
-echo "##--------------------------------------" ;
+#echo "##--------------------------------------" ;
 #echo "==> OUTPUT SORTED ALPHABETICALLY BY DIRECTORY NAMES:"
 #cat /tmp/tmp.txt
+##
+echo "##--------------------------------------" ;
+echo "## SUMMARY FOR DIRECTORY => $DIRPATH" ;
+echo "##--------------------------------------" ;
+total_folders=$(fd . -t d $DIRPATH | wc -l | awk '{$1=$1;print}') ;
+total_files=$(fd . -t f $DIRPATH | wc -l | awk '{$1=$1;print}') ;
+total_files_and_folders_recursive=$(fd . $DIRPATH | wc -l | awk '{$1=$1;print}') ;
+##
+echo "$total_folders => TOTAL FOLDERS + SUBFOLDERS" ;  
+echo "$total_files => TOTAL FILES" ;  
+echo "$total_files_and_folders_recursive => TOTAL FILES + FOLDERS + SUBFOLDERS" ;
+echo "##--------------------------------------" ;
 
