@@ -70,5 +70,10 @@ total_files_and_folders_recursive=$(fd . $DIRPATH | wc -l | awk '{$1=$1;print}')
 echo "$total_folders => TOTAL FOLDERS + SUBFOLDERS" ;  
 echo "$total_files => TOTAL FILES" ;  
 echo "$total_files_and_folders_recursive => TOTAL FILES + FOLDERS + SUBFOLDERS" ;
-echo "##--------------------------------------" ;
 
+##
+echo "##--------------------------------------" ;
+echo "## SUMMARY OF FILES BY EXTENSION => $DIRPATH" ;
+echo "##--------------------------------------" ;
+fd . -t f $DIRPATH | rev | grep '\.' | cut -d '.' -f1 | rev | sort | uniq -c | sort -nr
+echo "##--------------------------------------" ;
