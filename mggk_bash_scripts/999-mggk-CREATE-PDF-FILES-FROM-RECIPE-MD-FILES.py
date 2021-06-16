@@ -312,12 +312,9 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         ##------------------------------------------------------------------------------
         ## FINAL PDF OUTPUT FOR THIS RECIPE 
         pdf.output(PDFDIR + PDF_FILENAME, 'F')
-
-
-
-
-
-
+        print();
+        print('PDF File Saved => ' + PDFDIR + PDF_FILENAME) ;
+        print();
 
 ###############################################################################
 ############################# PROGRAM ENDS ####################################
