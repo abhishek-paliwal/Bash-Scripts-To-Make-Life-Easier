@@ -107,6 +107,7 @@ video_cutting_in_1_minute_equal_parts_using_ffmpeg
 999-mggk-2020-MICROSOFT-BING-BATCH-URL-SUBMISSION
 999A-mggk-MATCH-WORDS-IN-MD-FILE-WITH-EXISTING-URLS-LIKE-WORDPRESS
 999B-mggk-CREATE-SEARCH-ENGINE-LINKS-FOR-ALL-URLS
+999-mggk-CREATE-PDF-FILES-FROM-RECIPE-MD-FILES
 mggk_shortcode_collection_maker
 mggk_calculate_length_of_yoast_description
 mggk_calculate_length_of_titles
