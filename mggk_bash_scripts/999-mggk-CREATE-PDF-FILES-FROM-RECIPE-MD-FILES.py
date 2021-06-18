@@ -52,7 +52,7 @@ from fpdf import FPDF
 
 ##############################################################################
 ## WHERE ARE THE FILES TO MODIFY
-MYHOME = os.environ['HOME'] ## GETTING THE ENVIRONMENT VALUE FOR HOME
+MYHOME = os.environ['HOME_WINDOWS'] ## GETTING THE ENVIRONMENT VALUE FOR HOME
 ROOTDIR = MYHOME + "/Desktop/Y/recipes_demo/"
 PDFDIR = MYHOME + "/Desktop/Y/"
 #ROOTDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/"
@@ -63,18 +63,16 @@ for filename in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
 ##############################################################################
 
 ##################################################################################
-## DEFINE HTML TAGS CLEANING FUNCTION
-def cleanhtml(raw_html):
-  cleanr = re.compile('<.*?>')
-  cleantext = re.sub(cleanr, '', raw_html)
-  return cleantext
-
+## DEFINE HTML TAGS and UNPRINTABLE CHARACTERS CLEANING FUNCTION
 def remove_unreadable_characters(some_text):
+    ## replace some unprintable characters
     some_text = some_text.replace("\u2013", "-") #replace en dash
     some_text = some_text.replace("\u2014", "-") #replace em dash
+    ## clean html tags (if any)
+    cleanr = re.compile('<.*?>')
+    some_text = re.sub(cleanr, '', some_text)
     ## finally replace any more unreadable characters to question marks
     some_text = some_text.encode('latin-1', 'replace').decode('latin-1') ;                 
-    ##
     return some_text 
 ##################################################################################
 
@@ -214,30 +212,49 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         ##------------------------------------------------------------------------------
         PDF_FILENAME = 'PDF-' + URL_NO_SLASHES + '.pdf'
         pdf = FPDF('P', 'mm', 'A4')
-        effective_page_width = pdf.w - 2*pdf.l_margin ; ## in mm
+        ##
+        effective_page_width = pdf.w - 2*pdf.l_margin ; ## in mm        
+        page_width = pdf.w  # in mm
+        page_height = pdf.h  # in mm
         chosen_box_height = 7 ; ## in mm
-        #print(effective_page_width)
+        ##
 
         pdf.add_page()
         pdf.set_font('Arial', 'B', 16)
 
         ##
-        #print RECIPE URL:
-        pdf.set_font('Arial', '', 12)
-        pdf.cell(effective_page_width, chosen_box_height*2, 'RECIPE Link: ' + URL_MGGK, 1, 1, 'L')
+        #print RECIPE URL LINK:
+        pdf.set_font('Arial', '', 9)
+        pdf.set_text_color(0,0,255)
+        pdf.set_fill_color(220,220,220) ## fill color to grey
+        pdf.cell(effective_page_width, chosen_box_height, 'RECIPE DOWNLOADED FROM: ', border=0, ln=1, align='L')
+        pdf.multi_cell(effective_page_width, chosen_box_height, URL_MGGK, border=0, align='L', fill=True)
+        pdf.set_fill_color(0,0,0) # fill color reset
+        ## line break
+        pdf.ln(chosen_box_height)
+
+
+        ## print website logo
+        pdf.image('logo-mggk.png', x=page_width/2.6, y=None, w=0, h=0, type='', link=URL_MGGK)
+        ## line break
         pdf.ln(chosen_box_height)
 
         #print TITLE:
         pdf.set_font('Times', 'B', 30)
+        pdf.set_text_color(205,30,100)
         TITLE = remove_unreadable_characters(TITLE)
         pdf.multi_cell(effective_page_width, chosen_box_height*2, TITLE+' [RECIPE]', 0, 1, 'L')
+        pdf.set_text_color(0, 0, 0)  # text color reset
 
         #print description
         #through multi_cell => it requires declaring the height of the cell.
         pdf.set_font('Arial', '', 16)
+        pdf.set_text_color(205,30,100)
         YOAST_DESCRIPTION = remove_unreadable_characters(YOAST_DESCRIPTION)
-        pdf.multi_cell(effective_page_width, chosen_box_height, YOAST_DESCRIPTION, 0, 1, 'L')
+        pdf.multi_cell(effective_page_width, chosen_box_height, YOAST_DESCRIPTION, border=0, align='L', fill=False )
         pdf.ln(chosen_box_height)
+        pdf.set_text_color(0, 0, 0) ## text color reset
+
 
         #print PREPTIME, COOKTIME, TOTALTIME
         pdf.set_font('Arial', 'B', 12)
@@ -255,11 +272,13 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         pdf.cell(effective_page_width, chosen_box_height, nutrition_fulltext, 0, 1, 'R')
     
         ##------------------------------------------------------------------------------
-
         #print recipe ingredients
         pdf.ln(chosen_box_height)
-        pdf.set_font('Arial', '', 14)
-        pdf.cell(effective_page_width, chosen_box_height, "RECIPE INGREDIENTS //", 1, 1, 'L')
+        pdf.set_font('Arial', '', 13)
+        pdf.set_fill_color(220, 220, 220)  # fill color to grey
+        pdf.multi_cell(effective_page_width, chosen_box_height*1.5,
+                       "RECIPE INGREDIENTS", border=0, align='C', fill=True)
+        pdf.set_fill_color(0, 0, 0)  # fill color reset
         ##
         count=1
         for ingr_group in RECIPE_INGREDIENTS:
@@ -270,19 +289,23 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
             print(ingr_group_title)
             pdf.set_font('Arial', 'B', 13)
             ingr_group_title = remove_unreadable_characters(ingr_group_title)
-            pdf.multi_cell(effective_page_width, chosen_box_height, '=> ' + ingr_group_title, 0, 1, 'L')
+            pdf.multi_cell(effective_page_width, chosen_box_height,
+                           '»   ' + ingr_group_title, border=0, align='L', fill=False)
             list_ingredients= ingr_group.get("recipeIngredientList")
             for ingr in list_ingredients:
                 print(ingr)
                 pdf.set_font('Arial', '', 12)
                 ingr = remove_unreadable_characters(ingr)
-                pdf.multi_cell(effective_page_width, chosen_box_height, str(count) + ') ' + ingr, 0, 1, 'L') 
+                pdf.multi_cell(effective_page_width, chosen_box_height, str(count) + '.   ' + ingr, 0, 1, 'L') 
                 count=count+1   
 
+        ##------------------------------------------------------------------------------
         #print recipe instructions
         pdf.ln(chosen_box_height)
-        pdf.set_font('Arial', '', 14)
-        pdf.cell(effective_page_width, chosen_box_height, "RECIPE INSTRUCTIONS //", 1, 1, 'L')
+        pdf.set_font('Arial', '', 13)
+        pdf.set_fill_color(220, 220, 220)  # fill color to grey
+        pdf.multi_cell(effective_page_width, chosen_box_height*1.5,"RECIPE INSTRUCTIONS", border=0, align='C', fill=True)
+        pdf.set_fill_color(0, 0, 0)  # fill color reset
         ##
         count=1
         for ingr_group in RECIPE_INSTRUCTIONS:
@@ -293,33 +316,43 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
             print(ingr_group_title)
             pdf.set_font('Arial', 'B', 13)
             ingr_group_title = remove_unreadable_characters(ingr_group_title)
-            pdf.multi_cell(effective_page_width, chosen_box_height, '=> ' + ingr_group_title, 0, 1, 'L')
+            pdf.multi_cell(effective_page_width, chosen_box_height,
+                           '»   ' + ingr_group_title, border=0, align='L', fill=False)
             list_ingredients= ingr_group.get("recipeInstructionsList")
             for ingr in list_ingredients:
                 print(ingr)
                 pdf.set_font('Arial', '', 12)
                 ingr = remove_unreadable_characters(ingr)
-                pdf.multi_cell(effective_page_width, chosen_box_height, str(count) + ') ' + ingr, 0, 1, 'L') 
+                pdf.multi_cell(effective_page_width, chosen_box_height, str(count) + '.   ' + ingr, 0, 1, 'L') 
                 count=count+1   
         
+        ##------------------------------------------------------------------------------
         #print recipe notes
         pdf.ln(chosen_box_height)
         count=1
-        pdf.set_font('Arial', '', 12)
-        pdf.cell(effective_page_width, chosen_box_height, "RECIPE NOTES //", 1, 1, 'L')
+        pdf.set_font('Arial', '', 13)
+        pdf.set_fill_color(220, 220, 220)  # fill color to grey
+        pdf.multi_cell(effective_page_width, chosen_box_height*1.5,"RECIPE NOTES", border=0, align='C', fill=True)
+        pdf.set_fill_color(0, 0, 0)  # fill color reset
         for single_note in RECIPE_NOTES:
+            pdf.set_font('Arial', '', 12)
             single_note = remove_unreadable_characters(single_note)
-            pdf.multi_cell(effective_page_width, chosen_box_height, str(count) + ') ' + single_note, 0, 1, 'L')
+            pdf.multi_cell(effective_page_width, chosen_box_height, str(count) + '.   ' + single_note, 0, 1, 'L')
             count=count+1
-
 
         ##------------------------------------------------------------------------------
         ## FINAL PDF OUTPUT FOR THIS RECIPE 
-        pdf.line(0,280,300,280)
         pdf.output(PDFDIR + PDF_FILENAME, 'F')
         print();
         print('PDF File Saved => ' + PDFDIR + PDF_FILENAME) ;
         print();
+
+        ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        ## SUMMARY PRINTING
+        ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        print(">> PDF SUMMARY (in millimeters): ") ;
+        print("Page Height = {} // Page width = {} // Effective Page Width = {} // Chosen Box Height = {}".format(page_height, page_width,
+                                      effective_page_width, chosen_box_height))
 
 ###############################################################################
 ############################# PROGRAM ENDS ####################################
