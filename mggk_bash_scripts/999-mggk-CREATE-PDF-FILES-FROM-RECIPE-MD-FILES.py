@@ -53,8 +53,10 @@ from fpdf import FPDF
 ##############################################################################
 ## WHERE ARE THE FILES TO MODIFY
 MYHOME = os.environ['HOME'] ## GETTING THE ENVIRONMENT VALUE FOR HOME
-ROOTDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/"
-PDFDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/PDF-PRINTS/"
+ROOTDIR = MYHOME + "/Desktop/Y/recipes_demo/"
+PDFDIR = MYHOME + "/Desktop/Y/"
+#ROOTDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/"
+#PDFDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/PDF-PRINTS/"
 ## printing all filenames found in ROOTDIR
 for filename in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
     print(filename)
@@ -66,6 +68,14 @@ def cleanhtml(raw_html):
   cleanr = re.compile('<.*?>')
   cleantext = re.sub(cleanr, '', raw_html)
   return cleantext
+
+def remove_unreadable_characters(some_text):
+    some_text = some_text.replace("\u2013", "-") #replace en dash
+    some_text = some_text.replace("\u2014", "-") #replace em dash
+    ## finally replace any more unreadable characters to question marks
+    some_text = some_text.encode('latin-1', 'replace').decode('latin-1') ;                 
+    ##
+    return some_text 
 ##################################################################################
 
 ## CREATING A STRING WHICH WILL BE APPENDED LATER
@@ -219,17 +229,13 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
 
         #print TITLE:
         pdf.set_font('Times', 'B', 30)
-        ## replace some unreadable characters to question marks
-        TITLE = TITLE.encode('latin-1', 'replace').decode('latin-1')
-        ##
+        TITLE = remove_unreadable_characters(TITLE)
         pdf.multi_cell(effective_page_width, chosen_box_height*2, TITLE+' [RECIPE]', 0, 1, 'L')
 
         #print description
         #through multi_cell => it requires declaring the height of the cell.
         pdf.set_font('Arial', '', 16)
-        ## replace some unreadable characters to question marks
-        YOAST_DESCRIPTION = YOAST_DESCRIPTION.encode('latin-1', 'replace').decode('latin-1')
-        ##
+        YOAST_DESCRIPTION = remove_unreadable_characters(YOAST_DESCRIPTION)
         pdf.multi_cell(effective_page_width, chosen_box_height, YOAST_DESCRIPTION, 0, 1, 'L')
         pdf.ln(chosen_box_height)
 
@@ -263,18 +269,13 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
             ingr_group_title = ingr_group.get("recipeIngredientTitle")
             print(ingr_group_title)
             pdf.set_font('Arial', 'B', 13)
-            ## replace some unreadable characters to question marks
-            ingr_group_title = ingr_group_title.encode('latin-1', 'replace').decode('latin-1')
-            ##
+            ingr_group_title = remove_unreadable_characters(ingr_group_title)
             pdf.multi_cell(effective_page_width, chosen_box_height, '=> ' + ingr_group_title, 0, 1, 'L')
             list_ingredients= ingr_group.get("recipeIngredientList")
             for ingr in list_ingredients:
                 print(ingr)
                 pdf.set_font('Arial', '', 12)
-                ingr = cleanhtml(ingr) ## clean html tags, if any
-                ## replace some unreadable characters to question marks
-                ingr = ingr.encode('latin-1', 'replace').decode('latin-1') ;                 
-                ##
+                ingr = remove_unreadable_characters(ingr)
                 pdf.multi_cell(effective_page_width, chosen_box_height, str(count) + ') ' + ingr, 0, 1, 'L') 
                 count=count+1   
 
@@ -291,18 +292,13 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
             ingr_group_title = ingr_group.get("recipeInstructionsTitle")
             print(ingr_group_title)
             pdf.set_font('Arial', 'B', 13)
-            ## replace some unreadable characters to question marks
-            ingr_group_title = ingr_group_title.encode('latin-1', 'replace').decode('latin-1')
-            ##
+            ingr_group_title = remove_unreadable_characters(ingr_group_title)
             pdf.multi_cell(effective_page_width, chosen_box_height, '=> ' + ingr_group_title, 0, 1, 'L')
             list_ingredients= ingr_group.get("recipeInstructionsList")
             for ingr in list_ingredients:
                 print(ingr)
                 pdf.set_font('Arial', '', 12)
-                ingr = cleanhtml(ingr)  # clean html tags, if any
-                ## replace some unreadable characters to question marks
-                ingr = ingr.encode('latin-1', 'replace').decode('latin-1')
-                ##
+                ingr = remove_unreadable_characters(ingr)
                 pdf.multi_cell(effective_page_width, chosen_box_height, str(count) + ') ' + ingr, 0, 1, 'L') 
                 count=count+1   
         
@@ -312,15 +308,14 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         pdf.set_font('Arial', '', 12)
         pdf.cell(effective_page_width, chosen_box_height, "RECIPE NOTES //", 1, 1, 'L')
         for single_note in RECIPE_NOTES:
-            ## replace some unreadable characters to question marks
-            single_note = single_note.encode('latin-1', 'replace').decode('latin-1')
-            ##
+            single_note = remove_unreadable_characters(single_note)
             pdf.multi_cell(effective_page_width, chosen_box_height, str(count) + ') ' + single_note, 0, 1, 'L')
             count=count+1
 
 
         ##------------------------------------------------------------------------------
         ## FINAL PDF OUTPUT FOR THIS RECIPE 
+        pdf.line(0,280,300,280)
         pdf.output(PDFDIR + PDF_FILENAME, 'F')
         print();
         print('PDF File Saved => ' + PDFDIR + PDF_FILENAME) ;
