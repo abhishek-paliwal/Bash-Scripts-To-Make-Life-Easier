@@ -46,9 +46,9 @@ import os
 from os.path import basename, splitext
 import glob
 import sys
+import re
 ## Tutorial here: https://pyfpdf.readthedocs.io/en/latest/Tutorial/index.html
 from fpdf import FPDF
-
 
 ##############################################################################
 ## WHERE ARE THE FILES TO MODIFY
@@ -59,6 +59,14 @@ PDFDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/PDF-PRINTS/"
 for filename in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
     print(filename)
 ##############################################################################
+
+##################################################################################
+## DEFINE HTML TAGS CLEANING FUNCTION
+def cleanhtml(raw_html):
+  cleanr = re.compile('<.*?>')
+  cleantext = re.sub(cleanr, '', raw_html)
+  return cleantext
+##################################################################################
 
 ## CREATING A STRING WHICH WILL BE APPENDED LATER
 ## FIRST INITIALIZING THAT STRING WITH THE COLUMNS NAME HEADERS
@@ -263,8 +271,9 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
             for ingr in list_ingredients:
                 print(ingr)
                 pdf.set_font('Arial', '', 12)
+                ingr = cleanhtml(ingr) ## clean html tags, if any
                 ## replace some unreadable characters to question marks
-                ingr = ingr.encode('latin-1', 'replace').decode('latin-1')
+                ingr = ingr.encode('latin-1', 'replace').decode('latin-1') ;                 
                 ##
                 pdf.multi_cell(effective_page_width, chosen_box_height, str(count) + ') ' + ingr, 0, 1, 'L') 
                 count=count+1   
@@ -290,6 +299,7 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
             for ingr in list_ingredients:
                 print(ingr)
                 pdf.set_font('Arial', '', 12)
+                ingr = cleanhtml(ingr)  # clean html tags, if any
                 ## replace some unreadable characters to question marks
                 ingr = ingr.encode('latin-1', 'replace').decode('latin-1')
                 ##
