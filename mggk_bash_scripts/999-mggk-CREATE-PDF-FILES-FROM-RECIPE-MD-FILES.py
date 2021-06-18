@@ -53,6 +53,7 @@ from fpdf import FPDF
 ##############################################################################
 ## WHERE ARE THE FILES TO MODIFY
 MYHOME = os.environ['HOME_WINDOWS'] ## GETTING THE ENVIRONMENT VALUE FOR HOME
+LOGO_IMAGE = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/logos/logo-mggk-for-pdfs-100px.png"
 ROOTDIR = MYHOME + "/Desktop/Y/recipes_demo/"
 PDFDIR = MYHOME + "/Desktop/Y/"
 #ROOTDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/"
@@ -235,7 +236,7 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
 
 
         ## print website logo
-        pdf.image('logo-mggk.png', x=page_width/2.6, y=None, w=0, h=0, type='', link=URL_MGGK)
+        pdf.image(LOGO_IMAGE, x=page_width/2.6, y=None, w=0, h=0, type='', link=URL_MGGK)
         ## line break
         pdf.ln(chosen_box_height)
 
