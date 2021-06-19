@@ -65,10 +65,10 @@ else:
 
 #######################################
 LOGO_IMAGE = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/logos/logo-mggk-for-pdfs-100px.png"
-ROOTDIR = MYHOME_WIN + "/Desktop/Y/recipes_demo/"
-PDFDIR = MYHOME_WIN + "/Desktop/Y/"
-#ROOTDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/"
-#PDFDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/PDF-PRINTS/"
+#ROOTDIR = MYHOME_WIN + "/Desktop/Y/recipes_demo/"
+#PDFDIR = MYHOME_WIN + "/Desktop/Y/"
+ROOTDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/"
+PDFDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/PRINT-PDFs/"
 ## printing all filenames found in ROOTDIR
 for filename in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
     print(filename)
@@ -234,29 +234,45 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         pdf.add_page()
         pdf.set_font('Arial', 'B', 16)
 
-        ##
-        #print RECIPE URL LINK:
-        pdf.set_font('Arial', '', 9)
-        pdf.set_text_color(0,0,255)
-        pdf.set_fill_color(220,220,220) ## fill color to grey
-        pdf.cell(effective_page_width, chosen_box_height, 'RECIPE DOWNLOADED FROM: ', border=0, ln=1, align='L')
-        pdf.multi_cell(effective_page_width, chosen_box_height, URL_MGGK, border=0, align='L', fill=True)
-        pdf.set_fill_color(0,0,0) # fill color reset
-        ## line break
-        pdf.ln(chosen_box_height)
-
-
         ## print website logo
         pdf.image(LOGO_IMAGE, x=page_width/2.6, y=None, w=0, h=0, type='', link=URL_MGGK)
         ## line break
         pdf.ln(chosen_box_height)
 
+        ##
+        #print RECIPE URL LINK:
+        pdf.set_font('Arial', '', 9)
+        pdf.set_text_color(0, 0, 255)
+        pdf.set_fill_color(220, 220, 220)  # fill color to grey
+        pdf.cell(effective_page_width, chosen_box_height,
+                 'RECIPE DOWNLOADED FROM: My Ginger Garlic Kitchen Food Website', border=0, ln=1, align='C')
+        pdf.multi_cell(effective_page_width, chosen_box_height,
+                       URL_MGGK, border=0, align='C', fill=True)
+        pdf.set_fill_color(0, 0, 0)  # fill color reset
+        ## line break
+        pdf.ln(chosen_box_height)
+
+
+        ## print recipe image
+        recipeImage = MYHOME + \
+            '/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/rich-markup-images/4x3/4x3-' + \
+            URL_NO_SLASHES + '.jpg'
+        pdf.image(recipeImage, x=10, y=None,
+                  w=effective_page_width, h=0, type='', link=URL_MGGK)
+        ## line break
+        pdf.ln(chosen_box_height)
+
+
         #print TITLE:
         pdf.set_font('Times', 'B', 30)
         pdf.set_text_color(205,30,100)
         TITLE = remove_unreadable_characters(TITLE)
-        pdf.multi_cell(effective_page_width, chosen_box_height*2, TITLE+' [RECIPE]', 0, 1, 'L')
+        pdf.multi_cell(effective_page_width, chosen_box_height*2, TITLE + ' [RECIPE]', border=0, align='C', fill=False)
         pdf.set_text_color(0, 0, 0)  # text color reset
+
+
+
+        pdf.add_page()
 
         #print description
         #through multi_cell => it requires declaring the height of the cell.
