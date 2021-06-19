@@ -51,11 +51,22 @@ import re
 from fpdf import FPDF
 
 ##############################################################################
-## WHERE ARE THE FILES TO MODIFY
-MYHOME = os.environ['HOME_WINDOWS'] ## GETTING THE ENVIRONMENT VALUE FOR HOME
+
+##################################################################################
+## VARIABLE INITIALIZATION
+## IF THE HOME USER IS UBUNTU, CHANGE THE HOME PATH (BCOZ WE ARE USING WSL)
+## WHERE ARE THE FILES TO MODIFY (is it on WSL or elsewhere on MAC, for eg.)
+if os.environ['USER'] == "ubuntu":
+    MYHOME = os.environ['HOME'] 
+    MYHOME_WIN = os.environ['HOME_WINDOWS']
+else:
+    MYHOME = os.environ['HOME']
+    MYHOME_WIN = os.environ['HOME']
+
+#######################################
 LOGO_IMAGE = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/logos/logo-mggk-for-pdfs-100px.png"
-ROOTDIR = MYHOME + "/Desktop/Y/recipes_demo/"
-PDFDIR = MYHOME + "/Desktop/Y/"
+ROOTDIR = MYHOME_WIN + "/Desktop/Y/recipes_demo/"
+PDFDIR = MYHOME_WIN + "/Desktop/Y/"
 #ROOTDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/"
 #PDFDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/PDF-PRINTS/"
 ## printing all filenames found in ROOTDIR
@@ -290,7 +301,7 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
             print(ingr_group_title)
             pdf.set_font('Arial', 'B', 13)
             ingr_group_title = remove_unreadable_characters(ingr_group_title)
-            pdf.multi_cell(effective_page_width, chosen_box_height,
+            pdf.multi_cell(effective_page_width, chosen_box_height*2,
                            '»   ' + ingr_group_title, border=0, align='L', fill=False)
             list_ingredients= ingr_group.get("recipeIngredientList")
             for ingr in list_ingredients:
@@ -317,7 +328,7 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
             print(ingr_group_title)
             pdf.set_font('Arial', 'B', 13)
             ingr_group_title = remove_unreadable_characters(ingr_group_title)
-            pdf.multi_cell(effective_page_width, chosen_box_height,
+            pdf.multi_cell(effective_page_width, chosen_box_height*2,
                            '»   ' + ingr_group_title, border=0, align='L', fill=False)
             list_ingredients= ingr_group.get("recipeInstructionsList")
             for ingr in list_ingredients:
