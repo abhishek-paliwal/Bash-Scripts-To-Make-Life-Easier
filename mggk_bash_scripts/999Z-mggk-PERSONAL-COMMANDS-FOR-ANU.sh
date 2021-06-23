@@ -156,7 +156,8 @@ leelasrecipes_calculate_length_of_urls
 leelasrecipes_make_20_directories
 leelasrecipes-CREATE-SUBDIRECTORIES-THEN-MOVE-STEPS-IMAGES
 2000-collage-maker-using-vendor-script-leelasrecipes
-2000-python-image-resize) ;
+2000-python-image-resize
+leelasrecipes_run_commands_13_14_15) ;
 
 ##
 IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY=(1_imagemagick_maker
