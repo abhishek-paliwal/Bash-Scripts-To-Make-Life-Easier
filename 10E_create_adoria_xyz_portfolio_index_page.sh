@@ -326,12 +326,22 @@ echo "</html>" >> $OUTPUT
 
 echo "######## SM IMAGES Index Successfully created. ######### ";
 
-## IF on MAC, then open webpage
-if [ "$USER" != "ubuntu" ] ; then 
-  echo "####### DONE! File will now be opened in SAFARI. ########"
-  open -a Safari $OUTPUT
-  open -a Safari $SITEURL
-fi
+##------------------------------------------------------------------------------
+## FUNCTION DEFITNITION
+## Open directory if on MAC computer
+function open_files_on_mac() {
+    if [ "$(uname)" = "Darwin" ] ; then
+        ##
+        echo "Opening $1" ;
+        open $1 ;
+        ##
+        echo "Opening $2" ;
+        open $2 ;
+    fi
+}
+##------------------------------------------------------------------------------
+
+#open_files_on_mac "$OUTPUT" "$SITEURL"
 
 ##------------------------------------------------------------------------------
 ## Getting all image names for creating wordcloud in python
@@ -344,3 +354,6 @@ basename $(find . -iname '*.jpg') | sed -e 's/-/ /g' -e 's/_/ /g' -e 's/\./ /g' 
 echo; echo ">> THIS WORDCLOUD FILE CREATED (use it with 603-mggk-wordcloud...sh script) => $WORDCLOUD_FILE" ;
 echo;
 ##------------------------------------------------------------------------------
+
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 

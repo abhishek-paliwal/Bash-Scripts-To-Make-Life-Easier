@@ -254,11 +254,22 @@ echo;echo "######## SM IMAGES Index Successfully created. ######### ";
 echo "SITE URL = $SITEURL" ;
 echo "OUTPUT = $OUTPUT" ;
 
-## If this machine is a MAC
-if [ "$(uname)" = "Darwin" ] ; then
-  echo "####### DONE! File will now be opened in SAFARI. ########" ;
-  open -a Safari $SITEURL ;
-  open -a Safari $OUTPUT ;
-fi
+##------------------------------------------------------------------------------
+## FUNCTION DEFITNITION
+## Open directory if on MAC computer
+function open_files_on_mac() {
+    if [ "$(uname)" = "Darwin" ] ; then
+        ##
+        echo "Opening $1" ;
+        open $1 ;
+        ##
+        echo "Opening $2" ;
+        open $2 ;
+    fi
+}
+##------------------------------------------------------------------------------
 
+#open_files_on_mac "$OUTPUT" "$SITEURL"
 
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
