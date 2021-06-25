@@ -80,6 +80,24 @@ echo "$NUM_YOAST_DESCIPTION_POSTS: NUMBER OF POSTS WITH YOAST_DESCIPTION" >> $FI
 NUM_FEATURED_IMAGE_POSTS=$(grep -irh 'featured_image:' $HUGO_CONTENT_DIR/* | wc -l)
 echo "$NUM_FEATURED_IMAGE_POSTS: NUMBER OF POSTS WITH FEATURED_IMAGE" >> $FILE_OUTPUT_SITESTATS
 
+################################################################################
+## NUMBER OF CURRENT IMAGES PRESENT IN 1x1 DIRECTORY
+NUM_CURRENT_1x1_IMAGES=$(ls $DIR_HUGO_MAIN/static/wp-content/rich-markup-images/1x1/*.jpg | wc -l)
+echo "$NUM_CURRENT_1x1_IMAGES: NUMBER OF CURRENT IMAGES PRESENT IN 1x1 DIRECTORY" >> $FILE_OUTPUT_SITESTATS
+
+## NUMBER OF CURRENT IMAGES PRESENT IN 4x3 DIRECTORY
+NUM_CURRENT_4x3_IMAGES=$(ls $DIR_HUGO_MAIN/static/wp-content/rich-markup-images/4x3/*.jpg | wc -l)
+echo "$NUM_CURRENT_4x3_IMAGES: NUMBER OF CURRENT IMAGES PRESENT IN 4x3 DIRECTORY" >> $FILE_OUTPUT_SITESTATS
+
+## NUMBER OF CURRENT IMAGES PRESENT IN 16x9 DIRECTORY
+NUM_CURRENT_16x9_IMAGES=$(ls $DIR_HUGO_MAIN/static/wp-content/rich-markup-images/16x9/*.jpg | wc -l)
+echo "$NUM_CURRENT_16x9_IMAGES: NUMBER OF CURRENT IMAGES PRESENT IN 16x9 DIRECTORY" >> $FILE_OUTPUT_SITESTATS
+
+## NUMBER OF CURRENT IMAGES PRESENT IN ORIGINAL_COPIED DIRECTORY
+NUM_CURRENT_ORIGINAL_COPIED_IMAGES=$(ls $DIR_HUGO_MAIN/static/wp-content/rich-markup-images/original_copied/*.* | wc -l)
+echo "$NUM_CURRENT_ORIGINAL_COPIED_IMAGES: NUMBER OF CURRENT IMAGES PRESENT IN original_copied DIRECTORY" >> $FILE_OUTPUT_SITESTATS
+################################################################################
+
 ## NUMBER OF POSTS WITH CATEGORIES
 NUM_CATEGORIES_POSTS=$(grep -irl '^categories:' $HUGO_CONTENT_DIR/* |wc -l)
 echo "$NUM_CATEGORIES_POSTS: NUMBER OF POSTS WITH CATEGORIES" >> $FILE_OUTPUT_SITESTATS
@@ -87,9 +105,19 @@ echo "$NUM_CATEGORIES_POSTS: NUMBER OF POSTS WITH CATEGORIES" >> $FILE_OUTPUT_SI
 ## NUMBER OF POSTS WITH TAGS
 NUM_TAGS_POSTS=$(grep -irl '^tags:' $HUGO_CONTENT_DIR/* |wc -l)
 echo "$NUM_TAGS_POSTS: NUMBER OF POSTS WITH TAGS" >> $FILE_OUTPUT_SITESTATS
-## NUMBER OF POSTS WITH MGGK_JSON_RECIPE BLOCK
-NUM_MGGK_JSON_RECIPE_POSTS=$(grep -irh 'mggk_json_recipe:' $HUGO_CONTENT_DIR/* | wc -l)
-echo "$NUM_MGGK_JSON_RECIPE_POSTS: NUMBER OF POSTS WITH MGGK_JSON_RECIPE BLOCK" >> $FILE_OUTPUT_SITESTATS
+
+################################################################################
+## NUMBER OF POSTS WITH VAR prepTime + recipeIngredient + recipeInstructions + recipeNotes
+MGGK_VAR_prepTime=$(grep -irl 'prepTime' $HUGO_CONTENT_DIR/* | wc -l)
+MGGK_VAR_recipeIngredient=$(grep -irl 'recipeIngredient' $HUGO_CONTENT_DIR/* | wc -l)
+MGGK_VAR_recipeInstructions=$(grep -irl 'recipeInstructions' $HUGO_CONTENT_DIR/* | wc -l)
+MGGK_VAR_recipeNotes=$(grep -irl 'recipeNotes' $HUGO_CONTENT_DIR/* | wc -l)
+
+echo "$MGGK_VAR_prepTime: NUMBER OF POSTS WITH VAR prepTime" >> $FILE_OUTPUT_SITESTATS
+echo "$MGGK_VAR_recipeIngredient: NUMBER OF POSTS WITH VAR recipeIngredient" >> $FILE_OUTPUT_SITESTATS
+echo "$MGGK_VAR_recipeInstructions: NUMBER OF POSTS WITH VAR recipeInstructions" >> $FILE_OUTPUT_SITESTATS
+echo "$MGGK_VAR_recipeNotes: NUMBER OF POSTS WITH VAR recipeNotes" >> $FILE_OUTPUT_SITESTATS
+################################################################################
 
 ## NUMBER OF POSTS WITH YOUTUBE_VIDEO_ID
 NUM_YOUTUBE_VIDEO_ID_POSTS=$(grep -irh 'youtube_video_id:' $HUGO_CONTENT_DIR/* | wc -l)
@@ -107,36 +135,9 @@ echo "$MGGK_RECIPE_HERE_BUTTON_BLOCKS: NUMBER OF POSTS WITH MGGK_RECIPE_HERE_BUT
 MGGK_steps_images_present_YES=$(grep -irl 'steps_images_present: "yes"' $HUGO_CONTENT_DIR/* | sort | uniq | wc -l)
 echo "$MGGK_steps_images_present_YES: NUMBER OF POSTS WITH steps_images_present = yes" >> $FILE_OUTPUT_SITESTATS
 
-##
-## NUMBER OF POSTS WITH VAR prepTime + recipeIngredient + recipeInstructions + recipeNotes
-MGGK_VAR_prepTime=$(grep -irl 'prepTime' $HUGO_CONTENT_DIR/* | wc -l)
-MGGK_VAR_recipeIngredient=$(grep -irl 'recipeIngredient' $HUGO_CONTENT_DIR/* | wc -l)
-MGGK_VAR_recipeInstructions=$(grep -irl 'recipeInstructions' $HUGO_CONTENT_DIR/* | wc -l)
-MGGK_VAR_recipeNotes=$(grep -irl 'recipeNotes' $HUGO_CONTENT_DIR/* | wc -l)
-
-echo "$MGGK_VAR_prepTime: NUMBER OF POSTS WITH VAR prepTime" >> $FILE_OUTPUT_SITESTATS
-echo "$MGGK_VAR_recipeIngredient: NUMBER OF POSTS WITH VAR recipeIngredient" >> $FILE_OUTPUT_SITESTATS
-echo "$MGGK_VAR_recipeInstructions: NUMBER OF POSTS WITH VAR recipeInstructions" >> $FILE_OUTPUT_SITESTATS
-echo "$MGGK_VAR_recipeNotes: NUMBER OF POSTS WITH VAR recipeNotes" >> $FILE_OUTPUT_SITESTATS
-##
-
-################################################################################
-################################################################################
-## NUMBER OF CURRENT IMAGES PRESENT IN 1x1 DIRECTORY
-NUM_CURRENT_1x1_IMAGES=$(ls $DIR_HUGO_MAIN/static/wp-content/rich-markup-images/1x1/*.jpg | wc -l)
-echo "$NUM_CURRENT_1x1_IMAGES: NUMBER OF CURRENT IMAGES PRESENT IN 1x1 DIRECTORY" >> $FILE_OUTPUT_SITESTATS
-
-## NUMBER OF CURRENT IMAGES PRESENT IN 4x3 DIRECTORY
-NUM_CURRENT_4x3_IMAGES=$(ls $DIR_HUGO_MAIN/static/wp-content/rich-markup-images/4x3/*.jpg | wc -l)
-echo "$NUM_CURRENT_4x3_IMAGES: NUMBER OF CURRENT IMAGES PRESENT IN 4x3 DIRECTORY" >> $FILE_OUTPUT_SITESTATS
-
-## NUMBER OF CURRENT IMAGES PRESENT IN 16x9 DIRECTORY
-NUM_CURRENT_16x9_IMAGES=$(ls $DIR_HUGO_MAIN/static/wp-content/rich-markup-images/16x9/*.jpg | wc -l)
-echo "$NUM_CURRENT_16x9_IMAGES: NUMBER OF CURRENT IMAGES PRESENT IN 16x9 DIRECTORY" >> $FILE_OUTPUT_SITESTATS
-
-## NUMBER OF CURRENT IMAGES PRESENT IN ORIGINAL_COPIED DIRECTORY
-NUM_CURRENT_ORIGINAL_COPIED_IMAGES=$(ls $DIR_HUGO_MAIN/static/wp-content/rich-markup-images/original_copied/*.* | wc -l)
-echo "$NUM_CURRENT_ORIGINAL_COPIED_IMAGES: NUMBER OF CURRENT IMAGES PRESENT IN original_copied DIRECTORY" >> $FILE_OUTPUT_SITESTATS
+## NUMBER OF POSTS WITH MGGK_JSON_RECIPE BLOCK
+NUM_MGGK_JSON_RECIPE_POSTS=$(grep -irh 'mggk_json_recipe:' $HUGO_CONTENT_DIR/* | wc -l)
+echo "$NUM_MGGK_JSON_RECIPE_POSTS: NUMBER OF POSTS WITH MGGK_JSON_RECIPE BLOCK" >> $FILE_OUTPUT_SITESTATS
 
 ################################################################################
 echo "##------------------------------------------------------------------------------" >> $FILE_OUTPUT_SITESTATS 
