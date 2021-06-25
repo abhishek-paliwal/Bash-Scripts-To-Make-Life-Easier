@@ -45,8 +45,9 @@ echo "##########################################################################
 echo;
 echo "##---------------------------------------"  >> $FILE_OUTPUT_SITESTATS ;
 echo ">> FINDING DUPLICATE MD FILES WITH SAME URL (AS COUNT, URL)" >> $FILE_OUTPUT_SITESTATS ;
-echo ">> Example output, only top 10 are printed below: (If COUNT = 1, means no duplicates found)" >> $FILE_OUTPUT_SITESTATS ;
-grep -irh "^url: " $HUGO_CONTENT_DIR/* | sort | uniq -c | sort -nr | head -10 >> $FILE_OUTPUT_SITESTATS
+echo ">> If the following block is empty, means no duplicates found." >> $FILE_OUTPUT_SITESTATS ;
+grep -irh "^url: " $HUGO_CONTENT_DIR/* | sort | uniq -cd >> $FILE_OUTPUT_SITESTATS
+echo "" >> $FILE_OUTPUT_SITESTATS ;
 echo "##---------------------------------------"  >> $FILE_OUTPUT_SITESTATS ;
 echo; 
 ################################################################################ 
