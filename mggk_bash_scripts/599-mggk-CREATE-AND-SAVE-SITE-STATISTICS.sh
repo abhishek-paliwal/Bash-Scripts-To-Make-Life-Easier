@@ -23,7 +23,8 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 ##################################################################################
 HUGO_CONTENT_DIR="$REPO_MGGK/content" ;
-FILE_OUTPUT_SITESTATS="$REPO_MGGK_SUMMARY/mggk-sitestats.html" ;
+FILE_OUTPUT_SITESTATS="$DIR_Y/tmp-mggk-sitestats.html" ;
+FILE_OUTPUT_SITESTATS_FINAL="$REPO_MGGK_SUMMARY/mggk-sitestats.html" ;
 DIR_HUGO_MAIN="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL" ; 
 DIR_OUTPUT="$HOME/Desktop/Y" ;
 
@@ -45,9 +46,9 @@ echo "##########################################################################
 echo;
 echo "##---------------------------------------"  >> $FILE_OUTPUT_SITESTATS ;
 echo ">> FINDING DUPLICATE MD FILES WITH SAME URL (AS COUNT, URL)" >> $FILE_OUTPUT_SITESTATS ;
-echo ">> If the following block is empty, means no duplicates found." >> $FILE_OUTPUT_SITESTATS ;
 grep -irh "^url: " $HUGO_CONTENT_DIR/* | sort | uniq -cd >> $FILE_OUTPUT_SITESTATS
 echo "" >> $FILE_OUTPUT_SITESTATS ;
+echo ">> If the above block is empty, means no duplicates found." >> $FILE_OUTPUT_SITESTATS ;
 echo "##---------------------------------------"  >> $FILE_OUTPUT_SITESTATS ;
 echo; 
 ################################################################################ 
@@ -255,8 +256,10 @@ echo "##########################################################################
 echo "</pre>" >> $FILE_OUTPUT_SITESTATS
 
 ##################################################################################
+cat $FILE_OUTPUT_SITESTATS | sed 's+/home/ubuntu+HOMEDIR+g' | sed 's+/home/abhishek+HOMEDIR+g' > $FILE_OUTPUT_SITESTATS_FINAL
+##################################################################################
 echo;
 echo ">> SUMMARY >> " ;
-echo ">> STATISTICS FILE SAVED AS => $FILE_OUTPUT_SITESTATS" ;
+echo ">> STATISTICS FILE SAVED AS => $FILE_OUTPUT_SITESTATS_FINAL" ;
 ## COPY this file to Dropbox dir
-cp $FILE_OUTPUT_SITESTATS $DIR_DROPBOX_SCRIPTS_OUTPUT/
+cp $FILE_OUTPUT_SITESTATS_FINAL $DIR_DROPBOX_SCRIPTS_OUTPUT/
