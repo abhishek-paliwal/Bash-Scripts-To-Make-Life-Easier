@@ -210,10 +210,8 @@ for x in ${FILENAME_ARRAY[@]} ; do
     echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" >> $FILE_OUTPUT_SITESTATS
     echo ">> CURRENTLY COMPARING => $FILE_ALL_URLS -- AND -- $x" >> $FILE_OUTPUT_SITESTATS
     echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" >> $FILE_OUTPUT_SITESTATS
-    echo "      ## Lines unique to $FILE_ALL_URLS" >> $FILE_OUTPUT_SITESTATS
-    diff $FILE_ALL_URLS $x | grep '<' >> $FILE_OUTPUT_SITESTATS
-    echo "      ## Lines unique to $x" >> $FILE_OUTPUT_SITESTATS
-    diff $FILE_ALL_URLS $x | grep '>' >> $FILE_OUTPUT_SITESTATS
+    echo "" >> $FILE_OUTPUT_SITESTATS
+    diff $FILE_ALL_URLS $x >> $FILE_OUTPUT_SITESTATS
 done
 ################################################################################
 ################################################################################
@@ -281,7 +279,7 @@ echo "##########################################################################
 echo "</pre>" >> $FILE_OUTPUT_SITESTATS
 
 ##################################################################################
-cat $FILE_OUTPUT_SITESTATS | sed 's+/home/ubuntu+HOMEDIR+g' | sed 's+/home/abhishek+HOMEDIR+g' > $FILE_OUTPUT_SITESTATS_FINAL
+cat $FILE_OUTPUT_SITESTATS | sed -e 's/abhishek/USERNAME/g' -e 's/ubuntu/USERNAME/g' > $FILE_OUTPUT_SITESTATS_FINAL
 ##################################################################################
 echo;
 echo ">> SUMMARY >> " ;
