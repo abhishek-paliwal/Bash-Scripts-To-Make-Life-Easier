@@ -43,14 +43,14 @@ echo "##########################################################################
 
 ################################################################################ 
 ## FINDING ALL DUPLICATE MD FILES WITH SAME URL
-echo;
+echo "" >> $FILE_OUTPUT_SITESTATS ;
 echo "##---------------------------------------"  >> $FILE_OUTPUT_SITESTATS ;
 echo ">> FINDING DUPLICATE MD FILES WITH SAME URL (AS COUNT, URL)" >> $FILE_OUTPUT_SITESTATS ;
 grep -irh "^url: " $HUGO_CONTENT_DIR/* | sort | uniq -d | uniq -c >> $FILE_OUTPUT_SITESTATS
 echo "" >> $FILE_OUTPUT_SITESTATS ;
 echo ">> If the above block is empty, means no duplicates found." >> $FILE_OUTPUT_SITESTATS ;
 echo "##---------------------------------------"  >> $FILE_OUTPUT_SITESTATS ;
-echo; 
+echo "" >> $FILE_OUTPUT_SITESTATS ;
 ################################################################################ 
 
 ################################################################################ 
@@ -64,15 +64,34 @@ DIR_STEPS_IMAGES="$REPO_MGGK/static/wp-content/recipe-steps-images" ;
 ## Changing the username to the be the same on all computers ...
 fd . -t d --full-path $DIR_STEPS_IMAGES | sed 's+ubuntu+abhishek+g' | sed 's+/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/recipe-steps-images/++g' | sort > $tmpfile2 ;
 ##
-echo;
+echo "" >> $FILE_OUTPUT_SITESTATS ;
 echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" >> $FILE_OUTPUT_SITESTATS
 echo ">> CHECKING IF RECIPE_STEPS_FOLDERS ARE SAME AS URLS ... (ideally diff should be blank)" >> $FILE_OUTPUT_SITESTATS
 echo ">>>>  left-file = all_urls // right-file = recipe_steps_folder names " >> $FILE_OUTPUT_SITESTATS
 diff $tmpfile1 $tmpfile2 >> $FILE_OUTPUT_SITESTATS
 echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" >> $FILE_OUTPUT_SITESTATS
-echo; 
+echo "" >> $FILE_OUTPUT_SITESTATS ;
 ################################################################################ 
 ################################################################################ 
+
+################################################################################ 
+## CHECKING IF FILES AND DIRECTORIES IN RECIPE_STEPS_IMAGES HAVE
+## ANY UPPERCASE LETTERS (bcoz they are not allowed)...
+tmpfile1="$DIR_Y/tmp999.txt" ;
+##
+DIR_STEPS_IMAGES="$REPO_MGGK/static/wp-content/recipe-steps-images" ;
+fd . --full-path $DIR_STEPS_IMAGES | sed 's+ubuntu+abhishek+g' | sed 's+/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/recipe-steps-images/++g' | grep '[A-Z]' > $tmpfile1 ;
+##
+echo "" >> $FILE_OUTPUT_SITESTATS ;
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" >> $FILE_OUTPUT_SITESTATS
+echo ">> PRINTING IF FILES AND DIRECTORIES IN RECIPE_STEPS_IMAGES HAVE ANY UPPERCASE LETTERS (bcoz they are not allowed)..." >> $FILE_OUTPUT_SITESTATS ;
+cat $tmpfile1 >> $FILE_OUTPUT_SITESTATS ;
+echo "" >> $FILE_OUTPUT_SITESTATS ;
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" >> $FILE_OUTPUT_SITESTATS
+echo "" >> $FILE_OUTPUT_SITESTATS ;
+################################################################################ 
+################################################################################ 
+
 
 echo "" >> $FILE_OUTPUT_SITESTATS
 echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
