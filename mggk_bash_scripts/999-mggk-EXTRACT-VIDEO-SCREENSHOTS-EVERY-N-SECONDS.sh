@@ -132,7 +132,7 @@ function FUNCTION_step0_download_videos_using_youtube_dl_program () {
         url_var=$(grep -irh 'url:' $mymdfile | tr -d ' ' | sed 's/url://g' | sed 's+/++g') ;
         youtube_id=$(grep -irh 'youtube_video_id:' $mymdfile | tr -d ' ' | sed 's/youtube_video_id://g' | sed 's+/++g' | sed 's+"++g') ;
         ## Saving to txt file with semicolon as delimiter
-        echo "$youtube_id;$url_var" >> $tmpfile1
+        echo "$url_var;$youtube_id" >> $tmpfile1
     done 
     #######################
     ## Part 2 = downloading videos one by one
@@ -141,7 +141,7 @@ function FUNCTION_step0_download_videos_using_youtube_dl_program () {
         echo ">> CURRENT LINE: $line" ; echo; 
         ## Separating the fields using semicolon as delimiter
         url_var=$(echo $line | cut -d';' -f1) ;
-        youtube_id=$(echo $line | cut -d';' -f1) ;
+        youtube_id=$(echo $line | cut -d';' -f2) ;
         ## DOWNLOADING YOUTUBE VIDEO USING youtube-dl program
         youtube-dl --id "https://youtu.be/$youtube_id" ;
         ## RENAMING YOUTUBE VIDEO WITH URL_VAR
