@@ -119,21 +119,43 @@ function FUNCTION_step2_rename_steps_thumbnails () {
 ##
 function FUNCTION_step0_download_videos_using_youtube_dl_program () {
     echo "RUNNING STEP 0 = Downloading + Renaming Videos in chosen DIR_WHICH_YOUTUBE_VIDEOS = $DIR_WHICH_YOUTUBE_VIDEOS ..." ; echo; 
+    tmpfile1="$WORKDIR/tmp_youtube_videos_ALL.txt" ;
+    tmpfile2="$WORKDIR/tmp_youtube_videos_DOWNLOADED_SO_FAR.txt" ;
+    tmpfile3="$WORKDIR/tmp_youtube_videos_NOT_DOWNLOADED_SO_FAR.txt" ;
+    echo > $tmpfile1 ## initialize this file
+    echo > $tmpfile2 ## initialize this file
+    echo > $tmpfile3 ## initialize this file
+    #######################
+    ## Part 1 = listing all videos to download
     for mymdfile in $(grep -irl 'youtube_video_id:' $DIR_WHICH_YOUTUBE_VIDEOS/ ) ; do 
-        ## Extracting url without slashes to use for filename later
+        ## Extracting url + video id
         url_var=$(grep -irh 'url:' $mymdfile | tr -d ' ' | sed 's/url://g' | sed 's+/++g') ;
-        ## Extracting youtube video id without quotes
         youtube_id=$(grep -irh 'youtube_video_id:' $mymdfile | tr -d ' ' | sed 's/youtube_video_id://g' | sed 's+/++g' | sed 's+"++g') ;
-        ## PRINTING
-        echo; echo "YOUTUBE_ID = $youtube_id // URL_VAR= $url_var" ;
+        ## Saving to txt file with semicolon as delimiter
+        echo "$youtube_id;$url_var" >> $tmpfile1
+    done 
+    #######################
+    ## Part 2 = downloading videos one by one
+    while IFS= read -r line
+    do
+        echo ">> CURRENT LINE: $line" ; echo; 
+        ## Separating the fields using semicolon as delimiter
+        url_var=$(echo $line | cut -d';' -f1) ;
+        youtube_id=$(echo $line | cut -d';' -f1) ;
         ## DOWNLOADING YOUTUBE VIDEO USING youtube-dl program
         youtube-dl --id "https://youtu.be/$youtube_id" ;
         ## RENAMING YOUTUBE VIDEO WITH URL_VAR
         mv $youtube_id.mkv  $url_var.mkv ;
         mv $youtube_id.mp4  $url_var.mp4 ;
         mv $youtube_id.webm  $url_var.webm ;
-        echo; echo ">> VIDEO FILE RENAMED AS // IF MKV => $url_var.mkv // IF MP4 => $url_var.mp4 // IF WEBM => $url_var.webm" ; 
-    done 
+        echo; 
+        echo ">> VIDEO FILE RENAMED AS $url_var.(mkv|mp4|webm)" ; 
+        ##
+        ## Appending this to the videos successfully downloaded so far
+        echo "$line" >> $tmpfile2
+        ## Listing all videos yet to be downloaded at this point 
+        diff $tmpfile1 $tmpfile2 > $tmpfile3
+    done < "$tmpfile1"
 }
 ##################################################################################
 
