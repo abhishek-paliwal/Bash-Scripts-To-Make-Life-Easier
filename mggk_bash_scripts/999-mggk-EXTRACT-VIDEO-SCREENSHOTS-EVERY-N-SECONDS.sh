@@ -60,6 +60,7 @@ echo "------------------------------------------------------" ;
 ls -1 *.webm | nl
 
 ##################################################################################
+##################################################################################
 ##
 function FUNCTION_step1_video_thumbnails_extraction () {
     echo; echo "RUNNING STEP 1 = Thumbnails extraction from Video ... " ; echo; 
@@ -117,25 +118,30 @@ function FUNCTION_step2_rename_steps_thumbnails () {
     done
 }
 ##
-function FUNCTION_step0_download_videos_using_youtube_dl_program () {
-    echo "RUNNING STEP 0 = Downloading + Renaming Videos in chosen DIR_WHICH_YOUTUBE_VIDEOS = $DIR_WHICH_YOUTUBE_VIDEOS ..." ; echo; 
-    tmpfile1="$WORKDIR/tmp_youtube_videos_ALL.txt" ;
-    tmpfile2="$WORKDIR/tmp_youtube_videos_DOWNLOADED_SO_FAR.txt" ;
-    tmpfile3="$WORKDIR/tmp_youtube_videos_NOT_DOWNLOADED_SO_FAR.txt" ;
-    echo > $tmpfile1 ## initialize this file
-    echo > $tmpfile2 ## initialize this file
-    echo > $tmpfile3 ## initialize this file
-    #######################
-    ## Part 1 = listing all videos to download
+
+function FUNCTION_step0_list_youtube_videos_to_be_downloaded () {
+    echo ">> LISTING YOUTUBE VIDEO IDs TO BE DOWNLOADED FROM THIS DIR => $DIR_WHICH_YOUTUBE_VIDEOS ..." ; echo; 
+    tmpfile1="$1" ;
+    ##
+    echo > tmp0 ; 
     for mymdfile in $(grep -irl 'youtube_video_id:' $DIR_WHICH_YOUTUBE_VIDEOS/ ) ; do 
         ## Extracting url + video id
         url_var=$(grep -irh 'url:' $mymdfile | tr -d ' ' | sed 's/url://g' | sed 's+/++g') ;
         youtube_id=$(grep -irh 'youtube_video_id:' $mymdfile | tr -d ' ' | sed 's/youtube_video_id://g' | sed 's+/++g' | sed 's+"++g') ;
         ## Saving to txt file with semicolon as delimiter
-        echo "$url_var;$youtube_id" >> $tmpfile1
-    done 
-    #######################
-    ## Part 2 = downloading videos one by one
+        echo "$url_var;$youtube_id" | sed 's/ //g' >> tmp0
+    done
+    sort tmp0 | grep -v '^$' > $tmpfile1 ## deleting blank lines + sorting
+    cat $tmpfile1 ; ## printing
+}    
+
+function FUNCTION_step0A_download_videos_using_youtube_dl_program () {
+    echo ">> DOWNLOADING VIDEOS ONE BY ONE ..." ; echo; 
+    tmpfile1="$1" ;
+    tmpfile2="$2" ;
+    tmpfile3="$3" ;
+    ##
+    echo > tmp1 ; 
     while IFS= read -r line
     do
         echo ">> CURRENT LINE: $line" ; echo; 
@@ -152,37 +158,56 @@ function FUNCTION_step0_download_videos_using_youtube_dl_program () {
         echo ">> VIDEO FILE RENAMED AS $url_var.(mkv|mp4|webm)" ; 
         ##
         ## Appending this to the videos successfully downloaded so far
-        echo "$line" >> $tmpfile2
-        ## Listing all videos yet to be downloaded at this point 
-        diff $tmpfile1 $tmpfile2 > $tmpfile3
+        echo "$line" >> tmp1
+        ## Listing all videos yet to be downloaded at this point
+        sort $tmpfile1 | grep -v '^$' > tmp0 ; ## deleting blank lines + sorting
+        sort tmp1 | grep -v '^$' > $tmpfile2 ; ## deleting blank lines + sorting
+        diff tmp0 $tmpfile2 | grep '<' | sed 's/<//g' > $tmpfile3
+        echo "========================================" ;
     done < "$tmpfile1"
 }
+##
+##################################################################################
 ##################################################################################
 
 ## CALLING THE FUNCTIONS, DEPENDING UPON THE OPTION CHOSEN BY THE USER
 echo; echo; 
 echo "What do you want to do? Select your option =======>
-0) FUNCTION_step0_download_videos_using_youtube-dl_program (from this DIR = $DIR_WHICH_YOUTUBE_VIDEOS)
-1) FUNCTION_step1_video_thumbnails_extraction
-2) FUNCTION_step2_rename_steps_thumbnails
+1) FUNCTION_step0A_list_youtube_videos_to_be_downloaded (all videos from this DIR = $DIR_WHICH_YOUTUBE_VIDEOS)
+2) FUNCTION_step0A_list_youtube_videos_to_be_downloaded (remaining videos)
+3) FUNCTION_step1_video_thumbnails_extraction
+4) FUNCTION_step2_rename_steps_thumbnails
 " ;
 
-echo "Enter your choice (0/1/2): " ;
+echo "Enter your choice (1/2/3/4): " ;
 read which_function_to_run
 
+##################################################################################
 if [ "$which_function_to_run" == "1" ]; then
-    echo ">> Your chosen step is: $which_function_to_run" ;
-    echo ">> Hence, this will run => FUNCTION_step1_video_thumbnails_extraction" ;
-    FUNCTION_step1_video_thumbnails_extraction ;
+    tmpfile1A="$WORKDIR/tmp_youtube_videos_ALL.txt" ;
+    tmpfile2A="$WORKDIR/tmp_youtube_videos_DOWNLOADED_SO_FAR.txt" ;
+    tmpfile3A="$WORKDIR/tmp_youtube_videos_NOT_DOWNLOADED_SO_FAR.txt" ;
+    echo > $tmpfile1A ## initialize this file    
+    echo > $tmpfile2A ## initialize this file
+    echo > $tmpfile3A ## initialize this file
+    ##
+    FUNCTION_step0_list_youtube_videos_to_be_downloaded "$tmpfile1A" ;
+    FUNCTION_step0A_download_videos_using_youtube_dl_program "$tmpfile1A" "$tmpfile2A" "$tmpfile3A" ;
 elif [ "$which_function_to_run" == "2" ]; then
-    echo ">> Your chosen step is: $which_function_to_run" ;
-    echo ">> Hence, this will run => FUNCTION_step2_rename_steps_thumbnails" ;
+    tmpfile1B="$WORKDIR/tmp_youtube_videos_NOT_DOWNLOADED_SO_FAR.txt" ;
+    tmpfile2B="$WORKDIR/tmp_youtube_videos_DOWNLOADED_SO_FAR_REMAINING.txt" ;
+    tmpfile3B="$WORKDIR/tmp_youtube_videos_NOT_DOWNLOADED_SO_FAR_REMAINING.txt" ;
+    #echo > $tmpfile1B ## DO NOT initialize this file    
+    echo > $tmpfile2B ## initialize this file
+    echo > $tmpfile3B ## initialize this file
+    ##
+    FUNCTION_step0A_download_videos_using_youtube_dl_program "$tmpfile1B" "$tmpfile2B" "$tmpfile3B" ;
+elif [ "$which_function_to_run" == "3" ]; then
+    FUNCTION_step1_video_thumbnails_extraction ;
+elif [ "$which_function_to_run" == "4" ]; then
     FUNCTION_step2_rename_steps_thumbnails ;
-elif [ "$which_function_to_run" == "0" ]; then
-    echo ">> Your chosen step is: $which_function_to_run" ;
-    echo ">> Hence, this will run => FUNCTION_step0_download_videos_using_youtube_dl_program" ;
-    FUNCTION_step0_download_videos_using_youtube_dl_program ;
 else 
     echo ">> Your chosen step is INVALID = $which_function_to_run // TRY AGAIN." ;
 fi
 ##################################################################################
+
