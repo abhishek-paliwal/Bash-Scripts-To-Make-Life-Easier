@@ -117,7 +117,7 @@ function FUNCTION_step2_rename_steps_thumbnails () {
     done
 }
 ##
-function FUNCTION_step0_download_videos_using_youtube-dl_program () {
+function FUNCTION_step0_download_videos_using_youtube_dl_program () {
     echo "RUNNING STEP 0 = Downloading + Renaming Videos in chosen DIR_WHICH_YOUTUBE_VIDEOS = $DIR_WHICH_YOUTUBE_VIDEOS ..." ; echo; 
     for mymdfile in $(grep -irl 'youtube_video_id:' $DIR_WHICH_YOUTUBE_VIDEOS/ ) ; do 
         ## Extracting url without slashes to use for filename later
@@ -158,8 +158,8 @@ elif [ "$which_function_to_run" == "2" ]; then
     FUNCTION_step2_rename_steps_thumbnails ;
 elif [ "$which_function_to_run" == "0" ]; then
     echo ">> Your chosen step is: $which_function_to_run" ;
-    echo ">> Hence, this will run => FUNCTION_step3_download_videos_using_youtube-dl_program" ;
-    FUNCTION_step0_download_videos_using_youtube-dl_program ;
+    echo ">> Hence, this will run => FUNCTION_step0_download_videos_using_youtube_dl_program" ;
+    FUNCTION_step0_download_videos_using_youtube_dl_program ;
 else 
     echo ">> Your chosen step is INVALID = $which_function_to_run // TRY AGAIN." ;
 fi
