@@ -173,17 +173,17 @@ function FUNCTION_step0A_download_videos_using_youtube_dl_program () {
 ## CALLING THE FUNCTIONS, DEPENDING UPON THE OPTION CHOSEN BY THE USER
 echo; echo; 
 echo "What do you want to do? Select your option =======>
-1) FUNCTION_step0A_list_youtube_videos_to_be_downloaded (all videos from this DIR = $DIR_WHICH_YOUTUBE_VIDEOS)
-2) FUNCTION_step0A_list_youtube_videos_to_be_downloaded (remaining videos)
-3) FUNCTION_step1_video_thumbnails_extraction
-4) FUNCTION_step2_rename_steps_thumbnails
+1) FUNCTION_step1_video_thumbnails_extraction
+2) FUNCTION_step2_rename_steps_thumbnails
+3) FUNCTION_step0A_list_youtube_videos_to_be_downloaded (all videos from this DIR = $DIR_WHICH_YOUTUBE_VIDEOS)
+4) FUNCTION_step0A_list_youtube_videos_to_be_downloaded (remaining videos)
 " ;
 
 echo "Enter your choice (1/2/3/4): " ;
 read which_function_to_run
 
 ##################################################################################
-if [ "$which_function_to_run" == "1" ]; then
+if [ "$which_function_to_run" == "3" ]; then
     tmpfile1A="$WORKDIR/tmp_youtube_videos_ALL.txt" ;
     tmpfile2A="$WORKDIR/tmp_youtube_videos_DOWNLOADED_SO_FAR.txt" ;
     tmpfile3A="$WORKDIR/tmp_youtube_videos_NOT_DOWNLOADED_SO_FAR.txt" ;
@@ -193,7 +193,7 @@ if [ "$which_function_to_run" == "1" ]; then
     ##
     FUNCTION_step0_list_youtube_videos_to_be_downloaded "$tmpfile1A" ;
     FUNCTION_step0A_download_videos_using_youtube_dl_program "$tmpfile1A" "$tmpfile2A" "$tmpfile3A" ;
-elif [ "$which_function_to_run" == "2" ]; then
+elif [ "$which_function_to_run" == "4" ]; then
     tmpfile1B="$WORKDIR/tmp_youtube_videos_NOT_DOWNLOADED_SO_FAR.txt" ;
     tmpfile2B="$WORKDIR/tmp_youtube_videos_DOWNLOADED_SO_FAR_REMAINING.txt" ;
     tmpfile3B="$WORKDIR/tmp_youtube_videos_NOT_DOWNLOADED_SO_FAR_REMAINING.txt" ;
@@ -202,9 +202,9 @@ elif [ "$which_function_to_run" == "2" ]; then
     echo > $tmpfile3B ## initialize this file
     ##
     FUNCTION_step0A_download_videos_using_youtube_dl_program "$tmpfile1B" "$tmpfile2B" "$tmpfile3B" ;
-elif [ "$which_function_to_run" == "3" ]; then
+elif [ "$which_function_to_run" == "1" ]; then
     FUNCTION_step1_video_thumbnails_extraction ;
-elif [ "$which_function_to_run" == "4" ]; then
+elif [ "$which_function_to_run" == "2" ]; then
     FUNCTION_step2_rename_steps_thumbnails ;
 else 
     echo ">> Your chosen step is INVALID = $which_function_to_run // TRY AGAIN." ;
