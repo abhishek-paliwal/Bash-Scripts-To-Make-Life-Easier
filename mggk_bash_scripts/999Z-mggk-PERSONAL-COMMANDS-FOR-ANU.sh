@@ -173,6 +173,7 @@ IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY=(1_imagemagick_maker
 117-imagemagick-sort-images-long-and-wide
 118-imagemagick-make-title-slides-and-move-to-their-directories
 119-imagemagick-make-video-slideshow-title-using-collage-n-text
+120-imagemagick-create-random-image-with-user-input-text
 2000-python_collage_maker
 2000-collage-maker-using-vendor-script
 201_sorting_mp3_files_by_duration
@@ -201,10 +202,19 @@ youtube-update-downloader-program
 pali_imagemagick_fixed_resize_images_by_width_or_height
 2000-python-image-resize)
 
+##
+GOPS_COMMANDS_ARRAY=(gops_choose_final_video_dimensions
+gops_convert_mp4_mkv_to_CUSTOM_WIDTH_ffmpeg
+gops_copy_7z_files_to_dreamobjects
+gops_copy_all_files_n_folders_to_pi_server
+gops_create_html_file_for_7z_files_dreamobjects
+gops_extract_video_screenshots_every_4_mins)
+
 ## Assign the corresponding user array to the new array variable
 if [ "$WHICH_USER" == "anu" ] ; then MY_COMMANDS_ARRAY=( "${ANU_COMMANDS_ARRAY[@]}" ) ; fi
 if [ "$WHICH_USER" == "pali" ] ; then MY_COMMANDS_ARRAY=( "${PALI_COMMANDS_ARRAY[@]}" ) ; fi
 if [ "$WHICH_USER" == "leela" ] ; then MY_COMMANDS_ARRAY=( "${LEELA_COMMANDS_ARRAY[@]}" ) ; fi
+if [ "$WHICH_USER" == "gops" ] ; then MY_COMMANDS_ARRAY=( "${GOPS_COMMANDS_ARRAY[@]}" ) ; fi
 if [ "$WHICH_USER" == "imagemagick_ffmpeg" ] ; then MY_COMMANDS_ARRAY=( "${IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY[@]}" ) ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
