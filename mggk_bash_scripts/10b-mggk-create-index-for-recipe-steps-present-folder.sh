@@ -98,7 +98,7 @@ echo "<strong>Number of sub-directories found => $num_files</strong>" >> $main_i
 echo "<hr>" >> $main_index_htmlfile ;
 
 echo "<table border='1' width='100%'>" >> $main_index_htmlfile ;
-echo "<tr> <td>#</td> <td>SUB-DIRECTORY (HTML INDEX FILE LINKED)</td> <td>NUMBER OF JPG IMAGES FOUND IN SUB-DIR</td> <td>ERROR MSG</td> <td>GOTO MGGK PAGE</td> </tr>" >> $main_index_htmlfile ;
+echo "<tr> <td>#</td> <td>SUB-DIRECTORY (HTML INDEX FILE LINKED)</td> <td>IMAGES FOUND IN SUB-DIR // STEPS FOUND IN MDFILE</td> <td>ERROR MSG</td> <td>GOTO MGGK PAGE</td> </tr>" >> $main_index_htmlfile ;
 
 ##+++++++++++++++++++++++++++++++++++++++++
 COUNT=1;
@@ -129,13 +129,15 @@ for x in $(fd . $MAIN_DIR -t d); do
     MDFILE_WITH_CHOSEN_URL=$(FUNCTION_OUTPUT_MDFILE_FULLPATH "$url_from_dirname") ;
     counted_images_via_yq=$(cat $MDFILE_WITH_CHOSEN_URL | sed -n '/^---/,/^---/p' | yq .recipeInstructions | sed 's/null//g'| jq '.[].recipeInstructionsList[]' | wc -l | sed 's/ //g' ) ; 
     ## Counting comparison
-    echo ">> //$counted_images_via_yq//$num_files_in_this_dir" ;
     ERROR_MSG="" ;
-    if [[ "$counted_images_via_yq" != "$num_files_in_this_dir" ]] ; then ERROR_MSG="Image count differs."; fi
+    if [[ "$counted_images_via_yq" -gt "$num_files_in_this_dir" ]] ; then ERROR_MSG="Steps extra."; fi
+    if [[ "$counted_images_via_yq" -lt "$num_files_in_this_dir" ]] ; then ERROR_MSG="Images extra."; fi
+    ##
+    echo "      // Images = $num_files_in_this_dir // Steps = $counted_images_via_yq // $ERROR_MSG" ;
     ##################### END: yq + jq block #####################    
 
     ## FINALLY APPENDING THIS DIRECTORY'S INDEX FILE LOCATION IN THE MAIN HTML FILE INDEX
-    echo "<tr><td>$COUNT</td> <td><a target= '_blank' href='$BASE_URL/$this_dirname/$thisdir_index_htmlfile'>$this_dirname</a></td> <td>$num_files_in_this_dir (counted from mdfile=$counted_images_via_yq)</td> <td>$ERROR_MSG</td> <td><a target='_blank' href='$MGGK_URL/$this_dirname/'>MGGK-PAGE-URL</a></td> </tr>" >> $main_index_htmlfile ;
+    echo "<tr><td>$COUNT</td> <td><a target= '_blank' href='$BASE_URL/$this_dirname/$thisdir_index_htmlfile'>$this_dirname</a></td> <td> Images_found = $num_files_in_this_dir // $counted_images_via_yq = Steps_found</td> <td>$ERROR_MSG</td> <td><a target='_blank' href='$MGGK_URL/$this_dirname/'>MGGK-PAGE-URL</a></td> </tr>" >> $main_index_htmlfile ;
     ##
     ((COUNT++)) ;
  ##
