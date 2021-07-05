@@ -113,6 +113,7 @@ mggk_calculate_length_of_yoast_description
 mggk_calculate_length_of_titles
 mggk_calculate_length_of_urls
 10b-mggk-create-index-for-recipe-steps-present-folder
+mggk_WEEKLY_SUMMARY_RUN
 makesite_mggk_quickly) ;
 
 ##
@@ -139,7 +140,8 @@ pali_takeout_google_unzip_all_sequential_zip_files
 pali_mggk_RSYNC_REPOS_MGGK_AND_ZZMGGK
 pali_GIT_STATUS_FOR_ALL_REPOS
 pali_imagemagick_fixed_resize_images_by_width_or_height
-2000-python-image-resize) ;
+2000-python-image-resize
+mggk_WEEKLY_SUMMARY_RUN) ;
 
 ##
 LEELA_COMMANDS_ARRAY=(leelasrecipes_makesite_hugo
