@@ -37,6 +37,10 @@ MGGK_URL="https://www.mygingergarlickitchen.com" ;
 MAIN_INDEX_HTMLFILE_URL="$BASE_URL/index-recipe-steps-images.html" ;
 ##
 main_index_htmlfile="$REPO_MGGK/static/wp-content/recipe-steps-images/index-recipe-steps-images.html" ;
+## Create and initialize summary file
+TMPFILE="$DIR_Y/SUMMARY_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+echo "## Summary file created: $(date) // by script => $THIS_SCRIPT_NAME" > $TMPFILE ;
+
 
 ##------------------------------------------------------------------------------
 ## BEGIN: FUNCTION TO OUTPUT THE MARKDOWN FILE PATH FOR AN ENTERED MGGK URL
@@ -128,12 +132,22 @@ for x in $(fd . $MAIN_DIR -t d); do
     url_from_dirname="/$this_dirname/" ;
     MDFILE_WITH_CHOSEN_URL=$(FUNCTION_OUTPUT_MDFILE_FULLPATH "$url_from_dirname") ;
     counted_images_via_yq=$(cat $MDFILE_WITH_CHOSEN_URL | sed -n '/^---/,/^---/p' | yq .recipeInstructions | sed 's/null//g'| jq '.[].recipeInstructionsList[]' | wc -l | sed 's/ //g' ) ; 
+    ######
     ## Counting comparison
     ERROR_MSG="" ;
-    if [[ "$counted_images_via_yq" -gt "$num_files_in_this_dir" ]] ; then ERROR_MSG="Steps extra."; fi
-    if [[ "$counted_images_via_yq" -lt "$num_files_in_this_dir" ]] ; then ERROR_MSG="Images extra."; fi
+    PRINT_MSG="$url_from_dirname || Images = $num_files_in_this_dir || Steps = $counted_images_via_yq" ;
     ##
-    echo "      // Images = $num_files_in_this_dir // Steps = $counted_images_via_yq // $ERROR_MSG" ;
+    if [[ "$counted_images_via_yq" -gt "$num_files_in_this_dir" ]] ; then 
+        ERROR_MSG="Steps extra." ; 
+        echo "$PRINT_MSG || $ERROR_MSG" >> $TMPFILE ;
+    fi
+    ##
+    if [[ "$counted_images_via_yq" -lt "$num_files_in_this_dir" ]] ; then 
+        ERROR_MSG="Images extra." ; 
+        echo "$PRINT_MSG || $ERROR_MSG" >> $TMPFILE ;
+    fi
+    ##
+    echo "$PRINT_MSG || $ERROR_MSG" ;
     ##################### END: yq + jq block #####################    
 
     ## FINALLY APPENDING THIS DIRECTORY'S INDEX FILE LOCATION IN THE MAIN HTML FILE INDEX
