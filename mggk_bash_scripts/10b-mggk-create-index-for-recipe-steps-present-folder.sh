@@ -90,7 +90,7 @@ html_body_script_footer="<!-- BEGIN: Scripts will load below -->
 echo "$html_header" > $main_index_htmlfile ;
 ##
 echo "<h1>INDEX OF ALL HTML INDEX FILES IN DIR => recipe-steps-images</h1>" >> $main_index_htmlfile ;
-echo "Page created by script: " >> $main_index_htmlfile ;
+echo "Page created by script: $THIS_SCRIPT_NAME" >> $main_index_htmlfile ;
 echo "Page Updated: <strong><span id='printTimeFromNow'></span></strong>, at $(date +%Y-%m-%d-T%H:%M:%S) // Currently it's <span id='currentDateDisplay'></span><hr>" >> $main_index_htmlfile ;
 
 num_files=$(fd . $MAIN_DIR -t d | wc -l)
