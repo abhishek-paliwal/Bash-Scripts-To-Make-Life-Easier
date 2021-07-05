@@ -38,7 +38,7 @@ MAIN_INDEX_HTMLFILE_URL="$BASE_URL/index-recipe-steps-images.html" ;
 ##
 main_index_htmlfile="$REPO_MGGK/static/wp-content/recipe-steps-images/index-recipe-steps-images.html" ;
 ## Create and initialize summary file
-TMPFILE="$DIR_Y/SUMMARY_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+TMPFILE="$DIR_Y/mggk_summary_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 echo "## Summary file created: $(date) // by script => $THIS_SCRIPT_NAME" > $TMPFILE ;
 
 
@@ -113,8 +113,7 @@ for x in $(fd . $MAIN_DIR -t d); do
     thisdir_index_htmlfile="index-$this_dirname.html" ; 
     htmlfile="$x/$thisdir_index_htmlfile" ; 
     
-    #echo "$this_dirname // $htmlfile" ; 
-    echo "  >> Creating HTML index file (recipe steps images directory) = $COUNT of $num_files " ;
+    echo; echo "  >> Creating HTML index file (recipe steps images directory) = $COUNT of $num_files " ;
 
     ## Initializing htmlfile
     num_files_in_this_dir=$(fd . $x -e jpg | wc -l | sed 's/ //g') ;
@@ -135,19 +134,19 @@ for x in $(fd . $MAIN_DIR -t d); do
     ######
     ## Counting comparison
     ERROR_MSG="" ;
-    PRINT_MSG="$url_from_dirname || Images = $num_files_in_this_dir || Steps = $counted_images_via_yq" ;
+    PRINT_MSG="Images_found = $num_files_in_this_dir || Steps_found = $counted_images_via_yq || $url_from_dirname" ;
     ##
     if [[ "$counted_images_via_yq" -gt "$num_files_in_this_dir" ]] ; then 
-        ERROR_MSG="Steps extra." ; 
-        echo "$PRINT_MSG || $ERROR_MSG" >> $TMPFILE ;
+        ERROR_MSG="Steps extra" ; 
+        echo "$ERROR_MSG || $PRINT_MSG" >> $TMPFILE ;
+    elif [[ "$counted_images_via_yq" -lt "$num_files_in_this_dir" ]] ; then 
+        ERROR_MSG="Images extra" ; 
+        echo "$ERROR_MSG || $PRINT_MSG" >> $TMPFILE ;
+    else
+        ERROR_MSG="" ;
+        echo "$ERROR_MSG || $PRINT_MSG" ;
     fi
     ##
-    if [[ "$counted_images_via_yq" -lt "$num_files_in_this_dir" ]] ; then 
-        ERROR_MSG="Images extra." ; 
-        echo "$PRINT_MSG || $ERROR_MSG" >> $TMPFILE ;
-    fi
-    ##
-    echo "$PRINT_MSG || $ERROR_MSG" ;
     ##################### END: yq + jq block #####################    
 
     ## FINALLY APPENDING THIS DIRECTORY'S INDEX FILE LOCATION IN THE MAIN HTML FILE INDEX
@@ -166,5 +165,10 @@ echo;
 echo ">> SUMMARY: " ;
 echo ">> INDEX HTML FILE SAVED AS => $main_index_htmlfile" ;
 ## COPY this file to Dropbox dir
+echo "  main_index_htmlfile = $main_index_htmlfile" ;
+echo "  TMPFILE             = $TMPFILE" ;
+##
 cp $main_index_htmlfile $DIR_DROPBOX_SCRIPTS_OUTPUT/ ;
-echo ">> INDEX HTML ALSO COPIED TO => $DIR_DROPBOX_SCRIPTS_OUTPUT" ;
+cp $TMPFILE $DIR_DROPBOX_SCRIPTS_OUTPUT/ ;
+##
+echo ">> INDEX HTML + SUMMARY FILE COPIED TO => $DIR_DROPBOX_SCRIPTS_OUTPUT" ;
