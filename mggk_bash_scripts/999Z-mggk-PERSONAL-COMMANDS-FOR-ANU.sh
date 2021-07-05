@@ -112,7 +112,8 @@ mggk_shortcode_collection_maker
 mggk_calculate_length_of_yoast_description
 mggk_calculate_length_of_titles
 mggk_calculate_length_of_urls
-10b-mggk-create-index-for-recipe-steps-present-folder) ;
+10b-mggk-create-index-for-recipe-steps-present-folder
+makesite_mggk_quickly) ;
 
 ##
 PALI_COMMANDS_ARRAY=(palinotes_makesite_hugo
