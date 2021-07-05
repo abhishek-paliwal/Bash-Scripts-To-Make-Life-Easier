@@ -11,6 +11,7 @@ USAGE: $(basename $0)
     ################################################################################
     ## USAGE:
     #### > bash $THIS_SCRIPT_NAME
+    #### CLI ARGUMENTS OPTINONAL => \$1 = calculate_steps_count_TRUE
     ################################################################################
     ## THIS SCRIPT MAKES AN INDEX HTML FILE FROM RECIPE-STEPS-IMAGES DIRECTORY. THIS 
     ## CONTAINS LINKS TO OTHER INDEX FILES CORRESPONDING TO SUB-DIRECTORIES. THESE INDEX
@@ -40,7 +41,12 @@ main_index_htmlfile="$REPO_MGGK/static/wp-content/recipe-steps-images/index-reci
 ## Create and initialize summary file
 TMPFILE="$DIR_Y/mggk_summary_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 echo "## Summary file created: $(date) // by script => $THIS_SCRIPT_NAME" > $TMPFILE ;
-
+## Print another line to check whether steps couting is done or not.
+if [[ "$1" == "calculate_steps_count_TRUE" ]] ; then
+    echo "## Recipe Steps calculated during last run = YES." >> $TMPFILE ;
+else
+    echo "## Recipe Steps calculated during last run = NO. Hence, empty block below." >> $TMPFILE ;
+fi
 
 ##------------------------------------------------------------------------------
 ## BEGIN: FUNCTION TO OUTPUT THE MARKDOWN FILE PATH FOR AN ENTERED MGGK URL
@@ -125,28 +131,33 @@ for x in $(fd . $MAIN_DIR -t d); do
         this_fname="$(basename $fname)" ;
         echo "<img style='border: 2px solid #000000 ;' src='$BASE_URL/$this_dirname/$this_fname' width='300px'>" >> $htmlfile ;
     done
-    ##
-    ##################### BEGIN: yq + jq block #####################
-    ## Getting mdfile name from dirname url + counting recipe steps in it (via yq and jq)
-    url_from_dirname="/$this_dirname/" ;
-    MDFILE_WITH_CHOSEN_URL=$(FUNCTION_OUTPUT_MDFILE_FULLPATH "$url_from_dirname") ;
-    counted_images_via_yq=$(cat $MDFILE_WITH_CHOSEN_URL | sed -n '/^---/,/^---/p' | yq .recipeInstructions | sed 's/null//g'| jq '.[].recipeInstructionsList[]' | wc -l | sed 's/ //g' ) ; 
-    ######
-    ## Counting comparison
+    #####################
     ERROR_MSG="" ;
-    PRINT_MSG="Images_found = $num_files_in_this_dir || Steps_found = $counted_images_via_yq || $url_from_dirname" ;
-    ##
-    if [[ "$counted_images_via_yq" -gt "$num_files_in_this_dir" ]] ; then 
-        ERROR_MSG="Steps extra" ; 
-        echo "$ERROR_MSG || $PRINT_MSG" >> $TMPFILE ;
-    elif [[ "$counted_images_via_yq" -lt "$num_files_in_this_dir" ]] ; then 
-        ERROR_MSG="Images extra" ; 
-        echo "$ERROR_MSG || $PRINT_MSG" >> $TMPFILE ;
-    else
-        ERROR_MSG="" ;
-        echo "$ERROR_MSG || $PRINT_MSG" ;
+    counted_images_via_yq="not-caculated" ;
+
+    ##################### BEGIN: yq + jq block #####################
+    ## CALCULATING STEPS COUNT IF CHOSEN CLI ARGUMENT PRESENT
+    if [[ "$1" == "calculate_steps_count_TRUE" ]] ; then
+        ## Getting mdfile name from dirname url + counting recipe steps in it (via yq and jq)
+        url_from_dirname="/$this_dirname/" ;
+        MDFILE_WITH_CHOSEN_URL=$(FUNCTION_OUTPUT_MDFILE_FULLPATH "$url_from_dirname") ;
+        counted_images_via_yq=$(cat $MDFILE_WITH_CHOSEN_URL | sed -n '/^---/,/^---/p' | yq .recipeInstructions | sed 's/null//g'| jq '.[].recipeInstructionsList[]' | wc -l | sed 's/ //g' ) ; 
+        ######
+        ## Counting comparison
+        PRINT_MSG="Images_found = $num_files_in_this_dir || Steps_found = $counted_images_via_yq || $url_from_dirname" ;
+        ##
+        if [[ "$counted_images_via_yq" -gt "$num_files_in_this_dir" ]] ; then 
+            ERROR_MSG="Steps extra" ; 
+            echo "$ERROR_MSG || $PRINT_MSG" >> $TMPFILE ;
+        elif [[ "$counted_images_via_yq" -lt "$num_files_in_this_dir" ]] ; then 
+            ERROR_MSG="Images extra" ; 
+            echo "$ERROR_MSG || $PRINT_MSG" >> $TMPFILE ;
+        else
+            ERROR_MSG="" ;
+            echo "$ERROR_MSG || $PRINT_MSG" ;
+        fi
+        ##
     fi
-    ##
     ##################### END: yq + jq block #####################    
 
     ## FINALLY APPENDING THIS DIRECTORY'S INDEX FILE LOCATION IN THE MAIN HTML FILE INDEX
