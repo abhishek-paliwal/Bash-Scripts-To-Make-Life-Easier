@@ -54,6 +54,18 @@ echo "" >> $FILE_OUTPUT_SITESTATS ;
 ################################################################################ 
 
 ################################################################################ 
+## COMPARING THE NUMBER OF STEPS IMAGES TO ACTUAL STEPS IN MDFILES
+echo "" >> $FILE_OUTPUT_SITESTATS ;
+echo "##---------------------------------------"  >> $FILE_OUTPUT_SITESTATS ;
+echo ">> COMPARING THE NUMBER OF STEPS IMAGES TO ACTUAL STEPS IN MDFILES" >> $FILE_OUTPUT_SITESTATS ;
+echo "##-------------------"  >> $FILE_OUTPUT_SITESTATS ;
+sort $DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_10b-mggk-create-index-for-recipe-steps-present-folder.txt >> $FILE_OUTPUT_SITESTATS ;
+echo "##---------------------------------------"  >> $FILE_OUTPUT_SITESTATS ;
+echo "" >> $FILE_OUTPUT_SITESTATS ;
+################################################################################ 
+
+
+################################################################################ 
 ## CHECKING IF RECIPE_STEPS_FOLDERS ARE SAME AS URLS ...
 tmpfile1="$DIR_Y/tmp1000.txt" ;
 tmpfile2="$DIR_Y/tmp1001.txt" ;
