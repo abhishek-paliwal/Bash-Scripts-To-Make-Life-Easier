@@ -131,7 +131,7 @@ for x in $(fd . $MAIN_DIR -t d); do
     ## Counting comparison
     echo ">> //$counted_images_via_yq//$num_files_in_this_dir" ;
     ERROR_MSG="" ;
-    if [[ "$counted_images_via_yq" != "$num_files_in_this_dir" ]] ; then ERROR_MSG="FIX ERROR"; fi
+    if [[ "$counted_images_via_yq" != "$num_files_in_this_dir" ]] ; then ERROR_MSG="Image count differs."; fi
     ##################### END: yq + jq block #####################    
 
     ## FINALLY APPENDING THIS DIRECTORY'S INDEX FILE LOCATION IN THE MAIN HTML FILE INDEX
