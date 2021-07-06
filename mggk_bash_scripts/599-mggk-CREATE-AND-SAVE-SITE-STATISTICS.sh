@@ -73,8 +73,10 @@ tmpfile2="$DIR_Y/tmp1001.txt" ;
 for x in $(grep -irl preptime $REPO_MGGK/content/**) ; do grep -i 'url: ' $x ;  done | sed 's/url: //g' | sed 's+/++g' | sort > $tmpfile1 ;
 ##
 DIR_STEPS_IMAGES="$REPO_MGGK/static/wp-content/recipe-steps-images" ;
+replace_this1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/recipe-steps-images/" ;
+replace_this2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/recipe-steps-images/" ;
 ## Changing the username to the be the same on all computers ...
-fd . -t d --full-path $DIR_STEPS_IMAGES | sed 's+ubuntu+abhishek+g' | sed 's+/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/recipe-steps-images/++g' | sort > $tmpfile2 ;
+fd . -t d --full-path $DIR_STEPS_IMAGES | sed "s+$replace_this1++g" | sed "s+$replace_this2++g" | sort > $tmpfile2 ;
 ##
 echo "" >> $FILE_OUTPUT_SITESTATS ;
 echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" >> $FILE_OUTPUT_SITESTATS
@@ -92,7 +94,10 @@ echo "" >> $FILE_OUTPUT_SITESTATS ;
 tmpfile1="$DIR_Y/tmp999.txt" ;
 ##
 DIR_STEPS_IMAGES="$REPO_MGGK/static/wp-content/recipe-steps-images" ;
-fd . --full-path $DIR_STEPS_IMAGES | sed 's+ubuntu+abhishek+g' | sed 's+/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/recipe-steps-images/++g' | grep '[A-Z]' > $tmpfile1 ;
+replace_this1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/recipe-steps-images/" ;
+replace_this2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/recipe-steps-images/" ;
+##
+fd . --full-path $DIR_STEPS_IMAGES | sed "s+$replace_this1++g" | sed "s+$replace_this2++g" | grep '[A-Z]' > $tmpfile1 ;
 ##
 echo "" >> $FILE_OUTPUT_SITESTATS ;
 echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" >> $FILE_OUTPUT_SITESTATS
