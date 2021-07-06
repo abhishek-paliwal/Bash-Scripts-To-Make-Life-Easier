@@ -37,6 +37,11 @@ BASE_URL="https://www.mygingergarlickitchen.com/wp-content/recipe-steps-images" 
 MGGK_URL="https://www.mygingergarlickitchen.com" ;
 MAIN_INDEX_HTMLFILE_URL="$BASE_URL/index-recipe-steps-images.html" ;
 ##
+## Create a mdfilepaths summary file, and initialize it.
+PATHS_FILE="$REPO_MGGK_SUMMARY/summary_mggk_current_mdfilepaths.txt" ;
+echo "## File created on: $(date) by script: $THIS_SCRIPT_NAME" > $PATHS_FILE ;
+fd --search-path="$REPO_MGGK/content/" -e md >> $PATHS_FILE ;
+##
 main_index_htmlfile="$REPO_MGGK/static/wp-content/recipe-steps-images/index-recipe-steps-images.html" ;
 ## Create and initialize summary file
 TMPFILE="$DIR_Y/mggk_summary_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
@@ -47,27 +52,6 @@ if [[ "$1" == "calculate_steps_count_TRUE" ]] ; then
 else
     echo "## Recipe Steps calculated during last run = NO. Hence, empty block below." >> $TMPFILE ;
 fi
-
-##------------------------------------------------------------------------------
-## BEGIN: FUNCTION TO OUTPUT THE MARKDOWN FILE PATH FOR AN ENTERED MGGK URL
-## AS COMMAND LINE ARGUMENT
-function FUNCTION_OUTPUT_MDFILE_FULLPATH () {
-  SEARCHDIR="$REPO_MGGK/content" ;
-  ## CREATING SEARCH_URL FROM THE USER INPUT
-  SEARCHURL=$(echo $1 | sed 's|https://www.mygingergarlickitchen.com||g')
-  ## EXIT THE SCRIPT IF THE ENTERED URL IS NOT PROPER
-  if [[ "$SEARCHURL" == "/" ]] || [[ "$SEARCHURL" == "" ]] ; then exit 1; fi
-  ## COUNT THE NUMBER OF FILES WITH CURRENT URL IN YAML FRONTMATTER.
-  ## THE ANSWER SHOULD ONLY BE 1. BUT JUST TO MAKE SURE, RUN THE FOLLOWING COMMAND.
-  NUM_FILES=$(grep -irl "url: $SEARCHURL" $SEARCHDIR | wc -l | tr -d '[:space:]') ;
-  ## Check, how many files with this url are returned. Exit, if more than 1.
-  if [[ "$NUM_FILES" -eq 0 ]] || [[ "$NUM_FILES" -gt 1 ]] ; then exit 1; fi
-  ## SEARCH FOR THE MD FILE WHERE THE URL LIES IN THE YAML FRONTMATTER
-  grep -irl "url: $SEARCHURL" $SEARCHDIR | head -1 ;
-}
-## END: FUNCTION
-#MDFILE_WITH_CHOSEN_URL=$(FUNCTION_OUTPUT_MDFILE_FULLPATH "YOUR-CHOSEN-URL") ;
-##------------------------------------------------------------------------------
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## SETTING HTML HEADER AND FOOTER
@@ -140,7 +124,7 @@ for x in $(fd . $MAIN_DIR -t d); do
     if [[ "$1" == "calculate_steps_count_TRUE" ]] ; then
         ## Getting mdfile name from dirname url + counting recipe steps in it (via yq and jq)
         url_from_dirname="/$this_dirname/" ;
-        MDFILE_WITH_CHOSEN_URL=$(FUNCTION_OUTPUT_MDFILE_FULLPATH "$url_from_dirname") ;
+        MDFILE_WITH_CHOSEN_URL=$(grep "$this_dirname" $PATHS_FILE) ;
         counted_images_via_yq=$(cat $MDFILE_WITH_CHOSEN_URL | sed -n '/^---/,/^---/p' | yq .recipeInstructions | sed 's/null//g'| jq '.[].recipeInstructionsList[]' | wc -l | sed 's/ //g' ) ; 
         ######
         ## Counting comparison
