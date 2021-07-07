@@ -59,7 +59,7 @@ echo "" >> $FILE_OUTPUT_SITESTATS ;
 echo "##---------------------------------------"  >> $FILE_OUTPUT_SITESTATS ;
 echo ">> COMPARING THE NUMBER OF STEPS IMAGES TO ACTUAL STEPS IN MDFILES" >> $FILE_OUTPUT_SITESTATS ;
 echo "##-------------------"  >> $FILE_OUTPUT_SITESTATS ;
-sort $DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_10b-mggk-create-index-for-recipe-steps-present-folder.txt >> $FILE_OUTPUT_SITESTATS ;
+cat $DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_10b-mggk-create-index-for-recipe-steps-present-folder.txt >> $FILE_OUTPUT_SITESTATS ;
 echo "##---------------------------------------"  >> $FILE_OUTPUT_SITESTATS ;
 echo "" >> $FILE_OUTPUT_SITESTATS ;
 ################################################################################ 
