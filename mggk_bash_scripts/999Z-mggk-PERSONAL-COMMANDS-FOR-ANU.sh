@@ -141,6 +141,7 @@ pali_mggk_RSYNC_REPOS_MGGK_AND_ZZMGGK
 pali_GIT_STATUS_FOR_ALL_REPOS
 pali_imagemagick_fixed_resize_images_by_width_or_height
 2000-python-image-resize
+pali_imagemagick_create_10_random_images
 mggk_WEEKLY_SUMMARY_RUN) ;
 
 ##
@@ -160,7 +161,8 @@ leelasrecipes_make_20_directories
 leelasrecipes-CREATE-SUBDIRECTORIES-THEN-MOVE-STEPS-IMAGES
 2000-collage-maker-using-vendor-script-leelasrecipes
 2000-python-image-resize
-leelasrecipes_run_commands_13_14_15) ;
+leelasrecipes_run_commands_13_14_15
+pali_imagemagick_create_10_random_images) ;
 
 ##
 IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY=(1_imagemagick_maker
@@ -203,6 +205,7 @@ youtube-download-best-overall-version
 youtube-list-formats
 youtube-update-downloader-program
 pali_imagemagick_fixed_resize_images_by_width_or_height
+pali_imagemagick_create_10_random_images
 2000-python-image-resize)
 
 ##
