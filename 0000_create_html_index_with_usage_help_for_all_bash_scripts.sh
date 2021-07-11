@@ -125,7 +125,7 @@ for x in $(grep -irL --include \*.sh --include \*.py 'usage()' $PATHDIR/) ; do
     replaceThis2="/Users/abhishek/GitHub/Bash-Scripts-To-Make-Life-Easier/"
     #script_name=$(echo $x | sed -e "s|$replaceThis1||g" -e "s|$replaceThis2||g") ;  
     script_name=$(basename $x) ;
-    warn "-- USAGE FUNCTION NOT FOUND IN ==> $x" ; 
+    warn "-- USAGE FUNCTION NOT FOUND IN ==> $script_name" ; 
     echo "<tr class='table-danger'> <th scope='row'>$count</th> <td>$script_name</td> <td>Usage function not found. Fix it.</td> <td>usage_output not found.</td> </tr>" >> $outfile ;
 done
 ##
@@ -145,7 +145,7 @@ for x in $(grep -irl --include \*.sh --include \*.py 'usage()' $PATHDIR/) ; do
     replaceThis2="/Users/abhishek/GitHub/Bash-Scripts-To-Make-Life-Easier/"
     #script_name=$(echo $x | sed -e "s|$replaceThis1||g" -e "s|$replaceThis2||g") ;  
     script_name=$(basename $x) ;
-    echo; success "++ USAGE FUNCTION FOUND IN ==> $x // EXTENSION = $file_extension" ; 
+    echo; success "++ USAGE FUNCTION FOUND IN ==> $script_name // EXTENSION = $file_extension" ; 
     
     ## Check the file extension and run corresponding help command 
     if [ "$file_extension" == "sh" ] ; then 
