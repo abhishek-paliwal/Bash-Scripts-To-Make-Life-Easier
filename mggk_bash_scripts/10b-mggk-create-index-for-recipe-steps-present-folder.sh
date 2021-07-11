@@ -129,7 +129,7 @@ echo "$TABLE_HEADER" >> $main_index_htmlfile ;
 ##+++++++++++++++++++++++++++++++++++++++++
 COUNT=0;
 COUNT_STEPSERROR=0;
-COUNT_IMAGESSERROR=0;
+COUNT_IMAGESERROR=0;
 COUNT_NOERROR=0;
 ## Looping through all directories present in MAIN_DIR
 for x in $(fd . $MAIN_DIR -t d); do 
@@ -229,19 +229,30 @@ $print_msg3
 $print_msg4" >> $TMPFILE ;
 ##
 echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
-## COPY files to Dropbox dir
+
+## COPY index file to Dropbox dir
 cp $main_index_htmlfile $DIR_DROPBOX_SCRIPTS_OUTPUT/ ;
-cp $TMPFILE $DIR_DROPBOX_SCRIPTS_OUTPUT/ ;
-##
 echo ; 
-echo ">> OUTPUT FILES COPIED TO => $DIR_DROPBOX_SCRIPTS_OUTPUT" ;
+echo ">> INDEX FILE COPIED TO => $DIR_DROPBOX_SCRIPTS_OUTPUT" ;
 echo "  main_index_htmlfile (ORIGINAL) = $main_index_htmlfile" ;
-echo "  TMPFILE (ORIGINAL)             = $TMPFILE" ;
-echo "  main_index_htmlfile (COPIED)   = $DIR_DROPBOX_SCRIPTS_OUTPUT/$main_index_htmlfile" ;
-echo "  TMPFILE (COPIED)               = $DIR_DROPBOX_SCRIPTS_OUTPUT/$TMPFILE" ;
+echo "  main_index_htmlfile (COPIED)   = $DIR_DROPBOX_SCRIPTS_OUTPUT/$(basename $main_index_htmlfile)" ;
 ####
+echo;
 echo "Check URL here: $MAIN_INDEX_HTMLFILE_URL" ;
-echo "##------------------------------------------------------------------------------"
-## Output final counts
-cat $TMPFILE ; 
-echo "##------------------------------------------------------------------------------"
+
+#### COPY tmpfile to Dropbox dir (only if steps are calculated)
+echo ; 
+if [[ "$1" == "calculate_steps_count_TRUE" ]] ; then
+    cp $TMPFILE $DIR_DROPBOX_SCRIPTS_OUTPUT/ ;
+    echo ">> INDEX FILE COPIED TO DROPBOX DIR => $DIR_DROPBOX_SCRIPTS_OUTPUT" ;
+    echo "  TMPFILE (ORIGINAL)             = $TMPFILE" ;
+    echo "  TMPFILE (COPIED)               = $DIR_DROPBOX_SCRIPTS_OUTPUT/$(basename $TMPFILE)" ;
+    ## Output final counts
+    echo "##-----------------------------------------------------" ;
+    cat $TMPFILE ; 
+    echo "##-----------------------------------------------------" ;
+else
+    echo ">> TMPFILE IS NOT COPIED TO DROPBOX DIR (bcoz steps are not calculated)." ;
+    echo "  TMPFILE (ORIGINAL)             = $TMPFILE" ;
+fi
+####
