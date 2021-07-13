@@ -40,7 +40,8 @@ MAIN_INDEX_HTMLFILE_URL="$BASE_URL/index-recipe-steps-images.html" ;
 ## Create a mdfilepaths summary file, and initialize it.
 PATHS_FILE="$REPO_MGGK_SUMMARY/summary_mggk_current_mdfilepaths.txt" ;
 echo "## File created on: $(date) by script: $THIS_SCRIPT_NAME" > $PATHS_FILE ;
-fd --search-path="$REPO_MGGK/content/" -e md >> $PATHS_FILE ;
+#fd --search-path="$REPO_MGGK/content/" -e md >> $PATHS_FILE ;
+for x in $(fd --search-path="$REPO_MGGK/content/" -e md); do var=$(grep "url: " $x | sed 's/url: //g') ; echo "$x=$var" ; done >> $PATHS_FILE ;
 ##
 main_index_htmlfile="$MAIN_DIR/index-recipe-steps-images.html" ;
 ## Creating some intermediate tmp files 
@@ -132,14 +133,15 @@ COUNT_STEPSERROR=0;
 COUNT_IMAGESERROR=0;
 COUNT_NOERROR=0;
 ## Looping through all directories present in MAIN_DIR
-for x in $(fd . $MAIN_DIR -t d); do 
+#### removing spaces if any
+for x in $(fd . $MAIN_DIR -t d | sed 's/ //g'); do 
 ##
     this_dirname="$(basename $x)" ;
     thisdir_index_htmlfile="index-$this_dirname.html" ; 
     htmlfile="$x/$thisdir_index_htmlfile" ; 
     ##
     ((COUNT++)) ;   
-    echo; echo "  >> Creating HTML index file (recipe steps images directory) = $COUNT of $num_files " ;
+    echo; echo ">> Creating HTML index file (recipe steps images directory) = $COUNT of $num_files " ;
 
     ## Initializing htmlfile
     num_files_in_this_dir=$(fd . $x -e jpg | wc -l | sed 's/ //g') ;
@@ -153,18 +155,20 @@ for x in $(fd . $MAIN_DIR -t d); do
     done
     #####################
     ERROR_MSG="" ;
-    counted_images_via_yq="not-caculated" ;
+    counted_images_via_yq="not-caculated" ; ## Initialize the variable
 
     ##################### BEGIN: yq + jq block #####################
     ## CALCULATING STEPS COUNT IF CHOSEN CLI ARGUMENT PRESENT
     if [[ "$1" == "calculate_steps_count_TRUE" ]] ; then
         ## Getting mdfile name from dirname url + counting recipe steps in it (via yq and jq)
         url_from_dirname="/$this_dirname/" ;
-        MDFILE_WITH_CHOSEN_URL=$(grep "$this_dirname" $PATHS_FILE) ;
+        ## getting the first field from chosen line
+        MDFILE_WITH_CHOSEN_URL=$(grep "$url_from_dirname" $PATHS_FILE | cut -d'=' -f1) ; 
         counted_images_via_yq=$(cat $MDFILE_WITH_CHOSEN_URL | sed -n '/^---/,/^---/p' | yq .recipeInstructions | sed 's/null//g'| jq '.[].recipeInstructionsList[]' | wc -l | sed 's/ //g' ) ; 
         ######
         ## Counting comparison
         PRINT_MSG="Images_found = $num_files_in_this_dir || Steps_found = $counted_images_via_yq || $url_from_dirname" ;
+        echo "  >> CURRENT FILE: $MDFILE_WITH_CHOSEN_URL" ;
         ##
         if [[ "$counted_images_via_yq" -gt "$num_files_in_this_dir" ]] ; then 
             ((COUNT_STEPSERROR++)) ;
