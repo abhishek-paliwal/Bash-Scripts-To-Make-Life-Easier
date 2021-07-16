@@ -3,13 +3,17 @@
 tmp1="$DIR_Y/tmp_recipe_steps_images_dimensions_ALL.txt" ;
 tmp2="$DIR_Y/tmp_recipe_steps_images_dimensions_ALL_1x1.txt" ;
 
-##
+####
 searchPath="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/recipe-steps-images" ;
 for x in $(fd --search-path="$searchPath" -e jpg) ; do var=$(identify -format "%wx%h\n" $x) ; echo "$var=$x" ; done > $tmp1 ;
-##
+## print out the counts of all image dimensions thus found
+cat $tmp1 | cut -d'=' -f1 | sort | uniq -c | sort -nr
+####
+
+## extract filepaths of 1x1 images only
 cat $tmp1 | ag 1x1= > $tmp2 | sd '1x1=' '' | sort > $tmp2 ;
 
-######
+################################################################################
 function FUNC_copy_white_images() {
     ## Create custom white image using imagemagick convert command
     whiteImage="$DIR_Y/imagemagick_white.jpg" ;
@@ -22,5 +26,7 @@ function FUNC_copy_white_images() {
         cp $whiteImage $line ;
     done < "$input"
 }
+####
+echo; echo ">> Replacing white images ..."
 FUNC_copy_white_images
-######
+################################################################################
