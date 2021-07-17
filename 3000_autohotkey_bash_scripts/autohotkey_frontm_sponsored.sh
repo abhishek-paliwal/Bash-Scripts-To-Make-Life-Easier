@@ -9,6 +9,8 @@ USAGE: $(basename $0)
     ##################################################################################
     ## CREATE MGGK HUGO sponsored file with frontmatter inserted.
     ## IMPORTANT NOTE: This script needs a user input at runtime.
+    ## Created by: Pali
+    ## Created on: July 17, 2021
     ##################################################################################
 EOM
 
