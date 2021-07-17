@@ -114,7 +114,8 @@ mggk_calculate_length_of_titles
 mggk_calculate_length_of_urls
 10b-mggk-create-index-for-recipe-steps-present-folder
 mggk_WEEKLY_SUMMARY_RUN
-makesite_mggk_quickly) ;
+makesite_mggk_quickly
+frontm_sponsored) ;
 
 ##
 PALI_COMMANDS_ARRAY=(palinotes_makesite_hugo
