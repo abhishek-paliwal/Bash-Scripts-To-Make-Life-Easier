@@ -9,14 +9,15 @@ tmp2="$DIR_Y/tmp2.txt" ;
 echo "## Created by script: " > $tmp1
 
 ## In all md-files, find all lines with hugo figure tags and parse it
+echo ">> Finding hugo figure tags in all md files in $IMAGES_ROOTDIR ... " ;     
 for x in $(grep -irl "{{< figure" $IMAGES_ROOTDIR  ) ; 
 do 
-    url_var=$(grep -i "^url: " $x) ; 
+    #url_var=$(grep -i "^url: " $x) ; 
     grep -i "{{< figure" $x | sd ' ' '\n' | grep 'src' | sd '"' '' | sd 'src=' '' >> $tmp1
 done
 
 ## Converting urls to local file paths
-cat $tmp1 | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmp2
+cat $tmp1 | sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmp2
 
 ##################################################################################
 
@@ -28,7 +29,6 @@ function FUNC_create_responsive_images_for_each_line () {
     echo "Image = $imagePath"
     echo "BASENAME = $imagePath_basename" ;
     originalImageDir="$RESPONSIVE_IMAGES_ROOTDIR/original" ;
-    mkdir $originalImageDir ;
     ## 
     myarray=(300px 425px 550px 675px 800px)
     ##
@@ -41,20 +41,24 @@ function FUNC_create_responsive_images_for_each_line () {
         outputImage="$resizeDir/$imageRes-$imagePath_basename"
         CopiedOriginalImage="$originalImageDir/$imagePath_basename"
         ##
-        if [[ -d "$resizeDir" ]] ; then
-            echo "Directory already exists => $resizeDir"
+        if [[ -d "$resizeDir" ]] && [[ -d "$originalImageDir" ]] ; then
+            echo "  Responsive Image directory already exists => $resizeDir" ;
+            echo "  Original Image directory already exists   => $originalImageDir" ;
         else
-            echo "Directory does not exist. Will be created => $resizeDir" ; 
+            echo "  Responsive Image directory does not exist => $resizeDir" ;
+            echo "  Original Image directory does not exist   => $originalImageDir" ;
             mkdir $resizeDir ;
+            mkdir $originalImageDir ;
         fi
         ##
         ## Copy original image + only create responsive image if it does not exist
-        if [[ -f "$outputImage" ]] ; then
-            echo "Image already exists => $outputImage" ; 
+        if [[ -f "$outputImage" ]] && [[ -f "$CopiedOriginalImage" ]] ; then
+            echo "  Output Image already exists => $outputImage" ; 
+            echo "  Copied Original Image already exists => $CopiedOriginalImage" ; 
         else
-            echo "($imageRes) Image will be created (+ original image copied)" ; 
-            echo "Output image = $outputImage" ; 
-            echo "Copied original image = $CopiedOriginalImage" ; 
+            echo "These Images will be created ..." ; 
+            echo "  Output image = $outputImage" ; 
+            echo "  Copied original image = $CopiedOriginalImage" ; 
             cp "$imagePath" "$CopiedOriginalImage" ;
             convert $imagePath -resize "$resizeTo" -quality 80 "$outputImage" ;
         fi
