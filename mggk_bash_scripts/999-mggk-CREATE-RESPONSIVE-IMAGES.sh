@@ -17,7 +17,7 @@ do
 done
 
 ## Converting urls to local file paths
-cat $tmp1 | sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmp2
+cat $tmp1 | grep -iv '#' |sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmp2
 
 ##################################################################################
 
@@ -68,14 +68,17 @@ function FUNC_create_responsive_images_for_each_line () {
 ##################################################################################
 
 ## Creating responsive images corresponding to each image path
+## but only if the original image file exists
 while read -r line;
 do
-    echo "$line" ;
+    echo ; 
     if [[ -f "$line" ]] ; then 
-        echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"; 
+    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
+        echo ">> CURRENT LINE = $line" ; 
         echo "OK = Image Found" ; 
         FUNC_create_responsive_images_for_each_line "$line" ; ## Call function
     else 
+        echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"; 
         echo "NOT OK = Image Not Found" ;
     fi
 done < $tmp2
