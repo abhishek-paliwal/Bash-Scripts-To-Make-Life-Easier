@@ -1,7 +1,7 @@
 #!/bin/bash
 
 IMAGES_ROOTDIR="$REPO_MGGK/content/" ;
-RESPONSIVE_IMAGES_ROOTDIR="$DIR_Y" ;
+RESPONSIVE_IMAGES_ROOTDIR="$REPO_MGGK/static/wp-content/responsive-images" ;
 
 ##
 tmp1="$DIR_Y/tmp1.txt" ;
