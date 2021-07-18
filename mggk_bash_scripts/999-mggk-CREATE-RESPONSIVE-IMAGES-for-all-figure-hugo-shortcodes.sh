@@ -43,9 +43,12 @@ do
     #url_var=$(grep -i "^url: " $x) ; 
     grep -i "{{< figure" $x | sd ' ' '\n' | grep 'src' | sd '"' '' | sd 'src=' '' >> $tmp1
 done
+## Appending all featured images to the list of images
+grep -irh 'featured_image' $IMAGES_ROOTDIR | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmp1
 
+########################################
 ## Converting urls to local file paths
-cat $tmp1 | grep -iv '#' |sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmp2
+cat $tmp1 | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmp2
 
 ##################################################################################
 ## FUNCTION DEFINITIONS
