@@ -27,29 +27,6 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-################################################################################
-IMAGES_ROOTDIR="$REPO_MGGK/content/" ;
-RESPONSIVE_IMAGES_ROOTDIR="$REPO_MGGK/static/wp-content/responsive-images" ;
-##
-tmp1="$DIR_Y/tmp1-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
-tmp2="$DIR_Y/tmp2-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
-echo "## Created by script: " > $tmp1
-################################################################################
-
-## In all md-files, find all lines with hugo figure tags and parse it
-echo ">> Finding hugo figure tags in all md files in $IMAGES_ROOTDIR ... " ;     
-for x in $(grep -irl "{{< figure" $IMAGES_ROOTDIR  ) ; 
-do 
-    #url_var=$(grep -i "^url: " $x) ; 
-    grep -i "{{< figure" $x | sd ' ' '\n' | grep 'src' | sd '"' '' | sd 'src=' '' >> $tmp1
-done
-## Appending all featured images to the list of images
-grep -irh 'featured_image' $IMAGES_ROOTDIR | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmp1
-
-########################################
-## Converting urls to local file paths
-cat $tmp1 | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmp2
-
 ##################################################################################
 ## FUNCTION DEFINITIONS
 function FUNC_create_responsive_images_for_each_line () {
@@ -95,6 +72,43 @@ function FUNC_create_responsive_images_for_each_line () {
     done
 }
 ##################################################################################
+
+################################################################################
+IMAGES_ROOTDIR="$REPO_MGGK/content/" ;
+RESPONSIVE_IMAGES_ROOTDIR="$REPO_MGGK/static/wp-content/responsive-images" ;
+##
+IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/recipe-steps-images/" ;
+RESPONSIVE_IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/responsive-steps-images" ;
+
+##
+tmp1="$DIR_Y/tmp1-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+tmp2="$DIR_Y/tmp2-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+echo "## Created by script: " > $tmp1
+################################################################################
+
+##------------------------------------------------------------------------------
+## Image addition part 1 = Adding all images with hugo figure tags
+echo ">> Image addition part 1 = Adding all images with hugo figure tags ... " ;     
+for x in $(grep -irl "{{< figure" $IMAGES_ROOTDIR  ) ; 
+do 
+    grep -i "{{< figure" $x | sd ' ' '\n' | grep 'src' | sd '"' '' | sd 'src=' '' >> $tmp1
+done
+
+## Image addition part 2 = Adding all featured images to the list of images
+echo ">> Image addition part 2 = Adding all featured images to the list of images ... " ;
+grep -irh 'featured_image' $IMAGES_ROOTDIR | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmp1
+
+## Image addition part 3 = Adding all recipe steps imagesto the list of images
+echo ">> Image addition part 3 = Adding all recipe steps imagesto the list of images ... " ;
+replaceThis1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
+replaceThis2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
+fd --search-path="$IMAGES_ROOTDIR_STEPS" -a -e jpg | sd '$replaceThis1' ''| sd '$replaceThis2' '' | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmp1
+
+##------------------------------------------------------------------------------
+
+########################################
+## Converting urls to local file paths
+cat $tmp1 | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmp2
 
 ## Creating responsive images corresponding to each image path
 ## but only if the original image file exists
