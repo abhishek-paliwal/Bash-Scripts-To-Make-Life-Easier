@@ -32,6 +32,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 function FUNC_create_responsive_images_for_each_line () {
     ## FUNCTION TO CREATE RESPONSIVE IMAGES
     imagePath="$1" ;
+    RESPONSIVE_IMAGES_ROOTDIR="$2" ;
     imagePath_basename=$(basename $imagePath) ;
     echo "Image = $imagePath"
     echo "BASENAME = $imagePath_basename" ;
@@ -73,42 +74,35 @@ function FUNC_create_responsive_images_for_each_line () {
 }
 ##################################################################################
 
-################################################################################
+##------------------------------------------------------------------------------
+## BEGIN: BLOCK 1 = Creating responsive images for all figure images + all featured images
+##------------------------------------------------------------------------------
 IMAGES_ROOTDIR="$REPO_MGGK/content/" ;
 RESPONSIVE_IMAGES_ROOTDIR="$REPO_MGGK/static/wp-content/responsive-images" ;
 ##
 IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/recipe-steps-images/" ;
 RESPONSIVE_IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/responsive-steps-images" ;
-
 ##
-tmp1="$DIR_Y/tmp1-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
-tmp2="$DIR_Y/tmp2-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
-echo "## Created by script: " > $tmp1
-################################################################################
+tmp1A="$DIR_Y/tmp1A-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+tmp2A="$DIR_Y/tmp2A-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+echo "## Created by script: " > $tmp1A
+#####################################
 
-##------------------------------------------------------------------------------
-## Image addition part 1 = Adding all images with hugo figure tags
+## Image addition part 1A = Adding all images with hugo figure tags
 echo ">> Image addition part 1 = Adding all images with hugo figure tags ... " ;     
 for x in $(grep -irl "{{< figure" $IMAGES_ROOTDIR  ) ; 
 do 
-    grep -i "{{< figure" $x | sd ' ' '\n' | grep 'src' | sd '"' '' | sd 'src=' '' >> $tmp1
+    grep -i "{{< figure" $x | sd ' ' '\n' | grep 'src' | sd '"' '' | sd 'src=' '' >> $tmp1A
 done
 
-## Image addition part 2 = Adding all featured images to the list of images
+## Image addition part 1B = Adding all featured images to the list of images
 echo ">> Image addition part 2 = Adding all featured images to the list of images ... " ;
-grep -irh 'featured_image' $IMAGES_ROOTDIR | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmp1
-
-## Image addition part 3 = Adding all recipe steps imagesto the list of images
-echo ">> Image addition part 3 = Adding all recipe steps imagesto the list of images ... " ;
-replaceThis1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
-replaceThis2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
-fd --search-path="$IMAGES_ROOTDIR_STEPS" -a -e jpg | sd '$replaceThis1' ''| sd '$replaceThis2' '' | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmp1
-
-##------------------------------------------------------------------------------
+grep -irh 'featured_image' $IMAGES_ROOTDIR | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmp1A
 
 ########################################
 ## Converting urls to local file paths
-cat $tmp1 | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmp2
+echo ">> Converting urls to local file paths ..." ; 
+cat $tmp1A | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmp2A
 
 ## Creating responsive images corresponding to each image path
 ## but only if the original image file exists
@@ -119,9 +113,54 @@ do
     echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
         echo ">> CURRENT LINE = $line" ; 
         echo "OK = Image Found" ; 
-        FUNC_create_responsive_images_for_each_line "$line" ; ## Call function
+        FUNC_create_responsive_images_for_each_line "$line" "$RESPONSIVE_IMAGES_ROOTDIR" ; ## Call function
     else 
         echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"; 
         echo "NOT OK = Image Not Found" ;
     fi
-done < $tmp2
+done < $tmp2A
+##------------------------------------------------------------------------------
+## END: BLOCK 1
+##------------------------------------------------------------------------------
+
+##------------------------------------------------------------------------------
+## BEGIN: BLOCK 2 = Creating responsive images for recipe steps images
+##------------------------------------------------------------------------------
+IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/recipe-steps-images/" ;
+#RESPONSIVE_IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/responsive-steps-images" ;
+RESPONSIVE_IMAGES_ROOTDIR_STEPS="$DIR_Y" ;
+##
+tmp1B="$DIR_Y/tmp1B-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+tmp2B="$DIR_Y/tmp2B-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+echo "## Created by script: " > $tmp1B
+#####################################
+
+## Image addition part 2A = Adding all recipe steps imagesto the list of images
+echo ">> Image addition part 3 = Adding all recipe steps imagesto the list of images ... " ;
+replaceThis1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
+replaceThis2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
+fd --search-path="$IMAGES_ROOTDIR_STEPS" -a -e jpg | sd "$replaceThis1" "" | sd "$replaceThis2" "" | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmp1B
+
+########################################
+## Converting urls to local file paths
+echo ">> Converting urls to local file paths ..." ; 
+cat $tmp1B | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmp2B
+
+## Creating responsive images corresponding to each image path
+## but only if the original image file exists
+while read -r line;
+do
+    echo ; 
+    if [[ -f "$line" ]] ; then 
+    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
+        echo ">> CURRENT LINE = $line" ; 
+        echo "OK = Image Found" ; 
+        FUNC_create_responsive_images_for_each_line "$line" "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" ; ## Call function
+    else 
+        echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"; 
+        echo "NOT OK = Image Not Found" ;
+    fi
+done < $tmp2B
+##------------------------------------------------------------------------------
+## END: BLOCK 2
+##------------------------------------------------------------------------------
