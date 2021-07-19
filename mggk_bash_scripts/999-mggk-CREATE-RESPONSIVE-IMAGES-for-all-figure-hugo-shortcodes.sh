@@ -64,10 +64,18 @@ function FUNC_create_responsive_images_for_each_line () {
         fi
         ##
         ## Copy original image + only create responsive image if it does not exist
-        if [[ -f "$outputImage" ]] && [[ -f "$CopiedOriginalImage" ]] ; then
-            echo;
-            #echo "  Output Image already exists => $outputImage" ; 
+        ## Also, compare md5sums of the two files to check that the content has not changed.
+        m1sum=$(md5sum "$imagePath" | cut -d' ' -f1) ; 
+        ##
+        if [[ -f "$CopiedOriginalImage" ]] ; then 
             #echo "  Copied Original Image already exists => $CopiedOriginalImage" ; 
+            m2sum=$(md5sum "$CopiedOriginalImage" | cut -d' ' -f1) ; 
+        else 
+            m2sum="XXXXXXXXXX" ; 
+        fi
+        ##
+        if [[ "$m1sum"=="$m2sum" ]] ; then
+            echo "md5sum comparison = OK // m1sum = $m1sum // m2sum = $m2sum";
         else
             #echo "These Images will be created ..." ; 
             #echo "  Output image = $outputImage" ; 
@@ -110,7 +118,7 @@ cat $tmpA1 | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.
 ## but only if the original image file exists
 while read -r line;
 do
-    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"; 
+    #echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"; 
     if [[ -f "$line" ]] ; then 
         echo "SUCCESS = Image Found = $line" ; 
         FUNC_create_responsive_images_for_each_line "$line" "$RESPONSIVE_IMAGES_ROOTDIR" ; ## Call function
@@ -149,7 +157,7 @@ cat $tmpB1 | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.
 ## but only if the original image file exists
 while read -r line;
 do
-    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
+    #echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
     if [[ -f "$line" ]] ; then 
         echo "SUCCESS = Recipe Step Image Found = $line" ; 
         FUNC_create_responsive_images_for_each_line "$line" "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" ; ## Call function
