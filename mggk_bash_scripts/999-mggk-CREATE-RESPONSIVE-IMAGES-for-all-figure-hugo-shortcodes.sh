@@ -2,6 +2,9 @@
 THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 ##
+time_taken="$DIR_Y/tmp-time-taken-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+date > $time_taken
+
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
 usage()
@@ -34,15 +37,15 @@ function FUNC_create_responsive_images_for_each_line () {
     imagePath="$1" ;
     RESPONSIVE_IMAGES_ROOTDIR="$2" ;
     imagePath_basename=$(basename $imagePath) ;
-    echo "Image = $imagePath"
-    echo "BASENAME = $imagePath_basename" ;
+    #echo "Image = $imagePath"
+    #echo "BASENAME = $imagePath_basename" ;
     originalImageDir="$RESPONSIVE_IMAGES_ROOTDIR/original" ;
-    ## 
+    #### 
     myarray=(300px 425px 550px 675px 800px)
-    ##
+    ####
     for i in "${myarray[@]}"; do
-        echo; 
-        echo "#### CURRENT SIZE => $i" ;
+        #echo; 
+        #echo "#### CURRENT SIZE => $i" ;
         imageRes="$i" ;
         resizeTo="$(echo $i | sed 's/px//g')"
         resizeDir="$RESPONSIVE_IMAGES_ROOTDIR/$imageRes" ;
@@ -50,23 +53,25 @@ function FUNC_create_responsive_images_for_each_line () {
         CopiedOriginalImage="$originalImageDir/$imagePath_basename"
         ##
         if [[ -d "$resizeDir" ]] && [[ -d "$originalImageDir" ]] ; then
-            echo "  Responsive Image directory already exists => $resizeDir" ;
-            echo "  Original Image directory already exists   => $originalImageDir" ;
+            echo;
+            #echo "  Responsive Image directory already exists => $resizeDir" ;
+            #echo "  Original Image directory already exists   => $originalImageDir" ;
         else
-            echo "  Responsive Image directory does not exist => $resizeDir" ;
-            echo "  Original Image directory does not exist   => $originalImageDir" ;
+            #echo "  Responsive Image directory does not exist => $resizeDir" ;
+            #echo "  Original Image directory does not exist   => $originalImageDir" ;
             mkdir $resizeDir ;
             mkdir $originalImageDir ;
         fi
         ##
         ## Copy original image + only create responsive image if it does not exist
         if [[ -f "$outputImage" ]] && [[ -f "$CopiedOriginalImage" ]] ; then
-            echo "  Output Image already exists => $outputImage" ; 
-            echo "  Copied Original Image already exists => $CopiedOriginalImage" ; 
+            echo;
+            #echo "  Output Image already exists => $outputImage" ; 
+            #echo "  Copied Original Image already exists => $CopiedOriginalImage" ; 
         else
-            echo "These Images will be created ..." ; 
-            echo "  Output image = $outputImage" ; 
-            echo "  Copied original image = $CopiedOriginalImage" ; 
+            #echo "These Images will be created ..." ; 
+            #echo "  Output image = $outputImage" ; 
+            #echo "  Copied original image = $CopiedOriginalImage" ; 
             cp "$imagePath" "$CopiedOriginalImage" ;
             convert $imagePath -resize "$resizeTo" -quality 80 "$outputImage" ;
         fi
@@ -80,45 +85,39 @@ function FUNC_create_responsive_images_for_each_line () {
 IMAGES_ROOTDIR="$REPO_MGGK/content/" ;
 RESPONSIVE_IMAGES_ROOTDIR="$REPO_MGGK/static/wp-content/responsive-images" ;
 ##
-IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/recipe-steps-images/" ;
-RESPONSIVE_IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/responsive-steps-images" ;
-##
-tmp1A="$DIR_Y/tmp1A-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
-tmp2A="$DIR_Y/tmp2A-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
-echo "## Created by script: " > $tmp1A
+tmpA1="$DIR_Y/tmpA1-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+tmpA2="$DIR_Y/tmpA2-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+echo "## Created by script: " > $tmpA1
 #####################################
 
-## Image addition part 1A = Adding all images with hugo figure tags
+## Image addition part 1.1 = Adding all images with hugo figure tags
 echo ">> Image addition part 1 = Adding all images with hugo figure tags ... " ;     
 for x in $(grep -irl "{{< figure" $IMAGES_ROOTDIR  ) ; 
 do 
-    grep -i "{{< figure" $x | sd ' ' '\n' | grep 'src' | sd '"' '' | sd 'src=' '' >> $tmp1A
+    grep -i "{{< figure" $x | sd ' ' '\n' | grep 'src' | sd '"' '' | sd 'src=' '' >> $tmpA1
 done
 
-## Image addition part 1B = Adding all featured images to the list of images
+## Image addition part 1.2 = Adding all featured images to the list of images
 echo ">> Image addition part 2 = Adding all featured images to the list of images ... " ;
-grep -irh 'featured_image' $IMAGES_ROOTDIR | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmp1A
+grep -irh 'featured_image' $IMAGES_ROOTDIR | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmpA1
 
 ########################################
 ## Converting urls to local file paths
 echo ">> Converting urls to local file paths ..." ; 
-cat $tmp1A | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmp2A
+cat $tmpA1 | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmpA2
 
 ## Creating responsive images corresponding to each image path
 ## but only if the original image file exists
 while read -r line;
 do
-    echo ; 
+    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"; 
     if [[ -f "$line" ]] ; then 
-    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
-        echo ">> CURRENT LINE = $line" ; 
-        echo "OK = Image Found" ; 
+        echo "SUCCESS = Image Found = $line" ; 
         FUNC_create_responsive_images_for_each_line "$line" "$RESPONSIVE_IMAGES_ROOTDIR" ; ## Call function
     else 
-        echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"; 
-        echo "NOT OK = Image Not Found" ;
+        echo "FAILURE = Image Not Found = $line" ;
     fi
-done < $tmp2A
+done < $tmpA2
 ##------------------------------------------------------------------------------
 ## END: BLOCK 1
 ##------------------------------------------------------------------------------
@@ -130,37 +129,40 @@ IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/recipe-steps-images/" ;
 #RESPONSIVE_IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/responsive-steps-images" ;
 RESPONSIVE_IMAGES_ROOTDIR_STEPS="$DIR_Y" ;
 ##
-tmp1B="$DIR_Y/tmp1B-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
-tmp2B="$DIR_Y/tmp2B-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
-echo "## Created by script: " > $tmp1B
+tmpB1="$DIR_Y/tmpB1-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+tmpB2="$DIR_Y/tmpB2-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+echo "## Created by script: " > $tmpB1
 #####################################
 
-## Image addition part 2A = Adding all recipe steps imagesto the list of images
+## Image addition part 2.1 = Adding all recipe steps imagesto the list of images
 echo ">> Image addition part 3 = Adding all recipe steps imagesto the list of images ... " ;
 replaceThis1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
 replaceThis2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
-fd --search-path="$IMAGES_ROOTDIR_STEPS" -a -e jpg | sd "$replaceThis1" "" | sd "$replaceThis2" "" | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmp1B
+fd --search-path="$IMAGES_ROOTDIR_STEPS" -a -e jpg | sd "$replaceThis1" "" | sd "$replaceThis2" "" | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmpB1
 
 ########################################
 ## Converting urls to local file paths
 echo ">> Converting urls to local file paths ..." ; 
-cat $tmp1B | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmp2B
+cat $tmpB1 | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmpB2
 
 ## Creating responsive images corresponding to each image path
 ## but only if the original image file exists
 while read -r line;
 do
-    echo ; 
-    if [[ -f "$line" ]] ; then 
     echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
-        echo ">> CURRENT LINE = $line" ; 
-        echo "OK = Recipe Step Image Found" ; 
+    if [[ -f "$line" ]] ; then 
+        echo "SUCCESS = Recipe Step Image Found = $line" ; 
         FUNC_create_responsive_images_for_each_line "$line" "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" ; ## Call function
     else 
-        echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"; 
-        echo "NOT OK = Recipe Step Image Not Found" ;
+        echo "FAILURE = Recipe Step Image Not Found = $line" ; 
     fi
-done < $tmp2B
+done < $tmpB2
 ##------------------------------------------------------------------------------
 ## END: BLOCK 2
 ##------------------------------------------------------------------------------
+
+################################################################################
+############################### PROGRAM ENDS ###################################
+################################################################################
+date >> $time_taken
+cat $time_taken
