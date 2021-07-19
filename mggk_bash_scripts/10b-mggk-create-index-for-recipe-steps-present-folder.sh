@@ -144,7 +144,7 @@ for x in $(fd . $MAIN_DIR -t d | sed 's/ //g'); do
     echo; echo ">> Creating HTML index file (recipe steps images directory) = $COUNT of $num_files " ;
 
     ## Initializing htmlfile
-    num_files_in_this_dir=$(fd . $x -e jpg | wc -l | sed 's/ //g') ;
+    num_files_in_this_dir=$(fd . $x -d1 -e jpg | wc -l | sed 's/ //g') ;
     echo "<h1>JPG images in this sub-directory = $num_files_in_this_dir <pre>$this_dirname</pre></h1>" > $htmlfile ;
     echo "Page updated: The same time when the main index page is updated. (<a href='$MAIN_INDEX_HTMLFILE_URL'>See here</a>)<hr>" >> $htmlfile ;
 
