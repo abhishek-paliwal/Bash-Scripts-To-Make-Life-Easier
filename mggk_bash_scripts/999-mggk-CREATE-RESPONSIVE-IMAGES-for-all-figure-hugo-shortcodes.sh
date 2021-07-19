@@ -76,7 +76,7 @@ function FUNC_create_responsive_images_for_each_line () {
         imageRes="$i" ;
         resizeTo="$(echo $i | sed 's/px//g')"
         resizeDir="$RESPONSIVE_IMAGES_ROOTDIR/$imageRes" ;
-        outputImage="$resizeDir/$imageRes-$imagePath_basename"
+        outputImage="$resizeDir/$imageRes-$imagePath_basename" ;
         ##
         #echo "  Responsive Image directory => $resizeDir" ;
         #echo "  Original Image directory   => $originalImageDir" ;
@@ -125,8 +125,13 @@ cat $tmpA1 | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.
 
 ## Creating responsive images corresponding to each image path
 ## but only if the original image file exists
+total_linesA=$(cat $tmpA2 | wc -l ) ;
+countA=0;
 while read -r line;
 do
+    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+    ((countA++)) ;
+    echo "Currently = $countA of $total_linesA" ;
     FUNC_create_responsive_images_for_each_line "$line" "$RESPONSIVE_IMAGES_ROOTDIR" ; ## Call function
 done < $tmpA2
 ##------------------------------------------------------------------------------
@@ -158,8 +163,13 @@ cat $tmpB1 | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.
 
 ## Creating responsive images corresponding to each image path
 ## but only if the original image file exists
+total_linesB=$(cat $tmpB2 | wc -l ) ;
+countB=0;
 while read -r line;
 do
+    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+    ((countB++)) ;
+    echo "Currently = $countB of $total_linesB" ;
     FUNC_create_responsive_images_for_each_line "$line" "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" ; ## Call function
 done < $tmpB2
 ##------------------------------------------------------------------------------
