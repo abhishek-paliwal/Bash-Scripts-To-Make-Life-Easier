@@ -154,11 +154,11 @@ do
     if [[ -f "$line" ]] ; then 
     echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
         echo ">> CURRENT LINE = $line" ; 
-        echo "OK = Image Found" ; 
+        echo "OK = Recipe Step Image Found" ; 
         FUNC_create_responsive_images_for_each_line "$line" "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" ; ## Call function
     else 
         echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"; 
-        echo "NOT OK = Image Not Found" ;
+        echo "NOT OK = Recipe Step Image Not Found" ;
     fi
 done < $tmp2B
 ##------------------------------------------------------------------------------
