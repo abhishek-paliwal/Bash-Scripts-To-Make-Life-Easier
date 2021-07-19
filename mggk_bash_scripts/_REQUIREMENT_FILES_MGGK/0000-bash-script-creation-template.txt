@@ -3,6 +3,9 @@ THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 REQUIREMENTS_FILE="$REPO_SCRIPTS_MGGK/_REQUIREMENT_FILES_MGGK/$THIS_SCRIPT_NAME_SANS_EXTENSION-requirements.txt" ;
 ##
+time_taken="$DIR_Y/tmp-time-taken-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+date > $time_taken
+
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
 usage()
@@ -151,3 +154,9 @@ echo "##------------------------------------------------------------------------
 success ">>>> SUCCESS // SUMMARY: OUTPUT HTML FILE CREATED AT => $OUTPUT_HTML" ;
 success ">>>> SUCCESS // SUMMARY: OUTPUT TXT FILE CREATED AT => $OUTPUT_TXT" ;
 echo "################################################################################" ;
+
+################################################################################
+############################### PROGRAM ENDS ###################################
+################################################################################
+date >> $time_taken
+cat $time_taken
