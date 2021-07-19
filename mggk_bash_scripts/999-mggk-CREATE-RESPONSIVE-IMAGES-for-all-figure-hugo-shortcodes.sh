@@ -15,7 +15,8 @@ USAGE: $(basename $0)
     ## USAGE:
     #### > bash $THIS_SCRIPT_NAME
     ################################################################################
-    ## This script reads all figure shortcodes from all md files and creates 
+    ## This script reads all figure shortcodes + featured images + recipe steps images 
+    ## from all md files and creates 
     ## responsive images to be read by the srcset html image tags by the browser.
     ## Example image resolutions include: 300px, 425px, 550px, 675px, 800px, etc.
     ################################################################################
@@ -39,8 +40,34 @@ function FUNC_create_responsive_images_for_each_line () {
     imagePath_basename=$(basename $imagePath) ;
     #echo "Image = $imagePath"
     #echo "BASENAME = $imagePath_basename" ;
+    ##
+    if [[ -f "$imagePath" ]] ; then 
+        echo "SUCCESS = Image Found = $imagePath" ; 
+    else 
+        echo "FAILURE = Image Not Found = $imagePath" ; 
+    fi
+    ##
     originalImageDir="$RESPONSIVE_IMAGES_ROOTDIR/original" ;
+    CopiedOriginalImage="$originalImageDir/$imagePath_basename" ;
+    
+    ## Calculate md5sums of the original and copied file (if it exists)
+    md5sum_orig=$(md5sum "$imagePath" | cut -d' ' -f1) ;
+    md5sum_copy="XXXXXXXXXX" ; 
+    md5_matched=False ; 
+    
+    ####
+    if [[ -f "$CopiedOriginalImage" ]] ; then 
+        #echo "  Copied Original Image already exists => $CopiedOriginalImage" ; 
+        md5sum_copy=$(md5sum "$CopiedOriginalImage" | cut -d' ' -f1) ;
+        ## Compare md5sums and create comparison variable
+        if [[ "$md5sum_orig"=="$md5sum_copy" ]] ; then
+            echo "md5sum comparison = OK // md5sum_orig = $md5sum_orig // md5sum_copy = $md5sum_copy";
+            md5_matched=True;
+        fi
+        ##
+    fi
     #### 
+    
     myarray=(300px 425px 550px 675px 800px)
     ####
     for i in "${myarray[@]}"; do
@@ -50,39 +77,21 @@ function FUNC_create_responsive_images_for_each_line () {
         resizeTo="$(echo $i | sed 's/px//g')"
         resizeDir="$RESPONSIVE_IMAGES_ROOTDIR/$imageRes" ;
         outputImage="$resizeDir/$imageRes-$imagePath_basename"
-        CopiedOriginalImage="$originalImageDir/$imagePath_basename"
         ##
-        if [[ -d "$resizeDir" ]] && [[ -d "$originalImageDir" ]] ; then
-            echo;
-            #echo "  Responsive Image directory already exists => $resizeDir" ;
-            #echo "  Original Image directory already exists   => $originalImageDir" ;
-        else
-            #echo "  Responsive Image directory does not exist => $resizeDir" ;
-            #echo "  Original Image directory does not exist   => $originalImageDir" ;
-            mkdir $resizeDir ;
-            mkdir $originalImageDir ;
-        fi
+        #echo "  Responsive Image directory => $resizeDir" ;
+        #echo "  Original Image directory   => $originalImageDir" ;
+        mkdir -p $resizeDir ;
+        mkdir -p $originalImageDir ;
         ##
-        ## Copy original image + only create responsive image if it does not exist
-        ## Also, compare md5sums of the two files to check that the content has not changed.
-        m1sum=$(md5sum "$imagePath" | cut -d' ' -f1) ; 
-        ##
-        if [[ -f "$CopiedOriginalImage" ]] ; then 
-            #echo "  Copied Original Image already exists => $CopiedOriginalImage" ; 
-            m2sum=$(md5sum "$CopiedOriginalImage" | cut -d' ' -f1) ; 
-        else 
-            m2sum="XXXXXXXXXX" ; 
-        fi
-        ##
-        if [[ "$m1sum"=="$m2sum" ]] ; then
-            echo "md5sum comparison = OK // m1sum = $m1sum // m2sum = $m2sum";
-        else
+        ## Copy original image + responsive image if md5sums do not match
+        if [[ "$md5_matched"==False ]] ; then
             #echo "These Images will be created ..." ; 
             #echo "  Output image = $outputImage" ; 
             #echo "  Copied original image = $CopiedOriginalImage" ; 
             cp "$imagePath" "$CopiedOriginalImage" ;
             convert $imagePath -resize "$resizeTo" -quality 80 "$outputImage" ;
         fi
+        ##
     done
 }
 ##################################################################################
@@ -118,13 +127,7 @@ cat $tmpA1 | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.
 ## but only if the original image file exists
 while read -r line;
 do
-    #echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"; 
-    if [[ -f "$line" ]] ; then 
-        echo "SUCCESS = Image Found = $line" ; 
-        FUNC_create_responsive_images_for_each_line "$line" "$RESPONSIVE_IMAGES_ROOTDIR" ; ## Call function
-    else 
-        echo "FAILURE = Image Not Found = $line" ;
-    fi
+    FUNC_create_responsive_images_for_each_line "$line" "$RESPONSIVE_IMAGES_ROOTDIR" ; ## Call function
 done < $tmpA2
 ##------------------------------------------------------------------------------
 ## END: BLOCK 1
@@ -157,13 +160,7 @@ cat $tmpB1 | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.
 ## but only if the original image file exists
 while read -r line;
 do
-    #echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
-    if [[ -f "$line" ]] ; then 
-        echo "SUCCESS = Recipe Step Image Found = $line" ; 
-        FUNC_create_responsive_images_for_each_line "$line" "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" ; ## Call function
-    else 
-        echo "FAILURE = Recipe Step Image Not Found = $line" ; 
-    fi
+    FUNC_create_responsive_images_for_each_line "$line" "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" ; ## Call function
 done < $tmpB2
 ##------------------------------------------------------------------------------
 ## END: BLOCK 2
