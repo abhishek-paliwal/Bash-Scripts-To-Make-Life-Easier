@@ -3,7 +3,7 @@ THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 ##
 time_taken="$DIR_Y/tmp-time-taken-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
-date > $time_taken
+echo "$(date) = START-TIME" > $time_taken
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
@@ -164,5 +164,7 @@ done < $tmpB2
 ################################################################################
 ############################### PROGRAM ENDS ###################################
 ################################################################################
-date >> $time_taken
+echo "$(date) = END-TIME" >> $time_taken
 cat $time_taken
+
+
