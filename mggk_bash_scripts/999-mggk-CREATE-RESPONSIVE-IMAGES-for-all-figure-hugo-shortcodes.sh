@@ -218,7 +218,13 @@ FUNC_calc_md5sums "$DIR_Y/md5sums-after.txt"
 ## Finding diff and printing filepaths
 diff md5sums* | grep '<' | awk '{print $3}' | sort > $FINAL_FILE
 
-mogrify -path $MYDIR/300px/ -resize 300 $MYDIR_ORIG/*
+#mogrify -path $MYDIR/300px/ -resize 300 $MYDIR_ORIG/*
+mogrify -path $MYDIR/300px/ -resize 300 $(cat $FINAL_FILE)
+mogrify -path $MYDIR/425px/ -resize 425 $(cat $FINAL_FILE)
+mogrify -path $MYDIR/550px/ -resize 550 $(cat $FINAL_FILE)
+mogrify -path $MYDIR/675px/ -resize 675 $(cat $FINAL_FILE)
+mogrify -path $MYDIR/800px/ -resize 800 $(cat $FINAL_FILE)
+
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ## Creating responsive images corresponding to each image path
