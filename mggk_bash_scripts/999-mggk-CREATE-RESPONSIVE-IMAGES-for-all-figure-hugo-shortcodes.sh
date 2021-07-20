@@ -95,6 +95,29 @@ function FUNC_create_responsive_images_for_each_line () {
     done
 }
 ##################################################################################
+function FUNC_create_responsive_images_for_each_line_quick () {
+    ## FUNCTION TO CREATE RESPONSIVE IMAGES
+    imagePath="$1" ;
+    RESPONSIVE_IMAGES_ROOTDIR="$2" ;
+    imagePath_basename=$(basename $imagePath) ;
+    originalImageDir="$RESPONSIVE_IMAGES_ROOTDIR/original" ;
+    CopiedOriginalImage="$originalImageDir/$imagePath_basename" ;
+    ##   
+    myarray=(300px 425px 550px 675px 800px)
+    ####
+    for i in "${myarray[@]}"; do
+        imageRes="$i" ;
+        resizeTo="$(echo $i | sed 's/px//g')"
+        resizeDir="$RESPONSIVE_IMAGES_ROOTDIR/$imageRes" ;
+        outputImage="$resizeDir/$imageRes-$imagePath_basename" ;
+        mkdir -p $resizeDir ;
+        mkdir -p $originalImageDir ;
+        ## Copy original image + responsive image if md5sums do not match
+        cp "$imagePath" "$CopiedOriginalImage" ;
+        #convert $imagePath -resize "$resizeTo" -quality 80 "$outputImage" ;
+    done
+}
+##################################################################################
 
 ##------------------------------------------------------------------------------
 ## BEGIN: BLOCK 1 = Creating responsive images for all figure images + all featured images
@@ -132,7 +155,7 @@ do
     echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
     ((countA++)) ;
     echo "Currently = $countA of $total_linesA" ;
-    FUNC_create_responsive_images_for_each_line "$line" "$RESPONSIVE_IMAGES_ROOTDIR" ; ## Call function
+    FUNC_create_responsive_images_for_each_line_quick "$line" "$RESPONSIVE_IMAGES_ROOTDIR" ; ## Call function
 done < $tmpA2
 ##------------------------------------------------------------------------------
 ## END: BLOCK 1
@@ -170,7 +193,7 @@ do
     echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
     ((countB++)) ;
     echo "Currently = $countB of $total_linesB" ;
-    FUNC_create_responsive_images_for_each_line "$line" "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" ; ## Call function
+    FUNC_create_responsive_images_for_each_line_quick "$line" "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" ; ## Call function
 done < $tmpB2
 ##------------------------------------------------------------------------------
 ## END: BLOCK 2
