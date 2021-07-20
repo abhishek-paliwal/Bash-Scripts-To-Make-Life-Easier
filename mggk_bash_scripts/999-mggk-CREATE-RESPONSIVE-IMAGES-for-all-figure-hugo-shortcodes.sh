@@ -44,6 +44,9 @@ function FUNC_create_responsive_images () {
     RESPONSIVE_IMAGES_ROOTDIR="$1" ;
     ALL_IMAGES_FILE="$2" ;
     PREFIX="$3" ;
+    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+    echo "CURRENT RESPONSIVE DIR IN USE => $RESPONSIVE_IMAGES_ROOTDIR" ;
+    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
     ##
     FINAL_FILE="$WORKDIR/$PREFIX-create-these-responsive-images-FINAL.txt" ;
     originalImageDir="$RESPONSIVE_IMAGES_ROOTDIR/original" ;
@@ -56,16 +59,19 @@ function FUNC_create_responsive_images () {
 
     ## The following command splits a large text file into separate smaller 
     ## text files as xaa ,xab, xac, xad, etc, each containing 2000 lines
+    echo ">> Splitting big $ALL_IMAGES_FILE to chunks with 2000 lines each ..." ;
     rm $WORKDIR/xa* ; ## remove these files if already exist
     split -l 2000 $ALL_IMAGES_FILE ;
 
     ## Read these files and copy all images to orig dir
+    echo ">> Copying all files => (from $ALL_IMAGES_FILE)(to $originalImageDir )" ;
     for myfile in $WORKDIR/xa* ; do cp $(cat $myfile) $originalImageDir/ ; done
 
     ## Calculate md5sums after copying images
     FUNC_calc_md5sums $md52
 
     ## Finding diff and printing filepaths
+    echo ">> Doing diff of md5sums ..." ;
     diff $md51 $md52 | grep '>' | awk '{print $3}' | sort > $FINAL_FILE
 
     ## Read file line by line and create responsive image
@@ -164,6 +170,9 @@ FUNC_create_responsive_images "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" "$tmpB2" "tmpB"
 ## END: BLOCK 2
 ##------------------------------------------------------------------------------
 
+## PRINGING WORD COUNTS FOR ALL FILES IN WORKDIR
+echo ">> PRINGING WORD COUNTS FOR ALL FILES IN WORKDIR ..." ;
+wc $WORKDIR/* ;
 ################################################################################
 ############################### PROGRAM ENDS ###################################
 ################################################################################
