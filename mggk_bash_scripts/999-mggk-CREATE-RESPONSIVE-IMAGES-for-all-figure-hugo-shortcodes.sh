@@ -54,6 +54,7 @@ function FUNC_create_responsive_images () {
 
     ## The following command splits a large text file into separate smaller 
     ## text files as xaa ,xab, xac, xad, etc, each containing 2000 lines
+    rm $WORKDIR/xa* ; ## remove these files if already exist
     split -l 2000 $ALL_IMAGES_FILE ;
 
     ## Read these files and copy all images to orig dir
@@ -63,7 +64,7 @@ function FUNC_create_responsive_images () {
     FUNC_calc_md5sums $md52
 
     ## Finding diff and printing filepaths
-    diff $m1 $m2 | grep '>' | awk '{print $3}' | sort > $FINAL_FILE
+    diff $md51 $md52 | grep '>' | awk '{print $3}' | sort > $FINAL_FILE
 
     ## Read file line by line and create responsive image
     myarray=(425px 550px 675px 800px)
@@ -138,8 +139,7 @@ FUNC_create_responsive_images "$RESPONSIVE_IMAGES_ROOTDIR" "$tmpA2" "tmpA" ;
 ## BEGIN: BLOCK 2 = Creating responsive images for recipe steps images
 ##------------------------------------------------------------------------------
 IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/recipe-steps-images/" ;
-RESPONSIVE_IMAGES_ROOTDIR_STEPS="$WORKDIR" ;
-#RESPONSIVE_IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/responsive-steps-images" ;
+RESPONSIVE_IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/responsive-steps-images" ;
 ##
 tmpB1="$WORKDIR/tmpB1-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 tmpB2="$WORKDIR/tmpB2-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
