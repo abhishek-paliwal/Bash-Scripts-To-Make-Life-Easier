@@ -115,6 +115,7 @@ function FUNC_calc_md5sums() {
 ## BEGIN: BLOCK 1 = Creating responsive images for all figure images + all featured images
 ##------------------------------------------------------------------------------
 IMAGES_ROOTDIR="$REPO_MGGK/content/" ;
+IMAGES_ROOTDIR_ZZMGGK="$REPO_ZZMGGK/content/blog/" ; 
 RESPONSIVE_IMAGES_ROOTDIR="$REPO_MGGK/static/wp-content/responsive-images" ;
 ##
 tmpA1="$WORKDIR/tmpA1-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
@@ -122,16 +123,25 @@ tmpA2="$WORKDIR/tmpA2-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 echo "## Created by script: " > $tmpA1
 #####################################
 
-## Image addition part 1.1 = Adding all images with hugo figure tags
-echo ">> Image addition part 1 = Adding all images with hugo figure tags ... " ;     
-for x in $(grep -irl "{{< figure" $IMAGES_ROOTDIR  ) ; 
+## Image addition part 1.1 = Adding all images with hugo figure tags in MGGK HUGO DIR
+echo ">> Image addition part 1 = Adding all images with hugo figure tags in MGGK HUGO DIR ... " ;     
+for x in $(grep -irl "{{< figure" $IMAGES_ROOTDIR ) ; 
 do 
     grep -i "{{< figure" $x | sd ' ' '\n' | grep 'src' | sd '"' '' | sd 'src=' '' >> $tmpA1
 done
 
-## Image addition part 1.2 = Adding all featured images to the list of images
-echo ">> Image addition part 2 = Adding all featured images to the list of images ... " ;
-grep -irh 'featured_image' $IMAGES_ROOTDIR | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmpA1
+## Image addition part 1.2 = Adding all images with hugo figure tags in ZZ MGGK HUGO DIR
+echo ">> Image addition part 1 = Adding all images with hugo figure tags in ZZ MGGK HUGO DIR ... " ;     
+for x in $(grep -irl "{{< figure" $IMAGES_ROOTDIR_ZZMGGK ) ; 
+do 
+    grep -i "{{< figure" $x | sd ' ' '\n' | grep 'src' | sd '"' '' | sd 'src=' '' >> $tmpA1
+done
+
+## Image addition part 1.3 = Adding all featured images to the list of images in MGGK + ZZMGGK DIR
+echo ">> Image addition part 2 = Adding all featured images to the list of images in MGGK + ZZMGGK DIR ... " ;
+grep -irh 'featured_image' $IMAGES_ROOTDIR | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmpA1 ;
+##
+grep -irh 'featured_image' $IMAGES_ROOTDIR_ZZMGGK | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmpA1 ;
 
 ########################################
 ## Converting urls to local file paths
