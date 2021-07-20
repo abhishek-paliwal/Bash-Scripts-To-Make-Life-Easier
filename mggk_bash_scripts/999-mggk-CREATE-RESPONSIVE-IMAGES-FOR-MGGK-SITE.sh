@@ -124,29 +124,30 @@ echo "## Created by script: " > $tmpA1
 #####################################
 
 ## Image addition part 1.1 = Adding all images with hugo figure tags in MGGK HUGO DIR
-echo ">> Image addition part 1 = Adding all images with hugo figure tags in MGGK HUGO DIR ... " ;     
+echo ">> Image addition part 1.1 = Adding all images with hugo figure tags in MGGK HUGO DIR ... " ;     
 for x in $(grep -irl "{{< figure" $IMAGES_ROOTDIR ) ; 
 do 
-    grep -i "{{< figure" $x | sd ' ' '\n' | grep 'src' | sd '"' '' | sd 'src=' '' >> $tmpA1
+    grep -i "{{< figure" $x | sd ' ' '\n' | grep 'src' | sd '"' '' | sd 'src=' '' >> $tmpA1 ;
 done
 
 ## Image addition part 1.2 = Adding all images with hugo figure tags in ZZ MGGK HUGO DIR
-echo ">> Image addition part 1 = Adding all images with hugo figure tags in ZZ MGGK HUGO DIR ... " ;     
+echo ">> Image addition part 1.2 = Adding all images with hugo figure tags in ZZ MGGK HUGO DIR ... " ;     
 for x in $(grep -irl "{{< figure" $IMAGES_ROOTDIR_ZZMGGK ) ; 
 do 
-    grep -i "{{< figure" $x | sd ' ' '\n' | grep 'src' | sd '"' '' | sd 'src=' '' >> $tmpA1
+    grep -i "{{< figure" $x | sd ' ' '\n' | grep 'src' | sd '"' '' | sd 'src=' '' >> $tmpA1 ;
 done
 
 ## Image addition part 1.3 = Adding all featured images to the list of images in MGGK + ZZMGGK DIR
-echo ">> Image addition part 2 = Adding all featured images to the list of images in MGGK + ZZMGGK DIR ... " ;
-grep -irh 'featured_image' $IMAGES_ROOTDIR | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmpA1 ;
+echo ">> Image addition part 1.3 = Adding all featured images to the list of images in MGGK + ZZMGGK DIR ... " ;
+insertURL="https://www.mygingergarlickitchen.com" ;
+grep -irh 'featured_image:' $IMAGES_ROOTDIR | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' >> $tmpA1 ;
 ##
-grep -irh 'featured_image' $IMAGES_ROOTDIR_ZZMGGK | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmpA1 ;
+grep -irh 'featured_image:' $IMAGES_ROOTDIR_ZZMGGK | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' >> $tmpA1 ;
 
 ########################################
 ## Converting urls to local file paths
 echo ">> Converting urls to local file paths ..." ; 
-cat $tmpA1 | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmpA2
+cat $tmpA1 | grep -iv '#' | sd "$insertURL" "" | sed "s+^+$insertURL+g" | sd "$insertURL" "$REPO_MGGK/static" | sort | uniq > $tmpA2
 ## Call main function
 FUNC_create_responsive_images "$RESPONSIVE_IMAGES_ROOTDIR" "$tmpA2" "tmpA" ;
 ##------------------------------------------------------------------------------
@@ -165,7 +166,7 @@ echo "## Created by script: " > $tmpB1
 
 #####################################
 ## Image addition part 2.1 = Adding all recipe steps imagesto the list of images
-echo ">> Image addition part 3 = Adding all recipe steps imagesto the list of images ... " ;
+echo ">> Image addition part 2.1 = Adding all recipe steps imagesto the list of images ... " ;
 replaceThis1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
 replaceThis2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
 fd --search-path="$IMAGES_ROOTDIR_STEPS" -a -e jpg | sd "$replaceThis1" "" | sd "$replaceThis2" "" | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmpB1
@@ -173,7 +174,7 @@ fd --search-path="$IMAGES_ROOTDIR_STEPS" -a -e jpg | sd "$replaceThis1" "" | sd 
 ########################################
 ## Converting urls to local file paths
 echo ">> Converting urls to local file paths ..." ; 
-cat $tmpB1 | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmpB2
+cat $tmpB1 | grep -iv '#' | sd "$insertURL" "" | sed "s+^+$insertURL+g" | sd "$insertURL" "$REPO_MGGK/static" | sort | uniq > $tmpB2
 ## Call main function
 FUNC_create_responsive_images "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" "$tmpB2" "tmpB" ;
 ##------------------------------------------------------------------------------
