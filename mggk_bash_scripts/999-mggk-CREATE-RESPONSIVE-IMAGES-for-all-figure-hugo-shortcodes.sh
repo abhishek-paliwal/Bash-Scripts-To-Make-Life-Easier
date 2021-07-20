@@ -1,10 +1,12 @@
 #!/bin/bash
 THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
+echo "CURRENTLY RUNNING SCRIPT = $THIS_SCRIPT_NAME" ;
 ## Present working directory
 WORKDIR="$DIR_Y";
 cd $WORKDIR ;
-echo ">> Present working directory = $WORKIDR" ;
+echo ">> Present working directory = $WORKDIR" ;
+echo;
 ##
 time_taken="$WORKDIR/tmp-time-taken-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 echo "$(date) = START-TIME" > $time_taken
