@@ -1,8 +1,12 @@
 #!/bin/bash
 THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
+## Present working directory
+WORKDIR="$DIR_Y";
+cd $WORKDIR ;
+echo ">> Present working directory = $WORKIDR" ;
 ##
-time_taken="$DIR_Y/tmp-time-taken-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+time_taken="$WORKDIR/tmp-time-taken-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 echo "$(date) = START-TIME" > $time_taken
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -33,89 +37,68 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 ##################################################################################
 ## FUNCTION DEFINITIONS
-function FUNC_create_responsive_images_for_each_line () {
+function FUNC_create_responsive_images () {
     ## FUNCTION TO CREATE RESPONSIVE IMAGES
-    imagePath="$1" ;
-    RESPONSIVE_IMAGES_ROOTDIR="$2" ;
-    imagePath_basename=$(basename $imagePath) ;
-    #echo "Image = $imagePath"
-    #echo "BASENAME = $imagePath_basename" ;
+    RESPONSIVE_IMAGES_ROOTDIR="$1" ;
+    ALL_IMAGES_FILE="$2" ;
+    PREFIX="$3" ;
     ##
-    if [[ -f "$imagePath" ]] ; then 
-        echo "SUCCESS = Image Found = $imagePath" ; 
-    else 
-        echo "FAILURE = Image Not Found = $imagePath" ; 
-    fi
-    ##
+    FINAL_FILE="$WORKDIR/$PREFIX-create-these-responsive-images-FINAL.txt" ;
     originalImageDir="$RESPONSIVE_IMAGES_ROOTDIR/original" ;
-    CopiedOriginalImage="$originalImageDir/$imagePath_basename" ;
-    
-    ## Calculate md5sums of the original and copied file (if it exists)
-    md5sum_orig=$(md5sum "$imagePath" | cut -d' ' -f1) ;
-    md5sum_copy="XXXXXXXXXX" ; 
-    md5_matched=False ; 
-    
+    mkdir -p $originalImageDir ;
+    md51="$WORKDIR/$PREFIX-md5sums-before.txt"
+    md52="$WORKDIR/$PREFIX-md5sums-after.txt"
+
+    ## Calculate md5sums after of the existing images
+    FUNC_calc_md5sums $md51
+
+    ## The following command splits a large text file into separate smaller 
+    ## text files as xaa ,xab, xac, xad, etc, each containing 2000 lines
+    split -l 2000 $ALL_IMAGES_FILE ;
+
+    ## Read these files and copy all images to orig dir
+    for myfile in $WORKDIR/xa* ; do cp $(cat $myfile) $originalImageDir/ ; done
+
+    ## Calculate md5sums after copying images
+    FUNC_calc_md5sums $md52
+
+    ## Finding diff and printing filepaths
+    diff $m1 $m2 | grep '>' | awk '{print $3}' | sort > $FINAL_FILE
+
+    ## Read file line by line and create responsive image
+    myarray=(425px 550px 675px 800px)
+    ##
+    total_lines=$(cat $FINAL_FILE | wc -l ) ;
+    count=0;
+    while read -r line; 
+    do
     ####
-    if [[ -f "$CopiedOriginalImage" ]] ; then 
-        #echo "  Copied Original Image already exists => $CopiedOriginalImage" ; 
-        md5sum_copy=$(md5sum "$CopiedOriginalImage" | cut -d' ' -f1) ;
-        ## Compare md5sums and create comparison variable
-        if [[ "$md5sum_orig"=="$md5sum_copy" ]] ; then
-            echo "md5sum comparison = OK // md5sum_orig = $md5sum_orig // md5sum_copy = $md5sum_copy";
-            md5_matched=True;
-        fi
-        ##
-    fi
-    #### 
-    
-    myarray=(300px 425px 550px 675px 800px)
+        ((count++)) ;
+        echo "Currently reading = $count of $total_lines" ;
+        ####
+        for i in "${myarray[@]}"; do
+        ####
+            imageRes="$i" ;
+            resizeDimen="$(echo $i | sed 's/px//g')"
+            resizeDir="$RESPONSIVE_IMAGES_ROOTDIR/$imageRes" ;
+            imagePath="$line" ;
+            imagePath_basename=$(basename $imagePath) ;
+            outputImage="$resizeDir/$imageRes-$imagePath_basename" ;
+            mkdir -p $resizeDir ;
+            convert $line -resize "$resizeDimen" -quality 80 "$outputImage" ;
+        ####           
+        done
     ####
-    for i in "${myarray[@]}"; do
-        #echo; 
-        #echo "#### CURRENT SIZE => $i" ;
-        imageRes="$i" ;
-        resizeTo="$(echo $i | sed 's/px//g')"
-        resizeDir="$RESPONSIVE_IMAGES_ROOTDIR/$imageRes" ;
-        outputImage="$resizeDir/$imageRes-$imagePath_basename" ;
-        ##
-        #echo "  Responsive Image directory => $resizeDir" ;
-        #echo "  Original Image directory   => $originalImageDir" ;
-        mkdir -p $resizeDir ;
-        mkdir -p $originalImageDir ;
-        ##
-        ## Copy original image + responsive image if md5sums do not match
-        if [[ "$md5_matched"==False ]] ; then
-            #echo "These Images will be created ..." ; 
-            #echo "  Output image = $outputImage" ; 
-            #echo "  Copied original image = $CopiedOriginalImage" ; 
-            cp "$imagePath" "$CopiedOriginalImage" ;
-            convert $imagePath -resize "$resizeTo" -quality 80 "$outputImage" ;
-        fi
-        ##
-    done
+    done < $FINAL_FILE
 }
-##################################################################################
-function FUNC_create_responsive_images_for_each_line_quick () {
-    ## FUNCTION TO CREATE RESPONSIVE IMAGES
-    imagePath="$1" ;
-    RESPONSIVE_IMAGES_ROOTDIR="$2" ;
-    imagePath_basename=$(basename $imagePath) ;
-    originalImageDir="$RESPONSIVE_IMAGES_ROOTDIR/original" ;
-    CopiedOriginalImage="$originalImageDir/$imagePath_basename" ;
-    ##   
-    myarray=(300px 425px 550px 675px 800px)
-    ####
-    for i in "${myarray[@]}"; do
-        imageRes="$i" ;
-        resizeTo="$(echo $i | sed 's/px//g')"
-        resizeDir="$RESPONSIVE_IMAGES_ROOTDIR/$imageRes" ;
-        outputImage="$resizeDir/$imageRes-$imagePath_basename" ;
-        mkdir -p $resizeDir ;
-        mkdir -p $originalImageDir ;
-        ## Copy original image + responsive image if md5sums do not match
-        #cp "$imagePath" "$CopiedOriginalImage" ;
-        convert $imagePath -resize "$resizeTo" -quality 80 "$outputImage" ;
-    done
+
+#######
+function FUNC_calc_md5sums() {
+    ## Calculate md5sums of the existing files
+    outputFile="$1" ;
+    echo "Writing md5sums to => $outputFile" ; 
+    fd --search-path="$originalImageDir" -x md5sum > tmp-md5.txt ;
+    sort tmp-md5.txt > "$outputFile" ;
 }
 ##################################################################################
 
@@ -125,8 +108,8 @@ function FUNC_create_responsive_images_for_each_line_quick () {
 IMAGES_ROOTDIR="$REPO_MGGK/content/" ;
 RESPONSIVE_IMAGES_ROOTDIR="$REPO_MGGK/static/wp-content/responsive-images" ;
 ##
-tmpA1="$DIR_Y/tmpA1-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
-tmpA2="$DIR_Y/tmpA2-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+tmpA1="$WORKDIR/tmpA1-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+tmpA2="$WORKDIR/tmpA2-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 echo "## Created by script: " > $tmpA1
 #####################################
 
@@ -145,18 +128,8 @@ grep -irh 'featured_image' $IMAGES_ROOTDIR | sd 'featured_image:' '' | sd ' ' ''
 ## Converting urls to local file paths
 echo ">> Converting urls to local file paths ..." ; 
 cat $tmpA1 | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmpA2
-
-## Creating responsive images corresponding to each image path
-## but only if the original image file exists
-total_linesA=$(cat $tmpA2 | wc -l ) ;
-countA=0;
-while read -r line;
-do
-    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
-    ((countA++)) ;
-    echo "Currently = $countA of $total_linesA" ;
-    #FUNC_create_responsive_images_for_each_line_quick "$line" "$RESPONSIVE_IMAGES_ROOTDIR" ; ## Call function
-done < $tmpA2
+## Call main function
+FUNC_create_responsive_images "$RESPONSIVE_IMAGES_ROOTDIR" "$tmpA2" "tmpA" ;
 ##------------------------------------------------------------------------------
 ## END: BLOCK 1
 ##------------------------------------------------------------------------------
@@ -165,11 +138,11 @@ done < $tmpA2
 ## BEGIN: BLOCK 2 = Creating responsive images for recipe steps images
 ##------------------------------------------------------------------------------
 IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/recipe-steps-images/" ;
-RESPONSIVE_IMAGES_ROOTDIR_STEPS="$DIR_Y" ;
+RESPONSIVE_IMAGES_ROOTDIR_STEPS="$WORKDIR" ;
 #RESPONSIVE_IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/responsive-steps-images" ;
 ##
-tmpB1="$DIR_Y/tmpB1-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
-tmpB2="$DIR_Y/tmpB2-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+tmpB1="$WORKDIR/tmpB1-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+tmpB2="$WORKDIR/tmpB2-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 echo "## Created by script: " > $tmpB1
 
 #####################################
@@ -183,61 +156,8 @@ fd --search-path="$IMAGES_ROOTDIR_STEPS" -a -e jpg | sd "$replaceThis1" "" | sd 
 ## Converting urls to local file paths
 echo ">> Converting urls to local file paths ..." ; 
 cat $tmpB1 | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmpB2
-
-##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-## FOR TESTING
-MYDIR="$RESPONSIVE_IMAGES_ROOTDIR_STEPS" ;
-#MYDIR="$DIR_Y" ;
-MYDIR_ORIG="$MYDIR/original" ;
-mkdir -p $MYDIR_ORIG ;
-FINAL_FILE="$DIR_Y/tmp_final_for_making_responsive_images.txt" ;
-
-#######
-function FUNC_calc_md5sums() {
-    ## Calculate md5sums of the existing files
-    outputFile="$1" ;
-    echo "Writing md5sums to => $outputFile" ; 
-    fd --search-path="$MYDIR_ORIG" -x md5sum > md5.tmp ;
-    sort md5.tmp > "$outputFile" ;
-}
-#######
-
-## Calculate md5sums after of the existing files
-FUNC_calc_md5sums "$DIR_Y/md5sums-before.txt"
-
-## The following command splits a txt file into separate txt 
-## files as xaa ,xab, xac, xad, etc, each containing 2000 lines
-split -l 2000 $tmpB2 ;
-
-## Read these files and copy all images to orig dir
-for myfile in $MYDIR/xa* ; do cp $(cat $myfile) $MYDIR_ORIG/ ; done
-
-## Calculate md5sums after of the copied files
-FUNC_calc_md5sums "$DIR_Y/md5sums-after.txt"
-
-## Finding diff and printing filepaths
-diff md5sums* | grep '<' | awk '{print $3}' | sort > $FINAL_FILE
-
-#mogrify -path $MYDIR/300px/ -resize 300 $MYDIR_ORIG/*
-mogrify -path $MYDIR/300px/ -resize 300 $(cat $FINAL_FILE)
-mogrify -path $MYDIR/425px/ -resize 425 $(cat $FINAL_FILE)
-mogrify -path $MYDIR/550px/ -resize 550 $(cat $FINAL_FILE)
-mogrify -path $MYDIR/675px/ -resize 675 $(cat $FINAL_FILE)
-mogrify -path $MYDIR/800px/ -resize 800 $(cat $FINAL_FILE)
-
-##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-## Creating responsive images corresponding to each image path
-## but only if the original image file exists
-total_linesB=$(cat $FINAL_FILE | wc -l ) ;
-countB=0;
-while read -r line;
-do
-    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
-    ((countB++)) ;
-    echo "Currently = $countB of $total_linesB" ;
-    #FUNC_create_responsive_images_for_each_line_quick "$line" "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" ; ## Call function
-done < $FINAL_FILE
+## Call main function
+FUNC_create_responsive_images "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" "$tmpB2" "tmpB" ;
 ##------------------------------------------------------------------------------
 ## END: BLOCK 2
 ##------------------------------------------------------------------------------
