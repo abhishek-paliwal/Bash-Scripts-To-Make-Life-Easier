@@ -113,8 +113,8 @@ function FUNC_create_responsive_images_for_each_line_quick () {
         mkdir -p $resizeDir ;
         mkdir -p $originalImageDir ;
         ## Copy original image + responsive image if md5sums do not match
-        cp "$imagePath" "$CopiedOriginalImage" ;
-        #convert $imagePath -resize "$resizeTo" -quality 80 "$outputImage" ;
+        #cp "$imagePath" "$CopiedOriginalImage" ;
+        convert $imagePath -resize "$resizeTo" -quality 80 "$outputImage" ;
     done
 }
 ##################################################################################
@@ -155,7 +155,7 @@ do
     echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
     ((countA++)) ;
     echo "Currently = $countA of $total_linesA" ;
-    FUNC_create_responsive_images_for_each_line_quick "$line" "$RESPONSIVE_IMAGES_ROOTDIR" ; ## Call function
+    #FUNC_create_responsive_images_for_each_line_quick "$line" "$RESPONSIVE_IMAGES_ROOTDIR" ; ## Call function
 done < $tmpA2
 ##------------------------------------------------------------------------------
 ## END: BLOCK 1
@@ -165,14 +165,14 @@ done < $tmpA2
 ## BEGIN: BLOCK 2 = Creating responsive images for recipe steps images
 ##------------------------------------------------------------------------------
 IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/recipe-steps-images/" ;
-#RESPONSIVE_IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/responsive-steps-images" ;
 RESPONSIVE_IMAGES_ROOTDIR_STEPS="$DIR_Y" ;
+#RESPONSIVE_IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/responsive-steps-images" ;
 ##
 tmpB1="$DIR_Y/tmpB1-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 tmpB2="$DIR_Y/tmpB2-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 echo "## Created by script: " > $tmpB1
-#####################################
 
+#####################################
 ## Image addition part 2.1 = Adding all recipe steps imagesto the list of images
 echo ">> Image addition part 3 = Adding all recipe steps imagesto the list of images ... " ;
 replaceThis1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
@@ -184,17 +184,54 @@ fd --search-path="$IMAGES_ROOTDIR_STEPS" -a -e jpg | sd "$replaceThis1" "" | sd 
 echo ">> Converting urls to local file paths ..." ; 
 cat $tmpB1 | grep -iv '#' | sort | uniq | sd "https://www.mygingergarlickitchen.com" "$REPO_MGGK/static" > $tmpB2
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## FOR TESTING
+MYDIR="$RESPONSIVE_IMAGES_ROOTDIR_STEPS" ;
+#MYDIR="$DIR_Y" ;
+MYDIR_ORIG="$MYDIR/original" ;
+mkdir -p $MYDIR_ORIG ;
+FINAL_FILE="$DIR_Y/tmp_final_for_making_responsive_images.txt" ;
+
+#######
+function FUNC_calc_md5sums() {
+    ## Calculate md5sums of the existing files
+    outputFile="$1" ;
+    echo "Writing md5sums to => $outputFile" ; 
+    fd --search-path="$MYDIR_ORIG" -x md5sum > md5.tmp ;
+    sort md5.tmp > "$outputFile" ;
+}
+#######
+
+## Calculate md5sums after of the existing files
+FUNC_calc_md5sums "$DIR_Y/md5sums-before.txt"
+
+## The following command splits a txt file into separate txt 
+## files as xaa ,xab, xac, xad, etc, each containing 2000 lines
+split -l 2000 $tmpB2 ;
+
+## Read these files and copy all images to orig dir
+for myfile in $MYDIR/xa* ; do cp $(cat $myfile) $MYDIR_ORIG/ ; done
+
+## Calculate md5sums after of the copied files
+FUNC_calc_md5sums "$DIR_Y/md5sums-after.txt"
+
+## Finding diff and printing filepaths
+diff md5sums* | grep '<' | awk '{print $3}' | sort > $FINAL_FILE
+
+mogrify -path $MYDIR/300px/ -resize 300 $MYDIR_ORIG/*
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 ## Creating responsive images corresponding to each image path
 ## but only if the original image file exists
-total_linesB=$(cat $tmpB2 | wc -l ) ;
+total_linesB=$(cat $FINAL_FILE | wc -l ) ;
 countB=0;
 while read -r line;
 do
     echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
     ((countB++)) ;
     echo "Currently = $countB of $total_linesB" ;
-    FUNC_create_responsive_images_for_each_line_quick "$line" "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" ; ## Call function
-done < $tmpB2
+    #FUNC_create_responsive_images_for_each_line_quick "$line" "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" ; ## Call function
+done < $FINAL_FILE
 ##------------------------------------------------------------------------------
 ## END: BLOCK 2
 ##------------------------------------------------------------------------------
@@ -204,5 +241,3 @@ done < $tmpB2
 ################################################################################
 echo "$(date) = END-TIME" >> $time_taken
 cat $time_taken
-
-
