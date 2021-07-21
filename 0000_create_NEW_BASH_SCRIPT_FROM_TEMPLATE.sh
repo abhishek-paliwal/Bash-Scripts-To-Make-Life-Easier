@@ -43,8 +43,9 @@ function CREATESCRIPT_BASH () {
     read SCRIPT_DESC ; 
     echo; echo ">>>> Inserting text into script ... " ; 
     echo > $NEW_SCRIPTNAME ; 
-    echo "$SCRIPT_DESC" | fold -sw 75 | sed "s/^/    ## /g" >> $NEW_SCRIPTNAME ; 
-    cat $REQUIREMENTS_FILE >> $NEW_SCRIPTNAME ; 
+    varDesc=$(echo "$SCRIPT_DESC" | fold -sw 75 | sed "s/^/    ## /g") ## >> $NEW_SCRIPTNAME ; 
+    varDate=$(date +%Y-%m-%d) ;
+    cat $REQUIREMENTS_FILE | sd "INSERT_SCRIPT_DESCRIPTION" "$varDesc" | sd "INSERT_CURRENT_DATE" "$varDate" >> $NEW_SCRIPTNAME ; 
     $EDITOR $NEW_SCRIPTNAME 
 } ; 
 ## RUNNING THE FUNCTION
