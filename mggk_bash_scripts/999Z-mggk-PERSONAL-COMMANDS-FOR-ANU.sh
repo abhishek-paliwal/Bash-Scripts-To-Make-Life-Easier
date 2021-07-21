@@ -210,12 +210,8 @@ pali_imagemagick_create_10_random_images
 2000-python-image-resize)
 
 ##
-GOPS_COMMANDS_ARRAY=(gops_choose_final_video_dimensions
-gops_convert_mp4_mkv_to_CUSTOM_WIDTH_ffmpeg
-gops_copy_7z_files_to_dreamobjects
-gops_copy_all_files_n_folders_to_pi_server
-gops_create_html_file_for_7z_files_dreamobjects
-gops_extract_video_screenshots_every_4_mins)
+GOPS_COMMANDS_ARRAY=(gops_convert_mp4_mkv_to_CUSTOM_WIDTH_ffmpeg
+gops_copy_7z_files_to_dreamobjects)
 
 ## Assign the corresponding user array to the new array variable
 if [ "$WHICH_USER" == "anu" ] ; then MY_COMMANDS_ARRAY=( "${ANU_COMMANDS_ARRAY[@]}" ) ; fi
