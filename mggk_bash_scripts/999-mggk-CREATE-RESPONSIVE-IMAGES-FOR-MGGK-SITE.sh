@@ -15,7 +15,7 @@ USAGE: $(basename $0)
     ## This script reads all figure shortcodes + featured images + recipe steps images 
     ## from all md files and creates 
     ## responsive images to be read by the srcset html image tags by the browser.
-    ## Example image resolutions include: 300px, 425px, 550px, 675px, 800px, etc.
+    ## Example image resolutions include: 425px, 550px, 675px, 800px, etc.
     ################################################################################
     ## CREATED BY: PALI
     ## CREATED ON: July 18, 2021
