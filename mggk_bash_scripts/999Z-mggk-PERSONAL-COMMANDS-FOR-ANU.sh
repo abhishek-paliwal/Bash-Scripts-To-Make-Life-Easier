@@ -108,6 +108,8 @@ video_cutting_in_1_minute_equal_parts_using_ffmpeg
 999A-mggk-MATCH-WORDS-IN-MD-FILE-WITH-EXISTING-URLS-LIKE-WORDPRESS
 999B-mggk-CREATE-SEARCH-ENGINE-LINKS-FOR-ALL-URLS
 999-mggk-CREATE-PDF-FILES-FROM-RECIPE-MD-FILES
+999-mggk-REPLACE-RECIPE-STEPS-WHITE-SQUARE-IMAGES-WITH-WIDE-ONES
+999-mggk-CREATE-RESPONSIVE-IMAGES-for-all-figure-hugo-shortcodes
 mggk_shortcode_collection_maker
 mggk_calculate_length_of_yoast_description
 mggk_calculate_length_of_titles
