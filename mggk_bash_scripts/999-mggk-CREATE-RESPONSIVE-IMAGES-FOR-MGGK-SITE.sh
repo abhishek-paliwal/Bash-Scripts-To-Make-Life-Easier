@@ -28,10 +28,20 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+## Only run this program on MAC OS
+echo "IMPORTANT NOTE: This script only runs on MAC OS." ; 
+if [ "$USER" == "abhishek" ] ; then
+  echo "This is MAC OS. So, script will continue ... " ;
+else
+  echo "This is not MAC OS. So, script will stop and exit now." ;
+  exit 1 ;
+fi
+
 echo "CURRENTLY RUNNING SCRIPT = $THIS_SCRIPT_NAME" ;
 ## Present working directory
 WORKDIR="$DIR_Y";
 cd $WORKDIR ;
+echo;
 echo ">> Present working directory = $WORKDIR" ;
 echo;
 ##
