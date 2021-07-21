@@ -80,8 +80,8 @@ fi
 ## Using the power of sed to find all text between two phrases
 echo ">> Dumping all text found between the required headings" ;
 sed -n "/##begin_recipename/,/##end_recipename/p" $REQUIREMENTS_FILE | grep -v '#' | grep -v '^$' > $REQUIREMENTS_FILE_BASENAME-recipename.txt
-sed -n "/##begin_ingredients/,/##end_ingredients/p" $REQUIREMENTS_FILE | grep -v '#' | grep -v '^$' > $REQUIREMENTS_FILE_BASENAME-ingredients.txt
-sed -n "/##begin_instructions/,/##end_instructions/p" $REQUIREMENTS_FILE | grep -v '#' | grep -v '^$' > $REQUIREMENTS_FILE_BASENAME-instructions.txt
+sed -n "/##begin_ingredients/,/##end_ingredients/p" $REQUIREMENTS_FILE | grep -v '#' | grep -v '^$' | sd '\* ' '' | sd '^\d*. ' '' > $REQUIREMENTS_FILE_BASENAME-ingredients.txt
+sed -n "/##begin_instructions/,/##end_instructions/p" $REQUIREMENTS_FILE | grep -v '#' | grep -v '^$' | sd '\* ' '' | sd '^\d*. ' '' > $REQUIREMENTS_FILE_BASENAME-instructions.txt
 sed -n "/##begin_notes/,/##end_notes/p" $REQUIREMENTS_FILE | grep -v '#' | grep -v '^$' > $REQUIREMENTS_FILE_BASENAME-notes.txt
 ###############################################################################
 
