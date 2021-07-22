@@ -80,7 +80,7 @@ function FUNC_find_cache_status () {
         ((count++));
         echo ">> $count of $total" ;
         varCache=$(curl -s -I -L $myURL | grep 'cf-cache') ;
-        echo "$varCache=$myURL" >> $cacheSummaryOutput ; 
+        echo "$varCache ## $myURL" >> $cacheSummaryOutput ; 
         echo "" >> $cacheSummaryOutput ; 
     done
 }
