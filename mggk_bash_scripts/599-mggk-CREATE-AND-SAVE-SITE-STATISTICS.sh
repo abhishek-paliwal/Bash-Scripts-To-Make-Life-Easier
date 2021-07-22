@@ -32,8 +32,31 @@ echo "##------------------------------------------------------------------------
 echo ">> GATHERING IMPORTANT SITE STATS FOR MGGK HUGO WEBSITE ..." ;
 echo "##------------------------------------------------------------------------------" ;
 
+##------------------ ADD BLOCKS AS NEEDED BELOW ------------------------------
 
-##------------------ DO NOT CHANGE ANYTHING BELOW ------------------------------
+##################################################################################
+##################################################################################
+## CREATING SUMMARY FILES TO BE USED BY CLOUDFLARE SCRIPTS
+echo ">> CREATING SUMMARY FILES TO BE USED BY CLOUDFLARE SCRIPTS ... (line count below)" ;
+
+FilesUrlsWPcontent="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_FilesUrlsWPcontent.txt" ;
+AllValidUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidSiteUrls.txt" ;
+##
+wc -l $FilesUrlsWPcontent ;
+wc -l $AllValidUrlsMGGK ;
+##
+## Get all filepaths inside wp-content directory and converting them to valid MGGK urls
+replaceThis1="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
+replaceThis2="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
+replaceTo="https://www.mygingergarlickitchen.com" ;
+fd -t f --search-path=$REPO_MGGK/static/wp-content | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" > $FilesUrlsWPcontent ;
+
+## Get all mggk urls from current md files
+ack -ih 'url:' $REPO_MGGK/content/ | sd 'url:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com'  | sort | uniq > $AllValidUrlsMGGK ;
+##################################################################################
+##################################################################################
+
+
 ## OUTPUT FILE CREATED AT (+ initializing the output file):
 echo "<pre>" > $FILE_OUTPUT_SITESTATS
 echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
@@ -322,3 +345,6 @@ echo ">> SUMMARY >> " ;
 echo ">> STATISTICS FILE SAVED AS => $FILE_OUTPUT_SITESTATS_FINAL" ;
 ## COPY this file to Dropbox dir
 cp $FILE_OUTPUT_SITESTATS_FINAL $DIR_DROPBOX_SCRIPTS_OUTPUT/
+
+
+

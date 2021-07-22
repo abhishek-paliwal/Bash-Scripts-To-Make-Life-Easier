@@ -1,7 +1,6 @@
 #!/bin/bash
 THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
-WORKDIR="$DIR_Y" ;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
@@ -42,24 +41,29 @@ function FUNC_ONLY_RUN_FOR_THIS_USER () {
 #FUNC_ONLY_RUN_FOR_THIS_USER
 ##------------------------------------------------------------------------------
 
-
 ##
 time_taken="$WORKDIR/tmp-time-taken-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 echo "$(date) = START-TIME" > $time_taken
 
 ##################################################################################
+WORKDIR="$DIR_Y" ;
+cd $WORKDIR ; 
 
-FilesUrlsWPcontent="$WORKDIR/summary_cloudflare_mggk_FilesUrlsWPcontent.txt"
-AllValidUrlsMGGK="$WORKDIR/summary_cloudflare_mggk_AllValidSiteUrls.txt"
+## Getting required files from dropbox urls
+prefix_url="https://downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs" ;
+file1="mggk_summary_cloudflare_FilesUrlsWPcontent.txt"
+file2="mggk_summary_cloudflare_AllValidSiteUrls.txt"
 
-## Get all filepaths inside wp-content directory and converting them to valid MGGK urls
-replaceThis1="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
-replaceThis2="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
-replaceTo="https://www.mygingergarlickitchen.com" ;
-fd -t f --search-path=$REPO_MGGK/static/wp-content | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" > $FilesUrlsWPcontent ;
+ARRAY_FILES_TO_DOWNLOAD=("$prefix_url/$file1"
+"$prefix_url/$file2") ;
 
-## Get all mggk urls from current md files
-ack -ih 'url:' $REPO_MGGK/content/ | sd 'url:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com'  | sort | uniq > $AllValidUrlsMGGK ;
+for i in "${ARRAY_FILES_TO_DOWNLOAD[@]}"; do
+    echo "Downloading ... $i" ;
+    wget -P "$WORKDIR" $i ;
+done
+
+FilesUrlsWPcontent="$WORKDIR/$file1" ;
+AllValidUrlsMGGK="$WORKDIR/$file2" ;
 
 ##################################################################################
 ## FUNCTION TO FIND THE ACTUAL CACHE STATUS USING CURL
