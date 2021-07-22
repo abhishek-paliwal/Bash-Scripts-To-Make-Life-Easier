@@ -39,7 +39,7 @@ function FUNC_ONLY_RUN_FOR_THIS_USER () {
         exit 1 ;
     fi
 }
-FUNC_ONLY_RUN_FOR_THIS_USER
+#FUNC_ONLY_RUN_FOR_THIS_USER
 ##------------------------------------------------------------------------------
 
 
