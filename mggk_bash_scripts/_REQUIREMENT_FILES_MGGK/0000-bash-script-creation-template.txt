@@ -31,14 +31,19 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-## Only run this program on MAC OS
-echo "IMPORTANT NOTE: This script only runs on MAC OS." ; 
-if [ "$USER" == "abhishek" ] ; then
-  echo "This is MAC OS. So, script will continue ... " ;
-else
-  echo "This is not MAC OS. So, script will stop and exit now." ;
-  exit 1 ;
-fi
+##------------------------------------------------------------------------------
+function FUNC_ONLY_RUN_FOR_THIS_USER () {
+    ## ## Only run this program for this user
+    echo "IMPORTANT NOTE: This script only runs on MAC OS." ; 
+    if [ "$USER" == "abhishek" ] ; then
+    echo "This is MAC OS. So, script will continue ... " ;
+    else
+    echo "This is not MAC OS. So, script will stop and exit now." ;
+    exit 1 ;
+    fi
+}
+FUNC_ONLY_RUN_FOR_THIS_USER
+##------------------------------------------------------------------------------
 
 ##
 time_taken="$DIR_Y/tmp-time-taken-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
