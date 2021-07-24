@@ -346,5 +346,9 @@ echo ">> STATISTICS FILE SAVED AS => $FILE_OUTPUT_SITESTATS_FINAL" ;
 ## COPY this file to Dropbox dir
 cp $FILE_OUTPUT_SITESTATS_FINAL $DIR_DROPBOX_SCRIPTS_OUTPUT/
 
+## Listing word counts for files in dropbox dir
+#echo;
+#echo ">> Listing word counts for files in dropbox dir ..." ; 
+#fd --search-path="$DIR_DROPBOX_SCRIPTS_OUTPUT/" -x wc -l {} ;
 
 
