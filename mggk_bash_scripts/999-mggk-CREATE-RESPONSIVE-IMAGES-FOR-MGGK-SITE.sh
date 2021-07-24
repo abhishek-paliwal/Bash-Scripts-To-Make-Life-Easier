@@ -29,11 +29,12 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ## Only run this program on MAC OS
+echo "##------------------------------------------------------------------------------" ;
 echo "IMPORTANT NOTE: This script only runs on MAC OS." ; 
 if [ "$USER" == "abhishek" ] ; then
-  echo "This is MAC OS. So, script will continue ... " ;
+  echo "This is MAC OS. So, script this will continue => $THIS_SCRIPT_NAME " ;
 else
-  echo "This is not MAC OS. So, script will stop and exit now." ;
+  echo "This is not MAC OS. So, this script will stop and exit now => $THIS_SCRIPT_NAME " ;
   exit 1 ;
 fi
 
