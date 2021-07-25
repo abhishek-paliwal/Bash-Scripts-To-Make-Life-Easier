@@ -54,6 +54,15 @@ prefix_url="https://downloads.concepro.com/dropbox-public-files/LCE/_pali_github
 file1="mggk_summary_cloudflare_FilesUrlsWPcontent.txt"
 file2="mggk_summary_cloudflare_AllValidSiteUrls.txt"
 
+FilesUrlsWPcontent="$WORKDIR/$file1" ;
+AllValidUrlsMGGK="$WORKDIR/$file2" ;
+
+## Remove these files if already existing
+echo ">> Deleting existing file => $FilesUrlsWPcontent" ;
+echo ">> Deleting existing file => $AllValidUrlsMGGK" ;
+rm $FilesUrlsWPcontent ;
+rm $AllValidUrlsMGGK ;
+
 ARRAY_FILES_TO_DOWNLOAD=("$prefix_url/$file1"
 "$prefix_url/$file2") ;
 
@@ -62,8 +71,6 @@ for i in "${ARRAY_FILES_TO_DOWNLOAD[@]}"; do
     wget -P "$WORKDIR" $i ;
 done
 
-FilesUrlsWPcontent="$WORKDIR/$file1" ;
-AllValidUrlsMGGK="$WORKDIR/$file2" ;
 
 ##################################################################################
 ## FUNCTION TO FIND THE ACTUAL CACHE STATUS USING CURL
