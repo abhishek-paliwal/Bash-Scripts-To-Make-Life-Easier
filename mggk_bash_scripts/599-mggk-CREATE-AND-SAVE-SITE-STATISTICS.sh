@@ -41,11 +41,13 @@ echo ">> CREATING SUMMARY FILES TO BE USED BY CLOUDFLARE SCRIPTS ... (line count
 FilesUrlsWPcontent="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_FilesUrlsWPcontent.txt" ;
 AllValidUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidSiteUrls.txt" ;
 ##
-## Get all filepaths inside wp-content directory and converting them to valid MGGK urls
+#### Get all filepaths inside wp-content directory and converting them to valid MGGK urls
 replaceThis1="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
 replaceThis2="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
 replaceTo="https://www.mygingergarlickitchen.com" ;
-fd -t f --search-path=$REPO_MGGK/static/wp-content | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" > $FilesUrlsWPcontent ;
+## (Add -I flag so that fd also read filepaths present in .gitignore in the given directory)
+fd -I -t f --search-path=$REPO_MGGK/static/wp-content | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" > $FilesUrlsWPcontent ;
+####
 
 ## Get all mggk urls from current md files
 ack -ih 'url:' $REPO_MGGK/content/ | sd 'url:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com'  | sort | uniq > $AllValidUrlsMGGK ;
