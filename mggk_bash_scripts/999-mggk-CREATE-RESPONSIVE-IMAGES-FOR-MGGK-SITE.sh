@@ -15,7 +15,7 @@ USAGE: $(basename $0)
     ## This script reads all figure shortcodes + featured images + recipe steps images 
     ## from all md files and creates 
     ## responsive images to be read by the srcset html image tags by the browser.
-    ## Example image resolutions include: 425px, 550px, 675px, 800px, etc.
+    ## Example image resolutions include: 350px, 425px, 550px, 675px, 800px, etc.
     ################################################################################
     ## CREATED BY: PALI
     ## CREATED ON: July 18, 2021
@@ -87,7 +87,7 @@ function FUNC_create_responsive_images () {
     diff $md51 $md52 | grep '>' | awk '{print $3}' | sort > $FINAL_FILE
 
     ## Read file line by line and create responsive image
-    myarray=(425px 550px 675px 800px)
+    myarray=(350px 425px 550px 675px 800px)
     ##
     total_lines=$(cat $FINAL_FILE | wc -l ) ;
     count=0;
