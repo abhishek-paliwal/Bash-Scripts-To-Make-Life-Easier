@@ -88,8 +88,8 @@ function FUNC_find_cache_status () {
         echo ">> $count of $total" ;
         varCache=$(curl -s -I -L $myURL | grep 'cf-cache') ;
         ## Print and remove some dos-sy unprintable characters
-        echo "$varCache ## $myURL" | sed -e "s/\r//g" >> $cacheSummaryOutput ; 
         echo "" >> $cacheSummaryOutput ; 
+        echo "$count of $total ## $varCache ## $myURL" | sed -e "s/\r//g" >> $cacheSummaryOutput ; 
     done
 }
 ####
