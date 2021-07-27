@@ -127,7 +127,7 @@ function FUNC_calc_md5sums() {
 ## BEGIN: BLOCK 1 = Creating responsive images for all figure images + all featured images
 ##------------------------------------------------------------------------------
 IMAGES_ROOTDIR="$REPO_MGGK/content/" ;
-IMAGES_ROOTDIR_ZZMGGK="$REPO_ZZMGGK/content/blog/" ; 
+IMAGES_ROOTDIR_ZZMGGK="$REPO_ZZMGGK/content/" ; 
 RESPONSIVE_IMAGES_ROOTDIR="$REPO_MGGK/static/wp-content/responsive-images" ;
 ##
 tmpA1="$WORKDIR/tmpA1-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
