@@ -141,7 +141,9 @@ for x in $(fd . $MAIN_DIR -t d | sed 's/ //g'); do
     htmlfile="$x/$thisdir_index_htmlfile" ; 
     ##
     ((COUNT++)) ;   
-    echo; echo ">> Creating HTML index file (recipe steps images directory) = $COUNT of $num_files " ;
+    echo; 
+    echo ">> CURRENT DIR => $this_dirname" ;
+    echo ">> Creating HTML index file (recipe steps images directory) = $COUNT of $num_files " ;
 
     ## Initializing htmlfile
     num_files_in_this_dir=$(fd . $x -d1 -e jpg | wc -l | sed 's/ //g') ;
@@ -164,6 +166,14 @@ for x in $(fd . $MAIN_DIR -t d | sed 's/ //g'); do
         url_from_dirname="/$this_dirname/" ;
         ## getting the first field from chosen line
         MDFILE_WITH_CHOSEN_URL=$(grep "$url_from_dirname" $PATHS_FILE | cut -d'=' -f1) ; 
+        if [ -z "$MDFILE_WITH_CHOSEN_URL" ] ; then 
+            echo "FAILURE: MDFILE not found for this steps dir => $this_dirname" ; 
+            echo "Program will exit now." ; 
+            exit 1 ; 
+        else 
+            echo "SUCCESS: MD FILE found. "  ; 
+        fi
+        ##
         counted_images_via_yq=$(cat $MDFILE_WITH_CHOSEN_URL | sed -n '/^---/,/^---/p' | yq .recipeInstructions | sed 's/null//g'| jq '.[].recipeInstructionsList[]' | wc -l | sed 's/ //g' ) ; 
         ######
         ## Counting comparison
