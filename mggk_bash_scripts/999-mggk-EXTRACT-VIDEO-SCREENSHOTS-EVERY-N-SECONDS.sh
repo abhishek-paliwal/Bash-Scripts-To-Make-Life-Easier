@@ -4,7 +4,7 @@
 ## SOME VARIABLES (CHANGE THE DIRs IF NEEDED)
 WORKDIR="$HOME_WINDOWS/Desktop/Y" ;
 #DIR_WHICH_YOUTUBE_VIDEOS="$(pwd)" ;
-DIR_WHICH_YOUTUBE_VIDEOS="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-501-END" ;
+DIR_WHICH_YOUTUBE_VIDEOS="$DIR_Y/f" ;
 ##################################################################################
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
