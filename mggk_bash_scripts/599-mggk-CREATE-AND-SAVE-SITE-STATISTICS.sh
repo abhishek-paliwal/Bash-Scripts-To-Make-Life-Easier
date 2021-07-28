@@ -134,6 +134,14 @@ echo "" >> $FILE_OUTPUT_SITESTATS ;
 ################################################################################ 
 ################################################################################ 
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" >> $FILE_OUTPUT_SITESTATS
+echo ">> LIST OF MD FILES WITH VALID YOUTUBE ID BUT WITH STEPS IMAGES PRESENT = NO" >> $FILE_OUTPUT_SITESTATS
+echo "" >> $FILE_OUTPUT_SITESTATS
+for x in $(grep -irl youtube_video_id $REPO_MGGK/content ) ; do grep -il 'steps_images_present: "no"' $x ; done | nl >> $FILE_OUTPUT_SITESTATS
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" >> $FILE_OUTPUT_SITESTATS
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 echo "" >> $FILE_OUTPUT_SITESTATS
 echo "################################################################################" >> $FILE_OUTPUT_SITESTATS
@@ -221,6 +229,14 @@ echo "$MGGK_RECIPE_HERE_BUTTON_BLOCKS: NUMBER OF POSTS WITH MGGK_RECIPE_HERE_BUT
 ## NUMBER OF POSTS WITH steps_images_present: "yes"
 MGGK_steps_images_present_YES=$(grep -irl 'steps_images_present: "yes"' $HUGO_CONTENT_DIR/* | sort | uniq | wc -l)
 echo "$MGGK_steps_images_present_YES: NUMBER OF POSTS WITH steps_images_present = yes" >> $FILE_OUTPUT_SITESTATS
+
+## NUMBER OF POSTS WITH steps_images_present: "no"
+MGGK_steps_images_present_NO=$(grep -irl 'steps_images_present: "no"' $HUGO_CONTENT_DIR/* | sort | uniq | wc -l)
+echo "$MGGK_steps_images_present_NO: NUMBER OF POSTS WITH steps_images_present = no" >> $FILE_OUTPUT_SITESTATS
+
+## NUMBER OF POSTS WITH steps_images_present: "no" // BUT WITH VALID YOUTUBE IDs
+MGGK_steps_images_present_NO_valid_youtube_id=$(for x in $(grep -irl youtube_video_id $REPO_MGGK/content) ; do grep -il 'steps_images_present: "no"' $x ; done | sort | uniq | wc -l)
+echo "$MGGK_steps_images_present_NO_valid_youtube_id: NUMBER OF POSTS WITH steps_images_present = no // BUT WITH VALID YOUTUBE IDs" >> $FILE_OUTPUT_SITESTATS
 
 ## NUMBER OF POSTS WITH MGGK_JSON_RECIPE BLOCK
 NUM_MGGK_JSON_RECIPE_POSTS=$(grep -irh 'mggk_json_recipe:' $HUGO_CONTENT_DIR/* | wc -l)
