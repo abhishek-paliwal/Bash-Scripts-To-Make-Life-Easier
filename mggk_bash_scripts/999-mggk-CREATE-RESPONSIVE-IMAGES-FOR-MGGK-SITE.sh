@@ -153,8 +153,10 @@ done
 echo ">> Image addition part 1.3 = Adding all featured images to the list of images in MGGK + ZZMGGK DIR ... " ;
 insertURL="https://www.mygingergarlickitchen.com" ;
 grep -irh 'featured_image:' $IMAGES_ROOTDIR | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' >> $tmpA1 ;
+grep -irh 'recipe_code_image:' $IMAGES_ROOTDIR | sd 'recipe_code_image:' '' | sd ' ' '' | sd '"' '' >> $tmpA1 ;
 ##
 grep -irh 'featured_image:' $IMAGES_ROOTDIR_ZZMGGK | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' >> $tmpA1 ;
+grep -irh 'recipe_code_image:' $IMAGES_ROOTDIR_ZZMGGK | sd 'recipe_code_image:' '' | sd ' ' '' | sd '"' '' >> $tmpA1 ;
 
 ########################################
 ## Converting urls to local file paths
