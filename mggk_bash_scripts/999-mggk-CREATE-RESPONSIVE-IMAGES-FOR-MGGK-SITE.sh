@@ -111,6 +111,8 @@ function FUNC_create_responsive_images () {
         done
     ####
     done < $FINAL_FILE
+    ####
+    FUNC_ONLY_RUN_FOR_THIS_USER "$RESPONSIVE_IMAGES_ROOTDIR" ;
 }
 
 #######
@@ -121,6 +123,20 @@ function FUNC_calc_md5sums() {
     fd --search-path="$originalImageDir" -x md5sum > tmp-md5.txt ;
     sort tmp-md5.txt > "$outputFile" ;
 }
+
+#######
+function FUNC_ONLY_RUN_FOR_THIS_USER () {
+    DirImages="$1" ;
+    ## ## Only run this program for this user
+    echo "IMPORTANT NOTE: This script only runs on MAC OS." ; 
+    if [ "$USER" == "abhishek" ] ; then
+        echo "This is MAC OS. So, script will remove extended image attributes ..." ;
+        xattr -rc "$1" ;
+    else
+        echo "This is not MAC OS. So, script will continue normally." ;
+    fi
+}
+
 ##################################################################################
 
 ##------------------------------------------------------------------------------
