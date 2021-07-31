@@ -38,7 +38,7 @@ MGGK_URL="https://www.mygingergarlickitchen.com" ;
 MAIN_INDEX_HTMLFILE_URL="$BASE_URL/index-recipe-steps-images.html" ;
 ##
 ## Create a mdfilepaths summary file, and initialize it.
-PATHS_FILE="$REPO_MGGK_SUMMARY/summary_mggk_current_mdfilepaths.txt" ;
+PATHS_FILE="$REPO_MGGK_SUMMARY/summary_mggk_current_mdfilepaths_with_urls.txt" ;
 echo "## File created on: $(date) by script: $THIS_SCRIPT_NAME" > $PATHS_FILE ;
 #fd --search-path="$REPO_MGGK/content/" -e md >> $PATHS_FILE ;
 for x in $(fd --search-path="$REPO_MGGK/content/" -e md); do var=$(grep "url: " $x | sed 's/url: //g') ; echo "$x=$var" ; done >> $PATHS_FILE ;
