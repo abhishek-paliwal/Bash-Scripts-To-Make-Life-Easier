@@ -54,7 +54,7 @@ function step2_FUNC_cloudflare_format_urls_for_api () {
         echo "\"$x\"," >> $tmpFile ; 
     done ; 
     echo "\"$(head -1 $inFile)\"" >> $tmpFile ;
-    cat $tmpFile | grep -iv '#' > $outFile ;
+    cat $tmpFile | grep -iv '#' | sd '\n' '' > $outFile ;
     echo ">> DONE = step2_FUNC_cloudflare_format_urls_for_api " ;
 }
 
@@ -72,13 +72,13 @@ function step3_FUNC_cloudflare_create_html_page_with_keyword_urls () {
 }
 
 function step4_FUNC_cloudflare_delete_cache_for_keyword_urls () {
-    ## function takes no arguments 
-    inFile="$step1File" ; ## step1File
-    echo ">> Deleting cache keyword urls ..." ;
+    ## function takes one argument as texfile with less than 30 urls
+    inFile="$1" ;
+    echo ">> Deleting cache keyword urls ... only 30 urls are allowed in one api purge call ..." ;
     for line in $(cat $inFile) ; do
         final_data='{ "files":[ "'"$line"'" ]}' ;
         echo "FINAL DATA = $final_data" ; 
-        curl -X POST "https://api.cloudflare.com/client/v4/zones/53b0327844e25ed872863f33e465bca0/purge_cache" -H "X-Auth-Email:$EMAIL_CLOUDFLARE" -H "X-Auth-Key:$API_KEY_CLOUDFLARE_PURGE" -H "Content-Type:application/json" --data "$final_data" ;
+        curl -X POST "https://api.cloudflare.com/client/v4/zones/53b0327844e25ed872863f33e465bca0/purge_cache" -H "X-Auth-Email:$CLOUDFLARE_EMAIL" -H "X-Auth-Key:$API_KEY_CLOUDFLARE_PURGE" -H "Content-Type:application/json" --data "$final_data" ;
     done
     ##
     echo ">> DONE = step4_FUNC_cloudflare_delete_cache_for_keyword_urls " ;
@@ -93,7 +93,8 @@ step2_FUNC_cloudflare_format_urls_for_api ;
 step3_FUNC_cloudflare_create_html_page_with_keyword_urls ;
 
 ## SUMMARY OF OUTPUTS
-fd "$prefixFileName" -t f --search-path="$WORKDIR" -x wc -l {} ;
+echo; echo ">> PRINTING WORD COUNTS ... " ;
+fd "$prefixFileName" -t f --search-path="$WORKDIR" -x wc {} ;
 
 ## ASK USER TO DELETE CACHE OR NOT
 echo ;
@@ -101,7 +102,13 @@ echo ">> ALSO WANT TO DELETE CLOUDFLARE CACHE, ENTER y OR n : " ;
 read CacheDelete ;
 if [ "$CacheDelete" == "y" ]; then
     echo ">> Alright, cache WILL BE DELETED." ;
-    step4_FUNC_cloudflare_delete_cache_for_keyword_urls ;
+    ##
+    inFile="$step1File" ; ## step1File
+    inFile_base=$(basename $inFile) ; 
+    echo ">> Splitting file (= $inFile_base ) into multiple files with 30 lines each ..." ;
+    fd 'xa' -t f --split-path="$WORKDIR" -x rm {} ; ## Deleting already present xa files
+    split -l 30 $inFile ;
+    fd 'xa' -t f --split-path="$WORKDIR" -x step4_FUNC_cloudflare_delete_cache_for_keyword_urls {} ;
 else 
     echo ">> Alright, cache WILL NOT BE DELETED." ;
 fi
