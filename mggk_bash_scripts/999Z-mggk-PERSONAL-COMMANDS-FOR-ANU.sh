@@ -146,6 +146,9 @@ pali_GIT_STATUS_FOR_ALL_REPOS
 pali_imagemagick_fixed_resize_images_by_width_or_height
 2000-python-image-resize
 pali_imagemagick_create_10_random_images
+901-mggk-get-all-image-links-from-mggk-webpages-for-cloudflare-cache
+901-mggk-get-cloudflare-cache-status-for-all-valid-mggk-urls
+901-mggk-delete-cloudflare-cache-for-chosen-keyword-urls
 mggk_WEEKLY_SUMMARY_RUN) ;
 
 ##
