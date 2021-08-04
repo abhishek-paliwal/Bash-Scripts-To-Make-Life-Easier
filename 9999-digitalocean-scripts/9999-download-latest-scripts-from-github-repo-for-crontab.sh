@@ -15,7 +15,7 @@ USAGE: $(basename $0)
   ################################################################################
   ## IMPORTANT NOTE: Please dont include this script to download itself.
   ################################################################################
-  ## Created on: July 21, 2021
+  ## Created on: July 31, 2021
   ## Coded by: Pali
   ###############################################################################
   # USAGE (run the following command):
@@ -36,7 +36,7 @@ echo ">> WORKDIR = $WORKDIR" ;
 
 ## ADD FULL GITHUB SCRIPT PATH TO FOLLOWING ARRAY (one on each line)
 ARRAY_download_these_scripts=(https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/9999-digitalocean-scripts/9999-show-files-to-delete-for-space-cleanup-digitalocean.sh
-https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/mggk_bash_scripts/901-mggk-GET-CLOUDFLARE-CACHE-STATUS.sh) ;
+https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/mggk_bash_scripts/901-cloudflare-scripts/901-mggk-get-cloudflare-cache-status-for-all-valid-mggk-urls.sh) ;
 
 for i in "${ARRAY_download_these_scripts[@]}"; do
     echo "#################################################" ;
