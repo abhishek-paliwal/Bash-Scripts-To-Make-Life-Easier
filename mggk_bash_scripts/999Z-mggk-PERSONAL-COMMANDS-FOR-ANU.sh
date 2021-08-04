@@ -117,7 +117,6 @@ mggk_calculate_length_of_urls
 10b-mggk-create-index-for-recipe-steps-present-folder
 mggk_WEEKLY_SUMMARY_RUN
 makesite_mggk_quickly
-901-mggk-GET-CLOUDFLARE-CACHE-STATUS
 frontm_sponsored) ;
 
 ##
