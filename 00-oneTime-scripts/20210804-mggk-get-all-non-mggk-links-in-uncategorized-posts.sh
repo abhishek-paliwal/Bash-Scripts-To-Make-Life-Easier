@@ -6,11 +6,13 @@ THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 WORKDIR="$DIR_Y/_tmp_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
 mkdir -p $WORKDIR ;
+##
 tmpFile1="$WORKDIR/tmp1.txt" ;
 tmpFile2="$WORKDIR/tmp2.txt" ;
 tmpFile3="$WORKDIR/tmp3.txt" ;
 tmpFile4="$WORKDIR/tmp4.txt" ;
 tmpFile5="$WORKDIR/tmp5.txt" ;
+## making sure the files are generated only through this program
 for x in $tmpFile1 $tmpFile2 $tmpFile3 $tmpFile4 $tmpFile5 ; do
     touch $x ; rm $x ;
 done
@@ -67,6 +69,14 @@ function 5_FUNC_find_http_server_headers_for_urls () {
     done 
 }
 
+function 6_convert_server_header_rows_to_columns_as_csv () { 
+    ## Finding the headers of the urls to see their http error status
+    inFile="$tmpFile5" ;
+    tmpFile6="$WORKDIR/tmp6.csv" ;
+    outFile="$tmpFile6" ;
+    cat $inFile | tr '\n\r' ' ' | sd 'MYURL' '\nMYURL' | sd ',' '' |sd 'HTTP' ',HTTP' > $outFile
+}
+
 
 ################################################################################
 ## Calling all functions sequentially
@@ -76,4 +86,6 @@ function 5_FUNC_find_http_server_headers_for_urls () {
 3_FUNC_find_non-mggk-hyperlinks-from-given-urls
 4_FUNC_discard_authority_domains_from_url_list
 5_FUNC_find_http_server_headers_for_urls
+6_convert_server_header_rows_to_columns_as_csv
 
+ 
