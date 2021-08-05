@@ -46,7 +46,7 @@ FUNC_ONLY_RUN_FOR_THIS_USER
 ##------------------------------------------------------------------------------
 
 ##
-time_taken="$DIR_Y/tmp-time-taken-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+time_taken="$WORKDIR/tmp-time-taken-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 echo "$(date) = START-TIME" > $time_taken
 
 ####################### ADDING COLOR TO OUTPUT ON CLI ##########################
@@ -60,12 +60,14 @@ debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-
 
 ##############################################################################
 ## SETTING VARIABLES
-WORKING_DIR="$DIR_Y" ;
-OUTPUT_HTML="$WORKING_DIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.html" ;
-OUTPUT_TXT="$WORKING_DIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+WORKDIR="$DIR_Y/_tmp_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
+mkdir -p $WORKDIR ; ## create dir if not exists
+##
+OUTPUT_HTML="$WORKDIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.html" ;
+OUTPUT_TXT="$WORKDIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 echo ;
 echo "################################################################################" ; 
-warn "## PRESENT WORKING DIRECTORY = $WORKING_DIR" ;
+warn "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
 echo; 
 read -p "Press Enter key if OKAY ..." ; 
 ##############################################################################
