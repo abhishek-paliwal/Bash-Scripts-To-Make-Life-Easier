@@ -85,7 +85,7 @@ function 6_convert_server_header_rows_to_columns_as_csv () {
 2_FUNC_get_mggkurls_from_mdfiles
 3_FUNC_find_non-mggk-hyperlinks-from-given-urls
 4_FUNC_discard_authority_domains_from_url_list
-5_FUNC_find_http_server_headers_for_urls
-6_convert_server_header_rows_to_columns_as_csv
+#5_FUNC_find_http_server_headers_for_urls
+#6_convert_server_header_rows_to_columns_as_csv
 
  
