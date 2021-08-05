@@ -57,7 +57,7 @@ function 4_FUNC_discard_authority_domains_from_url_list () {
     ## Discarding some authority domain urls to get the wanted ones
     inFile="$tmpFile3" ;
     outFile="$tmpFile4" ;
-    cat $inFile | grep -ivE '(pinterest|wikipedia|wikihow|anupama|wa.me)' | grep -i 'http' | sd ' ' '' | sort -u > $outFile
+    cat $inFile | grep -ivE '(pinterest|wikipedia|wikihow|anupama|myginger.us|wa.me)' | grep -i 'http' | sd ' ' '' | sort -u > $outFile
 }
 
 function 5_FUNC_find_http_server_headers_for_urls () { 
