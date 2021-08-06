@@ -153,7 +153,7 @@ for x in $(fd . $MAIN_DIR -t d | sed 's/ //g'); do
     ## Making links for all jpg files in current directory
     for fname in $(fd . $x -e jpg); do 
         this_fname="$(basename $fname)" ;
-        echo "<img style='border: 2px solid #000000 ;' src='$BASE_URL/$this_dirname/$this_fname' width='300px'>" >> $htmlfile ;
+        echo "<div style='display: inline-block; width: 150px; height: auto; border: 2px solid black;'><img width='100%' src='$BASE_URL/$this_dirname/$this_fname'></div>" >> $htmlfile ;
     done
     #####################
     ERROR_MSG="" ;
