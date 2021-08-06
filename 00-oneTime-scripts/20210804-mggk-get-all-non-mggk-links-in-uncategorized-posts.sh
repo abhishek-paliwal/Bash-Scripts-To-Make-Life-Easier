@@ -77,7 +77,34 @@ function 6_convert_server_header_rows_to_columns_as_csv () {
     cat $inFile | tr '\n\r' ' ' | sd 'MYURL' '\nMYURL' | sd ',' '' |sd 'HTTP' ',HTTP' > $outFile
 }
 
+function 7_FUNC_convert_nofollowed_mggk_links_to_normal_in_md_files () {
+for x in $(cat final.txt); do 
+    echo "##------------------------------------------------------------------------------";
+    echo ">> FILENAME = $x" ;
+    # create the backup file of the original
+    file_bak="$x.bak" ;
+    mv "$x" "$file_bak" ;
+    ## create the original file back
+    cat $file_bak | sd 'rel="nofollow" href="https://www.mygingergarlic' 'href="https://www.mygingergarlic' > $x ;
+done
+}
 
+function 8_FUNC_convert_client_links_to_nofollow_in_md_files_in_markdown_syntax () {
+for myurl in $(cat t1.txt) ; do 
+    echo "##------------------------------------------------------------------------------";
+    echo "====> $myurl" ;
+    for myfile in $(ag -l "$myurl" $REPO_MGGK/content/ ) ; do 
+        echo "$myfile" ;
+        file_bak="$myfile.bak" ;
+        cp "$myfile" "$file_bak" ;
+        ## create the original file back
+        #ag "\($myurl" $myfile ;
+        cat $file_bak | sd "\($myurl" "($myurl#NOFOLLOW" > $myfile ;
+    done
+done
+}
+
+################################################################################
 ################################################################################
 ## Calling all functions sequentially
 
@@ -87,5 +114,7 @@ function 6_convert_server_header_rows_to_columns_as_csv () {
 4_FUNC_discard_authority_domains_from_url_list
 #5_FUNC_find_http_server_headers_for_urls
 #6_convert_server_header_rows_to_columns_as_csv
+#7_FUNC_convert_nofollowed_mggk_links_to_normal_in_md_files ;
+#8_FUNC_convert_client_links_to_nofollow_in_md_files_in_markdown_syntax ;
 
  
