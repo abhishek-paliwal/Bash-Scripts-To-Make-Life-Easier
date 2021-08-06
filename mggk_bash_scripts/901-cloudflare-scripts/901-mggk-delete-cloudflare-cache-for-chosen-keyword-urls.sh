@@ -45,7 +45,8 @@ echo "Enter your keyword to find images for: " ;
 read myKeyword ; 
 ##
 if [ -z "$myKeyword" ] ; then 
-    echo "CLI Argument is empty. Please try again." ; 
+    echo "CLI Argument is empty. Please try again. Program will exit now." ;
+    exit 1 ; 
 fi
 ##------------------------------------------------------------------------------
 
@@ -72,19 +73,6 @@ function step1_FUNC_cloudflare_search_image_urls_containing_keyword () {
     echo ">> DONE = step1_FUNC_cloudflare_search_image_urls_containing_keyword " ;
 }
 
-function step2_FUNC_cloudflare_format_urls_for_api () {
-    ## function takes no arguments 
-    inFile="$1" ;
-    outFile="$tmpFile1" ; 
-    echo "##" > $tmpFile ; 
-    for x in $(cat $inFile) ; do 
-        echo "\"$x\"," >> $tmpFile ; 
-    done ; 
-    echo "\"$(head -1 $inFile)\"" >> $tmpFile ;
-    cat $tmpFile | grep -iv '#' | sd '\n' '' > $outFile ;
-    echo ">> DONE = step2_FUNC_cloudflare_format_urls_for_api (=> for this FILE: $inFile )" ;
-}
-
 function step2_FUNC_cloudflare_create_html_page_with_keyword_urls () {
     ## function takes no arguments 
     #### mggk create a html page showing all images with names with given keyword
@@ -96,6 +84,19 @@ function step2_FUNC_cloudflare_create_html_page_with_keyword_urls () {
     done
     ##
     echo ">> DONE = step2_FUNC_cloudflare_create_html_page_with_keyword_urls " ;
+}
+
+function step3_FUNC_cloudflare_format_urls_for_api () {
+    ## function takes no arguments 
+    inFile="$1" ;
+    outFile="$tmpFile1" ; 
+    echo "##" > $tmpFile ; 
+    for x in $(cat $inFile) ; do 
+        echo "\"$x\"," >> $tmpFile ; 
+    done ; 
+    echo "\"$(head -1 $inFile)\"" >> $tmpFile ;
+    cat $tmpFile | grep -iv '#' | sd '\n' '' > $outFile ;
+    echo ">> DONE = step2_FUNC_cloudflare_format_urls_for_api (=> for this FILE: $inFile )" ;
 }
 
 function step4_FUNC_cloudflare_delete_cache_for_keyword_urls () {
@@ -139,7 +140,7 @@ if [ "$CacheDelete" == "y" ]; then
     ####
     ## Actual deletion of cache
     for myFile in $(fd 'xa' -t f --search-path="$WORKDIR"); do 
-        step2_FUNC_cloudflare_format_urls_for_api "$myFile" ;
+        step3_FUNC_cloudflare_format_urls_for_api "$myFile" ;
         step4_FUNC_cloudflare_delete_cache_for_keyword_urls "$tmpFile1" ;
     done
     ####
