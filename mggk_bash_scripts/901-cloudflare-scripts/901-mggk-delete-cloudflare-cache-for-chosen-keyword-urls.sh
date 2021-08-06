@@ -32,7 +32,7 @@ mkdir -p "$WORKDIR" ;
 cd $WORKDIR; 
 echo ">> CURRENT WORKDIR = $WORKDIR" ;
 
-prefixFileName="_OUTPUT_9999_cloudflare_delete_cache_for_custom_keyword_urls" ;
+prefixFileName="_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
 tmpFile="$WORKDIR/_tmp.txt" ; 
 tmpFile1="$WORKDIR/_tmp1.txt" ; 
 step0File="$WORKDIR/$prefixFileName-step0.txt" ; 
