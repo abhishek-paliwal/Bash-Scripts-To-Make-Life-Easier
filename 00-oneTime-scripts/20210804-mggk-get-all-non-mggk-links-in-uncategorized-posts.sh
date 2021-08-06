@@ -77,31 +77,34 @@ function 6_convert_server_header_rows_to_columns_as_csv () {
     cat $inFile | tr '\n\r' ' ' | sd 'MYURL' '\nMYURL' | sd ',' '' |sd 'HTTP' ',HTTP' > $outFile
 }
 
-function 7_FUNC_convert_nofollowed_mggk_links_to_normal_in_md_files () {
-for x in $(cat final.txt); do 
-    echo "##------------------------------------------------------------------------------";
-    echo ">> FILENAME = $x" ;
-    # create the backup file of the original
-    file_bak="$x.bak" ;
-    mv "$x" "$file_bak" ;
-    ## create the original file back
-    cat $file_bak | sd 'rel="nofollow" href="https://www.mygingergarlic' 'href="https://www.mygingergarlic' > $x ;
-done
+function 7_FUNC_remove_nofollow_tags_from_mggk_links_in_md_files () {
+    ## Remove nofollow tag from mygingergarlickitchen.com links in md files (if any)
+    inFile="$tmpFile1" ;
+    for mymdfile in $(cat $inFile); do 
+        echo "##------------------------------------------------------------------------------";
+        echo ">> FILENAME = $mymdfile" ;
+        # create the backup file of the original
+        file_bak="$mymdfile.bak" ;
+        cp "$mymdfile" "$file_bak" ;
+        ## create the original file back by removing nofollow tags
+        cat $file_bak | sd 'rel="nofollow" href="https://www.mygingergarlic' 'href="https://www.mygingergarlic' > $mymdfile ;
+    done
 }
 
 function 8_FUNC_convert_client_links_to_nofollow_in_md_files_in_markdown_syntax () {
-for myurl in $(cat t1.txt) ; do 
-    echo "##------------------------------------------------------------------------------";
-    echo "====> $myurl" ;
-    for myfile in $(ag -l "$myurl" $REPO_MGGK/content/ ) ; do 
-        echo "$myfile" ;
-        file_bak="$myfile.bak" ;
-        cp "$myfile" "$file_bak" ;
-        ## create the original file back
-        #ag "\($myurl" $myfile ;
-        cat $file_bak | sd "\($myurl" "($myurl#NOFOLLOW" > $myfile ;
+    ## Converting markdown syntax hyperlinks to nofollow in md files
+    inFile="$tmpFile4" ;
+    for myurl in $(cat $inFile) ; do 
+        echo "##------------------------------------------------------------------------------";
+        echo "====> $myurl" ;
+        for mymdfile in $(ag -l "$myurl" $REPO_MGGK/content/ ) ; do 
+            echo ">> FILENAME = $mymdfile" ;
+            file_bak="$mymdfile.bak" ;
+            cp "$mymdfile" "$file_bak" ;
+            ## create the original file back by converting markdown hyperlinks syntax
+            cat $file_bak | sd "\($myurl" "($myurl#NOFOLLOW" > $mymdfile ;
+        done
     done
-done
 }
 
 ################################################################################
@@ -114,7 +117,7 @@ done
 4_FUNC_discard_authority_domains_from_url_list
 #5_FUNC_find_http_server_headers_for_urls
 #6_convert_server_header_rows_to_columns_as_csv
-#7_FUNC_convert_nofollowed_mggk_links_to_normal_in_md_files ;
+#7_FUNC_remove_nofollow_tags_from_mggk_links_in_md_files ;
 #8_FUNC_convert_client_links_to_nofollow_in_md_files_in_markdown_syntax ;
 
  
