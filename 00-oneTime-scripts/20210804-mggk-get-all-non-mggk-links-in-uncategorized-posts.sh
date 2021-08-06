@@ -7,12 +7,13 @@ THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 WORKDIR="$DIR_Y/_tmp_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
 mkdir -p $WORKDIR ;
 ##
-tmpFile1="$WORKDIR/tmp1.txt" ;
-tmpFile2="$WORKDIR/tmp2.txt" ;
-tmpFile3="$WORKDIR/tmp3.txt" ;
-tmpFile4="$WORKDIR/tmp4.txt" ;
-tmpFile5="$WORKDIR/tmp5.txt" ;
-tmpFile6="$WORKDIR/tmp6.csv" ;
+tmpFile1="$WORKDIR/tmp1.txt" ; # list of mdfile paths
+tmpFile2="$WORKDIR/tmp2.txt" ; # mggk urls corresponding to mdfile paths from above
+tmpFile3="$WORKDIR/tmp3.txt" ; # all href urls found in mggk urls from above
+tmpFile4="$WORKDIR/tmp4.txt" ; # href urls remaining after some cleaning from above
+tmpFile5="$WORKDIR/tmp5.txt" ; # http server headers found through curl from above
+tmpFile6="$WORKDIR/tmp6.csv" ; # convert rows to colums as csv from above
+##
 ## making sure the files are generated only through this program
 for x in $tmpFile1 $tmpFile2 $tmpFile3 $tmpFile4 $tmpFile5 $tmpFile6 ; do
     touch $x ; rm $x ;
