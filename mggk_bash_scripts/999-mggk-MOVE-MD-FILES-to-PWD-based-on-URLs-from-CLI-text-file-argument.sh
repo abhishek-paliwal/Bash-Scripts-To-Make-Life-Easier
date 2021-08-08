@@ -2,7 +2,6 @@
 
 ##################################################################################
 ## SOME VARIABLES (CHANGE THE SOURCE DIR IF NEEDED)
-#SOURCE_DIR="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/_FIXED/top-01-50" ;
 SOURCE_DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content" ;
 DIR_TO_MOVE="$HOME_WINDOWS/Desktop/Y/_TMP_md_files_moved-$(basename $SOURCE_DIR)" ;
 ##################################################################################
