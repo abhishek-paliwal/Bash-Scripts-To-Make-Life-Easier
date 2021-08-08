@@ -41,6 +41,7 @@ fi
 echo "CURRENTLY RUNNING SCRIPT = $THIS_SCRIPT_NAME" ;
 ## Present working directory
 WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION";
+mkdir -p $WORKDIR ;
 cd $WORKDIR ;
 echo;
 echo ">> Present working directory = $WORKDIR" ;
