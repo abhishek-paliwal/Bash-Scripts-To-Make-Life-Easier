@@ -1,5 +1,6 @@
 #!/bin/bash
-THIS_SCRIPT_NAME="599-mggk-create-and-save-site-statistics.sh"
+THIS_SCRIPT_NAME="$(basename $0)" ;
+THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
@@ -22,8 +23,10 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ##################################################################################
+WORKDIR="$DIR_Y/_OUTPUT/$THIS_SCRIPT_NAME_SANS_EXTENSION";
+mkdir -p "$WORKDIR" ;
 HUGO_CONTENT_DIR="$REPO_MGGK/content" ;
-FILE_OUTPUT_SITESTATS="$DIR_Y/tmp-mggk-sitestats.html" ;
+FILE_OUTPUT_SITESTATS="$WORKDIR/tmp-mggk-sitestats.html" ;
 FILE_OUTPUT_SITESTATS_FINAL="$REPO_MGGK_SUMMARY/mggk-sitestats.html" ;
 DIR_HUGO_MAIN="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL" ; 
 DIR_OUTPUT="$HOME/Desktop/Y" ;
@@ -92,8 +95,8 @@ echo "" >> $FILE_OUTPUT_SITESTATS ;
 
 ################################################################################ 
 ## CHECKING IF RECIPE_STEPS_FOLDERS ARE SAME AS URLS ...
-tmpfile1="$DIR_Y/tmp1000.txt" ;
-tmpfile2="$DIR_Y/tmp1001.txt" ;
+tmpfile1="$WORKDIR/tmp1000.txt" ;
+tmpfile2="$WORKDIR/tmp1001.txt" ;
 ##
 for x in $(grep -irl preptime $REPO_MGGK/content/**) ; do grep -i 'url: ' $x ;  done | sed 's/url: //g' | sed 's+/++g' | sort > $tmpfile1 ;
 ##
@@ -116,7 +119,7 @@ echo "" >> $FILE_OUTPUT_SITESTATS ;
 ################################################################################ 
 ## CHECKING IF FILES AND DIRECTORIES IN RECIPE_STEPS_IMAGES HAVE
 ## ANY UPPERCASE LETTERS (bcoz they are not allowed)...
-tmpfile1="$DIR_Y/tmp999.txt" ;
+tmpfile1="$WORKDIR/tmp999.txt" ;
 ##
 DIR_STEPS_IMAGES="$REPO_MGGK/static/wp-content/recipe-steps-images" ;
 replace_this1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/recipe-steps-images/" ;
@@ -364,9 +367,18 @@ echo ">> STATISTICS FILE SAVED AS => $FILE_OUTPUT_SITESTATS_FINAL" ;
 ## COPY this file to Dropbox dir
 cp $FILE_OUTPUT_SITESTATS_FINAL $DIR_DROPBOX_SCRIPTS_OUTPUT/
 
-## Listing word counts for files in dropbox dir
-#echo;
-#echo ">> Listing word counts for files in dropbox dir ..." ; 
-#fd --search-path="$DIR_DROPBOX_SCRIPTS_OUTPUT/" -x wc -l {} ;
 
-
+################################################################################
+## KEEP THIS BLOCK AT THE END ##
+function FUNC_CREATE_INDEX_FILE () {
+    ## CREATING INDEX PAGE FOR ALL FILES IN DROPBOX SUMMARY DIR
+    tmpfile1="$WORKDIR/index.html" ;
+    echo "<h1>INDEX OF FILES IN DROPBOX SUMMARY DIR</h1>" > "$tmpfile1" ; 
+    echo "<p><strong>Updated: $(date)</strong></p><hr>" >> "$tmpfile1" ; 
+    fd -I --search-path="$DIR_DROPBOX_SCRIPTS_OUTPUT" -x echo "<p>&bull; <a href='{/}'>{/}</a></p>" >> $tmpfile1 ;
+    ## COPY this file to Dropbox dir
+    cp $tmpfile1 $DIR_DROPBOX_SCRIPTS_OUTPUT/ ;
+    echo ">> INDEX FILE COPIED TO DROPBOX DIR" ; 
+}
+FUNC_CREATE_INDEX_FILE
+################################################################################
