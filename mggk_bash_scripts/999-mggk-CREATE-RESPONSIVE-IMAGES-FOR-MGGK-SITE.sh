@@ -121,8 +121,8 @@ function FUNC_calc_md5sums() {
     ## Calculate md5sums of the existing files
     outputFile="$1" ;
     echo "Writing md5sums to => $outputFile" ; 
-    fd --search-path="$originalImageDir" -x md5sum > tmp-md5.txt ;
-    sort tmp-md5.txt > "$outputFile" ;
+    fd --search-path="$originalImageDir" -x md5sum > $WORKDIR/tmp-md5.txt ;
+    sort $WORKDIR/tmp-md5.txt > "$outputFile" ;
 }
 
 #######
