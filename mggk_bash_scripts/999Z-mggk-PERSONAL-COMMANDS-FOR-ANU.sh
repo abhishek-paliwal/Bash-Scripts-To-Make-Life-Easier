@@ -123,11 +123,11 @@ frontm_sponsored) ;
 PALI_COMMANDS_ARRAY=(palinotes_makesite_hugo
 frontp
 0000_create_NEW_BASH_SCRIPT_FROM_TEMPLATE
-1_all_backup_indexes_maker
-999-make-imagemagick-collage-vertically-and-horizontally
 edit_0000_BASHSCRIPT_CREATION_TEMPLATE_FILE
 edit_999Z_script
 edit_lce_index_html
+1_all_backup_indexes_maker
+999-make-imagemagick-collage-vertically-and-horizontally
 pali_0000_create_html_index_with_usage_help_for_all_bash_scripts
 pali_copy_aspell_personal_words_for_this_user
 pali_countfiles
@@ -145,9 +145,10 @@ pali_GIT_STATUS_FOR_ALL_REPOS
 pali_imagemagick_fixed_resize_images_by_width_or_height
 2000-python-image-resize
 pali_imagemagick_create_10_random_images
+901-mggk-delete-cloudflare-cache-for-chosen-keyword-urls
+901-mggk-delete-cloudflare-cache-for-user-input-urls
 901-mggk-get-all-image-links-from-mggk-webpages-for-cloudflare-cache
 901-mggk-get-cloudflare-cache-status-for-all-valid-mggk-urls
-901-mggk-delete-cloudflare-cache-for-chosen-keyword-urls
 mggk_WEEKLY_SUMMARY_RUN) ;
 
 ##
