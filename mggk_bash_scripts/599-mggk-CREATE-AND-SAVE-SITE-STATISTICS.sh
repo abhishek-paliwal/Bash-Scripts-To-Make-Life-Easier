@@ -23,13 +23,13 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ##################################################################################
-WORKDIR="$DIR_Y/_OUTPUT/$THIS_SCRIPT_NAME_SANS_EXTENSION";
+WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION";
 mkdir -p "$WORKDIR" ;
 HUGO_CONTENT_DIR="$REPO_MGGK/content" ;
 FILE_OUTPUT_SITESTATS="$WORKDIR/tmp-mggk-sitestats.html" ;
 FILE_OUTPUT_SITESTATS_FINAL="$REPO_MGGK_SUMMARY/mggk-sitestats.html" ;
 DIR_HUGO_MAIN="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL" ; 
-DIR_OUTPUT="$HOME/Desktop/Y" ;
+DIR_OUTPUT="$WORKDIR" ;
 
 echo "##------------------------------------------------------------------------------" ;
 echo ">> GATHERING IMPORTANT SITE STATS FOR MGGK HUGO WEBSITE ..." ;
