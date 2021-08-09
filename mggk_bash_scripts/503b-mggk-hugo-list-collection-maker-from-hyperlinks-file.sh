@@ -1,4 +1,7 @@
 #!/bin/bash
+THIS_SCRIPT_NAME="$(basename $0)" ;
+THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
+REQUIREMENTS_FILE="$THIS_SCRIPT_NAME_SANS_EXTENSION-requirements.txt" ;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
@@ -17,8 +20,8 @@ USAGE: $(basename $0)
     #### OR
     #### sh 503b-mggk-hugo-list-collection-maker-from-hyperlinks-file.sh \$1
     ###############################################################################
-    ## NOTE: REQUIREMENTS_FILE should be present in => $HOME/Desktop/Y
-    ## REQUIREMENTS_FILE="503b_mylinks.txt"
+    ## NOTE: REQUIREMENTS_FILE should be present in => $DIR_Y
+    ## REQUIREMENTS_FILE="$REQUIREMENTS_FILE"
     ## OR
     ## REQUIREMENTS_FILE="\$1"
     ###############################################################################
@@ -38,8 +41,8 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ################################################################################
 if [ -z "$1" ]
 then
-  echo "\$1 is EMPTY. Hence, REQUIREMENTS_FILE will be assigned as = 503b_mylinks.txt)." ;
-  REQUIREMENTS_FILE="503b_mylinks.txt" ;
+  echo "\$1 is EMPTY. Hence, REQUIREMENTS_FILE will be assigned as = $REQUIREMENTS_FILE)." ;
+  REQUIREMENTS_FILE="$REQUIREMENTS_FILE" ;
 else
   echo "\$1 is NOT EMPTY. Hence, REQUIREMENTS_FILE will be assigned as = $1)." ;
   REQUIREMENTS_FILE="$1" ;
@@ -49,16 +52,17 @@ fi
 ###############################################################################
 
 ## CD to temporary directory on desktop
-myPWD="$HOME/Desktop/Y" ;
-cd $myPWD ;
+myPWD="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
+mkdir -p $myPWD ;
+#cd $myPWD ;
 echo ">>>> PWD is $myPWD" ;
 echo "<<<< IN CASE OF ERROR: Make sure that there is a file named mylinks.txt in $myPWD >>>>" ;
 
 ## DEFINE SOME VARIABLE FILENAMES
-LINKS_FILE_OUTPUT="_TMP_MYLINKS.txt" ;
-OUTPUT_HTML_FILE="_TMP_503b_FINAL_OUTPUT-$REQUIREMENTS_FILE.html"
-TMP_CURL_FILE="_TMP_mycurlfile.txt" ;
-MD_FILENAME="_TMP-$REQUIREMENTS_FILE.md";
+LINKS_FILE_OUTPUT="$myPWD/_TMP_MYLINKS.txt" ;
+OUTPUT_HTML_FILE="$myPWD/_TMP_503b_FINAL_OUTPUT-$REQUIREMENTS_FILE.html"
+TMP_CURL_FILE="$myPWD/_TMP_mycurlfile.txt" ;
+MD_FILENAME="$myPWD/_TMP-$REQUIREMENTS_FILE.md";
 ###############################################################################
 
 echo ;
@@ -154,18 +158,22 @@ while read -r line; do
     echo ; echo ;
     echo ">>> LINE NUMBER $COUNT = $line " # Reading each line
 
-    MGGK_BASEURL="https://www.mygingergarlickitchen.com"
-
     MDFILE_WITH_CHOSEN_URL=$(FUNCTION_OUTPUT_MDFILE_FULLPATH "$line") ;
     echo "  >> Markdown file found => $MDFILE_WITH_CHOSEN_URL " ; 
     echo;
     
     ## EXTRACTING NEEDED DETAILS FROM MD FILE THUS FOUND
+    MGGK_BASEURL="https://www.mygingergarlickitchen.com" ;
+    MGGK_BASEURL_RESPONSIVE="https://www.mygingergarlickitchen.com/wp-content/responsive-images" ;
+    ##
     TITLE=$(grep -irh '^title: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed 's/title: //g' ) ;
     META_DESCRIPTION=$(grep -irh '^yoast_description: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed 's/yoast_description: //g' | cut -c1-180 ) ;
     URL=$(grep -irh '^url: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed "s+url: +$MGGK_BASEURL+g" ) ;
     IMAGE=$(grep -irh '^featured_image: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed "s+featured_image: +$MGGK_BASEURL+g" ) ;
     IMAGE_TO_COPY=$(grep -irh '^featured_image: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed "s+featured_image: +$REPO_MGGK/static+g" ) ;  
+
+    IMAGE_BASENAME=$(basename $IMAGE) ;
+    IMAGE_350PX="$MGGK_BASEURL_RESPONSIVE/350px/350px-$IMAGE_BASENAME" ;
 
     ## Further processing of IMAGE + META_DESCRIPTION
     #### DOWNLOADING THE IMAGE INTO A SPECIFIC FOLDER (folder will be created if not present already)
@@ -190,6 +198,7 @@ while read -r line; do
     echo "PAGE URL = $URL " ;
     echo "META_DESCRIPTION = $META_DESCRIPTION " ;
     echo "IMAGE = $IMAGE " ;
+    echo "IMAGE_350PX = $IMAGE_350PX " ;
     echo "IMAGE_TO_COPY = $IMAGE_TO_COPY " ;
 
           ## PRINTING RESPONSIVE GRID COLUMNS
@@ -202,7 +211,7 @@ while read -r line; do
 
         echo ""  >> $OUTPUT_HTML_FILE;
         echo "      <div class='col-5 col-sm-5 col-md-12 col-lg-12 col-xl-12'>
-        <a href='$URL'><img class='lazy' src='$IMAGE' data-src='$IMAGE' alt='$TITLE' width='100%' \></a>
+        <a href='$URL'><img src='$IMAGE_350PX' alt='$TITLE' width='100%' \></a>
         </div>" >> $OUTPUT_HTML_FILE ;
 
         echo ""  >> $OUTPUT_HTML_FILE;
@@ -229,7 +238,12 @@ echo "   </div></div> <!-- END: ALL CONTENT COLUMN+ROW -->
 
 ## Date is assigned in mdfile as 12 hours in the past from current time, to take care
 #### of various timezones errors, so that it gets published when the hugo site is made.
-DATEVAR=$(date -v -12H +%Y-%m-%dT%H:%M:%S) ;
+if [ "$(uname)" == "Linux" ] ; then 
+    DATEVAR=$(date -d '12 hour ago' +%Y-%m-%dT%H:%M:%S) ;
+else
+    DATEVAR=$(date -v -12H +%Y-%m-%dT%H:%M:%S) ;
+fi 
+
 
 ################ BEGIN: CREATE MD FILE BY DUMPING ALL TEXT
 echo "---
@@ -273,7 +287,10 @@ echo "{{< /mggkrecipeHTMLcode >}}" >> $MD_FILENAME ;
 ################ END: CREATE MD FILE BY DUMPING ALL TEXT
 
 ###############################################################################
-## Opening directory = PWD
-# This command works only on mac
-open $myPWD ;
-open $OUTPUT_HTML_FILE ;
+## Opening directory and output html file
+if [[ "$USER" == "ubuntu" ]] ; then 
+  explorer.exe . ;
+elif [[ "$USER" == "abhishek" ]] ; then 
+  open $myPWD ;
+  open $OUTPUT_HTML_FILE ;
+fi
