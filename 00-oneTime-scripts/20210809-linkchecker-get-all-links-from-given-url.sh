@@ -30,7 +30,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 ##############################################################################
 ## SETTING VARIABLES
-WORKDIR="$DIR_Y/_tmp_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
+WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
 mkdir -p $WORKDIR ; ## create dir if not exists
 ##
 
