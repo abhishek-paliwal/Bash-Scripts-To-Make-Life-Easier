@@ -101,14 +101,14 @@ if [ "$CacheDelete" == "y" ]; then
     inFile="$step1File" ; ## step1File
     inFile_base=$(basename $inFile) ; 
     echo ">> Splitting file (= $inFile_base ) into multiple files with 28 lines each ..." ;
-    fd 'xa' -t f --search-path="$WORKDIR" -x rm {} ; ## Deleting already present xa files
+    fd 'xa|xb|xc|xd|xe' -t f --search-path="$WORKDIR" -x rm {} ; ## Deleting already present x** files
     split -l 28 $inFile ; ## Actual splitting
     ## SUMMARY OF OUTPUTS
     echo; echo ">> PRINTING WORD COUNTS ... " ;
-    fd 'xa' -t f --search-path="$WORKDIR" -x wc {} ;
+    fd 'xa|xb|xc|xd|xe' -t f --search-path="$WORKDIR" -x wc {} ;
     ####
     ## Actual deletion of cache
-    for myFile in $(fd 'xa' -t f --search-path="$WORKDIR"); do 
+    for myFile in $(fd 'xa|xb|xc|xd|xe' -t f --search-path="$WORKDIR"); do 
         echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><>>>>" ; 
         step3_FUNC_cloudflare_format_urls_for_api "$myFile" ;
         step4_FUNC_cloudflare_delete_cache_for_keyword_urls "$tmpFile1" ;
