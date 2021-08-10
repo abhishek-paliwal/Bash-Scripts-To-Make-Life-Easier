@@ -11,12 +11,10 @@ cat <<EOM
 USAGE: $(basename $0)
     ################################################################################
     ## USAGE:
-    #### > bash $THIS_SCRIPT_NAME \$1
-    #### WHERE, \$1 IS ...
+    #### > bash $THIS_SCRIPT_NAME
     ################################################################################
-    ## This script saves copy of chosen competitors webpages as html thru curl command. 
-    ## 
-    ## 
+    ## This script saves copy of chosen competitors webpages as html page using 
+    ## curl command. 
     ################################################################################
     ## REQUIREMENT:  $REQUIREMENTS_FILE
     ################################################################################
@@ -31,10 +29,32 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+##------------------------------------------------------------------------------
+## ASSIGN COMPUTER HOSTNAME SPECIFIC VARIABLES
+function FUNC_assign_variables_for_this_hostname () {
+    HOSTNAME=$(uname -n) ;
+    #### Possible hostnames are: 
+    #### AP-MBP.local // LAPTOP-F0AJ6LBG // ubuntu1804-digitalocean-bangalore-droplet
+    ## 
+    if [ "$HOSTNAME" == "ubuntu1804-digitalocean-bangalore-droplet" ] ; then
+        WWWDIR="/var/www/vps.abhishekpaliwal.com/html/scripts-html-outputs" ;
+        BASEDIR="$WWWDIR" ;
+    else
+        BASEDIR="$DIR_Y" ;
+    fi
+    ##
+    echo ">> HOSTNAME IS = $HOSTNAME";
+    echo ">> CHOSEN BASEDIR => $BASEDIR" ;
+}
+FUNC_assign_variables_for_this_hostname
+##------------------------------------------------------------------------------
+
 ##############################################################################
 ## SETTING VARIABLES
-WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
-mkdir -p $WORKDIR ; ## create dir if not exists
+WORKDIR="$BASEDIR/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
+if [ -d "$WORKDIR" ] ; then rm -rf "$WORKDIR" ; fi
+mkdir -p $WORKDIR ; ## create dir
+##
 echo ;
 echo "################################################################################" ; 
 echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
@@ -42,15 +62,20 @@ echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
 
 ##############################################################################
 ## MAIN FUNCTION DEFINITION
-function FUNC_save_webpages () {
+function FUNC_save_webpages_as_html () {
     inFile="$REQUIREMENTS_FILE" ;
-    outFile="$REQUIREMENTS_FILE" ;
-    outDir="$REQUIREMENTS_FILE" ;
-    for x in $(cat $inFile); do 
-    mydir="$WORKDIR/_OUTPUTS_500X_HTML" ; 
-    mkdir -p "$mydir" ; 
-    file=$(echo $x | sd '/' '-' | sd ':' '' | sd '\.' '-' ) ; 
-    curl $x > "$mydir/$file-$(date +%Y%m%d).html" ; 
+    outDir="$WORKDIR" ; 
+    mkdir -p "$outDir" ; 
+    ##
+    for myurl in $(cat $inFile); do 
+        echo ">> EXTRACTING THIS URL => $myurl" ;
+        ##
+        filename=$(echo $myurl | sd '/' '-' | sd ':' '' | sd '\.' '-' ) ; 
+        datevar="$(date +%Y%m%d)" ;
+        outFile="$outDir/$filename-$datevar.html" ;
+        curl -s "$myurl" > "$outFile" ; 
     done
 }
 ##############################################################################
+
+FUNC_save_webpages_as_html
