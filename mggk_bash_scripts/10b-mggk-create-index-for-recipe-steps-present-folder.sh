@@ -32,6 +32,9 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 ##################################################################################
 ## SETTING VARIABLES
+WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
+mkdir -p $WORKDIR ; ## create dir if not exists
+##
 MAIN_DIR="$REPO_MGGK/static/wp-content/recipe-steps-images" ;
 BASE_URL="https://www.mygingergarlickitchen.com/wp-content/recipe-steps-images" ;
 MGGK_URL="https://www.mygingergarlickitchen.com" ;
@@ -45,17 +48,17 @@ for x in $(fd --search-path="$REPO_MGGK/content/" -e md); do var=$(grep "url: " 
 ##
 main_index_htmlfile="$MAIN_DIR/index-recipe-steps-images.html" ;
 ## Creating some intermediate tmp files 
-tmp1="$DIR_Y/_tmp10b_1.txt"
-tmp2="$DIR_Y/_tmp10b_2.txt"
-tmp3="$DIR_Y/_tmp10b_3.txt"
-tmp4="$DIR_Y/_tmp10b_4.txt"
+tmp1="$WORKDIR/_tmp10b_1.txt"
+tmp2="$WORKDIR/_tmp10b_2.txt"
+tmp3="$WORKDIR/_tmp10b_3.txt"
+tmp4="$WORKDIR/_tmp10b_4.txt"
 # Initializing these tmp files
 echo "" > $tmp1 ;
 echo "" > $tmp2 ;
 echo "" > $tmp3 ;
 echo "" > $tmp4 ;
 ## Create and initialize summary file
-TMPFILE="$DIR_Y/mggk_summary_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+TMPFILE="$WORKDIR/mggk_summary_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 echo "## Summary file created: $(date) // by script => $THIS_SCRIPT_NAME" > $TMPFILE ;
 ## Print another line to check whether steps couting is done or not.
 if [[ "$1" == "calculate_steps_count_TRUE" ]] ; then
