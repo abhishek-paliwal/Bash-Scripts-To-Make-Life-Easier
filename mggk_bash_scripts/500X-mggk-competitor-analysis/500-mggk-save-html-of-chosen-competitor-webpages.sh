@@ -69,7 +69,7 @@ function FUNC_save_webpages_as_html () {
     mkdir -p "$outDir" ; 
     ##
     echo "Downloading => $REQUIREMENTS_FILE_DOWNLOAD_URL" ;
-    wget --directory-prefix="$outDir" "$REQUIREMENTS_FILE_DOWNLOAD_URL" ;
+    wget -O "$outDir/$REQUIREMENTS_FILE_BASENAME" "$REQUIREMENTS_FILE_DOWNLOAD_URL" ;
     ##
     inFile="$outDir/$REQUIREMENTS_FILE_BASENAME" ;
     ##
