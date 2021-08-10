@@ -80,7 +80,7 @@ function FUNC_save_webpages_as_html () {
         datevar="$(date +%Y%m%d)" ;
         outFile="$outDir/$filename-$datevar.html" ;
         curl -s "$myurl" > "$outFile" ; 
-        echo "  >> HTML FILE SAVED => $outFile" ;
+        echo "  >> HTML FILE SAVED => $outFile"  ;
     done
 }
 ##############################################################################
