@@ -370,15 +370,15 @@ cp $FILE_OUTPUT_SITESTATS_FINAL $DIR_DROPBOX_SCRIPTS_OUTPUT/
 
 ################################################################################
 ## KEEP THIS BLOCK AT THE END ##
-function FUNC_CREATE_INDEX_FILE () {
+function FUNC_CREATE_INDEX_FILE_IN_DROPBOX_DIR () {
     ## CREATING INDEX PAGE FOR ALL FILES IN DROPBOX SUMMARY DIR
     tmpfile1="$WORKDIR/index.html" ;
     echo "<h1>INDEX OF FILES IN DROPBOX SUMMARY DIR</h1>" > "$tmpfile1" ; 
     echo "<p><strong>Updated: $(date)</strong></p><hr>" >> "$tmpfile1" ; 
-    fd -I --search-path="$DIR_DROPBOX_SCRIPTS_OUTPUT" -x echo "<p>&bull; <a href='{/}'>{/}</a></p>" >> $tmpfile1 ;
+    fd -I --search-path="$DIR_DROPBOX_SCRIPTS_OUTPUT" -x echo "<p>&bull; <a href='{/}'>{/}</a></p>" | sort >> $tmpfile1 ;
     ## COPY this file to Dropbox dir
     cp $tmpfile1 $DIR_DROPBOX_SCRIPTS_OUTPUT/ ;
     echo ">> INDEX FILE COPIED TO DROPBOX DIR" ; 
 }
-FUNC_CREATE_INDEX_FILE
+FUNC_CREATE_INDEX_FILE_IN_DROPBOX_DIR
 ################################################################################
