@@ -1,7 +1,10 @@
 #!/bin/bash
 THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
-REQUIREMENTS_FILE="$REPO_SCRIPTS_MGGK/_REQUIREMENT_FILES_MGGK/500X-mggk-competitors-urls-of-interest.txt" ;
+##
+REQUIREMENTS_FILE_BASENAME="500X-mggk-competitors-urls-of-interest.txt" ;
+REQUIREMENTS_FILE="$REPO_SCRIPTS_MGGK/_REQUIREMENT_FILES_MGGK/$REQUIREMENTS_FILE_BASENAME" ;
+REQUIREMENTS_FILE_DOWNLOAD_URL="https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/mggk_bash_scripts/_REQUIREMENT_FILES_MGGK/$REQUIREMENTS_FILE_BASENAME" ;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
@@ -14,7 +17,7 @@ USAGE: $(basename $0)
     #### > bash $THIS_SCRIPT_NAME
     ################################################################################
     ## This script saves copy of chosen competitors webpages as html page using 
-    ## curl command. 
+    ## curl and wget utilities. 
     ################################################################################
     ## REQUIREMENT:  $REQUIREMENTS_FILE
     ################################################################################
@@ -52,8 +55,7 @@ FUNC_assign_variables_for_this_hostname
 ##############################################################################
 ## SETTING VARIABLES
 WORKDIR="$BASEDIR/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
-if [ -d "$WORKDIR" ] ; then rm -rf "$WORKDIR" ; fi
-mkdir -p $WORKDIR ; ## create dir
+mkdir -p $WORKDIR ; ## creates dir without any error messages if already present
 ##
 echo ;
 echo "################################################################################" ; 
@@ -63,9 +65,13 @@ echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
 ##############################################################################
 ## MAIN FUNCTION DEFINITION
 function FUNC_save_webpages_as_html () {
-    inFile="$REQUIREMENTS_FILE" ;
     outDir="$WORKDIR" ; 
     mkdir -p "$outDir" ; 
+    ##
+    echo "Downloading => $REQUIREMENTS_FILE_DOWNLOAD_URL" ;
+    wget --directory-prefix="$outDir" "$REQUIREMENTS_FILE_DOWNLOAD_URL" ;
+    ##
+    inFile="$outDir/$REQUIREMENTS_FILE_BASENAME" ;
     ##
     for myurl in $(cat $inFile); do 
         echo ">> EXTRACTING THIS URL => $myurl" ;
@@ -78,4 +84,8 @@ function FUNC_save_webpages_as_html () {
 }
 ##############################################################################
 
+## Call function
 FUNC_save_webpages_as_html
+
+
+
