@@ -45,6 +45,26 @@ function FUNC_ONLY_RUN_FOR_THIS_USER () {
 FUNC_ONLY_RUN_FOR_THIS_USER
 ##------------------------------------------------------------------------------
 
+##------------------------------------------------------------------------------
+## ASSIGN COMPUTER HOSTNAME SPECIFIC VARIABLES
+function FUNC_assign_variables_for_this_hostname () {
+    HOSTNAME=$(uname -n) ;
+    ## Possible hostnames are: 
+    #### AP-MBP.local // LAPTOP-F0AJ6LBG // ubuntu1804-digitalocean-bangalore-droplet
+    ## 
+    if [ "$HOSTNAME" == "ubuntu1804-digitalocean-bangalore-droplet" ] ; then
+        WWWDIR="/var/www/vps.abhishekpaliwal.com/html/scripts-html-outputs" ;
+        BASEDIR="$WWWDIR" ;
+    else
+        BASEDIR="$DIR_Y" ;
+    fi
+    ##
+    echo ">> HOSTNAME IS = $HOSTNAME";
+    echo ">> CHOSEN BASEDIR => $BASEDIR" ;
+}
+FUNC_assign_variables_for_this_hostname
+##------------------------------------------------------------------------------
+
 ##
 time_taken="$WORKDIR/tmp-time-taken-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 echo "$(date) = START-TIME" > $time_taken
