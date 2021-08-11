@@ -67,6 +67,18 @@ function step4_FUNC_cloudflare_delete_cache_for_keyword_urls () {
     ##
     echo ">> DONE = step4_FUNC_cloudflare_delete_cache_for_keyword_urls " ;
 }
+
+function step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls () {
+    ## function takes one argument as texfile containing urls
+    inFile="$1" ;
+    echo ">> Finding cache hit status for keyword urls ... " ;
+    ##
+    for myurl in $(cat $inFile); do 
+        echo ">> CURRENT URL = $myurl" ; 
+        curl -sI "$myurl" | grep -i 'cache-status' ; 
+    done
+    echo ">> DONE = step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls " ;
+}
 ################################################################################
 ################################################################################
 
@@ -114,6 +126,9 @@ if [ "$CacheDelete" == "y" ]; then
         step4_FUNC_cloudflare_delete_cache_for_keyword_urls "$tmpFile1" ;
         echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ; 
     done
+    ####
+    ## Finding cache hit status
+    step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls "$step1File" ;
     ####
 else 
     echo ">> Alright, cache WILL NOT BE DELETED." ;
