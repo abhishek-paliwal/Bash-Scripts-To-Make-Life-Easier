@@ -519,51 +519,6 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     ################################################################################
 
     ################################################################################
-    ## BEGIN: KEYWORDS EXTRACTION USING GENSIM (PYTHON PACKAGE)
-    ################################################################################
-    import gensim
-    from gensim.summarization import summarize
-    from gensim.summarization import keywords
-
-    GENSIM_ARTICLE_SUMMARY_100 = "" # initializing
-    GENSIM_ARTICLE_SUMMARY_20PC = "" # initializing
-    try:
-        print("\n\n>>>> GENSIM SUMMARY (100 words)\n")
-        GENSIM_ARTICLE_SUMMARY_100_TMP = summarize(article.text, word_count=100)
-        GENSIM_ARTICLE_SUMMARY_100 = GENSIM_ARTICLE_SUMMARY_100_TMP.replace('\n', '<br><br>')
-        print(GENSIM_ARTICLE_SUMMARY_100)
-
-        print("\n\n>>>> GENSIM SUMMARY (20% of original article length)\n")
-        GENSIM_ARTICLE_SUMMARY_20PC_TMP = summarize(article.text, ratio=0.2) # show 20% of the original text
-        GENSIM_ARTICLE_SUMMARY_20PC = GENSIM_ARTICLE_SUMMARY_20PC_TMP.replace('\n', '<br><br>')
-        print("\n\n",GENSIM_ARTICLE_SUMMARY_20PC)
-    except:
-        print("**** PRINT WARNING = Gensim summary can not be extracted. Maybe because the page content is only one sentence long. ****")
-
-    print("\n\n>>>> GENSIM KEYWORDS = ALL \n")
-    GENSIM_KEYWORDS_ALL_TMP = keywords(article.text,split=False)
-    GENSIM_KEYWORDS_ALL = GENSIM_KEYWORDS_ALL_TMP.replace('\n', '<br>')
-    print(GENSIM_KEYWORDS_ALL)
-
-    ## INITIAL IDEA BELOW WAS TO TAKE 25 KEYWORDS, BUT IT DOES NOT KEEP WELL WITH
-    #### THE CASE WHEN THERE ARE LESS THAN 25 KEYWORDS IN TOTAL. SO NOW, WE WILL
-    #### CONSIDER ALL KEYWORDS
-    print("\n\n>>>> GENSIM KEYWORDS = Top Keywords with scores \n")
-    GENSIM_KEYWORDS_TOP25_WITH_SCORES_TMP = keywords(article.text,split=False,scores=True)
-    ## WORKING WITH THIS GENSIM KEYWORDS TUPLE (BREAKING IT DOWN LINE BY LINE)
-    GENSIM_TOP_KEYWORD_ARRAY=[]
-    for gkword in GENSIM_KEYWORDS_TOP25_WITH_SCORES_TMP:
-        print(gkword)
-        GENSIM_string_kw = str(gkword[0]) + ' // ' + str( round(gkword[1],3) )
-        GENSIM_TOP_KEYWORD_ARRAY.append(GENSIM_string_kw)
-    ## CONVERTING THIS ARRAY TO A STRING OF WORDS FOR HTML OUTPUT
-    GENSIM_KEYWORDS_TOP25_WITH_SCORES = str('<br>'.join(GENSIM_TOP_KEYWORD_ARRAY))
-
-    ################################################################################
-    ## END: KEYWORDS EXTRACTION USING GENSIM (PYTHON PACKAGE)
-    ################################################################################
-
-    ################################################################################
     ## BEGIN: COLLECTING ALL VARIABLES AND WRITING TO OUTPUT HTML FILE
     ################################################################################
     colored_bullet_chars = '<hr style="height: 5px; background-color: ' + row_color + '">';
@@ -584,12 +539,8 @@ def mggk_find_ai_details_from_url_lines(url,URL_COUNT):
     f.write('<td>'+colored_bullet_chars+ str(BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY) +'</td>')
     f.write('<td>'+colored_bullet_chars+ str(NLP_ARTICLE_PUBLISH_DATE) +'</td>')
     f.write('<td>'+colored_bullet_chars+'<span style="color:blue">'+ NLP_ARTICLE_SUMMARY +'</span></td>')
-    f.write('<td>'+colored_bullet_chars+ GENSIM_ARTICLE_SUMMARY_100 +'</td>')
-    f.write('<td>'+colored_bullet_chars+'<span style="color:blue">'+ GENSIM_ARTICLE_SUMMARY_20PC +'</span></td>')
     f.write('<td>'+colored_bullet_chars+ NLP_TOP_KEYWORDS +'</td>')
-    f.write('<td>'+colored_bullet_chars+'<span style="color:blue">'+ GENSIM_KEYWORDS_ALL +'</span></td>')
     f.write('<td>'+colored_bullet_chars+ RAKE_TOP_KEYWORD_PHRASES +'</td>')
-    f.write('<td>'+colored_bullet_chars+ GENSIM_KEYWORDS_TOP25_WITH_SCORES +'</td>')
     f.write('<td>'+colored_bullet_chars+ FULL_HEADINGS_ARRAY_FINAL +'</td>')
     f.write('<td>'+colored_bullet_chars+ ALL_HYPERLINKS_ARRAY +'</td>')
     f.write('<td>'+colored_bullet_chars+ ALL_IMAGES_ARRAY +'</td>')
@@ -688,12 +639,8 @@ f.write('<th scope="col">NLP ARTICLE AUTHORS</th>')
 f.write('<th scope="col">BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY</th>')
 f.write('<th scope="col">NLP_ARTICLE_PUBLISH_DATE</th>')
 f.write('<th scope="col">NLP_ARTICLE_SUMMARY</th>')
-f.write('<th scope="col">GENSIM ARTICLE_SUMMARY_100_WORDS</th>')
-f.write('<th scope="col">GENSIM ARTICLE_SUMMARY_20_PERCENT_OF_ARTICLE_LENGTH</th>')
 f.write('<th scope="col">NLP_TOP_KEYWORDS</th>')
-f.write('<th scope="col">GENSIM_KEYWORDS_ALL</th>')
 f.write('<th scope="col">RAKE_TOP_KEYWORD_PHRASES</th>')
-f.write('<th scope="col">GENSIM ALL_KEYWORDS_WITH_SCORES</th>')
 f.write('<th scope="col">BSOUP ALL_HEADINGS_IN_WHOLE_WEBPAGE</th>')
 f.write('<th scope="col">BSOUP FOUND_HYPERLINKS_IN_ARTICLE_BLOCK</th>')
 f.write('<th scope="col">BSOUP ALL_IMAGES_ARRAY</th>')
