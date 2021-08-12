@@ -52,12 +52,12 @@ function FUNC_run_linkchecker_for_this_url () {
     ag --nonumber 'real url' $tmpFile | sd -f i 'real url' '' | sd ' ' '' | sort -u > $outFile_ALLURLS ;
     ## Filter some urls
     echo ">> Filtering urls and discarding the following ..." ;
-    discardThese="(.pdf|.png|.jpg|.js|.css|.svg|.xml|.html|wa.me|facebook.com|instagram.com|pinterest.com)" ;
-    ag --nonumber 'real url' $tmpFile | sd -f i 'real url' '' | sd ' ' '' | grep -ivE "$discardThese" | grep 'myginger' | sort -u > $outFile_FILTERED ;
+    discardThese="(.pdf|.png|.jpg|.js|.css|.svg|.xml|.html|wa.me|facebook.com|instagram.com|pinterest.com|gravatar.com)" ;
+    ag --nonumber 'real url' $tmpFile | sd -f i 'real url' '' | sd ' ' '' | grep -ivE "$discardThese" | sort -u > $outFile_FILTERED ;
     ## 
     ## Print only images urls
     echo ">> Filtering urls and discarding the following ..." ;
-    includeThese="(.png|.jpg|.jpeg|.gif|.svg)" ;
+    includeThese="(.png$|.jpg$|.jpeg$|.gif$|.svg$)" ;
     ag --nonumber 'real url' $tmpFile | sd -f i 'real url' '' | sd ' ' '' | grep -iE "$includeThese" | sort -u > $outFile_ALLIMAGES ;
     ####
     echo ">> Printing wordcount in outputs ..." ; 
