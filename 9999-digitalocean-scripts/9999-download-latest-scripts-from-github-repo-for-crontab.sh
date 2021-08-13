@@ -37,7 +37,8 @@ echo ">> WORKDIR = $WORKDIR" ;
 ## ADD FULL GITHUB SCRIPT PATH TO FOLLOWING ARRAY (one on each line)
 ARRAY_download_these_scripts=(https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/9999-digitalocean-scripts/9999-show-files-to-delete-for-space-cleanup-digitalocean.sh
 https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/mggk_bash_scripts/901-cloudflare-scripts/901-mggk-get-cloudflare-cache-status-for-all-valid-mggk-urls.sh
-https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/mggk_bash_scripts/510-mggk-check-broken-hyperlinks-using-linkchecker-program.sh) ;
+https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/mggk_bash_scripts/510-mggk-check-broken-hyperlinks-using-linkchecker-program.sh
+https://raw.githubusercontent.com/abhishek-paliwal/Bash-Scripts-To-Make-Life-Easier/master/mggk_bash_scripts/901-cloudflare-scripts/901-mggk-delete-cloudflare-cache-for-user-input-urls.sh) ;
 
 for i in "${ARRAY_download_these_scripts[@]}"; do
     echo "#################################################" ;
