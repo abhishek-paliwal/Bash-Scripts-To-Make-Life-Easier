@@ -226,8 +226,9 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         <html lang='en'>
         <head>
             <!-- Required meta tags -->
-            <meta charset='utf-8'>
-            <meta name='viewport' content='width=device-width, initial-scale=1'>
+            <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+            <meta name='viewport' content='width=device-width, initial-scale=1' />
+            <meta name='robots' content='noindex'>
             <!-- Bootstrap CSS -->
             <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We' crossorigin='anonymous'>
             <title>"""
@@ -243,30 +244,31 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         f.write(htmlHeader)
         ##
         headTitle = remove_unreadable_characters(TITLE)
-        f.write('PRINT RECIPE OF ' + headTitle)
+        f.write('PRINT RECIPE - ' + headTitle)
         ##
         f.write(htmlMidContent)   
 
         ## print website logo
         logoImage = """<div class='container'>
 <a href='https://www.mygingergarlickitchen.com'>
-<img class='d-block mx-auto' src='https://www.mygingergarlickitchen.com/logos/mggk-new-logo-transparent-1000px.svg' alt='My Ginger Garlic Kitchen' width='100' height='81'>
-</a>
+<img class='d-block mx-auto' src='https://www.mygingergarlickitchen.com/logos/mggk-new-logo-transparent-1000px.svg' alt='My Ginger Garlic Kitchen' width='100' height='81'></a>
 </div><div class='container'>"""
 
-        tagLine = "RECIPE DOWNLOADED FROM: My Ginger Garlic Kitchen Food Website"
+        #print tagline + RECIPE URL LINK:
+        tagLine = '<div class="row text-center"><a href="https://www.mygingergarlickitchen.com/"><strong>Get Hundreds of Easy Meal Ideas at My Ginger Garlic Kitchen Website</strong></a></div>'
         ##
+        recipeSourceLink = '<div class="row"><strong>Recipe Source Link:</strong><a href="' + URL_MGGK + '">' + URL_MGGK + '</a></div>'
 
         f.write(logoImage)
-        f.write("<hr>")
         f.write(tagLine)
-        
-        #print RECIPE URL LINK:
-        f.write('<div>' + URL_MGGK + '</div>')
+        f.write("<hr>")
 
         ####
         ## print recipe image + title
-        recipeImage = '<div><img width="100%" src="https://www.mygingergarlickitchen.com/wp-content/rich-markup-images/4x3/4x3-' + URL_NO_SLASHES + '.jpg"></div>'
+        recipeImage = '<img style="border-radius: 1%;" width="100%" src="https://www.mygingergarlickitchen.com/wp-content/rich-markup-images/1x1/1x1-' + URL_NO_SLASHES + '.jpg">'
+        ##
+        featuredImage = '<img style="border-radius: 1%;" width="100%" src="https://www.mygingergarlickitchen.com' + FEATURED_IMAGE + '">'
+
         ##
         ##
         #f.write(recipeImage)
@@ -279,25 +281,45 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         #f.write("<h1>" + TITLE + "</h1>")
         #f.write("<div style='color: rgb(205,30,100);'>" + YOAST_DESCRIPTION + "</div>")
 
-        htmlJumbotron = """<main class='container'>
+        htmlJumbotronTitle = """<main class='container'>
             <div class='bg-light p-5 rounded mt-3'>
-            <h1>""" + TITLE + """</h1>
-            <p class='lead'>""" + YOAST_DESCRIPTION + """</p>
-            <a class='btn btn-lg btn-primary' href='#' role='button'>Print this recipe &raquo;</a>
+                <div class='row'>
+                    <div class='col-8'>
+                        <h1>""" + TITLE + """ [Recipe for print]</h1>
+                        <p class='lead'>""" + YOAST_DESCRIPTION + """</p>
+                        <!-- <a class='btn btn-lg btn-primary' href='#' role='button'>Print this recipe &raquo;</a> -->
+                        """ + recipeSourceLink + """                 
+                    </div>
+                    <div class='col-4'>""" + featuredImage + """</div>
+                </div>
             </div>"""    
 
-        f.write(htmlJumbotron)   
+        f.write(htmlJumbotronTitle)   
 
         ##
         #print PREPTIME, COOKTIME, TOTALTIME + category, cuisine, serves + nutrition info
-        time_fulltext='Prep Time = ' + PREPTIME + ' // Cook Time = ' + COOKTIME + ' // Total Time = ' + TOTALTIME ;
-        category_fulltext='Category = ' + RECIPE_CATEGORY + ' // Cuisine = ' + RECIPE_CUISINE + ' // Serves = ' + RECIPE_YIELD ;
-        nutrition_fulltext='Nutrition Info = ' + str( NUTRITION.get("calories") ) + ' // Serving Size = ' + str( NUTRITION.get("servingSize") ) ;
+        PREPTIME = PREPTIME.replace('PT' , '') ; 
+        PREPTIME = PREPTIME.replace('H' , ' hour(s) ') ; 
+        PREPTIME = PREPTIME.replace('M' , ' minutes ') ; 
+        ##
+        COOKTIME = COOKTIME.replace('PT' , '') ; 
+        COOKTIME = COOKTIME.replace('H' , ' hour(s) ') ; 
+        COOKTIME = COOKTIME.replace('M' , ' minutes ') ; 
+        ##
+        TOTALTIME = TOTALTIME.replace('PT' , '') ; 
+        TOTALTIME = TOTALTIME.replace('H' , ' hour(s) ') ; 
+        TOTALTIME = TOTALTIME.replace('M' , ' minutes ') ; 
+        ##
+        time_fulltext='<div class="col-4">Prep Time = ' + PREPTIME + '</div><div class="col-4">Cook Time = ' + COOKTIME + '</div><div class="col-4">Total Time = ' + TOTALTIME + '</div>' ;
+        ##
+        category_fulltext='<div class="col-4">Category = ' + RECIPE_CATEGORY + '</div><div class="col-4">Cuisine = ' + RECIPE_CUISINE + '</div><div class="col-4">Serves = ' + RECIPE_YIELD + '</div>' ;
+        ##
+        nutrition_fulltext='<div class="col-4">Nutrition Info = ' + str( NUTRITION.get("calories") ) + '</div><div class="col-4">Serving Size = ' + str( NUTRITION.get("servingSize") ) + '</div>' ;
         ##
         f.write('<hr>')
-        f.write('<div>' + time_fulltext + '</div>')
-        f.write('<div>' + category_fulltext + '</div>')
-        f.write('<div>' + nutrition_fulltext + '</div>')
+        f.write('<div class="row">' + time_fulltext + '</div>')
+        f.write('<div class="row">' + category_fulltext + '</div>')
+        f.write('<div class="row">' + nutrition_fulltext + '</div>')
     
         ##------------------------------------------------------------------------------
         #print recipe ingredients
@@ -313,16 +335,20 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
             print(ingr_group_title)
             ingr_group_title = remove_unreadable_characters(ingr_group_title)
             ##
-            f.write('<h3>' + '»   ' + ingr_group_title + '</h3>')
+            f.write('<h4>' + '»   ' + ingr_group_title + '</h4>')
+            f.write('<ul>')
             ##
             list_ingredients= ingr_group.get("recipeIngredientList")
             for ingr in list_ingredients:
                 print(ingr)
                 ingr = remove_unreadable_characters(ingr)
                 ##
-                f.write('<br>' + str(count) + '.   ' + ingr)
+                #f.write('<li>' + str(count) + '.   ' + ingr + '</li>')
+                f.write('<li>' + ingr + '</li>')
                 ##
-                count=count+1   
+                count=count+1
+            ####
+            f.write('</ul>')   
 
         ##------------------------------------------------------------------------------
         #print recipe instructions
@@ -338,27 +364,34 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
             print(ingr_group_title)
             ingr_group_title = remove_unreadable_characters(ingr_group_title)
             ##
-            f.write('<h3>' + '»   ' + ingr_group_title + '</h3>')
+            f.write('<h4>' + '»   ' + ingr_group_title + '</h4>')
+            f.write('<ol>')
             ##
             list_ingredients= ingr_group.get("recipeInstructionsList")
             for ingr in list_ingredients:
                 print(ingr)
                 ingr = remove_unreadable_characters(ingr)
                 ##
-                f.write('<br>' + str(count) + '.   ' + ingr)
+                #f.write('<li>' + str(count) + '.   ' + ingr + '</li>')
+                f.write('<li>' + ingr + '</li>')
                 ##
                 count=count+1   
-        
+            ####
+            f.write('</ol>')   
+
         ##------------------------------------------------------------------------------
         #print recipe notes
         f.write('<hr>')
         f.write('<h2> RECIPE NOTES </h2>')
+        f.write('<ol>')
         ##
         count=1
         for single_note in RECIPE_NOTES:
             single_note = remove_unreadable_characters(single_note)
             f.write('<br>' + single_note)
             count=count+1
+        ####
+        f.write('</ol>')    
 
         ##------------------------------------------------------------------------------
         ## printing final html elements
