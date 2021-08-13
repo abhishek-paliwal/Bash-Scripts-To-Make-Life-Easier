@@ -75,9 +75,9 @@ function step4_FUNC_cloudflare_delete_cache_for_keyword_urls () {
 function step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls () {
     ## function takes one argument as texfile containing urls
     inFile="$1" ;
-    echo ">> Finding cache hit status for keyword urls ... " ;
+    echo; echo ">> Finding cache hit status for keyword urls ... " ;
     ##
-    TOTAL_COUNT=$(wc -l $inFile) ;
+    TOTAL_COUNT=$(cat $inFile | wc -l | sd ' ' '') ;
     COUNT=0;
     for myurl in $(cat $inFile); do 
         ((COUNT++)) ;
@@ -140,8 +140,7 @@ if [ "$CacheDelete" == "y" ]; then
         echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ; 
     done
     ####
-    ## Finding cache hit status two times because if it's MISS ...
-    ## ... the 1st time, it will be HIT the 2nd time.
+    ## Finding cache hit status two times (because in case of MISS, it will be a HIT 2nd time)
     step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls "$step1File" ;
     step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls "$step1File" ;
     ####
@@ -157,5 +156,8 @@ cat "$step1File" | nl
 ################################################################################
 ############################### PROGRAM ENDS ###################################
 ################################################################################
+echo;
+echo "##------------------------------------------------------------------------------" ;
+echo ">> RUNTIME SUMMARY: " ; 
 echo "$(date) = END-TIME" >> $time_taken
 cat $time_taken
