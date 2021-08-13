@@ -30,7 +30,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ################################################################################ 
-WORKDIR="$DIR_Y/_TMP_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
+WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
 mkdir -p "$WORKDIR" ;
 cd $WORKDIR; 
 echo ">> CURRENT WORKDIR = $WORKDIR" ;
@@ -73,8 +73,11 @@ function step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls () {
     inFile="$1" ;
     echo ">> Finding cache hit status for keyword urls ... " ;
     ##
+    TOTAL_COUNT=$(wc -l $inFile) ;
+    COUNT=0;
     for myurl in $(cat $inFile); do 
-        echo ">> CURRENT URL = $myurl" ; 
+        ((COUNT++)) ;
+        echo ">> ($COUNT of $TOTAL_COUNT) // CURRENT URL = $myurl" ; 
         curl -sI "$myurl" | grep -i 'cache-status' ; 
     done
     echo ">> DONE = step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls " ;
@@ -86,7 +89,9 @@ function step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls () {
 ## ASK FOR USER INPUT
 ##------------------------------------------------------------------------------
 echo "Enter a single url (with http/https) to delete the cloudflare cache, OR ..." ;
-echo "[Enter 0 (= zero) if you have multiple urls]: " ; 
+echo "[Enter 0 (= zero) if you have multiple urls: " ; 
+echo "[Enter 1 (= one) if you want to delete cache for all urls in mggk sitemap.xml file: " ; 
+##
 read myKeyword ; 
 ##
 if [ -z "$myKeyword" ] ; then 
@@ -96,6 +101,10 @@ elif [ "$myKeyword" == "0" ]; then
     echo ">> Please enter all your urls in this file (one url per line // no limit on number of urls): $step1File" ;
     touch $step1File ; rm $step1File ;
     $EDITOR $step1File ; ## Opening file in default editor
+elif [ "$myKeyword" == "1" ]; then
+    echo ">> The cache will be deleted for all current urls in MGGK sitemap.xml file." ;
+    allUrlsFile="https://downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs/mggk_summary_cloudflare_AllValidSiteUrls.txt" ;
+    curl -s "$allUrlsFile" --output "$step1File" ;
 else 
     echo ">> Cloudflare cache will be deleted for this URL: $myKeyword" ;
     echo "$myKeyword" > $step1File ; 
@@ -127,7 +136,9 @@ if [ "$CacheDelete" == "y" ]; then
         echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ; 
     done
     ####
-    ## Finding cache hit status
+    ## Finding cache hit status two times because if it's MISS ...
+    ## ... the 1st time, it will be HIT the 2nd time.
+    step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls "$step1File" ;
     step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls "$step1File" ;
     ####
 else 
