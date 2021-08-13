@@ -30,8 +30,12 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ################################################################################ 
+## SETTING VARIABLES
 WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
-mkdir -p "$WORKDIR" ;
+mkdir -p $WORKDIR ; ## create dir if not exists
+time_taken="$WORKDIR/tmp-time-taken-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+echo "$(date) = START-TIME" > $time_taken
+##
 cd $WORKDIR; 
 echo ">> CURRENT WORKDIR = $WORKDIR" ;
 
@@ -150,3 +154,8 @@ fi
 echo; echo ">> CACHE DELETED FOR THESE URLS ... " ;
 cat "$step1File" | nl
 
+################################################################################
+############################### PROGRAM ENDS ###################################
+################################################################################
+echo "$(date) = END-TIME" >> $time_taken
+cat $time_taken
