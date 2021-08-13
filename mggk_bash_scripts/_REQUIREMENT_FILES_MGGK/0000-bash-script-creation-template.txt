@@ -65,10 +65,6 @@ function FUNC_assign_variables_for_this_hostname () {
 FUNC_assign_variables_for_this_hostname
 ##------------------------------------------------------------------------------
 
-##
-time_taken="$WORKDIR/tmp-time-taken-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
-echo "$(date) = START-TIME" > $time_taken
-
 ####################### ADDING COLOR TO OUTPUT ON CLI ##########################
 echo "Currently sourcing the bash color script, which outputs chosen texts in various colors ..." ;
 
@@ -82,6 +78,8 @@ debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-
 ## SETTING VARIABLES
 WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
 mkdir -p $WORKDIR ; ## create dir if not exists
+time_taken="$WORKDIR/tmp-time-taken-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+echo "$(date) = START-TIME" > $time_taken
 ##
 OUTPUT_HTML="$WORKDIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.html" ;
 OUTPUT_TXT="$WORKDIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
