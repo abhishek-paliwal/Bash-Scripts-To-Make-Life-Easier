@@ -110,6 +110,8 @@ video_cutting_in_1_minute_equal_parts_using_ffmpeg
 999-mggk-CREATE-PDF-FILES-FROM-RECIPE-MD-FILES
 999-mggk-REPLACE-RECIPE-STEPS-WHITE-SQUARE-IMAGES-WITH-WIDE-ONES
 999-mggk-CREATE-RESPONSIVE-IMAGES-FOR-MGGK-SITE
+901-mggk-delete-cloudflare-cache-for-chosen-keyword-urls
+901-mggk-delete-cloudflare-cache-for-user-input-urls
 mggk_shortcode_collection_maker
 mggk_calculate_length_of_yoast_description
 mggk_calculate_length_of_titles
