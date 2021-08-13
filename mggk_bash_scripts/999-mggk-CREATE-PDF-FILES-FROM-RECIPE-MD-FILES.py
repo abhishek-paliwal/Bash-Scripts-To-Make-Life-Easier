@@ -66,9 +66,13 @@ else:
 #######################################
 LOGO_IMAGE = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/logos/logo-mggk-for-pdfs-100px.png"
 #ROOTDIR = MYHOME_WIN + "/Desktop/Y/recipes_demo/"
-#PDFDIR = MYHOME_WIN + "/Desktop/Y/"
+PDFDIR = MYHOME_WIN + "/Desktop/Y/PRINT-PDFs/"
 ROOTDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/"
-PDFDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/PRINT-PDFs/"
+#PDFDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/PRINT-PDFs/"
+## Create dir if not exists
+if not os.path.exists(PDFDIR):
+    os.mkdir(PDFDIR)
+##    
 ## printing all filenames found in ROOTDIR
 for filename in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
     print(filename)

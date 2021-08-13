@@ -62,9 +62,9 @@ else:
 
 #######################################
 #ROOTDIR = MYHOME_WIN + "/Desktop/Y/recipes_demo/"
-HTMLPRINTDIR = MYHOME_WIN + "/Desktop/X/"
+#HTMLPRINTDIR = MYHOME_WIN + "/Desktop/X/"
 ROOTDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/"
-#HTMLPRINTDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/PRINT-RECIPES/"
+HTMLPRINTDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/PRINT-RECIPES/"
 ## printing all filenames found in ROOTDIR
 for filename in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
     print(filename)
@@ -244,7 +244,7 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         f.write(htmlHeader)
         ##
         headTitle = remove_unreadable_characters(TITLE)
-        f.write('PRINT RECIPE - ' + headTitle)
+        f.write('PRINTED RECIPE - ' + headTitle)
         ##
         f.write(htmlMidContent)   
 
@@ -285,10 +285,9 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
             <div class='bg-light p-5 rounded mt-3'>
                 <div class='row'>
                     <div class='col-8'>
-                        <h1>""" + TITLE + """ [Recipe for print]</h1>
+                        <h1>""" + TITLE + """</h1>
                         <p class='lead'>""" + YOAST_DESCRIPTION + """</p>
-                        <!-- <a class='btn btn-lg btn-primary' href='#' role='button'>Print this recipe &raquo;</a> -->
-                        """ + recipeSourceLink + """                 
+                        """ + recipeSourceLink + """<hr><a class='btn btn-lg btn-secondary' href=""" + URL_MGGK + """ role='button'>&laquo; Go back</a> <a class='btn btn-lg btn-primary' onclick="window.print()" role='button'>Print this recipe &raquo;</a>
                     </div>
                     <div class='col-4'>""" + featuredImage + """</div>
                 </div>
@@ -310,11 +309,11 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         TOTALTIME = TOTALTIME.replace('H' , ' hour(s) ') ; 
         TOTALTIME = TOTALTIME.replace('M' , ' minutes ') ; 
         ##
-        time_fulltext='<div class="col-4">Prep Time = ' + PREPTIME + '</div><div class="col-4">Cook Time = ' + COOKTIME + '</div><div class="col-4">Total Time = ' + TOTALTIME + '</div>' ;
+        time_fulltext='<div class="col-4"><strong>Prep Time = </strong>' + PREPTIME + '</div><div class="col-4"><strong>Cook Time = </strong>' + COOKTIME + '</div><div class="col-4"><strong>Total Time = </strong>' + TOTALTIME + '</div>' ;
         ##
-        category_fulltext='<div class="col-4">Category = ' + RECIPE_CATEGORY + '</div><div class="col-4">Cuisine = ' + RECIPE_CUISINE + '</div><div class="col-4">Serves = ' + RECIPE_YIELD + '</div>' ;
+        category_fulltext='<div class="col-4"><strong>Category = </strong>' + RECIPE_CATEGORY + '</div><div class="col-4"><strong>Cuisine = </strong>' + RECIPE_CUISINE + '</div><div class="col-4"><strong>Serves = </strong>' + RECIPE_YIELD + '</div>' ;
         ##
-        nutrition_fulltext='<div class="col-4">Nutrition Info = ' + str( NUTRITION.get("calories") ) + '</div><div class="col-4">Serving Size = ' + str( NUTRITION.get("servingSize") ) + '</div>' ;
+        nutrition_fulltext='<div class="col-4"><strong>Nutrition Info = </strong>' + str( NUTRITION.get("calories") ) + '</div><div class="col-4"><strong>Serving Size = </strong>' + str( NUTRITION.get("servingSize") ) + '</div>' ;
         ##
         f.write('<hr>')
         f.write('<div class="row">' + time_fulltext + '</div>')
@@ -388,10 +387,27 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         count=1
         for single_note in RECIPE_NOTES:
             single_note = remove_unreadable_characters(single_note)
-            f.write('<br>' + single_note)
+            f.write('<li>' + single_note + '</li>')
             count=count+1
         ####
         f.write('</ol>')    
+
+        ##------------------------------------------------------------------------------
+        ## Print contact details
+        contactDetails = """<div class='section' style='padding: 10px; border: 2px solid grey; border-radius: 5px; '>
+        <p><strong>For questions and suggestions:</strong></p>
+        <p>If you have any questions or suggestions about this recipe, please do contact us via this contact form or via the social channels: </p>
+        <p>Website: <a href='https://www.mygingergarlickitchen.com'>www.mygingergarlickitchen.com</a> 
+        // <a href="https://www.mygingergarlickitchen.com/contact/">Contact Form</a> 
+        // <a href="https://myginger.us/facebook">Facebook Page</a>
+        // <a href="https://myginger.us/youtube">Youtube Page</a>
+        // <a href="https://myginger.us/instagram">Instagram Page</a>
+        // <a href="https://myginger.us/pinterest">Pinterest Page</a>
+        </p>
+        </div>""" ;
+        ##
+        f.write('<hr>')
+        f.write(contactDetails)
 
         ##------------------------------------------------------------------------------
         ## printing final html elements
