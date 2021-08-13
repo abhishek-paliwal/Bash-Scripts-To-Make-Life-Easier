@@ -38,9 +38,10 @@ echo "$(date) = START-TIME" > $time_taken
 
 ##############################################################################
 ## SETTING VARIABLES
-WORKDIR="$DIR_Y" ;
+WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
+mkdir -p "$WORKDIR" ;
 file_tmp="$WORKDIR/_tmp0.txt" ;
-file_output="$WORKDIR/_FINAL_OUTPUT-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ; 
+file_output="$WORKDIR/_FINAL_OUTPUT-ALL-IMAGES-URLS.txt" ; 
 
 echo "####" > $file_output ;
 ##################################################################################
@@ -54,8 +55,14 @@ for x in $(cat $REQUIREMENTS_FILE | grep -v '#' ) ; do
 done
 ##################################################################################
 
+echo "##------------------------------------------------------------------------------" ;
+echo ">> Check out the output file => $file_output" ;
+cat "$file_output" ;
+
 ################################################################################
 ############################### PROGRAM ENDS ###################################
 ################################################################################
+echo "##------------------------------------------------------------------------------" ;
+echo ">> RUNTIME SUMMARY: "; 
 echo "$(date) = END-TIME" >> $time_taken
 cat $time_taken

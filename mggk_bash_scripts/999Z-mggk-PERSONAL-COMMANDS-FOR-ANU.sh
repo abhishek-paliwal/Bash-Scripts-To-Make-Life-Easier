@@ -150,7 +150,7 @@ pali_imagemagick_create_10_random_images
 901-mggk-delete-cloudflare-cache-for-chosen-keyword-urls
 901-mggk-delete-cloudflare-cache-for-user-input-urls
 901-mggk-get-all-image-links-from-mggk-webpages-for-cloudflare-cache
-901-mggk-get-cloudflare-cache-status-for-all-valid-mggk-urls
+901-mggk-get-and-save-cloudflare-cache-status-for-all-valid-mggk-urls-1K-150K
 mggk_WEEKLY_SUMMARY_RUN) ;
 
 ##
