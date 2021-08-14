@@ -52,17 +52,17 @@ fi
 ###############################################################################
 
 ## CD to temporary directory on desktop
-myPWD="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
-mkdir -p $myPWD ;
-#cd $myPWD ;
-echo ">>>> PWD is $myPWD" ;
-echo "<<<< IN CASE OF ERROR: Make sure that there is a file named mylinks.txt in $myPWD >>>>" ;
+WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
+mkdir -p $WORKDIR ;
+#cd $WORKDIR ;
+echo ">>>> PWD is $WORKDIR" ;
+echo "<<<< IN CASE OF ERROR: Make sure that there is a file named mylinks.txt in $WORKDIR >>>>" ;
 
 ## DEFINE SOME VARIABLE FILENAMES
-LINKS_FILE_OUTPUT="$myPWD/_TMP_MYLINKS.txt" ;
-OUTPUT_HTML_FILE="$myPWD/_TMP_503b_FINAL_OUTPUT-$REQUIREMENTS_FILE.html"
-TMP_CURL_FILE="$myPWD/_TMP_mycurlfile.txt" ;
-MD_FILENAME="$myPWD/_TMP-$REQUIREMENTS_FILE.md";
+LINKS_FILE_OUTPUT="$WORKDIR/_TMP_MYLINKS.txt" ;
+OUTPUT_HTML_FILE="$WORKDIR/_TMP_503b_FINAL_OUTPUT-$REQUIREMENTS_FILE.html"
+TMP_CURL_FILE="$WORKDIR/_TMP_mycurlfile.txt" ;
+MD_FILENAME="$WORKDIR/_TMP-$REQUIREMENTS_FILE.md";
 ###############################################################################
 
 echo ;
@@ -119,7 +119,7 @@ echo;
 ## NOW, FINDING THE MARKDOWN FILES WHICH HAVE THE LINES FROM THE ABOVE OUTPUT1 FILE
 echo ">>>> Beginning WHILE LOOP" ;
 
-echo "<div class='row'> <!--BEGIN: MAIN ROW -->" > $OUTPUT_HTML_FILE ; ## Initializing the html file
+echo "<div class='row'> <!--BEGIN: MAIN ROW -->" > $OUTPUT_HTML_FILE ;
 
 echo ""  >> $OUTPUT_HTML_FILE;
 
@@ -177,7 +177,7 @@ while read -r line; do
 
     ## Further processing of IMAGE + META_DESCRIPTION
     #### DOWNLOADING THE IMAGE INTO A SPECIFIC FOLDER (folder will be created if not present already)
-    TmpImageDir="$myPWD/_TMP_IMAGES_$REQUIREMENTS_FILE" ;
+    TmpImageDir="$WORKDIR/_TMP_IMAGES_$REQUIREMENTS_FILE" ;
     mkdir $TmpImageDir ;
     echo "    >>>> Getting the image for this URL ..." ;
     cp $IMAGE_TO_COPY $TmpImageDir/ ;
@@ -287,10 +287,36 @@ echo "{{< /mggkrecipeHTMLcode >}}" >> $MD_FILENAME ;
 ################ END: CREATE MD FILE BY DUMPING ALL TEXT
 
 ###############################################################################
+## CREATING ANOTHER HTML OUTPUT FILE WITH PROPER BOOTSTRAP HEADER AND FOOTER
+###############################################################################
+NEW_HTMLFILE="$WORKDIR/_TMP_503b_FINAL_OUTPUT-$REQUIREMENTS_FILE-WITH-HEADER-FOOTER.html" ;
+#######
+bootstrap_header="<!doctype html>
+<html lang='en'>
+<head>
+<!-- Required meta tags -->
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<!-- Bootstrap CSS -->
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We' crossorigin='anonymous'>
+<title>$THIS_SCRIPT_NAME_SANS_EXTENSION - OUTPUT</title>
+</head>
+<body>" ;
+##
+bootstrap_footer="<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js' integrity='sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj' crossorigin='anonymous'></script>
+</body>
+</html>" ;
+########
+echo "$bootstrap_header" > $NEW_HTMLFILE ; ## Initializing
+cat $OUTPUT_HTML_FILE >> $NEW_HTMLFILE ; ## Dumping all content
+echo "$bootstrap_footer" >> $NEW_HTMLFILE ; 
+
+###############################################################################
 ## Opening directory and output html file
 if [[ "$USER" == "ubuntu" ]] ; then 
   explorer.exe . ;
 elif [[ "$USER" == "abhishek" ]] ; then 
-  open $myPWD ;
-  open $OUTPUT_HTML_FILE ;
+  open $WORKDIR ;
+  open $NEW_HTMLFILE ;
 fi
