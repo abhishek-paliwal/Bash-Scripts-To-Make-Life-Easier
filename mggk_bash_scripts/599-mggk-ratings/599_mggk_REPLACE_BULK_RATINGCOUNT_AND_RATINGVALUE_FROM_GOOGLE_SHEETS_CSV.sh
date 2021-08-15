@@ -99,7 +99,7 @@ echo "MY_MDFILENAME, COUNT, CSVURL, 90DAYS_PAGEVIEWS, EXISTING_CSVRATINGCOUNT, N
 ################################################################################
 ## CALCULATION VARIABLES (CHANGE AS NEEDED)
 NUM_DAYS_DATA_IN_REQUIREMENTS_CSVFILE="90" ;
-PERCENTAGE_OF_USERS_WHO_RATED="0.04" ; ## Let's say that 4% users provided rating out of total users
+PERCENTAGE_OF_USERS_WHO_RATED="0.01" ; ## Let's say that 1% users provided rating out of total users
 ################################################################################
 
 ## GETTING COLUMN NAMES FROM CSV FILE:
