@@ -98,7 +98,7 @@ video_cutting_in_1_minute_equal_parts_using_ffmpeg
 599-mggk-CREATE-AND-SAVE-SITE-STATISTICS
 599-mggk-MAKE-VIDEO-SITEMAP-XML
 599_mggk_CREATE_ALL_MISSING_STEPS_IMAGES_DIRECTORIES
-601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls
+601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls-NEW2021
 702-mggk-CREATE-LD-JSON-FAQ-BLOCKS-FROM-MD-FILES
 999-mggk-EXTRACT-VIDEO-SCREENSHOTS-EVERY-N-SECONDS
 999-mggk-MOVE-MD-FILES-to-PWD-based-on-URLs-from-CLI-text-file-argument
@@ -154,6 +154,8 @@ pali_imagemagick_create_10_random_images
 901-mggk-get-all-image-links-from-mggk-webpages-for-cloudflare-cache
 901-mggk-get-and-save-cloudflare-cache-status-for-all-valid-mggk-urls-1K-150K
 902-linkchecker-extract-all-internal-external-links-from-given-url
+601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls
+601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls-NEW2021
 mggk_WEEKLY_SUMMARY_RUN) ;
 
 ##
