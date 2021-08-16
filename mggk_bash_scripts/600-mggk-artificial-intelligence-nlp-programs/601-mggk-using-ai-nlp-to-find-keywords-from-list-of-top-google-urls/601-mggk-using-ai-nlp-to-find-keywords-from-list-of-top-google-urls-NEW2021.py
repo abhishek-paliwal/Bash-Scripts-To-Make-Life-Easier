@@ -226,6 +226,11 @@ def BSgetNumberOfWords(my_main_div_html):
     return BSOUP_NUMWORDS
 ##------------------------------------------------------------------------------
 ##------------------------------------------------------------------------------
+def BScalculateReadingTime(BSOUP_NUMWORDS):
+    BSOUP_READINGTIME_212WPM = round(len(BSOUP_NUMWORDS)/212, 1)
+    return BSOUP_READINGTIME_212WPM
+##------------------------------------------------------------------------------
+##------------------------------------------------------------------------------
 def BSgetAllHeadings(soup):
     ########## FINDING HEADINGS: H1,H2,H3,H4,H5,H6
     h1_array = []
@@ -550,6 +555,7 @@ def doAllMagic(url,URL_COUNT):
     META_DESCRIPTION = BSgetMetaDesc(soup)
     my_main_div_html = BSfindMainContentArticleDivHtml(soup)
     BSOUP_NUMWORDS = BSgetNumberOfWords(my_main_div_html)
+    BSOUP_READINGTIME_212WPM = BScalculateReadingTime(BSOUP_NUMWORDS)
     all_hyperlinks = BSgetAllHyperlinks(my_main_div_html)
     ALL_IMAGES = BSgetAllImages(my_main_div_html)
     FULL_HEADINGS_ARRAY_FINAL = BSgetAllHeadings(soup)
@@ -602,7 +608,7 @@ def doAllMagic(url,URL_COUNT):
     array8.append('<tr><td>URL: '+ url + '<br><br>' + TOP20_WORDS_STRING_HTML + '</td></tr>')
     array9.append('<tr><td>'+ str(BSOUP_NUMWORDS) + ' words</td></tr>')
     array10.append('<tr><td>'+ str(NLP_NUMWORDS) +' words</td></tr>')
-    array11.append('<tr><td>'+ str(NLP_READINGTIME_212WPM) +' minutes</td></tr>')
+    array11.append('<tr><td>' + str(BSOUP_READINGTIME_212WPM) +' minutes</td></tr>')
     array12.append('<tr><td>'+ str(NLP_ARTICLE_AUTHORS) +'</td></tr>')
     array13.append('<tr><td>'+ str(BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY) +'</td></tr>')
     array14.append('<tr><td>'+ str(NLP_ARTICLE_PUBLISH_DATE) +'</td></tr>')
@@ -651,7 +657,7 @@ array7.append('<table class="table table-striped table-bordered"><thead class="t
 array8.append('<table class="table table-striped table-bordered"><thead class="thead-dark"><tr><th scope="col">TOP20_WORDS_STRING_HTML</th>')
 array9.append('<table class="table table-striped table-bordered"><thead class="thead-dark"><tr><th scope="col">BSOUP_NUMWORDS</th>')
 array10.append('<table class="table table-striped table-bordered"><thead class="thead-dark"><tr><th scope="col">NLP_NUMWORDS</th>')
-array11.append('<table class="table table-striped table-bordered"><thead class="thead-dark"><tr><th scope="col">NLP_READINGTIME_212WPM</th>')
+array11.append('<table class="table table-striped table-bordered"><thead class="thead-dark"><tr><th scope="col">BSOUP_READINGTIME_212WPM</th>')
 array12.append('<table class="table table-striped table-bordered"><thead class="thead-dark"><tr><th scope="col">NLP_ARTICLE_AUTHORS</th>')
 array13.append('<table class="table table-striped table-bordered"><thead class="thead-dark"><tr><th scope="col">BSOUP_ALL_DATE_TIMES_FROM_WEBPAGE_ARRAY</th>')
 array14.append('<table class="table table-striped table-bordered"><thead class="thead-dark"><tr><th scope="col">NLP_ARTICLE_PUBLISH_DATE</th>')
