@@ -57,20 +57,23 @@ import matplotlib.pyplot as plt
 ## DEFINING SOME VARIABLES (Only edit these paths if running on the VPS SERVER)
 ################################################################################
 from os.path import expanduser
-home = expanduser("~")
+home = expanduser("~") ;
+home_windows = os.getenv('HOME_WINDOWS') ;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## IF THIS SCRIPT IS RUNNING ON THE VPS SERVER, THEN CHECK FOR THE USERNAME 'ubuntu' IN HOME DIRECTORY,
 #### AND SET DIRECTORY PATHS APPROPRIATELY. ELSE, SET OTHER PATHS FOR EXECUTION LOCALLY.
-if ('ubuntu' in home): ## if running on VPS
+myhostname = os.uname()[1] ;
+
+if ('digitalocean' in myhostname):  # if running on VPS
     dirpath = '/scripts-made-by-pali/600-mggk-ai-nlp-scripts/' ;
     rake_stop_dir = home + dirpath + '601-MGGK-PYTHON-RAKE-SmartStoplist.txt' ;
     working_directory = home + dirpath ;
 else: ## if running elsewhere
     dirpath = '/GitHub/Bash-Scripts-To-Make-Life-Easier/mggk_bash_scripts/600-mggk-artificial-intelligence-nlp-programs/601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls' ;
     rake_stop_dir = home + dirpath + '/601-MGGK-PYTHON-RAKE-SmartStoplist.txt' ;
-    working_directory = home + '/Desktop/Y/' ;
+    working_directory = home_windows + '/Desktop/Y/' ;
 ####   
 ## PRINTING IMPORTANT PATHS
 print('') ## empty line
@@ -191,7 +194,7 @@ def BSgetMetaDesc(soup):
         ##
         print(">>>> META_DESCRIPTION: \n", META_DESCRIPTION)
     except:
-        print("***** BEAUTIFUL SOUP ERROR: FAILED TO FIND META DESCRIPTION TAG IN WEBPAGE ***** = ", url)
+        print("***** BEAUTIFUL SOUP ERROR: FAILED TO FIND META DESCRIPTION TAG IN WEBPAGE ***** = ")
     ##
     return META_DESCRIPTION    
 ##------------------------------------------------------------------------------
@@ -383,35 +386,49 @@ def days_between(date1, date2):
 ##------------------------------------------------------------------------------
 def getPublishedDate_DateDiff(META_PUBLISHED_DATETIME):
     ARRAY_PUBLISHED_DATE_AND_YEAR = [] ;
-    ## CONVERTING OBTAINED DATE STRINGS INTO PYTHON DATE OBJECTS FOR CALCULATIONS
-    #### a.) converting string to corresponding date format (by using strptime)
-    date_post_published_tmp = datetime.strptime(META_PUBLISHED_DATETIME, "%Y-%m-%dT%H:%M:%S")
-    #### b.) converting thus created date into desired format for printing (by using strftime)
-    date_post_published = datetime.strftime(date_post_published_tmp, '%Y-%m-%d')
-    ## GETTING TODAY
-    today_tmp = datetime.now()
-    date_today = datetime.strftime(today_tmp,'%Y-%m-%d')
+    days_diff_first_published = 0  # chosen default value
+    YEARS_SINCE_FIRST_PUBLISHED = round(int(days_diff_first_published)/365, 3)
     ##
-    days_diff_first_published = days_between(date_today, date_post_published)
-    YEARS_SINCE_FIRST_PUBLISHED = round(int(days_diff_first_published)/365,3)
+    try:
+        ## CONVERTING OBTAINED DATE STRINGS INTO PYTHON DATE OBJECTS FOR CALCULATIONS
+        #### a.) converting string to corresponding date format (by using strptime)
+        date_post_published_tmp = datetime.strptime(META_PUBLISHED_DATETIME, "%Y-%m-%dT%H:%M:%S")
+        #### b.) converting thus created date into desired format for printing (by using strftime)
+        date_post_published = datetime.strftime(date_post_published_tmp, '%Y-%m-%d')
+        ## GETTING TODAY
+        today_tmp = datetime.now()
+        date_today = datetime.strftime(today_tmp,'%Y-%m-%d')
+        ##
+        days_diff_first_published = days_between(date_today, date_post_published)
+        YEARS_SINCE_FIRST_PUBLISHED = round(int(days_diff_first_published)/365,3)
+    except:
+        print ('**** PUBLISHED DATE IS NOT VALID. HENCE, NO CALCULATIONS CAN BE DONE. ****')
+    ##    
     ARRAY_PUBLISHED_DATE_AND_YEAR = [days_diff_first_published , YEARS_SINCE_FIRST_PUBLISHED]
     return ARRAY_PUBLISHED_DATE_AND_YEAR
 ##------------------------------------------------------------------------------
 ##------------------------------------------------------------------------------
 def getModifiedDate_DateDiff(META_MODIFIED_DATETIME):
     ARRAY_MODIFIED_DATE_AND_YEAR = [] ;
-    ## CONVERTING OBTAINED DATE STRINGS INTO PYTHON DATE OBJECTS FOR CALCULATIONS
-    #### a.) converting string to corresponding date format (by using strptime)
-    date_post_modified_tmp = datetime.strptime(META_MODIFIED_DATETIME, "%Y-%m-%dT%H:%M:%S")
-    #### b.) converting thus created date into desired format for printing (by using strftime)
-    date_post_modified = datetime.strftime(date_post_modified_tmp, '%Y-%m-%d')
-    ## GETTING TODAY
-    today_tmp = datetime.now()
-    date_today = datetime.strftime(today_tmp,'%Y-%m-%d')
+    days_diff_modified = 0  # chosen default value
+    YEARS_SINCE_LAST_MODIFIED = round(int(days_diff_modified)/365, 3)
     ##
-    days_diff_modified = days_between(date_today, date_post_modified)
-    YEARS_SINCE_LAST_MODIFIED = round(int(days_diff_modified)/365,3)
-    ARRAY_MODIFIED_DATE_AND_YEAR = [days_diff_modified , YEARS_SINCE_LAST_MODIFIED]
+    try:
+        ## CONVERTING OBTAINED DATE STRINGS INTO PYTHON DATE OBJECTS FOR CALCULATIONS
+        #### a.) converting string to corresponding date format (by using strptime)
+        date_post_modified_tmp = datetime.strptime(META_MODIFIED_DATETIME, "%Y-%m-%dT%H:%M:%S")
+        #### b.) converting thus created date into desired format for printing (by using strftime)
+        date_post_modified = datetime.strftime(date_post_modified_tmp, '%Y-%m-%d')
+        ## GETTING TODAY
+        today_tmp = datetime.now()
+        date_today = datetime.strftime(today_tmp,'%Y-%m-%d')
+        ##
+        days_diff_modified = days_between(date_today, date_post_modified)
+        YEARS_SINCE_LAST_MODIFIED = round(int(days_diff_modified)/365,3)
+    except:
+        print('**** MODIFIED DATE IS NOT VALID. HENCE, NO CALCULATIONS CAN BE DONE. ****')
+    ##
+    ARRAY_MODIFIED_DATE_AND_YEAR = [days_diff_modified, YEARS_SINCE_LAST_MODIFIED]
     return ARRAY_MODIFIED_DATE_AND_YEAR
 ##------------------------------------------------------------------------------
 ##------------------------------------------------------------------------------
