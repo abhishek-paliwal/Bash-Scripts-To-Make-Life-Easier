@@ -353,7 +353,7 @@ def BSgetPublishedDate(soup):
         META_PUBLISHED_DATETIME = META_PUBLISHED_DATETIME[:19] ## DISCARDING TIMEZONE INFO BY SUBSTRING METHOD
         print("\n>>>> META_PUBLISHED_DATETIME: ", META_PUBLISHED_DATETIME)
     except:
-        print("***** BEAUTIFUL SOUP ERROR: FAILED TO FIND PUBLISHED DATE IN WEBPAGE ***** = ", url)
+        print("***** BEAUTIFUL SOUP ERROR: FAILED TO FIND PUBLISHED DATE IN WEBPAGE ***** = ")
     ##
     return META_PUBLISHED_DATETIME
 ##------------------------------------------------------------------------------
@@ -369,7 +369,7 @@ def BSgetModifiedDate(soup):
         META_MODIFIED_DATETIME = META_MODIFIED_DATETIME[:19] ## DISCARDING TIMEZONE INFO BY SUBSTRING METHOD
         print(">>>> META_MODIFIED_DATETIME: ", META_MODIFIED_DATETIME)
     except:
-        print("***** BEAUTIFUL SOUP ERROR: FAILED TO FIND MODIFIED DATE IN WEBPAGE ***** = ", url)
+        print("***** BEAUTIFUL SOUP ERROR: FAILED TO FIND MODIFIED DATE IN WEBPAGE ***** = ")
     ##
     return META_MODIFIED_DATETIME
 ##------------------------------------------------------------------------------
