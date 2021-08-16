@@ -54,11 +54,11 @@ function FUNC_extractUrls () {
     url2txt=$(echo "$url" | sed -e 's/[/:.]/_/g' -e 's/___/_/' ) ;
     urlDomain=$(echo "$url" | sd 'http://' '' | sd 'https://' '' | sd 'www.' '' | cut -d '/' -f1 ) ;
     ##
-    outFile_all="$WORKDIR/linkchecker_ALLLINKS_$url2txt.txt" ;
-    outFile_externalurls="$WORKDIR/linkchecker_EXTERNALURLS_$url2txt.txt" ;
-    outFile_domainurls="$WORKDIR/linkchecker_DOMAINURLS_$url2txt.txt" ;
-    outFile_allimages="$WORKDIR/linkchecker_ALLIMAGES_$url2txt.txt" ;
-    outFile_allimages_filtered="$WORKDIR/linkchecker_ALLIMAGES_FILTERED_$url2txt.txt" ;
+    outFile_all="$WORKDIR/linkchecker_step1_ALLLINKS_$url2txt.txt" ;
+    outFile_externalurls="$WORKDIR/linkchecker_step2_EXTERNALURLS_$url2txt.txt" ;
+    outFile_domainurls="$WORKDIR/linkchecker_step3_DOMAINURLS_$url2txt.txt" ;
+    outFile_allimages="$WORKDIR/linkchecker_step4_ALLIMAGES_$url2txt.txt" ;
+    outFile_allimages_filtered="$WORKDIR/linkchecker_step5_ALLIMAGES_FILTERED_$url2txt.txt" ;
     ####
     ## Running linkchecker program on given url
     linkchecker --verbose -F csv --ignore-url='$urlDomain' "$url" ;
