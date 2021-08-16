@@ -227,7 +227,7 @@ def BSgetNumberOfWords(my_main_div_html):
 ##------------------------------------------------------------------------------
 ##------------------------------------------------------------------------------
 def BScalculateReadingTime(BSOUP_NUMWORDS):
-    BSOUP_READINGTIME_212WPM = round(len(BSOUP_NUMWORDS)/212, 1)
+    BSOUP_READINGTIME_212WPM = round(BSOUP_NUMWORDS/212, 1)
     return BSOUP_READINGTIME_212WPM
 ##------------------------------------------------------------------------------
 ##------------------------------------------------------------------------------
