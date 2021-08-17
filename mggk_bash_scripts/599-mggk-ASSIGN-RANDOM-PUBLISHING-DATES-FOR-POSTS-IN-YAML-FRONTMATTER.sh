@@ -1,9 +1,10 @@
 #!/bin/bash
 ################################################################################
-THIS_SCRIPT_NAME="599-mggk-ASSIGN-RANDOM-PUBLISHING-DATES-FOR-POSTS-IN-YAML-FRONTMATTER.sh"
+THIS_SCRIPT_NAME="$(basename $0)" ;
+THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 ################################################################################
 ## VARIABLE SETTING
-SHIFT_BY_NUMDAYS="40" ; ## 40 DAYS, ABOUT 1.33 MONTHS
+SHIFT_BY_NUMDAYS="180" ; ## 180 DAYS, ABOUT 6 MONTHS
 SUFFIX_STRING="d"; # d for days, w for weeks, m for months, y for years
 DATE_SHIFT_BY_NUMDAYS="$SHIFT_BY_NUMDAYS$SUFFIX_STRING" ;
 ################################################################################
