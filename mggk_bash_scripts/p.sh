@@ -152,18 +152,12 @@ function func_calculate_randomly_assigned_date_30days_ago () {
 ##------------------------------------------------------------------------------
 function func_calculate_exact_date_1year_ago_from_frontmatter_date () {
     ## Now we need to calculate a date which needs to satisfy the following 3 conditions:
-    ### 1. date should be exactly around 1/2/3/etc year from existing frontmatter date value 
+    ### 1. date should be exactly around 1/2/3/etc year from existing frontmatter date value
     ### 2. date needs to be in current year
     ### 3. date needs to be atleast 30 days ago or more from today
-
-    #FRONTMATTER_DATE_EPOCH_TIME_NEW=$(( $FRONTMATTER_DATE_EPOCH_TIME + (365*24*60) | bc))
-    #TODAY_EPOCH_TIME=$(date +%s) ;
-    #epoch_diff=$(( $TODAY_EPOCH_TIME - $FRONTMATTER_DATE_EPOCH_TIME | bc )) ;
     ##
-    ####
-    #ASSIGNED_DATE=$(date -v -$RAND_DATENUM$SUFFIX_STRING) ;
-    #ASSIGNED_DATE_EPOCH=$(date -v -$RAND_DATENUM$SUFFIX_STRING +%s) ;
-    ASSIGNED_DATE_EPOCH=$(( $FRONTMATTER_DATE_EPOCH_TIME + (3600*24*365) | bc))
+    ## Using 366 instead of 365 for an extra day addition
+    ASSIGNED_DATE_EPOCH=$(( $FRONTMATTER_DATE_EPOCH_TIME + (3600*24*366) | bc)) 
     ASSIGNED_DATE_EPOCH_RAND=$(echo "$ASSIGNED_DATE_EPOCH + $RANDOM" | bc ) ;
     ASSIGNED_DATE_FORMATTED=$(date -r $ASSIGNED_DATE_EPOCH_RAND +'%Y-%m-%dT%H:%M:%S') ;
     ##
