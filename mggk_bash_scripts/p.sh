@@ -4,7 +4,7 @@ THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 ################################################################################
 ## VARIABLE SETTING
-SHIFT_BY_NUMDAYS="180" ; ## 180 DAYS, ABOUT 6 MONTHS
+SHIFT_BY_NUMDAYS="396" ; ## 396 DAYS, ABOUT 13 MONTHS
 SUFFIX_STRING="d"; # d for days, w for weeks, m for months, y for years
 DATE_SHIFT_BY_NUMDAYS="$SHIFT_BY_NUMDAYS$SUFFIX_STRING" ;
 ################################################################################
@@ -156,18 +156,14 @@ function func_calculate_exact_date_1year_ago_from_frontmatter_date () {
     ### 2. date needs to be in current year
     ### 3. date needs to be atleast 30 days ago or more from today
 
-    ## AND ALSO TO SHIFT_BY_NUMDAYS DAYS OLDER THAN TODAY
-    ## HENCE, FOR THAT WE NEED TO CREATE A RANDOM NUMBER BETWEEN 30 AND SHIFT_BY_NUMDAYS
-    REMAINDER_VAR=$(( $SHIFT_BY_NUMDAYS - 30 | bc )) ;
-    RAND_DATENUM=$(( ($RANDOM % $REMAINDER_VAR) + 30 | bc )) ;
-
-    FRONTMATTER_DATE_EPOCH_TIME
-    TODAY_EPOCH_TIME=$(date +%s) ;
-    epoch_diff=$(( $TODAY_EPOCH_TIME - $FRONTMATTER_DATE_EPOCH_TIME | bc )) ;
+    #FRONTMATTER_DATE_EPOCH_TIME_NEW=$(( $FRONTMATTER_DATE_EPOCH_TIME + (365*24*60) | bc))
+    #TODAY_EPOCH_TIME=$(date +%s) ;
+    #epoch_diff=$(( $TODAY_EPOCH_TIME - $FRONTMATTER_DATE_EPOCH_TIME | bc )) ;
     ##
     ####
-    ASSIGNED_DATE=$(date -v -$RAND_DATENUM$SUFFIX_STRING) ;
-    ASSIGNED_DATE_EPOCH=$(date -v -$RAND_DATENUM$SUFFIX_STRING +%s) ;
+    #ASSIGNED_DATE=$(date -v -$RAND_DATENUM$SUFFIX_STRING) ;
+    #ASSIGNED_DATE_EPOCH=$(date -v -$RAND_DATENUM$SUFFIX_STRING +%s) ;
+    ASSIGNED_DATE_EPOCH=$(( $FRONTMATTER_DATE_EPOCH_TIME + (3600*24*365) | bc))
     ASSIGNED_DATE_EPOCH_RAND=$(echo "$ASSIGNED_DATE_EPOCH + $RANDOM" | bc ) ;
     ASSIGNED_DATE_FORMATTED=$(date -r $ASSIGNED_DATE_EPOCH_RAND +'%Y-%m-%dT%H:%M:%S') ;
     ##
@@ -223,11 +219,11 @@ function func_MAIN_get_dates_from_frontmatter_and_replace_date () {
         echo "$msg_succ" ;       
         echo "$msg_succ" >> $TMP_OUTPUT_FILE ;
         ##
-        ## IMPORTANT NOTE: Choose only one option from below
-        #### option#1
-        ASSIGNED_DATE_FORMATTED="$(func_calculate_randomly_assigned_date_30days_ago)" ;
-        #### option#2
-        ASSIGNED_DATE_FORMATTED="$(func_calculate_randomly_assigned_date_30days_ago)" ;
+        ## IMPORTANT NOTE: Choose only one option from below (uncomment the desired one)
+        #### option#1: calculate radom date
+        #ASSIGNED_DATE_FORMATTED="$(func_calculate_randomly_assigned_date_30days_ago)" ;
+        #### option#2: calculate exact date
+        ASSIGNED_DATE_FORMATTED="$(func_calculate_exact_date_1year_ago_from_frontmatter_date)" ;
         ##
         echo "$ASSIGNED_DATE_FORMATTED = ASSIGNED DATE FINAL (AFTER MODIFIED H:M:S)" >> $TMP_OUTPUT_FILE ;
         ## Actual date replacement in original md file
