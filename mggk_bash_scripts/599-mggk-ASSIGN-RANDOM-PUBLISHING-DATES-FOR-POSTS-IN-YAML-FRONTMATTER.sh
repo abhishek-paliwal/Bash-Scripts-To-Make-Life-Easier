@@ -144,8 +144,8 @@ do
     echo;echo "//// datediff_in_days => $datediff_in_days is more than 0 days. Hence, the date WILL BE updated." ;
     echo ;
     ##############################################################################
-    ## NOW WE NEED TO CREATE A RANDOM DATE WHICH IS 30 DAYS TO $SHIFT_BY_NUMDAYS DAYS OLDER THAN TODAY
-    ## HENCE, FOR THAT WE NEED TO CREATE A RANDOM NUMBER BETWEEN 30 AND 100
+    ## NOW WE NEED TO CREATE A RANDOM DATE WHICH IS 30 DAYS TO SHIFT_BY_NUMDAYS DAYS OLDER THAN TODAY
+    ## HENCE, FOR THAT WE NEED TO CREATE A RANDOM NUMBER BETWEEN 30 AND SHIFT_BY_NUMDAYS
     REMAINDER_VAR=$(( $SHIFT_BY_NUMDAYS -30 | bc )) ;
     RAND_DATENUM=$(( ($RANDOM % $REMAINDER_VAR) + 30 | bc )) ;
 
