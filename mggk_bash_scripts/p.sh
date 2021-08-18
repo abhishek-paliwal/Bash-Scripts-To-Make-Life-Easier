@@ -153,12 +153,18 @@ function func_calculate_randomly_assigned_date_30days_ago () {
 function func_calculate_exact_date_1year_ago_from_frontmatter_date () {
     ## Now we need to calculate a date which needs to satisfy the following 3 conditions:
     ### 1. date should be exactly around 1/2/3/etc year from existing frontmatter date value
-    ### 2. date needs to be in current year
-    ### 3. date needs to be atleast 30 days ago or more from today
-    ##
-    ## Using 366 instead of 365 for an extra day addition
-    ASSIGNED_DATE_EPOCH=$(( $FRONTMATTER_DATE_EPOCH_TIME + (3600*24*366) | bc)) 
-    ASSIGNED_DATE_EPOCH_RAND=$(echo "$ASSIGNED_DATE_EPOCH + $RANDOM" | bc ) ;
+    ### 2. date needs to be in current year, or in last year for remaining months from current month.
+    ### 3. date needs to be between 1month to 13months ago from today
+    ####
+    ## FOR THIS, WE WILL USE BUILTIN $RANDOM FUNCTION WHICH GIVES OUT A RANDOM
+    ## INTEGER VALUE IN THE RANGE OF 0 - 32767. THIS IS SUFFICIENT FOR US BCOZ
+    ## 32767 SECONDS MEAN ABOUT 9 HOURS. SO FINAL ASSIGNED EPOCH SECONDS WILL
+    ## ADD ANYHING FROM 0 TO 9 HOURS.
+    ####
+    ## PS: We'll use 367 instead of 365 to force 1-2 days yearly addition
+    RANDNUM=$(echo "$RANDOM * 2" | bc) ; ## gives between 0-18 hours of randomness
+    ASSIGNED_DATE_EPOCH=$(echo "$FRONTMATTER_DATE_EPOCH_TIME + (3600*24*367)" | bc ) 
+    ASSIGNED_DATE_EPOCH_RAND=$(echo "$ASSIGNED_DATE_EPOCH + $RANDNUM" | bc ) ;
     ASSIGNED_DATE_FORMATTED=$(date -r $ASSIGNED_DATE_EPOCH_RAND +'%Y-%m-%dT%H:%M:%S') ;
     ##
     echo "$ASSIGNED_DATE_FORMATTED" ;
@@ -212,16 +218,16 @@ function func_MAIN_get_dates_from_frontmatter_and_replace_date () {
         msg_succ="//SUCCESS: $datediff_in_days days difference is more than 0 days. DATE WILL BE REPLACED." ; 
         echo "$msg_succ" ;       
         echo "$msg_succ" >> $TMP_OUTPUT_FILE ;
-        ##
+        ##################
         ## IMPORTANT NOTE: Choose only one option from below (uncomment the desired one)
         #### option#1: calculate radom date
         #ASSIGNED_DATE_FORMATTED="$(func_calculate_randomly_assigned_date_30days_ago)" ;
-        #### option#2: calculate exact date
+        #### option#2: calculate exact date relative to original frontmatter date
         ASSIGNED_DATE_FORMATTED="$(func_calculate_exact_date_1year_ago_from_frontmatter_date)" ;
-        ##
+        ##################
         echo "$ASSIGNED_DATE_FORMATTED = ASSIGNED DATE FINAL (AFTER MODIFIED H:M:S)" >> $TMP_OUTPUT_FILE ;
         ## Actual date replacement in original md file
-        #func_replace_date_in_existing_mdfile "$mdfile" "$ASSIGNED_DATE_FORMATTED" ;
+        func_replace_date_in_existing_mdfile "$mdfile" "$ASSIGNED_DATE_FORMATTED" ;
         ##
     else
         (( COUNT_INVALID++ ))
