@@ -78,16 +78,20 @@ debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-
 ## SETTING VARIABLES
 WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
 mkdir -p $WORKDIR ; ## create dir if not exists
+echo "##########################################" ; 
+echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
+echo "##########################################" ; 
+
 time_taken="$WORKDIR/tmp-time-taken-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 echo "$(date) = START-TIME" > $time_taken
-##
+
+##############################################################################
+## Confirmation to proceed
+read -p "Press Enter key if OKAY ..." ; 
+##############################################################################
 OUTPUT_HTML="$WORKDIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.html" ;
 OUTPUT_TXT="$WORKDIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 echo ;
-echo "################################################################################" ; 
-warn "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
-echo; 
-read -p "Press Enter key if OKAY ..." ; 
 ##############################################################################
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
