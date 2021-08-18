@@ -120,6 +120,7 @@ mggk_calculate_length_of_titles
 mggk_calculate_length_of_urls
 10b-mggk-create-index-for-recipe-steps-present-folder
 mggk_WEEKLY_SUMMARY_RUN
+convert_images_to_1080x1920_padded_imagemagick
 makesite_mggk_quickly
 frontm_sponsored) ;
 
@@ -220,6 +221,8 @@ youtube-list-formats
 youtube-update-downloader-program
 pali_imagemagick_fixed_resize_images_by_width_or_height
 pali_imagemagick_create_10_random_images
+convert_images_to_1080x1920_padded_imagemagick
+convert_images_to_1920x1080_padded_imagemagick
 2000-python-image-resize)
 
 ##
