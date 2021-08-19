@@ -38,9 +38,15 @@ debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-
 
 ##############################################################################
 ## SETTING VARIABLES
-myfile="$DIR_Y/no_steps_present_urls.txt" ;
-outfile="$DIR_Y/_all_images_links.txt" ;
-CREATE_TMPDIRS_AT="$DIR_Y/_TMPDIRS_CREATED_FOR_NEW_STEPS_IMAGES_FOR_MOVING" ;
+WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
+mkdir -p $WORKDIR ; ## create dir if not exists
+echo "##########################################" ; 
+echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
+echo "##########################################" ; 
+##
+myfile="$WORKDIR/no_steps_present_urls.txt" ;
+outfile="$WORKDIR/_all_images_links.txt" ;
+CREATE_TMPDIRS_AT="$WORKDIR/_TMPDIRS_CREATED_FOR_NEW_STEPS_IMAGES_FOR_MOVING" ;
 WHITE1PX_IMAGE_PATH=" $REPO_SCRIPTS_MGGK/_REQUIREMENT_FILES_MGGK/1px_white.jpg" ;
 ##
 
@@ -51,8 +57,9 @@ WHITE1PX_IMAGE_PATH=" $REPO_SCRIPTS_MGGK/_REQUIREMENT_FILES_MGGK/1px_white.jpg" 
 function FUNCTION_GET_ALL_URLS_WITH_STEPS_IMAGES_PRESENT_FRONTMATTER_TAG () {
     HUGODIR="$REPO_MGGK/content" ;
     SUMMARY_FILE_STEPS_IMAGES_DIRS="$REPO_MGGK_SUMMARY/_mggk_summary_of_current_directories_with_steps_images.txt" ;
-    TMP1="$DIR_Y/_tmp1.txt" ;
-    TMP2="$DIR_Y/_tmp2.txt" ;
+    TMP1="$WORKDIR/_tmp1.txt" ;
+    TMP2="$WORKDIR/_tmp2.txt" ;
+    touch $TMP2 $TMP1 ## initialize
     rm $TMP2 $TMP1 ## if already exists
     ##
     cat $SUMMARY_FILE_STEPS_IMAGES_DIRS | grep -iv '#' | sed 's/ //g' > $TMP1 ;
@@ -70,17 +77,21 @@ function FUNCTION_GET_ALL_URLS_WITH_STEPS_IMAGES_PRESENT_FRONTMATTER_TAG () {
 
 ## Get all step images urls for each website url obtained from step1
 function FUNCTION_GET_IMAGES_URL_BY_CURL () {
-    TMP_OUTFILE="$DIR_Y/_tmp0.txt" ;
+    TMP_OUTFILE="$WORKDIR/_tmp0.txt" ;
     ##
+    touch $TMP_OUTFILE # initializing
     rm $TMP_OUTFILE ## if already exists
     while IFS= read -r line
     do
-    newline=$(echo $line | sed 's/ //g') ; ## remove spaces
-    echo "$newline ==> https://www.mygingergarlickitchen.com/$newline/" ;
-    curl "https://www.mygingergarlickitchen.com/$newline/" | grep '"image":' | grep -i 'recipe-steps-images' >> $TMP_OUTFILE ;
+        newline=$(echo $line | sed 's/ //g') ; ## remove spaces
+        echo "$newline ==> https://www.mygingergarlickitchen.com/$newline/" ;
+        curl "https://www.mygingergarlickitchen.com/$newline/" | grep '"image":' | grep -i 'recipe-steps-images' >> $TMP_OUTFILE ;
     done < "$myfile"
     ##
-    cat $TMP_OUTFILE | sed 's/ //g' | sed 's/"//g' | sed 's+image:https://www.mygingergarlickitchen.com/wp-content/recipe-steps-images/++g' > $outfile
+    if [ -f "$TMP_OUTFILE" ]; then
+        echo "$TMP_OUTFILE exists. Henc, this file will be processed." ;
+        cat $TMP_OUTFILE | sed 's/ //g' | sed 's/"//g' | sed 's+image:https://www.mygingergarlickitchen.com/wp-content/recipe-steps-images/++g' > $outfile
+    fi
 }
 
 ## Get directory names from parsed Image urls + create those directories
