@@ -1,4 +1,6 @@
-#/bin/bash
+#!/bin/bash
+THIS_SCRIPT_NAME="$(basename $0)" ;
+THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
@@ -21,10 +23,15 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-################################################################################
-## SOME VARIABLES
+##############################################################################
+## SETTING VARIABLES
+WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
+mkdir -p $WORKDIR ; ## create dir if not exists
+echo "##########################################" ; 
+echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
+echo "##########################################" ; 
+##
 MAIN_HUGO_CONTENT_DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content"
-WORKDIR="$HOME_WINDOWS/Desktop/Y" ;
 FILE_TMP_0="$WORKDIR/_tmp0_bing_sitemap.txt" ;
 FILE_TMP_1="$WORKDIR/_tmp1_bing_submission.txt" ;
 FILE_TMP_2="$WORKDIR/_tmp2_bing_submission.txt" ;

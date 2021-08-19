@@ -1,7 +1,6 @@
-#/bin/bash
-################################################################################
-THIS_SCRIPT_FILE="1002-leelasrecipes-MAKE-VIDEO-SITEMAP-XML.sh"
-################################################################################
+#!/bin/bash
+THIS_SCRIPT_NAME="$(basename $0)" ;
+THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
@@ -14,7 +13,7 @@ USAGE: $(basename $0)
 	## youtube_video_id TAG IN YAML FRONTMATTER.
 	## IT THEN SAVES IT IN HUGO STATIC DIRECTORY AS video-sitemap.xml
 	############################################
-	## USAGE: bash $THIS_SCRIPT_FILE
+	## USAGE: bash $THIS_SCRIPT_NAME
 	############################################
 	## CREATED ON: September 09, 2020
 	## CREATED BY: PALI
@@ -27,13 +26,20 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-################################################################################
+##############################################################################
+## SETTING VARIABLES
+WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
+mkdir -p $WORKDIR ; ## create dir if not exists
+echo "##########################################" ; 
+echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
+echo "##########################################" ; 
+##
 HUGO_BASEDIR="$HOME/GitHub/2020-LEELA-RECIPES"
 HUGO_CONTENT_DIR="$HUGO_BASEDIR/content"
 XML_OUTFILE="$HUGO_BASEDIR/static/video-sitemap.xml" ;
 HUGO_CURRENT_YOUTUBE_IMAGE_COVERS_DIR="$HUGO_BASEDIR/static/images/youtube_video_cover_images" ;
 CURRENT_VIDEO_COVER_IMAGES_TXTFILE="$HUGO_BASEDIR/static/video-cover-images-current.txt"
-TMPDIR="$HOME_WINDOWS/Desktop/Y"
+TMPDIR="$WORKDIR"
 ################################################################################
 
 ## LISTING AND SAVING ALL CURRENTLY EXISTING YOUTUBE COVER IMAGES

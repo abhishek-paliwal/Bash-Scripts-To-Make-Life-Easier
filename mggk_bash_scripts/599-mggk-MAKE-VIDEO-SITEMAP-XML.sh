@@ -1,7 +1,6 @@
-#/bin/bash
-################################################################################
-THIS_SCRIPT_FILE="599-mggk-MAKE-VIDEO-SITEMAP-XML.sh"
-################################################################################
+#!/bin/bash
+THIS_SCRIPT_NAME="$(basename $0)" ;
+THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
@@ -14,7 +13,7 @@ USAGE: $(basename $0)
 	## youtube_video_id TAG IN YAML FRONTMATTER.
 	## IT THEN SAVES IT IN HUGO STATIC DIRECTORY AS video-sitemap.xml
 	############################################
-	## USAGE: bash $THIS_SCRIPT_FILE
+	## USAGE: bash $THIS_SCRIPT_NAME
 	############################################
 	## CREATED ON: Thursday November 28, 2019
 	## CREATED BY: PALI
@@ -27,12 +26,19 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-################################################################################
+##############################################################################
+## SETTING VARIABLES
+WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
+mkdir -p $WORKDIR ; ## create dir if not exists
+echo "##########################################" ; 
+echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
+echo "##########################################" ; 
+##
 HUGO_CONTENT_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content"
 XML_OUTFILE="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/video-sitemap.xml" ;
 HUGO_CURRENT_YOUTUBE_IMAGE_COVERS_DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/youtube_video_cover_images" ;
 CURRENT_VIDEO_COVER_IMAGES_TXTFILE="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/video-cover-images-current.txt"
-TMPDIR="$HOME/Desktop/Y"
+TMPDIR="$WORKDIR"
 ################################################################################
 
 ## LISTING AND SAVING ALL CURRENTLY EXISTING YOUTUBE COVER IMAGES
