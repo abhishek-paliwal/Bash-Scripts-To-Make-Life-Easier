@@ -81,6 +81,26 @@ fi
 ## DECLARING COMMAND LIST ARRAYS FOR EACH USER, ONE COMMAND PER LINE (NO COMMAS)
 ANU_COMMANDS_ARRAY=(makesite_mggk
 frontm
+search_mggk_url_and_open_mdfile_in_code
+video_cutting_in_1_minute_equal_parts_using_ffmpeg
+1x1
+10-mggk-create-images-index-page-for-current-year
+506-mggk-search-word-in-tags-and-categories
+601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls-NEW2021
+999-mggk-EXTRACT-VIDEO-SCREENSHOTS-EVERY-N-SECONDS
+999A-mggk-MATCH-WORDS-IN-MD-FILE-WITH-EXISTING-URLS-LIKE-WORDPRESS
+999B-mggk-CREATE-SEARCH-ENGINE-LINKS-FOR-ALL-URLS
+999-mggk-CREATE-RESPONSIVE-IMAGES-FOR-MGGK-SITE
+901-mggk-delete-cloudflare-cache-for-chosen-keyword-urls
+901-mggk-delete-cloudflare-cache-for-user-input-urls
+902-linkchecker-extract-all-internal-external-images-links-from-given-urls
+convert_images_to_1080x1920_padded_imagemagick
+makesite_mggk_quickly
+frontm_sponsored) ;
+
+##
+MGGK_COMMANDS_ARRAY_LONG=(makesite_mggk
+frontm
 algolia_search_for_this_phrase
 gif_maker_from_jpgs
 hugo_mggk_enable_featured_posts
@@ -230,6 +250,7 @@ GOPS_COMMANDS_ARRAY=(gops_convert_mp4_mkv_to_CUSTOM_WIDTH_ffmpeg
 gops_copy_7z_files_to_dreamobjects)
 
 ## Assign the corresponding user array to the new array variable
+if [ "$WHICH_USER" == "mggk" ] ; then MY_COMMANDS_ARRAY=( "${MGGK_COMMANDS_ARRAY[@]}" ) ; fi
 if [ "$WHICH_USER" == "anu" ] ; then MY_COMMANDS_ARRAY=( "${ANU_COMMANDS_ARRAY[@]}" ) ; fi
 if [ "$WHICH_USER" == "pali" ] ; then MY_COMMANDS_ARRAY=( "${PALI_COMMANDS_ARRAY[@]}" ) ; fi
 if [ "$WHICH_USER" == "leela" ] ; then MY_COMMANDS_ARRAY=( "${LEELA_COMMANDS_ARRAY[@]}" ) ; fi
