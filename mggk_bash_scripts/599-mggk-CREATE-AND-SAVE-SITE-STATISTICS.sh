@@ -45,6 +45,7 @@ echo ">> CREATING SUMMARY FILES TO BE USED BY CLOUDFLARE SCRIPTS ... (line count
 FilesUrlsWPcontent="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_FilesUrlsWPcontent.txt" ;
 AllValidUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidSiteUrls.txt" ;
 AllValidRecipesUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidRecipesUrls.txt" ;
+AllValidNONRecipesUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidNONRecipesUrls.txt" ;
 ##
 #### Get all filepaths inside wp-content directory and converting them to valid MGGK urls
 replaceThis1="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
@@ -56,19 +57,31 @@ fd -I -t f --search-path=$REPO_MGGK/static/wp-content | sd "$replaceThis1" "$rep
 
 ## Get all mggk urls from current md files
 ack -ih 'url:' $REPO_MGGK/content/ | sd 'url:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com'  | sort | uniq > $AllValidUrlsMGGK ;
-##
+####
 ## Get all valid mggk recipe urls from current md files (HINT: containing preptime keyword)
-tmpfile="$WORKDIR/_tmp010.txt" ;
-echo > $tmpfile ;
+tmpfile010="$WORKDIR/_tmp010.txt" ;
+echo > $tmpfile010 ;
 for x in $(grep -irl 'preptime' $REPO_MGGK/content/) ; do 
-    grep -irh "^url: " $x | sd "url:" "" | sd " " "" | sd '"' '' | sed 's|^|https://www.mygingergarlickitchen.com|g' >> $tmpfile
+    grep -irh "^url: " $x | sd "url:" "" | sd " " "" | sd '"' '' | sed 's|^|https://www.mygingergarlickitchen.com|g' >> $tmpfile010
 done
 ## only list those urls with atleast one forward-slash
-cat $tmpfile | grep -i '/' | sort | uniq > $AllValidRecipesUrlsMGGK
-##
+cat $tmpfile010 | grep -i '/' | sort | uniq > $AllValidRecipesUrlsMGGK
+####
+####
+## Get all valid mggk NON recipe urls from current md files (HINT: dont containing preptime keyword)
+tmpfile011="$WORKDIR/_tmp011.txt" ;
+echo > $tmpfile011 ;
+for x in $(grep -irL 'preptime' $REPO_MGGK/content/) ; do 
+    grep -irh "^url: " $x | sd "url:" "" | sd " " "" | sd '"' '' | sed 's|^|https://www.mygingergarlickitchen.com|g' >> $tmpfile011
+done
+## only list those urls with atleast one forward-slash
+cat $tmpfile011 | grep -i '/' | sort | uniq > $AllValidNONRecipesUrlsMGGK
+####
+
 wc -l $FilesUrlsWPcontent ;
 wc -l $AllValidUrlsMGGK ;
 wc -l $AllValidRecipesUrlsMGGK ;
+wc -l $AllValidNONRecipesUrlsMGGK ;
 ##################################################################################
 ##################################################################################
 
