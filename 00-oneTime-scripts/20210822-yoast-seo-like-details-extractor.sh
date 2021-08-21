@@ -110,3 +110,9 @@ prefix2="VALID-NON-RECIPES" ;
 func_step2_find_all_mdfiles_containing_given_mggk_url "$inFile1" "$prefix1" ;
 func_step2_find_all_mdfiles_containing_given_mggk_url "$inFile2" "$prefix2" ;
 #######
+
+##############################################################################
+## SUMMARY OF OUTPUTS
+################################################################################
+echo ">> WORD-COUNTS FOR CREATED OUTPUTS:" ;
+fd -I --search-path="$WORKDIR" '_output' -x wc -l {/} ;
