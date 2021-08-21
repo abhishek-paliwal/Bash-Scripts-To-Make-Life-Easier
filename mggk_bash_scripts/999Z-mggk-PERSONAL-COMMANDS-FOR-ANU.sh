@@ -86,6 +86,7 @@ video_cutting_in_1_minute_equal_parts_using_ffmpeg
 1x1
 10-mggk-create-images-index-page-for-current-year
 506-mggk-search-word-in-tags-and-categories
+599-mggk-CREATE-AND-SAVE-SITE-STATISTICS
 601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls-NEW2021
 999-mggk-EXTRACT-VIDEO-SCREENSHOTS-EVERY-N-SECONDS
 999A-mggk-MATCH-WORDS-IN-MD-FILE-WITH-EXISTING-URLS-LIKE-WORDPRESS
