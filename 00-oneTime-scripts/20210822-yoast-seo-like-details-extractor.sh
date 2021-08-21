@@ -38,17 +38,19 @@ echo "##########################################" ;
 
 ##############################################################################
 ##############################################################################
-function func_step1_remove_frontmatter_and_extract_youmayalsolike_blocks_from_mdfiles () {
+function func_step1_delete_frontmatter_and_youmayalsolike_blocks_from_mdfiles () {
+    outFile="$WORKDIR/_tmp0.txt" ;
+    ##
     count=0;
     for x in $(fd -I --search-path="$REPO_MGGK/content" -e md) ; do 
     ####
         ((count++)) ;
-        x_base=$(basename $x | cut -d'T' -f2) ; 
-        ##
-        sed "/{{< mggk-YouMayAlsoLike-HTMLcode >}}/,/{{< \/mggk-YouMayAlsoLike-HTMLcode >}}/d" $x > $WORKDIR/_t.txt ;
-        ##
+        x_basename=$(basename $x | cut -d'T' -f2) ; 
+        ## step1 = delete all youMayAlsoLike section between two phrases and save the rest
+        sed "/{{< mggk-YouMayAlsoLike-HTMLcode >}}/,/{{< \/mggk-YouMayAlsoLike-HTMLcode >}}/d" $x > $outFile ;
+        ## step2 = delete full frontmatter section from step1 and save the rest
         myvar="^---" ; 
-        sed "/$myvar/,/$myvar/d" $WORKDIR/_t.txt > "$WORKDIR/$count-XYZ-$x_base" ;
+        sed "/$myvar/,/$myvar/d" "$outFile" > "$WORKDIR/$count-MYFILE-$x_basename" ;
     ####
     done
 }
@@ -80,6 +82,6 @@ function func_step2_find_all_mdfiles_containing_given_mggk_url () {
 ##############################################################################
 ################################################################################
 
-func_step1_remove_frontmatter_and_extract_youmayalsolike_blocks_from_mdfiles
+func_step1_delete_frontmatter_and_youmayalsolike_blocks_from_mdfiles
 
 func_step2_find_all_mdfiles_containing_given_mggk_url
