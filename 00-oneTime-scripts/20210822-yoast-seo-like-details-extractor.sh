@@ -38,43 +38,48 @@ echo "##########################################" ;
 
 ##############################################################################
 ##############################################################################
-function func_remove_frontmatter_and_extract_youmayalsolike_blocks_from_mdfiles () {
-    outFile="$WORKDIR/tmp1.txt"
-    echo > $outFile
-    #fd -I --search-path="$REPO_MGGK/content" -e md -x sed -n '/{{< mggk-YouMayAlsoLike-HTMLcode >}}/,/{{< \/mggk-YouMayAlsoLike-HTMLcode >}}/p' >> $outFile
-    ##
+function func_step1_remove_frontmatter_and_extract_youmayalsolike_blocks_from_mdfiles () {
     count=0;
     for x in $(fd -I --search-path="$REPO_MGGK/content" -e md) ; do 
-    ((count++)) ;
-    x_base=$(basename $x | cut -d'T' -f2) ; 
-    ##
-    sed "/{{< mggk-YouMayAlsoLike-HTMLcode >}}/,/{{< \/mggk-YouMayAlsoLike-HTMLcode >}}/d" $x > $WORKDIR/_t.txt ;
-    ##
-    myvar="^---" ; 
-    sed "/$myvar/,/$myvar/d" $WORKDIR/_t.txt > "$WORKDIR/$count-XYZ-$x_base" ;
+    ####
+        ((count++)) ;
+        x_base=$(basename $x | cut -d'T' -f2) ; 
+        ##
+        sed "/{{< mggk-YouMayAlsoLike-HTMLcode >}}/,/{{< \/mggk-YouMayAlsoLike-HTMLcode >}}/d" $x > $WORKDIR/_t.txt ;
+        ##
+        myvar="^---" ; 
+        sed "/$myvar/,/$myvar/d" $WORKDIR/_t.txt > "$WORKDIR/$count-XYZ-$x_base" ;
     ####
     done
 }
 ####
-function func_find_all_orphaned_files_from_mdfiles () {
+function func_step2_find_all_mdfiles_containing_given_mggk_url () {
+    ## 
     inFile="/Users/abhishek/Dropbox/Public/_TO_SYNC_downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs/mggk_summary_cloudflare_AllValidSiteUrls.txt" ;
-    outFile="$WORKDIR/tmp3.txt" ;
+    outFile="$WORKDIR/_output_MDFILES_WITH_GIVEN_MGGK_URL.txt" ;
+    outFile1="$WORKDIR/_output_MDFILES_WITH_GIVEN_MGGK_URL_COUNTS_ONLY.txt" ;
     #inDir="$REPO_MGGK/content" ;
     inDir="$WORKDIR" ;
     ##
+    echo > $outFile ;
+    echo > $outFile1 ;
     count=0;
-    for x in $(cat $inFile | sd 'https://www.mygingergarlickitchen.com' '' | sd '^/$' '') ; do 
+    for thisUrl in $(cat $inFile | sd 'https://www.mygingergarlickitchen.com' '' | sd '^/$' '') ; do 
+    ####
         ((count++)) ;
         echo >> $outFile ;
         echo "################################################################################" >> $outFile ;
-        echo "$count = URL = $x" >> $outFile ;
-        grep -irl "$x" "$inDir" >> $outFile ;
-    ##
+        echo "$count = URL = $thisUrl" >> $outFile ;
+        ag -l --markdown "$thisUrl" "$inDir" >> $outFile ;
+        ## count the number of files found for given url
+        myFileCount=$(ag -l --markdown "$thisUrl" "$inDir" | wc -l ) ;
+        echo "$myFileCount // URL = $thisUrl" >> $outFile1 ;
+    ####
     done
 }
 ##############################################################################
 ################################################################################
 
-func_remove_frontmatter_and_extract_youmayalsolike_blocks_from_mdfiles
+func_step1_remove_frontmatter_and_extract_youmayalsolike_blocks_from_mdfiles
 
-func_find_all_orphaned_files_from_mdfiles
+func_step2_find_all_mdfiles_containing_given_mggk_url
