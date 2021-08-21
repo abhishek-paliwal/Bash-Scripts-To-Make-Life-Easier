@@ -25,6 +25,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##################################################################################
 WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION";
 mkdir -p "$WORKDIR" ;
+##
 HUGO_CONTENT_DIR="$REPO_MGGK/content" ;
 FILE_OUTPUT_SITESTATS="$WORKDIR/tmp-mggk-sitestats.html" ;
 FILE_OUTPUT_SITESTATS_FINAL="$REPO_MGGK_SUMMARY/mggk-sitestats.html" ;
@@ -43,6 +44,7 @@ echo "##------------------------------------------------------------------------
 echo ">> CREATING SUMMARY FILES TO BE USED BY CLOUDFLARE SCRIPTS ... (line counts below)" ;
 FilesUrlsWPcontent="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_FilesUrlsWPcontent.txt" ;
 AllValidUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidSiteUrls.txt" ;
+AllValidRecipesUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidRecipesUrls.txt" ;
 ##
 #### Get all filepaths inside wp-content directory and converting them to valid MGGK urls
 replaceThis1="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
@@ -54,10 +56,19 @@ fd -I -t f --search-path=$REPO_MGGK/static/wp-content | sd "$replaceThis1" "$rep
 
 ## Get all mggk urls from current md files
 ack -ih 'url:' $REPO_MGGK/content/ | sd 'url:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com'  | sort | uniq > $AllValidUrlsMGGK ;
-
+##
+## Get all valid mggk recipe urls from current md files (HINT: containing preptime keyword)
+tmpfile="$WORKDIR/_tmp010.txt" ;
+echo > $tmpfile ;
+for x in $(grep -irl 'preptime' $REPO_MGGK/content/) ; do 
+    grep -irh "^url: " $x | sd "url:" "" | sd " " "" | sd '"' '' | sed 's|^|https://www.mygingergarlickitchen.com|g' >> $tmpfile
+done
+## only list those urls with atleast one forward-slash
+cat $tmpfile | grep -i '/' | sort | uniq > $AllValidRecipesUrlsMGGK
 ##
 wc -l $FilesUrlsWPcontent ;
 wc -l $AllValidUrlsMGGK ;
+wc -l $AllValidRecipesUrlsMGGK ;
 ##################################################################################
 ##################################################################################
 
@@ -264,8 +275,6 @@ FILE_ORIG_COPIED="$DIR_OUTPUT/_tmplist_00_ORIG_COPIED.txt" ;
 FILE_1x1="$DIR_OUTPUT/_tmplist_1x1.txt" ;
 FILE_4x3="$DIR_OUTPUT/_tmplist_4x3.txt" ;
 FILE_16x9="$DIR_OUTPUT/_tmplist_16x9.txt" ;
-####
-rm $DIR_OUTPUT/_tmplist*.txt ; ## removing existing temporary files
 ####
 ## Getting all names from jpg images
 ls $DIR_ORIG_COPIED/ | tr -d ' ' | sed 's/.jpg//g' | sort > $FILE_ORIG_COPIED
