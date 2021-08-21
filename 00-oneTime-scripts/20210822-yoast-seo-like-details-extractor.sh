@@ -40,22 +40,27 @@ echo "##########################################" ;
 ##############################################################################
 function func_step1_delete_frontmatter_and_youmayalsolike_blocks_from_mdfiles () {
     tmpFile="$WORKDIR/_tmp0.txt" ;
+    inDir="$REPO_MGGK/content" ;
     ##
+    echo ">> Creating temporary md files without any frontmatter and youMayAlsoLike blocks ..." ; 
     count=0;
-    for x in $(fd -I --search-path="$REPO_MGGK/content" -e md) ; do 
+    TOTAL_COUNT=$(fd -I --search-path="$inDir" -e md | wc -l | sd ' ' '') ; 
+    ##
+    for x in $(fd -I --search-path="$inDir" -e md) ; do 
     ####
         ((count++)) ;
-        outFile="$WORKDIR/$count-MYFILE-$x_basename" ;
+        echo ">> CURRENT FILE => $count of $TOTAL_COUNT" ;
         x_basename=$(basename $x | cut -d'T' -f2) ; 
         ## step1 = delete all youMayAlsoLike section between two phrases and save the rest
         sed "/{{< mggk-YouMayAlsoLike-HTMLcode >}}/,/{{< \/mggk-YouMayAlsoLike-HTMLcode >}}/d" $x > $tmpFile ;
         ## step2 = delete full frontmatter section from step1 and save the rest
+        outFile="$WORKDIR/$count-MYFILE-$x_basename" ;
         myvar="^---" ; 
         sed "/$myvar/,/$myvar/d" "$tmpFile" > "$outFile" ;
     ####
     done
 }
-####
+###########################################
 function func_step2_find_all_mdfiles_containing_given_mggk_url () {
     ##
     inFile="$1" ;
@@ -69,11 +74,12 @@ function func_step2_find_all_mdfiles_containing_given_mggk_url () {
     echo "## LIST OF FOUND MD FILES CONTAINING GIVEN_URL" > $outFile ;
     echo > $tmpFile1 ;
     ##
+    TOTAL_COUNT=$(cat $inFile | wc -l | sd ' ' '') ;
     count=0;
     for thisUrl in $(cat $inFile | sd 'https://www.mygingergarlickitchen.com' '' | sd '^/$' '') ; do 
     ####
         ((count++)) ;
-        echo "CURRENT FILE COUNT => $count" ;
+        echo "CURRENT FILE COUNT => $count of $TOTAL_COUNT // PREFIX_VAR = $PREFIX" ;
         echo >> $outFile ;
         echo "##------------------------------------------------------------------------------" >> $outFile ;
         echo "$count = URL = $thisUrl" >> $outFile ;
