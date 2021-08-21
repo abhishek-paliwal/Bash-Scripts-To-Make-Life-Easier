@@ -39,49 +39,68 @@ echo "##########################################" ;
 ##############################################################################
 ##############################################################################
 function func_step1_delete_frontmatter_and_youmayalsolike_blocks_from_mdfiles () {
-    outFile="$WORKDIR/_tmp0.txt" ;
+    tmpFile="$WORKDIR/_tmp0.txt" ;
     ##
     count=0;
     for x in $(fd -I --search-path="$REPO_MGGK/content" -e md) ; do 
     ####
         ((count++)) ;
+        outFile="$WORKDIR/$count-MYFILE-$x_basename" ;
         x_basename=$(basename $x | cut -d'T' -f2) ; 
         ## step1 = delete all youMayAlsoLike section between two phrases and save the rest
-        sed "/{{< mggk-YouMayAlsoLike-HTMLcode >}}/,/{{< \/mggk-YouMayAlsoLike-HTMLcode >}}/d" $x > $outFile ;
+        sed "/{{< mggk-YouMayAlsoLike-HTMLcode >}}/,/{{< \/mggk-YouMayAlsoLike-HTMLcode >}}/d" $x > $tmpFile ;
         ## step2 = delete full frontmatter section from step1 and save the rest
         myvar="^---" ; 
-        sed "/$myvar/,/$myvar/d" "$outFile" > "$WORKDIR/$count-MYFILE-$x_basename" ;
+        sed "/$myvar/,/$myvar/d" "$tmpFile" > "$outFile" ;
     ####
     done
 }
 ####
 function func_step2_find_all_mdfiles_containing_given_mggk_url () {
-    ## 
-    inFile="/Users/abhishek/Dropbox/Public/_TO_SYNC_downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs/mggk_summary_cloudflare_AllValidSiteUrls.txt" ;
-    outFile="$WORKDIR/_output_MDFILES_WITH_GIVEN_MGGK_URL.txt" ;
-    outFile1="$WORKDIR/_output_MDFILES_WITH_GIVEN_MGGK_URL_COUNTS_ONLY.txt" ;
-    #inDir="$REPO_MGGK/content" ;
+    ##
+    inFile="$1" ;
+    PREFIX="$2" ;
+    outFile="$WORKDIR/_output_FOUND_MDFILES_WITH_GIVEN_MGGK_URL-$PREFIX.txt" ;
+    outFile1="$WORKDIR/_output_FOUND_MDFILES_WITH_GIVEN_MGGK_URL_COUNTS_ONLY-$PREFIX.txt" ;
     inDir="$WORKDIR" ;
     ##
-    echo > $outFile ;
-    echo > $outFile1 ;
+    tmpFile1="$WORKDIR/_tmp1.txt" ;
+    ##
+    echo "## LIST OF FOUND MD FILES CONTAINING GIVEN_URL" > $outFile ;
+    echo > $tmpFile1 ;
+    ##
     count=0;
     for thisUrl in $(cat $inFile | sd 'https://www.mygingergarlickitchen.com' '' | sd '^/$' '') ; do 
     ####
         ((count++)) ;
+        echo "CURRENT FILE COUNT => $count" ;
         echo >> $outFile ;
-        echo "################################################################################" >> $outFile ;
+        echo "##------------------------------------------------------------------------------" >> $outFile ;
         echo "$count = URL = $thisUrl" >> $outFile ;
         ag -l --markdown "$thisUrl" "$inDir" >> $outFile ;
-        ## count the number of files found for given url
+        ####
+        ## list the counts for files found for given url
         myFileCount=$(ag -l --markdown "$thisUrl" "$inDir" | wc -l ) ;
-        echo "$myFileCount // URL = $thisUrl" >> $outFile1 ;
+        echo "$myFileCount // URL = $thisUrl" >> $tmpFile1 ;
     ####
     done
+    ## Sorting the counts output
+    echo "## NUMBER OF FOUND MD FILES CONTAINING GIVEN_URL // GIVEN_URL" > $outFile1 ;
+    sort "$tmpFile1" >> $outFile1 ;
 }
 ##############################################################################
 ################################################################################
 
-func_step1_delete_frontmatter_and_youmayalsolike_blocks_from_mdfiles
-
-func_step2_find_all_mdfiles_containing_given_mggk_url
+#######
+## CALLING FUNC_1
+func_step1_delete_frontmatter_and_youmayalsolike_blocks_from_mdfiles ;
+#######
+## CALLING FUNC_2
+FILEDIR="/Users/abhishek/Dropbox/Public/_TO_SYNC_downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs" ;
+inFile1="$FILEDIR/mggk_summary_cloudflare_AllValidRecipesUrls.txt" ;
+inFile2="$FILEDIR/mggk_summary_cloudflare_AllValidNONRecipesUrls.txt" ;
+prefix1="VALID-RECIPES" ;
+prefix2="VALID-NON-RECIPES" ;
+func_step2_find_all_mdfiles_containing_given_mggk_url "$inFile1" "$prefix1" ;
+func_step2_find_all_mdfiles_containing_given_mggk_url "$inFile2" "$prefix2" ;
+#######
