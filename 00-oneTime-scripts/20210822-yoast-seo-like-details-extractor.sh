@@ -61,7 +61,7 @@ function func_step1_delete_frontmatter_and_youmayalsolike_blocks_from_mdfiles ()
     done
 }
 ###########################################
-function func_step2_find_all_mdfiles_containing_given_mggk_url () {
+function func_step2_find_all_internal_inbound_links_for_each_mdfile_url () {
     ##
     inFile="$1" ;
     PREFIX="$2" ;
@@ -119,13 +119,14 @@ function func_step3_find_all_internal_outbound_links_in_each_mdfile () {
         ag -l --markdown "$thisUrl" "$inDir" > $tmpFile1 ;
         ##
         for foundMDfile in $(cat $tmpFile1) ; do 
-            echo "$foundMDfile=$thisUrl" >> $outFile ;
+            foundMDfile_base=$(basename $foundMDfile) ;
+            echo "$foundMDfile_base=$thisUrl" >> $outFile ;
         done    
     ####
     done
     ## Sorting the counts output
     echo "## NUMBER OF INTERNAL OUTBOUND LINKS FOUND IN MD FILES" > $outFile1 ;
-    cat $outFile | cut -d'=' -f1 | sort | uniq -c | sort -n >> $outFile1
+    cat $outFile | grep -iv '#' |cut -d'=' -f1 | sort | uniq -c | sort -n >> $outFile1
 }
 ##############################################################################
 ################################################################################
@@ -141,11 +142,11 @@ inFile2="$FILEDIR/mggk_summary_cloudflare_AllValidNONRecipesUrls.txt" ;
 prefix1="VALID-RECIPES" ;
 prefix2="VALID-NON-RECIPES" ;
 ##
-#func_step2_find_all_mdfiles_containing_given_mggk_url "$inFile1" "$prefix1" ;
-#func_step2_find_all_mdfiles_containing_given_mggk_url "$inFile2" "$prefix2" ;
+func_step2_find_all_internal_inbound_links_for_each_mdfile_url "$inFile1" "$prefix1" ;
+func_step2_find_all_internal_inbound_links_for_each_mdfile_url "$inFile2" "$prefix2" ;
 #######
 ## CALLING FUNC_3
-#func_step3_find_all_internal_outbound_links_in_each_mdfile "$inFile1" "$prefix1" ;
+func_step3_find_all_internal_outbound_links_in_each_mdfile "$inFile1" "$prefix1" ;
 func_step3_find_all_internal_outbound_links_in_each_mdfile "$inFile2" "$prefix2" ;
 #######
 
@@ -153,4 +154,4 @@ func_step3_find_all_internal_outbound_links_in_each_mdfile "$inFile2" "$prefix2"
 ## SUMMARY OF OUTPUTS
 ################################################################################
 echo ">> WORD-COUNTS FOR CREATED OUTPUTS:" ;
-fd -I --search-path="$WORKDIR" '_output' -x wc -l {/} ;
+fd -I --search-path="$WORKDIR" '_output' -x wc -l {} ;
