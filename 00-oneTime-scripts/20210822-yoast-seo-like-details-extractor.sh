@@ -49,12 +49,14 @@ function func_step1_delete_frontmatter_and_youmayalsolike_blocks_from_mdfiles ()
     for x in $(fd -I --search-path="$inDir" -e md) ; do 
     ####
         ((count++)) ;
+        countPadded=$(printf "%05d" "$count") ; ## pad with leading zeros
+        ##
         echo ">> CURRENT FILE => $count of $TOTAL_COUNT" ;
         x_basename=$(basename $x | cut -d'T' -f2) ; 
         ## step1 = delete all youMayAlsoLike section between two phrases and save the rest
         sed "/{{< mggk-YouMayAlsoLike-HTMLcode >}}/,/{{< \/mggk-YouMayAlsoLike-HTMLcode >}}/d" $x > $tmpFile ;
         ## step2 = delete full frontmatter section from step1 and save the rest
-        outFile="$WORKDIR/$count-MYFILE-$x_basename" ;
+        outFile="$WORKDIR/$countPadded-MYFILE-$x_basename" ;
         myvar="^---" ; 
         sed "/$myvar/,/$myvar/d" "$tmpFile" > "$outFile" ;
     ####
@@ -99,14 +101,20 @@ function func_step3_find_all_internal_outbound_links_in_each_mdfile () {
     ##
     inFile="$1" ;
     PREFIX="$2" ;
-    outFile="$WORKDIR/_output_FOUND_OUTBOUND_LINKS-$PREFIX.txt" ;
-    outFile1="$WORKDIR/_output_FOUND_OUTBOUND_LINKS_COUNTS_ONLY-$PREFIX.txt" ;
+    inbound_outFile="$WORKDIR/_output-$PREFIX-FOUND_INBOUND_LINKS.txt" ;
+    inbound_outFile1="$WORKDIR/_output-$PREFIX-FOUND_INBOUND_LINKS_COUNTS.txt" ;
+    inbound_zeroFile="$WORKDIR/_output-$PREFIX-FOUND_INBOUND_LINKS_ZEROFILE.txt"
+    ##
+    outbound_outFile="$WORKDIR/_output-$PREFIX-FOUND_OUTBOUND_LINKS.txt" ;
+    outbound_outFile1="$WORKDIR/_output-$PREFIX-FOUND_OUTBOUND_LINKS_COUNTS.txt" ;
     inDir="$WORKDIR" ;
     ##
     tmpFile1="$WORKDIR/_tmp1.txt" ;
     ##
-    echo "## LIST OF INTERNAL OUTBOUND LINKS FOUND IN MD FILES" > $outFile ;
+    echo "## LIST OF INTERNAL OUTBOUND LINKS FOUND IN MD FILES" > $outbound_outFile ;
+    echo "## LIST OF INTERNAL INBOUND LINKS FOUND IN MD FILES" > $inbound_outFile ;
     echo > $tmpFile1 ;
+    echo > $inbound_zeroFile ;
     ##
     TOTAL_COUNT=$(cat $inFile | wc -l | sd ' ' '') ;
     count=0;
@@ -115,18 +123,30 @@ function func_step3_find_all_internal_outbound_links_in_each_mdfile () {
         ((count++)) ;
         echo "CURRENT FILE COUNT => $count of $TOTAL_COUNT // PREFIX_VAR = $PREFIX" ;
         echo >> $outFile ;
-        ##
+        ## Find all mdfiles with given url
         ag -l --markdown "$thisUrl" "$inDir" > $tmpFile1 ;
+        NUM_LINES_FOUND=$(cat $tmpFile1 | wc -l | sd ' ' '') ;
+        ## If zero mdfiles found
+        if [ "$NUM_LINES_FOUND" == "0" ] ; then
+            echo "0 $thisUrl" >> $inbound_zeroFile ;
+        else
         ##
-        for foundMDfile in $(cat $tmpFile1) ; do 
-            foundMDfile_base=$(basename $foundMDfile) ;
-            echo "$foundMDfile_base=$thisUrl" >> $outFile ;
-        done    
+            for foundMDfile in $(cat $tmpFile1) ; do 
+                foundMDfile_base=$(basename $foundMDfile) ;
+                echo "$foundMDfile_base=$thisUrl" >> $outbound_outFile ;
+                echo "$thisUrl=$foundMDfile_base" >> $inbound_outFile ;
+            done    
+        ##
+        fi
     ####
     done
-    ## Sorting the counts output
-    echo "## NUMBER OF INTERNAL OUTBOUND LINKS FOUND IN MD FILES" > $outFile1 ;
-    cat $outFile | grep -iv '#' |cut -d'=' -f1 | sort | uniq -c | sort -n >> $outFile1
+    ## OUTBOUND => Sorting the counts output
+    echo "## NUMBER OF INTERNAL OUTBOUND LINKS FOUND IN MD FILES" > $outbound_outFile1 ;
+    cat $outbound_outFile | grep -iv '#' |cut -d'=' -f1 | sort | uniq -c | sort -n >> $outbound_outFile1
+    ## INBOUND => Sorting the counts output
+    echo "## NUMBER OF INTERNAL INBOUND LINKS FOUND IN MD FILES" > $inbound_outFile1 ;
+    cat $inbound_zeroFile >> $inbound_outFile1 ;
+    cat $inbound_outFile | grep -iv '#' |cut -d'=' -f1 | sort | uniq -c | sort -n >> $inbound_outFile1 ;
 }
 ##############################################################################
 ################################################################################
@@ -140,10 +160,10 @@ FILEDIR="/Users/abhishek/Dropbox/Public/_TO_SYNC_downloads.concepro.com/dropbox-
 inFile1="$FILEDIR/mggk_summary_cloudflare_AllValidRecipesUrls.txt" ;
 inFile2="$FILEDIR/mggk_summary_cloudflare_AllValidNONRecipesUrls.txt" ;
 prefix1="VALID-RECIPES" ;
-prefix2="VALID-NON-RECIPES" ;
+prefix2="NON-RECIPES" ;
 ##
-func_step2_find_all_internal_inbound_links_for_each_mdfile_url "$inFile1" "$prefix1" ;
-func_step2_find_all_internal_inbound_links_for_each_mdfile_url "$inFile2" "$prefix2" ;
+#func_step2_find_all_internal_inbound_links_for_each_mdfile_url "$inFile1" "$prefix1" ;
+#func_step2_find_all_internal_inbound_links_for_each_mdfile_url "$inFile2" "$prefix2" ;
 #######
 ## CALLING FUNC_3
 func_step3_find_all_internal_outbound_links_in_each_mdfile "$inFile1" "$prefix1" ;
