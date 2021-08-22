@@ -94,6 +94,39 @@ function func_step2_find_all_mdfiles_containing_given_mggk_url () {
     echo "## NUMBER OF FOUND MD FILES CONTAINING GIVEN_URL // GIVEN_URL" > $outFile1 ;
     sort "$tmpFile1" >> $outFile1 ;
 }
+###########################################
+function func_step3_find_all_internal_outbound_links_in_each_mdfile () {
+    ##
+    inFile="$1" ;
+    PREFIX="$2" ;
+    outFile="$WORKDIR/_output_FOUND_OUTBOUND_LINKS-$PREFIX.txt" ;
+    outFile1="$WORKDIR/_output_FOUND_OUTBOUND_LINKS_COUNTS_ONLY-$PREFIX.txt" ;
+    inDir="$WORKDIR" ;
+    ##
+    tmpFile1="$WORKDIR/_tmp1.txt" ;
+    ##
+    echo "## LIST OF INTERNAL OUTBOUND LINKS FOUND IN MD FILES" > $outFile ;
+    echo > $tmpFile1 ;
+    ##
+    TOTAL_COUNT=$(cat $inFile | wc -l | sd ' ' '') ;
+    count=0;
+    for thisUrl in $(cat $inFile | sd 'https://www.mygingergarlickitchen.com' '' | sd '^/$' '') ; do 
+    ####
+        ((count++)) ;
+        echo "CURRENT FILE COUNT => $count of $TOTAL_COUNT // PREFIX_VAR = $PREFIX" ;
+        echo >> $outFile ;
+        ##
+        ag -l --markdown "$thisUrl" "$inDir" > $tmpFile1 ;
+        ##
+        for foundMDfile in $(cat $tmpFile1) ; do 
+            echo "$foundMDfile=$thisUrl" >> $outFile ;
+        done    
+    ####
+    done
+    ## Sorting the counts output
+    echo "## NUMBER OF INTERNAL OUTBOUND LINKS FOUND IN MD FILES" > $outFile1 ;
+    cat $outFile | cut -d'=' -f1 | sort | uniq -c | sort -n >> $outFile1
+}
 ##############################################################################
 ################################################################################
 
@@ -107,8 +140,13 @@ inFile1="$FILEDIR/mggk_summary_cloudflare_AllValidRecipesUrls.txt" ;
 inFile2="$FILEDIR/mggk_summary_cloudflare_AllValidNONRecipesUrls.txt" ;
 prefix1="VALID-RECIPES" ;
 prefix2="VALID-NON-RECIPES" ;
-func_step2_find_all_mdfiles_containing_given_mggk_url "$inFile1" "$prefix1" ;
-func_step2_find_all_mdfiles_containing_given_mggk_url "$inFile2" "$prefix2" ;
+##
+#func_step2_find_all_mdfiles_containing_given_mggk_url "$inFile1" "$prefix1" ;
+#func_step2_find_all_mdfiles_containing_given_mggk_url "$inFile2" "$prefix2" ;
+#######
+## CALLING FUNC_3
+#func_step3_find_all_internal_outbound_links_in_each_mdfile "$inFile1" "$prefix1" ;
+func_step3_find_all_internal_outbound_links_in_each_mdfile "$inFile2" "$prefix2" ;
 #######
 
 ##############################################################################
