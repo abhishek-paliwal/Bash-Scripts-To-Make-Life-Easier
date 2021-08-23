@@ -103,7 +103,7 @@ function func_step2_find_all_internal_inbound_links_for_each_mdfile_url () {
         NUM_LINES_FOUND=$(cat $tmpFile1 | wc -l | sd ' ' '') ;
         ## If zero mdfiles found
         if [ "$NUM_LINES_FOUND" == "0" ] ; then
-            echo "0 $thisUrl" >> $inbound_zeroFile ;
+            echo "0 // $thisUrl" >> $inbound_zeroFile ;
         else
         ##
             for foundMDfile in $(cat $tmpFile1) ; do 
@@ -118,7 +118,7 @@ function func_step2_find_all_internal_inbound_links_for_each_mdfile_url () {
     ## INBOUND => Sorting the counts output
     echo "## NUMBER OF FOUND INTERNAL INBOUND LINKS FOR URLS IN MD FILES // $PREFIX" > $inbound_outFile1 ;
     cat $inbound_zeroFile >> $inbound_outFile1 ;
-    cat $inbound_outFile | grep -iv '#' |cut -d'=' -f1 | sort | uniq -c | sort -n >> $inbound_outFile1 ;
+    cat $inbound_outFile | grep -iv '#' | cut -d'=' -f1 | sort | uniq -c | sort -n | awk '{print $1 " // " $2}' >> $inbound_outFile1 ;
     ##--------------------------------------------
 }
 ###########################################
@@ -168,7 +168,7 @@ function func_step3_find_all_internal_outbound_links_in_each_mdfile () {
     cat $tmpFile2 | sort | uniq -c | sort -n >> $tmpFile3 ;
     ## Subtract one from the count in each line and final saving
     echo "## NUMBER OF INTERNAL OUTBOUND LINKS FOUND IN MD FILES // $PREFIX" > $outbound_outFile1 ;
-    cat $tmpFile3 | grep "$PREFIX" |awk '{print ($1-1) " // " $2}' >> $outbound_outFile1
+    cat $tmpFile3 | grep "$PREFIX" | awk '{print ($1-1) " // " $2}' >> $outbound_outFile1
     ##--------------------------------------
 }
 ##############################################################################
@@ -183,12 +183,12 @@ inFile2="$FILEDIR/mggk_summary_cloudflare_AllValidNONRecipesUrls.txt" ;
 func_step1_delete_frontmatter_and_youmayalsolike_blocks_from_mdfiles ;
 #######
 ## CALLING FUNC_2
-func_step2_find_all_internal_inbound_links_for_each_mdfile_url "$inFile1" "$PREFIX_RECIPE" ;
 func_step2_find_all_internal_inbound_links_for_each_mdfile_url "$inFile2" "$PREFIX_NONRECIPE" ;
+func_step2_find_all_internal_inbound_links_for_each_mdfile_url "$inFile1" "$PREFIX_RECIPE" ;
 #######
 ## CALLING FUNC_3
-func_step3_find_all_internal_outbound_links_in_each_mdfile "$inFile1" "$PREFIX_RECIPE" ;
 func_step3_find_all_internal_outbound_links_in_each_mdfile "$inFile2" "$PREFIX_NONRECIPE" ;
+func_step3_find_all_internal_outbound_links_in_each_mdfile "$inFile1" "$PREFIX_RECIPE" ;
 #######
 
 ##############################################################################
