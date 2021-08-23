@@ -161,8 +161,8 @@ function func_step3_find_all_internal_outbound_links_in_each_mdfile () {
     for x in $(fd -I -e md --search-path="$WORKDIR") ; do 
         basename $x >> $tmpFile2 ;
     done
-    ##
-    cat $outbound_outFile | grep -iv '#' |cut -d'=' -f1 >> $tmpFile2 ;
+    ## Getting first field
+    cat $outbound_outFile | grep -iv '#' | cut -d'=' -f1 >> $tmpFile2 ;
     tmpFile3="$WORKDIR/_tmp3.txt" ;
     echo > $tmpFile3 ;
     cat $tmpFile2 | sort | uniq -c | sort -n >> $tmpFile3 ;
@@ -183,12 +183,12 @@ inFile2="$FILEDIR/mggk_summary_cloudflare_AllValidNONRecipesUrls.txt" ;
 func_step1_delete_frontmatter_and_youmayalsolike_blocks_from_mdfiles ;
 #######
 ## CALLING FUNC_2
-func_step2_find_all_internal_inbound_links_for_each_mdfile_url "$inFile2" "$PREFIX_NONRECIPE" ;
-func_step2_find_all_internal_inbound_links_for_each_mdfile_url "$inFile1" "$PREFIX_RECIPE" ;
+#func_step2_find_all_internal_inbound_links_for_each_mdfile_url "$inFile2" "$PREFIX_NONRECIPE" ;
+#func_step2_find_all_internal_inbound_links_for_each_mdfile_url "$inFile1" "$PREFIX_RECIPE" ;
 #######
 ## CALLING FUNC_3
 func_step3_find_all_internal_outbound_links_in_each_mdfile "$inFile2" "$PREFIX_NONRECIPE" ;
-func_step3_find_all_internal_outbound_links_in_each_mdfile "$inFile1" "$PREFIX_RECIPE" ;
+#func_step3_find_all_internal_outbound_links_in_each_mdfile "$inFile1" "$PREFIX_RECIPE" ;
 #######
 
 ##############################################################################
