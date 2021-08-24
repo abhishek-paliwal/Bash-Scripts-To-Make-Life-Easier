@@ -168,7 +168,7 @@ function func_step3_find_all_internal_outbound_links_in_each_mdfile () {
     cat $tmpFile2 | sort | uniq -c | sort -n >> $tmpFile3 ;
     ## Subtract one from the count in each line and final saving
     echo "## NUMBER OF INTERNAL OUTBOUND LINKS FOUND IN MD FILES // $PREFIX" > $outbound_outFile1 ;
-    cat $tmpFile3 | grep "$PREFIX" | awk '{print ($1-1) " // " $2}' >> $outbound_outFile1
+    cat $tmpFile3 | awk '{print ($1-1) " // " $2}' >> $outbound_outFile1
     ##--------------------------------------
 }
 ##############################################################################
@@ -188,7 +188,7 @@ func_step1_delete_frontmatter_and_youmayalsolike_blocks_from_mdfiles ;
 #######
 ## CALLING FUNC_3
 func_step3_find_all_internal_outbound_links_in_each_mdfile "$inFile2" "$PREFIX_NONRECIPE" ;
-#func_step3_find_all_internal_outbound_links_in_each_mdfile "$inFile1" "$PREFIX_RECIPE" ;
+func_step3_find_all_internal_outbound_links_in_each_mdfile "$inFile1" "$PREFIX_RECIPE" ;
 #######
 
 ##############################################################################
