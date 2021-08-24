@@ -20,6 +20,7 @@ for mymdfile in $(cat $outFile1) ; do
 done 
 ##
 echo; echo "## FINAL LISTING OF mdfiles with their OUTBOUND LINKS COUNTS ..."; 
-echo ">> CHOOSE YOUR FILES FROM BELOW ..."
-echo; 
+echo; echo ">> CHOOSE YOUR FILES FROM BELOW ... [valid recipes]" ; echo; 
 sort -n $outFile2 | grep -i 'validrecipe' ;
+echo; echo ">> CHOOSE YOUR FILES FROM BELOW ... [non recipes]" ; echo; 
+sort -n $outFile2 | grep -i 'nonrecipe' ;
