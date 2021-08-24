@@ -4,7 +4,7 @@
 echo ">> Enter your keyword to find possible md files for linking => " ; 
 read myKeyword ; 
 ##
-outbound_linksFile="$DIR_Y/_OUTPUT_20210822-yoast-seo-like-details-extractor/_output-VALIDRECIPE-FOUND_OUTBOUND_LINKS_COUNTS.txt" ;
+outbound_linksFile="$DIR_DROPBOX_SCRIPTS_OUTPUT/_output-YOAST-ALLMGGKURLS-FOUND_OUTBOUND_LINKS_COUNTS.txt" ;
 outFile1="$DIR_Y/_tmp1_found_possible_incoming_links_files.txt" ;
 outFile2="$DIR_Y/_tmp2_found_possible_incoming_links_files.txt" ;
 echo > $outFile1 ;

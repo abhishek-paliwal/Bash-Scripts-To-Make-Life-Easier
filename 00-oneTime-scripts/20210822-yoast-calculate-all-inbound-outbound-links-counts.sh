@@ -82,8 +82,8 @@ function func_step2_find_all_internal_inbound_links_for_each_mdfile_url () {
     inFile="$1" ;
     PREFIX="$2" ;
     inDir="$WORKDIR" ;
-    inbound_outFile="$WORKDIR/_output-$PREFIX-FOUND_INBOUND_LINKS.txt" ;
-    inbound_outFile1="$WORKDIR/_output-$PREFIX-FOUND_INBOUND_LINKS_COUNTS.txt" ;
+    inbound_outFile="$WORKDIR/_output-YOAST-$PREFIX-FOUND_INBOUND_LINKS.txt" ;
+    inbound_outFile1="$WORKDIR/_output-YOAST-$PREFIX-FOUND_INBOUND_LINKS_COUNTS.txt" ;
     ##
     tmpFile1="$WORKDIR/_tmp1.txt" ;
     echo > $tmpFile1 ;
@@ -128,8 +128,8 @@ function func_step3_find_all_internal_outbound_links_in_each_mdfile () {
     inFile="$1" ;
     PREFIX="$2" ;
     inDir="$WORKDIR" ;
-    outbound_outFile="$WORKDIR/_output-$PREFIX-FOUND_OUTBOUND_LINKS.txt" ;
-    outbound_outFile1="$WORKDIR/_output-$PREFIX-FOUND_OUTBOUND_LINKS_COUNTS.txt" ;
+    outbound_outFile="$WORKDIR/_output-YOAST-$PREFIX-FOUND_OUTBOUND_LINKS.txt" ;
+    outbound_outFile1="$WORKDIR/_output-YOAST-$PREFIX-FOUND_OUTBOUND_LINKS_COUNTS.txt" ;
     ##
     tmpFile1="$WORKDIR/_tmp1.txt" ;
     ##
@@ -199,7 +199,11 @@ func_step3_find_all_internal_outbound_links_in_each_mdfile "$inFile0" "$PREFIX_A
 ## SUMMARY OF OUTPUTS
 ################################################################################
 echo ">> WORD-COUNTS FOR CREATED OUTPUTS:" ;
-fd -I --search-path="$WORKDIR" '_output' -x wc -l {} ;
+fd -I -t f --search-path="$WORKDIR" '_output-YOAST' -x wc -l {} ;
+
+## Copying all output files to dropbox directory 
+echo ">> Copying all output files to dropbox directory ... " ;
+fd -I -t f --search-path="$WORKDIR" '_output-YOAST' -x cp {} $DIR_DROPBOX_SCRIPTS_OUTPUT/ ;
 
 ################################################################################
 ############################### PROGRAM ENDS ###################################
