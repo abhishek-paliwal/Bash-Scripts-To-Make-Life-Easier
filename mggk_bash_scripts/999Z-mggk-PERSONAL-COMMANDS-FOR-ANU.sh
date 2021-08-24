@@ -81,6 +81,8 @@ fi
 ## DECLARING COMMAND LIST ARRAYS FOR EACH USER, ONE COMMAND PER LINE (NO COMMAS)
 ANU_COMMANDS_ARRAY=(makesite_mggk
 frontm
+frontm_sponsored
+makesite_mggk_quickly
 search_mggk_url_and_open_mdfile_in_code
 video_cutting_in_1_minute_equal_parts_using_ffmpeg
 1x1
@@ -96,8 +98,7 @@ video_cutting_in_1_minute_equal_parts_using_ffmpeg
 901-mggk-delete-cloudflare-cache-for-user-input-urls
 902-linkchecker-extract-all-internal-external-images-links-from-given-urls
 convert_images_to_1080x1920_padded_imagemagick
-makesite_mggk_quickly
-frontm_sponsored) ;
+yoast-find-possible-mdfiles-for-inserting-links-for-given-keyword) ;
 
 ##
 MGGK_COMMANDS_ARRAY_LONG=(makesite_mggk
