@@ -98,7 +98,10 @@ video_cutting_in_1_minute_equal_parts_using_ffmpeg
 901-mggk-delete-cloudflare-cache-for-user-input-urls
 902-linkchecker-extract-all-internal-external-images-links-from-given-urls
 convert_images_to_1080x1920_padded_imagemagick
-yoast-find-possible-mdfiles-for-inserting-links-for-given-keyword) ;
+yoast-find-possible-mdfiles-for-inserting-links-for-given-keyword
+yoast_delete_cloudflare_cache_for_outbound_mdfiles_urls_containing_given_keyword) ;
+
+
 
 ##
 MGGK_COMMANDS_ARRAY_LONG=(makesite_mggk
