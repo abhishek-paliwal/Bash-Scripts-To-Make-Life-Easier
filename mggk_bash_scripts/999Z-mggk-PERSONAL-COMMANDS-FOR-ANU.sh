@@ -99,7 +99,7 @@ video_cutting_in_1_minute_equal_parts_using_ffmpeg
 902-linkchecker-extract-all-internal-external-images-links-from-given-urls
 convert_images_to_1080x1920_padded_imagemagick
 yoast-find-possible-mdfiles-for-inserting-links-for-given-keyword
-yoast_delete_cloudflare_cache_for_outbound_mdfiles_urls_containing_given_keyword) ;
+yoast_find_all_outbound_mdfiles_urls_containing_target_keyword_url) ;
 
 
 
