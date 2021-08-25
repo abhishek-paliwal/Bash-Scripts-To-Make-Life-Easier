@@ -85,6 +85,9 @@ function func_step2_find_all_internal_inbound_links_for_each_mdfile_url () {
     inbound_outFile="$WORKDIR/_output-YOAST-$PREFIX-FOUND_INBOUND_LINKS.txt" ;
     inbound_outFile1="$WORKDIR/_output-YOAST-$PREFIX-FOUND_INBOUND_LINKS_COUNTS.txt" ;
     ##
+    DROPBOXDIR="/Users/abhishek/Dropbox/Public/_TO_SYNC_downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs" ;
+    validRecipeCheckFile="$DROPBOXDIR/mggk_summary_cloudflare_AllValidRecipesUrls.txt" ;
+    ##
     tmpFile1="$WORKDIR/_tmp1.txt" ;
     echo > $tmpFile1 ;
     ##
@@ -102,14 +105,23 @@ function func_step2_find_all_internal_inbound_links_for_each_mdfile_url () {
         ## Find all mdfiles with given url
         ag -l --markdown "$thisUrl" "$inDir" > $tmpFile1 ;
         NUM_LINES_FOUND=$(cat $tmpFile1 | wc -l | sd ' ' '') ;
+        ##
+        URL_TYPE="" ;
+        isValidRecipeOrNot=$(grep -i "$thisUrl" "$validRecipeCheckFile" | wc -l | sd ' ' '') ;
+        if [ "$isValidRecipeOrNot" == "0" ] ; then
+            URL_TYPE="NONRECIPE" ;
+        else 
+            URL_TYPE="VALIDRECIPE" ;
+        fi 
+        ##
         ## If zero mdfiles found
         if [ "$NUM_LINES_FOUND" == "0" ] ; then
-            echo "0 // $thisUrl" >> $inbound_zeroFile ;
+            echo "0 // ($URL_TYPE) $thisUrl" >> $inbound_zeroFile ;
         else
         ##
             for foundMDfile in $(cat $tmpFile1) ; do 
                 foundMDfile_base=$(basename $foundMDfile) ;
-                echo "$thisUrl=$foundMDfile_base" >> $inbound_outFile ;
+                echo "($URL_TYPE) $thisUrl=$foundMDfile_base" >> $inbound_outFile ;
             done    
         ##
         fi
@@ -119,7 +131,7 @@ function func_step2_find_all_internal_inbound_links_for_each_mdfile_url () {
     ## INBOUND => Sorting the counts output
     echo "## NUMBER OF FOUND INTERNAL INBOUND LINKS FOR URLS IN MD FILES // $PREFIX" > $inbound_outFile1 ;
     cat $inbound_zeroFile >> $inbound_outFile1 ;
-    cat $inbound_outFile | grep -iv '#' | cut -d'=' -f1 | sort | uniq -c | sort -n | awk '{print $1 " // " $2}' >> $inbound_outFile1 ;
+    cat $inbound_outFile | grep -iv '#' | cut -d'=' -f1 | sort | uniq -c | sort -n | awk '{print $1 " // " $2 " " $3}' >> $inbound_outFile1 ;
     ##--------------------------------------------
 }
 ###########################################
