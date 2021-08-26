@@ -166,6 +166,10 @@ URL=$(echo "$CLIPBOARD" | awk '{for (i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) s
 
 
 FRONTMATTER_HEADER="---
+toc: true
+
+seo_title_value: \"$CLIPBOARD\"
+
 my_custom_variable: \"custom_variable_value\"
 
 steps_images_present: \"no\"
