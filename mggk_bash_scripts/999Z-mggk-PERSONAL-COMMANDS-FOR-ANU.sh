@@ -105,7 +105,7 @@ yoast_find_all_outbound_mdfiles_urls_containing_target_keyword_url) ;
 
 
 ##
-MGGK_COMMANDS_ARRAY_LONG=(makesite_mggk
+MGGK_COMMANDS_ARRAY=(makesite_mggk
 frontm
 algolia_search_for_this_phrase
 gif_maker_from_jpgs
