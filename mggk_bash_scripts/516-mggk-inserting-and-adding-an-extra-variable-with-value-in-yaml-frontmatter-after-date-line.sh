@@ -13,16 +13,12 @@ usage()
 cat <<EOM
 USAGE: $(basename $0)
   ###############################################################################
-  ## This program adds (inserts) an extra yaml frontmatter variable of your choice, in markdown files.
-  #### To do this, it first finds the 'date' frontmatter line using grep, and then replaces
-  #### it with itself + one more yaml frontmatter variable at the end.
-  #### This is to make sure that our newly added frontmatter variable always
-  #### appears after the date frontmatter variable line.
-  ###############################################################################
-  ## INFORMATION AT THE END => ONE LINE VERSION TO ADD EXTRA FRONTMATTER VARIABLE(s) 
+  ## This program adds (inserts) extra yaml frontmatter variable(s) of your 
+  ## choice, in markdown files.
+  ## ALSO PRESENT => ONE LINE VERSION TO ADD EXTRA FRONTMATTER VARIABLE(s) 
   ## (if you simply want to add new variable(s) above my_custom_variable variable name)
   ###############################################################################
-  ## CREATED ON: Thursday September 26, 2019
+  ## CREATED ON: 2021-08-26
   ## CREATED BY: PALI
   ###############################################################################
 EOM
@@ -33,56 +29,22 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
-################################################################################
-DIR="$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content"
-################################################################################
-
-## => md files with no featured_image
-## Printing out all the filenames which don't have the 'featured_image' keyword in them
-grep -irL 'featured_image' $DIR/** |grep '.md'
-
-## Looping through all the interesting md files thus found
-counter=0;
-for x in $(grep -irL 'featured_image' $DIR/** |grep '.md');
-do
-((counter++))
-#echo "$counter// $x"
-
-## finding existing date var line
-date_var=$(grep -i '^date:' $x) ;
-
-## creating the new variable value to be inserted
-image_var=$(grep -io 'src="https://www.myginger.*.jpg" ' $x | head -1 | sed -e 's/"//g' -e 's|src=https://www.mygingergarlickitchen.com||g' )
-
-image_var_full="featured_image: $image_var" ;
-
-## Only put the featured_image in yaml frontmatter if image_var is not empty
-if [ -z "$image_var" ] ;
-then
-echo "image_var = EMPTY" ;
-else
-
-echo "image_var = NOT EMPTY" ;
-echo "$image_var" ;
-
-## IN-FILE REPLACEMENT // SED IN-FILE MULTILINE REPLACEMENT ON MAC OS
-#### Interesting thing to note here is that you need to add \\ at the end of each line in sed -i
-#### command on MAC OS version of sed, in order to add line breaks at certain places. Knowing this
-#### is very important.
-sed -i '' "s|$date_var|$date_var\\
-$image_var_full\\
-|" $x
-
-fi
-
-echo;
-done
-
 ################################################################################
 ################################################################################
 ## ONE LINE VERSION TO ADD EXTRA FRONTMATTER VARIABLE(s) 
 ## (if you simply want to add new variable(s) above my_custom_variable variable name)
 ################################################################################
-## The following is an example command (fully working) // copy-paste after uncommenting
+## STEP1 = The following is an example command (fully working) // copy-paste after uncommenting
 #fd --search-path="$REPO_MGGK/content/" -e md -x sed -i .bak "s|my_custom_variable|toc: true\n\nseo_title_value: \"demo title demo title\"\n\nmy_custom_variable|g" {} ;
+
+## STEP2 = Get the value from the existing title and insert into the newly created variable
+mydir="$REPO_MGGK/content/"
+##
+for x in $(ag -l "seo_title_value" "$mydir") ; do 
+    echo $x; 
+    ## get the existing title value to be inserted into the new one
+    new_seo_title=$(grep -irh '^title:' $x | sd 'title' 'seo_title_value') ;
+    ##
+    sed -i '' "s%seo_title_value.*$%$new_seo_title%g" $x
+done
+
