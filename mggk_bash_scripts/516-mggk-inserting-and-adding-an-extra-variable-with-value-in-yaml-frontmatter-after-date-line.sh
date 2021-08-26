@@ -19,6 +19,9 @@ USAGE: $(basename $0)
   #### This is to make sure that our newly added frontmatter variable always
   #### appears after the date frontmatter variable line.
   ###############################################################################
+  ## INFORMATION AT THE END => ONE LINE VERSION TO ADD EXTRA FRONTMATTER VARIABLE(s) 
+  ## (if you simply want to add new variable(s) above my_custom_variable variable name)
+  ###############################################################################
   ## CREATED ON: Thursday September 26, 2019
   ## CREATED BY: PALI
   ###############################################################################
@@ -78,7 +81,7 @@ done
 
 ################################################################################
 ################################################################################
-## ONE LINE VERSION TO ADD AN EXTRA FRONTMATTER VARIABLE 
+## ONE LINE VERSION TO ADD EXTRA FRONTMATTER VARIABLE(s) 
 ## (if you simply want to add new variable(s) above my_custom_variable variable name)
 ################################################################################
 ## The following is an example command (fully working) // copy-paste after uncommenting
