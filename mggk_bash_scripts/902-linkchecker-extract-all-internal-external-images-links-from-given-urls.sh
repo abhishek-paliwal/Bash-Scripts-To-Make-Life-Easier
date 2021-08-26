@@ -60,8 +60,9 @@ function FUNC_extractUrls () {
     outFile_allimages="$WORKDIR/linkchecker_step4_ALLIMAGES_$url2txt.txt" ;
     outFile_allimages_filtered="$WORKDIR/linkchecker_step5_ALLIMAGES_FILTERED_$url2txt.txt" ;
     ####
-    ## Running linkchecker program on given url
-    linkchecker --verbose -F csv --ignore-url='$urlDomain' "$url" ;
+    ## Running linkchecker program on given url (creates a linkchecker-out.csv file)
+    #linkchecker --verbose -F csv --ignore-url='$urlDomain' "$url" ;
+    linkchecker --verbose -F csv -r1 --ignore-url="$urlDomain" --no-follow-url="$urlDomain" "$url" ;
     ##
     #### Parsing linkchecker csv file (when you cut, columns of interest are f1 and f8)
     ## Finding all links, sorted and unique
