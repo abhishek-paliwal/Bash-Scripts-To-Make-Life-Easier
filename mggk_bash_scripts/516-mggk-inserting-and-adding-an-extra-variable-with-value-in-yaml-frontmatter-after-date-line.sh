@@ -75,3 +75,11 @@ fi
 
 echo;
 done
+
+################################################################################
+################################################################################
+## ONE LINE VERSION TO ADD AN EXTRA FRONTMATTER VARIABLE 
+## (if you simply want to add new variable(s) above my_custom_variable variable name)
+################################################################################
+## The following is an example command (fully working) // copy-paste after uncommenting
+#fd --search-path="$REPO_MGGK/content/" -e md -x sed -i .bak "s|my_custom_variable|toc: true\n\nseo_title_value: \"demo title demo title\"\n\nmy_custom_variable|g" {} ;
