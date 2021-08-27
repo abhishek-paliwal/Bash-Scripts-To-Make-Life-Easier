@@ -183,6 +183,7 @@ pali_imagemagick_create_10_random_images
 902-linkchecker-extract-all-internal-external-images-links-from-given-urls
 601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls
 601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls-NEW2021
+convert-all-csv-files-in-pwd-to-html-tables-bootstrap
 mggk_WEEKLY_SUMMARY_RUN) ;
 
 ##
