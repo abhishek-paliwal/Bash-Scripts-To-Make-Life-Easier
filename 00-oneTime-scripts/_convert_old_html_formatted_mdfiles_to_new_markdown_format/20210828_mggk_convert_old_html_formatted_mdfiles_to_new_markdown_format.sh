@@ -19,11 +19,12 @@ PREFIX_NONRECIPE="NONRECIPE" ;
 ## THIS PROGRAM FINDS THOSE MDFILES WHERE THE MAIN CONTENT IS IN HTML FORMAT
 ## IT THEN CONVERTS IT INTO MARKDOWN WITH PROPER FORMATTING FOR IMAGES TOO.
 
-myDir="$REPO_MGGK/content/popular-posts/" ;
+myDir="$REPO_MGGK/content/" ;
 
 ## all recipe files with where img tag appears
 #for x in $(ag -l 'preptime:'); do ag -l '<img' $x ; done | nl
 ## all non-recipe files where img tag appears
+echo ">> Gathering all files of interest ..." ; 
 files_of_interest="$WORKDIR/_tmp_files_of_interest.txt" ;
 for x in $(ag -l 'preptime:' "$myDir"); do ag -l '<img' $x ; done > "$files_of_interest"
 
