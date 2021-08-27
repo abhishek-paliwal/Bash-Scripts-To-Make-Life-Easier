@@ -85,7 +85,7 @@ function func_step2_find_all_internal_inbound_links_for_each_mdfile_url () {
     inbound_outFile="$WORKDIR/_output-YOAST-$PREFIX-FOUND_INBOUND_LINKS.txt" ;
     inbound_outFile1="$WORKDIR/_output-YOAST-$PREFIX-FOUND_INBOUND_LINKS_COUNTS.txt" ;
     ##
-    DROPBOXDIR="/Users/abhishek/Dropbox/Public/_TO_SYNC_downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs" ;
+    DROPBOXDIR="$DIR_DROPBOX_SCRIPTS_OUTPUT" ;
     validRecipeCheckFile="$DROPBOXDIR/mggk_summary_cloudflare_AllValidRecipesUrls.txt" ;
     ##
     tmpFile1="$WORKDIR/_tmp1.txt" ;
@@ -187,7 +187,7 @@ function func_step3_find_all_internal_outbound_links_in_each_mdfile () {
 ##############################################################################
 ################################################################################
 
-FILEDIR="/Users/abhishek/Dropbox/Public/_TO_SYNC_downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs" ;
+FILEDIR="$DIR_DROPBOX_SCRIPTS_OUTPUT" ;
 inFile0="$FILEDIR/mggk_summary_cloudflare_AllValidSiteUrls.txt" ;
 inFile1="$FILEDIR/mggk_summary_cloudflare_AllValidRecipesUrls.txt" ;
 inFile2="$FILEDIR/mggk_summary_cloudflare_AllValidNONRecipesUrls.txt" ;
