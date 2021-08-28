@@ -19,7 +19,8 @@ PREFIX_NONRECIPE="NONRECIPE" ;
 ## THIS PROGRAM FINDS THOSE MDFILES WHERE THE MAIN CONTENT IS IN HTML FORMAT
 ## IT THEN CONVERTS IT INTO MARKDOWN WITH PROPER FORMATTING FOR IMAGES TOO.
 
-myDir="$REPO_MGGK/content/" ;
+#myDir="$REPO_MGGK/content/" ;
+myDir="$REPO_MGGK/content/_FIXED/top-501-END" ;
 
 ## all recipe files with where img tag appears
 #for x in $(ag -l 'preptime:'); do ag -l '<img' $x ; done | nl
@@ -70,15 +71,17 @@ function func_extract_and_concatenate_frontmatter_and_bottom_content_after_modif
         pandoc --wrap=none --lua-filter=$pandoc_filter_filepath --from=html --to=markdown_strict "$outFileHtml" -o "$outFileTemporary" ;
         ####### 
         ## step 4 = concatenate frontmatter and bottom content in a single file
-        outputDirFinal="$WORKDIR/_FINAL_OUTPUTS/" ;
+        outputBaseDir="$(basename $(dirname $x))" ; 
+        outputDirFinal="$WORKDIR/_FINAL_OUTPUTS/$outputBaseDir" ;
         mkdir -p $outputDirFinal ; 
-        outFileFinal="$outputDirFinal/$(basename $outFile).FINAL.md" ;
+        outFileFinal="$outputDirFinal/$(basename $x)" ;
         ##
         cat "$outFile_front" > $outFileFinal
         echo "" >> $outFileFinal
         echo "<!--more-->" >> $outFileFinal
         echo "" >> $outFileFinal
-        cat "$outFileTemporary" | sd '&lt;' '<' | sd '&gt;' '>' | sd '(“|”)' '"'  >> $outFileFinal ;
+        imgText2replace='\[<img size-full" src="https://www.mygingergarlickitchen.com/wp-content/uploads/2016/06/go-to-recipe-button.png" alt="Go Directly to Recipe" width="267" height="40">\](\#recipe-here)' ; 
+        cat "$outFileTemporary" | sd '&lt;' '<' | sd '&gt;' '>' | sd '(“|”)' '"' | sd "$imgText2replace" "XYZXYZXYZ"  >> $outFileFinal ;
         ##
     done
     ####
