@@ -75,14 +75,16 @@ function func_extract_and_concatenate_frontmatter_and_bottom_content_after_modif
         outputDirFinal="$WORKDIR/_FINAL_OUTPUTS/$outputBaseDir" ;
         mkdir -p $outputDirFinal ; 
         outFileFinal="$outputDirFinal/$(basename $x)" ;
-        ##
+        ########
         cat "$outFile_front" > $outFileFinal
         echo "" >> $outFileFinal
         echo "<!--more-->" >> $outFileFinal
         echo "" >> $outFileFinal
-        imgText2replace='\[<img size-full" src="https://www.mygingergarlickitchen.com/wp-content/uploads/2016/06/go-to-recipe-button.png" alt="Go Directly to Recipe" width="267" height="40">\](\#recipe-here)' ; 
-        cat "$outFileTemporary" | sd '&lt;' '<' | sd '&gt;' '>' | sd '(“|”)' '"' | sd "$imgText2replace" "XYZXYZXYZ"  >> $outFileFinal ;
         ##
+        imgText2replace="\[<img size-full\" src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/2016/06/go-to-recipe-button.png\" alt=\"Go Directly to Recipe\" width=\"267\" height=\"40\">\](#recipe-here)" ; 
+        ##
+        cat "$outFileTemporary" | sd '&lt;' '<' | sd '&gt;' '>' | sd '(“|”)' '"' | sed "s|$imgText2replace|XYZXYZXYZ|g"  >> $outFileFinal ;
+        ########
     done
     ####
 }
