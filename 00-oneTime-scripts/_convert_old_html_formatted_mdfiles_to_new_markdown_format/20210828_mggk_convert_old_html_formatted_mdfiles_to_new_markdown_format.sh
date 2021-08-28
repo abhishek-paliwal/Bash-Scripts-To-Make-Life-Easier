@@ -80,14 +80,16 @@ function func_extract_and_concatenate_frontmatter_and_bottom_content_after_modif
         echo "" >> $outFileFinal
         echo "<!--more-->" >> $outFileFinal
         echo "" >> $outFileFinal
+        ##====
+        ReplaceThis1="\[<img size-full\" src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/2016/06/go-to-recipe-button.png\" alt=\"Go Directly to Recipe\" width=\"267\" height=\"40\">\](#recipe-here)" ; 
         ##
-        imgReplaceTextFrom1="\[<img size-full\" src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/2016/06/go-to-recipe-button.png\" alt=\"Go Directly to Recipe\" width=\"267\" height=\"40\">\](#recipe-here)" ; 
-        
-        imgReplaceTextFrom2="\[\!\[Go Directly to Recipe\](https://www.mygingergarlickitchen.com/wp-content/uploads/2016/06/go-to-recipe-button.png)\](#recipe-here)" ;
-
-        imgReplaceTextTo="{{< mggk-button-block-for-recipe-here-link-NO-VIDEO >}}" ;
+        ReplaceThis2="\[\!\[Go Directly to Recipe\](https://www.mygingergarlickitchen.com/wp-content/uploads/2016/06/go-to-recipe-button.png)\](#recipe-here)" ;
         ##
-        cat "$outFileTemporary" | sd '&lt;' '<' | sd '&gt;' '>' | sd '(“|”)' '"' | sed -e "s|$imgReplaceTextFrom1|$imgReplaceTextTo|g" -e "s|$imgReplaceTextFrom2|$imgReplaceTextTo|g"  >> $outFileFinal ;
+        ReplaceThis3="{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/2016/06/go-to-recipe-button.png\" alt=\"Go Directly to Recipe\" width=\"267\" height=\"40\" link=\"#recipe-here\" >}}" ; 
+        ##
+        ReplaceTo="{{< mggk-button-block-for-recipe-here-link-NO-VIDEO >}}" ;
+        ##====
+        cat "$outFileTemporary" | sd '&lt;' '<' | sd '&gt;' '>' | sd '(“|”)' '"' | sed -e "s|$ReplaceThis1|$ReplaceTo|g" -e "s|$ReplaceThis2|$ReplaceTo|g" -e "s|$ReplaceThis3|$ReplaceTo|g"  >> $outFileFinal ;
         ########
     done
     ####
