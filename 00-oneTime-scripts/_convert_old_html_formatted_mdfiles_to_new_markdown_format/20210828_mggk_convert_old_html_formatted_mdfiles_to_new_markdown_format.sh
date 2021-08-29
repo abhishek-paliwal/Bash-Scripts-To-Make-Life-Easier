@@ -38,7 +38,14 @@ function func_extract_and_concatenate_frontmatter_and_bottom_content_after_modif
     ####
     for x in $(cat $files_of_interest) ; do 
         ((count++)) ;
-        cat $x > $tmpFile ;
+        #cat $x > $tmpFile ;
+        ## STEP1 = first extract, then delete all youMayAlsoLike section between two phrases and save the rest
+        saveYouMayLinksFile="$WORKDIR/_tmp_YouMayLinks.txt" ;
+        #extraction
+        sed -n "/{{< mggk-YouMayAlsoLike-HTMLcode >}}/,/{{< \/mggk-YouMayAlsoLike-HTMLcode >}}/p" $x > $saveYouMayLinksFile ;
+        #deletion
+        sed "/{{< mggk-YouMayAlsoLike-HTMLcode >}}/,/{{< \/mggk-YouMayAlsoLike-HTMLcode >}}/d" $x > $tmpFile ;
+        ##
         ## STEP2 = delete full frontmatter section from STEP1 and save the rest
         countPadded=$(printf "%05d" "$count") ; ## pad with leading zeros
         x_basename=$(basename $x) ; 
@@ -91,6 +98,9 @@ function func_extract_and_concatenate_frontmatter_and_bottom_content_after_modif
         ##====
         cat "$outFileTemporary" | sd '&lt;' '<' | sd '&gt;' '>' | sd '(“|”)' '"' | sed -e "s|$ReplaceThis1|$ReplaceTo|g" -e "s|$ReplaceThis2|$ReplaceTo|g" -e "s|$ReplaceThis3|$ReplaceTo|g"  >> $outFileFinal ;
         ########
+        ## Adding all youmayalsolike links back
+        echo "" >> $outFileFinal ;
+        cat $saveYouMayLinksFile >> $outFileFinal ;
     done
     ####
 }
