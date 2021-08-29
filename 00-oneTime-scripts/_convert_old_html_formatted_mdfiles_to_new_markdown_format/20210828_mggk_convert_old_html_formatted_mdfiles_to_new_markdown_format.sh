@@ -19,16 +19,21 @@ PREFIX_NONRECIPE="NONRECIPE" ;
 ## THIS PROGRAM FINDS THOSE MDFILES WHERE THE MAIN CONTENT IS IN HTML FORMAT
 ## IT THEN CONVERTS IT INTO MARKDOWN WITH PROPER FORMATTING FOR IMAGES TOO.
 
-#myDir="$REPO_MGGK/content/" ;
-myDir="$REPO_MGGK/content/_FIXED/top-501-END" ;
+myDir="$REPO_MGGK/content/" ;
+#myDir="$REPO_MGGK/content/_FIXED/top-501-END" ;
 
 ## all recipe files with where img tag appears
 #for x in $(ag -l 'preptime:'); do ag -l '<img' $x ; done | nl
 ## all non-recipe files where img tag appears
 echo ">> Gathering all files of interest ..." ; 
 files_of_interest="$WORKDIR/_tmp_files_of_interest.txt" ;
-for x in $(ag -l 'preptime:' "$myDir"); do ag -l '<img' $x ; done > "$files_of_interest"
+excludePaths="(/99_collections/|/pages/)" ;
+#taking recipe files
+#for x in $(ag -l 'preptime:' "$myDir" | grep -iv "$excludePaths" ); do ag -l '<img' $x ; done > "$files_of_interest"
+#taking non-recipe files
+for x in $(ag -L 'preptime:' "$myDir" | grep -ivE "$excludePaths" ); do ag -l '<img' $x ; done > "$files_of_interest"
 
+################################################################################
 function func_extract_and_concatenate_frontmatter_and_bottom_content_after_modification () {
     echo ">> Creating temporary md files without any frontmatter ..." ; 
     tmpFile="$WORKDIR/_tmp0.txt" ;
@@ -53,12 +58,13 @@ function func_extract_and_concatenate_frontmatter_and_bottom_content_after_modif
         ## If variable is empty = nonrecipe file, else validrecipe file
         isRecipeOrNot=$(ag -l --markdown 'mggk-INSERT-RECIPE-HTML-BLOCK' $x) ;
         if [ -z "$isRecipeOrNot" ] ; then
-            echo ">> CURRENT FILE => $count of $TOTAL_COUNT // $PREFIX_NONRECIPE" ;
-            outFile="$WORKDIR/$countPadded-$PREFIX_NONRECIPE-$x_basename" ;
+            PREFIX="$PREFIX_NONRECIPE"
         else
-            echo ">> CURRENT FILE => $count of $TOTAL_COUNT // $PREFIX_RECIPE" ;
-            outFile="$WORKDIR/$countPadded-$PREFIX_RECIPE-$x_basename" ;
+            PREFIX="$PREFIX_RECIPE"
         fi
+        echo ">> CURRENT FILE => $count of $TOTAL_COUNT // $PREFIX // $x" ;
+        outFile="$WORKDIR/$countPadded-$PREFIX-$x_basename" ;
+        ##
         ## deleting the actual frontmatter
         outFile_front="$outFile-FRONTMATTER.txt" ;
         outFile_bottom="$outFile-BOTTOMCONTENT.txt" ;
@@ -104,6 +110,7 @@ function func_extract_and_concatenate_frontmatter_and_bottom_content_after_modif
     done
     ####
 }
-###########################################
+################################################################################
+
 ## CALLING FUNC_1
 func_extract_and_concatenate_frontmatter_and_bottom_content_after_modification ;
