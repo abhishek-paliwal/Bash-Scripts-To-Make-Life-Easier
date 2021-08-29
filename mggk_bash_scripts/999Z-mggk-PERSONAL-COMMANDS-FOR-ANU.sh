@@ -148,7 +148,8 @@ mggk_calculate_length_of_urls
 mggk_WEEKLY_SUMMARY_RUN
 convert_images_to_1080x1920_padded_imagemagick
 makesite_mggk_quickly
-frontm_sponsored) ;
+frontm_sponsored
+9999_mggk_create_mggk_and_localhost_hyperlinks_from_all_mdfiles_in_pwd) ;
 
 ##
 PALI_COMMANDS_ARRAY=(palinotes_makesite_hugo
