@@ -13,8 +13,8 @@ USAGE: $(basename $0)
     ## USAGE:
     #### > bash $THIS_SCRIPT_NAME
     ################################################################################
-    ## This script saves copies of chosen webpages read from given sitemap xml files 
-    ## as html pages using curl and wget utilities. 
+    ## This script download and saves copies of chosen webpages read from given 
+    ## sitemap xml files as html pages using curl and wget utilities. 
     ################################################################################
     ## REQUIREMENT:  sitemap xml files in present working directory
     ### The xml files can have any names, however, the extension must be xml.
