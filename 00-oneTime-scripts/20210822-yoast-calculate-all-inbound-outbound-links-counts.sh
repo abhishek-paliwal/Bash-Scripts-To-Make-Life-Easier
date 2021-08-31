@@ -54,8 +54,9 @@ function func_step1_delete_frontmatter_and_youmayalsolike_blocks_from_mdfiles ()
     ####
     for x in $(fd -I --search-path="$inDir" -e md) ; do 
         ((count++)) ;
-        ## STEP1 = delete all youMayAlsoLike section between two phrases and save the rest
-        sed "/{{< mggk-YouMayAlsoLike-HTMLcode >}}/,/{{< \/mggk-YouMayAlsoLike-HTMLcode >}}/d" $x > $tmpFile ;
+        ## STEP1 = delete all youMayAlsoLike section between two phrases and save the rest (uncomment if needed)
+        #sed "/{{< mggk-YouMayAlsoLike-HTMLcode >}}/,/{{< \/mggk-YouMayAlsoLike-HTMLcode >}}/d" $x > $tmpFile ;
+        cat $x > $tmpFile
         ##
         ## STEP2 = delete full frontmatter section from STEP1 and save the rest
         countPadded=$(printf "%05d" "$count") ; ## pad with leading zeros
