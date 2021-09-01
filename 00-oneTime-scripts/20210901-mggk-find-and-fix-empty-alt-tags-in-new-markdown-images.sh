@@ -2,6 +2,7 @@
 
 ## THIS PROGRAM FINDS AND FIXES empty image alt tags of new markdown
 ## images of ![](image.jpg/jpeg/png) format.
+## It replaces the empty alt tags with the enclosing image name without hyphens.
 
 WORKDIR="$DIR_Y" ;
 
