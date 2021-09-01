@@ -19,8 +19,8 @@ PREFIX_NONRECIPE="NONRECIPE" ;
 ## THIS PROGRAM FINDS THOSE MDFILES WHERE THE MAIN CONTENT IS IN HTML FORMAT
 ## IT THEN CONVERTS IT INTO MARKDOWN WITH PROPER FORMATTING FOR IMAGES TOO.
 
-myDir="$REPO_MGGK/content/" ;
-#myDir="$REPO_MGGK/content/_FIXED/top-501-END" ;
+#myDir="$REPO_MGGK/content/" ;
+myDir="$REPO_MGGK/content/_FIXED/top-501-END" ;
 
 ## all recipe files with where img tag appears
 #for x in $(ag -l 'preptime:'); do ag -l '<img' $x ; done | nl
@@ -29,9 +29,9 @@ echo ">> Gathering all files of interest ..." ;
 files_of_interest="$WORKDIR/_tmp_files_of_interest.txt" ;
 excludePaths="(/99_collections/|/pages/)" ;
 #taking recipe files
-#for x in $(ag -l 'preptime:' "$myDir" | grep -iv "$excludePaths" ); do ag -l '<img' $x ; done > "$files_of_interest"
+for x in $(ag -l 'preptime:' "$myDir" | grep -iv "$excludePaths" ); do ag -l '<img' $x ; done > "$files_of_interest"
 #taking non-recipe files
-for x in $(ag -L 'preptime:' "$myDir" | grep -ivE "$excludePaths" ); do ag -l '<img' $x ; done > "$files_of_interest"
+#for x in $(ag -L 'preptime:' "$myDir" | grep -ivE "$excludePaths" ); do ag -l '<img' $x ; done > "$files_of_interest"
 
 ################################################################################
 function func_extract_and_concatenate_frontmatter_and_bottom_content_after_modification () {

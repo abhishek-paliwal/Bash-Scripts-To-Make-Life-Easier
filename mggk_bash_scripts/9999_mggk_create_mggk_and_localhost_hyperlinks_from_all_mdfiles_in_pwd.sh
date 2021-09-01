@@ -64,6 +64,17 @@ function FUNC_CREATE_HYPERLINKS_FROM_MDFILES_IN_ALL_SUBDIRS () {
 
 ## CALLING FUNCTION
 currentDir="$(pwd)" ;
-for subdirFound in $(fd -I -t d --search-path="$currentDir") ; do 
+subdirs_in_pwd="$(fd -I -t d --search-path="$currentDir")" ;
+##
+if [ -z "$subdirs_in_pwd" ] ; then 
+    echo ">> No subdirectories found. Hence, md files will be read from present working directory itself." ;
+    FUNC_CREATE_HYPERLINKS_FROM_MDFILES_IN_ALL_SUBDIRS "$currentDir" ; 
+else
+    ####
+    for subdirFound in $(fd -I -t d --search-path="$currentDir") ; do 
+        echo ">> Subdirectories found. Hence, md files will be read from subdirectories." ; 
     FUNC_CREATE_HYPERLINKS_FROM_MDFILES_IN_ALL_SUBDIRS "$subdirFound" ;
-done 
+    done
+    #### 
+fi
+##############################################################################
