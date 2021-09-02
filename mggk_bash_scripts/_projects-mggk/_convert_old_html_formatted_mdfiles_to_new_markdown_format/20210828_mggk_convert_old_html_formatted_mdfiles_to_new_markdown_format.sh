@@ -80,7 +80,7 @@ function func_extract_and_concatenate_frontmatter_and_bottom_content_after_modif
         #######
         ## step 3 = convert step2 output to proper markdown content using pandoc
         outFileTemporary="$outFileHtml.TEMPORARY.txt" ;
-        pandoc_filter_filepath="$REPO_SCRIPTS_ONETIME/_convert_old_html_formatted_mdfiles_to_new_markdown_format/pandoc-filter-remove-html-attributes.lua" ;
+        pandoc_filter_filepath="$REPO_SCRIPTS_MGGK_PROJECTS/_convert_old_html_formatted_mdfiles_to_new_markdown_format/pandoc-filter-remove-html-attributes.lua" ;
         pandoc --wrap=none --lua-filter=$pandoc_filter_filepath --from=html --to=markdown_strict "$outFileHtml" -o "$outFileTemporary" ;
         ####### 
         ## step 4 = concatenate frontmatter and bottom content in a single file
