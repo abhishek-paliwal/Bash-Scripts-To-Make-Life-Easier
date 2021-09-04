@@ -20,7 +20,7 @@ PREFIX_NONRECIPE="NONRECIPE" ;
 ## IT THEN CONVERTS IT INTO MARKDOWN WITH PROPER FORMATTING FOR IMAGES TOO.
 
 #myDir="$REPO_MGGK/content/" ;
-myDir="$REPO_MGGK/content/_FIXED/top-301-400" ;
+myDir="$REPO_MGGK/content/_FIXED/top-101-200" ;
 
 ## all recipe files with where img tag appears
 #for x in $(ag -l 'preptime:'); do ag -l '<img' $x ; done | nl
