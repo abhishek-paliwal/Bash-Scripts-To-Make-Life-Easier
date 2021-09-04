@@ -55,7 +55,7 @@ function FUNC_CREATE_HYPERLINKS_FROM_MDFILES_IN_ALL_SUBDIRS () {
     for x in $(cat $urls_found_in_mdfiles) ; do 
         ((count++)) ; 
         echo ">> CURRENTLY READING URL => $count of $total_count => $x" ;
-        echo "<p>$count = <a href=\"$url2$x\">MGGK</a> // <a href=\"$url1$x\">LOCALHOST</a> // $x </p>" >> $htmlfile ;
+        echo "<p>$count = <a href=\"$url2$x\">MGGK</a> // <a href=\"$url1$x\">Localhost</a> // $x </p>" >> $htmlfile ;
     done 
     ####
     echo; echo ">> SUMMARY => HTML output created => $htmlfile" ;
