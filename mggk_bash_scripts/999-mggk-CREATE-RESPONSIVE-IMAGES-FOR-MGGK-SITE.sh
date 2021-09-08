@@ -175,6 +175,12 @@ grep -irh 'recipe_code_image:' $IMAGES_ROOTDIR | sd 'recipe_code_image:' '' | sd
 grep -irh 'featured_image:' $IMAGES_ROOTDIR_ZZMGGK | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' >> $tmpA1 ;
 grep -irh 'recipe_code_image:' $IMAGES_ROOTDIR_ZZMGGK | sd 'recipe_code_image:' '' | sd ' ' '' | sd '"' '' >> $tmpA1 ;
 
+## Image addition part 1.4 = Adding all markdown formatted images in MGGK HUGO DIR + ZZMGGK DIR
+echo ">> Image addition part 1.4 = Adding all markdown formatted images in MGGK HUGO DIR + ZZMGGK DIR ... " ;
+grep -irh '.jpg' $IMAGES_ROOTDIR | grep -io '/wp-content.*.jpg' | grep -iv 'responsive' | sd "('|\")" "" | awk '{print $1}' >> $tmpA1 ;
+grep -irh '.jpg' $IMAGES_ROOTDIR_ZZMGGK | grep -io '/wp-content.*.jpg' | grep -iv 'responsive' | sd "('|\")" "" | awk '{print $1}' >> $tmpA1 ;
+
+
 ########################################
 ## Converting urls to local file paths
 echo ">> Converting urls to local file paths ..." ; 
