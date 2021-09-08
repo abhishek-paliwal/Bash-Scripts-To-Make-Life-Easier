@@ -106,6 +106,22 @@ echo "" >> $FILE_OUTPUT_SITESTATS ;
 ################################################################################ 
 
 ################################################################################ 
+## LISTING THE COUNT FOR NUMBER OF FILES IN WP-CONTENT DIRECTORY
+echo "" >> $FILE_OUTPUT_SITESTATS ;
+echo "##---------------------------------------"  >> $FILE_OUTPUT_SITESTATS ;
+echo ">> LISTING THE COUNT FOR NUMBER OF FILES FOR LEVEL-1 DIRECTORIES IN WP-CONTENT DIRECTORY" >> $FILE_OUTPUT_SITESTATS ;
+for x in $(fd -t d -d1 --search-path="$REPO_MGGK/static/wp-content/" | sort); do 
+    myvar=$(ls -R $x | wc -l) ; 
+    echo "$myvar => $(basename $x)" >> $FILE_OUTPUT_SITESTATS ;
+done 
+echo "" >> $FILE_OUTPUT_SITESTATS ;
+echo "##---------------------------------------"  >> $FILE_OUTPUT_SITESTATS ;
+echo "" >> $FILE_OUTPUT_SITESTATS ;
+################################################################################ 
+
+for x in $(fd -t d -d1 --search-path="$REPO_MGGK/static/wp-content/"| sort); do v=$(ls -R $x | wc -l) ; echo "$v => $(basename $x)" ; done
+
+################################################################################ 
 ## COMPARING THE NUMBER OF STEPS IMAGES TO ACTUAL STEPS IN MDFILES
 echo "" >> $FILE_OUTPUT_SITESTATS ;
 echo "##---------------------------------------"  >> $FILE_OUTPUT_SITESTATS ;
