@@ -30,17 +30,20 @@ while read x ; do
 done < "$DIR_Y/1.txt" ;
 }
 ################################################################################
-function func_replace_in_mdfiles () {
+function func_replace_double_linked_markdown_images_in_mdfiles () {
     for x in $(fd -e md --search-path="$REPO_MGGK/content/"); do 
-    sed -i '' 's%.png%.jpg%g' $x ; 
+    #sed -i '' 's%.png%.jpg%g' $x ; 
+    #sed -i '' 's%\[\!\[\(.*\)\](\(.*\))\](\(.*\))%![\1](\2)%g' $x ; 
+    sed -i '' 's%\[\!\[\(.*\)\](\(.*\))\](\(.*\))%![\1](\3)%g' $x ; 
     done 
 }
 ################################################################################
 
-#grep -irh '\[\!\[\]' "$REPO_MGGK/content/" > $DIR_Y/1.txt ;
-#grep -irh '\[\!\[' "$REPO_MGGK/content/" >> $DIR_Y/1.txt ;
+## Getting all markdown images of all possible formats
+grep -irh '\[\!\[\]' "$REPO_MGGK/content/" > $DIR_Y/1.txt ;
+grep -irh '\[\!\[' "$REPO_MGGK/content/" >> $DIR_Y/1.txt ;
 grep -irh '\!\[' "$REPO_MGGK/content/" >> $DIR_Y/1.txt ;
 
 #func_count_occurences ;
 #func_replace_images_in_files ;
-#func_replace_in_mdfiles ;
+func_replace_double_linked_markdown_images_in_mdfiles ;
