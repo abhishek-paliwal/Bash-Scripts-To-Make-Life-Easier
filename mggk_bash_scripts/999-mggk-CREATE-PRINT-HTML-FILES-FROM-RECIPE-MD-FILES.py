@@ -267,7 +267,7 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         ## print recipe image + title
         recipeImage = '<img style="border-radius: 1%;" width="100%" src="https://www.mygingergarlickitchen.com/wp-content/rich-markup-images/1x1/1x1-' + URL_NO_SLASHES + '.jpg">'
         ##
-        featuredImage = '<img style="border-radius: 1%;" width="100%" src="https://www.mygingergarlickitchen.com' + FEATURED_IMAGE + '">'
+        featuredImage = '<img alt="' + headTitle +'" style="border-radius: 1%;" width="100%" src="https://www.mygingergarlickitchen.com' + FEATURED_IMAGE + '">'
 
         ##
         ##
