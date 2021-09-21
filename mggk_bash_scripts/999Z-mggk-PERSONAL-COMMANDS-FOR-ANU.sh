@@ -86,7 +86,7 @@ makesite_mggk_quickly
 search_mggk_url_and_open_mdfile_in_code
 video_cutting_in_1_minute_equal_parts_using_ffmpeg
 1x1
-10-mggk-create-images-index-page-for-current-year
+upload_all_images_to_mggk_webserver
 506-mggk-search-word-in-tags-and-categories
 599-mggk-CREATE-AND-SAVE-SITE-STATISTICS
 601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls-NEW2021
