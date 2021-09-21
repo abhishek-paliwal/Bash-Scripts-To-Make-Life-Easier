@@ -414,6 +414,15 @@ function FUNC_CREATE_INDEX_FILE_IN_DROPBOX_DIR () {
     echo "<h1>INDEX OF FILES IN DROPBOX SUMMARY DIR</h1>" > "$tmpfile1" ; 
     echo "<p><strong>Updated: $(date)</strong></p><hr>" >> "$tmpfile1" ; 
     fd -I --search-path="$DIR_DROPBOX_SCRIPTS_OUTPUT" -x echo "<p>&bull; <a href='{/}'>{/}</a></p>" | sort >> $tmpfile1 ;
+    echo "<hr>" >> $tmpfile1 ;
+    echo "<h2>Line numbers // File size // File name</h2>" >> $tmpfile1 ;
+    echo "<pre>" >> $tmpfile1 ;
+    for x in $(fd -I --search-path="$DIR_DROPBOX_SCRIPTS_OUTPUT" | sort); do 
+        lc="$(wc -l < $x)" ; 
+        size="$(du -h $x | awk '{print $1}')" ;
+        printf "%8s // %-8s // %s\n" "$lc" "$size" "$(basename $x)" >> $tmpfile1 ;
+    done
+    echo "</pre>" >> $tmpfile1 ;
     ## COPY this file to Dropbox dir
     cp $tmpfile1 $DIR_DROPBOX_SCRIPTS_OUTPUT/ ;
     echo ">> INDEX FILE COPIED TO DROPBOX DIR" ; 
