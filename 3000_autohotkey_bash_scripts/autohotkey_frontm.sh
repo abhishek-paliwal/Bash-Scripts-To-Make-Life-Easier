@@ -246,6 +246,7 @@ FRONTMATTER_FOOTER="---
 
 {{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-6.jpg\" alt=\"Image of $CLIPBOARD\" >}}
 
+{{< mggk-INSERT-RECIPE-STEP-BY-STEP-IMAGES-BLOCK >}}
 
 {{< mggk-print-recipe-button >}}
 
