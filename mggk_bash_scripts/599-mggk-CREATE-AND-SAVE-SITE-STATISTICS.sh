@@ -110,7 +110,7 @@ echo "" >> $FILE_OUTPUT_SITESTATS ;
 echo "" >> $FILE_OUTPUT_SITESTATS ;
 echo "##---------------------------------------"  >> $FILE_OUTPUT_SITESTATS ;
 echo ">> LISTING THE COUNT FOR NUMBER OF FILES FOR LEVEL-1 DIRECTORIES IN WP-CONTENT DIRECTORY" >> $FILE_OUTPUT_SITESTATS ;
-for x in $(fd -t d -d1 --search-path="$REPO_MGGK/static/wp-content/" | sort); do 
+for x in $(fd -I -t d -d1 --search-path="$REPO_MGGK/static/wp-content/" | sort); do 
     myvar=$(ls -R $x | wc -l) ; 
     echo "$myvar => $(basename $x)" >> $FILE_OUTPUT_SITESTATS ;
 done 
