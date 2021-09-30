@@ -205,7 +205,9 @@ leelasrecipes-CREATE-SUBDIRECTORIES-THEN-MOVE-STEPS-IMAGES
 2000-collage-maker-using-vendor-script-leelasrecipes
 2000-python-image-resize
 leelasrecipes_run_commands_13_14_15
-pali_imagemagick_create_10_random_images) ;
+pali_imagemagick_create_10_random_images
+901-mggk-delete-cloudflare-cache-for-chosen-keyword-urls-leelasrecipes
+901-mggk-delete-cloudflare-cache-for-user-input-urls-leelasrecipes) ;
 
 ##
 IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY=(1_imagemagick_maker
