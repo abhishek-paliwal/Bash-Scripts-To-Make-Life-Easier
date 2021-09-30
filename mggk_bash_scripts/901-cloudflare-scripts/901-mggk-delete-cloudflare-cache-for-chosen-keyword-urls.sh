@@ -40,12 +40,41 @@ step1File="$WORKDIR/$prefixFileName-step1.txt" ;
 step2File="$WORKDIR/$prefixFileName-step2.txt" ;
 step3FileHTML="$WORKDIR/$prefixFileName-step3.html" ;
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## Getting the correct cloudflare zone id based upon cli argument
+case "$1" in
+    leelasrecipes)
+        CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_LEELASRECIPES
+        DIR_IMAGES="$REPO_LEELA/static/"
+        replaceThis1="/Users/abhishek/GitHub/2020-LEELA-RECIPES/static/" ; 
+        replaceThis2="/home/ubuntu/GitHub/2020-LEELA-RECIPES/static/" ; 
+        replaceTo="https://www.leelasrecipes.com/" ; 
+        ;;
+    mggk)
+        CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_MGGK
+        DIR_IMAGES="$REPO_MGGK/static/wp-content/"
+        replaceThis1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
+        replaceThis2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
+        replaceTo="https://www.mygingergarlickitchen.com/" ; 
+        ;;
+    *)
+        CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_MGGK
+        DIR_IMAGES="$REPO_MGGK/static/wp-content/"
+        replaceThis1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
+        replaceThis2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
+        replaceTo="https://www.mygingergarlickitchen.com/" ; 
+esac
+echo ">> CHOSEN ZONE ID => $CLOUDFLARE_ZONE_ID" ; 
+echo ">> CHOSEN DIR FOR IMAGES => $DIR_IMAGES" ; 
+echo; 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 ##------------------------------------------------------------------------------
 echo "Enter your keyword to find images for: " ; 
 read myKeyword ; 
 ##
 if [ -z "$myKeyword" ] ; then 
-    echo "CLI Argument is empty. Please try again. Program will exit now." ;
+    echo "Keyword value is empty. Please try again. Program will exit now." ;
     exit 1 ; 
 fi
 ##------------------------------------------------------------------------------
@@ -54,7 +83,7 @@ function step0_FUNC_cloudflare_search_image_paths_containing_keyword () {
     ## function takes no arguments 
     outFile="$step0File" ; ## step0File
     echo "#" > $tmpFile ;
-    fd -I -t f -e jpg -e png -e jpeg -e gif --search-path="$REPO_MGGK/static/wp-content/" "$myKeyword" | sort >> $tmpFile
+    fd -I -t f -e jpg -e png -e jpeg -e gif --search-path="$DIR_IMAGES" "$myKeyword" | sort >> $tmpFile
     cat $tmpFile | grep -iv '#' > $outFile ;
     echo ">> DONE = step0_FUNC_cloudflare_search_image_paths_containing_keyword " ;
 }
@@ -63,9 +92,6 @@ function step1_FUNC_cloudflare_search_image_urls_containing_keyword () {
     ## function takes no arguments 
     inFile="$step0File" ## step0File
     outFile="$step1File" ; ## step1File
-    replaceThis1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
-    replaceThis2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
-    replaceTo="https://www.mygingergarlickitchen.com/" ; 
     ##
     echo "##" > $tmpFile ;
     cat $inFile | sd "$replaceThis1" "$replaceTo"| sd "$replaceThis2" "$replaceTo" | sort | grep -iv '#' >> $tmpFile ;
@@ -106,7 +132,7 @@ function step4_FUNC_cloudflare_delete_cache_for_keyword_urls () {
     url_array=$(cat $inFile) ;
     final_data="{ "'"files"'":[ $url_array ]}" ;
     #echo "FINAL DATA = $final_data" ; 
-    curl -X POST "https://api.cloudflare.com/client/v4/zones/53b0327844e25ed872863f33e465bca0/purge_cache" -H "X-Auth-Email:$CLOUDFLARE_EMAIL" -H "X-Auth-Key:$API_KEY_CLOUDFLARE_PURGE" -H "Content-Type:application/json" --data "$final_data" ;
+    curl -X POST "https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE_ID/purge_cache" -H "X-Auth-Email:$CLOUDFLARE_EMAIL" -H "X-Auth-Key:$API_KEY_CLOUDFLARE_PURGE" -H "Content-Type:application/json" --data "$final_data" ;
     ##
     echo ">> DONE = step4_FUNC_cloudflare_delete_cache_for_keyword_urls " ;
 }

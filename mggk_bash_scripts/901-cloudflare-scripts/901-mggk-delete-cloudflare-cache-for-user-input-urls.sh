@@ -44,6 +44,21 @@ tmpFile="$WORKDIR/_tmp.txt" ;
 tmpFile1="$WORKDIR/_tmp1.txt" ; 
 step1File="$WORKDIR/$prefixFileName-step1.txt" ; 
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## Getting the correct cloudflare zone id based upon cli argument
+case "$1" in
+    leelasrecipes)
+        CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_LEELASRECIPES
+        ;;
+    mggk)
+        CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_MGGK
+        ;;
+    *)
+        CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_MGGK
+esac
+echo ">> CHOSEN ZONE ID => $CLOUDFLARE_ZONE_ID" ; echo; 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 ################################################################################
 ## FUNCTION DEFINITIONS
 ################################################################################
@@ -67,7 +82,7 @@ function step4_FUNC_cloudflare_delete_cache_for_keyword_urls () {
     url_array=$(cat $inFile) ;
     final_data="{ "'"files"'":[ $url_array ]}" ;
     #echo "FINAL DATA = $final_data" ; 
-    curl -X POST "https://api.cloudflare.com/client/v4/zones/53b0327844e25ed872863f33e465bca0/purge_cache" -H "X-Auth-Email:$CLOUDFLARE_EMAIL" -H "X-Auth-Key:$API_KEY_CLOUDFLARE_PURGE" -H "Content-Type:application/json" --data "$final_data" ;
+    curl -X POST "https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE_ID/purge_cache" -H "X-Auth-Email:$CLOUDFLARE_EMAIL" -H "X-Auth-Key:$API_KEY_CLOUDFLARE_PURGE" -H "Content-Type:application/json" --data "$final_data" ;
     ##
     echo ">> DONE = step4_FUNC_cloudflare_delete_cache_for_keyword_urls " ;
 }
