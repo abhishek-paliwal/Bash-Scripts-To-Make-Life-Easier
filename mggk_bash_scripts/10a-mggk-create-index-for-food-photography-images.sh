@@ -219,7 +219,7 @@ echo "<script async defer data-pin-hover='true' data-pin-tall='true' data-pin-la
 
 echo "<nav class='navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top'>
   <a class='navbar-brand' href='https://www.MyGingerGarlicKitchen.com'>
-  <img src='https://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/mggk-new-logo-transparent-150px.png' style='width: 30px; '>
+  <img src='https://www.mygingergarlickitchen.com/logos/mggk-new-logo-transparent-1000px.svg' alt='My Ginger Garlic Kitchen' width='150' height='123'>
   <span style='font-weight: 700; color: #F81894;'>My Ginger Garlic Kitchen</span> | Food Photography Images
   </a>
 </nav>" >> $OUTPUT
@@ -233,7 +233,7 @@ echo "<div class='site-wrapper'>
 
 <!-- HEADING DIV STARTS --> <div class='heading'>
 <!-- TOP LOGO --> 
-<a href='https://www.MyGingerGarlicKitchen.com' target='_blank'><img src='https://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/mggk-new-logo-transparent-150px.png' style='width: 100px; '> </a>
+<a href='https://www.MyGingerGarlicKitchen.com' target='_blank'><img src=' <img src='https://www.mygingergarlickitchen.com/logos/mggk-new-logo-transparent-1000px.svg' alt='My Ginger Garlic Kitchen' width='150' height='123'> </a>
 
 <!--
 <h1 class='heading'>FOOD PHOTOGRAPHY IMAGES <br>&bull;&bull;&bull;&bull;&bull;</h1>
@@ -247,6 +247,7 @@ echo "<div class='site-wrapper'>
 
 echo "<div class='container-fluid'>" >> $OUTPUT
 
+echo "<h1>Food Photography Images</h1>" >> $OUTPUT
 echo "<h3 class='thin'>Total Images On This Page (Non-Recursive) = $totalimagefiles</h3>" >> $OUTPUT
 echo "<h3 class='thin'>Page last updated: "$(date)"</h3>" >> $OUTPUT
 
