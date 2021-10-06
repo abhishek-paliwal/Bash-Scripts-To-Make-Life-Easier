@@ -106,7 +106,9 @@ yoast_find_all_outbound_mdfiles_urls_containing_target_keyword_url) ;
 
 ##
 MGGK_COMMANDS_ARRAY=(makesite_mggk
+makesite_mggk_quickly
 frontm
+frontm_sponsored
 algolia_search_for_this_phrase
 gif_maker_from_jpgs
 hugo_mggk_enable_featured_posts
@@ -145,11 +147,11 @@ mggk_calculate_length_of_yoast_description
 mggk_calculate_length_of_titles
 mggk_calculate_length_of_urls
 10b-mggk-create-index-for-recipe-steps-present-folder
-mggk_WEEKLY_SUMMARY_RUN
 convert_images_to_1080x1920_padded_imagemagick
-makesite_mggk_quickly
-frontm_sponsored
-9999_mggk_create_mggk_and_localhost_hyperlinks_from_all_mdfiles_in_pwd) ;
+9999_mggk_create_mggk_and_localhost_hyperlinks_from_all_mdfiles_in_pwd
+yoast-calculate-all-inbound-outbound-links-counts
+yoast_find_paragraph_word_counts
+mggk_WEEKLY_SUMMARY_RUN) ;
 
 ##
 PALI_COMMANDS_ARRAY=(palinotes_makesite_hugo
