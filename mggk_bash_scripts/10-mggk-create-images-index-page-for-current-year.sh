@@ -207,7 +207,7 @@ echo "</head><body>" >> $OUTPUT
 
 echo "<nav class='navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top'>
   <a class='navbar-brand' href='https://www.MyGingerGarlicKitchen.com'>
-  <img src='https://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/mggk-new-logo-transparent-150px.png' style='width: 30px; '>
+  <img src='https://www.mygingergarlickitchen.com/logos/mggk-new-logo-transparent-1000px.svg' style='width: 30px; '>
   <span style='font-weight: 700; color: #F81894;'>MGGK</span> | Images Index
   </a>
 </nav>" >> $OUTPUT
@@ -220,7 +220,7 @@ echo "<div class='site-wrapper'>
 <div class='site-wrapper-inner'>
 
 <!-- HEADING DIV STARTS --> <div class='heading'>
-<!-- TOP LOGO --> <img src='https://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/mggk-new-logo-transparent-150px.png' style='width: 100px; '>
+<!-- TOP LOGO --> <img src='https://www.mygingergarlickitchen.com/logos/mggk-new-logo-transparent-1000px.svg' style='width: 100px; '>
 <h1 class='heading'>MGGK - IMAGES INDEX<br>FOR CURRENT MONTH<br>// $CURRENT_YEAR/$CURRENT_MONTH //<br>&bull;&bull;&bull;&bull;&bull;</h1>
 
 <h2 class='heading'><font color='#FFFF00'>Designed by</font> <a href='https://www.MyGingerGarlicKitchen.com'><font color='#50c878'>My Ginger Garlic Kitchen</font></a></h2>
