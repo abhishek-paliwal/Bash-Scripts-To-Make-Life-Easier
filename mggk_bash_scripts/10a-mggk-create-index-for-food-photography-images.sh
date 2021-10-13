@@ -219,7 +219,7 @@ echo "<script async defer data-pin-hover='true' data-pin-tall='true' data-pin-la
 
 echo "<nav class='navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top'>
   <a class='navbar-brand' href='https://www.MyGingerGarlicKitchen.com'>
-  <img src='https://www.mygingergarlickitchen.com/logos/mggk-new-logo-transparent-1000px.svg' alt='My Ginger Garlic Kitchen' width='150' height='123'>
+  <img src='https://www.mygingergarlickitchen.com/logos/mggk-new-logo-transparent-1000px.svg' alt='My Ginger Garlic Kitchen' width='50px'>
   <span style='font-weight: 700; color: #F81894;'>My Ginger Garlic Kitchen</span> | Food Photography Images
   </a>
 </nav>" >> $OUTPUT
@@ -233,7 +233,7 @@ echo "<div class='site-wrapper'>
 
 <!-- HEADING DIV STARTS --> <div class='heading'>
 <!-- TOP LOGO --> 
-<a href='https://www.MyGingerGarlicKitchen.com' target='_blank'><img src=' <img src='https://www.mygingergarlickitchen.com/logos/mggk-new-logo-transparent-1000px.svg' alt='My Ginger Garlic Kitchen' width='150' height='123'> </a>
+<a href='https://www.MyGingerGarlicKitchen.com' target='_blank'> <img src='https://www.mygingergarlickitchen.com/logos/mggk-new-logo-transparent-1000px.svg' alt='My Ginger Garlic Kitchen' width='120px'> </a>
 
 <!--
 <h1 class='heading'>FOOD PHOTOGRAPHY IMAGES <br>&bull;&bull;&bull;&bull;&bull;</h1>
