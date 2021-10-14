@@ -168,9 +168,13 @@ my_custom_variable: \"custom_variable_value\"
 steps_images_present: \"no\"
 
 title: \"$CLIPBOARD\"
+
 date: $DATE
+
 description: \"POST_DESCRIPTION\"
+
 type: post
+
 image: \"images/youtube_video_cover_images/YOUTUBE_ID.jpg\"
 
 url: /$(printf '%s' "$URL")/
@@ -183,9 +187,9 @@ categories:
 tags:
   - \"Vegetarian\"
 
-prepTime: PTHM
-cookTime: PTHM
-totalTime: PTHM
+prepTime: PT0H0M
+cookTime: PT0H0M
+totalTime: PT0H0M
 
 recipeCategory: Breakfast
 recipeCuisine: Indian
@@ -196,7 +200,7 @@ aggregateRating:
   ratingCount: 4
 
 nutrition:
-  calories: xyz calories
+  calories: XYZ calories
   servingSize: 1
 
 recipe_keywords: \"$CLIPBOARD\"
