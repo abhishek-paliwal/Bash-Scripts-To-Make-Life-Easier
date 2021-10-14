@@ -25,20 +25,21 @@ if [ "$1" == "--help" ] ; then usage ; fi
 IMGDIR="$DIR_GITHUB/2020-LEELA-RECIPES/static/images/masonary-post/2021/" ; 
 echo; echo ">>>> IMPORTANT NOTE: All images will be moved from $(pwd) => $IMGDIR" ;
 
-echo; echo ">> BEFORE MOVING- Current images found in = $IMGDIR"; echo;
-ls $IMGDIR | nl; 
+echo; echo ">> BEFORE MOVING- Current images found in => $IMGDIR"; echo;
+ls $IMGDIR | nl ; 
 
-echo; echo ">> BEFORE MOVING - Current images found in = $(pwd)"; echo;
-ls -l $(pwd) | nl;
+echo; echo ">> BEFORE MOVING - Current images found in => $(pwd)"; echo;
+fd -e jpg -e png -d1 --search-path="$(pwd)" | nl;
 
-echo; echo; echo ">>>> WARNING >>>> This command will move all above PNGs/JPGs to this directory => $IMGDIR" ; 
+echo; echo; echo ">>>> WARNING >>>> This command will move all above jpg + png images to this directory => $IMGDIR" ; 
 
+################
 ## GETTING USER CONFIRMATION TO MOVE ALL FILES. THE USER HAS TO PRESS y KEY.
 echo "Enter Y/y key to continue" ;
 read myNumber ; 
 if [[ "$myNumber" =~ ^[Yy]$ ]] ; then 
-  mv *.jpg $IMGDIR/ ; echo ">> All JPGs moved." ;
-  mv *.png $IMGDIR/ ; echo ">> All PNGs moved." ;
+  fd -e jpg -e png -d1 --search-path="$(pwd)" -x mv {} $IMGDIR/ ;
+  echo ">> All lowercase jpg + png images moved." ;
   ####
   echo ;  echo ">>>> AFTER MOVING - CURRENT FILES in $IMGDIR =>" ; echo ; 
   ls $IMGDIR | nl ;
@@ -46,5 +47,6 @@ if [[ "$myNumber" =~ ^[Yy]$ ]] ; then
   ls -l $(pwd) | nl ;
   ####
 else 
-  echo ">>>> ERROR: No files were moved because Y key was not pressed. OR some other key was pressed. <<<< " ; 
+  echo ">>>> ERROR: No files were moved because Y/y key was not pressed. OR some other key was pressed. <<<< " ; 
 fi ; 
+################

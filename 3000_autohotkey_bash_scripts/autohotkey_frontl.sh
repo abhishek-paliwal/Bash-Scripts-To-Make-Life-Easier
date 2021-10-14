@@ -240,5 +240,52 @@ FORMAT_INGREDIENTS >> $FILENAME
 FORMAT_INSTRUCTIONS >> $FILENAME
 FORMAT_NOTES >> $FILENAME
 printf '%s' "$FRONTMATTER_FOOTER" >> $FILENAME
-##
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## FINAL FUNCTION TO CREATE ALL RECIPE PLACEHOLDER IMAGES
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+create_placeholder_images_for_recipe () 
+{
+    recipeName=$(printf '%s' "$URL") ;
+    myDir="$DIR_Y" ;
+    echo; echo ">>>> BEGIN TASK: CREATING PLACEHOLDER IMAGES (for recipe = $recipeName) IN DIR (= $myDir) ..." ; 
+
+    ## creating 3 recipe images 
+    for x in $(seq 1 1 3); do convert -size 1200x100 canvas:orange "$myDir/${recipeName}-$x.jpg" ; done ; 
+    
+    ## creating 20 steps images
+    myDir_steps="$DIR_Y/${recipeName}" ;
+    mkdir -p "$myDir_steps" ;
+    for x in $(seq 1 1 20); do convert -size 1200x100 canvas:pink "$myDir_steps/${recipeName}-step-1-$x.jpg" ; done ; 
+    
+    ## creating 4 markup images => orig, 1x1,16x9,4x3
+    im_orig="$myDir/${recipeName}.jpg" ; convert -size 1200x1200 canvas:lime $im_orig ;
+    im1x1="$myDir/1x1-${recipeName}.jpg" ; convert -size 1200x1200 canvas:lime $im1x1 ;
+    im4x3="$myDir/4x3-${recipeName}.jpg" ; convert -size 1200x900 canvas:lime $im4x3 ;
+    im16x9="$myDir/16x9-${recipeName}.jpg" ; convert -size 1200x675 canvas:lime $im16x9 ;
+    
+    ## creating youtube cover image
+    im_youtube="$REPO_LEELA/static/images/youtube_video_cover_images/YOUTUBE_ID.jpg" ;
+    convert -size 1200x675 canvas:yellow $im_youtube ;
+    
+    ## Final MESSAGE printout about moving markup images to respective dirs  
+    dirMarkUp="$REPO_LEELA/static/rich-markup-images" ;
+    echo "  >> REMAINING TASKS FOR YOU ... " ; 
+    echo "    >> TASK 1 = Move steps images to steps directory." ; 
+    echo "    >> TASK 2 = Move recipe images to main images directory." ; 
+    echo "    >> TASK 3 = Copy-paste the following to move markup images ..." ; 
+    echo "mv $im_orig $dirMarkUp/original_copied/" ;
+    echo "mv $im1x1 $dirMarkUp/1x1/" ;
+    echo "mv $im4x3 $dirMarkUp/4x3/" ;
+    echo "mv $im16x9 $dirMarkUp/16x9/" ;
+
+    ## FINAL LINE
+    echo; echo ">>>> END TASK: CREATING BLANK IMAGES (for recipe = $recipeName) IN DIR (= $myDir) ..." ; 
+}
+## CALL THIS FUNCTION
+create_placeholder_images_for_recipe
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Opening markdown file in editor
+echo "Opening markdown file in editor ..." ;
 code $FILENAME ;
