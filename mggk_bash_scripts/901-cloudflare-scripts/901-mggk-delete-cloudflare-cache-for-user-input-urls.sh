@@ -110,6 +110,7 @@ function step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls () {
 echo "Enter a single url (with http/https) to delete the cloudflare cache, OR ..." ;
 echo "[Enter 0 (= zero) if you have multiple urls: " ; 
 echo "[Enter 1 (= one) if you want to delete cache for MGGK Homepage only: " ; 
+echo "[Enter 2 (= two) if you want to delete cache for top 16 MGGK URLS only: " ; 
 echo "[Enter 99 if you want to delete cache for all urls in mggk sitemap.xml file: " ; 
 ##
 read myKeyword ; 
@@ -124,7 +125,11 @@ elif [ "$myKeyword" == "0" ]; then
 elif [ "$myKeyword" == "1" ]; then
     echo ">> The cache will be deleted for MGGK Homepage only ..." ;
     mggk_homepage="https://www.mygingergarlickitchen.com/"
-    echo "$mggk_homepage" > $step1File ; 
+    echo "$mggk_homepage" > $step1File ;
+elif [ "$myKeyword" == "2" ]; then
+    echo ">> The cache will be deleted for top 16 MGGK URLS only ..." ;
+    grep -irh 'url: ' $REPO_MGGK/content/popular-posts/ | sd 'url: ' 'https://www.mygingergarlickitchen.com' > $step1File ; 
+    grep -irh 'url: ' $REPO_MGGK/content/readers-favorite/ | sd 'url: ' 'https://www.mygingergarlickitchen.com' >> $step1File ; 
 elif [ "$myKeyword" == "99" ]; then
     echo ">> The cache will be deleted for all current urls in MGGK sitemap.xml file." ;
     allUrlsFile="https://downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs/mggk_summary_cloudflare_AllValidSiteUrls.txt" ;
