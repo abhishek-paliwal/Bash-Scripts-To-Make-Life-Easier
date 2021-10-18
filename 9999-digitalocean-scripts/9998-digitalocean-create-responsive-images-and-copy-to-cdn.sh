@@ -17,7 +17,7 @@ USAGE: $(basename $0)
     ## Example image resolutions include: 350px, 425px, 550px, 675px, 800px, etc.
     ################################################################################
     ## CREATED BY: PALI
-    ## CREATED ON: July 18, 2021
+    ## CREATED ON: 2021-10-18
     ################################################################################
 EOM
 
@@ -106,7 +106,7 @@ function FUNC_create_responsive_images () {
     ####
     done < $FINAL_FILE
     ####
-    FUNC_ONLY_RUN_FOR_THIS_USER "$RESPONSIVE_IMAGES_ROOTDIR" ;
+    FUNC_REMOVE_EXTENDED_IMAGE_ATTRIBUTES_IF_MAC_USER "$RESPONSIVE_IMAGES_ROOTDIR" ;
 }
 
 #######
@@ -119,7 +119,7 @@ function FUNC_calc_md5sums() {
 }
 
 #######
-function FUNC_ONLY_RUN_FOR_THIS_USER () {
+function FUNC_REMOVE_EXTENDED_IMAGE_ATTRIBUTES_IF_MAC_USER () {
     DirImages="$1" ;
     ## ## Only run this program for this user
     echo "IMPORTANT NOTE: This script only runs on MAC OS." ; 
@@ -138,6 +138,7 @@ function FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS () {
     ## Creating responsive images for all images
     IMAGES_ROOTDIR="$1" ; ## copy images from this dir
     RESPONSIVE_OUTPUT_DIR="$2" ; ## copy images to this dir and create responsive copies
+    mkdir -p "$RESPONSIVE_OUTPUT_DIR" ; ## create dir if does not exist
 
     ## Image addition = Adding all images present in IMAGES_ROOTDIR
     tmpA="$WORKDIR/tmpA-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
@@ -150,7 +151,7 @@ function FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS () {
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 WWW_RESPONSIVE_ROOTDIR="$DIR_Y" ;
-FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "$REPO_LEELA/static/" "$WWW_RESPONSIVE_ROOTDIR/cdn.leelasrecipes.com/images/" ;
+FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "$REPO_LEELA/static/" "$WWW_RESPONSIVE_ROOTDIR/cdn.leelasrecipes.com/images" ;
 
 ################################################################################
 ############################### PROGRAM ENDS ###################################
