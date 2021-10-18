@@ -151,9 +151,12 @@ function MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS () {
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+## SENDING local files to server
+#rsync -avz --delete $DIR_Y/cdn.leelasrecipes.com/ $DIGITALOCEAN_USER@$DIGITALOCEAN_SERVER:/home/WWW_RESPONSIVE_IMAGES/cdn.leelasrecipes.com/ ;
+## RUNNING main function
 WWW_RESPONSIVE_ROOTDIR="$DIR_Y" ;
 MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "$REPO_LEELA/static/" "$WWW_RESPONSIVE_ROOTDIR/cdn.leelasrecipes.com/images" ;
-
+####
 ################################################################################
 ############################### PROGRAM ENDS ###################################
 ################################################################################
