@@ -134,7 +134,8 @@ function FUNC_REMOVE_EXTENDED_IMAGE_ATTRIBUTES_IF_MAC_USER () {
 ##################################################################################
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-function FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS () {
+function MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS () {
+    # USAGE: THIS_FUNCTION_NAME <copy images from this dir> <copy images to this dir>
     ## Creating responsive images for all images
     IMAGES_ROOTDIR="$1" ; ## copy images from this dir
     RESPONSIVE_OUTPUT_DIR="$2" ; ## copy images to this dir and create responsive copies
@@ -151,7 +152,7 @@ function FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS () {
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 WWW_RESPONSIVE_ROOTDIR="$DIR_Y" ;
-FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "$REPO_LEELA/static/" "$WWW_RESPONSIVE_ROOTDIR/cdn.leelasrecipes.com/images" ;
+MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "$REPO_LEELA/static/" "$WWW_RESPONSIVE_ROOTDIR/cdn.leelasrecipes.com/images" ;
 
 ################################################################################
 ############################### PROGRAM ENDS ###################################
