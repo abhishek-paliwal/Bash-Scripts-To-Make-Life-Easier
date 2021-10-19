@@ -27,15 +27,18 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-## Only run this program on MAC OS
-echo "##------------------------------------------------------------------------------" ;
-echo "IMPORTANT NOTE: This script only runs on MAC OS." ; 
-if [ "$USER" == "abhishek" ] ; then
-  echo "This is MAC OS. So, script this will continue => $THIS_SCRIPT_NAME " ;
-else
-  echo "This is not MAC OS. So, this script will stop and exit now => $THIS_SCRIPT_NAME " ;
-  exit 1 ;
-fi
+function FUNC_ONLY_RUN_FOR_THIS_USER () {
+    ## Only run this program on MAC OS
+    echo "##------------------------------------------------------------------------------" ;
+    echo "IMPORTANT NOTE: This script only runs on MAC OS." ; 
+    if [ "$USER" == "abhishek" ] ; then
+    echo "This is MAC OS. So, script this will continue => $THIS_SCRIPT_NAME " ;
+    else
+    echo "This is not MAC OS. So, this script will stop and exit now => $THIS_SCRIPT_NAME " ;
+    exit 1 ;
+    fi
+}
+#FUNC_ONLY_RUN_FOR_THIS_USER
 
 echo "CURRENTLY RUNNING SCRIPT = $THIS_SCRIPT_NAME" ;
 ## Present working directory
@@ -154,7 +157,7 @@ function MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS () {
 ## SENDING local files to server
 #rsync -avz --delete $DIR_Y/cdn.leelasrecipes.com/ $DIGITALOCEAN_USER@$DIGITALOCEAN_SERVER:/home/WWW_RESPONSIVE_IMAGES/cdn.leelasrecipes.com/ ;
 ## RUNNING main function
-WWW_RESPONSIVE_ROOTDIR="$DIR_Y" ;
+WWW_RESPONSIVE_ROOTDIR="/home/WWW_RESPONSIVE_IMAGES" ;
 MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "$REPO_LEELA/static/" "$WWW_RESPONSIVE_ROOTDIR/cdn.leelasrecipes.com/images" ;
 ####
 ################################################################################
