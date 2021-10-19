@@ -96,6 +96,7 @@ function FUNC_create_responsive_images () {
     diff $md51 $md52 | grep '>' | awk '{print $3}' | sort > $FINAL_FILE
 
     ## Read file line by line and create responsive image
+    echo ">> Create responsive images ..." ;
     myarray=(350px 425px 550px 675px 800px)
     ##
     total_lines=$(cat $FINAL_FILE | wc -l ) ;
@@ -144,7 +145,7 @@ function MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS () {
 
     ## Image addition = Adding all images present in REPO_IMAGEDIR
     tmpA="$WORKDIR/tmpA-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
-    echo ">> Image addition = Adding all images present in REPO_IMAGEDIR ... " ;     
+    echo ">> Image addition = Adding all images present in $REPO_IMAGEDIR ... " ;     
     fd -I -e jpg --search-path="$REPO_IMAGEDIR" | sort | uniq > $tmpA ;
 
     ## Call main image creation function
@@ -159,7 +160,7 @@ function MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS () {
 
 ## RUN THE FINAL FUNCTION FOR AS MANY CDNs AS REQUIRED
 MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "cdn.leelasrecipes.com" "$REPO_LEELA/static/" ;
-MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "cdn.mantracoaching.in" "$REPO_MANTRA/static/" ;
+#MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "cdn.mantracoaching.in" "$REPO_MANTRA/static/" ;
 
 ################################################################################
 ############################### PROGRAM ENDS ###################################
