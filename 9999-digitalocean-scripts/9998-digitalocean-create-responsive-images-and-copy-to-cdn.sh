@@ -16,6 +16,8 @@ USAGE: $(basename $0)
     ## This script reads all jpg images (only jpg) from given directories and creates 
     ## responsive images to be read by the srcset html image tags by the browser.
     ## Example image resolutions include: 350px, 425px, 550px, 675px, 800px, etc.
+    #### NOTE: Needs the rclone cli program. (https://rclone.org/)
+    #### Install by running > brew install rclone
     ################################################################################
     ## CREATED BY: PALI
     ## CREATED ON: 2021-10-18
@@ -135,32 +137,28 @@ function FUNC_calc_md5sums() {
 function MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS () {
     # USAGE: THIS_FUNCTION_NAME <copy images from this dir> <copy images to this dir>
     ## Creating responsive images for all images
-    IMAGES_ROOTDIR="$1" ; ## copy images from this dir
-    RESPONSIVE_OUTPUT_DIR="$2" ; ## copy images to this dir and create responsive copies
+    CDN_ROOTDIR="$1" ;
+    REPO_IMAGEDIR="$2" ; ## copy all images from this dir
+    RESPONSIVE_OUTPUT_DIR="$WWW_RESPONSIVE_ROOTDIR/$CDN_ROOTDIR/images" ; ## copy images to this dir and create responsive copies
     mkdir -p "$RESPONSIVE_OUTPUT_DIR" ; ## create dir if does not exist
 
-    ## Image addition = Adding all images present in IMAGES_ROOTDIR
+    ## Image addition = Adding all images present in REPO_IMAGEDIR
     tmpA="$WORKDIR/tmpA-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
-    echo ">> Image addition = Adding all images present in IMAGES_ROOTDIR ... " ;     
-    fd -I -e jpg --search-path="$IMAGES_ROOTDIR" | sort | uniq > $tmpA ;
+    echo ">> Image addition = Adding all images present in REPO_IMAGEDIR ... " ;     
+    fd -I -e jpg --search-path="$REPO_IMAGEDIR" | sort | uniq > $tmpA ;
 
-    ## Call main function
+    ## Call main image creation function
     FUNC_create_responsive_images "$RESPONSIVE_OUTPUT_DIR" "$tmpA" "tmpA" ;
+
+    ## Syncing to cdn bucket and checking its integrity
+    rclone sync $WWW_RESPONSIVE_ROOTDIR/$CDN_ROOTDIR dreamobjects:$CDN_ROOTDIR ;
+    rclone check $WWW_RESPONSIVE_ROOTDIR/$CDN_ROOTDIR dreamobjects:$CDN_ROOTDIR ;
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-## RUN THE MAIN FUNCTION FOR AS MANY CDNs AS REQUIRED
-#### for cdn 1
-CDN_1_ROOTDIR="cdn.leelasrecipes.com" ;
-CDN_1_IMAGES_PATH_IN_REPO="$REPO_LEELA/static/" ;
-MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "$CDN_1_IMAGES_PATH_IN_REPO" "$WWW_RESPONSIVE_ROOTDIR/$CDN_1_ROOTDIR/images" ;
-rclone check $WWW_RESPONSIVE_ROOTDIR/$CDN_1_ROOTDIR dreamobjects:$CDN_1_ROOTDIR ; ## syncing to cdn bucket
-#### for cdn 2
-#CDN_2_ROOTDIR="cdn.mantracoaching.in" ;
-#CDN_2_IMAGES_PATH_IN_REPO="$REPO_MANTRA/static/" ;
-#MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "$CDN_2_IMAGES_PATH_IN_REPO" "$WWW_RESPONSIVE_ROOTDIR/$CDN_2_ROOTDIR/images" ;
-#rclone check $WWW_RESPONSIVE_ROOTDIR/$CDN_2_ROOTDIR dreamobjects:$CDN_2_ROOTDIR ; ## syncing to cdn bucket
-
+## RUN THE FINAL FUNCTION FOR AS MANY CDNs AS REQUIRED
+MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "cdn.leelasrecipes.com" "$REPO_LEELA/static/" ;
+MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "cdn.mantracoaching.in" "$REPO_MANTRA/static/" ;
 
 ################################################################################
 ############################### PROGRAM ENDS ###################################
