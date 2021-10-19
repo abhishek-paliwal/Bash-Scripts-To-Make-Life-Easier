@@ -47,7 +47,7 @@ FUNC_ONLY_RUN_FOR_THIS_USER
 
 ##------------------------------------------------------------------------------
 ## ASSIGN COMPUTER HOSTNAME SPECIFIC VARIABLES
-function FUNC_assign_variables_for_this_hostname () {
+function FUNC_check_hostname_and_assign_proper_variables () {
     HOSTNAME=$(uname -n) ;
     ## Possible hostnames are: 
     #### AP-MBP.local // LAPTOP-F0AJ6LBG // ubuntu1804-digitalocean-bangalore-droplet
@@ -62,7 +62,7 @@ function FUNC_assign_variables_for_this_hostname () {
     echo ">> HOSTNAME IS = $HOSTNAME";
     echo ">> CHOSEN BASEDIR => $BASEDIR" ;
 }
-FUNC_assign_variables_for_this_hostname
+FUNC_check_hostname_and_assign_proper_variables
 ##------------------------------------------------------------------------------
 
 ####################### ADDING COLOR TO OUTPUT ON CLI ##########################

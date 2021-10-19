@@ -12,7 +12,8 @@ USAGE: $(basename $0)
     ## USAGE:
     #### > bash $THIS_SCRIPT_NAME
     ################################################################################
-    ## This script reads all images from given directories and creates 
+    #### IMPORTANT: THIS SCRIPT SHOULD ONLY BE RUN ON DIGITAL OCEAN SERVER.
+    ## This script reads all jpg images (only jpg) from given directories and creates 
     ## responsive images to be read by the srcset html image tags by the browser.
     ## Example image resolutions include: 350px, 425px, 550px, 675px, 800px, etc.
     ################################################################################
@@ -27,18 +28,27 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-function FUNC_ONLY_RUN_FOR_THIS_USER () {
-    ## Only run this program on MAC OS
-    echo "##------------------------------------------------------------------------------" ;
-    echo "IMPORTANT NOTE: This script only runs on MAC OS." ; 
-    if [ "$USER" == "abhishek" ] ; then
-    echo "This is MAC OS. So, script this will continue => $THIS_SCRIPT_NAME " ;
+##------------------------------------------------------------------------------
+## ASSIGN COMPUTER HOSTNAME SPECIFIC VARIABLES
+function FUNC_check_hostname_and_assign_proper_variables () {
+    HOSTNAME=$(uname -n) ;
+    ## Possible hostnames are: 
+    #### AP-MBP.local // LAPTOP-F0AJ6LBG // ubuntu1804-digitalocean-bangalore-droplet
+    ## 
+    if [ "$HOSTNAME" == "ubuntu1804-digitalocean-bangalore-droplet" ] ; then
+        echo ">> NOTE: This is digital ocean server, hence the script will continue ..." ;
+        WWW_RESPONSIVE_ROOTDIR="/home/WWW_RESPONSIVE_IMAGES" ;
     else
-    echo "This is not MAC OS. So, this script will stop and exit now => $THIS_SCRIPT_NAME " ;
-    exit 1 ;
+        echo ">> NOTE: This is NOT digital ocean server, hence the script will EXIT." ;
+        exit 1 ;
+        WWW_RESPONSIVE_ROOTDIR="$DIR_Y" ;
     fi
+    ##
+    echo ">> HOSTNAME IS = $HOSTNAME";
+    echo ">> CHOSEN WWW_RESPONSIVE_ROOTDIR => $WWW_RESPONSIVE_ROOTDIR" ;
 }
-#FUNC_ONLY_RUN_FOR_THIS_USER
+FUNC_check_hostname_and_assign_proper_variables
+##------------------------------------------------------------------------------
 
 echo "CURRENTLY RUNNING SCRIPT = $THIS_SCRIPT_NAME" ;
 ## Present working directory
@@ -108,8 +118,6 @@ function FUNC_create_responsive_images () {
         done
     ####
     done < $FINAL_FILE
-    ####
-    FUNC_REMOVE_EXTENDED_IMAGE_ATTRIBUTES_IF_MAC_USER "$RESPONSIVE_IMAGES_ROOTDIR" ;
 }
 
 #######
@@ -119,19 +127,6 @@ function FUNC_calc_md5sums() {
     echo "Writing md5sums to => $outputFile" ; 
     fd --search-path="$originalImageDir" -x md5sum > $WORKDIR/tmp-md5.txt ;
     sort $WORKDIR/tmp-md5.txt > "$outputFile" ;
-}
-
-#######
-function FUNC_REMOVE_EXTENDED_IMAGE_ATTRIBUTES_IF_MAC_USER () {
-    DirImages="$1" ;
-    ## ## Only run this program for this user
-    echo "IMPORTANT NOTE: This script only runs on MAC OS." ; 
-    if [ "$USER" == "abhishek" ] ; then
-        echo "This is MAC OS. So, script will remove extended image attributes ..." ;
-        xattr -rc "$1" ;
-    else
-        echo "This is not MAC OS. So, script will continue normally." ;
-    fi
 }
 
 ##################################################################################
@@ -154,12 +149,17 @@ function MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS () {
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-## SENDING local files to server
-#rsync -avz --delete $DIR_Y/cdn.leelasrecipes.com/ $DIGITALOCEAN_USER@$DIGITALOCEAN_SERVER:/home/WWW_RESPONSIVE_IMAGES/cdn.leelasrecipes.com/ ;
-## RUNNING main function
-WWW_RESPONSIVE_ROOTDIR="/home/WWW_RESPONSIVE_IMAGES" ;
-MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "$REPO_LEELA/static/" "$WWW_RESPONSIVE_ROOTDIR/cdn.leelasrecipes.com/images" ;
+## RUN THE MAIN FUNCTION FOR AS MANY CDNs AS REQUIRED
 ####
+CDN_1_ROOTDIR="cdn.leelasrecipes.com" ;
+CDN_1_IMAGES_PATH_IN_REPO="$REPO_LEELA/static/" ;
+MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "$CDN_1_IMAGES_PATH_IN_REPO" "$WWW_RESPONSIVE_ROOTDIR/$CDN_1_ROOTDIR/images" ;
+####
+#CDN_2_ROOTDIR="cdn.mantracoaching.in" ;
+#CDN_2_IMAGES_PATH_IN_REPO="$REPO_MANTRA/static/" ;
+#MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "$CDN_2_IMAGES_PATH_IN_REPO" "$WWW_RESPONSIVE_ROOTDIR/$CDN_2_ROOTDIR/images" ;
+
+
 ################################################################################
 ############################### PROGRAM ENDS ###################################
 ################################################################################
