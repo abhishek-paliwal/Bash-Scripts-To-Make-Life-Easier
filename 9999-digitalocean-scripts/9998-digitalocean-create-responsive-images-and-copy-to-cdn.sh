@@ -150,14 +150,16 @@ function MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS () {
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ## RUN THE MAIN FUNCTION FOR AS MANY CDNs AS REQUIRED
-####
+#### for cdn 1
 CDN_1_ROOTDIR="cdn.leelasrecipes.com" ;
 CDN_1_IMAGES_PATH_IN_REPO="$REPO_LEELA/static/" ;
 MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "$CDN_1_IMAGES_PATH_IN_REPO" "$WWW_RESPONSIVE_ROOTDIR/$CDN_1_ROOTDIR/images" ;
-####
+rclone check $WWW_RESPONSIVE_ROOTDIR/$CDN_1_ROOTDIR dreamobjects:$CDN_1_ROOTDIR ; ## syncing to cdn bucket
+#### for cdn 2
 #CDN_2_ROOTDIR="cdn.mantracoaching.in" ;
 #CDN_2_IMAGES_PATH_IN_REPO="$REPO_MANTRA/static/" ;
 #MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS "$CDN_2_IMAGES_PATH_IN_REPO" "$WWW_RESPONSIVE_ROOTDIR/$CDN_2_ROOTDIR/images" ;
+#rclone check $WWW_RESPONSIVE_ROOTDIR/$CDN_2_ROOTDIR dreamobjects:$CDN_2_ROOTDIR ; ## syncing to cdn bucket
 
 
 ################################################################################
