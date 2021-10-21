@@ -70,21 +70,15 @@ function FUNC_create_responsive_images () {
     ## Calculate md5sums after of the existing images
     FUNC_calc_md5sums $md51
 
-    ## The following command splits a large text file into separate smaller 
-    ## text files as xaa ,xab, xac, xad, etc, each containing 2000 lines
-    echo ">> Splitting big $ALL_IMAGES_FILE to chunks with 2000 lines each ..." ;
-    rm $WORKDIR/xa* ; ## remove these files if already exist
-    split -l 2000 $ALL_IMAGES_FILE ;
-
     ## Read these files and copy all images to orig dir
-    echo ">> Copying all files => (from $ALL_IMAGES_FILE)(to $originalImageDir )" ;
-    for myfile in $WORKDIR/xa* ; do cp $(cat $myfile) $originalImageDir/ ; done
-
+    echo; echo ">> Copying all files => (from $ALL_IMAGES_FILE)(to $originalImageDir )" ;
+    while read imagepath; do cp "$imagepath" $originalImageDir/ ; done < $ALL_IMAGES_FILE
+    
     ## Calculate md5sums after copying images
     FUNC_calc_md5sums $md52
 
     ## Finding diff and printing filepaths
-    echo ">> Doing diff of md5sums ..." ;
+    echo; echo ">> Doing diff of md5sums ..." ;
     diff $md51 $md52 | grep '>' | awk '{print $3}' | sort > $FINAL_FILE
 
     ## Read file line by line and create responsive image
@@ -107,7 +101,7 @@ function FUNC_create_responsive_images () {
             imagePath_basename=$(basename $imagePath) ;
             outputImage="$resizeDir/$imageRes-$imagePath_basename" ;
             mkdir -p $resizeDir ;
-            convert $line -resize "$resizeDimen" -quality 80 "$outputImage" ;
+            convert "$line" -resize "$resizeDimen" -quality 80 "$outputImage" ;
         ####           
         done
     ####
@@ -120,7 +114,7 @@ function FUNC_create_responsive_images () {
 function FUNC_calc_md5sums() {
     ## Calculate md5sums of the existing files
     outputFile="$1" ;
-    echo "Writing md5sums to => $outputFile" ; 
+    echo; echo "Writing md5sums to => $outputFile" ; 
     fd --search-path="$originalImageDir" -x md5sum > $WORKDIR/tmp-md5.txt ;
     sort $WORKDIR/tmp-md5.txt > "$outputFile" ;
 }
@@ -129,7 +123,7 @@ function FUNC_calc_md5sums() {
 function FUNC_ONLY_RUN_FOR_THIS_USER () {
     DirImages="$1" ;
     ## ## Only run this program for this user
-    echo "IMPORTANT NOTE: This script only runs on MAC OS." ; 
+    echo; echo "IMPORTANT NOTE: This script only runs on MAC OS." ; 
     if [ "$USER" == "abhishek" ] ; then
         echo "This is MAC OS. So, script will remove extended image attributes ..." ;
         xattr -rc "$1" ;
@@ -149,42 +143,15 @@ RESPONSIVE_IMAGES_ROOTDIR="$REPO_MGGK/static/wp-content/responsive-images" ;
 ##
 tmpA1="$WORKDIR/tmpA1-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 tmpA2="$WORKDIR/tmpA2-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+
+echo; echo ">>  Image addition part 1 = Adding all images in REPO_MGGK + REPO_ZZMGGK ..."
 echo "## Created by script: " > $tmpA1
-#####################################
+fd -I -e jpg -e png --search-path="$REPO_MGGK/static/" | grep -iv 'responsive' | grep -iv 'recipe-steps-images' >> $tmpA1
+fd -I -e jpg -e png --search-path="$REPO_ZZMGGK/static/" | grep -iv 'responsive' | grep -iv 'recipe-steps-images' >> $tmpA1
 
-## Image addition part 1.1 = Adding all images with hugo figure tags in MGGK HUGO DIR
-echo ">> Image addition part 1.1 = Adding all images with hugo figure tags in MGGK HUGO DIR ... " ;     
-for x in $(grep -irl "{{< figure" $IMAGES_ROOTDIR ) ; 
-do 
-    grep -i "{{< figure" $x | sd ' ' '\n' | grep 'src' | sd '"' '' | sd 'src=' '' >> $tmpA1 ;
-done
+echo; echo ">> Sorting image paths ..." ; 
+cat $tmpA1 | grep -iv '#' | sort | uniq > $tmpA2
 
-## Image addition part 1.2 = Adding all images with hugo figure tags in ZZ MGGK HUGO DIR
-echo ">> Image addition part 1.2 = Adding all images with hugo figure tags in ZZ MGGK HUGO DIR ... " ;     
-for x in $(grep -irl "{{< figure" $IMAGES_ROOTDIR_ZZMGGK ) ; 
-do 
-    grep -i "{{< figure" $x | sd ' ' '\n' | grep 'src' | sd '"' '' | sd 'src=' '' >> $tmpA1 ;
-done
-
-## Image addition part 1.3 = Adding all featured images to the list of images in MGGK + ZZMGGK DIR
-echo ">> Image addition part 1.3 = Adding all featured images to the list of images in MGGK + ZZMGGK DIR ... " ;
-insertURL="https://www.mygingergarlickitchen.com" ;
-grep -irh 'featured_image:' $IMAGES_ROOTDIR | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' >> $tmpA1 ;
-grep -irh 'recipe_code_image:' $IMAGES_ROOTDIR | sd 'recipe_code_image:' '' | sd ' ' '' | sd '"' '' >> $tmpA1 ;
-##
-grep -irh 'featured_image:' $IMAGES_ROOTDIR_ZZMGGK | sd 'featured_image:' '' | sd ' ' '' | sd '"' '' >> $tmpA1 ;
-grep -irh 'recipe_code_image:' $IMAGES_ROOTDIR_ZZMGGK | sd 'recipe_code_image:' '' | sd ' ' '' | sd '"' '' >> $tmpA1 ;
-
-## Image addition part 1.4 = Adding all markdown formatted images in MGGK HUGO DIR + ZZMGGK DIR
-echo ">> Image addition part 1.4 = Adding all markdown formatted images in MGGK HUGO DIR + ZZMGGK DIR ... " ;
-grep -irh '.jpg' $IMAGES_ROOTDIR | grep -io '/wp-content.*.jpg' | grep -iv 'responsive' | sd "('|\")" "" | awk '{print $1}' >> $tmpA1 ;
-grep -irh '.jpg' $IMAGES_ROOTDIR_ZZMGGK | grep -io '/wp-content.*.jpg' | grep -iv 'responsive' | sd "('|\")" "" | awk '{print $1}' >> $tmpA1 ;
-
-
-########################################
-## Converting urls to local file paths
-echo ">> Converting urls to local file paths ..." ; 
-cat $tmpA1 | grep -iv '#' | sd "$insertURL" "" | sed "s+^+$insertURL+g" | sd "$insertURL" "$REPO_MGGK/static" | sort | uniq > $tmpA2
 ## Call main function
 FUNC_create_responsive_images "$RESPONSIVE_IMAGES_ROOTDIR" "$tmpA2" "tmpA" ;
 ##------------------------------------------------------------------------------
@@ -199,19 +166,14 @@ RESPONSIVE_IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/responsive-steps-i
 ##
 tmpB1="$WORKDIR/tmpB1-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 tmpB2="$WORKDIR/tmpB2-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+
+echo; echo ">> Image addition part 2 = Adding all recipe steps images to the list ... " ;
 echo "## Created by script: " > $tmpB1
+fd -I -e jpg -e png --search-path="$REPO_MGGK/static/wp-content/recipe-steps-images/" >> $tmpB1
 
-#####################################
-## Image addition part 2.1 = Adding all recipe steps imagesto the list of images
-echo ">> Image addition part 2.1 = Adding all recipe steps imagesto the list of images ... " ;
-replaceThis1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
-replaceThis2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
-fd --search-path="$IMAGES_ROOTDIR_STEPS" -a -e jpg | sd "$replaceThis1" "" | sd "$replaceThis2" "" | sd '^' 'https://www.mygingergarlickitchen.com' >> $tmpB1
+echo; echo ">> Sorting steps image paths ..." ; 
+cat $tmpB1 | grep -iv '#' | sort | uniq > $tmpB2
 
-########################################
-## Converting urls to local file paths
-echo ">> Converting urls to local file paths ..." ; 
-cat $tmpB1 | grep -iv '#' | sd "$insertURL" "" | sed "s+^+$insertURL+g" | sd "$insertURL" "$REPO_MGGK/static" | sort | uniq > $tmpB2
 ## Call main function
 FUNC_create_responsive_images "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" "$tmpB2" "tmpB" ;
 ##------------------------------------------------------------------------------
@@ -219,7 +181,7 @@ FUNC_create_responsive_images "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" "$tmpB2" "tmpB"
 ##------------------------------------------------------------------------------
 
 ## PRINGING WORD COUNTS FOR ALL FILES IN WORKDIR
-echo ">> PRINGING WORD COUNTS FOR ALL FILES IN WORKDIR ..." ;
+echo; echo ">> PRINGING WORD COUNTS FOR ALL FILES IN WORKDIR ..." ;
 wc $WORKDIR/* ;
 ################################################################################
 ############################### PROGRAM ENDS ###################################
