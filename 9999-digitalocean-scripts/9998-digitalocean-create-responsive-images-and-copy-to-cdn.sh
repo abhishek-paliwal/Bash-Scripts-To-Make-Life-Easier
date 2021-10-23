@@ -153,9 +153,11 @@ function MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS () {
 
     ## Syncing to cdn bucket and checking its integrity
     echo; echo ">> Syncing to cdn bucket and checking its integrity using rclone ..." ;
-    echo ">> Syncing ..." ; 
+    ## IF using native aws cli commands, then uncomment the following: 
+    #aws --profile=dreamobjects --endpoint-url https://objects-us-east-1.dream.io s3 sync $WWW_RESPONSIVE_ROOTDIR/$CDN_ROOTDIR s3://$CDN_ROOTDIR ;
+    echo ">> Syncing to bucket using rclone ..." ; 
     rclone sync --fast-list --checksum $WWW_RESPONSIVE_ROOTDIR/$CDN_ROOTDIR dreamobjects:$CDN_ROOTDIR ;
-    echo ">> Checking integrity ..." ; 
+    echo ">> Checking integrity of bucket using rclone ..." ; 
     rclone check $WWW_RESPONSIVE_ROOTDIR/$CDN_ROOTDIR dreamobjects:$CDN_ROOTDIR ;
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
