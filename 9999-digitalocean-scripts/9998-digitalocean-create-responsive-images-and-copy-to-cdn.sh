@@ -153,7 +153,9 @@ function MAIN_FUNC_GET_IMAGES_AND_CREATE_RESPONSIVE_VERSIONS () {
 
     ## Syncing to cdn bucket and checking its integrity
     echo; echo ">> Syncing to cdn bucket and checking its integrity using rclone ..." ;
+    echo ">> Syncing ..." ; 
     rclone sync --fast-list --checksum $WWW_RESPONSIVE_ROOTDIR/$CDN_ROOTDIR dreamobjects:$CDN_ROOTDIR ;
+    echo ">> Checking integrity ..." ; 
     rclone check $WWW_RESPONSIVE_ROOTDIR/$CDN_ROOTDIR dreamobjects:$CDN_ROOTDIR ;
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
