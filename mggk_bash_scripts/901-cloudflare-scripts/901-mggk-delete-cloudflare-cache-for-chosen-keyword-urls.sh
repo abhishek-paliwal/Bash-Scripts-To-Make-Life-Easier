@@ -39,27 +39,53 @@ step0File="$WORKDIR/$prefixFileName-step0.txt" ;
 step1File="$WORKDIR/$prefixFileName-step1.txt" ; 
 step2File="$WORKDIR/$prefixFileName-step2.txt" ;
 step3FileHTML="$WORKDIR/$prefixFileName-step3.html" ;
+#
+cdn_images_file="$WORKDIR/_cdn_images_listing.txt" ;
+echo > $cdn_images_file ## initializing
+
+##------------------------------------------------------------------------------
+function FUNC_create_CDN_images_listing () {
+    ## function takes 2 arguments // <dir images> <cdn images path> 
+    DIR_IMAGES="$1" ;
+    cdn_imagesPath="$2" ; 
+    outFile="$cdn_images_file" ;
+    ## create listing for all possible image resoulutions
+    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/800px/800px-" >> $cdn_images_file
+    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/675px/675px-" >> $cdn_images_file
+    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/550px/550px-" >> $cdn_images_file
+    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/425px/425px-" >> $cdn_images_file
+    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/350px/350px-" >> $cdn_images_file
+    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/original/" >> $cdn_images_file
+    ##
+    echo >> $cdn_images_file ; ## adding blank line
+    echo ">> DONE = CDN images listing for => $DIR_IMAGES" ;
+}
+##------------------------------------------------------------------------------
+
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## Getting the correct cloudflare zone id based upon cli argument
 case "$1" in
     leelasrecipes)
         CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_LEELASRECIPES
-        DIR_IMAGES="$REPO_LEELA/static/"
+        DIR_IMAGES="$REPO_LEELA/static/" ;
         replaceThis1="/Users/abhishek/GitHub/2020-LEELA-RECIPES/static/" ; 
         replaceThis2="/home/ubuntu/GitHub/2020-LEELA-RECIPES/static/" ; 
-        replaceTo="https://www.leelasrecipes.com/" ; 
+        replaceTo="https://www.leelasrecipes.com/" ;
+        ## add cdn block such as below for any repos which has cdn images
+        cdn_imagesPath="https://cdn.leelasrecipes.com/images" ; 
+        FUNC_create_CDN_images_listing "$DIR_IMAGES" "$cdn_imagesPath" ;
         ;;
     mggk)
         CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_MGGK
-        DIR_IMAGES="$REPO_MGGK/static/wp-content/"
+        DIR_IMAGES="$REPO_MGGK/static/wp-content/" ;
         replaceThis1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
         replaceThis2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
         replaceTo="https://www.mygingergarlickitchen.com/" ; 
         ;;
     *)
         CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_MGGK
-        DIR_IMAGES="$REPO_MGGK/static/wp-content/"
+        DIR_IMAGES="$REPO_MGGK/static/wp-content/" ;
         replaceThis1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
         replaceThis2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
         replaceTo="https://www.mygingergarlickitchen.com/" ; 
@@ -84,6 +110,9 @@ function step0_FUNC_cloudflare_search_image_paths_containing_keyword () {
     outFile="$step0File" ; ## step0File
     echo "#" > $tmpFile ;
     fd -I -t f -e jpg -e png -e jpeg -e gif --search-path="$DIR_IMAGES" "$myKeyword" | sort >> $tmpFile
+    ## appending cdn images for this keyword
+    sort "$cdn_images_file" | grep -i "$myKeyword"  >> $tmpFile
+    ##
     cat $tmpFile | grep -iv '#' > $outFile ;
     echo ">> DONE = step0_FUNC_cloudflare_search_image_paths_containing_keyword " ;
 }
