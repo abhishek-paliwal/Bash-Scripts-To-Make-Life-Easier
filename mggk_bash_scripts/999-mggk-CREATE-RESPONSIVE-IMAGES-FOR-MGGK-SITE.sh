@@ -157,6 +157,7 @@ FUNC_create_responsive_images "$RESPONSIVE_IMAGES_ROOTDIR" "$tmpA2" "tmpA" ;
 CDN_ROOTDIR="cdn.mygingergarlickitchen.com" ;
 CDN_PATH="$REPO_CDN/$CDN_ROOTDIR" ;
 rclone sync --fast-list --checksum $CDN_PATH dreamobjects:$CDN_ROOTDIR ;
+rclone check $CDN_PATH dreamobjects:$CDN_ROOTDIR ;
 
 ##------------------------------------------------------------------------------
 ## END: BLOCK 1
