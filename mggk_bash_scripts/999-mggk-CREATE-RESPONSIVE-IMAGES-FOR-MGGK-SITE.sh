@@ -152,6 +152,12 @@ cat $tmpA1 | grep -iv '#' | sort | uniq > $tmpA2
 
 ## Call main function
 FUNC_create_responsive_images "$RESPONSIVE_IMAGES_ROOTDIR" "$tmpA2" "tmpA" ;
+
+## Sync images to CDN on dreamobjects
+CDN_ROOTDIR="cdn.mygingergarlickitchen.com" ;
+CDN_PATH="$REPO_CDN/$CDN_ROOTDIR" ;
+rclone sync --fast-list --checksum $CDN_PATH dreamobjects:$CDN_ROOTDIR ;
+
 ##------------------------------------------------------------------------------
 ## END: BLOCK 1
 ##------------------------------------------------------------------------------
