@@ -39,7 +39,7 @@ function FUNC_check_hostname_and_assign_proper_variables () {
     ## 
     if [ "$HOSTNAME" == "ubuntu1804-digitalocean-bangalore-droplet" ] ; then
         echo ">> NOTE: This is digital ocean server, hence the script will continue ..." ;
-        WWW_RESPONSIVE_ROOTDIR="/home/WWW_RESPONSIVE_IMAGES" ;
+        WWW_RESPONSIVE_ROOTDIR="$REPO_CDN" ;
     else
         echo ">> NOTE: This is NOT digital ocean server, hence the script will EXIT." ;
         exit 1 ;
