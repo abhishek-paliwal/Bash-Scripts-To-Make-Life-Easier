@@ -16,6 +16,8 @@ USAGE: $(basename $0)
     ## from all md files and creates 
     ## responsive images to be read by the srcset html image tags by the browser.
     ## Example image resolutions include: 350px, 425px, 550px, 675px, 800px, etc.
+    #### NOTE: This program uses rclone utility => brew install rclone
+    #### NOTE: This program uses awscli utility => brew install awscli
     ################################################################################
     ## CREATED BY: PALI
     ## CREATED ON: July 18, 2021
@@ -153,9 +155,12 @@ cat $tmpA1 | grep -iv '#' | sort | uniq > $tmpA2
 ## Call main function
 FUNC_create_responsive_images "$RESPONSIVE_IMAGES_ROOTDIR" "$tmpA2" "tmpA" ;
 
-## Sync images to CDN on dreamobjects
+## Sync images to CDN on dreamobjects bucket using rclone OR awscli
 CDN_ROOTDIR="cdn.mygingergarlickitchen.com" ;
 CDN_PATH="$REPO_CDN/$CDN_ROOTDIR" ;
+## IF using native aws cli commands, then uncomment the following:
+#aws --profile=dreamobjects --endpoint-url https://objects-us-east-1.dream.io s3 sync $CDN_PATH s3://$CDN_ROOTDIR ;
+##
 rclone sync --fast-list --checksum $CDN_PATH dreamobjects:$CDN_ROOTDIR ;
 rclone check $CDN_PATH dreamobjects:$CDN_ROOTDIR ;
 
