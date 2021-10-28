@@ -135,19 +135,17 @@ function FUNC_ONLY_RUN_FOR_THIS_USER () {
 ##################################################################################
 
 ##------------------------------------------------------------------------------
-## BEGIN: BLOCK 1 = Creating responsive images for all figure images + all featured images
+## BEGIN: BLOCK 1 = Creating responsive images for all images + steps images present in wp content dir
 ##------------------------------------------------------------------------------
-IMAGES_ROOTDIR="$REPO_MGGK/content/" ;
-IMAGES_ROOTDIR_ZZMGGK="$REPO_ZZMGGK/content/" ; 
-RESPONSIVE_IMAGES_ROOTDIR="$REPO_MGGK/static/wp-content/responsive-images" ;
+RESPONSIVE_IMAGES_ROOTDIR="$REPO_CDN/cdn.mygingergarlickitchen.com/images" ;
 ##
 tmpA1="$WORKDIR/tmpA1-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 tmpA2="$WORKDIR/tmpA2-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 
 echo; echo ">>  Image addition part 1 = Adding all images in REPO_MGGK + REPO_ZZMGGK ..."
 echo "## Created by script: " > $tmpA1
-fd -I -e jpg -e png --search-path="$REPO_MGGK/static/" | grep -iv 'responsive' | grep -iv 'recipe-steps-images' >> $tmpA1
-fd -I -e jpg -e png --search-path="$REPO_ZZMGGK/static/" | grep -iv 'responsive' | grep -iv 'recipe-steps-images' >> $tmpA1
+fd -I -e jpg -e png --search-path="$REPO_MGGK/static/"   >> $tmpA1
+fd -I -e jpg -e png --search-path="$REPO_ZZMGGK/static/" >> $tmpA1
 
 echo; echo ">> Sorting image paths ..." ; 
 cat $tmpA1 | grep -iv '#' | sort | uniq > $tmpA2
@@ -156,28 +154,6 @@ cat $tmpA1 | grep -iv '#' | sort | uniq > $tmpA2
 FUNC_create_responsive_images "$RESPONSIVE_IMAGES_ROOTDIR" "$tmpA2" "tmpA" ;
 ##------------------------------------------------------------------------------
 ## END: BLOCK 1
-##------------------------------------------------------------------------------
-
-##------------------------------------------------------------------------------
-## BEGIN: BLOCK 2 = Creating responsive images for recipe steps images
-##------------------------------------------------------------------------------
-IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/recipe-steps-images/" ;
-RESPONSIVE_IMAGES_ROOTDIR_STEPS="$REPO_MGGK/static/wp-content/responsive-steps-images" ;
-##
-tmpB1="$WORKDIR/tmpB1-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
-tmpB2="$WORKDIR/tmpB2-$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
-
-echo; echo ">> Image addition part 2 = Adding all recipe steps images to the list ... " ;
-echo "## Created by script: " > $tmpB1
-fd -I -e jpg -e png --search-path="$REPO_MGGK/static/wp-content/recipe-steps-images/" >> $tmpB1
-
-echo; echo ">> Sorting steps image paths ..." ; 
-cat $tmpB1 | grep -iv '#' | sort | uniq > $tmpB2
-
-## Call main function
-FUNC_create_responsive_images "$RESPONSIVE_IMAGES_ROOTDIR_STEPS" "$tmpB2" "tmpB" ;
-##------------------------------------------------------------------------------
-## END: BLOCK 2
 ##------------------------------------------------------------------------------
 
 ## PRINGING WORD COUNTS FOR ALL FILES IN WORKDIR
