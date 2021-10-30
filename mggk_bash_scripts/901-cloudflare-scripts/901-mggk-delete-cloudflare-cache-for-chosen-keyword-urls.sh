@@ -49,15 +49,16 @@ function FUNC_create_CDN_images_listing () {
     DIR_IMAGES="$1" ;
     cdn_imagesPath="$2" ; 
     outFile="$cdn_images_file" ;
-    ## create listing for all possible image resoulutions
-    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/800px/800px-" >> $cdn_images_file
-    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/675px/675px-" >> $cdn_images_file
-    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/550px/550px-" >> $cdn_images_file
-    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/425px/425px-" >> $cdn_images_file
-    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/350px/350px-" >> $cdn_images_file
-    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/original/" >> $cdn_images_file
+    echo > $outFile ## initializing
+    ## create listing for all possible image resolutions
+    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/800px/800px-" >> $outFile
+    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/675px/675px-" >> $outFile
+    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/550px/550px-" >> $outFile
+    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/425px/425px-" >> $outFile
+    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/350px/350px-" >> $outFile
+    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/original/" >> $outFile
     ##
-    echo >> $cdn_images_file ; ## adding blank line
+    echo >> $outFile ; ## adding blank line
     echo ">> DONE = CDN images listing for => $DIR_IMAGES" ;
 }
 ##------------------------------------------------------------------------------
@@ -82,14 +83,20 @@ case "$1" in
         replaceThis1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
         replaceThis2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
         replaceTo="https://www.mygingergarlickitchen.com/" ; 
+        ## add cdn block such as below for any repos which has cdn images
+        cdn_imagesPath="https://cdn.mygingergarlickitchen.com/images" ; 
+        FUNC_create_CDN_images_listing "$DIR_IMAGES" "$cdn_imagesPath" ;
         ;;
     *)
         CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_MGGK
         DIR_IMAGES="$REPO_MGGK/static/wp-content/" ;
         replaceThis1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
         replaceThis2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
-        replaceTo="https://www.mygingergarlickitchen.com/" ; 
-esac
+        replaceTo="https://www.mygingergarlickitchen.com/" ;
+        ## add cdn block such as below for any repos which has cdn images
+        cdn_imagesPath="https://cdn.mygingergarlickitchen.com/images" ; 
+        FUNC_create_CDN_images_listing "$DIR_IMAGES" "$cdn_imagesPath" ;
+ esac
 echo ">> CHOSEN ZONE ID => $CLOUDFLARE_ZONE_ID" ; 
 echo ">> CHOSEN DIR FOR IMAGES => $DIR_IMAGES" ; 
 echo; 
