@@ -45,18 +45,19 @@ echo > $cdn_images_file ## initializing
 
 ##------------------------------------------------------------------------------
 function FUNC_create_CDN_images_listing () {
-    ## function takes 2 arguments // <dir images> <cdn images path> 
+    ## function takes 3 arguments // <dir images> <cdn images path> <search keyword>
     DIR_IMAGES="$1" ;
     cdn_imagesPath="$2" ; 
+    myKeyword="$3" ;
     outFile="$cdn_images_file" ;
     echo > $outFile ## initializing
     ## create listing for all possible image resolutions
-    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/800px/800px-" >> $outFile
-    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/675px/675px-" >> $outFile
-    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/550px/550px-" >> $outFile
-    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/425px/425px-" >> $outFile
-    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/350px/350px-" >> $outFile
-    fd -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sd '^' "$cdn_imagesPath/original/" >> $outFile
+    fd "$myKeyword" -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sed "s|^|$cdn_imagesPath/800px/800px-|g" >> $outFile
+    fd "$myKeyword" -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sed "s|^|$cdn_imagesPath/675px/675px-|g" >> $outFile
+    fd "$myKeyword" -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sed "s|^|$cdn_imagesPath/550px/550px-|g" >> $outFile
+    fd "$myKeyword" -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sed "s|^|$cdn_imagesPath/425px/425px-|g" >> $outFile
+    fd "$myKeyword" -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sed "s|^|$cdn_imagesPath/350px/350px-|g" >> $outFile
+    fd "$myKeyword" -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sed "s|^|$cdn_imagesPath/original/|g" >> $outFile
     ##
     echo >> $outFile ; ## adding blank line
     echo ">> DONE = CDN images listing for => $DIR_IMAGES" ;
@@ -75,7 +76,6 @@ case "$1" in
         replaceTo="https://www.leelasrecipes.com/" ;
         ## add cdn block such as below for any repos which has cdn images
         cdn_imagesPath="https://cdn.leelasrecipes.com/images" ; 
-        FUNC_create_CDN_images_listing "$DIR_IMAGES" "$cdn_imagesPath" ;
         ;;
     mggk)
         CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_MGGK
@@ -85,7 +85,6 @@ case "$1" in
         replaceTo="https://www.mygingergarlickitchen.com/" ; 
         ## add cdn block such as below for any repos which has cdn images
         cdn_imagesPath="https://cdn.mygingergarlickitchen.com/images" ; 
-        FUNC_create_CDN_images_listing "$DIR_IMAGES" "$cdn_imagesPath" ;
         ;;
     *)
         CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_MGGK
@@ -95,7 +94,6 @@ case "$1" in
         replaceTo="https://www.mygingergarlickitchen.com/" ;
         ## add cdn block such as below for any repos which has cdn images
         cdn_imagesPath="https://cdn.mygingergarlickitchen.com/images" ; 
-        FUNC_create_CDN_images_listing "$DIR_IMAGES" "$cdn_imagesPath" ;
  esac
 echo ">> CHOSEN ZONE ID => $CLOUDFLARE_ZONE_ID" ; 
 echo ">> CHOSEN DIR FOR IMAGES => $DIR_IMAGES" ; 
@@ -116,9 +114,9 @@ function step0_FUNC_cloudflare_search_image_paths_containing_keyword () {
     ## function takes no arguments 
     outFile="$step0File" ; ## step0File
     echo "#" > $tmpFile ;
-    fd -I -t f -e jpg -e png -e jpeg -e gif --search-path="$DIR_IMAGES" "$myKeyword" | sort >> $tmpFile
+    fd -I -t f -e jpg -e png -e jpeg -e gif --search-path="$DIR_IMAGES" "$myKeyword" | sort >> $tmpFile ;
     ## appending cdn images for this keyword
-    sort "$cdn_images_file" | grep -i "$myKeyword"  >> $tmpFile
+    sort "$cdn_images_file" | grep -i "$myKeyword"  >> $tmpFile ;
     ##
     cat $tmpFile | grep -iv '#' > $outFile ;
     echo ">> DONE = step0_FUNC_cloudflare_search_image_paths_containing_keyword " ;
@@ -188,6 +186,7 @@ function step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls () {
 ################################################################################
 
 ## CALLING FUNCTIONS
+FUNC_create_CDN_images_listing "$DIR_IMAGES" "$cdn_imagesPath" "$myKeyword" ;
 step0_FUNC_cloudflare_search_image_paths_containing_keyword
 step1_FUNC_cloudflare_search_image_urls_containing_keyword ;
 step2_FUNC_cloudflare_create_html_page_with_keyword_urls ;
