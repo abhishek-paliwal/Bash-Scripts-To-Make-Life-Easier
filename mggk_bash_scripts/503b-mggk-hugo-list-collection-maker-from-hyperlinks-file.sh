@@ -164,7 +164,8 @@ while read -r line; do
     
     ## EXTRACTING NEEDED DETAILS FROM MD FILE THUS FOUND
     MGGK_BASEURL="https://www.mygingergarlickitchen.com" ;
-    MGGK_BASEURL_RESPONSIVE="https://www.mygingergarlickitchen.com/wp-content/responsive-images" ;
+    #MGGK_BASEURL_RESPONSIVE="https://www.mygingergarlickitchen.com/wp-content/responsive-images" ;
+    MGGK_BASEURL_RESPONSIVE="https://cdn.mygingergarlickitchen.com/images" ;
     ##
     TITLE=$(grep -irh '^title: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed 's/title: //g' ) ;
     META_DESCRIPTION=$(grep -irh '^yoast_description: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed 's/yoast_description: //g' | cut -c1-180 ) ;
