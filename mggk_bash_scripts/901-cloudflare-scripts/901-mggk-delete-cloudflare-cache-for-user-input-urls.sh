@@ -133,7 +133,7 @@ elif [ "$myKeyword" == "2" ]; then
 elif [ "$myKeyword" == "99" ]; then
     echo ">> The cache will be deleted for all current urls in MGGK sitemap.xml file." ;
     allUrlsFile="https://downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs/mggk_summary_cloudflare_AllValidSiteUrls.txt" ;
-    curl -s "$allUrlsFile" --output "$step1File" ;
+    curl -sk "$allUrlsFile" --output "$step1File" ;
 else 
     echo ">> Cloudflare cache will be deleted for this URL: $myKeyword" ;
     echo "$myKeyword" > $step1File ; 
