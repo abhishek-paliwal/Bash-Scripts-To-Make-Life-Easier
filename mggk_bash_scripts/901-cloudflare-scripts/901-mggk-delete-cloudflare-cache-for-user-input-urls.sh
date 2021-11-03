@@ -50,6 +50,9 @@ case "$1" in
     leelasrecipes)
         CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_LEELASRECIPES
         ;;
+    ado)
+        CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_ADO
+        ;;
     mggk)
         CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_MGGK
         ;;
