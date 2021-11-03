@@ -18,7 +18,8 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 
 echo "#################" #Blank line
-DIRPATH="$HOME_WINDOWS/Dropbox/Public/_TO_SYNC_adoria.xyz"
+#DIRPATH="$HOME_WINDOWS/Dropbox/Public/_TO_SYNC_adoria.xyz"
+DIRPATH="$REPO_ADO"
 MAIN_IMAGES_FOLDER="drawings"
 ROOT="$DIRPATH/$MAIN_IMAGES_FOLDER"
 
