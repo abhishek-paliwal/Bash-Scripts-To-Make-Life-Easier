@@ -182,6 +182,7 @@ pali_imagemagick_fixed_resize_images_by_width_or_height
 pali_imagemagick_create_10_random_images
 901-mggk-delete-cloudflare-cache-for-chosen-keyword-urls
 901-mggk-delete-cloudflare-cache-for-user-input-urls
+901-mggk-delete-cloudflare-cache-for-user-input-urls-adoria
 901-mggk-get-all-image-links-from-mggk-webpages-for-cloudflare-cache
 901-mggk-get-and-save-cloudflare-cache-status-for-all-valid-mggk-urls-1K-150K
 902-linkchecker-extract-all-internal-external-images-links-from-given-urls
