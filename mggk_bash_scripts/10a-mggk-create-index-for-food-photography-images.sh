@@ -70,11 +70,11 @@ echo "<html lang='en'>
     <title>Food Photography | My Ginger Garlic Kitchen</title>
 
     <!-- Bootstrap core CSS -->
-    <link href='https://adoria.xyz/_static_code_files/bootstrap-alpha6-js-css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://www.mygingergarlickitchen.com/_static_code_files/bootstrap-alpha6-js-css/bootstrap.min.css' rel='stylesheet'>
 
     <!-- Custom styles for this template -->
-    <link href='https://adoria.xyz/_static_code_files/bootstrap-alpha6-js-css/starter-template.css' rel='stylesheet'>
-    <link href='https://adoria.xyz/_static_code_files/bootstrap-alpha6-js-css/bootstrap-fullpage-cover.css' rel='stylesheet'>
+    <link href='https://www.mygingergarlickitchen.com/_static_code_files/bootstrap-alpha6-js-css/starter-template.css' rel='stylesheet'>
+    <link href='https://www.mygingergarlickitchen.com/_static_code_files/bootstrap-alpha6-js-css/bootstrap-fullpage-cover.css' rel='stylesheet'>
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,900' rel='stylesheet'>
 
@@ -314,13 +314,13 @@ echo "</div><!-- Container DIV ENDS -->" >> $OUTPUT
 
 echo "<!-- Bootstrap core JavaScript ================================ -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src='https://adoria.xyz/_static_code_files/bootstrap-alpha6-js-css/jquery-3.1.1.slim.min.js'></script>
+<script src='https://www.mygingergarlickitchen.com/_static_code_files/bootstrap-alpha6-js-css/jquery-3.1.1.slim.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'></script>
-<script src='https://adoria.xyz/_static_code_files/bootstrap-alpha6-js-css/bootstrap.min.js'></script>
+<script src='https://www.mygingergarlickitchen.com/_static_code_files/bootstrap-alpha6-js-css/bootstrap.min.js'></script>
 
 <!-- PACKERY - MASONRY JQuery core files -->
-<script src='https://adoria.xyz/_static_code_files/js/PACKERY.pkgd.js'></script>
-<script src='https://adoria.xyz/_static_code_files/js/IMAGESLOADED.pkgd.min.js'></script>
+<script src='https://www.mygingergarlickitchen.com/_static_code_files/js/PACKERY.pkgd.js'></script>
+<script src='https://www.mygingergarlickitchen.com/_static_code_files/js/IMAGESLOADED.pkgd.min.js'></script>
 
 
 <script>
