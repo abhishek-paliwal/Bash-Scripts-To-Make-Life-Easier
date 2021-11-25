@@ -90,8 +90,8 @@ then
     echo; echo "     >>>>>>>> BEGINNING: Backup [TO] downloads.mygingergarlickitchen.com <<<<<<<" ;
     1_backup_to_mggk_cdn ;
 
-    echo; echo "     >>>>>>>> BEGINNING: Backup [TO] https://adoria.xyz <<<<<<<" ;
-    1_backup_to_adoria_xyz ;
+    #echo; echo "     >>>>>>>> BEGINNING: Backup [TO] https://adoria.xyz <<<<<<<" ;
+    #1_backup_to_adoria_xyz ;
     ######################## END: BACKUPS TO CDN // SSH+SCP BLOCK ########################
 else
     #### FINALLY, BACKUP TO-AND-FROM DIGITALOCEAN SERVER IF NOT ON MAC ####
