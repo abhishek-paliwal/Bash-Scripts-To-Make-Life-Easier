@@ -48,16 +48,20 @@ step1File="$WORKDIR/$prefixFileName-step1.txt" ;
 ## Getting the correct cloudflare zone id based upon cli argument
 case "$1" in
     leelasrecipes)
-        CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_LEELASRECIPES
+        CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_LEELASRECIPES ;
+        XML_SITEMAP="https://www.leelasrecipes.com/sitemap.xml" ;
         ;;
     ado)
-        CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_ADO
+        CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_ADO ;
+        XML_SITEMAP="https://www.adoria.xyz/sitemap.xml" ;
         ;;
     mggk)
-        CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_MGGK
+        CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_MGGK ;
+        XML_SITEMAP="https://www.mygingergarlickitchen.com/sitemap.xml" ;
         ;;
     *)
-        CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_MGGK
+        CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_MGGK ;
+        XML_SITEMAP="https://www.mygingergarlickitchen.com/sitemap.xml" ;
 esac
 echo ">> CHOSEN ZONE ID => $CLOUDFLARE_ZONE_ID" ; echo; 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -145,9 +149,8 @@ elif [ "$myKeyword" == "3" ]; then
     echo ">> CACHE WILL BE DELETED FOR THESE URLs ..." ; 
     cat $step1File ; 
 elif [ "$myKeyword" == "99" ]; then
-    echo ">> The cache will be deleted for all current urls in MGGK sitemap.xml file." ;
-    allUrlsFile="https://downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs/mggk_summary_cloudflare_AllValidSiteUrls.txt" ;
-    curl -sk "$allUrlsFile" --output "$step1File" ;
+    echo ">> The cache will be deleted for all current urls in SITEMAP.XML file." ;
+    curl -sk "$XML_SITEMAP" | grep -i '<loc>' | sed -e 's|<loc>||g' -e 's|</loc>||g' -e 's| ||g' | sort > "$step1File" ;
 else 
     echo ">> Cloudflare cache will be deleted for this URL: $myKeyword" ;
     echo "$myKeyword" > $step1File ; 
