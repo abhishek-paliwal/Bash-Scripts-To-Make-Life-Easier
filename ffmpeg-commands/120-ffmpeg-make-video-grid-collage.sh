@@ -118,8 +118,10 @@ ffmpeg -i $inDir/1.mp4 -i $inDir/2.mp4 -i $inDir/3.mp4 -i $inDir/4.mp4 -filter_c
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CUT THE MAIN VIDEO INTO CLIPS OF CHOSEN LENGTH (IN SECONDS)
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
 echo ">> CUT THE MAIN VIDEO INTO CLIPS OF CHOSEN LENGTH (IN SECONDS) ..." ;
 echo ">>>> [HINT: You Can Convert The Main Video's Total Time In Seconds And Divide It By Number Of Clips You Want. Maybe use that time below.]" ;
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
 echo ">>>>>> ENTER EACH VIDEO DESIRED CLIP LENGTH [as hh:mm:ss, eg. 00:00:35]"
 read clipLength ;
 ##
@@ -138,10 +140,12 @@ c=1; for x in $(fd -I -t f -e mp4 output) ; do cp "$x" "$WORKDIR/$c.mp4" ; ((c++
 ##------------------------------------------------------------------------------
 ## ASK FOR USER INPUT
 ##------------------------------------------------------------------------------
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
 echo "[Enter 1 (= one)   => collage 1920x1080 (3x3 LONG)" ; 
 echo "[Enter 2 (= two)   => collage 1920x1080 (3x3 WIDE)" ; 
 echo "[Enter 3 (= three) => collage 1920x1080 (3x2 WIDE)" ; 
 echo "[Enter 4 (= four)  => collage 1920x1080 (2x2 WIDE)" ; 
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
 echo ; 
 echo ">> Select an integer from the list and enter that integer for which you want the collage for: " ;
 ##
