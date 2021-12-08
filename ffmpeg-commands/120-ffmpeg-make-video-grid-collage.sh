@@ -51,13 +51,13 @@ ffmpeg -i $inDir/1.mp4 -i $inDir/2.mp4 -i $inDir/3.mp4 -i $inDir/4.mp4 -i $inDir
     [8:v] setpts=PTS-STARTPTS, scale=360x640 [nine];
     [base][one] overlay=shortest=1:x=0:y=0 [tmp1];
     [tmp1][two] overlay=shortest=1:x=360:y=0 [tmp2];
-    [tmp2][three] overlay=shortest=1:x=640:y=0 [tmp3];
+    [tmp2][three] overlay=shortest=1:x=720:y=0 [tmp3];
     [tmp3][four] overlay=shortest=1:x=0:y=640 [tmp4];
     [tmp4][five] overlay=shortest=1:x=360:y=640 [tmp5];
-    [tmp5][six] overlay=shortest=1:x=640:y=640 [tmp6];
+    [tmp5][six] overlay=shortest=1:x=720:y=640 [tmp6];
     [tmp6][seven] overlay=shortest=1:x=0:y=1280 [tmp7];
     [tmp7][eight] overlay=shortest=1:x=360:y=1280 [tmp8];
-    [tmp8][nine] overlay=shortest=1:x=640:y=1280" -c:v libx264 $inDir/_output_video_collage_1920x1080_3x3_LONG.mp4
+    [tmp8][nine] overlay=shortest=1:x=720:y=1280" -c:v libx264 $inDir/_output_video_collage_1920x1080_3x3_LONG.mp4
 }
 ########
 function FUNC_CREATE_VIDEO_COLLAGE_3X3 () {
@@ -117,12 +117,50 @@ ffmpeg -i $inDir/1.mp4 -i $inDir/2.mp4 -i $inDir/3.mp4 -i $inDir/4.mp4 -filter_c
 }
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CUT THE MAIN VIDEO INTO CLIPS OF CHOSEN LENGTH (IN SECONDS)
+echo ">> CUT THE MAIN VIDEO INTO CLIPS OF CHOSEN LENGTH (IN SECONDS) ..." ;
+echo ">>>> [HINT: You Can Convert The Main Video's Total Time In Seconds And Divide It By Number Of Clips You Want. Maybe use that time below.]" ;
+echo ">>>>>> ENTER EACH VIDEO DESIRED CLIP LENGTH [as hh:mm:ss, eg. 00:00:35]"
+read clipLength ;
+##
+for myvideo in $(fd -e mp4 | head -1) ; do 
+    videoExtn=${myvideo##*.} ; 
+    myvideoNew=$(basename "$myvideo" | sed "s+\.+_+g" ) ; 
+    echo ">> CURRENT VIDEO: $myvideoNew" ; 
+    #ffmpeg -i $myvideo -c copy -map 0 -segment_time 00:00:55 -f segment -reset_timestamps 1 $myvideoNew-output%03d.$videoExtn ;
+    ffmpeg -i $myvideo -c copy -map 0 -segment_time "$clipLength" -f segment -reset_timestamps 1 $myvideoNew-output%03d.$videoExtn ; 
+done
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ## Copying and then renaming all mp4 files to working dir
-c=1; for x in *.mp4 ; do cp $x $WORKDIR/$c.mp4 ; ((c++)); done
+c=1; for x in $(fd -I -t f -e mp4 output) ; do cp "$x" "$WORKDIR/$c.mp4" ; ((c++)); done
 
-## Calling all functions
-FUNC_CREATE_VIDEO_COLLAGE_3X3_LONG "$WORKDIR" ;
-FUNC_CREATE_VIDEO_COLLAGE_3X3 "$WORKDIR" ;
-FUNC_CREATE_VIDEO_COLLAGE_3X2 "$WORKDIR" ;
-FUNC_CREATE_VIDEO_COLLAGE_2X2 "$WORKDIR" ;
+##------------------------------------------------------------------------------
+## ASK FOR USER INPUT
+##------------------------------------------------------------------------------
+echo "[Enter 1 (= one)   => collage 1920x1080 (3x3 LONG)" ; 
+echo "[Enter 2 (= two)   => collage 1920x1080 (3x3 WIDE)" ; 
+echo "[Enter 3 (= three) => collage 1920x1080 (3x2 WIDE)" ; 
+echo "[Enter 4 (= four)  => collage 1920x1080 (2x2 WIDE)" ; 
+echo ; 
+echo ">> Select an integer from the list and enter that integer for which you want the collage for: " ;
+##
+read myKeyword ; 
+##
+if [ -z "$myKeyword" ] ; then 
+    echo "Wrong entry. Please try again. Program will exit now." ;
+    exit 1 ; 
+elif [ "$myKeyword" == "1" ]; then
+    FUNC_CREATE_VIDEO_COLLAGE_3X3_LONG "$WORKDIR" ;
+elif [ "$myKeyword" == "2" ]; then
+    FUNC_CREATE_VIDEO_COLLAGE_3X3 "$WORKDIR" ;
+elif [ "$myKeyword" == "3" ]; then
+    FUNC_CREATE_VIDEO_COLLAGE_3X2 "$WORKDIR" ;
+elif [ "$myKeyword" == "4" ]; then
+    FUNC_CREATE_VIDEO_COLLAGE_2X2 "$WORKDIR" ;
+else 
+    echo "Wrong entry. Please try again. Program will exit now." ;
+    exit 1 ; 
+fi
+
+##------------------------------------------------------------------------------
