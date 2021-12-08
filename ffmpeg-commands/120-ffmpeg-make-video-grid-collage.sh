@@ -36,6 +36,30 @@ echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
 echo "##########################################" ; 
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function FUNC_CREATE_VIDEO_COLLAGE_3X3_LONG () {
+inDir="$1" ;
+## creating actual collage
+ffmpeg -i $inDir/1.mp4 -i $inDir/2.mp4 -i $inDir/3.mp4 -i $inDir/4.mp4 -i $inDir/5.mp4 -i $inDir/6.mp4 -i $inDir/7.mp4 -i $inDir/8.mp4 -i $inDir/9.mp4 -filter_complex "nullsrc=size=1080x1920 [base];
+    [0:v] setpts=PTS-STARTPTS, scale=360x640 [one];
+    [1:v] setpts=PTS-STARTPTS, scale=360x640 [two];
+    [2:v] setpts=PTS-STARTPTS, scale=360x640 [three];
+    [3:v] setpts=PTS-STARTPTS, scale=360x640 [four];
+    [4:v] setpts=PTS-STARTPTS, scale=360x640 [five];
+    [5:v] setpts=PTS-STARTPTS, scale=360x640 [six];
+    [6:v] setpts=PTS-STARTPTS, scale=360x640 [seven];
+    [7:v] setpts=PTS-STARTPTS, scale=360x640 [eight];
+    [8:v] setpts=PTS-STARTPTS, scale=360x640 [nine];
+    [base][one] overlay=shortest=1:x=0:y=0 [tmp1];
+    [tmp1][two] overlay=shortest=1:x=360:y=0 [tmp2];
+    [tmp2][three] overlay=shortest=1:x=640:y=0 [tmp3];
+    [tmp3][four] overlay=shortest=1:x=0:y=640 [tmp4];
+    [tmp4][five] overlay=shortest=1:x=360:y=640 [tmp5];
+    [tmp5][six] overlay=shortest=1:x=640:y=640 [tmp6];
+    [tmp6][seven] overlay=shortest=1:x=0:y=1280 [tmp7];
+    [tmp7][eight] overlay=shortest=1:x=360:y=1280 [tmp8];
+    [tmp8][nine] overlay=shortest=1:x=640:y=1280" -c:v libx264 $inDir/_output_video_collage_1920x1080_3x3_LONG.mp4
+}
+########
 function FUNC_CREATE_VIDEO_COLLAGE_3X3 () {
 inDir="$1" ;
 ## creating actual collage
@@ -98,6 +122,7 @@ ffmpeg -i $inDir/1.mp4 -i $inDir/2.mp4 -i $inDir/3.mp4 -i $inDir/4.mp4 -filter_c
 c=1; for x in *.mp4 ; do cp $x $WORKDIR/$c.mp4 ; ((c++)); done
 
 ## Calling all functions
+FUNC_CREATE_VIDEO_COLLAGE_3X3_LONG "$WORKDIR" ;
 FUNC_CREATE_VIDEO_COLLAGE_3X3 "$WORKDIR" ;
 FUNC_CREATE_VIDEO_COLLAGE_3X2 "$WORKDIR" ;
 FUNC_CREATE_VIDEO_COLLAGE_2X2 "$WORKDIR" ;
