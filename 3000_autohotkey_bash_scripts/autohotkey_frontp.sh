@@ -20,7 +20,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-BASEDIR="$HOME/Desktop/Y"
+BASEDIR="$DIR_Y"
 cd $BASEDIR
 
 echo ">>>> Current working directory is: $BASEDIR" ;
