@@ -61,8 +61,8 @@ then
     echo "creating wallpapers index in github......"
     sh $BASEPATH/2_create_wallpapers_index.sh
 
-    echo "creating ADORIA.XYZ portfolio index file in dropbox......"
-    sh $BASEPATH/10E_create_adoria_xyz_portfolio_index_page.sh
+    #echo "creating ADORIA.XYZ portfolio index file in dropbox......"
+    #sh $BASEPATH/10E_create_adoria_xyz_portfolio_index_page.sh
 
     echo "creating logos index in dropbox......"
     sh $BASEPATH/10D_create_OUR_LOGOS_indexes.sh
