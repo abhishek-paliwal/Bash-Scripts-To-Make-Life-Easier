@@ -125,7 +125,7 @@ echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 echo ">>>>>> ENTER EACH VIDEO DESIRED CLIP LENGTH [as hh:mm:ss, eg. 00:00:35]"
 read clipLength ;
 ##
-for myvideo in $(fd -e mp4 | head -1) ; do 
+for myvideo in $(fd -d1 -e mp4 | head -1) ; do 
     videoExtn=${myvideo##*.} ; 
     myvideoNew=$(basename "$myvideo" | sed "s+\.+_+g" ) ; 
     echo ">> CURRENT VIDEO: $myvideoNew" ; 
