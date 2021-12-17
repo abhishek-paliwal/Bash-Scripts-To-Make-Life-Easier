@@ -44,6 +44,7 @@ source $REPO_SCRIPTS/2000_vendor_programs/color-logger.sh
 ## SETTING VARIABLES
 WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
 mkdir -p $WORKDIR ; ## create dir if not exists
+hemingwayExtractFile="$WORKDIR/_TMP_EXTRACT_UNIQUE_HYPERLINKS_FROM_HEMINGWAY_EXPORTED.txt" ;
 echo "##########################################" ; 
 echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
 echo "##########################################" ; 
@@ -55,6 +56,14 @@ read -p "Please provide the filename containing hyperlinks in DIR_Y [press ENTER
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function FUNC_EXTRACT_UNIQUE_HYPERLINKS_FROM_HEMINGWAY_EXPORTED_MDFILE () {
+    ## This function extracts all links from all the mdfiles exported from hemingway editor (works on MAC OS)
+    for myFile in *.md ; do 
+        outFile="$hemingwayExtractFile-$(basename $myFile)" ;
+        grep -iroh '(http.*)' "$myFile" | tr -d '()' | sort -u > $outFile
+    done 
+}
+####
 function FUNC_STEP0_GET_MDFILEPATHS_FROM_HYPERLINKS () {
     ## This function reads each line from hyperlinks file and finds corresponding
     ## mdfile path in MGGK REPO
@@ -128,6 +137,7 @@ function FUNC_PRINT_FINAL_CATEGORY_LINE_TO_ADD_IN_COLLECTION_MDFILE () {
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ## Calling all functions in correct order
+FUNC_EXTRACT_UNIQUE_HYPERLINKS_FROM_HEMINGWAY_EXPORTED_MDFILE
 FUNC_STEP0_GET_MDFILEPATHS_FROM_HYPERLINKS ;
 FUNC_PRINT_EXISTING_COLLECTION_CATEGORY_NAMES ;
 FUNC_STEP1_ADD_NEW_CATEGORY_TO_ORIGINAL_MDFILES ;
