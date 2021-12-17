@@ -44,7 +44,6 @@ source $REPO_SCRIPTS/2000_vendor_programs/color-logger.sh
 ## SETTING VARIABLES
 WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
 mkdir -p $WORKDIR ; ## create dir if not exists
-hemingwayExtractFile="$WORKDIR/_TMP_EXTRACT_UNIQUE_HYPERLINKS_FROM_HEMINGWAY_EXPORTED.txt" ;
 echo "##########################################" ; 
 echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
 echo "##########################################" ; 
@@ -58,9 +57,12 @@ read -p "Please provide the filename containing hyperlinks in DIR_Y [press ENTER
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function FUNC_EXTRACT_UNIQUE_HYPERLINKS_FROM_HEMINGWAY_EXPORTED_MDFILE () {
     ## This function extracts all links from all the mdfiles exported from hemingway editor (works on MAC OS)
+    echo; echo ">> Extracting all links from all the mdfiles exported from Hemingway editor (works on MAC OS) ..." ; 
     for myFile in *.md ; do 
-        outFile="$hemingwayExtractFile-$(basename $myFile)" ;
-        grep -iroh '(http.*)' "$myFile" | tr -d '()' | sort -u > $outFile
+        outFile="$WORKDIR/hemingway-Extracted-Links-$(basename $myFile).txt" ;
+        grep -iroh '(http.*)' "$myFile" | tr -d '()' | sort -u > $outFile ;
+        echo "  >>>> FILE SAVED: $outFile" ; 
+        echo ;
     done 
 }
 ####
