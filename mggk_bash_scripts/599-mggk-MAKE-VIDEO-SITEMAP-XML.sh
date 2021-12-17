@@ -79,7 +79,17 @@ FUNCTION_DOWNLOAD_COVER_IMAGE_FROM_YOUTUBE () {
 	video_youtube_id=$1 ; ## $1= current value of youtube_video_id
 	echo "	>> DOWNLOADING THE COVER IMAGE FROM YOUTUBE AND SAVING TO LOCAL YOUTUBE COVERS DIRECTORY..." ;
 	##
-	wget "https://i.ytimg.com/vi/$video_youtube_id/maxresdefault.jpg" -O "$HUGO_CURRENT_YOUTUBE_IMAGE_COVERS_DIR/$video_youtube_id.jpg" ;
+	myImage="$HUGO_CURRENT_YOUTUBE_IMAGE_COVERS_DIR/$video_youtube_id.jpg" ;
+	wget "https://i.ytimg.com/vi/$video_youtube_id/maxresdefault.jpg" -O "$myImage" ;
+	## If maxresdefault downloaded image has zero size, then download hqdefault image 
+	minimumsize=1; 
+	actualsize=$(du -k "$myImage" | cut -f 1) ;
+	if [ $actualsize -ge $minimumsize ]; then
+		echo "	>> Size is over $minimumsize kilobytes. MAXRESDEFAULT is downloaded." ;
+	else
+		echo "	>> Size is under $minimumsize kilobytes. HQDEFAULT is downloaded." ;
+		wget "https://i.ytimg.com/vi/$video_youtube_id/hqdefault.jpg" -O "$myImage" ;
+	fi
 }
 ######### END: FUNCTION - DOWNLOADING THE COVER IMAGE FROM YOUTUBE AND SAVING TO LOCAL DIR ##########
 
