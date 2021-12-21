@@ -60,6 +60,7 @@ bootstrap_footer="</div>
 function func_convert_csv_to_html_table () {
     ##
     inFileCSV="$1" ;
+    csvDelimiter="$2" ; 
     outFileHTML="$(basename $inFileCSV).html" ;
     ##
     echo ">> CURRENT CSV FILE         => $inFileCSV" ;
@@ -68,7 +69,7 @@ function func_convert_csv_to_html_table () {
     echo "$bootstrap_header" > $outFileHTML ;
     echo "<table class='table table-striped table-hover'>" >> $outFileHTML ;
     while read INPUT ; do
-        echo "<tr><td>${INPUT//;/</td><td>}</td></tr>" >> $outFileHTML ;
+        echo "<tr><td>${INPUT//$csvDelimiter/</td><td>}</td></tr>" >> $outFileHTML ;
     done < $inFileCSV ;
     echo "</table>" >> $outFileHTML ;
     echo "$bootstrap_footer" >> $outFileHTML ;
@@ -77,7 +78,10 @@ function func_convert_csv_to_html_table () {
 
 csvDir="$(pwd)" ;
 
+echo ">> ENTER THE CSV DELIMITER TO USE: " ; 
+read csvDelimiter;
+
 ## Calling function for every csv file found
 for csvFile in $(fd --search-path="$csvDir" -e csv) ; do
-    func_convert_csv_to_html_table "$csvFile"
+    func_convert_csv_to_html_table "$csvFile" "$csvDelimiter"
 done
