@@ -124,7 +124,7 @@ echo "[Enter 99 if you want to delete cache for all urls in mggk sitemap.xml fil
 read myKeyword ; 
 ##
 if [ -z "$myKeyword" ] ; then 
-    echo "CLI Argument is empty. Please try again. Program will exit now." ;
+    echo ">> ERROR NOTE: CLI Argument is empty. Please try again. Program will exit now." ;
     exit 1 ; 
 elif [ "$myKeyword" == "0" ]; then
     echo ">> Please enter all your urls in this file (one url per line // no limit on number of urls): $step1File" ;
@@ -145,12 +145,28 @@ elif [ "$myKeyword" == "3" ]; then
     echo ">> The cache will be deleted for existing URLs containing new link [user provided keyword url] ..." ;
     echo ">>>> ENTER NEW URL KEYWORD: ";
     read newURLKeyword ; 
-    for x in $(ag -l "$newURLKeyword" "$REPO_MGGK/content/" ); do grep -irh 'url: ' $x ; done | sed -e 's/url: //g' -e 's|^|https://www.mygingergarlickitchen.com|g' > $step1File ; 
-    echo ">> CACHE WILL BE DELETED FOR THESE URLs ..." ; 
-    cat $step1File ; 
+    ####
+    if [ -z "$newURLKeyword" ] ; then 
+        echo "*** ERROR NOTE: NEW URL KEYWORD is empty. Please try again. Program will exit now. ***" ;
+        exit 1 ; 
+    else
+        for x in $(ag -l "$newURLKeyword" "$REPO_MGGK/content/" ); do grep -irh 'url: ' $x ; done | sed -e 's/url: //g' -e 's|^|https://www.mygingergarlickitchen.com|g' > $step1File ; 
+        echo ">> CACHE WILL BE DELETED FOR THESE URLs ..." ; 
+        cat $step1File ; 
+    fi
+    ####
 elif [ "$myKeyword" == "99" ]; then
-    echo ">> The cache will be deleted for all current urls in SITEMAP.XML file." ;
-    curl -sk "$XML_SITEMAP" | grep -i '<loc>' | sed -e 's|<loc>||g' -e 's|</loc>||g' -e 's| ||g' | sort > "$step1File" ;
+    echo ">> The cache will be deleted for all current urls in SITEMAP.XML file [meaning about 1000 URLs ...]" ;
+    echo ">> DO YOU WANT TO DELETE CLOUDFLARE CACHE, ENTER y OR n : " ;
+    read CacheToDelete ;
+    ####
+    if [ "$CacheToDelete" == "y" ]; then
+        curl -sk "$XML_SITEMAP" | grep -i '<loc>' | sed -e 's|<loc>||g' -e 's|</loc>||g' -e 's| ||g' | sort > "$step1File" ;
+    else
+        echo "*** NOTE: Very well! Looks like you don't want to delete the cache for about 1000 URLs. Program will exit now. ***" ;
+        exit 1 ;      
+    fi
+    ####    
 else 
     echo ">> Cloudflare cache will be deleted for this URL: $myKeyword" ;
     echo "$myKeyword" > $step1File ; 
@@ -187,7 +203,7 @@ if [ "$CacheDelete" == "y" ]; then
     step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls "$step1File" ;
     ####
 else 
-    echo ">> Alright, cache WILL NOT BE DELETED." ;
+    echo "*** IMPORTANT NOTE: Alright, cache WILL NOT BE DELETED. ***" ;
 fi
 
 ##------------------------------------------------------------------------------
