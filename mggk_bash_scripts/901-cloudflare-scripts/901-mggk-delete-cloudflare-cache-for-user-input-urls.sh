@@ -114,11 +114,11 @@ function step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls () {
 ##------------------------------------------------------------------------------
 ## ASK FOR USER INPUT
 ##------------------------------------------------------------------------------
-echo "Enter a single url (with http/https) to delete the cloudflare cache, OR ..." ;
-echo "[Enter 0 (= zero) if you have multiple urls: " ; 
-echo "[Enter 1 (= one) if you want to delete cache for MGGK Homepage only: " ; 
-echo "[Enter 2 (= two) if you want to delete cache for top 16 MGGK URLS only: " ;
-echo "[Enter 3 (= three) if you want to delete cache for existing URLs containing new link [user provided keyword url]: " ; 
+echo "[Enter 0  (= zero) if you have a single url (with http/https): " ; 
+echo "[Enter 1  (= one) if you want to delete cache for MGGK Homepage only: " ; 
+echo "[Enter 2  (= two) if you want to delete cache for top 16 MGGK URLS only: " ;
+echo "[Enter 3  (= three) if you want to delete cache for existing URLs containing new link [user provided keyword url]: " ; 
+echo "[Enter 4  (= zero) if you have multiple urls: " ; 
 echo "[Enter 99 if you want to delete cache for all urls in mggk sitemap.xml file: " ; 
 ##
 read myKeyword ; 
@@ -127,10 +127,10 @@ if [ -z "$myKeyword" ] ; then
     echo ">> ERROR NOTE: CLI Argument is empty. Please try again. Program will exit now." ;
     exit 1 ; 
 elif [ "$myKeyword" == "0" ]; then
-    echo ">> Please enter all your urls in this file (one url per line // no limit on number of urls): $step1File" ;
-    touch $step1File ; rm $step1File ;
-    $EDITOR $step1File ; ## Opening file in default editor
-    sleep 4; ## wait for 4 seconds
+    echo "Enter a single url (with http/https) to delete the cloudflare cache ..." ;
+    read singleUrl ; 
+    echo ">> Cloudflare cache will be deleted for this URL: $singleUrl" ;
+    echo "$singleUrl" > $step1File ; 
 elif [ "$myKeyword" == "1" ]; then
     echo ">> The cache will be deleted for MGGK Homepage only ..." ;
     mggk_homepage="https://www.mygingergarlickitchen.com/"
@@ -155,6 +155,11 @@ elif [ "$myKeyword" == "3" ]; then
         cat $step1File ; 
     fi
     ####
+elif [ "$myKeyword" == "4" ]; then
+    echo ">> Please enter all your urls in this file (one url per line // no limit on number of urls): $step1File" ;
+    touch $step1File ; rm $step1File ;
+    $EDITOR $step1File ; ## Opening file in default editor
+    sleep 4; ## wait for 4 seconds
 elif [ "$myKeyword" == "99" ]; then
     echo ">> The cache will be deleted for all current urls in SITEMAP.XML file [meaning about 1000 URLs ...]" ;
     echo ">> DO YOU WANT TO DELETE CLOUDFLARE CACHE, ENTER y OR n : " ;
@@ -168,8 +173,8 @@ elif [ "$myKeyword" == "99" ]; then
     fi
     ####    
 else 
-    echo ">> Cloudflare cache will be deleted for this URL: $myKeyword" ;
-    echo "$myKeyword" > $step1File ; 
+    echo "*** ERROR NOTE: Invalid choice, Prorgram will exit now. Run it again if desired. ***" ;
+    exit 1 ; 
 fi
 
 ##------------------------------------------------------------------------------
