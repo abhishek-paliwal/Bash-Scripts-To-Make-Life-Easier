@@ -75,7 +75,7 @@ function FUNC_STEP0_GET_MDFILEPATHS_FROM_HYPERLINKS () {
     outFile1="$WORKDIR/step0_output_mggk_part_removed.txt" ;
     outFile_step0="$WORKDIR/step0_output_found_md_filepaths.txt" ; 
     ##
-    cat $inFile | sd 'https://www.mygingergarlickitchen.com' 'url: ' > $outFile1 ;
+    cat $inFile | grep -i 'mygingergarlickitchen.com' | sd 'https://www.mygingergarlickitchen.com' 'url: ' > $outFile1 ;
     echo ">> FINDING MD FILEPATHS FROM HYPERLINKS ..." ;
     echo > $outFile_step0 ; 
     while read myurl ; do
