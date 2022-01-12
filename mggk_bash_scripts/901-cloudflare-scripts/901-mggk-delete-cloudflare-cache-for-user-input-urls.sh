@@ -188,6 +188,11 @@ if [ "$CacheDelete" == "y" ]; then
     ##
     inFile="$step1File" ; ## step1File
     inFile_base=$(basename $inFile) ; 
+    ## Add these urls => Delete cache for these two urls everytime ...
+    echo "** Adding sitemap.xml + index.xml urls to the delete list ...**" ;
+    echo "https://www.mygingergarlickitchen.com/index.xml" >> $inFile ;
+    echo "https://www.mygingergarlickitchen.com/sitemap.xml" >> $inFile ;
+    ##
     echo ">> Splitting file (= $inFile_base ) into multiple files with 28 lines each ..." ;
     fd 'xa|xb|xc|xd|xe' -t f --search-path="$WORKDIR" -x rm {} ; ## Deleting already present x** files
     split -l 28 $inFile ; ## Actual splitting
