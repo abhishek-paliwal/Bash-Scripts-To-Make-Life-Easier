@@ -2,7 +2,8 @@
 ## This program downloads xml rss feeds from listed urls
 
 ################################################################################
-outDir="/var/www/vps.abhishekpaliwal.com/html/scripts-html-outputs/data-reactapps" ; 
+outDir="/var/www/vps.abhishekpaliwal.com/html/scripts-html-outputs/data-reactapps/rssfeeds" ; 
+mkdir -p "$outDir" ; ## make dir (if not exists)
 ################################################################################
 ## Download all feeds ...
 wget https://www.cookwithmanali.com/feed/ -O $outDir/feed_cookwithmanali.xml ;
