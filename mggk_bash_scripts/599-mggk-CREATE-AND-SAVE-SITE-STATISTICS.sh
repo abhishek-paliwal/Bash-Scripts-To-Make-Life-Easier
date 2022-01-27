@@ -43,7 +43,7 @@ echo "##------------------------------------------------------------------------
 ## CREATING SUMMARY FILES TO BE USED BY CLOUDFLARE SCRIPTS
 echo ">> CREATING SUMMARY FILES TO BE USED BY CLOUDFLARE SCRIPTS ... (line counts below)" ;
 FilesUrlsWPcontent="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_FilesUrlsWPcontent.txt" ;
-ImagesUrlsWPcontentUploads="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_ImagesUrlsWPcontentUploads.txt" ;
+ImagesUrlsWPcontentUploads="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_ImagesUrlsWPcontentUploads.csv" ;
 AllValidUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidSiteUrls.txt" ;
 AllValidRecipesUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidRecipesUrls.txt" ;
 AllValidNONRecipesUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidNONRecipesUrls.txt" ;
@@ -55,7 +55,8 @@ replaceTo="https://www.mygingergarlickitchen.com" ;
 ## (Add -I flag so that fd also read filepaths present in .gitignore in the given directory)
 fd -I -t f --search-path=$REPO_MGGK/static/wp-content | sort -u | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" > $FilesUrlsWPcontent ;
 ## Get all images present in wp-content/uploads/ directory
-fd -I -t f --search-path=$REPO_MGGK/static/wp-content/uploads | sort -u | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" > $ImagesUrlsWPcontentUploads ;
+echo "##URL" > $ImagesUrlsWPcontentUploads ; ## initialize csv file with column name
+fd -I -t f --search-path=$REPO_MGGK/static/wp-content/uploads | sort -u | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" >> $ImagesUrlsWPcontentUploads ;
 ####
 
 ## Get all mggk urls from current md files

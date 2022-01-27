@@ -6,7 +6,7 @@ outDir1="/var/www/vps.abhishekpaliwal.com/html/scripts-html-outputs/data-reactap
 mkdir -p "$outDir1" ; ## make dir (if does not exist)
 ## Download all files ...
 ######
-url1="http://downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs/mggk_summary_cloudflare_ImagesUrlsWPcontentUploads.txt" ;
+url1="http://downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs/mggk_summary_cloudflare_ImagesUrlsWPcontentUploads.csv" ;
 url2="http://downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs/mggk_summary_cloudflare_AllValidSiteUrls.txt" ; 
 url3="http://downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs/mggk_summary_cloudflare_FilesUrlsWPcontent.txt" ;
 url4="http://downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs/mggk_summary_cloudflare_AllValidRecipesUrls.txt" ; 
