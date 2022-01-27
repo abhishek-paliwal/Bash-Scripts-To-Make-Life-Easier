@@ -56,7 +56,7 @@ replaceTo="https://www.mygingergarlickitchen.com" ;
 fd -I -t f --search-path=$REPO_MGGK/static/wp-content | sort -u | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" > $FilesUrlsWPcontent ;
 ## Get all images present in wp-content/uploads/ directory
 echo "##URL" > $ImagesUrlsWPcontentUploads ; ## initialize csv file with column name
-fd -I -t f --search-path=$REPO_MGGK/static/wp-content/uploads | sort -u | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" >> $ImagesUrlsWPcontentUploads ;
+fd -I -t f --search-path=$REPO_MGGK/static/wp-content/uploads | sort -nr | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" >> $ImagesUrlsWPcontentUploads ;
 ####
 
 ## Get all mggk urls from current md files
