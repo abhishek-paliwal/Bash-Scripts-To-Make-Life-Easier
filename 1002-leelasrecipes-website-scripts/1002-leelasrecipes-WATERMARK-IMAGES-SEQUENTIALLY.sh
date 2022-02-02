@@ -25,6 +25,7 @@ function STEP0_FUNC_SET_DEFAULTS_IF_ARGUMENTS_ABSENT () {
     if [ $# -eq 0 ] ; then 
         echo "No arguments supplied. Hence defaults will be set." ;
         PROJECT_DIR=$(pwd) ; 
+        DIR_WATERMARKED="$PROJECT_DIR/_DIR_WATERMARKED" ;
         ## options=(delete_original_images_yes | delete_original_images_no)
         DELETE_ORIGINAL_IMAGES="delete_original_images_no" ; 
         ## options=(delete_watermarked_images_yes | delete_watermarked_images_no)
@@ -38,12 +39,14 @@ function STEP0_FUNC_SET_DEFAULTS_IF_ARGUMENTS_ABSENT () {
 function STEP1_FUNC_CLEAN_EXISTING_WATERMARKED_IMAGES_IN_PROJECTDIR () {
     PRINT_FUNC_SEPARATOR ;
     if [ "$DELETE_EXISTING_WATERMARKED_IMAGES" == "delete_watermarked_images_yes" ]; then
-        rm $PROJECT_DIR/$PREFIX_WATERMARKED*.jpg ; 
+        rm -rf "$DIR_WATERMARKED" ; 
     fi    
 }
 ########
 function STEP2_FUNC_WATERMARK_IMAGES_IN_PROJECTDIR () {
     PRINT_FUNC_SEPARATOR ;
+    ## CREATE WATERMARK OUTPUT DIRECTORY
+    mkdir -p "$DIR_WATERMARKED" ;
     ######################################
     FONT_TO_USE="$REPO_SCRIPTS/_fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf" ; 
     FONTCOLOR="white" ; 
@@ -57,7 +60,7 @@ function STEP2_FUNC_WATERMARK_IMAGES_IN_PROJECTDIR () {
         IMAGE_WIDTH_ORIGINAL=$(identify -format %w $MYIMAGE) ; 
         IMAGE_WIDTH=$(($IMAGE_WIDTH_ORIGINAL / 9)) ; ## 9 times lesser than width
         MYIMAGE_BASENAME="$(basename $MYIMAGE)" ; 
-        MYIMAGE_NEW="$PROJECT_DIR/$PREFIX_WATERMARKED-$MYIMAGE_BASENAME" ;
+        MYIMAGE_NEW="$DIR_WATERMARKED/$PREFIX_WATERMARKED-$MYIMAGE_BASENAME" ;
         ## USING imagemagick tool TO CREATE NEW WATERMARKED IMAGES
         convert -background '#00000085' -fill "$FONTCOLOR" -font "$FONT_TO_USE" -gravity $GRAVITY_TEXT -size ${IMAGE_WIDTH}x${IMAGE_WIDTH} caption:"$COUNT" $MYIMAGE +swap -gravity "$GRAVITY_DIRECTION" -composite $MYIMAGE_NEW ;
         ##
