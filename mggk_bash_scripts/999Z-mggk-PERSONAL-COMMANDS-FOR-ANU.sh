@@ -101,7 +101,7 @@ convert_images_to_1080x1920_padded_imagemagick
 make_collages_from_images_from_given_url_1080x1920
 yoast-find-possible-mdfiles-for-inserting-links-for-given-keyword
 yoast_find_all_outbound_mdfiles_urls_containing_target_keyword_url
-leelasrecipes_run_commands_13_14_15) ;
+leelasrecipes_run_commands_13_14_15_16) ;
 
 
 
@@ -207,9 +207,10 @@ leelasrecipes_calculate_length_of_urls
 999-mggk-EXTRACT-VIDEO-SCREENSHOTS-EVERY-N-SECONDS
 leelasrecipes_make_20_directories
 leelasrecipes-CREATE-SUBDIRECTORIES-THEN-MOVE-STEPS-IMAGES
+leelasrecipes-WATERMARK-IMAGES-SEQUENTIALLY-IN-SUBDIRS
 2000-collage-maker-using-vendor-script-leelasrecipes
 2000-python-image-resize
-leelasrecipes_run_commands_13_14_15
+leelasrecipes_run_commands_13_14_15_16
 pali_imagemagick_create_10_random_images
 901-mggk-delete-cloudflare-cache-for-chosen-keyword-urls-leelasrecipes
 901-mggk-delete-cloudflare-cache-for-user-input-urls-leelasrecipes) ;
