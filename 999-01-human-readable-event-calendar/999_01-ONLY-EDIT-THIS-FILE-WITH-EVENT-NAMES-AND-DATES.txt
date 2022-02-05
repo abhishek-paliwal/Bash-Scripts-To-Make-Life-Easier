@@ -7,18 +7,11 @@
 #### DATE AS YYYYMMDD,TIME_OF_EVENT,HIGHLIGHT_COLOR,EVENT-NAME(CAN HAVE SPACES)
 ##############################################################################
 ##############################################################################
-## SWIMMING CLASSES
-20200711,15:50:00,DeepSkyBlue,Swimming-Class (till 16:25)
-######################
 ## OTHER FESTIVALS
-20210114,12:00:00,orange,Makar Sankranti
+20220214,12:00:00,orange,Valentines Day
+20220214,12:00:00,orange,Winter Break
 ######################
-## ADO EVENTS
-20210113,15:20:00,lime, Millie hangouts meeting // 15:15 to 15:30 meet.google.com/ami-tbyr-rir
-#######################
 ## HOME EVENTS
-20210130,12:00:00,deeppink,PA-Bday 
-20210128,12:00:00,deeppink,EV-Bday 
-20210418,12:00:00,deeppink,AN-Bday 
-20210422,12:00:00,deeppink,AD-Bday 
-20210714,12:00:00,deeppink,AB-Bday 
+20220418,12:00:00,deeppink,AN-Bday 
+20220422,12:00:00,deeppink,AD-Bday 
+20220714,12:00:00,deeppink,AB-Bday 
