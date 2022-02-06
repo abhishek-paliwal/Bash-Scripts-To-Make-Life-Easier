@@ -34,9 +34,9 @@ echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 echo "##------------------------------------------------------------------------------" ;
 echo "$durationPrefix-Husband-Danske.pdf" ;
 echo "$durationPrefix-Husband-Nordea.pdf" ;
-echo "$durationPrefix-Nordea-Concepro.pd" ;
+echo "$durationPrefix-Nordea-Concepro.pdf" ;
 echo "$durationPrefix-Spouse-Nordea.pdf" ;
-echo "$durationPrefix-Spouse-Nordea-Perk" ;
+echo "$durationPrefix-Spouse-Nordea-Perk.pdf" ;
 echo "##------------------------------------------------------------------------------" ;
 echo "$ago1month-Fortum-Invoice.pdf" ;
 echo "$ago1month-YTK-Invoice.pdf" ;
