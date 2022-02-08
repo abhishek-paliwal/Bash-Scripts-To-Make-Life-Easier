@@ -101,16 +101,17 @@ function FUNC_STEP1_ADD_NEW_CATEGORY_TO_ORIGINAL_MDFILES () {
     ## removing empty lines
     grep -iv '^$' $inFile > $outFile_step1 ; 
     ## looping over each line 
-    while read line ; do
+    while read mdfilepath ; do
         echo "##--------------------------------------"; 
-        echo "FILEPATH => $line" ; 
+        echo "FILEPATH => $mdfilepath" ; 
         ## only add new category to original file if not present already.
-        countOfCategoryFound=$(grep -ch "$addThisCategory" $line) ;
+        categoryNameToSearch="$(echo $addThisCategory | awk '{$1=$1;print}')" ; #remove leading+trailing spaces
+        countOfCategoryFound=$(grep -ch "$categoryNameToSearch$" $mdfilepath) ;
         echo $countOfCategoryFound ; 
         if [ "$countOfCategoryFound" == "0" ]; then
             echo "SUCCESS: This category name is NOT FOUND (hence, category added) => $addThisCategory" ;
             replaceText="categories:\n  - $addThisCategory" ;
-            sed -i '' "s|categories:|$replaceText|g" $line ;
+            sed -i '' "s|categories:|$replaceText|g" $mdfilepath ;
         else
             echo "FAILURE: This category name ALREADY FOUND (hence, category not added) => $addThisCategory" ;
         fi
