@@ -39,6 +39,14 @@ echo "##########################################" ;
 DIR_LOCAL_BACKUP="/home/00-BACKUPS-BY-PALI/" ; 
 BUCKET_REMOTE_BACKUP="dreamobjects:private-digitalocean-backups" ;
 
+## Check for the presence of directory paths
+if [ -d "$DIR_LOCAL_BACKUP" ] ; then 
+    echo "SUCCESS = Directory exists => $DIR_LOCAL_BACKUP" ; 
+else 
+    echo "FAILURE = Directory does not exist => $DIR_LOCAL_BACKUP. Program will exit now." ;
+    exit 1 ; 
+fi 
+
 ## COPYING ALL ZIP FILES ONE BY ONE TO REMOTE BUCKET
 for myfile in $DIR_LOCAL_BACKUP/*.zip ; do
     rclone copy -i "$myfile" "$BUCKET_REMOTE_BACKUP" ; 
