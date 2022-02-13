@@ -10,7 +10,8 @@ cat <<EOM
 USAGE: $(basename $0)
   ###############################################################################
   ## THIS SCRIPT CHECKS BROKEN HYPERLINKS IN ANY GIVEN SITE.
-  ## THIS SCRIPT USES DOCKER. SO, RUN DOCKER BEFORE RUNNING IT.
+  ## THE CHOSEN SITE IN OUR CASE = https://www.mygingergarlickitchen.com
+  ## THIS SCRIPT USES linkchecker TOOL.
   ## GET HELP: https://linkchecker.github.io/linkchecker/install.html
   ## Local Help > linkchecker --help
   ###############################################################################
@@ -46,15 +47,15 @@ function FUNC_RUN_LINKCHECKER () {
       ## Copying the created HTML output to the www accessible folder, then renaming the original
       cp $HTML_OUTPUT /var/www/vps.abhishekpaliwal.com/html/scripts-html-outputs/
       ## FINALLY SEND FINAL EMAIL USING AMAZON SES
-      aws ses send-email --from info@mygingergarlickitchen.com --to abhiitbhu@gmail.com --subject "LINKCHECKER RUN COMPLETED // DOCKER LINKCHECKER" --text "Cronjob completed at $(date)" ;
+      aws ses send-email --from info@mygingergarlickitchen.com --to abhiitbhu@gmail.com --subject "LINKCHECKER RUN COMPLETED" --text "Cronjob completed at $(date)" ;
 
 }
 
 function FUNC_ONLY_RUN_FOR_THIS_USER () {
     ## ## Only run this program for this user
-    echo "IMPORTANT NOTE: This script only runs on MAC OS." ; 
+    echo "IMPORTANT NOTE: This script does not run on MAC OS." ; 
     if [ "$USER" == "ubuntu" ] ; then
-      echo "This is not MAC OS. So, script will continue ... " ;
+      echo "This is not MAC OS, and the user is $USER. So, script will continue ... " ;
       FUNC_RUN_LINKCHECKER ;
     else
     echo "This is MAC OS. So, script will stop and exit now." ;
