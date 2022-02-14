@@ -34,7 +34,7 @@ function step1_gops_convert_mp4_mkv_to_CUSTOM_WIDTH_ffmpeg () {
     ## 
     echo "##------------" ; 
     du -skh * ; 
-    ring_terminal_bell_5_times ;
+    step99_ring_terminal_bell_5_times ;
 }
 #########################
 function step2_gops_extract_video_screenshots_every_4_mins () {
@@ -93,7 +93,7 @@ function step5_gops_copy_7z_files_to_dreamobjects () {
     rclone ls $dreamobj_basedir/ ; 
 }
 #########################
-function ring_terminal_bell_5_times () {
+function step99_ring_terminal_bell_5_times () {
     for x in $(seq 1 1 5); do 
         tput bel ; sleep 3 ; 
     done
@@ -103,11 +103,22 @@ function ring_terminal_bell_5_times () {
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CALLING FUNCTIONS SEQUENTIALLY (comment/uncomment as needed)
-step0_gops_choose_final_video_dimensions ;
-step1_gops_convert_mp4_mkv_to_CUSTOM_WIDTH_ffmpeg ;
-step2_gops_extract_video_screenshots_every_4_mins ;
+##
+#step0_gops_choose_final_video_dimensions ;
+#step1_gops_convert_mp4_mkv_to_CUSTOM_WIDTH_ffmpeg ;
+#step2_gops_extract_video_screenshots_every_4_mins ;
 #step3_gops_copy_all_files_n_folders_to_pi_server ;
-step4_gops_create_html_file_for_7z_files_dreamobjects ;
-step5_gops_copy_7z_files_to_dreamobjects ;
-ring_terminal_bell_5_times ;
+#step4_gops_create_html_file_for_7z_files_dreamobjects ;
+#step5_gops_copy_7z_files_to_dreamobjects ;
+#step99_ring_terminal_bell_5_times ;
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##------------------------------------------------------------------------------
+## Select one from the listing of all functions in this bash program
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+echo ">> Choose a number below to run the corresponding function:" ;
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+select myFunction in $(declare -F | awk '{print $NF}' | sort | egrep -v "^_") ; do
+    $myFunction ;
+done
+##------------------------------------------------------------------------------
