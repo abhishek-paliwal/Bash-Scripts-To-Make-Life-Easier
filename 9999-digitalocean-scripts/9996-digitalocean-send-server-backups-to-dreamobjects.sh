@@ -46,12 +46,16 @@ else
     echo "FAILURE = Directory does not exist => $DIR_LOCAL_BACKUP. Program will exit now." ;
     exit 1 ; 
 fi 
+##
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
 
 ## COPYING ALL ZIP FILES ONE BY ONE TO REMOTE BUCKET
 for myfile in $DIR_LOCAL_BACKUP/*.zip ; do
-    rclone copy -i "$myfile" "$BUCKET_REMOTE_BACKUP" ; 
+    rclone copy -P "$myfile" "$BUCKET_REMOTE_BACKUP" ; 
 done 
 ## LISTING REMOTE DIRECTORY STRUCTURE TO CHECK
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+echo ">> LISTING REMOTE DIRECTORY STRUCTURE TO CHECK" ; 
 rclone lsd "$BUCKET_REMOTE_BACKUP" ;
 ##############################################################################
 
