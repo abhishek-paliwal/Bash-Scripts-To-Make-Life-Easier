@@ -82,14 +82,14 @@ function step4_gops_create_html_file_for_7z_files_dreamobjects () {
 #########################
 function step5_gops_copy_7z_files_to_dreamobjects () {
     dreamobj_basedir="dreamobjects:public-palibucket/g" ;
-    rclone mkdir $dreamobj_basedir ;
+    #rclone mkdir $dreamobj_basedir ;
     for myfile in $(fd -t f -e 7z -e png -e html --search-path=$(pwd)) ; do 
         x=$(basename $myfile) ;
         echo ">> DREAMOBJECTS COPYING FILE: $x ..." ; 
         rclone -P copy $x $dreamobj_basedir/ ; 
         echo "LINK = http://public-palibucket.objects-us-east-1.dream.io/g/$x" ; 
     done ; 
-    echo ">> LISTING FROM THE SERVER =>" ; 
+    echo ">> LISTING FROM THE SERVER => $dreamobj_basedir/" ; 
     rclone ls $dreamobj_basedir/ ; 
 }
 #########################
@@ -102,12 +102,12 @@ function ring_terminal_bell_5_times () {
 ##################################################################################
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-## CALLING FUNCTIONS (comment/uncomment as needed)
-#step0_gops_choose_final_video_dimensions ;
-#step1_gops_convert_mp4_mkv_to_CUSTOM_WIDTH_ffmpeg ;
-#step2_gops_extract_video_screenshots_every_4_mins ;
+## CALLING FUNCTIONS SEQUENTIALLY (comment/uncomment as needed)
+step0_gops_choose_final_video_dimensions ;
+step1_gops_convert_mp4_mkv_to_CUSTOM_WIDTH_ffmpeg ;
+step2_gops_extract_video_screenshots_every_4_mins ;
 #step3_gops_copy_all_files_n_folders_to_pi_server ;
-#step4_gops_create_html_file_for_7z_files_dreamobjects ;
+step4_gops_create_html_file_for_7z_files_dreamobjects ;
 step5_gops_copy_7z_files_to_dreamobjects ;
 ring_terminal_bell_5_times ;
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

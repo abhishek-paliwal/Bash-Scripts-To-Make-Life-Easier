@@ -262,8 +262,7 @@ convert_images_to_1920x1080_padded_imagemagick
 2000-python-image-resize)
 
 ##
-GOPS_COMMANDS_ARRAY=(gops_convert_mp4_mkv_to_CUSTOM_WIDTH_ffmpeg
-gops_copy_7z_files_to_dreamobjects)
+GOPS_COMMANDS_ARRAY=(gops_full_video_extraction_encoding_upload_process)
 
 ## Assign the corresponding user array to the new array variable
 if [ "$WHICH_USER" == "mggk" ] ; then MY_COMMANDS_ARRAY=( "${MGGK_COMMANDS_ARRAY[@]}" ) ; fi
