@@ -56,6 +56,6 @@ done
 ## LISTING REMOTE DIRECTORY STRUCTURE TO CHECK
 echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
 echo ">> LISTING REMOTE DIRECTORY STRUCTURE TO CHECK" ; 
-rclone lsd "$BUCKET_REMOTE_BACKUP" ;
+rclone ls "$BUCKET_REMOTE_BACKUP" ;
 ##############################################################################
 
