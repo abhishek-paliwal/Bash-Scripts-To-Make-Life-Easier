@@ -101,7 +101,8 @@ convert_images_to_1080x1920_padded_imagemagick
 make_collages_from_images_from_given_url_1080x1920
 yoast-find-possible-mdfiles-for-inserting-links-for-given-keyword
 yoast_find_all_outbound_mdfiles_urls_containing_target_keyword_url
-leelasrecipes_run_commands_13_14_15_16) ;
+leelasrecipes_run_commands_13_14_15_16
+algolia_search_for_this_phrase) ;
 
 
 
