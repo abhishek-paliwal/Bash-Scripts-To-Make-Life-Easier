@@ -102,7 +102,7 @@ make_collages_from_images_from_given_url_1080x1920
 yoast-find-possible-mdfiles-for-inserting-links-for-given-keyword
 yoast_find_all_outbound_mdfiles_urls_containing_target_keyword_url
 leelasrecipes_run_commands_13_14_15_16
-algolia_search_for_this_phrase) ;
+algolia_search_for_this_phrase_mggk) ;
 
 
 
@@ -111,7 +111,7 @@ MGGK_COMMANDS_ARRAY=(makesite_mggk
 makesite_mggk_quickly
 frontm
 frontm_sponsored
-algolia_search_for_this_phrase
+algolia_search_for_this_phrase_mggk
 gif_maker_from_jpgs
 hugo_mggk_enable_featured_posts
 pali_spellings_check_in_this_directory
