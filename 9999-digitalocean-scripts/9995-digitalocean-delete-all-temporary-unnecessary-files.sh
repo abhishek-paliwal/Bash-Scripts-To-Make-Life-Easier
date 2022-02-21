@@ -46,45 +46,55 @@ function delete_CSVs_older_than_2_days () {
     FUNC_print_current_function_name ;
     MYDIR="/home/ubuntu/scripts-made-by-pali/602-mggk-python-plotting/_TMP_FINAL_CSVs/" ; 
     files_to_delete=$(fd . $MYDIR -d1 -t f -e csv --change-older-than 2days) ; 
-    echo; 
-    echo $files_to_delete | sed "s/ /\n/g" ; 
-    if [ -z "$files_to_delete" ] ; then echo "NOTE: No files to delete." ; else figlet -t -f cybermedium "NOTE: Files will be deleted." ; read -p "If OKAY, press ENTER to DELETE ..." ; rm $files_to_delete ; fi
+    ## 
+    FUNC_confirm_and_delete_files "$MYDIR" "$files_to_delete" ;
 }
 #####
 function delete_LOG_files_older_than_2_days () {
     FUNC_print_current_function_name ;
     MYDIR="/home/ubuntu/scripts-made-by-pali/517-mggk-delete-every-2nd-csv-file/" ; 
     files_to_delete=$(fd LOGFILE $MYDIR -d1 -t f -e txt --change-older-than 2days) ; 
-    echo; 
-    echo $files_to_delete | sed "s/ /\n/g" ; 
-    if [ -z "$files_to_delete" ] ; then echo "NOTE: No files to delete." ; else figlet -t -f cybermedium "NOTE: Files will be deleted." ; read -p "If OKAY, press ENTER to DELETE ..." ; rm $files_to_delete ; fi
+    ## 
+    FUNC_confirm_and_delete_files "$MYDIR" "$files_to_delete" ;
 }
 #####
 function delete_PNGs_older_than_2_days () {
     FUNC_print_current_function_name ;
     MYDIR="/var/www/vps.abhishekpaliwal.com/html/scripts-html-outputs/602-mggk-plotting-outputs/" ; 
     files_to_delete=$(fd . $MYDIR -d1 -t f -e png --change-older-than 2days) ; 
-    echo; 
-    echo $files_to_delete | sed "s/ /\n/g" ; 
-    if [ -z "$files_to_delete" ] ; then echo "NOTE: No files to delete." ; else figlet -t -f cybermedium "NOTE: Files will be deleted." ; read -p "If OKAY, press ENTER to DELETE ..." ; rm $files_to_delete ; fi
+    ## 
+    FUNC_confirm_and_delete_files "$MYDIR" "$files_to_delete" ;
 }
 #####
 function delete_TMPSUMMARY_files_older_than_2_days () { 
     FUNC_print_current_function_name ;
     MYDIR="/home/ubuntu/scripts-made-by-pali/600-mggk-ai-nlp-scripts/" ; 
     files_to_delete=$(fd TMP_SUMMARY_FOR_LAST_RUN $MYDIR -d1 -t f -e txt --change-older-than 2days) ; 
-    echo; echo $files_to_delete | sed "s/ /\n/g" ; 
-    if [ -z "$files_to_delete" ] ; then echo "NOTE: No files to delete." ; else figlet -t -f cybermedium "NOTE: Files will be deleted." ; read -p "If OKAY, press ENTER to DELETE ..." ; rm $files_to_delete ; fi
+    ## 
+    FUNC_confirm_and_delete_files "$MYDIR" "$files_to_delete" ;
 }
 #####
 function delete_ZIPs_older_than_3_days () { 
     FUNC_print_current_function_name ;
     MYDIR="/home/00-BACKUPS-BY-PALI/" ; 
-    files_to_delete=$(fd DAILY $MYDIR -d1 -t f -e zip --change-older-than 3days) ; 
-    echo; echo $files_to_delete | sed "s/ /\n/g" ; 
-    if [ -z "$files_to_delete" ] ; then echo "NOTE: No files to delete." ; else figlet -t -f cybermedium "NOTE: Files will be deleted." ; read -p "If OKAY, press ENTER to DELETE ..." ; rm $files_to_delete ; fi
+    files_to_delete=$(fd DAILY $MYDIR -d1 -t f -e zip --change-older-than 3days) ;
+    ## 
+    FUNC_confirm_and_delete_files "$MYDIR" "$files_to_delete" ;
 }
 #####
+fuction FUNC_confirm_and_delete_files () {
+    MYDIR="$1" ;
+    files_to_delete="$2" ; 
+    ##
+    if [ -z "$files_to_delete" ] ; then 
+        echo "NOTE: No files to delete." ; 
+    else 
+        echo; echo $files_to_delete | sed "s/ /\n/g" ; 
+        figlet -t -f cybermedium "NOTE: Files will be deleted." ; 
+        read -p "If OKAY, press ENTER to DELETE ..." ; 
+        rm $files_to_delete ; 
+    fi
+}
 ################################################################################
 
 ## Calling functions
