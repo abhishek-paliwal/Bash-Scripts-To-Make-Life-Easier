@@ -42,7 +42,7 @@ function delete_CSVs_older_than_2_days () {
     echo; 
     echo $files_to_delete | sed "s/ /\n/g" ; 
     read -p "If OKAY, press ENTER to DELETE ..." ; 
-    rm $files_to_delete ;
+    if [ -z "$files_to_delete" ] ; then echo "NOTE: No files to delete." ; else echo "NOTE: Files will be deleted." ; rm $files_to_delete ; fi
 }
 
 function delete_LOG_files_older_than_2_days () {
