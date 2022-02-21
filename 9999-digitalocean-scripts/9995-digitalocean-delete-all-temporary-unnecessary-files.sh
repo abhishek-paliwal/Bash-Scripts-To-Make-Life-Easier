@@ -82,7 +82,7 @@ function delete_ZIPs_older_than_3_days () {
     FUNC_confirm_and_delete_files "$MYDIR" "$files_to_delete" ;
 }
 #####
-fuction FUNC_confirm_and_delete_files () {
+function FUNC_confirm_and_delete_files () {
     MYDIR="$1" ;
     files_to_delete="$2" ; 
     ##
