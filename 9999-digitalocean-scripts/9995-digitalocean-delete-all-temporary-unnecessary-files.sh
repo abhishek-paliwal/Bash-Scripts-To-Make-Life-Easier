@@ -48,8 +48,7 @@ function delete_CSVs_older_than_2_days () {
     files_to_delete=$(fd . $MYDIR -d1 -t f -e csv --change-older-than 2days) ; 
     echo; 
     echo $files_to_delete | sed "s/ /\n/g" ; 
-    read -p "If OKAY, press ENTER to DELETE ..." ; 
-    if [ -z "$files_to_delete" ] ; then echo "NOTE: No files to delete." ; else echo "NOTE: Files will be deleted." ; rm $files_to_delete ; fi
+    if [ -z "$files_to_delete" ] ; then echo "NOTE: No files to delete." ; else echo "NOTE: Files will be deleted." ; read -p "If OKAY, press ENTER to DELETE ..." ; rm $files_to_delete ; fi
 }
 #####
 function delete_LOG_files_older_than_2_days () {
@@ -58,8 +57,7 @@ function delete_LOG_files_older_than_2_days () {
     files_to_delete=$(fd LOGFILE $MYDIR -d1 -t f -e txt --change-older-than 2days) ; 
     echo; 
     echo $files_to_delete | sed "s/ /\n/g" ; 
-    read -p "If OKAY, press ENTER to DELETE ..." ; 
-    if [ -z "$files_to_delete" ] ; then echo "NOTE: No files to delete." ; else echo "NOTE: Files will be deleted." ; rm $files_to_delete ; fi
+    if [ -z "$files_to_delete" ] ; then echo "NOTE: No files to delete." ; else echo "NOTE: Files will be deleted." ; read -p "If OKAY, press ENTER to DELETE ..." ; rm $files_to_delete ; fi
 }
 #####
 function delete_PNGs_older_than_2_days () {
@@ -68,8 +66,7 @@ function delete_PNGs_older_than_2_days () {
     files_to_delete=$(fd . $MYDIR -d1 -t f -e png --change-older-than 2days) ; 
     echo; 
     echo $files_to_delete | sed "s/ /\n/g" ; 
-    read -p "If OKAY, press ENTER to DELETE ..." ; 
-    if [ -z "$files_to_delete" ] ; then echo "NOTE: No files to delete." ; else echo "NOTE: Files will be deleted." ; rm $files_to_delete ; fi
+    if [ -z "$files_to_delete" ] ; then echo "NOTE: No files to delete." ; else echo "NOTE: Files will be deleted." ; read -p "If OKAY, press ENTER to DELETE ..." ; rm $files_to_delete ; fi
 }
 #####
 function delete_TMPSUMMARY_files_older_than_2_days () { 
@@ -77,8 +74,7 @@ function delete_TMPSUMMARY_files_older_than_2_days () {
     MYDIR="/home/ubuntu/scripts-made-by-pali/600-mggk-ai-nlp-scripts/" ; 
     files_to_delete=$(fd TMP_SUMMARY_FOR_LAST_RUN $MYDIR -d1 -t f -e txt --change-older-than 2days) ; 
     echo; echo $files_to_delete | sed "s/ /\n/g" ; 
-    read -p "If OKAY, press ENTER to DELETE ..." ; 
-    if [ -z "$files_to_delete" ] ; then echo "NOTE: No files to delete." ; else echo "NOTE: Files will be deleted." ; rm $files_to_delete ; fi
+    if [ -z "$files_to_delete" ] ; then echo "NOTE: No files to delete." ; else echo "NOTE: Files will be deleted." ; read -p "If OKAY, press ENTER to DELETE ..." ; rm $files_to_delete ; fi
 }
 #####
 function delete_ZIPs_older_than_3_days () { 
@@ -86,8 +82,7 @@ function delete_ZIPs_older_than_3_days () {
     MYDIR="/home/00-BACKUPS-BY-PALI/" ; 
     files_to_delete=$(fd DAILY $MYDIR -d1 -t f -e zip --change-older-than 3days) ; 
     echo; echo $files_to_delete | sed "s/ /\n/g" ; 
-    read -p "If OKAY, press ENTER to DELETE ..." ; 
-    if [ -z "$files_to_delete" ] ; then echo "NOTE: No files to delete." ; else echo "NOTE: Files will be deleted." ; rm $files_to_delete ; fi
+    if [ -z "$files_to_delete" ] ; then echo "NOTE: No files to delete." ; else echo "NOTE: Files will be deleted." ; read -p "If OKAY, press ENTER to DELETE ..." ; rm $files_to_delete ; fi
 }
 #####
 ################################################################################
