@@ -37,6 +37,7 @@ echo "##########################################" ;
 ##############################################################################
 
 function delete_CSVs_older_than_2_days () {
+    echo ">>>>>>>>>>> CURRENT FUNCTION => ${FUNCNAME[0]} <<<<<<<<<<<" ; 
     MYDIR="/home/ubuntu/scripts-made-by-pali/602-mggk-python-plotting/_TMP_FINAL_CSVs/" ; 
     files_to_delete=$(fd . $MYDIR -d1 -t f -e csv --change-older-than 2days) ; 
     echo; 
