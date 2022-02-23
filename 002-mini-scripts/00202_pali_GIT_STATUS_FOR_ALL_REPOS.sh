@@ -18,3 +18,6 @@ for myDir in $DIR_GITHUB/*/ ; do
     git pull ; 
     cd $DIR_GITHUB ; 
 done
+##
+
+figlet -t "DONE ... Kaka Grill." | lolcat ;
