@@ -39,6 +39,41 @@ echo "##------------------------------------------------------------------------
 ##------------------ ADD BLOCKS AS NEEDED BELOW ------------------------------
 
 ##################################################################################
+## BEGIN: CREATING COLLECTION OF IMPORTANT DETAILS FOR ALL MD FILES IN ONE FILE
+##################################################################################
+echo ">> CREATING COLLECTION OF IMPORTANT DETAILS FOR ALL MD FILES IN ONE FILE ..." ;
+##
+outFile="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_collection_important_details_AllMDFiles.txt" ;
+#outFile="$DIR_Y/mggk_summary_collection_important_details_AllMDFiles.txt" ;
+echo "count;mdfilepath;url_value;seo_title_value;title_value" > $outFile ; 
+####
+count=0;
+total_files="$(fd -I -t f -e md --search-path=$REPO_MGGK/content | wc -l)" ;
+#
+for mdfile in $(fd -I -t f -e md --search-path="$REPO_MGGK/content") ; do 
+    ((count++));
+    mggk_baseurl="https://www.mygingergarlickitchen.com" ;
+    ##
+    replaceTo="REPO_MGGK"; 
+    r1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL";
+    r2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL"; 
+    mdfilepath=$(echo $mdfile | sd "$r1" "$replaceTo" | sd "$r2" "$replaceTo" ) ; 
+    ##
+    seo_title_value=$(grep -irh '^seo_title_value:' $mdfile | sd 'seo_title_value:' '' | sd '"' ''| sd ';' '') ;
+    title_value=$(grep -irh '^title:' $mdfile | sd 'title:' '' | sd '"' ''| sd ';' '') ;
+    url_value=$(grep -irh '^url:' $mdfile  | sd "url:" "$mggk_baseurl" | sd '"' ''| sd ' ' '') ;
+    ##
+    echo "$count;$mdfilepath;$url_value;$seo_title_value;$title_value" >> $outFile ;
+    ##
+    ## SHOWING CURRENT PROGRESS IN PERCENTAGE
+    $REPO_SCRIPTS/002-mini-scripts/00210-show-current-state-progress-bar-in-percentage-for-programs.sh "$count" "$total_files" ;
+done
+####
+##################################################################################
+## END: CREATING COLLECTION OF IMPORTANT DETAILS FOR ALL MD FILES IN ONE FILE
+##################################################################################
+
+##################################################################################
 ##################################################################################
 ## CREATING SUMMARY FILES TO BE USED BY CLOUDFLARE SCRIPTS
 echo ">> CREATING SUMMARY FILES TO BE USED BY CLOUDFLARE SCRIPTS ... (line counts below)" ;
