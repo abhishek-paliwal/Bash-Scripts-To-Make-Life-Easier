@@ -13,6 +13,12 @@ USAGE: $(basename $0)
     ## SAVES THEM TO AN OUTPUT FILE IN HUGO STATIC DIRECTORY
     ## USAGE:
     #### bash $THIS_SCRIPT_NAME
+    #####################################
+    ## NOTE: This program uses csvtojson NPM utility.
+    ## => Install it by running: npm i -g csvtojson
+    #####################################
+    ## Created on: 2021-07-21
+    ## Created by: Pali
     ################################################################################
 EOM
 
@@ -41,11 +47,11 @@ echo "##------------------------------------------------------------------------
 ##################################################################################
 ## BEGIN: CREATING COLLECTION OF IMPORTANT DETAILS FOR ALL MD FILES IN ONE FILE
 ##################################################################################
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
 echo ">> CREATING COLLECTION OF IMPORTANT DETAILS FOR ALL MD FILES IN ONE FILE ..." ;
 ##
-outFile="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_collection_important_details_AllMDFiles.txt" ;
-#outFile="$DIR_Y/mggk_summary_collection_important_details_AllMDFiles.txt" ;
-echo "count;mdfilepath;url_value;seo_title_value;title_value" > $outFile ; 
+outFileCSV="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_collection_important_details_AllMDFiles.csv" ;
+echo "count;mdfilepath;url_value;seo_title_value;title_value" > $outFileCSV ; 
 ####
 count=0;
 total_files="$(fd -I -t f -e md --search-path=$REPO_MGGK/content | wc -l)" ;
@@ -63,12 +69,21 @@ for mdfile in $(fd -I -t f -e md --search-path="$REPO_MGGK/content") ; do
     title_value=$(grep -irh '^title:' $mdfile | sd 'title:' '' | sd '"' ''| sd ';' '') ;
     url_value=$(grep -irh '^url:' $mdfile  | sd "url:" "$mggk_baseurl" | sd '"' ''| sd ' ' '') ;
     ##
-    echo "$count;$mdfilepath;$url_value;$seo_title_value;$title_value" >> $outFile ;
+    echo "$count;$mdfilepath;$url_value;$seo_title_value;$title_value" >> $outFileCSV ;
     ##
     ## SHOWING CURRENT PROGRESS IN PERCENTAGE
     $REPO_SCRIPTS/002-mini-scripts/00210-show-current-state-progress-bar-in-percentage-for-programs.sh "$count" "$total_files" ;
 done
+echo; echo ;
 ####
+## CREATING JSON FROM ABOVE CSV FILE (which has 5 comma-separated fields)
+outFileJSON="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_collection_important_details_AllMDFiles.json" ;
+cat $outFileCSV | awk 'BEGIN {FS=";"} {print "\"" $1 "\",\"" $2 "\",\"" $3 "\",\"" $4 "\",\"" $5 "\""}' > $WORKDIR/_tmpCSV1.csv ; 
+csvtojson $WORKDIR/_tmpCSV1.csv | jq > $outFileJSON ;
+##
+wc -l $outFileCSV ;
+wc -l $outFileJSON ;
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
 ##################################################################################
 ## END: CREATING COLLECTION OF IMPORTANT DETAILS FOR ALL MD FILES IN ONE FILE
 ##################################################################################
