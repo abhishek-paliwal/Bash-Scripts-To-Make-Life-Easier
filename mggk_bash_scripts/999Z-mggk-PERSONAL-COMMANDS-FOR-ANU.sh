@@ -105,7 +105,6 @@ leelasrecipes_run_commands_13_14_15_16
 algolia_search_for_this_phrase_mggk) ;
 
 
-
 ##
 MGGK_COMMANDS_ARRAY=(makesite_mggk
 makesite_mggk_quickly
@@ -191,7 +190,8 @@ pali_imagemagick_create_10_random_images
 601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls
 601-mggk-using-ai-nlp-to-find-keywords-from-list-of-top-google-urls-NEW2021
 convert-all-csv-files-in-pwd-to-html-tables-bootstrap
-mggk_WEEKLY_SUMMARY_RUN) ;
+mggk_WEEKLY_SUMMARY_RUN
+dotfiles_copy) ;
 
 ##
 LEELA_COMMANDS_ARRAY=(leelasrecipes_makesite_hugo
@@ -263,6 +263,16 @@ convert_images_to_1920x1080_padded_imagemagick
 2000-python-image-resize)
 
 ##
+DIGITALOCEAN_COMMANDS_ARRAY=(9995-digitalocean-delete-all-temporary-unnecessary-files
+9996-digitalocean-send-server-backups-to-dreamobjects
+9997-digitalocean-download-latest-datafiles-required-for-react-apps
+9997-digitalocean-download-latest-rss-xml-feeds-from-websites
+9998-digitalocean-create-responsive-images-and-copy-to-cdn
+9999-download-latest-scripts-from-github-repo-for-crontab
+9999-show-files-to-delete-for-space-cleanup-digitalocean
+dotfiles_copy)
+
+##
 GOPS_COMMANDS_ARRAY=(gops_full_video_extraction_encoding_upload_process)
 
 ## Assign the corresponding user array to the new array variable
@@ -271,6 +281,7 @@ if [ "$WHICH_USER" == "anu" ] ; then MY_COMMANDS_ARRAY=( "${ANU_COMMANDS_ARRAY[@
 if [ "$WHICH_USER" == "pali" ] ; then MY_COMMANDS_ARRAY=( "${PALI_COMMANDS_ARRAY[@]}" ) ; fi
 if [ "$WHICH_USER" == "leela" ] ; then MY_COMMANDS_ARRAY=( "${LEELA_COMMANDS_ARRAY[@]}" ) ; fi
 if [ "$WHICH_USER" == "gops" ] ; then MY_COMMANDS_ARRAY=( "${GOPS_COMMANDS_ARRAY[@]}" ) ; fi
+if [ "$WHICH_USER" == "docean" ] ; then MY_COMMANDS_ARRAY=( "${DIGITALOCEAN_COMMANDS_ARRAY[@]}" ) ; fi
 if [ "$WHICH_USER" == "imagemagick_ffmpeg" ] ; then MY_COMMANDS_ARRAY=( "${IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY[@]}" ) ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
