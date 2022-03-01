@@ -20,4 +20,4 @@ for myDir in $DIR_GITHUB/*/ ; do
 done
 ##
 
-figlet -t "DONE ... Kaka Grill." | lolcat ;
+figlet -t "All is done." | lolcat ;
