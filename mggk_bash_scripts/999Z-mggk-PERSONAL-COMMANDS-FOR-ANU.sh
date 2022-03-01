@@ -214,7 +214,8 @@ leelasrecipes-WATERMARK-IMAGES-SEQUENTIALLY-IN-SUBDIRS
 leelasrecipes_run_commands_13_14_15_16
 pali_imagemagick_create_10_random_images
 901-mggk-delete-cloudflare-cache-for-chosen-keyword-urls-leelasrecipes
-901-mggk-delete-cloudflare-cache-for-user-input-urls-leelasrecipes) ;
+901-mggk-delete-cloudflare-cache-for-user-input-urls-leelasrecipes
+9998-digitalocean-create-responsive-images-and-copy-to-cdn) ;
 
 ##
 IMAGEMAGICK_FFMPEG_COMMANDS_ARRAY=(1_imagemagick_maker
