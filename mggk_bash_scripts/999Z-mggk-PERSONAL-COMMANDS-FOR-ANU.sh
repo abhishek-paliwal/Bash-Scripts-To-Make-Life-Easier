@@ -41,6 +41,7 @@ debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-
 
 ##############################################################################
 ############ BEGIN: EXPANDING ALIASES ON NON-INTERATIVE SHELL SCRIPTS ########
+source $REPO_DOTFILES/LAPTOP-F0AJ6LBG/mydotfile.bash_aliases ## source this the first
 shopt -s expand_aliases ## for BASH: This has to be done, else, aliases are not expanded in scripts.
 ##
 ## IF THE HOME USER IS UBUNTU, CHANGE SOME DEFAULT VARIABLES (BCOZ WE ARE USING WSL)
