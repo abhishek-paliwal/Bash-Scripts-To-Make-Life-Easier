@@ -51,6 +51,7 @@ echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ## COPYING ALL ZIP FILES ONE BY ONE TO REMOTE BUCKET
 for myfile in $DIR_LOCAL_BACKUP/*.zip ; do
+    echo ">> CURRENT FILE = $myfile" ;
     rclone copy -P "$myfile" "$BUCKET_REMOTE_BACKUP" ; 
 done 
 ## LISTING REMOTE DIRECTORY STRUCTURE TO CHECK
