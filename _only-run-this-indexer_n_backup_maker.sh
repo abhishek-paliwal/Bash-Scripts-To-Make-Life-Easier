@@ -33,6 +33,20 @@ fi
 source $HOME/.bash_aliases ## Then, this also has to be done to use aliases in this script.
 
 ##############################################################################
+## FUNCTION DEFINITIONS
+function FUNC_get_backup_from_digitalocean_server () {
+    #### FINALLY, BACKUP TO-AND-FROM DIGITALOCEAN SERVER IF NOT ON MAC ####
+    #### Actual backup command aliases below ##
+    echo ;
+    echo "     ++++++++ Getting backups to-and-from DIGITALOCEAN Server......" ;
+    echo "     >>>>>>>> BEGINNING: Backup [FROM] DIGITAL OCEAN Server. <<<<<<<" ;
+    echo "Enter password on command prompt:" ;
+    1_backup_from_digitalocean_server ;
+    echo "     >>>>>>>> DONE: Backup [FROM] DIGITALOCEAN Server. <<<<<<<" ;
+    echo ;
+    echo " = = = = > Now opening the DIGITALOCEAN VPS Backup directory..." ;
+    open $HOME_WINDOWS/OneDrive/Apps2Sync/DreamCompute-VPS-Backup ; ## Don't forget to add semicolon at the end.
+}
 ##############################################################################
 
 ####### only run this bash script to make ALL the indexes and backups on PALI's Macbook #########
@@ -94,17 +108,8 @@ then
     #1_backup_to_adoria_xyz ;
     ######################## END: BACKUPS TO CDN // SSH+SCP BLOCK ########################
 else
-    #### FINALLY, BACKUP TO-AND-FROM DIGITALOCEAN SERVER IF NOT ON MAC ####
-    #### Actual backup command aliases below ##
-    echo ;
-    echo "     ++++++++ Getting backups to-and-from DIGITALOCEAN Server......" ;
-    echo "     >>>>>>>> BEGINNING: Backup [FROM] DIGITAL OCEAN Server. <<<<<<<" ;
-    echo "Enter password on command prompt:" ;
-    1_backup_from_digitalocean_server ;
-    echo "     >>>>>>>> DONE: Backup [FROM] DIGITALOCEAN Server. <<<<<<<" ;
-    echo ;
-    echo " = = = = > Now opening the DIGITALOCEAN VPS Backup directory..." ;
-    open $HOME_WINDOWS/OneDrive/Apps2Sync/DreamCompute-VPS-Backup ; ## Don't forget to add semicolon at the end.
+    ## UNCOMMENT THE FOLLOWING BLOCK IF NEEDED
+    # FUNC_get_backup_from_digitalocean_server
     #####
     echo ">>>> 1. The USER is >>> $USER <<< , which is not 'abhishek'. Hence, no SSH/SCP backups are performed." ;
     echo ">>>> 2. NOTE: IF you want to execute the SSH/SCP backup block, then run this script as USER 'abhishek' on MBP15. " ;
@@ -112,4 +117,5 @@ else
 fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+figlet "Good 2 go ..." | lolcat ; 
 ########################## SCRIPT ENDS ########################
