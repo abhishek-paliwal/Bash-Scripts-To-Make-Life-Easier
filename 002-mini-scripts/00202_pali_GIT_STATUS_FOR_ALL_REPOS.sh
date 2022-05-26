@@ -23,8 +23,6 @@ done
 
 ## Printing text in big letters
 ##
-# figlet -t "REPOS Updated" | lolcat ;
-##
 cat << "EOF" 
  ____  _____ ____   ___  ____                  _       _           _
 |  _ \| ____|  _ \ / _ \/ ___| _   _ _ __   __| | __ _| |_ ___  __| |
