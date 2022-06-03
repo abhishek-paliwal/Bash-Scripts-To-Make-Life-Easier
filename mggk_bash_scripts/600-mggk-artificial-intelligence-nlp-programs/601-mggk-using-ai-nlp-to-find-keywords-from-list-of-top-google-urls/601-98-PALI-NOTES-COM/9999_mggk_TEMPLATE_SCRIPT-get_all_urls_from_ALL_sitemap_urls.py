@@ -53,7 +53,7 @@ OUTPUT_CSV_FILE = '_OUTPUT_9999_SITEMAP_ALL_URLS.csv'
 ################################################################################
 
 ## CONCEPRO.COM SITEMAPS (uncomment if running the following)
-sitemap_urls = ['https://www.notes.abhishekpaliwal.com/sitemap.xml']
+sitemap_urls = ['https://notes.abhishekpali.us/sitemap.xml']
 
 ################################################################################
 xmlDict = {} ## initializing an empty dictionary
