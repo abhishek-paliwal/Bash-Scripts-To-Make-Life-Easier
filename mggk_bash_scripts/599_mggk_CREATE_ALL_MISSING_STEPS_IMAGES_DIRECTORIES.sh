@@ -62,7 +62,7 @@ function FUNCTION_GET_ALL_URLS_WITH_STEPS_IMAGES_PRESENT_FRONTMATTER_TAG () {
     touch $TMP2 $TMP1 ## initialize
     rm $TMP2 $TMP1 ## if already exists
     ##
-    cat $SUMMARY_FILE_STEPS_IMAGES_DIRS | grep -iv '#' | sed 's/ //g' > $TMP1 ;
+    cat $SUMMARY_FILE_STEPS_IMAGES_DIRS | grep -iv '#' | sed 's/ //g' | sed 's|/||g' > $TMP1 ;
     ##
     for mdfile in $(grep -irl 'steps_images_present:' $HUGODIR/** ) ; do 
         grep -i 'url: ' $mdfile | sed 's/url: //g' | sed 's+/++g' | sed 's/ //g' >> $TMP2
@@ -89,7 +89,7 @@ function FUNCTION_GET_IMAGES_URL_BY_CURL () {
     done < "$myfile"
     ##
     if [ -f "$TMP_OUTFILE" ]; then
-        echo "$TMP_OUTFILE exists. Henc, this file will be processed." ;
+        echo "$TMP_OUTFILE exists. Hence, this file will be processed." ;
         cat $TMP_OUTFILE | sed 's/ //g' | sed 's/"//g' | sed 's+image:https://www.mygingergarlickitchen.com/wp-content/recipe-steps-images/++g' > $outfile
     fi
 }
