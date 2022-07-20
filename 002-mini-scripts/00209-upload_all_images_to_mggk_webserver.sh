@@ -2,6 +2,12 @@
 ##
 ## NOTE: Some VARS are taken from env variables
 ####
+WORKDIR="$DIR_Y";
+cd $WORKDIR;
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+echo ">> Present working directory: $WORKDIR" ; 
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+##
 echo ">>>> BEGIN: RSYNC ... <<<<" ; 
 figlet -t -f cybermedium "Enter password" | lolcat ;
 #rsync -azq --delete $REPO_MGGK/static/wp-content/ $DREAMHOST_USER_MGGK@$DREAMHOST_SERVER:/home/$DREAMHOST_USER_MGGK/mygingergarlickitchen.com/wp-content/ ; 
