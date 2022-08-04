@@ -2,10 +2,10 @@
 
 cd $DIR_Y ; 
 
-echo ">> Following mp4/mkv files will be used: " ; 
-fd -e mp4 -e mkv --full-path $DIR_Y ; 
+echo ">> Following mp4/mkv/mov files will be used: " ; 
+fd -e mp4 -e mkv -e mov --full-path $DIR_Y ; 
 
-for myvideo in $(fd -e mp4 -e mkv --full-path $DIR_Y) ; do 
+for myvideo in $(fd -e mp4 -e mkv -e mov --full-path $DIR_Y) ; do 
     videoExtn=${myvideo##*.} ; 
     myvideoNew=$(basename "$myvideo" | sed "s+\.+_+g" ) ; 
     echo ">> CURRENT VIDEO: $myvideoNew" ; 
