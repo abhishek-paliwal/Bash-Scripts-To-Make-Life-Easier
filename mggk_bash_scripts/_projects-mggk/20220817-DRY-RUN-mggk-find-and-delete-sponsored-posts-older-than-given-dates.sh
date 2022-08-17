@@ -12,9 +12,11 @@ USAGE: $(basename $0)
     ## USAGE:
     #### > bash $THIS_SCRIPT_NAME 
     ################################################################################
-    ## This program finds and moves the sponsored posts which are older than the 
+    ## This program is a dry run. Change somethings to run it for real. However, here's 
+    ## what it does ==> 
+    ## This program finds and moves the sponsored posts mdfiles which are first published before 
     ## given dates. To change those dates, open this program and change the 
-    ## variable known as `keep_posts_with_these_dates`
+    ## variable known as DONT_DELETE_POSTS_WITH_THESE_DATES
     ################################################################################
     ## CREATED BY: PALI
     ## CREATED ON: 2022-08-17
@@ -36,19 +38,20 @@ echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
 echo "##########################################" ; 
 ####
 INDIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/blog/99_uncategorized" ;
-TMPFILE1="$WORKDIR/tmpSpon1.txt" ; 
-TMPFILE2="$WORKDIR/tmpSpon2.txt" ; 
-TMPFILE3="$WORKDIR/tmpSpon3.txt" ; 
+TMPFILE1="$WORKDIR/_tmpSpon1.txt" ; 
+TMPFILE2="$WORKDIR/_tmpSpon2.txt" ; 
+TMPFILE3="$WORKDIR/_tmpSpon3.txt" ;
+TMPFILE4="$WORKDIR/_tmpSpon4.txt" ; 
 ##  
-keep_posts_with_these_dates="(2022-|2021-|2020-12|2020-11|2020-10|2020-09)" ;
-####
+DONT_DELETE_POSTS_WITH_THESE_DATES="(2022-|2021-|2020-12|2020-11|2020-10|2020-09)" ; ## Change this accordingly as you please
+##
 
-## finding the first published dates for the posts other than keep_posts_with_these_dates
+################################################################################
+## finding the first published dates for the posts other than DONT_DELETE_POSTS_WITH_THESE_DATES
 echo > $TMPFILE1 ; 
 for x in $(fd --search-path="$INDIR") ; do 
     ## echo $x ; 
-    #ack 'first_published_on' $x | grep -ivE '(2022-|2021-|2020-12|2020-11|2020-10|2020-09)' >> $TMPFILE1 ; 
-    ack 'first_published_on' $x | grep -ivE "$keep_posts_with_these_dates" >> $TMPFILE1 ; 
+    ack 'first_published_on' $x | grep -ivE "$DONT_DELETE_POSTS_WITH_THESE_DATES" >> $TMPFILE1 ; 
 done
 ## sorting the output
 sort -n $TMPFILE1 | grep -iv '^$' > $TMPFILE2 ; 
@@ -65,19 +68,23 @@ while read line ; do
 done < $TMPFILE2 ; 
 
 ## Moving files from original directory to the WORKDIR
+echo ">> Moving files from original directory to the WORKDIR ..." ; 
 while read line_filepath ; do 
     cp "$line_filepath" $WORKDIR/ ; 
 done <  $TMPFILE3
 
 ################################################################################
-## finding posts to keep forver because we would need to move them back (meaning undelete them)
-ag 'keep_this_post_forever: yes' -l $WORKDIR ; 
+## finding posts to keep forever because we would need to move them back (meaning undelete them)
+echo "################################################################################" ;  
+echo ">> Displaying posts with keep forever tag because they needed to be moved back (meaning undelete them) ..." ; 
+echo > $TMPFILE4 ; 
+ag 'keep_this_post_forever: yes' -l $WORKDIR >> $TMPFILE4 ; 
 
 ################################################################################
 ## FINAL IMPORTANT NOTE
 echo "################################################################################" ;  
 echo "################################################################################" ;  
 echo ">> IMPORTANT NOTE: Immediately after running this program, check the Github Desktop in the MGGK HUGO DIR that no unnecessary files have been deleted or moved. This is very important."
-echo ">>>> Even though " ; 
+echo ">>>> This is the dry run of the program." ; 
 echo "################################################################################" ;  
 echo "################################################################################" ;  
