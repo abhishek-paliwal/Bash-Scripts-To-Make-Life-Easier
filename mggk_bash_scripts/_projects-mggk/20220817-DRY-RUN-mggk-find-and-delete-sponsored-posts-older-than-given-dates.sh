@@ -48,6 +48,8 @@ DONT_DELETE_POSTS_WITH_THESE_DATES="(2022-|2021-|2020-12|2020-11|2020-10|2020-09
 
 ################################################################################
 ## finding the first published dates for the posts other than DONT_DELETE_POSTS_WITH_THESE_DATES
+echo; echo "################################################################################" ;  
+echo ">> FINDING THE FIRST PUBLISHED DATES FOR THE POSTS OTHER THAN GIVEN DATES ..." ; 
 echo > $TMPFILE1 ; 
 for x in $(fd --search-path="$INDIR") ; do 
     ## echo $x ; 
@@ -68,23 +70,41 @@ while read line ; do
 done < $TMPFILE2 ; 
 
 ## Moving files from original directory to the WORKDIR
-echo ">> Moving files from original directory to the WORKDIR ..." ; 
+echo; echo "################################################################################" ;  
+echo ">> MOVING FILES FROM ORIGINAL DIRECTORY TO THE WORKDIR ..." ; 
+countA=1;
 while read line_filepath ; do 
-    cp "$line_filepath" $WORKDIR/ ; 
-done <  $TMPFILE3
+    echo "--------"  ;
+    echo "$countA >>>> CURRENT FILEPATH = $line_filepath" ;  
+    cp "$line_filepath" $WORKDIR/ ;
+    ((countA++)) ;  
+done < $TMPFILE3
 
 ################################################################################
 ## finding posts to keep forever because we would need to move them back (meaning undelete them)
-echo "################################################################################" ;  
-echo ">> Displaying posts with keep forever tag because they needed to be moved back (meaning undelete them) ..." ; 
+echo; echo "################################################################################" ;  
 echo > $TMPFILE4 ; 
 ag 'keep_this_post_forever: yes' -l $WORKDIR >> $TMPFILE4 ; 
+echo ">> DISPLAYING POSTS WITH KEEP FOREVER TAG BECAUSE THEY NEEDED TO BE MOVED BACK (MEANING UNDELETE THEM) ..." ; 
+cat $TMPFILE4 ; 
+echo "################################################################################" ;  
+
+################################################################################
+## SUMMARY
+echo; echo "################################################################################" ;  
+echo ">> SUMMARY ==>" ;
+echo "  $(ls $INDIR | wc -l) = TOTAL_FILES_FOUND in DIR $INDIR (before running the program)" ; 
+echo "  $(cat $TMPFILE3 | grep -iv '^$' | wc -l) = VALID_FILES_FOUND (older than the dates given)" ; 
+echo "  $(cat $TMPFILE4 | grep -iv '^$' | wc -l) =  FILES_MOVED_BACK (with keep forever tag)" ; 
+echo "  $(ls $INDIR | wc -l) = TOTAL_FILES_FOUND in DIR => $INDIR (after running the program)" ; 
 
 ################################################################################
 ## FINAL IMPORTANT NOTE
+echo;
 echo "################################################################################" ;  
 echo "################################################################################" ;  
-echo ">> IMPORTANT NOTE: Immediately after running this program, check the Github Desktop in the MGGK HUGO DIR that no unnecessary files have been deleted or moved. This is very important."
+echo ">> IMPORTANT NOTE: " ;
+echo ">>>> Immediately after running this program, check the Github Desktop in the MGGK HUGO DIR that no unnecessary files have been deleted or moved. This is very important."
 echo ">>>> This is the dry run of the program." ; 
 echo "################################################################################" ;  
 echo "################################################################################" ;  
