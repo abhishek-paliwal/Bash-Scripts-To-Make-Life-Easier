@@ -104,8 +104,9 @@ yoast-find-possible-mdfiles-for-inserting-links-for-given-keyword
 yoast_find_all_outbound_mdfiles_urls_containing_target_keyword_url
 leelasrecipes_run_commands_13_14_15_16
 algolia_search_for_this_phrase_mggk
-yt1
-yt2) ;
+yt1_download_audio
+yt2_download_video
+ffmpeg_convert_webm_videos_to_mp4) ;
 
 
 ##
