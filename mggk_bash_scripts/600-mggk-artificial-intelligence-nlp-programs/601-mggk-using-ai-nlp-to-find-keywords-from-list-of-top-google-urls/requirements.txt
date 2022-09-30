@@ -10,7 +10,7 @@ filelock==3.8.0
 fonttools==4.37.1
 idna==3.3
 jieba3k==0.35.1
-joblib==1.1.0
+joblib==1.2.0
 kiwisolver==1.4.4
 lxml==4.9.1
 matplotlib==3.5.3
