@@ -21,7 +21,14 @@ function FUNC_RENAME_FILES_SEQUENTIALLY () {
 ##############################################################################
 ## RENAME ALL JPG FILES
 count=0;
-for x in $(fd -e jpg -t f --search-path="$(pwd)" | grep -iv 'publish'); do
+for x in $(fd -e jpg -e JPG -t f --search-path="$(pwd)"); do
+    ((count++))
+    FUNC_RENAME_FILES_SEQUENTIALLY $count ;
+done
+###################################
+## RENAME ALL PNG FILES
+count=0;
+for x in $(fd -e png -e PNG -t f --search-path="$(pwd)"); do
     ((count++))
     FUNC_RENAME_FILES_SEQUENTIALLY $count ;
 done
