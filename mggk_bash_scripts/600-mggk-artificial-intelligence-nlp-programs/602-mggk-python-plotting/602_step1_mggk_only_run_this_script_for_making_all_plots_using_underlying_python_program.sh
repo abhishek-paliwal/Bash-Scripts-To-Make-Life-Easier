@@ -48,13 +48,14 @@ if [ $USER = "ubuntu" ]; then
   find $CSVDIR/ -name $(date +%Y%m%d)*CSV -exec cp "{}" $BASEDIR/  \;
   ######
   ## Finding the latest produced CSV file in the CSVDIR and copying them to BASEDIR
+  echo ">> Finding the latest produced CSV files ..." ; 
   TMPFILE0="$DIR_Y/_tmp_602_csv_files.txt" ; 
-  echo "## List of CSVs" > $TMPFILE0 ;
+  echo "##List_of_CSVs" > $TMPFILE0 ;
   for x in $(fd -td --search-path="$CSVDIR") ; do 
-    echo ">> LISTING THE CSV FILES TO COPY ..." ; 
-    fd -e csv --search-path="$x" 'FUTURE_ANALYSES.CSV' | sort -rn | head -1 ; 
     fd -e csv --search-path="$x" 'FUTURE_ANALYSES.CSV' | sort -rn | head -1 >> $TMPFILE0 ; 
   done ; 
+  echo ">> LISTING THE CSV FILES TO COPY ..." ; 
+  cat $TMPFILE0 ;
   ## Read the tmp file and copy each line as a CSV file into $BASEDIR
   for y in $(cat $TMPFILE0 | grep -i 'csv') ; do cp "$y" $BASEDIR/ ; done
   ######
