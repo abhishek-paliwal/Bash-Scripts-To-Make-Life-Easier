@@ -46,6 +46,13 @@ if [ $USER = "ubuntu" ]; then
   rm $BASEDIR/*.CSV 
   ## Finding today's created CSV files in the CSVDIR and copying them to BASEDIR
   find $CSVDIR/ -name $(date +%Y%m%d)*CSV -exec cp "{}" $BASEDIR/  \;
+  ######
+  ## Finding the latest produced CSV file in the CSVDIR and copying them to BASEDIR
+  TMPFILE0="$DIR_Y/_tmp_602_csv_files.txt" ; 
+  for x in $(fd -td --search-path="$CSVDIR") ; do fd -e csv --search-path="$x" 'FUTURE_ANALYSES.CSV' | sort -rn | head -1 > $TMPFILE0 ; done ; 
+  ## Read the tmp file and copy each line CSV file into $BASEDIR
+  for y in $(cat $TMPFILE0) ; do cp "$y" $BASEDIR/ ; done
+  ######
 else
   MY_PWD="$(pwd)"
   echo "USER = $USER // USER is not ubuntu. Hence, MY_PWD will be: $MY_PWD " ;
