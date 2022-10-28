@@ -50,7 +50,8 @@ if [ $USER = "ubuntu" ]; then
   ## Finding the latest produced CSV file in the CSVDIR and copying them to BASEDIR
   TMPFILE0="$DIR_Y/_tmp_602_csv_files.txt" ; 
   for x in $(fd -td --search-path="$CSVDIR") ; do 
-    fd -e csv --search-path="$x" 'FUTURE_ANALYSES.CSV' ; 
+    echo ">> LISTING THE CSV FILES TO COPY ..." ; 
+    fd -e csv --search-path="$x" 'FUTURE_ANALYSES.CSV' | sort -rn | head -1 ; 
     fd -e csv --search-path="$x" 'FUTURE_ANALYSES.CSV' | sort -rn | head -1 > $TMPFILE0 ; 
   done ; 
   ## Read the tmp file and copy each line CSV file into $BASEDIR
