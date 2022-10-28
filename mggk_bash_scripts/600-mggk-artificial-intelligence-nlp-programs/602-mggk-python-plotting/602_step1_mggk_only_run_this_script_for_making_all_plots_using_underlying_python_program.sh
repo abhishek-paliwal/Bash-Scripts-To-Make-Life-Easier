@@ -97,7 +97,8 @@ echo "<!doctype html>
 echo "<div class='row' style='color: grey;'> Webpage created: $(date) </div>" >> $HTML_OUTPUT_FILE
 echo "<hr style='background-color: grey; height: 3px;' >" >> $HTML_OUTPUT_FILE
 echo "<div class='row'> <h1>List of CSV Files Used For Plotting:</h1> </div>" >> $HTML_OUTPUT_FILE
-for csvfile in $(date +%Y%m%d)*.CSV ; do
+#for csvfile in $(date +%Y%m%d)*.CSV ; do
+for csvfile in *.CSV ; do
   csvfile_data=$(cat $csvfile | grep 'http' | wc -l)
   echo "<div class='row'>$csvfile_data = Number of URLs // CSV-FILE = $csvfile</div>" >> $HTML_OUTPUT_FILE
 done
