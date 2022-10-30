@@ -89,14 +89,15 @@ echo "<!doctype html>
     <!-- Bootstrap CSS -->
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
 
-    <title>602 Plotting - Program output</title>
+    <title>PROJ602 Data Analysis/Plotting Output</title>
   </head>
   <body>
   <div class='container'><!-- BEGIN: main containter div -->" > $HTML_OUTPUT_FILE
 ##------------------------------------------------------------------------------
 echo "<div class='row' style='color: grey;'> Webpage created: $(date) </div>" >> $HTML_OUTPUT_FILE
 echo "<hr style='background-color: grey; height: 3px;' >" >> $HTML_OUTPUT_FILE
-echo "<div class='row'> <h1>List of CSV Files Used For Plotting:</h1> </div>" >> $HTML_OUTPUT_FILE
+echo "<div class='row'> <h1>[Concepro Client- 2022] MGGK - Competitor Analysis</h1> </div>" >> $HTML_OUTPUT_FILE
+echo "<div class='row'> <h2>List of DATA Files Used For Data Analysis and Reporting:</h2> </div>" >> $HTML_OUTPUT_FILE
 #for csvfile in $(date +%Y%m%d)*.CSV ; do
 for csvfile in *.CSV ; do
   csvfile_data=$(cat $csvfile | grep 'http' | wc -l)
