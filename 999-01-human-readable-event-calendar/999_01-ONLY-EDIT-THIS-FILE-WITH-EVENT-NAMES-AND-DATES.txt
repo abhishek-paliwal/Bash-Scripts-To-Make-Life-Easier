@@ -8,10 +8,14 @@
 ##############################################################################
 ##############################################################################
 ## OTHER FESTIVALS
-20220214,12:00:00,orange,Valentines Day
-20220214,12:00:00,orange,Winter Break
+20221121,12:00:00,pink,Anniv
+20221225,12:00:00,orange,Christmas
+20221231,12:00:00,orange,NewYear
 ######################
 ## HOME EVENTS
-20220418,12:00:00,deeppink,AN-Bday 
-20220422,12:00:00,deeppink,AD-Bday 
-20220714,12:00:00,deeppink,AB-Bday 
+20221109,12:00:00,deeppink,Dentist1/6 
+20221117,12:00:00,deeppink,Dentist2/6 
+20221125,12:00:00,deeppink,Dentist3/6 
+20221214,12:00:00,deeppink,Dentist4/6 
+20230102,12:00:00,deeppink,Dentist5/6 
+20230125,12:00:00,deeppink,Dentist6/6 
