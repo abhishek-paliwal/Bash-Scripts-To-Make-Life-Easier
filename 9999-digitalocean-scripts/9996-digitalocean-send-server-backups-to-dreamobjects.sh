@@ -36,7 +36,8 @@ echo "##########################################" ;
 echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
 echo "##########################################" ; 
 
-DIR_LOCAL_BACKUP="/home/00-BACKUPS-BY-PALI/" ; 
+#DIR_LOCAL_BACKUP="/home/00-BACKUPS-BY-PALI/" ; 
+DIR_LOCAL_BACKUP="/mnt/volume_blr1_01/00-BACKUPS-MOVED/" ; 
 BUCKET_REMOTE_BACKUP="dreamobjects:private-digitalocean-backups" ;
 
 ## Check for the presence of directory paths
