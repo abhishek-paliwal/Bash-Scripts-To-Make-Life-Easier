@@ -5,7 +5,7 @@
 ## DIRECTORY BASED UPON THEIR PARENT DIRECTORY NAME. 
 #############################################################################
 
-DIR="/mnt/d/OneDrive/00-MGGK-ARCHIVED-VIDEOS-PHOTOS/2014-2018-Recipe-Photos/Baking" ; 
+DIR="/mnt/d/OneDrive/00-MGGK-ARCHIVED-VIDEOS-PHOTOS/2019-2021-recipe-photos-videos/2019-ALL-ENGLISH-RECIPE-VIDEOS/20190701-Ghee-Mysore-Pak/Mysore-Pak-Final" ; 
 INFILE="$DIR_Y/tmp.txt" ; 
 
 ## listing dirs with the desired images names
@@ -19,7 +19,7 @@ echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function FUNC_ACTUALLY_RENAME_FILES () {
 ####
-    for x in $(cat $INFILE | head -27) ; do 
+    for x in $(cat $INFILE | head -100) ; do 
         echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>";  
         cd $x ; 
         ls $x/* ; 
