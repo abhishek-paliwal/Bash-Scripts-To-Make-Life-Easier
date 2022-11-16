@@ -43,14 +43,14 @@ echo "<!DOCTYPE html>" > $OUTPUT ## FIRST OUTPUT LINE TO HTML FILE
 echo "<html lang='en'>
 <head>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src='https://www.googletagmanager.com/gtag/js?id=UA-48712319-9'></script>
+<!-- Google tag (gtag.js) -->
+<script async src='https://www.googletagmanager.com/gtag/js?id=G-JE3DGTTYC1'></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-48712319-9');
+  gtag('config', 'G-JE3DGTTYC1');
 </script>
 
 <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
@@ -349,8 +349,7 @@ echo; echo ">>>> Getting all image names for creating wordcloud in python (throu
 WORDCLOUD_FILE="$DIRPATH/ADO_SITE_WORDCLOUD_for_using_with_603_mggk_script.csv"
 echo "TITLE_TAG_VALUE" > $WORDCLOUD_FILE ## We need to have this line as the first line.
 ## The following command finds all files (case insensitive jpg, JPG, png, PNG)
-basename $(find . -iname '*.png') | sed -e 's/-/ /g' -e 's/_/ /g' -e 's/\./ /g' >> $WORDCLOUD_FILE
-basename $(find . -iname '*.jpg') | sed -e 's/-/ /g' -e 's/_/ /g' -e 's/\./ /g' >> $WORDCLOUD_FILE
+fd -t f -e png -e jpg --search-path="$ROOT" -x basename {} | sd '-' ' ' | sd '\.' ' ' >> $WORDCLOUD_FILE
 echo; echo ">> THIS WORDCLOUD FILE CREATED (use it with 603-mggk-wordcloud...sh script) => $WORDCLOUD_FILE" ;
 echo;
 ##------------------------------------------------------------------------------
