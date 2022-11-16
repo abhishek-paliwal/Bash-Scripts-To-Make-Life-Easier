@@ -212,7 +212,7 @@ echo "</head><body>" >> $OUTPUT
 
 echo "<nav class='navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top'>
   <a class='navbar-brand' href='https://adoria.xyz'>
-  <img src='./drawings/0-logos/site-logo-transparent-1000px-lowres.png' style='width: 30px; '>
+  <img src='./drawings/0-Logos/Site-Logo-Transparent-1000Px-Lowres.png' style='width: 30px; '>
   <span style='font-weight: 700; color: #F81894;'>adoria</span> | a personal portfolio
   </a>
 </nav>" >> $OUTPUT
@@ -224,7 +224,7 @@ echo "<div class='site-wrapper'>
 <div class='site-wrapper-inner'>
 
 <!-- HEADING DIV STARTS --> <div class='heading'>
-<!-- TOP LOGO --> <img src='./drawings/0-logos/site-logo-transparent-1000px-lowres.png' style='width: 300px; '>
+<!-- TOP LOGO --> <img src='./drawings/0-Logos/Site-Logo-Transparent-1000Px-Lowres.png' style='width: 300px; '>
 <h1 class='heading'>Personal Portfolio of Adoria's Drawings<br>&bull;&bull;&bull;&bull;&bull;</h1>
 
 <h2 class='heading'><font color='#FFFF00'>Designed by</font> <a href='https://adoria.xyz'><font color='#50c878'>Adoria</font></a></h2>
