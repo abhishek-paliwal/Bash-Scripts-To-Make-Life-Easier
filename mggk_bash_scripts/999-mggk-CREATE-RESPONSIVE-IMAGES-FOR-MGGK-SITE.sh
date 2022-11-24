@@ -171,9 +171,18 @@ FUNC_create_responsive_images "$RESPONSIVE_IMAGES_ROOTDIR" "$tmpA2" "tmpA" ;
 ## END: BLOCK 1
 ##------------------------------------------------------------------------------
 
-## PRINGING WORD COUNTS FOR ALL FILES IN WORKDIR
-echo; echo ">> PRINGING WORD COUNTS FOR ALL FILES IN WORKDIR ..." ;
+## PRINTING WORD COUNTS FOR ALL FILES IN WORKDIR
+echo; echo ">> PRINTING WORD COUNTS FOR ALL FILES IN WORKDIR ..." ;
 wc $WORKDIR/* ;
+
+##+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## PRINTING THE FULL UPDATED LIST OF FILES IN MGGK CDN DIRECTORY TO SEE FOR ANY CHANGES
+echo; echo ">> PRINTING THE FULL UPDATED LIST OF FILES IN MGGK CDN DIRECTORY TO SEE IF ANY CHANGES ..." ;
+DIR_CDN="$REPO_CDN/cdn.mygingergarlickitchen.com" ; 
+echo "## File last updated: $(date)" > $DIR_CDN/summary_file_list_latest.txt ;
+tree -h --charset=ascii "$DIR_CDN"  >> $DIR_CDN/summary_file_list_latest.txt ; 
+##+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 ################################################################################
 ############################### PROGRAM ENDS ###################################
 ################################################################################
