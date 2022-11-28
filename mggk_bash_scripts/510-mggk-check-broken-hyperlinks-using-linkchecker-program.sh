@@ -18,7 +18,8 @@ USAGE: $(basename $0)
   ## USAGE (if run from command line interactive terminal):
   ## > linkchecker --verbose --check-extern www.mygingergarlickitchen.com
   ###############################################################################
-  ## UPDATED ON: 2021-08-07
+  ## CREATED ON: 2021-08-07
+  ## LAST UPDATED ON: 2022-11-28
   ## BY: PALI
   ###############################################################################
 EOM
@@ -43,7 +44,7 @@ HTML_OUTPUT="$WORKDIR/linkchecker-out-mggk.html"
 
 ##------------------------------------------------------------------------------
 function FUNC_RUN_LINKCHECKER () {
-      linkchecker --check-extern -F html/$HTML_OUTPUT "$MY_SITE" ;
+      linkchecker --check-extern -F html/$HTML_OUTPUT -o failures "$MY_SITE" ;
       ## Copying the created HTML output to the www accessible folder, then renaming the original
       cp $HTML_OUTPUT /var/www/vps.abhishekpaliwal.com/html/scripts-html-outputs/
       ## FINALLY SEND FINAL EMAIL USING AMAZON SES
