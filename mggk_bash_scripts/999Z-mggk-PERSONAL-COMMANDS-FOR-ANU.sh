@@ -197,7 +197,8 @@ pali_imagemagick_create_10_random_images
 convert-all-csv-files-in-pwd-to-html-tables-bootstrap
 mggk_WEEKLY_SUMMARY_RUN
 gits_all
-dotfiles_copy) ;
+dotfiles_copy
+create_listing_of_mggk_ONEDRIVE_FILES) ;
 
 ##
 LEELA_COMMANDS_ARRAY=(leelasrecipes_makesite_hugo
