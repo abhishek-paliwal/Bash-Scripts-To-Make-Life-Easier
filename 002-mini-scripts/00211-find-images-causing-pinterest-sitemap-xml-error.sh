@@ -8,7 +8,7 @@ TMPFILE3="$WORKDIR/_tmpfile3_pinterest.html" ;
 
 ## Downloading index.xml locally
 echo ">> Downloading index.xml locally into $WORKDIR" ; 
-curl https://www.mygingergarlickitchen.com/index.xml > $TMPFILE1 ;
+curl -k https://www.mygingergarlickitchen.com/index.xml > $TMPFILE1 ;
 echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
 
 ## Getting all jpg image urls
