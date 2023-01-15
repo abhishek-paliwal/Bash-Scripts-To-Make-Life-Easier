@@ -46,7 +46,7 @@ echo; echo "NUMBER of posts to be included in HTML output = $numPosts" ;
 ###############################################################################
 
 ## first download the xml file locally and save as feed.xml
-curl -s https://www.mygingergarlickitchen.com/index.xml > $OUTPUT_RSSFEED_FILE
+curl -sk https://www.mygingergarlickitchen.com/index.xml > $OUTPUT_RSSFEED_FILE
 echo "XML RSS FEED locally saved at $PWD" ;
 echo ;
 
