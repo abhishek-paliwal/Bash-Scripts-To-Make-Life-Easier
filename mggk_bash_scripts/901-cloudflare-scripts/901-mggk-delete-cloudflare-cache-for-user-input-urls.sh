@@ -104,7 +104,7 @@ function step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls () {
     for myurl in $(cat $inFile); do 
         ((COUNT++)) ;
         echo ">> ($COUNT of $TOTAL_COUNT) // CURRENT URL = $myurl" ; 
-        curl -sI "$myurl" | grep -i 'cache-status' ; 
+        curl -skI "$myurl" | grep -i 'cache-status' ; 
     done
     echo ">> DONE = step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls " ;
 }
@@ -118,7 +118,7 @@ echo "[Enter 0  (= zero) if you have a single url (with http/https): " ;
 echo "[Enter 1  (= one) if you want to delete cache for MGGK Homepage only: " ; 
 echo "[Enter 2  (= two) if you want to delete cache for top 16 MGGK URLS only: " ;
 echo "[Enter 3  (= three) if you want to delete cache for existing URLs containing new link [user provided keyword url]: " ; 
-echo "[Enter 4  (= zero) if you have multiple urls: " ; 
+echo "[Enter 4  (= four) if you have multiple urls: " ; 
 echo "[Enter 99 if you want to delete cache for all urls in mggk sitemap.xml file: " ; 
 ##
 read myKeyword ; 
