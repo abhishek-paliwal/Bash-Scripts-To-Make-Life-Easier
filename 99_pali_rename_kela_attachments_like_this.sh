@@ -70,7 +70,6 @@ echo "##------------------------------------------------------------------------
 2.pdf,$durationPrefix-Husband-Nordea.pdf 
 3.pdf,$durationPrefix-Nordea-Concepro.pdf 
 4.pdf,$durationPrefix-Spouse-Nordea.pdf 
-5.pdf,$durationPrefix-Spouse-Nordea-Perk.pdf 
 ##------------------------------------------------------------------------------ 
 a.pdf,$ago1month-Kotivakuutus.pdf 
 b.pdf,$ago1month-MAKSUT-Asunto-Oy-Merivesi.pdf 
