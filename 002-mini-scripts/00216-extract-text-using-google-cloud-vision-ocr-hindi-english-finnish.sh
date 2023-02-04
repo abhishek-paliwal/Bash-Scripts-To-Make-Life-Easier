@@ -42,8 +42,9 @@ done
 }
 ##############################################
 FUNC2_CONCATENATE_ALL_EXTRACTED_TEXT_FILES_INTO_ONE () {
-    for x in $(ls "$dirResultsOCR/*.txt" | sort -V) ; do echo; echo; echo ">>>>>>>>>> $x" ; echo; cat $x ; done >> "$dirResultsOCRcombined/101.txt" ; 
-    echo ">> SUMMARY: Combined file saved => $dirResultsOCRcombined/101.txt " ; 
+    combinedFile="$dirResultsOCRcombined/COMBINED_OCR_RESULTS.txt"
+    for x in $(ls $dirResultsOCR/*.txt | sort -V) ; do echo; echo; echo ">>>>>>>>>> $x" ; echo; cat $x ; done >> "$combinedFile" ; 
+    echo ">> SUMMARY: Combined file saved => $combinedFile " ; 
 }
 ################################################################################
 ################################################################################
