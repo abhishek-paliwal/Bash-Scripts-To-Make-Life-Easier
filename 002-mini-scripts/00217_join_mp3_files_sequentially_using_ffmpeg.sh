@@ -24,6 +24,6 @@ cat  $TMPLIST_FILE ;
 
 ## FINALLY SOME FFMPEG CONCATENATE MAGIC, AND CREATING FINAL FILE
 mkdir _TMP_DIR ;
-how_many_mp3=$(fd -e mp3 -e MP3 | wc -l | tr ' ' '') ; 
+how_many_mp3=$(fd -e mp3 -e MP3 | wc -l | sd ' ' '_') ; 
 ffmpeg -f concat -safe 0 -i $TMPLIST_FILE -c copy _TMP_DIR/joined-$how_many_mp3-files-FULL-FINAL-AUDIO.mp3
 
