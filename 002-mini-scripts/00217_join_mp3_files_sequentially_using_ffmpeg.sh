@@ -1,7 +1,16 @@
-#/bin/bash
+#!/bin/bash
 ################################################################################
 ## THIS SCRIPT JOINS MP3 FILES FOUND IN PWD, USING FFMPEG
 ################################################################################
+
+###########################################################
+## MAIN FUNCTION DEFINITION
+FUNC_PRINT_DIVIDER_AND_ASK_FOR_CONFIRMATION_TO_PROCEED () {
+    echo; echo "####===========================================================####" ;
+    read -p ">>>>>>>> If everything is okay so far, then press ENTER key to continue ..." ;
+    echo ;
+}
+###########################################################
 
 echo "################################################################################" ; 
 WORKING_DIR="$(pwd)" ; 
@@ -21,6 +30,8 @@ for f in $(fd -e mp3 -e MP3 | sort -V) ;
 ##
 echo ">> THESE mp3 FILES WILL BE JOINED IN THIS ORDER ..." ; 
 cat  $TMPLIST_FILE ; 
+## CALL FOR CONFIRMATION
+FUNC_PRINT_DIVIDER_AND_ASK_FOR_CONFIRMATION_TO_PROCEED ; 
 
 ## FINALLY SOME FFMPEG CONCATENATE MAGIC, AND CREATING FINAL FILE
 mkdir _TMP_DIR ;
