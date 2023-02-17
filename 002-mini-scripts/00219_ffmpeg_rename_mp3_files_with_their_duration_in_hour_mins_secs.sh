@@ -24,6 +24,3 @@ echo; echo "##------------------------------------------------------------------
 echo ">> PRINTING FILE TREE" ; 
 tree $WORKDIR ; 
 echo "##------------------------------------------------------------------------------" ; 
-
-
-# alias 00219_ffmpeg_rename_mp3_files_with_their_duration_in_hour_mins_secs="bash $REPO_SCRIPTS_MINI/00219_ffmpeg_rename_mp3_files_with_their_duration_in_hour_mins_secs.sh"
