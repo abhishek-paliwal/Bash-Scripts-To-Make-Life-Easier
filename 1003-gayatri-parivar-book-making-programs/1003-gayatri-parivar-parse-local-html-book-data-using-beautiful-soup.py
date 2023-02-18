@@ -8,7 +8,6 @@ import sys
 
 ##################################################################################
 ##################################################################################
-from newspaper import Article
 from bs4 import BeautifulSoup
 from bs4.diagnose import diagnose
 import urllib.request
@@ -17,7 +16,6 @@ import glob
 import csv
 from datetime import datetime
 from random import randint
-import matplotlib.pyplot as plt
 
 #########################################################
 ## BEGIN: GETTING SOME MORE DETAILS USING BeautifulSoup
@@ -44,32 +42,34 @@ def parse_data_for_this_url(myurl,x):
     ################################################################################
     ## GETTING THE TITLE TAG TEXT
     TITLE_VALUE = soup.find('title').get_text()
-    print("<h3>SECTION " + str(x) + ': ' ,TITLE_VALUE,"</h3>")
+    print("<h3>CHAPTER " + str(x) + ': ' ,TITLE_VALUE,"</h3>")
     ################################################################################
     ##
     #page_headings = soup.find_all("h3")
     #print(page_headings) 
     main_content = soup.find("div", ["versionPage"])
     print(main_content)
-    print ('<hr><hr>')
+    print ('<hr>')
 
 
 ####
 
 ## CHANGE THE FOLLOWING VARIABLES FOR EACH BOOK YOU WISH TO DOWNLOAD
-bookname = "BOOKNAME GOES HERE" ; 
-number_of_pages_to_download = 20 ; 
+bookname = "हमारी वसीयत और विरासत - Text for Audiobook" ; 
+number_of_pages_to_download = 23 ; 
+MYURL_BASEPATH = 'file:///Users/abhishek/Desktop/Y/0/v4.' ; 
+##
 
-print('<h1>' + bookname + '</h2>')
+print('<h1>' + bookname + '</h1>')
 print('<h2>Table of contents</h2>')
 print('<ol>')
 for x in range(1, number_of_pages_to_download+1):
-    myurl = 'file:///Users/abhishek/Desktop/Y/0/v1.'+ str(number_of_pages_to_download+1) + '.html' ;
-    parse_title_for_this_url(myurl,number_of_pages_to_download+1)
+    myurl = MYURL_BASEPATH + str(x) + '.html' ;
+    parse_title_for_this_url(myurl,x)
 print('</ol>')
-print ('<hr><hr>')
+print ('<hr>')
 
 ####
 for x in range(1,number_of_pages_to_download+1):
-    myurl = 'file:///Users/abhishek/Desktop/Y/0/v1.'+ str(number_of_pages_to_download+1) + '.html' ;
-    parse_data_for_this_url(myurl,number_of_pages_to_download+1)
+    myurl = MYURL_BASEPATH + str(x) + '.html' ;
+    parse_data_for_this_url(myurl,x)
