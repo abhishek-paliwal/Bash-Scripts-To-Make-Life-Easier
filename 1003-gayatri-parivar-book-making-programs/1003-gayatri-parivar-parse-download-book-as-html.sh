@@ -28,7 +28,7 @@ FUNC_DOWNLOAD_ALL_PAGES_LOCALLY () {
 }
 #####################################################
 ## CALL FUNCTION
-#FUNC_DOWNLOAD_ALL_PAGES_LOCALLY ;
+FUNC_DOWNLOAD_ALL_PAGES_LOCALLY ;
 
 ####
 ## run the python bsoup program to extract the desired data from locally present html files
