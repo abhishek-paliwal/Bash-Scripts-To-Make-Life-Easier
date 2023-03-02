@@ -144,7 +144,7 @@ count=0;
 ## Print the bash script where usage function is not found.
 echo "<tr class='table-dark'> <th scope='row'>COUNT</th> <td>SCRIPTS WHERE USAGE FUNCTION IS NOT FOUND (red rows)</td> <td>Needs debugging.</td> <td>Usage_Function_Output</td> </tr>" >> $outfile ;
 echo "<tr> <th scope='row'>#</th> <td>Row left blank intentionally.</td> <td></td> </tr>" >> $outfile ;
-for x in $(grep -irL --include \*.sh --include \*.py 'usage()' $PATHDIR/) ; do
+for x in $(grep -irL --include \*.sh --include \*.py 'usage()' $PATHDIR/ | grep -iv '/venv/') ; do
     ((count++))
     replaceThis1="/home/ubuntu/GitHub/Bash-Scripts-To-Make-Life-Easier/" ;
     replaceThis2="/Users/abhishek/GitHub/Bash-Scripts-To-Make-Life-Easier/"
@@ -162,7 +162,7 @@ echo "$DATATABLE_HEADER_SUCCESS" >> $outfile ;
 ##
 ## Print the bash script where usage function is found.
 echo "<tr class='table-dark'> <th scope='row'>COUNT</th> <td>SCRIPTS WHERE USAGE FUNCTION IS FOUND (blue/green rows)</td> <td>They do not need fixing.</td> <td>Usage_Function_Output</td> </tr>" >> $outfile ;
-for x in $(grep -irl --include \*.sh --include \*.py 'usage()' $PATHDIR/) ; do
+for x in $(grep -irl --include \*.sh --include \*.py 'usage()' $PATHDIR/ | grep -iv '/venv/') ; do
     ((count++))
     ## Get file extension (sh OR py)
     file_extension="${x##*.}";
