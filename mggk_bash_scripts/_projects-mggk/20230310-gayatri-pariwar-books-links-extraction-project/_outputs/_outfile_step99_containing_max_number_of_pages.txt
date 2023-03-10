@@ -344,16 +344,16 @@ BOOK_SERIALNUM_74
 >>>>>>>>
   >> BOOK SERIALNUM = BOOK_SERIALNUM_200
   >> MYURL_REALBOOKNAME = उच्चस्तरीय साधना के दो सोपान- जप और ध्यान
-  >> URL_BASE = http://literature.awgp.org/book/Recitation_and_Meditation/v5
-  >> URL_NEW = http://literature.awgp.org/book/Recitation_and_Meditation/v5.1
+  >> URL_BASE = http://literature.awgp.org/book/Recitation_and_Meditation/v4
+  >> URL_NEW = http://literature.awgp.org/book/Recitation_and_Meditation/v4.1
   >> MYURL_BOOKNAME = Recitation_and_Meditation
 
 
 >>>>>>>>
   >> BOOK SERIALNUM = BOOK_SERIALNUM_204
   >> MYURL_REALBOOKNAME = उतावली न करें उद्विग्न न हों
-  >> URL_BASE = http://literature.awgp.org/book/Utai_Na_Kare_Udvign_Na_Ho/v2
-  >> URL_NEW = http://literature.awgp.org/book/Utai_Na_Kare_Udvign_Na_Ho/v2.1
+  >> URL_BASE = http://literature.awgp.org/book/Utavali_Na_Kare_Udvign_Na_Ho/v2
+  >> URL_NEW = http://literature.awgp.org/book/Utavali_Na_Kare_Udvign_Na_Ho/v2.1
   >> MYURL_BOOKNAME = Utai_Na_Kare_Udvign_Na_Ho
 
 
@@ -710,8 +710,8 @@ BOOK_SERIALNUM_74
 >>>>>>>>
   >> BOOK SERIALNUM = BOOK_SERIALNUM_528
   >> MYURL_REALBOOKNAME = जीव जन्तु बोलते भी हैं सोचते भी हैं
-  >> URL_BASE = http://literature.awgp.org/book/jeev_jantu_bolte_bhi_hai_sochte_bhi_hai/v1
-  >> URL_NEW = http://literature.awgp.org/book/jeev_jantu_bolte_bhi_hai_sochte_bhi_hai/v1.1
+  >> URL_BASE = http://literature.awgp.org/book/jeev_jantu_bolte_bhi_hai,_sochte_bhi_hai/v1
+  >> URL_NEW = http://literature.awgp.org/book/jeev_jantu_bolte_bhi_hai,_sochte_bhi_hai/v1.1
   >> MYURL_BOOKNAME = jeev_jantu_bolte_bhi_hai_sochte_bhi_hai
 
 
@@ -986,8 +986,8 @@ BOOK_SERIALNUM_74
 >>>>>>>>
   >> BOOK SERIALNUM = BOOK_SERIALNUM_722
   >> MYURL_REALBOOKNAME = पंच तत्वों से— सम्पूर्ण रोगों का निवारण
-  >> URL_BASE = http://literature.awgp.org/book/Panch_Tatvon_Dwara_Sampurn_Rogon_Ka_Nivaran/v2
-  >> URL_NEW = http://literature.awgp.org/book/Panch_Tatvon_Dwara_Sampurn_Rogon_Ka_Nivaran/v2.1
+  >> URL_BASE = http://literature.awgp.org/book/Panch_Tatvon_Dwara_Sampurn_Rogon_Ka_Nivaran/1
+  >> URL_NEW = http://literature.awgp.org/book/Panch_Tatvon_Dwara_Sampurn_Rogon_Ka_Nivaran/1.1
   >> MYURL_BOOKNAME = Panch_Tatvon_Dwara_Sampurn_Rogon_Ka_Nivaran
 
 

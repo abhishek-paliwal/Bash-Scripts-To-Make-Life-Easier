@@ -48,9 +48,9 @@ BOOK_SERIALNUM_189;ईश्वर का विराट रूप;http://liter
 BOOK_SERIALNUM_197;उच्चस्तरीय परमार्थ समयदान;http://literature.awgp.org/book/उच्चस्तरीय_परमार्थ_समयदान;Text Book Version
 BOOK_SERIALNUM_198;उच्चस्तरीय परमार्थ समयदान;http://literature.awgp.org/book/The_Demand_of_the_Times/v3;Text Book Version
 BOOK_SERIALNUM_199;उच्चस्तरीय परमार्थ समयदान;http://literature.awgp.org/book/The_Demand_of_the_Times/v2;Scan Book Version
-BOOK_SERIALNUM_200;उच्चस्तरीय साधना के दो सोपान- जप और ध्यान;http://literature.awgp.org/book/Recitation_and_Meditation/v5;Text Book Version
+BOOK_SERIALNUM_200;उच्चस्तरीय साधना के दो सोपान- जप और ध्यान;http://literature.awgp.org/book/Recitation_and_Meditation/v4;Text Book Version
 BOOK_SERIALNUM_203;उतावली न करें उद्विग्न न हों;http://literature.awgp.org/book/Utai_Na_Kare_Udvign_Na_Ho/v1;Scan Book Version
-BOOK_SERIALNUM_204;उतावली न करें उद्विग्न न हों;http://literature.awgp.org/book/Utai_Na_Kare_Udvign_Na_Ho/v2;Text Book Version
+BOOK_SERIALNUM_204;उतावली न करें उद्विग्न न हों;http://literature.awgp.org/book/Utavali_Na_Kare_Udvign_Na_Ho/v2;Text Book Version
 BOOK_SERIALNUM_206;उत्कृष्ट और परिष्कृत जीवन;http://literature.awgp.org/book/utkrusht_aur_parishkrut_jeevan/v1;Text Book Version
 BOOK_SERIALNUM_208;उदारता और दूरदर्शिता;http://literature.awgp.org/book/Udarta_Aur_Durdarshita/v3;Text Book Version
 BOOK_SERIALNUM_209;उदारता और दूरदर्शिता;http://literature.awgp.org/book/Udarta_Aur_Durdarshita/v1;Scan Book Version
@@ -130,7 +130,7 @@ BOOK_SERIALNUM_675;ध्यान का दार्शनिक पक्ष;
 BOOK_SERIALNUM_679;न डरिये न अशान्त हूजिये;http://literature.awgp.org/book/Na_Dariye_Na_Ashant_Hojiye/v2;Text Book Version
 BOOK_SERIALNUM_712;नियामक सत्ता का नियंत्रण न तोड़ें;http://literature.awgp.org/book/niyamak_satta_ka_niyantran_na_tode/v1;Text Book Version
 BOOK_SERIALNUM_718;नेत्र रोगों की चिकित्सा;http://literature.awgp.org/book/netra_rogo_ki_chikitsa/v1;Text Book Version
-BOOK_SERIALNUM_722;पंच तत्वों से— सम्पूर्ण रोगों का निवारण;http://literature.awgp.org/book/Panch_Tatvon_Dwara_Sampurn_Rogon_Ka_Nivaran/v2;Text Book Version
+BOOK_SERIALNUM_722;पंच तत्वों से— सम्पूर्ण रोगों का निवारण;http://literature.awgp.org/book/Panch_Tatvon_Dwara_Sampurn_Rogon_Ka_Nivaran/1;Text Book Version
 BOOK_SERIALNUM_727;पत्नी का सम्मान गृहस्थ का उत्थान;http://literature.awgp.org/book/Patni_Ka_Samman_Grihasth_Ka_Utthan/v3;Text Book Version
 BOOK_SERIALNUM_728;पत्नी का सम्मान गृहस्थ का उत्थान;http://literature.awgp.org/book/Patni_Ka_Samman_Grihasth_Ka_Utthan/v1;Scan Book Version
 BOOK_SERIALNUM_733;परमार्थ और स्वार्थ का समन्वय;http://literature.awgp.org/book/Parmarth_Aur_Svarth/v1;Scan Book Version

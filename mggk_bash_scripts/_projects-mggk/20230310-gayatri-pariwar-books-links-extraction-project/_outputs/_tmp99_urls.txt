@@ -34,8 +34,8 @@ http://literature.awgp.org/book/Indriya_Sanyam_Ka_Mahatva/v3
 http://literature.awgp.org/book/Ishwar_Ka_Virat_Roop/v3
 http://literature.awgp.org/book/उच्चस्तरीय_परमार्थ_समयदान
 http://literature.awgp.org/book/The_Demand_of_the_Times/v3
-http://literature.awgp.org/book/Recitation_and_Meditation/v5
-http://literature.awgp.org/book/Utai_Na_Kare_Udvign_Na_Ho/v2
+http://literature.awgp.org/book/Recitation_and_Meditation/v4
+http://literature.awgp.org/book/Utavali_Na_Kare_Udvign_Na_Ho/v2
 http://literature.awgp.org/book/utkrusht_aur_parishkrut_jeevan/v1
 http://literature.awgp.org/book/Udarta_Aur_Durdarshita/v3
 http://literature.awgp.org/book/Unse_Jo_50_Ke_Ho_Chale/v3
@@ -73,7 +73,7 @@ http://literature.awgp.org/book/Jad_Ke_Bhitar_bhi_vivekavan_Chetan/v2
 http://literature.awgp.org/book/jap_ka_gyan_aur_vigyan/v1
 http://literature.awgp.org/book/jadugari_ya_chhal/v1
 http://literature.awgp.org/book/Jindagi_Kaise_Jiye/v2
-http://literature.awgp.org/book/jeev_jantu_bolte_bhi_hai_sochte_bhi_hai/v1
+http://literature.awgp.org/book/jeev_jantu_bolte_bhi_hai,_sochte_bhi_hai/v1
 http://literature.awgp.org/book/jeevant_vibhootiyon_se_bhavabharee_apekshaen/v1
 http://literature.awgp.org/book/The_Spiritual_Training_and_Adoration_of_Life_Deity/v6
 http://literature.awgp.org/book/jivan_lakhsay_aur_usaki_prapti/v2
@@ -103,7 +103,7 @@ http://literature.awgp.org/book/dhyan_ka_darshanik_paksh/v1
 http://literature.awgp.org/book/Na_Dariye_Na_Ashant_Hojiye/v2
 http://literature.awgp.org/book/niyamak_satta_ka_niyantran_na_tode/v1
 http://literature.awgp.org/book/netra_rogo_ki_chikitsa/v1
-http://literature.awgp.org/book/Panch_Tatvon_Dwara_Sampurn_Rogon_Ka_Nivaran/v2
+http://literature.awgp.org/book/Panch_Tatvon_Dwara_Sampurn_Rogon_Ka_Nivaran/1
 http://literature.awgp.org/book/Patni_Ka_Samman_Grihasth_Ka_Utthan/v3
 http://literature.awgp.org/book/Parmarth_Aur_Svarth/v3
 http://literature.awgp.org/book/prakarm_aur_purusharth_se_aut_prot_yeh_manavi_satta/v1

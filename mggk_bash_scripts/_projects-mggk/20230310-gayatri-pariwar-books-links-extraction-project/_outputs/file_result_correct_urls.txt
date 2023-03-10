@@ -101,7 +101,7 @@ http://literature.awgp.org/book/The_Demand_of_the_Times/v3")
 199
 http://literature.awgp.org/book/The_Demand_of_the_Times/v2")
 200
-http://literature.awgp.org/book/Recitation_and_Meditation/v5")
+http://literature.awgp.org/book/Recitation_and_Meditation/v4")
 203
 http://literature.awgp.org/book/Utavali_Na_Kare_Udvign_Na_Ho/v1")
 204
@@ -283,7 +283,7 @@ http://literature.awgp.org/book/niyamak_satta_ka_niyantran_na_tode/v1")
 718
 http://literature.awgp.org/book/netra_rogo_ki_chikitsa/v1")
 722
-http://literature.awgp.org/book/Panch_Tatvon_Dwara_Sampurn_Rogon_Ka_Nivaran/v2")
+http://literature.awgp.org/book/Panch_Tatvon_Dwara_Sampurn_Rogon_Ka_Nivaran/1")
 727
 http://literature.awgp.org/book/Patni_Ka_Samman_Grihasth_Ka_Utthan/v3")
 728

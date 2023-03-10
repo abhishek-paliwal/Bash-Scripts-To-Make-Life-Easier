@@ -997,7 +997,7 @@ BOOK_SERIALNUM_199
 ========
 BOOK_SERIALNUM_200
 ("VAL","उच्चस्तरीय साधना के दो सोपान- जप और ध्यान")
-("BOOKNAME","http://literature.awgp.org/book/Recitation_and_Meditation/v5")
+("BOOKNAME","http://literature.awgp.org/book/Recitation_and_Meditation/v4")
 ("VAL","Text Book Version")
 ========
 BOOK_SERIALNUM_201
@@ -3607,7 +3607,7 @@ BOOK_SERIALNUM_721
 ========
 BOOK_SERIALNUM_722
 ("VAL","पंच तत्वों से— सम्पूर्ण रोगों का निवारण")
-("BOOKNAME","http://literature.awgp.org/book/Panch_Tatvon_Dwara_Sampurn_Rogon_Ka_Nivaran/v2")
+("BOOKNAME","http://literature.awgp.org/book/Panch_Tatvon_Dwara_Sampurn_Rogon_Ka_Nivaran/1")
 ("VAL","Text Book Version")
 ========
 BOOK_SERIALNUM_723
