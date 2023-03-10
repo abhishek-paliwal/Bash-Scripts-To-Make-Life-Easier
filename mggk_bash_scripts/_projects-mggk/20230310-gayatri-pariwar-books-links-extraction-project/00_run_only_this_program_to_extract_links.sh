@@ -79,6 +79,8 @@ FUNC_STEP99_FIND_MAX_NUMBER_OF_PAGES_FROM_EACH_BOOK_URL () {
     INFILE_BOOKLIST="$1" ; ## GET VALUE FROM CLI ARGUMENT
     TMPFILE="$OUTDIR_MAIN/_tmp99_urls.txt" ;
     TMPFILE1="$OUTDIR_MAIN/_tmp99_curl_output.txt" ;
+    echo > $TMPFILE ; # initiliazing
+    echo > $TMPFILE1 ; # initiliazing 
     ## FIND MAX PAGES ONLY FOR TEXT BOOK TYPE, AND NOT SCANNED BOOK TYPE
     grep -i 'text book' $INFILE_BOOKLIST |  awk -F ";" '{print $3}' > $TMPFILE
     ##
