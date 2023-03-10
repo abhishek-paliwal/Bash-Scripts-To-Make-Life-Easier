@@ -1,28 +1,35 @@
 #/bin/bash
 
 ## THIS SCRIPT EXTRACTS THE CORRECT URLS FROM THE GIVEN LIST OF ANCHOR TEXTS FROM THE AWGP BOOK CATALOG PAGE.
-## 
+## THIS SCRIPT ALSO OUTPUTS THE MAX NUMBER OF PAGES IN BOOK BY GOING TO THE CHOSEN BOOK URL AND FINDING THE FAST FORWARD KEYWORD
 
-WORKDIR="$DIR_Y" ; 
+WORKDIR="$REPO_SCRIPTS_MGGK_PROJECTS/20230310-gayatri-pariwar-books-links-extraction-project" ; 
+INDIR_MAIN="$WORKDIR/_input" ; 
+OUTDIR_MAIN="$WORKDIR/_output" ; 
+
 cd $WORKDIR  ;
+echo ">> PWD IS => $WORKDIR" ; 
 
 ###################################
-file_catalog_full="$WORKDIR/book_catalog.html" ;
-file_anchor_texts="$WORKDIR/txt_list_of_anchor_texts.txt" ; 
+## VARIABLES
+###################################
+file_catalog_full="$INDIR_MAIN/book_catalog.html" ;
+file_anchor_texts="$INDIR_MAIN/txt_list_of_anchor_texts.txt" ; 
 ##
-file_result_correct_serialnums="$WORKDIR/file_result_correct_serialnums.txt" ; 
-file_result_correct_urls="$WORKDIR/file_result_correct_urls.txt" ; 
-file_with_all_urls_from_book_catalog="$WORKDIR/_FINAL_file_with_all_urls_from_book_catalog.txt" ; 
+file_result_correct_serialnums="$OUTDIR_MAIN/file_result_correct_serialnums.txt" ; 
+file_result_correct_urls="$OUTDIR_MAIN/file_result_correct_urls.txt" ; 
+file_with_all_urls_from_book_catalog="$OUTDIR_MAIN/_FINAL_file_with_all_urls_from_book_catalog.txt" ; 
 ##
-outfile_step97="$WORKDIR/_outfile_step97_my_booklist.txt" ; 
+outfile_step97="$OUTDIR_MAIN/_outfile_step97_my_booklist.txt" ; 
+outfile_step99="$OUTDIR_MAIN/_outfile_step99_containing_max_number_of_pages.txt" ; 
 ###################################
 
 
-#####################
+################################################################################
 FUNC_STEP0_EXTRACT_ALL_LINKS_FOR_ALL_BOOKS_SEQUENTIALLY () {
     echo ">> RUNNING => FUNC_STEP0_EXTRACT_ALL_LINKS_FOR_ALL_BOOKS_SEQUENTIALLY" ; 
-    TMPFILE="$WORKDIR/_tmp0.txt" ;
-    TMPFILE1="$WORKDIR/_tmp1.txt" ;
+    TMPFILE="$OUTDIR_MAIN/_tmp0.txt" ;
+    TMPFILE1="$OUTDIR_MAIN/_tmp1.txt" ;
     OUTFILE="$file_with_all_urls_from_book_catalog" ;
     echo >  $TMPFILE ; 
     ##
@@ -69,8 +76,8 @@ FUNC_STEP99_FIND_MAX_NUMBER_OF_PAGES_FROM_EACH_BOOK_URL () {
     echo ">> RUNNING => FUNC_STEP99_FIND_MAX_NUMBER_OF_PAGES_FROM_EACH_BOOK_URL" ; 
     echo ">> GETTING THE MAXIMUM NUMBER OF LINKS FOR A CORRESPONDING BOOK URL ..." ; 
     INFILE_BOOKLIST="$1" ; ## GET VALUE FROM CLI ARGUMENT
-    TMPFILE="$WORKDIR/_tmp99_urls.txt" ;
-    TMPFILE1="$WORKDIR/_tmp99_curl_output.txt" ;
+    TMPFILE="$OUTDIR_MAIN/_tmp99_urls.txt" ;
+    TMPFILE1="$OUTDIR_MAIN/_tmp99_curl_output.txt" ;
     ## FIND MAX PAGES ONLY FOR TEXT BOOK TYPE, AND NOT SCANNED BOOK TYPE
     grep -i 'text book' $INFILE_BOOKLIST |  awk -F ";" '{print $3}' > $TMPFILE
     ##
@@ -92,12 +99,17 @@ FUNC_STEP99_FIND_MAX_NUMBER_OF_PAGES_FROM_EACH_BOOK_URL () {
         grep -i "$myurl_bookname" $TMPFILE1 | grep -i 'fa-fast-forward' | head -2 ; 
     done < "$TMPFILE"
 }
-#####################
+################################################################################
 
 
-FUNC_STEP0_EXTRACT_ALL_LINKS_FOR_ALL_BOOKS_SEQUENTIALLY
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## CALLING FUNCTIONS (COMMENT/UNCOMMENT AS NEEDED)
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+echo ">> PRODUCING OUTPUTS. BUT BEFORE THAT, MAKE SURE TO COMMENT/UNCOMMENT THE FUNCTION IN THE BASH SCRIPT FILE ... THEN RERUN." ;
 
-#FUNC_STEP97_EXTRACT_DETAILS_FOR_MY_CHOSEN_BOOKLIST_FROM_CORRECT_SERIALNUMS
-
-#FUNC_STEP99_FIND_MAX_NUMBER_OF_PAGES_FROM_EACH_BOOK_URL  "$outfile_step97"
+#FUNC_STEP0_EXTRACT_ALL_LINKS_FOR_ALL_BOOKS_SEQUENTIALLY ; 
+#FUNC_STEP1_GET_SERIALNUMS_FROM_ANCHORS ; 
+#FUNC_STEP2_GET_CORRECT_URLS_FROM_SERIALNUMS ; 
+#FUNC_STEP97_EXTRACT_DETAILS_FOR_MY_CHOSEN_BOOKLIST_FROM_CORRECT_SERIALNUMS ; 
+#FUNC_STEP99_FIND_MAX_NUMBER_OF_PAGES_FROM_EACH_BOOK_URL  "$outfile_step97" > "$outfile_step99" ; 
 
