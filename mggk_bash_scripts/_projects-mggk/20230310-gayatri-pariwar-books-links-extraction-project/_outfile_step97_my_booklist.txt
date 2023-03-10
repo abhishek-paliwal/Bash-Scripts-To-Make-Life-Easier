@@ -1,0 +1,246 @@
+
+BOOK_SERIALNUM_37;अदृश्य जगत का पर्यवेक्षण सपनों की खिड़की से;http://literature.awgp.org/book/adrishy_jagat_ka_paryavekshan_sapanon_kee_khidakee_se/v2;Text Book Version
+BOOK_SERIALNUM_38;अदृश्य जगत का पर्यवेक्षण सपनों की खिड़की से !;http://literature.awgp.org/book/adrishy_jagat_ka_paryavekshan_sapanon_kee_khidakee_se/v1;Scan Book Version
+BOOK_SERIALNUM_39;अध्यात्म एक नगद धर्म;http://literature.awgp.org/book/adhyatm_ek_nagad_dharm/v1;Text Book Version
+BOOK_SERIALNUM_40;अध्यात्म एक नगद धर्म;http://literature.awgp.org/book/adhyatm_ek_nagad_dharm/v2;Scan Book Version
+BOOK_SERIALNUM_41;अध्यात्म एक प्रकार का समर;http://literature.awgp.org/book/adhyatm_ek_prakar_ka_samar/v2;Scan Book Version
+BOOK_SERIALNUM_42;अध्यात्म एक प्रकार का समर;http://literature.awgp.org/book/adhyatm_ek_prakar_ka_samar/v1;Text Book Version
+BOOK_SERIALNUM_43;अध्यात्म का मर्म समझें;http://literature.awgp.org/book/adhyatm_ka_marm_samajhen/v1;Text Book Version
+BOOK_SERIALNUM_44;अध्यात्म का मर्म समझें;http://literature.awgp.org/book/adhyatm_ka_marm_samajhen/v2;Scan Book Version
+BOOK_SERIALNUM_45;अध्यात्म के सही स्वरूप का पुनर्जागरण;http://literature.awgp.org/book/adhyatm_ke_sahee_svaroop_ka_punarjagaran/v1;Text Book Version
+BOOK_SERIALNUM_46;अध्यात्म को जीवंत बनाएँ;http://literature.awgp.org/book/adhyatm_ko_jeevant_banaen/v2;Scan Book Version
+BOOK_SERIALNUM_47;अध्यात्म को जीवंत बनाएँ;http://literature.awgp.org/book/adhyatm_ko_jeevant_banaen/v1;Text Book Version
+BOOK_SERIALNUM_49;अध्यात्म क्या था? क्या हो गया? क्या होना चाहिए?;http://literature.awgp.org/book/what_is_spirituality/v4;Text Book Version
+BOOK_SERIALNUM_51;अध्यात्म दृष्टिकोण और अनन्‍त आत्‍मबल;http://literature.awgp.org/book/aadhyatmik_drishtikon_aur_anant_aatmabal/v2;Text Book Version
+BOOK_SERIALNUM_53;अध्यात्म विद्या का प्रवेश द्वार;http://literature.awgp.org/book/adhayatm_vidhya_ka_pravesh_dwar/v1;Scan Book Version
+BOOK_SERIALNUM_54;अध्यात्म विद्या का प्रवेश द्वार;http://literature.awgp.org/book/adhayatm_vidhya_ka_pravesh_dwar/v3;Text Book Version
+BOOK_SERIALNUM_61;अन्तरिक्ष विज्ञान एवं परोक्ष का अनुसन्धान;http://literature.awgp.org/book/antariksh_vijnan_evan_paroksh_ka_anusandhan/v2;Text Book Version
+BOOK_SERIALNUM_62;अन्तर्जगत् की यात्रा का ज्ञान-विज्ञान -1;http://literature.awgp.org/book/antarjagat_kee_yatra_ka_jnanvijnan/v2;Text Book Version
+BOOK_SERIALNUM_66;अन्तर्जगत् की यात्रा का ज्ञान-विज्ञान-1;http://literature.awgp.org/book/antarjagat_kee_yatra_ka_jnanvijnan/v1;Text Book Version
+BOOK_SERIALNUM_67;अन्ध परम्पराएं छोड़ें भी तोड़ें भी;http://literature.awgp.org/book/andh_prampraye_chode_bhi_tode_bhi/v1;Text Book Version
+BOOK_SERIALNUM_69;अन्धविश्वासी नहीं विवेकशील बनिए;http://literature.awgp.org/book/andhvishwasi_nahi_vivekshil_baniye/v1;Text Book Version
+BOOK_SERIALNUM_71;अपना उत्साह शिथिल न होने दें;http://literature.awgp.org/book/apna_utsaah_shithil_na_hone_de/v1;Text Book Version
+BOOK_SERIALNUM_72;अपना उद्धार आप करें;http://literature.awgp.org/book/apna_uddhar_aap_kare/v1;Text Book Version
+BOOK_SERIALNUM_73;अपना सुधार संसार की सबसे बड़ी सेवा;http://literature.awgp.org/book/apana_sudhar_sansar_kee_sabase_badaee_seva/v1;Text Book Version
+BOOK_SERIALNUM_74;अपना सुधार संसार की सबसे बड़ी सेवा;http://literature.awgp.org/book/apana_sudhar_sansar_kee_sabase_badaee_seva/v1;Scan Book Version
+BOOK_SERIALNUM_75;अपने दीपक आप बनो तुम;http://literature.awgp.org/book/apane_deepak_aap_bano_tum/v2;Text Book Version
+BOOK_SERIALNUM_76;अपने दीपक आप बनो तुम;http://literature.awgp.org/book/apane_deepak_aap_bano_tum/v1;Scan Book Version
+BOOK_SERIALNUM_78;अपने ब्राह्मण एवं सन्त को जिन्दा कीजिए;http://literature.awgp.org/book/apane_brahman_evan_sant_ko_jinda_keejie/v1;Text Book Version
+BOOK_SERIALNUM_97;असामान्य और विलक्षण किंतु संभव और सुलभ;http://literature.awgp.org/book/asamany_evan_vilakshan_kintu_sanbhav_aur_sulabh/v2;Text Book Version
+BOOK_SERIALNUM_106;आत्म शक्ति का उच्चस्तरीय नियोजन;http://literature.awgp.org/book/Aatm_shakti_Ka_Uchchastariye_Niyojan/v2;Text Book Version
+BOOK_SERIALNUM_108;आत्मज्ञान और आत्म कल्याण;http://literature.awgp.org/book/Atmagyan_Aur_Atmakalyan/v1;Scan Book Version
+BOOK_SERIALNUM_109;आत्मज्ञान और आत्म कल्याण;http://literature.awgp.org/book/Atmagyan_Aur_Atmakalyan/v3;Text Book Version
+BOOK_SERIALNUM_115;आत्मा न नारी है न नर;http://literature.awgp.org/book/Aatma_na_Nari_Hai_na_Nar/v1;Scan Book Version
+BOOK_SERIALNUM_116;आत्मा न नारी है न नर;http://literature.awgp.org/book/Aatma_na_Nari_Hai_na_Nar/v3;Text Book Version
+BOOK_SERIALNUM_119;आत्मिक उन्नति के चार चरण- साधना स्वाध्याय संयम सेवा;http://literature.awgp.org/book/aatmik_unnati_ke_char_charan/v1;Text Book Version
+BOOK_SERIALNUM_120;आत्मिक उन्नति के चार चरण- साधना स्वाध्याय संयम सेवा;http://literature.awgp.org/book/aatmik_unnati_ke_char_charan/v2;Scan Book Version
+BOOK_SERIALNUM_136;आध्यात्मवादी भौतिकता अपनाई जाय;http://literature.awgp.org/book/adhyatamvadi_bhautikta_apnaai_jaye/v1;Text Book Version
+BOOK_SERIALNUM_137;आध्यात्मिक उत्कर्ष के सोपान — योग और तप;http://literature.awgp.org/book/adhyatmik_utkarsh_ke_sopan/v1;Text Book Version
+BOOK_SERIALNUM_140;आध्यात्मिक काम-विज्ञान;http://literature.awgp.org/book/aadhyatmik_kaam_vigyan/v1;Text Book Version
+BOOK_SERIALNUM_152;आप अपने आपको पहचान लीजिये ....;http://literature.awgp.org/book/aap_apane_aapako_pahachan_leejiye/v1;Text Book Version
+BOOK_SERIALNUM_155;आपत्तियों में धैर्य;http://literature.awgp.org/book/aapattiyon_me_dhairya/v2;Text Book Version
+BOOK_SERIALNUM_156;आपत्तियों में धैर्य;http://literature.awgp.org/book/aapattiyon_me_dhairya/v1;Scan Book Version
+BOOK_SERIALNUM_158;आरोग्यता का आधार—शारीरिक श्रम;http://literature.awgp.org/book/arogyata_ka_adhar__sharirik_shram/v1;Text Book Version
+BOOK_SERIALNUM_160;आवेशग्रस्त होने में अपार हानि;http://literature.awgp.org/book/aaveshgrast_hone_men_apaar_hani/v1;Text Book Version
+BOOK_SERIALNUM_174;इक्कीसवीं सदी का संविधान;http://literature.awgp.org/book/ikkeesaveen_sadee_ka_sanvidhan/v2;Text Book Version
+BOOK_SERIALNUM_175;इक्कीसवीं सदी का संविधान;http://literature.awgp.org/book/ikkeesaveen_sadee_ka_sanvidhan/v1;Scan Book Version
+BOOK_SERIALNUM_179;इन्द्रिय संयम;http://literature.awgp.org/book/Indriya_Sanyam_Ka_Mahatva/v3;Text Book Version
+BOOK_SERIALNUM_188;ईश्वर का विराट रूप;http://literature.awgp.org/book/Ishwar_Ka_Virat_Roop/v1;Scan Book Version
+BOOK_SERIALNUM_189;ईश्वर का विराट रूप;http://literature.awgp.org/book/Ishwar_Ka_Virat_Roop/v3;Text Book Version
+BOOK_SERIALNUM_197;उच्चस्तरीय परमार्थ समयदान;http://literature.awgp.org/book/उच्चस्तरीय_परमार्थ_समयदान;Text Book Version
+BOOK_SERIALNUM_198;उच्चस्तरीय परमार्थ समयदान;http://literature.awgp.org/book/The_Demand_of_the_Times/v3;Text Book Version
+BOOK_SERIALNUM_199;उच्चस्तरीय परमार्थ समयदान;http://literature.awgp.org/book/The_Demand_of_the_Times/v2;Scan Book Version
+BOOK_SERIALNUM_200;उच्चस्तरीय साधना के दो सोपान- जप और ध्यान;http://literature.awgp.org/book/Recitation_and_Meditation/v5;Text Book Version
+BOOK_SERIALNUM_203;उतावली न करें उद्विग्न न हों;http://literature.awgp.org/book/Utai_Na_Kare_Udvign_Na_Ho/v1;Scan Book Version
+BOOK_SERIALNUM_204;उतावली न करें उद्विग्न न हों;http://literature.awgp.org/book/Utai_Na_Kare_Udvign_Na_Ho/v2;Text Book Version
+BOOK_SERIALNUM_206;उत्कृष्ट और परिष्कृत जीवन;http://literature.awgp.org/book/utkrusht_aur_parishkrut_jeevan/v1;Text Book Version
+BOOK_SERIALNUM_208;उदारता और दूरदर्शिता;http://literature.awgp.org/book/Udarta_Aur_Durdarshita/v3;Text Book Version
+BOOK_SERIALNUM_209;उदारता और दूरदर्शिता;http://literature.awgp.org/book/Udarta_Aur_Durdarshita/v1;Scan Book Version
+BOOK_SERIALNUM_212;उनसे जो पचास के हो चले;http://literature.awgp.org/book/Unse_Jo_50_Ke_Ho_Chale/v3;Text Book Version
+BOOK_SERIALNUM_237;एक अनुरोध मतदाताओं से;http://literature.awgp.org/book/ek_anurodh_matadataon_se/v1;Scan Book Version
+BOOK_SERIALNUM_238;एक अनुरोध मतदाताओं से;http://literature.awgp.org/book/ek_anurodh_matadataon_se/v2;Text Book Version
+BOOK_SERIALNUM_240;एक समानान्तर शिक्षा तंत्र;http://literature.awgp.org/book/ek_samantar_shiksha_tantra/v1;Text Book Version
+BOOK_SERIALNUM_244;ऐसे बनें जैसा दूसरों को बनाना है;http://literature.awgp.org/book/aisa_bane_jaisaa_doosaro_ko_banana_hai/v2;Text Book Version
+BOOK_SERIALNUM_246;कठिनाइयों की कसौटी पर खरे उतरें;http://literature.awgp.org/book/kathinaiyon_ki_kasauti_par_khare_utare/v2;Text Book Version
+BOOK_SERIALNUM_247;कठिनाइयों से डरिये नहीं लड़िये;http://literature.awgp.org/book/kathinaiyon_se_darie_nahi_ladie/v2;Text Book Version
+BOOK_SERIALNUM_249;कब्ज की सरल चिकित्सा;http://literature.awgp.org/book/kabaj_ki_saral_chikitsa/v1;Text Book Version
+BOOK_SERIALNUM_263;कलात्मक जीवन जिएं;http://literature.awgp.org/book/kalatmak_jeevan_jiyen/v1;Text Book Version
+BOOK_SERIALNUM_266;काम उल्लास का सृजनात्‍मक उपयोग;http://literature.awgp.org/book/kaam_ullas_ka_srijnatmak_upyog/v1;Text Book Version
+BOOK_SERIALNUM_267;काम तत्व का ज्ञान विज्ञान;http://literature.awgp.org/book/kaam_tatv_ka_gyan_vigyan/v1;Text Book Version
+BOOK_SERIALNUM_274;कुछ धार्मिक प्रश्नों का उचित समाधान;http://literature.awgp.org/book/Kuchh_Dharmik_Prashnon_Ka_Uchit_Samadhan/v2;Text Book Version
+BOOK_SERIALNUM_275;कुछ धार्मिक प्रश्नों का उचित समाधान;http://literature.awgp.org/book/Kuchh_Dharmik_Prashnon_Ka_Uchit_Samadhan/v1;Scan Book Version
+BOOK_SERIALNUM_285;क्या धर्म ? क्या अधर्म;http://literature.awgp.org/book/Kya_Dharm_Kya_Adharm/v1;Scan Book Version
+BOOK_SERIALNUM_286;क्या धर्म ? क्या अधर्म;http://literature.awgp.org/book/Kya_Dharm_Kya_Adharm/v3;Text Book Version
+BOOK_SERIALNUM_287;क्या धर्म अफ़ीम की गोली है;http://literature.awgp.org/book/kya_dharm_afeem_kee_golee_hai/v3;Text Book Version
+BOOK_SERIALNUM_288;क्या धर्म अफ़ीम की गोली है;http://literature.awgp.org/book/kya_dharm_afeem_kee_golee_hai/v1;Scan Book Version
+BOOK_SERIALNUM_293;क्षुद्र हम क्षुद्रतम हमारी इच्छाएँ;http://literature.awgp.org/book/kshudr_ham_kshudratam_hamaree_ichchhaen/v1;Text Book Version
+BOOK_SERIALNUM_295;क्षुद्रता छोड़ें महानता के पथ पर चलें;http://literature.awgp.org/book/kshudrata_chhoden_mahanata_ke_path_par_chalen/v1;Text Book Version
+BOOK_SERIALNUM_296;खाते समय इन बातें का ध्यान रखें;http://literature.awgp.org/book/khate_samay_inbaato_ka_dhyan_rkkhe/v1;Text Book Version
+BOOK_SERIALNUM_297;खाया कैसे जाय ?;http://literature.awgp.org/book/khaya_kaise_jaye_?/v1;Text Book Version
+BOOK_SERIALNUM_299;खिलौनों ने अध्यात्म का सत्यानाश कर दिया;http://literature.awgp.org/book/khilaunon_ne_adhyatm_ka_satyanash_kar_diya/v1;Text Book Version
+BOOK_SERIALNUM_300;खिलौनों ने अध्यात्म का सत्यानाश कर दिया;http://literature.awgp.org/book/khilaunon_ne_adhyatm_ka_satyanash_kar_diya/v2;Scan Book Version
+BOOK_SERIALNUM_305;गरीब लोग अमीरों का स्वांग न बनायें;http://literature.awgp.org/book/log_ameero_ka_swang_na_bnaye/v1;Text Book Version
+BOOK_SERIALNUM_322;गायत्री का अर्थ और सन्देश;http://literature.awgp.org/book/gayatri_ka_arth_aur_sandesh/v1;Text Book Version
+BOOK_SERIALNUM_414;गायत्री से बुद्धि विकास;http://literature.awgp.org/book/Gayatri_Se_Buddhi_Vikash/v2;Text Book Version
+BOOK_SERIALNUM_415;गायत्री से बुद्धि विकास;http://literature.awgp.org/book/Gayatri_Se_Buddhi_Vikash/v1;Scan Book Version
+BOOK_SERIALNUM_416;गायत्री से ब्रह्म साक्षात्कार;http://literature.awgp.org/book/gayatri_se_brahm_sakshatkaar/v1;Text Book Version
+BOOK_SERIALNUM_425;गायत्री ही कामधेनु है;http://literature.awgp.org/book/Gayatri_Hi_Kamdhenu_Hai/v2;Text Book Version
+BOOK_SERIALNUM_426;गायत्री ही कामधेनु है;http://literature.awgp.org/book/Gayatri_Hi_Kamdhenu_Hai/v1;Scan Book Version
+BOOK_SERIALNUM_461;गुणों का परिष्कार ही सच्ची भक्ति;http://literature.awgp.org/book/gunon_ka_parishkar_hee_sachchee_bhakti/v2;Scan Book Version
+BOOK_SERIALNUM_462;गुणों का परिष्कार ही सच्ची भक्ति;http://literature.awgp.org/book/gunon_ka_parishkar_hee_sachchee_bhakti/v1;Text Book Version
+BOOK_SERIALNUM_464;गुरु दक्षिणा चुकाएँ-समयदान करें;http://literature.awgp.org/book/guru_dakshina_chukaesamayadan_karen/v1;Text Book Version
+BOOK_SERIALNUM_477;गृहलक्ष्मी की प्रतिष्ठा;http://literature.awgp.org/book/Grihlakshmi_Ki_Pratishtha/v3;Text Book Version
+BOOK_SERIALNUM_478;गृहलक्ष्मी की प्रतिष्ठा;http://literature.awgp.org/book/Grihlakshmi_Ki_Pratishtha/v1;Scan Book Version
+BOOK_SERIALNUM_482;गृहस्थ जीवन एक तपोवन;http://literature.awgp.org/book/grihasth_jivan_ek_tapovan/v1;Text Book Version
+BOOK_SERIALNUM_493;चिंतन-चरित्र को ऊँचा बनाएँ;http://literature.awgp.org/book/chintancharitr_ko_uncha_banaen/v2;Text Book Version
+BOOK_SERIALNUM_494;चिंतन-चरित्र को ऊँचा बनाएँ;http://literature.awgp.org/book/chintancharitr_ko_uncha_banaen/v1;Scan Book Version
+BOOK_SERIALNUM_496;चिन्ता छोड़ो—प्रसन्न रहो;http://literature.awgp.org/book/chinta_chodiye_prasanna_rahiye/v1;Text Book Version
+BOOK_SERIALNUM_497;चिन्ताओं से छुटकारे का मार्ग;http://literature.awgp.org/book/Chintaon_Se_Chhutkare_Ka_Marg/v2;Text Book Version
+BOOK_SERIALNUM_503;चेतना की प्रचण्ड क्षमता-एक दर्शन;http://literature.awgp.org/book/chetana_kee_prachand_kshamat_ek_darshan/v1;Scan Book Version
+BOOK_SERIALNUM_504;चेतना की प्रचण्ड क्षमता-एक दर्शन;http://literature.awgp.org/book/chetana_kee_prachand_kshamat_ek_darshan/v2;Text Book Version
+BOOK_SERIALNUM_513;जड़ के भीतर विवेकवान चेतन;http://literature.awgp.org/book/Jad_Ke_Bhitar_bhi_vivekavan_Chetan/v2;Text Book Version
+BOOK_SERIALNUM_514;जड़ के भीतर विवेकवान चेतन;http://literature.awgp.org/book/Jad_Ke_Bhitar_bhi_vivekavan_Chetan/v1;Scan Book Version
+BOOK_SERIALNUM_519;जप का ज्ञान और विज्ञान;http://literature.awgp.org/book/jap_ka_gyan_aur_vigyan/v1;Text Book Version
+BOOK_SERIALNUM_521;जादूगरी या छल;http://literature.awgp.org/book/jadugari_ya_chhal/v1;Text Book Version
+BOOK_SERIALNUM_525;जिन्दगी कैसे जियें?;http://literature.awgp.org/book/Jindagi_Kaise_Jiye/v2;Text Book Version
+BOOK_SERIALNUM_528;जीव जन्तु बोलते भी हैं सोचते भी हैं;http://literature.awgp.org/book/jeev_jantu_bolte_bhi_hai_sochte_bhi_hai/v1;Text Book Version
+BOOK_SERIALNUM_529;जीवंत विभूतियों से भावभरी अपेक्षाएँ;http://literature.awgp.org/book/jeevant_vibhootiyon_se_bhavabharee_apekshaen/v1;Text Book Version
+BOOK_SERIALNUM_530;जीवंत विभूतियों से भावभरी अपेक्षाएँ;http://literature.awgp.org/book/jeevant_vibhootiyon_se_bhavabharee_apekshaen/v2;Scan Book Version
+BOOK_SERIALNUM_547;जीवन देवता की साधना-आराधना;http://literature.awgp.org/book/The_Spiritual_Training_and_Adoration_of_Life_Deity/v6;Text Book Version
+BOOK_SERIALNUM_549;जीवन लक्ष्य और उसकी प्राप्ति;http://literature.awgp.org/book/jivan_lakhsay_aur_usaki_prapti/v1;Scan Book Version
+BOOK_SERIALNUM_550;जीवन लक्ष्य और उसकी प्राप्ति;http://literature.awgp.org/book/jivan_lakhsay_aur_usaki_prapti/v2;Text Book Version
+BOOK_SERIALNUM_551;जीवन साधना करें देवता बनें;http://literature.awgp.org/book/jeevan_sadhana_karen_devata_banen/v2;Scan Book Version
+BOOK_SERIALNUM_552;जीवन साधना करें देवता बनें;http://literature.awgp.org/book/jeevan_sadhana_karen_devata_banen/v1;Text Book Version
+BOOK_SERIALNUM_553;जीवन साधना का मर्म है भक्ति;http://literature.awgp.org/book/jeevan_sadhana_ka_marm_hai_bhakti/v1;Text Book Version
+BOOK_SERIALNUM_557;जीवन साधना प्रयोग और सिद्धियां-;http://literature.awgp.org/book/Jeevan_Sadhna_Prayog_Aur_Siddhi/v2;Text Book Version
+BOOK_SERIALNUM_568;ज्ञानयोग की साधना;http://literature.awgp.org/book/gyanyog_ki_sadhana/v1;Text Book Version
+BOOK_SERIALNUM_574;तन विदेशी मन भारतीय;http://literature.awgp.org/book/tan_videshi_man_bhartiy/v1;Text Book Version
+BOOK_SERIALNUM_580;तीर्थ यात्रा इस तरह की जाये;http://literature.awgp.org/book/teerth_yatra_is_tarah_ki_jaaye/v1;Text Book Version
+BOOK_SERIALNUM_581;तुम महान हो;http://literature.awgp.org/book/tum_mhan_ho/v1;Text Book Version
+BOOK_SERIALNUM_585;त्याग-बलिदान की संस्कृति - देवसंस्कृति;http://literature.awgp.org/book/tyagbalidan_kee_sanskriti_devasanskriti/v1;Text Book Version
+BOOK_SERIALNUM_588;दर्शन तो करें पर इस तरह;http://literature.awgp.org/book/darshan_to_kare_par_is_tarah/v1;Text Book Version
+BOOK_SERIALNUM_591;दहेज—एक कुरीति;http://literature.awgp.org/book/dahej_ek_kuriti/v1;Text Book Version
+BOOK_SERIALNUM_601;दुनिया नष्ट नहीं होगी श्रेष्ठतर बनेगी;http://literature.awgp.org/book/duniya_nasht_naheen_hogee_shreshthatar_banegee/v1;Text Book Version
+BOOK_SERIALNUM_602;दुर्गति और सदगति का कारण हम स्वयं;http://literature.awgp.org/book/durgati_aur_sadagati_ka_karan_ham_svayan/v2;Text Book Version
+BOOK_SERIALNUM_603;दुर्गति और सदगति का कारण हम स्वयं;http://literature.awgp.org/book/durgati_aur_sadagati_ka_karan_ham_svayan/v1;Scan Book Version
+BOOK_SERIALNUM_604;दूसरों के दोष-दुर्गुण ही न देखा करें;http://literature.awgp.org/book/dusro_ke_dosh_durgun_hi_na_dekha_kare/v1;Text Book Version
+BOOK_SERIALNUM_609;दृष्टिकोण में बसते हैं स्वर्ग नरक;http://literature.awgp.org/book/drishtikon_men_basate_hain_svarg_narak/v1;Text Book Version
+BOOK_SERIALNUM_618;देव संस्कृति का मेरुदण्ड वानप्रस्थ;http://literature.awgp.org/book/dev_sanskriti_ka_merudand_vanprasth/v1;Text Book Version
+BOOK_SERIALNUM_621;देवता हमें क्या दे सकते हैं;http://literature.awgp.org/book/devata_hamen_kya_de_sakate_hain/v1;Scan Book Version
+BOOK_SERIALNUM_622;देवता हमें क्या दे सकते हैं;http://literature.awgp.org/book/devata_hamen_kya_de_sakate_hain/v2;Text Book Version
+BOOK_SERIALNUM_623;देवताओं के वरदान- सत्प्रवृत्तियाँ;http://literature.awgp.org/book/devataon_ke_varadan_satpravrittiyan/v1;Text Book Version
+BOOK_SERIALNUM_635;दैवी शक्ति के अनुदान और वरदान;http://literature.awgp.org/book/daivy_shakti_ke_anudan_aur_vardan/v1;Scan Book Version
+BOOK_SERIALNUM_636;दैवी शक्ति के अनुदान और वरदान;http://literature.awgp.org/book/daivy_shakti_ke_anudan_aur_vardan/v2;Text Book Version
+BOOK_SERIALNUM_641;धन का उपार्जन और उपयोग;http://literature.awgp.org/book/dhan_ka_uparjan_or_upyog/v1;Text Book Version
+BOOK_SERIALNUM_646;धर्म की सुदृढ़ धारणा;http://literature.awgp.org/book/Dharma_Ki_Sudrid_Dharna/v2;Text Book Version
+BOOK_SERIALNUM_647;धर्म की सुदृढ़ धारणा;http://literature.awgp.org/book/Dharma_Ki_Sudrid_Dharna/v1;Scan Book Version
+BOOK_SERIALNUM_648;धर्म के दस लक्षण और पंचशील;http://literature.awgp.org/book/darm_ke_dus_laksharn_aur_panchsheel/v1;Text Book Version
+BOOK_SERIALNUM_664;धर्मग्रंथ हमें क्या शिक्षण देते हैं यह जानें;http://literature.awgp.org/book/dharmagranth_hamen_kya_shikshan_dete_hain_yah_janen/v1;Text Book Version
+BOOK_SERIALNUM_674;ध्यान का दार्शनिक पक्ष;http://literature.awgp.org/book/dhyan_ka_darshanik_paksh/v2;Scan Book Version
+BOOK_SERIALNUM_675;ध्यान का दार्शनिक पक्ष;http://literature.awgp.org/book/dhyan_ka_darshanik_paksh/v1;Text Book Version
+BOOK_SERIALNUM_679;न डरिये न अशान्त हूजिये;http://literature.awgp.org/book/Na_Dariye_Na_Ashant_Hojiye/v2;Text Book Version
+BOOK_SERIALNUM_712;नियामक सत्ता का नियंत्रण न तोड़ें;http://literature.awgp.org/book/niyamak_satta_ka_niyantran_na_tode/v1;Text Book Version
+BOOK_SERIALNUM_718;नेत्र रोगों की चिकित्सा;http://literature.awgp.org/book/netra_rogo_ki_chikitsa/v1;Text Book Version
+BOOK_SERIALNUM_722;पंच तत्वों से— सम्पूर्ण रोगों का निवारण;http://literature.awgp.org/book/Panch_Tatvon_Dwara_Sampurn_Rogon_Ka_Nivaran/v2;Text Book Version
+BOOK_SERIALNUM_727;पत्नी का सम्मान गृहस्थ का उत्थान;http://literature.awgp.org/book/Patni_Ka_Samman_Grihasth_Ka_Utthan/v3;Text Book Version
+BOOK_SERIALNUM_728;पत्नी का सम्मान गृहस्थ का उत्थान;http://literature.awgp.org/book/Patni_Ka_Samman_Grihasth_Ka_Utthan/v1;Scan Book Version
+BOOK_SERIALNUM_733;परमार्थ और स्वार्थ का समन्वय;http://literature.awgp.org/book/Parmarth_Aur_Svarth/v1;Scan Book Version
+BOOK_SERIALNUM_734;परमार्थ और स्वार्थ का समन्वय;http://literature.awgp.org/book/Parmarth_Aur_Svarth/v3;Text Book Version
+BOOK_SERIALNUM_735;पराक्रम और पुरुषार्थ से ओत-प्रोत यह मानवी सत्ता;http://literature.awgp.org/book/prakarm_aur_purusharth_se_aut_prot_yeh_manavi_satta/v1;Text Book Version
+BOOK_SERIALNUM_741;परिवार का पालन ही नहीं निर्माण भी;http://literature.awgp.org/book/parivar_ka_palan_hi_nahi_nirman_bhi/v1;Text Book Version
+BOOK_SERIALNUM_743;परिवार को सुव्यवस्थित कैसे बनायें?;http://literature.awgp.org/book/parivar_ko_suvevasthi_kaise_banaye/v2;Text Book Version
+BOOK_SERIALNUM_745;परिवार को सुसंस्‍कृत बनायें;http://literature.awgp.org/book/parivar_ko_susanskrit_bnaye/v1;Text Book Version
+BOOK_SERIALNUM_750;परिवार में स्वर्गीय वातावरण कैसे बने ?;http://literature.awgp.org/book/pariwar_men_swargiya_vatavaran_kaise_bane/v1;Text Book Version
+BOOK_SERIALNUM_755;परिष्कृत व्यक्तित्व-एक सिद्धि एक उपलब्धि;http://literature.awgp.org/book/parishkrit_vyaktitv_ek_siddhi_ek_upalabdhi/v1;Scan Book Version
+BOOK_SERIALNUM_756;परिष्कृत व्यक्तित्व-एक सिद्धि एक उपलब्धि;http://literature.awgp.org/book/parishkrit_vyaktitv_ek_siddhi_ek_upalabdhi/v2;Text Book Version
+BOOK_SERIALNUM_757;परोक्ष सत्ता एवं उसकी विधि व्यवस्था;http://literature.awgp.org/book/proksh_satta_evam_uski_vidhi_vyavstha/v1;Text Book Version
+BOOK_SERIALNUM_762;पवित्र जीवन;http://literature.awgp.org/book/Pavitra_Jeevan/v1;Scan Book Version
+BOOK_SERIALNUM_769;पातंजलि योग का तत्त्व- दर्शन;http://literature.awgp.org/book/Patanjali_Yog_Ka_Tatvadarshan/v3;Text Book Version
+BOOK_SERIALNUM_782;पुरुषार्थ—मनुष्य की सर्वोपरि सामर्थ्य;http://literature.awgp.org/book/purusharth__manushya_ki_sarvopari_samrthiya/v1;Text Book Version
+BOOK_SERIALNUM_784;प्रकृति का अनुसरण;http://literature.awgp.org/book/Prakriti_Ka_Anusaran/v1;Scan Book Version
+BOOK_SERIALNUM_785;प्रकृति का अनुसरण;http://literature.awgp.org/book/Prakriti_Ka_Anusaran/v3;Text Book Version
+BOOK_SERIALNUM_786;प्रखर प्रतिभा की जननी इच्छा शक्ति;http://literature.awgp.org/book/Prakhar_Pratibha_Ki_JananiIchchashakti/v2;Text Book Version
+BOOK_SERIALNUM_787;प्रखर प्रतिभा की जननी इच्छा शक्ति;http://literature.awgp.org/book/Prakhar_Pratibha_Ki_JananiIchchashakti/v1;Scan Book Version
+BOOK_SERIALNUM_825;प्रतीक पूजा का वैज्ञानिक आधार;http://literature.awgp.org/book/prateek_pooja_ka_vaijnanik_aadhar/v2;Scan Book Version
+BOOK_SERIALNUM_826;प्रतीक पूजा का वैज्ञानिक आधार;http://literature.awgp.org/book/prateek_pooja_ka_vaijnanik_aadhar/v1;Text Book Version
+BOOK_SERIALNUM_827;प्रतीक पूजा के पीछे छिपे संकेत और शिक्षाएँ;http://literature.awgp.org/book/prateek_pooja_ke_peechhe_chhipe_sanket_aur_shikshaen/v1;Text Book Version
+BOOK_SERIALNUM_836;प्राणघातक व्यसन;http://literature.awgp.org/book/Pranghatak_Vyasan/v3;Text Book Version
+BOOK_SERIALNUM_837;प्राणघातक व्यसन;http://literature.awgp.org/book/Pranghatak_Vyasan/v1;Scan Book Version
+BOOK_SERIALNUM_841;प्रेम ही परमेश्वर है;http://literature.awgp.org/book/Preme_Hi_Parmeshwar_hai/v2;Text Book Version
+BOOK_SERIALNUM_842;प्रेम ही परमेश्वर है;http://literature.awgp.org/book/prem_hee_parameshvar_hai/v1;Text Book Version
+BOOK_SERIALNUM_843;प्रेम ही परमेश्वर है;http://literature.awgp.org/book/Preme_Hi_Parmeshwar_hai/v1;Scan Book Version
+BOOK_SERIALNUM_845;प्रेमोपहार;http://literature.awgp.org/book/premopahar/v2;Text Book Version
+BOOK_SERIALNUM_850;बच्चे और उनका मनोविज्ञान;http://literature.awgp.org/book/bachhe_or_unaka_manovigyan/v1;Text Book Version
+BOOK_SERIALNUM_856;बच्चों का भावनात्मक विकास;http://literature.awgp.org/book/bachchon_ka_bhawatmk_vikas/v1;Text Book Version
+BOOK_SERIALNUM_863;बच्चों को उत्तराधिकार में धन नहीं गुण दें;http://literature.awgp.org/book/Bacchon_Ko_Dhan_Nahi_Gun_Den/v2;Text Book Version
+BOOK_SERIALNUM_865;बच्चों को बिगड़ने न दें;http://literature.awgp.org/book/bachchon_ko_bigrne_n_de/v1;Text Book Version
+BOOK_SERIALNUM_903;बोलिए तो पर इस तरह;http://literature.awgp.org/book/boliye_to_is_tarah/v1;Text Book Version
+BOOK_SERIALNUM_905;ब्रह्मज्ञान का प्रकाश;http://literature.awgp.org/book/Brahmagyan_Ka_Prakash/v1;Scan Book Version
+BOOK_SERIALNUM_906;ब्रह्मज्ञान का प्रकाश;http://literature.awgp.org/book/Brahmagyan_Ka_Prakash/v3;Text Book Version
+BOOK_SERIALNUM_910;ब्रह्मवर्चस् - एक संक्षिप्त परिचय;http://literature.awgp.org/book/brahmavarchas_ek_sanchhipta_parichay/v1;Text Book Version
+BOOK_SERIALNUM_913;ब्रह्मवर्चस् साधना की ध्यान - धारणा;http://literature.awgp.org/book/bhramvarchas_ki_dhyaan_dharna/v1;Text Book Version
+BOOK_SERIALNUM_922;भक्ति- एक दर्शन एक विज्ञान;http://literature.awgp.org/book/bhakt_ek_darshan_ek_vijnan/v1;Text Book Version
+BOOK_SERIALNUM_953;भाव-संवेदना का विकास करना ही साधुता है;http://literature.awgp.org/book/bhavsanvedana_ka_vikas_karana_hee_sadhuta_hai/v1;Text Book Version
+BOOK_SERIALNUM_962;भूत कैसे होते हैं—क्या करते हैं ?;http://literature.awgp.org/book/bhut_kaise_hote_hai_kya_karte_hai/v1;Text Book Version
+BOOK_SERIALNUM_963;भूत कैसे होते हैं—क्या करते हैं ?;http://literature.awgp.org/book/bhoot_kaise_hote_hai_kya_karte_hai/v1;Text Book Version
+BOOK_SERIALNUM_964;मंत्र बनाम उच्चारण;http://literature.awgp.org/book/mantra_banam_uchcharan/v2;Text Book Version
+BOOK_SERIALNUM_965;मंत्र बनाम उच्चारण;http://literature.awgp.org/book/mantra_banam_uchcharan/v1;Scan Book Version
+BOOK_SERIALNUM_968;मन की प्रचंड शक्ति;http://literature.awgp.org/book/Man_Ki_Praachand_shakti/v2;Text Book Version
+BOOK_SERIALNUM_975;मनचाही सन्तान;http://literature.awgp.org/book/man_chaahi_santaan/v1;Text Book Version
+BOOK_SERIALNUM_976;मनचाही सन्तान;http://literature.awgp.org/book/manchahi_santan/v1;Text Book Version
+BOOK_SERIALNUM_986;मनुष्य गिरा हुआ देवता या उठा हुआ पशु ?;http://literature.awgp.org/book/Manushya_Gira_Hua_Devata/v2;Text Book Version
+BOOK_SERIALNUM_987;मनुष्य गिरा हुआ देवता या उठा हुआ पशु ?;http://literature.awgp.org/book/Manushya_Gira_Hua_Devata/v1;Scan Book Version
+BOOK_SERIALNUM_995;मरने के बाद हमारा क्या होता है;http://literature.awgp.org/book/Marne_Ke_Baad_Hamara_Kya_Hota_Hai/v2;Text Book Version
+BOOK_SERIALNUM_996;मरने के बाद हमारा क्या होता है ?;http://literature.awgp.org/book/life_beyond_physical_death/v4;Text Book Version
+BOOK_SERIALNUM_997;मरने के बाद हमारा क्या होता है ?;http://literature.awgp.org/book/life_beyond_physical_death/v3;Scan Book Version
+BOOK_SERIALNUM_1000;मरे तो सही पर बुद्धिमत्ता के साथ;http://literature.awgp.org/book/mare_to_sahee_par_buddhimatta_ke_sath/v1;Scan Book Version
+BOOK_SERIALNUM_1001;मरे तो सही पर बुद्धिमत्ता के साथ;http://literature.awgp.org/book/mare_to_sahee_par_buddhimatta_ke_sath/v2;Text Book Version
+BOOK_SERIALNUM_1004;मस्तिष्क प्रत्यक्ष कल्पवृक्ष;http://literature.awgp.org/book/mastishk_pratyaksh_kalpavriksh/v1;Scan Book Version
+BOOK_SERIALNUM_1005;मस्तिष्क प्रत्यक्ष कल्पवृक्ष;http://literature.awgp.org/book/mastishk_pratyaksh_kalpavriksh/v2;Text Book Version
+BOOK_SERIALNUM_1053;मानसिक संतुलन;http://literature.awgp.org/book/Mansik_Santulan/v1;Scan Book Version
+BOOK_SERIALNUM_1054;मानसिक संतुलन;http://literature.awgp.org/book/Mansik_Santulan/v2;Text Book Version
+BOOK_SERIALNUM_1057;मित्रभाव बढ़ाने की कला;http://literature.awgp.org/book/Mitra_Bhav_Badaane_Ki_Kalaa/v2;Text Book Version
+BOOK_SERIALNUM_1166;वर्तमान चुनौतियाँ और युवावर्ग;http://literature.awgp.org/book/Vartaman_Chunautiyan_Au_rYuvavarga/v1;Scan Book Version
+BOOK_SERIALNUM_1167;वर्तमान चुनौतियाँ और युवावर्ग;http://literature.awgp.org/book/Vartaman_Chunautiyan_Au_rYuvavarga/v2;Text Book Version
+BOOK_SERIALNUM_1169;वशीकरण की सच्ची सिद्धि;http://literature.awgp.org/book/Vashikaran_Ki_Siddhi/v1;Scan Book Version
+BOOK_SERIALNUM_1170;वशीकरण की सच्ची सिद्धि;http://literature.awgp.org/book/Vashikaran_Ki_Siddhi/v2;Text Book Version
+BOOK_SERIALNUM_1189;विज्ञान एवं अध्यात्म का समन्वित स्वरूप;http://literature.awgp.org/book/vigyan_evam_adhyatm_ka_samnvit_swarup/v1;Scan Book Version
+BOOK_SERIALNUM_1190;विज्ञान एवं अध्यात्म का समन्वित स्वरूप;http://literature.awgp.org/book/vigyan_evam_adhyatm_ka_samnvit_swarup/v2;Text Book Version
+BOOK_SERIALNUM_1212;विवेक की साधना और सिद्धि;http://literature.awgp.org/book/vivek_kee_sadhana_aur_siddhi/v1;Text Book Version
+BOOK_SERIALNUM_1233;वैज्ञानिक अध्यात्म के क्रान्ति दीप;http://literature.awgp.org/book/The_Pioneers_Of_Scientific_Spirituality/v2;Scan Book Version
+BOOK_SERIALNUM_1243;व्यवस्था बुद्धि की गरिमा;http://literature.awgp.org/book/vyavastha_buddhi_ki_garima/v3;Text Book Version
+BOOK_SERIALNUM_1244;व्यवस्था बुद्धि की गरिमा;http://literature.awgp.org/book/vyavastha_buddhi_ki_garima/v1;Scan Book Version
+BOOK_SERIALNUM_1245;शक्ति का सदुपयोग;http://literature.awgp.org/book/Shakti_Ka_Sadupayog/v1;Scan Book Version
+BOOK_SERIALNUM_1246;शक्ति का सदुपयोग;http://literature.awgp.org/book/Shakti_Ka_Sadupayog/v2;Text Book Version
+BOOK_SERIALNUM_1247;शक्ति के भंडार से स्वयं को जोड़े;http://literature.awgp.org/book/shakti_ke_bhandar_se_svayan_ko_jodae/v1;Scan Book Version
+BOOK_SERIALNUM_1248;शक्ति के भंडार से स्वयं को जोड़े;http://literature.awgp.org/book/shakti_ke_bhandar_se_svayan_ko_jodae/v2;Text Book Version
+BOOK_SERIALNUM_1265;शिष्ट बनें सज्जन कहलायें;http://literature.awgp.org/book/Shisht_Bane_Sajjan_Kahalaye/v2;Text Book Version
+BOOK_SERIALNUM_1266;शिष्ट बनें सज्जन कहलायें;http://literature.awgp.org/book/Shisht_Bane_Sajjan_Kahalaye/v1;Scan Book Version
+BOOK_SERIALNUM_1267;शिष्टाचार और सहयोग;http://literature.awgp.org/book/Shishtachar_Aur_Sahayog/v3;Text Book Version
+BOOK_SERIALNUM_1268;शिष्टाचार और सहयोग;http://literature.awgp.org/book/Shishtachar_Aur_Sahayog/v1;Scan Book Version
+BOOK_SERIALNUM_1277;संकल्पशक्ति की महिमा एवं गरिमा;http://literature.awgp.org/book/sankalpashakti_kee_mahima_evan_garima/v1;Text Book Version
+BOOK_SERIALNUM_1290;संतान के प्रति कर्तव्य;http://literature.awgp.org/book/Santaan_Ke_Prati_Kartavya/v2;Text Book Version
+BOOK_SERIALNUM_1291;संतान के प्रति कर्तव्य;http://literature.awgp.org/book/Santaan_Ke_Prati_Kartavya/v1;Scan Book Version
+BOOK_SERIALNUM_1296;संसार चक्र की गति प्रगति;http://literature.awgp.org/book/sansar_chakr_kee_gati_pragati/v2;Text Book Version
+BOOK_SERIALNUM_1297;संसार चक्र की गति प्रगति;http://literature.awgp.org/book/sansar_chakr_kee_gati_pragati/v1;Scan Book Version
+BOOK_SERIALNUM_1298;संसार चक्र की गति प्रगति;http://literature.awgp.org/book/v1;Text Book Version
+BOOK_SERIALNUM_1299;संस्कार परम्परा;http://literature.awgp.org/book/sanskar_parampara/v1;Text Book Version
+BOOK_SERIALNUM_1333;सफल जीवन के कुछ स्वर्णिम सूत्र;http://literature.awgp.org/book/safal_jeevan_ke_kuch_savarnim_sutra/v1;Text Book Version
+BOOK_SERIALNUM_1347;समय का सदुपयोग;http://literature.awgp.org/book/Samay_Ka_Sadupayog/v2;Text Book Version
+BOOK_SERIALNUM_1348;समय का सदुपयोग;http://literature.awgp.org/book/Samay_Ka_Sadupayog/v1;Scan Book Version
+BOOK_SERIALNUM_1357;समस्याएं अनेक- हल एक;http://literature.awgp.org/book/samsyaye_anek_hal_ek/v1;Text Book Version
+BOOK_SERIALNUM_1371;सर्वोपयोगी सुलभ साधनाएं;http://literature.awgp.org/book/sarvopyogi_sulabh_sadhanaye/v1;Text Book Version
+BOOK_SERIALNUM_1382;साकार और निराकार ध्यान;http://literature.awgp.org/book/sakar_aur_nirakar_dhyan/v1;Scan Book Version
+BOOK_SERIALNUM_1383;साकार और निराकार ध्यान;http://literature.awgp.org/book/sakar_aur_nirakar_dhyan/v2;Text Book Version
+BOOK_SERIALNUM_1409;सुख-शांति की साधना;http://literature.awgp.org/book/sukh_shanti_ki_sadhana/v1;Text Book Version
+BOOK_SERIALNUM_1419;सूर्य चिकित्सा विज्ञान;http://literature.awgp.org/book/Surya_Chikitsa_Vigyan/v2;Text Book Version
+BOOK_SERIALNUM_1420;सूर्य चिकित्सा विज्ञान;http://literature.awgp.org/book/Surya_Chikitsa_Vigyan/v1;Scan Book Version
+BOOK_SERIALNUM_1441;स्वच्छता मनुष्यता का गौरव;http://literature.awgp.org/book/svachchhata_manushyata_ka_gaurav/v1;Text Book Version
+BOOK_SERIALNUM_1449;स्वाध्याय और सत्संग;http://literature.awgp.org/book/Swadhyay_Aur_Satsang/v1;Scan Book Version
+BOOK_SERIALNUM_1450;स्वाध्याय और सत्संग;http://literature.awgp.org/book/Swadhyay_Aur_Satsang/v2;Text Book Version
+BOOK_SERIALNUM_1461;हम ईमान सिखाते हैं;http://literature.awgp.org/book/ham_eeman_sikhate_hain/v1;Text Book Version
+BOOK_SERIALNUM_1462;हम ईमान सिखाते हैं;http://literature.awgp.org/book/ham_eeman_sikhate_hain/v2;Scan Book Version
+BOOK_SERIALNUM_1464;हम दुर्बल नहीं शक्तिशाली बने;http://literature.awgp.org/book/hum_durbal_nahi_shaktishali_bane/v2;Scan Book Version
+BOOK_SERIALNUM_1465;हम दुर्बल नहीं शक्तिशाली बने;http://literature.awgp.org/book/hum_durbal_nahi_shaktishali_bane/v1;Text Book Version
+BOOK_SERIALNUM_1470;हम सुख शांति से वंचित क्यो है?;http://literature.awgp.org/book/Ham_sukh_shanti_se_vanchit_kyo_hai/v1;Text Book Version
+BOOK_SERIALNUM_1487;हमें स्वप्न क्यों दीखते हैं?;http://literature.awgp.org/book/hme_swapan_kyu_dikhte_hai/v1;Text Book Version
