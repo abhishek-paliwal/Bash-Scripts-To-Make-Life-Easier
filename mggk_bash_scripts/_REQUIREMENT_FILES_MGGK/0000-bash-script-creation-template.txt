@@ -118,27 +118,41 @@ fi
 ##############################################################################
 HTML_BOOTSTRAP_HEADER="<!doctype html>
 <html lang='en'>
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <!-- Bootstrap CSS -->
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'
+        integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
 
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-    <link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.css' />
-    <script type='text/javascript' src='https://cdn.datatables.net/v/bs4/dt-1.10.22/datatables.min.js'></script>
+
+    <link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap5.min.css' />
+    <script type='text/javascript' src='https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js'></script>
+    <script type='text/javascript' src='https://cdn.datatables.net/1.13.3/js/dataTables.bootstrap5.min.js'></script>
     <script>
-        \$(document).ready(function () {
-            \$('#mytable').DataTable();
+        $(document).ready(function () {
+            $('#mytable').DataTable(
+                {
+                    'scrollY': '400px',
+                    'paging': false,
+                    'autoWidth': true
+                }
+            );
         });
     </script>
 
-    <title>OUTPUT - $THIS_SCRIPT_NAME_SANS_EXTENSION</title>
-  </head>
-  <body><div class='container'>" ;
+    <title>OUTPUT - template_bashscript_20230310-151806</title>
+</head>
+<body>
+<div class='container'>" ;
 
-HTML_BOOTSTRAP_FOOTER="</div></body></html>" ;
+HTML_BOOTSTRAP_FOOTER="</div><!-- Option 1: Bootstrap Bundle with Popper -->
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'
+    integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM'
+    crossorigin='anonymous'></script>
+</body></html>" ;
 
 DATATABLE_HEADER="<table class='table table-striped' id='mytable' class='display' style='width:100%'>
     <thead>
