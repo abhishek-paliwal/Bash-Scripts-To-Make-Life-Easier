@@ -18,7 +18,7 @@ file_anchor_texts="$INDIR_MAIN/txt_list_of_anchor_texts.txt" ;
 ##
 file_result_correct_serialnums="$OUTDIR_MAIN/file_result_correct_serialnums.txt" ; 
 file_result_correct_urls="$OUTDIR_MAIN/file_result_correct_urls.txt" ; 
-file_with_all_urls_from_book_catalog="$OUTDIR_MAIN/_FINAL_file_with_all_urls_from_book_catalog.txt" ; 
+file_with_all_urls_from_book_catalog="$OUTDIR_MAIN/_output_step00_FINAL_file_with_all_urls_from_book_catalog.csv" ; 
 ##
 outfile_step97="$OUTDIR_MAIN/_outfile_step97_my_booklist.txt" ; 
 outfile_step99="$OUTDIR_MAIN/_outfile_step99_containing_max_number_of_pages.txt" ; 
@@ -26,7 +26,7 @@ outfile_step99="$OUTDIR_MAIN/_outfile_step99_containing_max_number_of_pages.txt"
 
 
 ################################################################################
-FUNC_STEP0_EXTRACT_ALL_LINKS_FOR_ALL_BOOKS_SEQUENTIALLY () {
+FUNC_STEP00_EXTRACT_ALL_LINKS_FOR_ALL_BOOKS_SEQUENTIALLY () {
     echo ">> RUNNING => FUNC_STEP0_EXTRACT_ALL_LINKS_FOR_ALL_BOOKS_SEQUENTIALLY" ; 
     TMPFILE="$OUTDIR_MAIN/_tmp0.txt" ;
     TMPFILE1="$OUTDIR_MAIN/_tmp1.txt" ;
@@ -43,8 +43,9 @@ FUNC_STEP0_EXTRACT_ALL_LINKS_FOR_ALL_BOOKS_SEQUENTIALLY () {
     ##------------------------
     ## CONVERT TMPFILE INTO A SINGLE LINE FOR EVERY SINGLE BOOK, USING AWK UTILITY
     awk -v RS="========" -F"\n" 'NF>=4{print $(NF-4) ";" $(NF-3) ";" $(NF-2) ";" $(NF-1)}' "$TMPFILE"  > "$TMPFILE1" ; 
-    ## CLEAN OUTPUT BY DELETING UNWANTED CHARACTERS
-    cat "$TMPFILE1" | sed -e 's/"//ig'  -e 's/VAL//ig' -e 's/BOOKNAME//ig' -e 's/,//ig' -e 's/(//ig' -e 's/)//ig'  > "$OUTFILE"
+    ## CLEAN OUTPUT BY DELETING UNWANTED CHARACTERS, BUT FIRST PRINT FIRST ROW OF RESULTING CSV FILE
+    echo "BOOK_SERIAL_NUMBER;BOOK_NAME;BOOK_URL;BOOK_TYPE" > "$OUTFILE" ; 
+    cat "$TMPFILE1" | sed -e 's/"//ig'  -e 's/VAL//ig' -e 's/BOOKNAME//ig' -e 's/,//ig' -e 's/(//ig' -e 's/)//ig'  >> "$OUTFILE" ; 
 
 }
 #####################
@@ -99,6 +100,18 @@ FUNC_STEP99_FIND_MAX_NUMBER_OF_PAGES_FROM_EACH_BOOK_URL () {
         grep -i "$myurl_bookname" $TMPFILE1 | grep -i 'fa-fast-forward' | head -2 ; 
     done < "$TMPFILE"
 }
+##################################
+FUNC_STEP100_CLEAN_AND_CONVERT_CSV_TO_HTML () {
+    ## CONVERT URLS TO HYPERLINK FORMAT
+    INFILE="$file_with_all_urls_from_book_catalog" ; 
+    OUTFILE="$OUTDIR_MAIN/_output_step100_converted_csvfile.csv"
+    cat "$INFILE" | sed -E 's+(http:.*);+<a target="_blank" href="\1.1">\1.1</a> // <a target="_blank" href="\1">(Book_Home)</a>;+g' > "$OUTFILE" ; 
+    ## CONVERT CSV TO HTML
+    cd $OUTDIR_MAIN ; 
+    bash $REPO_SCRIPTS_MGGK_PROJECTS/20210827-convert-all-csv-files-in-pwd-to-html-tables-bootstrap.sh ; 
+    cd $WORKDIR ; 
+}
+##################################
 ################################################################################
 
 
@@ -107,9 +120,10 @@ FUNC_STEP99_FIND_MAX_NUMBER_OF_PAGES_FROM_EACH_BOOK_URL () {
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 echo ">> PRODUCING OUTPUTS. BUT BEFORE THAT, MAKE SURE TO COMMENT/UNCOMMENT THE FUNCTION IN THE BASH SCRIPT FILE ... THEN RERUN." ;
 
-#FUNC_STEP0_EXTRACT_ALL_LINKS_FOR_ALL_BOOKS_SEQUENTIALLY ; 
+#FUNC_STEP00_EXTRACT_ALL_LINKS_FOR_ALL_BOOKS_SEQUENTIALLY ; 
 #FUNC_STEP1_GET_SERIALNUMS_FROM_ANCHORS ; 
 #FUNC_STEP2_GET_CORRECT_URLS_FROM_SERIALNUMS ; 
 #FUNC_STEP97_EXTRACT_DETAILS_FOR_MY_CHOSEN_BOOKLIST_FROM_CORRECT_SERIALNUMS ; 
 #FUNC_STEP99_FIND_MAX_NUMBER_OF_PAGES_FROM_EACH_BOOK_URL  "$outfile_step97" > "$outfile_step99" ; 
+#FUNC_STEP100_CLEAN_AND_CONVERT_CSV_TO_HTML
 
