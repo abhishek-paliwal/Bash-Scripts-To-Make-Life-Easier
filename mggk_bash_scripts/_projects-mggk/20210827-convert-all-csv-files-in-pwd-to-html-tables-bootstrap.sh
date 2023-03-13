@@ -87,6 +87,8 @@ for csvFile in $(fd --search-path="$csvDir" -e csv -e CSV) ; do
 done
 
 ## final message
+echo "################################################################################"
 echo ">> NOTE: All html outputs have been saved in this dir => $WORKDIR" ;
-echo ">> TREE LIST" ;
+echo "################################################################################"
+echo; echo ">> TREE LIST FOR => $WORKDIR" ;
 tree $WORKDIR ; 
