@@ -61,7 +61,7 @@ function func_convert_csv_to_html_table () {
     ##
     inFileCSV="$1" ;
     csvDelimiter="$2" ; 
-    outFileHTML="$(basename $inFileCSV).html" ;
+    outFileHTML="$WORKDIR/$(basename $inFileCSV).html" ;
     ##
     echo ">> CURRENT CSV FILE         => $inFileCSV" ;
     echo ">> CURRENT HTML OUTPUT FILE => $outFileHTML" ;
@@ -82,6 +82,11 @@ echo ">> ENTER THE CSV DELIMITER TO USE: " ;
 read csvDelimiter;
 
 ## Calling function for every csv file found
-for csvFile in $(fd --search-path="$csvDir" -e csv) ; do
+for csvFile in $(fd --search-path="$csvDir" -e csv -e CSV) ; do
     func_convert_csv_to_html_table "$csvFile" "$csvDelimiter"
 done
+
+## final message
+echo ">> NOTE: All html outputs have been saved in this dir => $WORKDIR" ;
+echo ">> TREE LIST" ;
+tree $WORKDIR ; 
