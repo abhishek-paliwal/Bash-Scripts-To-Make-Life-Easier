@@ -470,6 +470,7 @@ dict = {'अ' : 'a',
 'ँ' : 'n',
 'ॉ' : 'a',
 'ृ' : 'ri',
+' ं' : 'm',
 '0' : '0',
 '1' : '1',
 '2' : '2',
@@ -486,8 +487,6 @@ dict = {'अ' : 'a',
 }
 
 #print("Current Dict is: ", dict)
-
-var="बाल निर्माण की कहानियाँ-7 सबके लिए सुलभ साधना उपासना ईश्वर का विराट रूप मसाला वाटीका से घरेलु उपचार प्राण चिकित्सा विज्ञान प्रज्ञा पुराण भाग १ प्रज्ञा पुराण भाग २ प्रज्ञा पुराण भाग ३ " ; 
 
 ################################################################################
 def read_each_line_and_transliterate_to_hinglish (myline):
@@ -546,9 +545,15 @@ def read_each_line_and_transliterate_to_hinglish (myline):
 ################################################################################
 ################################################################################
 
+####
+import os
+## get user homepath dir
+os_home = os.path.expanduser('~') ; 
+####
 
-infilename='123.txt' ; 
-outfilename='demofile2.csv' ; 
+filedir = os_home + '/Desktop/Y/' ; 
+infilename= filedir + '00221_INPUT_FILE_FOR_HINDI_ENGLISH_TRANSLITERATION.txt' ; 
+outfilename= filedir + '00221_OUTPUT_TRANSLITERATED_TEXT.csv' ; 
 ##
 with open(infilename) as file:
     lines = [line.rstrip() for line in file]
