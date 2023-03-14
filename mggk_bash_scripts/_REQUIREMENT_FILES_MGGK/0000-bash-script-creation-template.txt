@@ -126,22 +126,23 @@ HTML_BOOTSTRAP_HEADER="<!doctype html>
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'
         integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
 
+    <!-- DATATABLE BLOCK -->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-
     <link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap5.min.css' />
     <script type='text/javascript' src='https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js'></script>
     <script type='text/javascript' src='https://cdn.datatables.net/1.13.3/js/dataTables.bootstrap5.min.js'></script>
     <script>
-        $(document).ready(function () {
-            $('#mytable').DataTable(
+        \$(document).ready(function () {
+            \$('#mytable').DataTable(
                 {
-                    'scrollY': '400px',
+                    'scrollY': '700px',
                     'paging': false,
                     'autoWidth': true
                 }
             );
         });
     </script>
+    <!-- DATATABLE BLOCK -->
 
     <title>OUTPUT - template_bashscript_20230310-151806</title>
 </head>
@@ -150,16 +151,15 @@ HTML_BOOTSTRAP_HEADER="<!doctype html>
 
 HTML_BOOTSTRAP_FOOTER="</div><!-- Option 1: Bootstrap Bundle with Popper -->
 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'
-    integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM'
-    crossorigin='anonymous'></script>
+  integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous'></script>
 </body></html>" ;
 
 DATATABLE_HEADER="<table class='table table-striped' id='mytable' class='display' style='width:100%'>
     <thead>
         <tr>
-            <th>Count</th>
-            <th>Recipe Title</th>
-            <th>URL</th>
+            <th>TITLE_1</th>
+            <th>TITLE_2</th>
+            <th>TITLE_3</th>
         </tr>
     </thead>
     <tbody>"
