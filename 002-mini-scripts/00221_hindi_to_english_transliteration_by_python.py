@@ -551,7 +551,7 @@ def read_each_line_and_transliterate_to_hinglish (myline):
     x = x.replace('XX4',' ai')
     ####
     transliterated_output = x ; 
-    print(">> result = " + transliterated_output)
+    print('>> English Result for this line = ' + transliterated_output)
     return transliterated_output ;
 ################################################################################
 ################################################################################
