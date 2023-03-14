@@ -8,7 +8,6 @@
 ## CREATED BY: PALI
 ################################################################################
 
-
 dict = {'अ' : 'a',
 'आ' : 'aa',
 'इ' : 'i',
@@ -490,49 +489,85 @@ dict = {'अ' : 'a',
 
 var="बाल निर्माण की कहानियाँ-7 सबके लिए सुलभ साधना उपासना ईश्वर का विराट रूप मसाला वाटीका से घरेलु उपचार प्राण चिकित्सा विज्ञान प्रज्ञा पुराण भाग १ प्रज्ञा पुराण भाग २ प्रज्ञा पुराण भाग ३ " ; 
 
-## split into words
-var_words = var.split() ;
-print(var_words)
-#var_chars = [x for x in var] ; 
-#print (var_chars)
-
-#########################
-mlist1 = []
-for word in var_words:
-    var_chars1 = [x for x in word] ;
-    print (word + ' = ' + " + ".join([str(i) for i in var_chars1]))
-    for c in var_chars1:
-        tr_letter = dict[c] ;
-        #print(tr_letter)   
-        mlist1.append(tr_letter)
+################################################################################
+def read_each_line_and_transliterate_to_hinglish (myline):
+    ######################################
+    ## split into words
+    var_words = myline.split() ;
+    print(var_words)
+    #var_chars = [x for x in var] ; 
+    #print (var_chars)
+    ######################################
+    ## create and append the list for words
+    mylist1 = [] ## empty list of english characters
+    for word in var_words:
+        ## create a list of character for each word in word list
+        var_chars1 = [x for x in word] ;
+        print (word + ' = ' + " + ".join([str(i) for i in var_chars1])) ; 
+        ## transliterate hindi char to english
+        for c in var_chars1:
+            try:
+                tr_letter = dict[c] ;
+            except:
+                tr_letter = c ;
+            #print(tr_letter)   
+            mylist1.append(tr_letter)
+        ##
+        mylist1.append(' ') ## insert space into list after every word
     ##
-    mlist1.append(' ') ## insert space into list after every word
-##
-x="".join([str(i) for i in mlist1])
+    ## finally join the whole list
+    x="".join([str(i) for i in mylist1])
+    ######################################
+    #### step 1 = change some character-combinations to special words, bcoz we don't want to replace them.
+    #### It's bcoz they appear at the beginning of the words.
+    x = x.replace(' ae','XX1')
+    x = x.replace(' au','XX2')
+    x = x.replace(' ao','XX3')
+    x = x.replace(' ai','XX4')
+    ####
+    #### step 2 = replace character combinations if appearing within words.
+    x = x.replace('ae','e')
+    x = x.replace('au','u')
+    x = x.replace('ao','o')
+    x = x.replace('ai','i')
+    x = x.replace('ee','i')
+    x = x.replace('jania','gya') ## as in pragya
+    x = x.replace('a ',' ')
+    ####
+    #### step 2 = finally put them back (from step 1).
+    x = x.replace('XX1',' ae')
+    x = x.replace('XX2',' au')
+    x = x.replace('XX3',' ao')
+    x = x.replace('XX4',' ai')
+    ####
+    transliterated_output = x ; 
+    print(">> result = " + transliterated_output)
+    return transliterated_output ;
+################################################################################
+################################################################################
 
-################################################################################
-#### step 1 = change some character-combinations to special words, bcoz we don't want to replace them.
-#### It's bcoz they appear at the beginning of the words.
-x = x.replace(' ae','XX1')
-x = x.replace(' au','XX2')
-x = x.replace(' ao','XX3')
-x = x.replace(' ai','XX4')
-####
-#### step 2 = replace character combinations if appearing within words.
-x = x.replace('ae','e')
-x = x.replace('au','u')
-x = x.replace('ao','o')
-x = x.replace('ai','i')
-x = x.replace('ee','i')
-x = x.replace('jania','gya') ## as in pragya
-x = x.replace('a ',' ')
-####
-#### step 2 = finally put them back (from step 1).
-x = x.replace('XX1',' ae')
-x = x.replace('XX2',' au')
-x = x.replace('XX3',' ao')
-x = x.replace('XX4',' ai')
-####
-print(x)
-################################################################################
+
+infilename='123.txt' ; 
+outfilename='demofile2.csv' ; 
+##
+with open(infilename) as file:
+    lines = [line.rstrip() for line in file]
+##########
+f = open(outfilename, "w")
+f.write('HINDI_LINE;ENGLISH_TRANSLITERATED\n') ;
+f.close()
+##
+for line in lines:
+    #print(line) ; 
+    #line_s = line.split(';') ;
+    myline = line ; 
+    print('========')
+    print(myline) ; 
+    transliterated_output = read_each_line_and_transliterate_to_hinglish (myline)
+    ## open a result file and write output to it
+    f = open(outfilename, "a")
+    f.write(myline + ';' + transliterated_output + '\n')
+    f.close()
+##########
+
 
