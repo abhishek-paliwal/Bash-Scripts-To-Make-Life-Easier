@@ -16,7 +16,9 @@ filedir = os_home + '/Desktop/Y/' ;
 infilename= filedir + '00221_INPUT_FILE_FOR_HINDI_ENGLISH_TRANSLITERATION.txt' ; 
 outfilename= filedir + '00221_OUTPUT_TRANSLITERATED_TEXT.csv' ; 
 ####
+print('\n\n##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++') ; 
 print ('>> IMPORTANT NOTE: This program needs this file containing hindi text. Make sure it is present. => ' + infilename) ;
+print('##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\n') ; 
 ################################################################################
 
 mydict = {'अ' : 'a',
@@ -494,7 +496,14 @@ mydict = {'अ' : 'a',
 '9' : '9',
 '१' : '1',
 '२' : '2',
-'३' : '3'
+'३' : '3',
+'४' : '4',
+'५' : '5',
+'६' : '6',
+'७' : '7',
+'८' : '8',
+'९' : '9',
+'०' : '0'
 }
 
 #print("Current Dict is: ", mydict)
@@ -541,8 +550,9 @@ def read_each_line_and_transliterate_to_hinglish (myline):
     x = x.replace('ao','o')
     x = x.replace('ai','i')
     x = x.replace('ee','i')
-    x = x.replace('jania','gya') ## as in pragya
     x = x.replace('a ',' ')
+    x = x.replace('jania','gya') ## as in pragya
+    x = x.replace('parag','prag') ## as in pragaya
     ####
     #### step 2 = finally put them back (from step 1).
     x = x.replace('XX1',' ae')
