@@ -7,8 +7,19 @@
 ## CREATED ON: 2023-03-14
 ## CREATED BY: PALI
 ################################################################################
+####
+import os
+## get user homepath dir
+os_home = os.path.expanduser('~') ; 
+####
+filedir = os_home + '/Desktop/Y/' ; 
+infilename= filedir + '00221_INPUT_FILE_FOR_HINDI_ENGLISH_TRANSLITERATION.txt' ; 
+outfilename= filedir + '00221_OUTPUT_TRANSLITERATED_TEXT.csv' ; 
+####
+print ('>> IMPORTANT NOTE: This program needs this file containing hindi text. Make sure it is present. => ' + infilename) ;
+################################################################################
 
-dict = {'अ' : 'a',
+mydict = {'अ' : 'a',
 'आ' : 'aa',
 'इ' : 'i',
 'ई' : 'ee',
@@ -486,7 +497,7 @@ dict = {'अ' : 'a',
 '३' : '3'
 }
 
-#print("Current Dict is: ", dict)
+#print("Current Dict is: ", mydict)
 
 ################################################################################
 def read_each_line_and_transliterate_to_hinglish (myline):
@@ -506,7 +517,7 @@ def read_each_line_and_transliterate_to_hinglish (myline):
         ## transliterate hindi char to english
         for c in var_chars1:
             try:
-                tr_letter = dict[c] ;
+                tr_letter = mydict[c] ;
             except:
                 tr_letter = c ;
             #print(tr_letter)   
@@ -545,15 +556,6 @@ def read_each_line_and_transliterate_to_hinglish (myline):
 ################################################################################
 ################################################################################
 
-####
-import os
-## get user homepath dir
-os_home = os.path.expanduser('~') ; 
-####
-
-filedir = os_home + '/Desktop/Y/' ; 
-infilename= filedir + '00221_INPUT_FILE_FOR_HINDI_ENGLISH_TRANSLITERATION.txt' ; 
-outfilename= filedir + '00221_OUTPUT_TRANSLITERATED_TEXT.csv' ; 
 ##
 with open(infilename) as file:
     lines = [line.rstrip() for line in file]
@@ -575,4 +577,9 @@ for line in lines:
     f.close()
 ##########
 
-
+#### Final message
+print('##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++') ; 
+print('SUMMARY: ') ; 
+print('>> INPUT FILE  = ' + infilename) ; 
+print('>> OUTPUT FILE = ' + outfilename) ; 
+print('##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++') ; 
