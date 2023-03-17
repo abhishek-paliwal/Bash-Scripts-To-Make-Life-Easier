@@ -213,3 +213,21 @@ echo "##########################################################################
 ################################################################################
 echo "$(date) = END-TIME" >> $time_taken
 cat $time_taken
+
+
+################################################################################
+## BLOCK TO GIVE USER SOME OPTIONS TO RUN 
+################################################################################
+while true
+do
+        echo "1. Update the system "
+        echo "2. Upgrade the system "
+        echo "3. Exit prompt"
+   read Input
+   case "$Input" in
+        1) exec sudo apt update ;;
+        2) exec sudo apt upgrade  ;;
+        3) break
+   esac
+done
+################################################################################
