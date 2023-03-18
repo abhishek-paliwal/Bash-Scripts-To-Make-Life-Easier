@@ -466,7 +466,9 @@ function FUNC_CREATE_INDEX_FILE_IN_DROPBOX_DIR () {
     ## CREATING INDEX PAGE FOR ALL FILES IN DROPBOX SUMMARY DIR
     echo ">> RUNNING => FUNC_CREATE_INDEX_FILE_IN_DROPBOX_DIR ..." ; 
     tmpfile1="$WORKDIR/_tmp599_dropbox_index.html" ;
+    tmpfile2="$WORKDIR/_tmp599_dropbox_wc.txt" ;
     echo > $tmpfile1 ; ## initializing file
+    echo > $tmpfile2 ; ## initializing file
     ## tree output of summary dir    
     tree -cDr --du -s -h "$DIR_DROPBOX_SCRIPTS_OUTPUT" -H https://downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs/ -o $WORKDIR/_tmp599_tree_dropbox_dir.html -T "Dir Tree - INDEX OF FILES IN DROPBOX SUMMARY DIR" ; 
     ## cleaning
@@ -478,8 +480,10 @@ function FUNC_CREATE_INDEX_FILE_IN_DROPBOX_DIR () {
     for x in $(fd -I -t f --search-path="$DIR_DROPBOX_SCRIPTS_OUTPUT" | sort); do 
         lc="$(wc -l < $x)" ; 
         size="$(du -h $x | awk '{print $1}')" ;
-        printf "%8s // %-8s // %s\n" "$lc" "$size" "$(basename $x)" >> $tmpfile1 ;
+        printf "%8s // %-8s // %s\n" "$lc" "$size" "$(basename $x)" >> $tmpfile2 ;
     done
+    ## sorting and appending
+    cat $tmpfile2 | sort -n >> $tmpfile1 ;
     echo "</pre>" >> $tmpfile1 ;
     echo "</body></html>" >> $tmpfile1 ; 
     ## COPY this file to Dropbox dir
