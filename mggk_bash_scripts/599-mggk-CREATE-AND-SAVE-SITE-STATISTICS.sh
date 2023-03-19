@@ -470,7 +470,7 @@ function FUNC_CREATE_INDEX_FILE_IN_DROPBOX_DIR () {
     echo > $tmpfile1 ; ## initializing file
     echo > $tmpfile2 ; ## initializing file
     ## tree output of summary dir    
-    tree -cDr --du -s -h "$DIR_DROPBOX_SCRIPTS_OUTPUT" -H https://downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs/ -o $WORKDIR/_tmp599_tree_dropbox_dir.html -T "Dir Tree - INDEX OF FILES IN DROPBOX SUMMARY DIR" ; 
+    tree --filesfirst -cDr --du -s -h "$DIR_DROPBOX_SCRIPTS_OUTPUT" -H https://downloads.concepro.com/dropbox-public-files/LCE/_pali_github_scripts_outputs/ -o $WORKDIR/_tmp599_tree_dropbox_dir.html -T "Dir Tree - INDEX OF FILES IN DROPBOX SUMMARY DIR" ; 
     ## cleaning
     cat "$WORKDIR/_tmp599_tree_dropbox_dir.html" | sed -e 's|</body>||ig' -e 's|</html>||ig' >> $tmpfile1 ;
     ##
