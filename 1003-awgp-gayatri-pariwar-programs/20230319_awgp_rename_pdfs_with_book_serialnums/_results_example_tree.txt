@@ -1,0 +1,24 @@
+.
+|-- 00_rename_pdfs_with_book_serialnums.sh
+|-- _results_example_tree.txt
+|-- v1_awgp_merged_full_book_catalog.csv
+|-- _original_pdfs
+|   |-- Aatmashakti_Ka_Ucchstariy_Niyojan.pdf
+|   |-- Gayatri_Ki_Shakti_Aur_Siddhi.pdf
+|   |-- Gyanyog,_Karmyog,_Bhaktiyog.pdf
+|   |-- Niyamak_Satta_Evam_Usaki_Vidhi-Vyavastha.pdf
+|   |-- Tap_Se_Milati_Hai_Siddhiyan.pdf
+|   |-- Teen_Shaktiyan-Teen_Siddhiyan.pdf
+|   |-- Tilasmon_Se_Bhari_Srusti_Evam_Usake_Avigyat_Rahasya.pdf
+|   `-- indriye_sanyam_ka_mahatv.pdf
+`-- _renamed_pdfs
+    |-- BOOK_SERIALNUM_112_XX_Aatmashakti_Ka_Ucchstariy_Niyojan.pdf
+    |-- BOOK_SERIALNUM_172_XX_indriye_sanyam_ka_mahatv.pdf
+    |-- BOOK_SERIALNUM_356_XX_Gayatri_Ki_Shakti_Aur_Siddhi.pdf
+    |-- BOOK_SERIALNUM_567_XX_Gyanyog,_Karmyog,_Bhaktiyog.pdf
+    |-- BOOK_SERIALNUM_577_XX_Tap_Se_Milati_Hai_Siddhiyan.pdf
+    |-- BOOK_SERIALNUM_578_XX_Tilasmon_Se_Bhari_Srusti_Evam_Usake_Avigyat_Rahasya.pdf
+    |-- BOOK_SERIALNUM_579_XX_Teen_Shaktiyan-Teen_Siddhiyan.pdf
+    `-- BOOK_SERIALNUM_711_XX_Niyamak_Satta_Evam_Usaki_Vidhi-Vyavastha.pdf
+
+3 directories, 19 files
