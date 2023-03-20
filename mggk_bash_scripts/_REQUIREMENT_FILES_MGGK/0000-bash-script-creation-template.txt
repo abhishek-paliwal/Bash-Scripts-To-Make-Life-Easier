@@ -31,6 +31,13 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FUNC_PRINT_FANCY_DIVIDER () {
+    source "$REPO_SCRIPTS_MINI/00200_print_fancy_divider.sh" ; 
+}
+FUNC_PRINT_FANCY_DIVIDER ; 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 ##------------------------------------------------------------------------------
 function FUNC_ONLY_RUN_FOR_THIS_USER () {
     ## ## Only run this program for this user
