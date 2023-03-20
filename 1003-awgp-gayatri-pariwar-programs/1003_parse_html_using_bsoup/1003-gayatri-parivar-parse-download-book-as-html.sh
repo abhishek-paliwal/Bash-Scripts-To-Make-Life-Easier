@@ -165,11 +165,11 @@ FUNC_PANDOC_CONVERT_HTML_TO_MARKDOWN () {
 FUNC_SEARCH_VARS_BASED_UPON_NUM_MAXPAGES_URL ;
 FUNC_GET_SOME_PARAM_VALUES ;
 ####
-echo "##+++++++++++++++++++++++++++++++++++++++" ; 
-echo ">> WHAT DO YOU WANT TO DO? " ; echo; 
-##
 while true
 do
+    FUNC_PRINT_FANCY_DIVIDER ; 
+    echo ">> WHAT DO YOU WANT TO DO? " ; echo; 
+    ##
     echo "1. Download HTMLs locally"
     echo "2. Parse local HTMLs using python"
     echo "3. Convert result HTML to markdown using pandoc"
@@ -182,6 +182,7 @@ do
         4) exit
    esac
 done
+####
 echo "##+++++++++++++++++++++++++++++++++++++++" ; 
 ################################################################################
 
