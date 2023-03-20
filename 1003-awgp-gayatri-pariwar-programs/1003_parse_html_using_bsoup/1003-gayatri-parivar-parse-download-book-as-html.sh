@@ -156,7 +156,7 @@ FUNC_PANDOC_CONVERT_HTML_TO_MARKDOWN () {
     echo ">> RUNNING ... FUNC_PANDOC_CONVERT_HTML_TO_MARKDOWN" ; 
     ## Firstly, sourcing the config file
     source "$tmpConfigFile" ; 
-    pandoc --from=html --to=markdown_strict "$HTML_OUTPUT" -o "$BOOKNAME_HTML_MD_FINAL.md" ;
+    pandoc --wrap=none --from=html --to=markdown_strict "$HTML_OUTPUT" -o "$BOOKNAME_HTML_MD_FINAL.md" ;
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
