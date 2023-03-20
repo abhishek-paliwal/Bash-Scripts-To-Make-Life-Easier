@@ -47,7 +47,7 @@ def parse_data_for_this_url(myurl,x):
     ################################################################################
     ## GETTING THE TITLE TAG TEXT
     TITLE_VALUE = soup.find('title').get_text()
-    print("<h3>CHAPTER " + str(x) + ': ' ,TITLE_VALUE,"</h3>")
+    print("<h2>CHAPTER " + str(x) + ': ' ,TITLE_VALUE,"</h2>")
     ################################################################################
     ##
     #page_headings = soup.find_all("h3")
