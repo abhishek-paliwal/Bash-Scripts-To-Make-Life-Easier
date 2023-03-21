@@ -17,6 +17,11 @@ DIR_PROJECT="$REPO_SCRIPTS_AWGP/1003_parse_html_using_bsoup" ;
 DIR_OUTPUT="$WORKDIR" ; 
 tmpConfigFile="$WORKDIR/_tmp_config_file.txt" ; 
 ####
+## Get all 'Text Book Version' NUM MAX PAGES URLs
+## Run miller command 
+textBookNumMaxURLsCSVFile="$WORKDIR/_tmp_textbook_nummaxurls.csv" ;
+mlr --csv --ifs ';' filter '$BOOK_TYPE =~ "Text Book"' then cut -f NUM_MAX_PAGES $CSV_AWGP | mlr --csv --ifs ';' skip-trivial-records > $textBookNumMaxURLsCSVFile ; 
+
 
 ##------------------------------------------------------------------------------
 ## sample configuration ##
@@ -48,9 +53,11 @@ FUNC_SEARCH_VARS_BASED_UPON_NUM_MAXPAGES_URL () {
         search_url="$NUM_MAX_PAGES_URL" ## from the sourced config file
     else
         ## ASK FOR USER INPUT
-        echo; echo ">> CONFIG FILE does not exist. User will be asked for the URL ..." ; 
-        echo ">>>> PLEASE PROVIDE THE NUM MAXPAGES URL (OR press ENTER key to exit) =>" ;
-        read search_url ; echo;
+        echo; echo ">> CONFIG FILE does not exist. User will be asked to choose the URL ..." ; 
+        #echo ">>>> PLEASE PROVIDE THE NUM MAXPAGES URL (OR press ENTER key to exit) =>" ;
+        #read search_url ; echo;
+        echo ">>>> PLEASE CHOOSE THE NUM MAXPAGES URL (press ENTER key to select) =>" ;
+        search_url=$(cat $textBookNumMaxURLsCSVFile | fzf ) ; 
     fi
     ########
     echo ">> CHOSEN SEARCH URL IS = $search_url";
