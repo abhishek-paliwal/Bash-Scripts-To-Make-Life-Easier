@@ -27,7 +27,7 @@ mlr --csv --ifs ';' filter '$BOOK_TYPE =~ "Text Book"' then cut -f NUM_MAX_PAGES
 ## sample configuration ##
 #DIR_PROJECT="$REPO_SCRIPTS/1003-gayatri-parivar-book-making-programs"
 #DIR_OUTPUT="$DIR_Y/_tmp_output_1003-gayatri-parivar-book-making-programs"
-#BOOKNAME="Audiobook - अंधविश्वास को उखाड़ फेंकिये"
+#BOOKNAME="अंधविश्वास को उखाड़ फेंकिये"
 #BOOK_URL_PREFIX_WITH_DOT_IN_END="http://literature.awgp.org/book/andhvishwas_ko_ukhad_fenkiye/v1."
 #LOCALPATH_PREFIX_WITH_DOT="file://$DIR_OUTPUT/v1." ;
 #NUMPAGES_TO_EXTRACT=48 ;
@@ -126,7 +126,7 @@ DIR_PROJECT="$REPO_SCRIPTS_AWGP/1003_parse_html_using_bsoup"
 DIR_OUTPUT="$WORKDIR"
 BOOK_SERIAL_NUMBER="$BOOK_SERIAL_NUMBER"
 NUM_MAX_PAGES_URL="$NUM_MAX_PAGES_URL" 
-BOOKNAME="Audiobook - $BOOKNAME"
+BOOKNAME="$BOOKNAME"
 BOOK_URL_PREFIX_WITH_DOT_IN_END="$BOOK_URL_PREFIX_WITH_DOT_IN_END"
 LOCALPATH_PREFIX_WITH_DOT="$LOCALPATH_PREFIX_WITH_DOT"
 NUMPAGES_TO_EXTRACT=$NUMPAGES_TO_EXTRACT

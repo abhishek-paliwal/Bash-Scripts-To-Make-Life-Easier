@@ -60,12 +60,12 @@ def parse_data_for_this_url(myurl,x):
 ####
 print('<h1>' + bookname + '</h1>')
 print('<h2>Table of contents</h2>')
-print('<ol>')
+print('<ul>')
 for x in range(1, number_of_pages_to_download+1):
     myurl = LOCALPATH_PREFIX + str(x) + '.html' ;
     #print(myurl) ; 
     parse_title_for_this_url(myurl,x) ; 
-print('</ol>')
+print('</ul>')
 print ('<hr>')
 
 ####
