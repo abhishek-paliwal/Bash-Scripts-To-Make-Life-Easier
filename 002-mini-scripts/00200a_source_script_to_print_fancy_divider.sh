@@ -9,4 +9,4 @@ FUNC_PRINT_DIVIDER () {
 }
 
 ## call function
-FUNC_PRINT_DIVIDER
+#FUNC_PRINT_DIVIDER
