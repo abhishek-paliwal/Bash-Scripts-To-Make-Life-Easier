@@ -1,6 +1,6 @@
 #/bin/bash
 
-FUNC_PRINT_DIVIDER () {
+function palidivider () {
     echo;
     echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ; 
     echo ">>>>>>>>>>>>>>>>>>>>                                        <<<<<<<<<<<<<<<<<<<<" ; 
@@ -9,4 +9,4 @@ FUNC_PRINT_DIVIDER () {
 }
 
 ## call function
-#FUNC_PRINT_DIVIDER
+#palidivider

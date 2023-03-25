@@ -32,10 +32,22 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-FUNC_PRINT_FANCY_DIVIDER () {
-    source "$REPO_SCRIPTS_MINI/00200_print_fancy_divider.sh" ; 
+FUNC_SOURCE_SCRIPTS () {
+    ####
+    source "$REPO_SCRIPTS_MINI/00200a_source_script_to_print_fancy_divider.sh" ;
+    echo ">> This enables => 'palidivider' command, which prints a fancy divider on cli." ; 
+    ####
+    source "$REPO_SCRIPTS_MINI/00200b_source_script_to_delete_chosen_files_and_dirs.sh" ; 
+    echo ">> This enables => 'palidelete' command, which moves files into a _trashed_directory instead of deleting completely." ; 
+    ####
+    ####################### ADDING COLOR TO OUTPUT ON CLI ##########################
+    echo "Currently sourcing the bash color script, which outputs chosen texts in various colors ..." ;
+    source $REPO_SCRIPTS/2000_vendor_programs/color-logger.sh
+    info "This enables use of keywords for coloring, such as: debug, info, error, success, warn, highlight." ;
+    debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.sh -h"
+    ##############################################################################
 }
-FUNC_PRINT_FANCY_DIVIDER ; 
+FUNC_SOURCE_SCRIPTS ; 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ##------------------------------------------------------------------------------
@@ -72,14 +84,6 @@ function FUNC_check_hostname_and_assign_proper_variables () {
 FUNC_check_hostname_and_assign_proper_variables
 ##------------------------------------------------------------------------------
 
-####################### ADDING COLOR TO OUTPUT ON CLI ##########################
-echo "Currently sourcing the bash color script, which outputs chosen texts in various colors ..." ;
-
-source $REPO_SCRIPTS/2000_vendor_programs/color-logger.sh
-
-info "This enables use of keywords for coloring, such as: debug, info, error, success, warn, highlight." ;
-debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.sh -h"
-##############################################################################
 
 ##############################################################################
 ## SETTING VARIABLES
