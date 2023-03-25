@@ -10,8 +10,8 @@
 ##        palidelete * ## delete multiple files and directories
 ################################################################################
 
-dateNow=$(date +%Y-%m-%d)
-TRASH_DIR="$DIR_X/_trashed_${dateNow}"
+dateTimeNow=$(date +%Y-%m-%d-%H-%M)
+TRASH_DIR="$DIR_X/_trashed_${dateTimeNow}"
 mkdir -p "$TRASH_DIR" ; 
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
