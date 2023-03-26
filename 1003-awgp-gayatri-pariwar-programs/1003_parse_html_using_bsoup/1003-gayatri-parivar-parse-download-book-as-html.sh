@@ -37,7 +37,7 @@ mlr --csv --ifs ';' filter '$BOOK_TYPE =~ "Text Book"' then cut -f NUM_MAX_PAGES
 ## FUNCITON DEFINITIONS
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 FUNC_PRINT_FANCY_DIVIDER () {
-    source "$REPO_SCRIPTS_MINI/00200_print_fancy_divider.sh" ; 
+    source "$REPO_SCRIPTS_MINI/00200a_source_script_to_print_fancy_divider.sh" ; 
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 FUNC_SEARCH_VARS_BASED_UPON_NUM_MAXPAGES_URL () {
