@@ -10,14 +10,21 @@
 ##        palidelete * ## delete multiple files and directories
 ################################################################################
 
-dateTimeNow=$(date +%Y-%m-%d-%H-%M)
-TRASH_DIR="$DIR_X/_trashed_${dateTimeNow}"
+dateNow=$(date +%Y%m%d) ; 
+TRASH_DIR="$DIR_X/_trashed_${dateNow}" ;
 mkdir -p "$TRASH_DIR" ; 
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-function palidelete () {
+function palitrash-put () {
     echo "###########################################" ;
     for file in "$@" ; do
+    dateTimeNow=$(date +%Y-%m-%dT%H:%M:%S) ;
+    presentDir=$(pwd) ;
+    ##
+    echo "[Trash Info]
+    DeletedFrom=$presentDir
+    DeletionDate=$dateTimeNow" > "$TRASH_DIR/$(basename $file).trashinfo" ;
+    ##
     echo ">> Current => $file" ; 
         if [ -d "$file" ]; then
             echo ">> Trashing this directory => $file" ;  
@@ -31,3 +38,33 @@ function palidelete () {
     done
     echo "############################################" ;
 }
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#function which reads the contents of a directory and lists them numerically
+function palitrash-list () {
+    echo "###########################################" ;
+    echo ">> Listing contents of $TRASH_DIR" ;
+    fd -HI --search-path="$TRASH_DIR" | grep -iv 'trashinfo' | nl  ;
+    echo "############################################" ;
+} 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#function which reads the contents of a directory and lists them numerically
+function palitrash-empty () {
+    echo "###########################################" ;
+    # confirm if user wants to delete all files in trashdir
+    echo ">> Are you sure you want to delete all files in $TRASH_DIR? (y/n): " ;
+    read myanswer ;
+    if [[ "$myanswer" == "y" ]] ; then
+        echo ">> Deleting all files in $TRASH_DIR" ;
+        fd -HI --search-path="$TRASH_DIR" | xargs rm -rf  ;
+    else
+        echo ">> Exiting without deleting any files in $TRASH_DIR" ;
+    fi 
+    echo "############################################" ;
+} 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## setting up aliases
+palidelete=palitrash-put ; 
+
+
+
