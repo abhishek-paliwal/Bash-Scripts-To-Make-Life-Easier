@@ -19,8 +19,15 @@ tmpConfigFile="$WORKDIR/_tmp_config_file.txt" ;
 ####
 ## Get all 'Text Book Version' NUM MAX PAGES URLs
 ## Run miller command 
-textBookNumMaxURLsCSVFile="$WORKDIR/_tmp_textbook_nummaxurls.csv" ;
-mlr --csv --ifs ';' filter '$BOOK_TYPE =~ "Text Book"' then cut -f NUM_MAX_PAGES $CSV_AWGP | mlr --csv --ifs ';' skip-trivial-records > $textBookNumMaxURLsCSVFile ; 
+textBookNumMaxURLsCSVFile="$WORKDIR/_tmp_textbook01_nummaxurls.csv" ;
+mlr --csv --ifs ';' --ofs ';' filter '$BOOK_TYPE =~ "Text Book"' then cut -f BOOK_SERIAL_NUMBER,NUM_MAX_PAGES $CSV_AWGP | mlr --csv --ifs ';' --ofs ';' skip-trivial-records > $textBookNumMaxURLsCSVFile ; 
+## Get all 'Text Book Version' BOOK URLs
+textBookbookURLsCSVFile="$WORKDIR/_tmp_textbook02_bookurls.csv" ;
+mlr --csv --ifs ';' --ofs ';' filter '$BOOK_TYPE =~ "Text Book"' then cut -f BOOK_SERIAL_NUMBER,BOOK_URL $CSV_AWGP | mlr --csv --ifs ';' --ofs ';' skip-trivial-records > $textBookbookURLsCSVFile ;  
+
+## COMBINE THESE 2 FILES
+textBookAllURLsCSVFile="$WORKDIR/_tmp_textbook03_allurls.csv" ;
+cat "$textBookNumMaxURLsCSVFile" "$textBookbookURLsCSVFile" | sort -V > "$textBookAllURLsCSVFile" ; 
 
 
 ##------------------------------------------------------------------------------
@@ -36,12 +43,11 @@ mlr --csv --ifs ';' filter '$BOOK_TYPE =~ "Text Book"' then cut -f NUM_MAX_PAGES
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## FUNCITON DEFINITIONS
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-FUNC_PRINT_FANCY_DIVIDER () {
-    source "$REPO_SCRIPTS_MINI/00200a_source_script_to_print_fancy_divider.sh" ; 
-}
+source "$REPO_SCRIPTS_MINI/00200a_source_script_to_print_fancy_divider.sh" ;
+echo ">> Now you can use => palidivider => to print a fancy divider" ;
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 FUNC_SEARCH_VARS_BASED_UPON_NUM_MAXPAGES_URL () {
-    FUNC_PRINT_FANCY_DIVIDER ; 
+    palidivider ; 
     ## USER INPUT:
     ########
     echo ">> CONFIG FILE = $tmpConfigFile" ; 
@@ -52,12 +58,10 @@ FUNC_SEARCH_VARS_BASED_UPON_NUM_MAXPAGES_URL () {
         echo ">> CONFIG FILE exists. URL will be chosen from the config file ..." ; 
         search_url="$NUM_MAX_PAGES_URL" ## from the sourced config file
     else
-        ## ASK FOR USER INPUT
+        ## ASK USER TO CHOOSE FROM LIST
         echo; echo ">> CONFIG FILE does not exist. User will be asked to choose the URL ..." ; 
-        #echo ">>>> PLEASE PROVIDE THE NUM MAXPAGES URL (OR press ENTER key to exit) =>" ;
-        #read search_url ; echo;
-        echo ">>>> PLEASE CHOOSE THE NUM MAXPAGES URL (press ENTER key to select) =>" ;
-        search_url=$(cat $textBookNumMaxURLsCSVFile | fzf ) ; 
+        echo ">>>> PLEASE CHOOSE THE URL WITH MORE PAGES, IF MULTIPLE URLs exist for single book. (Press ENTER key to select) =>" ;
+        search_url=$(cat $textBookAllURLsCSVFile | fzf | awk -F ';' '{print $2}' ) ;
     fi
     ########
     echo ">> CHOSEN SEARCH URL IS = $search_url";
@@ -96,7 +100,7 @@ FUNC_SEARCH_VARS_BASED_UPON_NUM_MAXPAGES_URL () {
 #NUM_MAX_PAGES
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 FUNC_GET_SOME_PARAM_VALUES () {
-    FUNC_PRINT_FANCY_DIVIDER ; 
+    palidivider ; 
     echo; echo ">> RUNNING FUNCTION => FUNC_GET_SOME_PARAM_VALUES ..."  ; 
     inFile="$searchResultCSV" ;
     ## PRIMARY VARIABLES
@@ -106,6 +110,17 @@ FUNC_GET_SOME_PARAM_VALUES () {
     BOOK_NAME=$(mlr --csv --ifs ';' --headerless-csv-output cut -f BOOK_NAME then head -n 1 $inFile) ; 
     BOOK_NAME_ENGLISH_TRANSLITERATED=$(mlr --csv --ifs ';' --headerless-csv-output cut -f BOOK_NAME_ENGLISH_TRANSLITERATED then head -n 1 $inFile) ; 
     NUM_MAX_PAGES_URL=$(mlr --csv --ifs ';' --headerless-csv-output cut -f NUM_MAX_PAGES then head -n 1 $inFile) ; 
+    BOOK_URL=$(mlr --csv --ifs ';' --headerless-csv-output cut -f BOOK_URL then head -n 1 $inFile) ;
+    ####
+    ## If NUM_MAX_PAGES_URL is empty, then replace it with BOOK_URL
+    if [ -z "$NUM_MAX_PAGES_URL" ]
+    then
+        echo "\$NUM_MAX_PAGES_URL is empty. \$BOOK_URL will be used instead." ; 
+        NUM_MAX_PAGES_URL="$BOOK_URL" ; 
+    else
+        echo "\$NUM_MAX_PAGES_URL is NOT empty. Program will continue." ; 
+    fi
+    ####
     ####
     ## SECONDARY VARIABLES EXTRACTED FROM PRIMARY VARS
     BOOKNAME="$BOOK_NAME" ; 
@@ -137,7 +152,7 @@ EOF
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 FUNC_DOWNLOAD_ALL_PAGES_LOCALLY () {
-    FUNC_PRINT_FANCY_DIVIDER ; 
+    palidivider ; 
     ## Firstly, sourcing the config file
     source "$tmpConfigFile" ; 
     ## download all pages one by one
@@ -147,7 +162,7 @@ FUNC_DOWNLOAD_ALL_PAGES_LOCALLY () {
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 FUNC_RUN_PYTHON_PROGRAMS_FOR_OUTPUTS () {
-    FUNC_PRINT_FANCY_DIVIDER ; 
+    palidivider ; 
     ## Firstly, sourcing the config file
     source "$tmpConfigFile" ; 
     ## run the python bsoup program to extract the desired data from locally present html files
@@ -159,7 +174,7 @@ FUNC_RUN_PYTHON_PROGRAMS_FOR_OUTPUTS () {
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 FUNC_PANDOC_CONVERT_HTML_TO_MARKDOWN () {
-    FUNC_PRINT_FANCY_DIVIDER ; 
+    palidivider ; 
     echo ">> RUNNING ... FUNC_PANDOC_CONVERT_HTML_TO_MARKDOWN" ; 
     ## Firstly, sourcing the config file
     source "$tmpConfigFile" ; 
@@ -174,7 +189,7 @@ FUNC_GET_SOME_PARAM_VALUES ;
 ####
 while true
 do
-    FUNC_PRINT_FANCY_DIVIDER ; 
+    palidivider ; 
     echo ">> WHAT DO YOU WANT TO DO? " ; echo; 
     ##
     echo "1. Download HTMLs locally"
