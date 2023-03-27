@@ -181,6 +181,15 @@ FUNC_PANDOC_CONVERT_HTML_TO_MARKDOWN () {
     pandoc --wrap=none --from=html --to=markdown_strict "$HTML_OUTPUT" -o "$BOOKNAME_HTML_MD_FINAL.md" ;
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FUNC_RUN_ALL_STEPS () {
+    palidivider ; 
+    FUNC_DOWNLOAD_ALL_PAGES_LOCALLY ;
+    FUNC_RUN_PYTHON_PROGRAMS_FOR_OUTPUTS  ;
+    FUNC_PANDOC_CONVERT_HTML_TO_MARKDOWN  ;
+    exit ;
+}
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ################################################################################
 ## CALL FUNCTIONS
@@ -192,19 +201,23 @@ do
     palidivider ; 
     echo ">> WHAT DO YOU WANT TO DO? " ; echo; 
     ##
-    echo "1. Download HTMLs locally"
-    echo "2. Parse local HTMLs using python"
-    echo "3. Convert result HTML to markdown using pandoc"
-    echo "4. Exit prompt"
+    echo "1. Download HTMLs locally" ; 
+    echo "2. Parse local HTMLs using python" ;
+    echo "3. Convert result HTML to markdown using pandoc" ;
+    echo "4. Exit prompt" ;
+    echo "5. Steps 1,2,3,4 in sequence" ; 
    read Input
    case "$Input" in
         1) FUNC_DOWNLOAD_ALL_PAGES_LOCALLY ;;
         2) FUNC_RUN_PYTHON_PROGRAMS_FOR_OUTPUTS  ;;
         3) FUNC_PANDOC_CONVERT_HTML_TO_MARKDOWN  ;;
-        4) exit
+        4) exit ;;
+        5) FUNC_RUN_ALL_STEPS ;;
+        *) exit ;;
    esac
 done
 ####
 echo "##+++++++++++++++++++++++++++++++++++++++" ; 
 ################################################################################
+
 
