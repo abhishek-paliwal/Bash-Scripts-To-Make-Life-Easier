@@ -1,22 +1,24 @@
 #/bin/bash
-
-SCRIPT_BASENAME=$(basename $0)
-SCRIPT_BASENAME_SANS_EXTN="${SCRIPT_BASENAME%.*}"
-WORKDIR="$DIR_Y/$SCRIPT_BASENAME_SANS_EXTN" ; 
-mkdir -p $WORKDIR ;
-
-####
-maxlength=80 ; 
-#### 
-hline="################################################################################" ; 
-aline=">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" ; 
-bline="<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ; 
-mline="--------------------------------------------------------------------------------" ;
-pline="++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
-xline="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" ;
+################################################################################
+## This script is contains a function which prints a string in a box of a given width made with chosen characters
+## Date created: 2023-03-30
+## Created by: Pali
+################################################################################
+## Examples of usage from other scripts after sourcing this script
+## palidivider arg1 arg2 arg3
+    ## Arguments:
+    ## \$1. string to print
+    ## \$2. character_line to use for the left side of the box (palihline|palialine|palibline|palimline|palipline|palixline)
+    ## \$3. character_line to use for the right side of the box (palihline|palialine|palibline|palimline|palipline|palixline)
+    ## Examples:
+# palidivider "$testStringInput" $palialine $palibline
+# palidivider "$testStringInput" $palihline $palihline
+# palidivider "$testStringInput" $palipline $palimline
+# palidivider "THIS IS A TEST STRING. THIS IS A TEST STRING." 
+################################################################################
 
 ################################################################################
-## main function
+## Main Function
 ################################################################################
 palidivider () {
     ## This function takes a string and prints it in a box of a given
@@ -25,6 +27,13 @@ palidivider () {
     ## \$1. string to print
     ## \$2. character_line to use for the left side of the box
     ## \$3. character_line to use for the right side of the box
+    ####################################
+    local FUNCTION_NAME="$FUNCNAME" ;
+    local OUTDIR="$DIR_Y/_tmp_output_$FUNCTION_NAME" ; 
+    mkdir -p "$OUTDIR" ;
+    local tmpfile="$OUTDIR/_tmp1.txt" ;
+    local maxlength=80 ; 
+    ####################################
     stringInput="$1" ;
     lineBegin=$2 ; 
     lineEnd="$3" ;
@@ -32,8 +41,7 @@ palidivider () {
     if [ -z "$1" ] ; then stringInput="" ; lineBegin="$hline" ; lineEnd="$hline" ; fi
     if [ -z "$2" ] ; then lineBegin="$aline" ; lineEnd="$bline" ; fi
     ## fold the input
-    tmpfile="$WORKDIR/_tmp1.txt" ;
-    echo $stringInput | fold -w70 -s > $tmpfile ;
+    echo $stringInput | fold -w70 -s > "$tmpfile" ;
     ########
     echo;
     echo $aline ; 
@@ -53,11 +61,26 @@ palidivider () {
 }
 ################################################################################
 
-# test string = lorem ipsum
-stringInput="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, augue et tincidunt aliquam, nulla nisl aliquam ligula, eget scelerisque dui justo a nunc. Nullam sed nulla ac turpis lacinia aliquam adipiscing ela." ; 
+## Variables to be used by other scripts after sourcing this script
+palihline="################################################################################" ; 
+palialine=">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" ; 
+palibline="<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" ; 
+palimline="--------------------------------------------------------------------------------" ;
+palipline="++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+palixline="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" ;
 
-## Examples of usage
-# palidivider "$stringInput" $aline $bline
-# palidivider "$stringInput" $hline $hline
-# palidivider "$stringInput" $pline $mline
-# palidivider "THIS IS A TEST STRING. THIS IS A TEST STRING. THIS IS ANOTHER TEST STRING." 
+# test string = lorem ipsum
+testStringInput="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, augue et tincidunt aliquam, nulla nisl aliquam ligula, eget scelerisque dui justo a nunc. Nullam sed nulla ac turpis lacinia aliquam adipiscing ela." ; 
+
+################################################################################
+# Unset variables to avoid name collisions in other scripts after sourcing this script
+################################################################################
+unset OUTDIR
+unset testStringInput
+unset lineBegin
+unset lineEnd
+unset tmpfile
+unset countBegin
+unset countEnd
+unset newline
+################################################################################
