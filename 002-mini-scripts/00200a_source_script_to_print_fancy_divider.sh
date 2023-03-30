@@ -38,13 +38,13 @@ palidivider () {
     lineBegin=$2 ; 
     lineEnd="$3" ;
     # check if cli argument exists. If not, use defaults.
-    if [ -z "$1" ] ; then stringInput="" ; lineBegin="$hline" ; lineEnd="$hline" ; fi
-    if [ -z "$2" ] ; then lineBegin="$aline" ; lineEnd="$bline" ; fi
+    if [ -z "$1" ] ; then stringInput="" ; lineBegin="$palihline" ; lineEnd="$palihline" ; fi
+    if [ -z "$2" ] ; then lineBegin="$palialine" ; lineEnd="$palibline" ; fi
     ## fold the input
     echo $stringInput | fold -w70 -s > "$tmpfile" ;
     ########
     echo;
-    echo $aline ; 
+    echo $palialine ; 
     ##
     while read line ; do
         #echo "$line" ;
@@ -56,7 +56,7 @@ palidivider () {
         echo "$newline" ;
     done < "$tmpfile"
     ##
-    echo $bline ; 
+    echo $palibline ; 
     echo; 
 }
 ################################################################################
