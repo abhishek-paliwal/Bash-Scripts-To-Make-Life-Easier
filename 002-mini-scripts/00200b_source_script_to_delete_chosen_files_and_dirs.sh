@@ -10,12 +10,15 @@
 ##        palitrash-put * ## delete multiple files and directories
 ################################################################################
 
-dateNow=$(date +%Y%m%d) ; 
-TRASH_DIR="$DIR_X/_trashed_${dateNow}" ;
-mkdir -p "$TRASH_DIR" ; 
-
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function set_vars () {
+    dateNow=$(date +%Y%m%d) ; 
+    TRASH_DIR="$DIR_X/_trashed_${dateNow}" ;
+    mkdir -p "$TRASH_DIR" ; 
+}
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function palitrash-put () {
+    set_vars ;
     echo "###########################################" ;
     for file in "$@" ; do
     dateTimeNow=$(date +%Y-%m-%dT%H:%M:%S) ;
@@ -41,6 +44,7 @@ function palitrash-put () {
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #function which reads the contents of a directory and lists them numerically
 function palitrash-list () {
+    set_vars ;
     echo "###########################################" ;
     echo ">> Listing contents of $TRASH_DIR" ;
     fd -HI --search-path="$TRASH_DIR" | grep -iv 'trashinfo' | nl  ;
@@ -49,6 +53,7 @@ function palitrash-list () {
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #function which reads the contents of a directory and lists them numerically
 function palitrash-empty () {
+    set_vars ;
     echo "###########################################" ;
     # confirm if user wants to delete all files in trashdir
     echo ">> Are you sure you want to delete all files in $TRASH_DIR? (y/n): " ;
