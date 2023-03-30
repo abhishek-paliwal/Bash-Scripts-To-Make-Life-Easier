@@ -38,7 +38,7 @@ FUNC_SOURCE_SCRIPTS () {
     echo ">> This enables => 'palidivider' command, which prints a fancy divider on cli." ; 
     ####
     source "$REPO_SCRIPTS_MINI/00200b_source_script_to_delete_chosen_files_and_dirs.sh" ; 
-    echo ">> This enables => 'palidelete' command, which moves files into a _trashed_directory instead of deleting completely." ; 
+    echo ">> This enables => 'palidelete, palitrash-put, palitrash-empty, palitrash-list' commands, which move files into a _trashed_directory instead of deleting completely." ; 
     ####
     ####################### ADDING COLOR TO OUTPUT ON CLI ##########################
     echo "Currently sourcing the bash color script, which outputs chosen texts in various colors ..." ;
