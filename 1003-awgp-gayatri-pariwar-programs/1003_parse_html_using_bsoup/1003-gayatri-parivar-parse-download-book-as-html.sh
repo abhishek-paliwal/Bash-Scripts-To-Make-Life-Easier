@@ -1,14 +1,18 @@
 #!/bin/bash
 ################################################################################
 ## THIS PROGRAM DOWNLOAD WEBPAGES AND PARSES THEM INTO A COMBINED HTML FILE RESUTING IN A SINGLE PAGE BOOK
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## SOURCE THE SCRIPTS FIRST, ELSE IT WILL OVERWRITE THE VARIABLES
+source "$REPO_SCRIPTS_MINI/00200a_source_script_to_print_fancy_divider.sh" ;
+echo ">> Now you can use => palidivider => to print a fancy divider" ;
 ################################################################################
 THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 ####
 
 WORKDIR="$DIR_Y/_output_$THIS_SCRIPT_NAME_SANS_EXTENSION" ; 
-mkdir -p $WORKDIR ; 
-cd $WORKDIR ; 
+mkdir -p "$WORKDIR" ; 
+cd "$WORKDIR" ; 
 ####
 inFileCSV="$CSV_AWGP" ## get from env variable
 searchResultCSV="$WORKDIR/_tmp_searchResult.csv" ;
@@ -43,11 +47,8 @@ cat "$textBookNumMaxURLsCSVFile" "$textBookbookURLsCSVFile" | sort -V > "$textBo
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## FUNCITON DEFINITIONS
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-source "$REPO_SCRIPTS_MINI/00200a_source_script_to_print_fancy_divider.sh" ;
-echo ">> Now you can use => palidivider => to print a fancy divider" ;
-##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 FUNC_SEARCH_VARS_BASED_UPON_NUM_MAXPAGES_URL () {
-    palidivider ; 
+    palidivider "Running $FUNCNAME" ; 
     ## USER INPUT:
     ########
     echo ">> CONFIG FILE = $tmpConfigFile" ; 
@@ -68,9 +69,9 @@ FUNC_SEARCH_VARS_BASED_UPON_NUM_MAXPAGES_URL () {
     ## Exit the program if search url is empty.
     if [ -z "$search_url" ]
     then
-        echo "\$search_url is empty. Program will exit now." ; exit ; 
+        echo "search_url is empty. Program will exit now." ; exit ; 
     else
-        echo "\$search_url is NOT empty. Program will continue." ; 
+        echo "search_url is NOT empty. Program will continue." ; 
     fi
     ########
     echo "##+++++++++++++++++++++++++++++++++++++++" ; 
@@ -100,8 +101,9 @@ FUNC_SEARCH_VARS_BASED_UPON_NUM_MAXPAGES_URL () {
 #NUM_MAX_PAGES
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 FUNC_GET_SOME_PARAM_VALUES () {
-    palidivider ; 
-    echo; echo ">> RUNNING FUNCTION => FUNC_GET_SOME_PARAM_VALUES ..."  ; 
+    palidivider "RUNNING => FUNC_GET_SOME_PARAM_VALUES ..." ; 
+    echo "============ $WORKDIR" ;
+    echo; 
     inFile="$searchResultCSV" ;
     ## PRIMARY VARIABLES
     ## consider first result line only
@@ -121,6 +123,7 @@ FUNC_GET_SOME_PARAM_VALUES () {
         echo "\$NUM_MAX_PAGES_URL is NOT empty. Program will continue." ; 
     fi
     ####
+    echo "============ $WORKDIR" ;
     ####
     ## SECONDARY VARIABLES EXTRACTED FROM PRIMARY VARS
     BOOKNAME="$BOOK_NAME" ; 
@@ -168,9 +171,9 @@ FUNC_RUN_PYTHON_PROGRAMS_FOR_OUTPUTS () {
     ## run the python bsoup program to extract the desired data from locally present html files
     python_program_path="$DIR_PROJECT/1003-gayatri-parivar-parse-local-html-book-data-using-beautiful-soup.py" ;
     ## Check output
-    python3 $python_program_path "$BOOKNAME" "$NUMPAGES_TO_EXTRACT" "$LOCALPATH_PREFIX_WITH_DOT" ; 
+    $VIRTUAL_ENV/bin/python3 $python_program_path "$BOOKNAME" "$NUMPAGES_TO_EXTRACT" "$LOCALPATH_PREFIX_WITH_DOT" ; 
     ## Then run again to save output to html
-    python3 $python_program_path "$BOOKNAME" "$NUMPAGES_TO_EXTRACT" "$LOCALPATH_PREFIX_WITH_DOT" > "$HTML_OUTPUT" ; 
+    $VIRTUAL_ENV/bin/python3 $python_program_path "$BOOKNAME" "$NUMPAGES_TO_EXTRACT" "$LOCALPATH_PREFIX_WITH_DOT" > "$HTML_OUTPUT" ; 
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 FUNC_PANDOC_CONVERT_HTML_TO_MARKDOWN () {
@@ -182,7 +185,7 @@ FUNC_PANDOC_CONVERT_HTML_TO_MARKDOWN () {
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 FUNC_RUN_ALL_STEPS () {
-    palidivider ; 
+    palidivider "Running $FUNCNAME ..."; 
     FUNC_DOWNLOAD_ALL_PAGES_LOCALLY ;
     FUNC_RUN_PYTHON_PROGRAMS_FOR_OUTPUTS  ;
     FUNC_PANDOC_CONVERT_HTML_TO_MARKDOWN  ;
@@ -193,6 +196,7 @@ FUNC_RUN_ALL_STEPS () {
 
 ################################################################################
 ## CALL FUNCTIONS
+echo "PRESENT WORKDIR => $WORKDIR" ;
 FUNC_SEARCH_VARS_BASED_UPON_NUM_MAXPAGES_URL ;
 FUNC_GET_SOME_PARAM_VALUES ;
 ####
