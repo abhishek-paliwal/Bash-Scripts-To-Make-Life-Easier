@@ -5,9 +5,9 @@
 # Author: Pali
 # Date: 2023-03-25 
 # Usage: source demo.sh, then run commands from cli or in another script
-##        palidelete temptemp ## delete directory    
-##        palidelete 1.txt ## delete file
-##        palidelete * ## delete multiple files and directories
+##        palitrash-put temptemp ## delete directory    
+##        palitrash-put 1.txt ## delete file
+##        palitrash-put * ## delete multiple files and directories
 ################################################################################
 
 dateNow=$(date +%Y%m%d) ; 
@@ -63,8 +63,6 @@ function palitrash-empty () {
 } 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-## setting up aliases
-palidelete=palitrash-put ; 
 
 
 
