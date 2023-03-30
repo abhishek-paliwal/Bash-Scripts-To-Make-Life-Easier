@@ -1,8 +1,14 @@
 #!/bin/bash
 THIS_SCRIPT_NAME="$(basename $0)" ;
-THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
+THIS_SCRIPT_NAME_SANS_EXTENSION="${THIS_SCRIPT_NAME%.*}" ;
+THIS_SCRIPT_NAME_EXTENSION="${THIS_SCRIPT_NAME##*.}" ;
 ##################################################################################
-OUTPUT_DIR="$DIR_DROPBOX_SCRIPTS_OUTPUT"
+WORKDIR="$DIR_Y/$THIS_SCRIPT_NAME_SANS_EXTENSION" ; 
+mkdir -p $WORKDIR ;
+##
+OUTPUT_DIR="$DIR_DROPBOX_SCRIPTS_OUTPUT" ; 
+echo ">> Currently running => $THIS_SCRIPT_NAME" ; 
+echo ">> OUTPUT_DIR = $OUTPUT_DIR" ;
 ##################################################################################
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -34,22 +40,37 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-####################### ADDING COLOR TO OUTPUT ON CLI ##########################
-echo "Currently sourcing the bash color script, which outputs chosen texts in various colors ..." ;
-source $REPO_SCRIPTS/2000_vendor_programs/color-logger.sh
-info "This enables use of keywords for coloring, such as: debug, info, error, success, warn, highlight." ;
-debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.sh -h"
-##############################################################################
-
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FUNC_SOURCE_SCRIPTS () {
+    ####
+    source "$REPO_SCRIPTS_MINI/00200a_source_script_to_print_fancy_divider.sh" ;
+    echo ">> This enables => 'palidivider' command, which prints a fancy divider on cli." ; 
+    ####
+    source "$REPO_SCRIPTS_MINI/00200b_source_script_to_delete_chosen_files_and_dirs.sh" ; 
+    echo ">> This enables => 'palidelete' command, which moves files into a _trashed_directory instead of deleting completely." ; 
+    ####
+    ####################### ADDING COLOR TO OUTPUT ON CLI ##########################
+    echo "Currently sourcing the bash color script, which outputs chosen texts in various colors ..." ;
+    source $REPO_SCRIPTS/2000_vendor_programs/color-logger.sh
+    info "This enables use of keywords for coloring, such as: debug, info, error, success, warn, highlight." ;
+    debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.sh -h"
+    ##############################################################################
+}
+FUNC_SOURCE_SCRIPTS ; 
+palidivider ; 
 ##################################################################################
-cd $OUTPUT_DIR
+##################################################################################
+
+cd $OUTPUT_DIR ; 
 echo ">> PWD = $(pwd)" 
-##################################################################################
-
-##################################################################################
-##################################################################################
+echo ">>>> Calculating the usage functions for all scripts (might take a while) ..." ; 
+##
 outfile="$OUTPUT_DIR/OUTPUT_0000_create_html_index_with_usage_help.html" ;
-
+log_outfile="$WORKDIR/OUTPUT_LOG_0000_create_html_index_with_usage_help.txt" ;
+DATE_NOW=$(date +"%Y-%m-%d-%H-%M-%S") ;
+echo ">> ## Created on = $DATE_NOW" > "$log_outfile" ; ## initializing the log file
+####
+####
 
 HTML_BOOTSTRAP_HEADER="<!doctype html>
 <html lang='en'>
@@ -125,13 +146,13 @@ for x in $(grep -irL --include \*.sh --include \*.py 'usage()' $PATHDIR/ | grep 
     replaceThis2="/Users/abhishek/GitHub/Bash-Scripts-To-Make-Life-Easier/"
     #script_name=$(echo $x | sed -e "s|$replaceThis1||g" -e "s|$replaceThis2||g") ;  
     script_name=$(basename $x) ;
-    warn "-- USAGE FUNCTION NOT FOUND IN ==> $script_name" ; 
+    echo "-- $count // USAGE FUNCTION NOT FOUND IN ==> $script_name" >> "$log_outfile" ; 
     echo "<tr class='table-danger'> <th scope='row'>$count</th> <td>$script_name</td> <td>Usage function not found. Fix it.</td> <td>usage_output not found.</td> </tr>" >> $outfile ;
 done
 ##
 echo "$DATATABLE_FOOTER" >> $outfile ;
 
-echo; echo;
+#echo; echo;
 echo "<hr>" >> $outfile ;
 echo "$DATATABLE_HEADER_SUCCESS" >> $outfile ;
 ##
@@ -145,7 +166,8 @@ for x in $(grep -irl --include \*.sh --include \*.py 'usage()' $PATHDIR/ | grep 
     replaceThis2="/Users/abhishek/GitHub/Bash-Scripts-To-Make-Life-Easier/"
     #script_name=$(echo $x | sed -e "s|$replaceThis1||g" -e "s|$replaceThis2||g") ;  
     script_name=$(basename $x) ;
-    echo; success "++ USAGE FUNCTION FOUND IN ==> $script_name // EXTENSION = $file_extension" ; 
+    #echo; 
+    echo "++ $count // USAGE FUNCTION FOUND IN ==> $script_name // EXTENSION = $file_extension" >> "$log_outfile" ; 
     
     ## Check the file extension and run corresponding help command 
     if [ "$file_extension" == "sh" ] ; then 
@@ -166,5 +188,13 @@ echo "$DATATABLE_FOOTER" >> $outfile ;
 ##
 echo "$HTML_BOOTSTRAP_FOOTER" >> $outfile
 
-## PRINTING OUTPUT DIRECTORY FULL PATH
-echo; echo "OUTPUT_DIRECTORY => $OUTPUT_DIR" ; echo ;   
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## PRINTING SUMMARY
+echo "#---------------------------------------------------------------" ;
+echo "SUMMARY:" ; 
+echo "#---------------------------------------------------------------" ;
+echo "TOTAL NUMBER OF SCRIPTS FOUND = $count" ; echo ;
+echo "LOG FILE = $log_outfile" ; echo ;
+echo "OUTPUT FILE = $outfile" ; echo ;
+echo "OUTPUT_DIRECTORY = $OUTPUT_DIR" ; echo ;
+palidivider ;    
