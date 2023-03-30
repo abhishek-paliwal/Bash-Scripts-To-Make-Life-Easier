@@ -1,4 +1,27 @@
 #!/bin/bash
+################################################################################
+## SOURCE OTHER SCRIPTS FIRST, SO THAT IT DOES NOT OVERWRITE THE VARIABLES
+################################################################################
+FUNC_SOURCE_SCRIPTS () {
+    ####
+    source "$REPO_SCRIPTS_MINI/00200a_source_script_to_print_fancy_divider.sh" ;
+    echo ">> This enables => 'palidivider' command, which prints a fancy divider on cli." ; 
+    ####
+    source "$REPO_SCRIPTS_MINI/00200b_source_script_to_delete_chosen_files_and_dirs.sh" ; 
+    echo ">> This enables => 'palidelete' command, which moves files into a _trashed_directory instead of deleting completely." ; 
+    ####
+    ####################### ADDING COLOR TO OUTPUT ON CLI ##########################
+    echo "Currently sourcing the bash color script, which outputs chosen texts in various colors ..." ;
+    source $REPO_SCRIPTS/2000_vendor_programs/color-logger.sh
+    info "This enables use of keywords for coloring, such as: debug, info, error, success, warn, highlight." ;
+    debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.sh -h"
+    ##############################################################################
+}
+FUNC_SOURCE_SCRIPTS ; 
+palidivider "BEGIN: $(basename $0)" ; 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## VARIABLES SETTING 
 THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="${THIS_SCRIPT_NAME%.*}" ;
 THIS_SCRIPT_NAME_EXTENSION="${THIS_SCRIPT_NAME##*.}" ;
@@ -40,27 +63,7 @@ exit 0 ## EXITING IF ONLY USAGE IS NEEDED
 if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-FUNC_SOURCE_SCRIPTS () {
-    ####
-    source "$REPO_SCRIPTS_MINI/00200a_source_script_to_print_fancy_divider.sh" ;
-    echo ">> This enables => 'palidivider' command, which prints a fancy divider on cli." ; 
-    ####
-    source "$REPO_SCRIPTS_MINI/00200b_source_script_to_delete_chosen_files_and_dirs.sh" ; 
-    echo ">> This enables => 'palidelete' command, which moves files into a _trashed_directory instead of deleting completely." ; 
-    ####
-    ####################### ADDING COLOR TO OUTPUT ON CLI ##########################
-    echo "Currently sourcing the bash color script, which outputs chosen texts in various colors ..." ;
-    source $REPO_SCRIPTS/2000_vendor_programs/color-logger.sh
-    info "This enables use of keywords for coloring, such as: debug, info, error, success, warn, highlight." ;
-    debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.sh -h"
-    ##############################################################################
-}
-FUNC_SOURCE_SCRIPTS ; 
-palidivider ; 
 ##################################################################################
-##################################################################################
-
 cd $OUTPUT_DIR ; 
 echo ">> PWD = $(pwd)" 
 echo ">>>> Calculating the usage functions for all scripts (might take a while) ..." ; 
@@ -197,4 +200,6 @@ echo "TOTAL NUMBER OF SCRIPTS FOUND = $count" ; echo ;
 echo "LOG FILE = $log_outfile" ; echo ;
 echo "OUTPUT FILE = $outfile" ; echo ;
 echo "OUTPUT_DIRECTORY = $OUTPUT_DIR" ; echo ;
-palidivider ;    
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+palidivider "END: $(basename $0)" ;
