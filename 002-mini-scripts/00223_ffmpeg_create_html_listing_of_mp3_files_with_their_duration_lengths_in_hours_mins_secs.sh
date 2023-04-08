@@ -117,6 +117,11 @@ echo "<h1>HTML OUTPUT - AWGP MP3 FILES LISTING WITH DURATION</h1>" >> $OUTPUT_HT
 echo "<p>Page last updated: $(date)" >> $OUTPUT_HTML ;
 echo "<br>Page updated by script: $THIS_SCRIPT_NAME</p><hr>" >> $OUTPUT_HTML ;
 ##
+NUMFILES_FOUND="$(fd -e mp3 -e MP3 --search-path="$(pwd)" | sort -V | wc -l)" ;
+echo "<h2>$NUMFILES_FOUND = Number of MP3 files found</h2>" >> $OUTPUT_HTML ;
+##
+echo "<hr>" >> $OUTPUT_HTML ;
+##
 echo "$DATATABLE_HEADER"  >> $OUTPUT_HTML ;
 #echo "$DATATABLE_CONTENT_ROWS"  >> $OUTPUT_HTML ;
 
@@ -130,7 +135,7 @@ for x in $(fd -e mp3 -e MP3 --search-path="$(pwd)" | sort -V) ; do
     ffprobe -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$x" 2>/dev/null > "$TMPFILE" ;
     duration_in_secs="$(cat $TMPFILE | cut -d . -f1)" ;
     song_duration=$(gdate -d@${duration_in_secs} -u +%Hh-%Mm-%Ss) ;
-    warn ">> Current file => $count" ; 
+    warn ">> Current file => $count of $NUMFILES_FOUND ..." ; 
     info ">> ORIGINAL FILE => $x" ; 
     success ">> ORIGINAL FILE BASENAME => $(basename $x)" ; 
     success ">> MP3 song duration in hours mins seconds => $song_duration" ;
@@ -161,6 +166,14 @@ echo "##------------------------------------------------------------------------
 success ">>>> SUCCESS // SUMMARY: OUTPUT HTML FILE CREATED AT => $OUTPUT_HTML" ;
 success ">>>> SUCCESS // SUMMARY: OUTPUT TXT FILE CREATED AT => $OUTPUT_TXT" ;
 echo "################################################################################" ;
+
+##------------------------------------------------------------------------------
+## FINALLY COPY THE OUTPUT HTML FILE TO THE DESIRED LOCATION
+palidivider "Copying output HTML file to Dropbox folder" ;
+DROPBOX_FILEPATH="$DIR_DROPBOX_SCRIPTS_OUTPUT/_AWGP_gayatri_pariwar_outputs/$(basename $OUTPUT_HTML)" ;
+cp "$OUTPUT_HTML" "$DROPBOX_FILEPATH" ;
+warn ">>>> MESSAGE // OUTPUT HTML FILE COPIED TO => $DROPBOX_FILEPATH" ;
+##------------------------------------------------------------------------------
 
 ################################################################################
 ############################### PROGRAM ENDS ###################################
