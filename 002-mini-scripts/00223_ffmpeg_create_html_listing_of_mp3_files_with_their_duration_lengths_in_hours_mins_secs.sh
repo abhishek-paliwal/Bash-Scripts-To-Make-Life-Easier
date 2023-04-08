@@ -4,6 +4,27 @@
 THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FUNC_SOURCE_SCRIPTS () {
+    ####
+    source "$REPO_SCRIPTS_MINI/00200a_source_script_to_print_fancy_divider.sh" ;
+    echo ">> This enables => 'palidivider' command, which prints a fancy divider on cli." ; 
+    ####
+    source "$REPO_SCRIPTS_MINI/00200b_source_script_to_delete_chosen_files_and_dirs.sh" ; 
+    echo ">> This enables => 'palidelete, palitrash-put, palitrash-empty, palitrash-list' commands, which move files into a _trashed_directory instead of deleting completely." ; 
+    ####
+    ####################### ADDING COLOR TO OUTPUT ON CLI ##########################
+    echo "Currently sourcing the bash color script, which outputs chosen texts in various colors ..." ;
+    source $REPO_SCRIPTS/2000_vendor_programs/color-logger.sh
+    info "This enables use of keywords for coloring, such as: debug, info, error, success, warn, highlight." ;
+    debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.sh -h"
+    ##############################################################################
+}
+FUNC_SOURCE_SCRIPTS ; 
+palidivider "Currently running: $THIS_SCRIPT_NAME" ; 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 ##############################################################################
 ## SETTING VARIABLES
 WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
@@ -53,7 +74,7 @@ HTML_BOOTSTRAP_HEADER="<!doctype html>
     </script>
     <!-- DATATABLE BLOCK -->
 
-    <title>OUTPUT - MP3 FILES LISTING WITH DURATION</title>
+    <title>OUTPUT - AWGP MP3 FILES LISTING WITH DURATION</title>
 </head>
 <body>
 <div class='container'>" ;
@@ -92,7 +113,7 @@ DATATABLE_FOOTER="</tbody></table>"
 ## CREATING HTML OUTPUT
 ##################################################################################
 echo "$HTML_BOOTSTRAP_HEADER" > $OUTPUT_HTML ; ## Initializing HTML output
-echo "<h1>HTML OUTPUT - $THIS_SCRIPT_NAME_SANS_EXTENSION</h1>" >> $OUTPUT_HTML ;
+echo "<h1>HTML OUTPUT - AWGP MP3 FILES LISTING WITH DURATION</h1>" >> $OUTPUT_HTML ;
 echo "<p>Page last updated: $(date)" >> $OUTPUT_HTML ;
 echo "<br>Page updated by script: $THIS_SCRIPT_NAME</p><hr>" >> $OUTPUT_HTML ;
 ##
@@ -101,7 +122,7 @@ echo "$DATATABLE_HEADER"  >> $OUTPUT_HTML ;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 count=0 ;
-for x in $(fd -e mp3 -e MP3 --search-path="$(pwd)") ; do  
+for x in $(fd -e mp3 -e MP3 --search-path="$(pwd)" | sort -V) ; do  
     ((count++)) ; 
     MP3_FILE_BASENAME="$(basename $x)" ; 
     echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
@@ -109,12 +130,12 @@ for x in $(fd -e mp3 -e MP3 --search-path="$(pwd)") ; do
     ffprobe -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$x" 2>/dev/null > "$TMPFILE" ;
     duration_in_secs="$(cat $TMPFILE | cut -d . -f1)" ;
     song_duration=$(gdate -d@${duration_in_secs} -u +%Hh-%Mm-%Ss) ;
-    echo ">> ORIGINAL FILE => $x" ; 
-    echo ">> ORIGINAL FILE BASENAME => $(basename $x)" ; 
-    echo ">> MP3 song duration in hours mins seconds => $song_duration" ;
+    warn ">> Current file => $count" ; 
+    info ">> ORIGINAL FILE => $x" ; 
+    success ">> ORIGINAL FILE BASENAME => $(basename $x)" ; 
+    success ">> MP3 song duration in hours mins seconds => $song_duration" ;
     ##
-    #echo ">> FILE DURATION // MP3 FILE PATH "  >>  "$HTML_OUTPUT" ; 
-    echo "<tr> <td>$count</td> <td>$song_duration</td> <td>$MP3_FILE_BASENAME</td> </tr>"  >>  "$HTML_OUTPUT" ; 
+    echo "<tr> <td>$count</td> <td>$song_duration</td> <td>$MP3_FILE_BASENAME</td> </tr>"  >>  "$OUTPUT_HTML" ; 
 done
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -146,7 +167,4 @@ echo "##########################################################################
 ################################################################################
 echo "$(date) = END-TIME" >> $time_taken
 cat $time_taken
-
-
-
 
