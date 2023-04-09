@@ -87,8 +87,10 @@ HTML_BOOTSTRAP_FOOTER="</div><!-- Option 1: Bootstrap Bundle with Popper -->
 DATATABLE_HEADER="<table class='table table-striped' id='mytable' class='display' style='width:100%'>
     <thead>
         <tr>
-            <th>SERIAL_NUMBER</th>
+            <th>S.No.</th>
             <th>FILE DURATION</th>
+            <th>AUDIO_NAME</th>
+            <th>AUDIO_NAME_FROMFILE</th>
             <th>MP3_FILE_BASENAME</th>
         </tr>
     </thead>
@@ -129,8 +131,15 @@ echo "$DATATABLE_HEADER"  >> $OUTPUT_HTML ;
 count=0 ;
 for x in $(fd -e mp3 -e MP3 --search-path="$(pwd)" | sort -V) ; do  
     ((count++)) ; 
-    MP3_FILE_BASENAME="$(basename $x)" ; 
     echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
+    MP3_FILE_BASENAME="$(basename $x)" ; 
+    MP3_FILE_BASENAME_SANS_EXTENSION="$(basename -s .mp3 $x)" ;
+    ##
+    get_serial_number_of_book=$(echo "$MP3_FILE_BASENAME" | awk -F '_XX_' '{print $1}' | sd ' ' '') ;
+    ## Use CSV_AWGP environment variable
+    get_bookname=$(grep -i "${get_serial_number_of_book};" $CSV_AWGP | awk -F ';' '{print $3}' | head -1)  ; 
+    get_bookname_txtmd=$( fd -e txt -e md "$MP3_FILE_BASENAME_SANS_EXTENSION" -x head -1 {} )  ; 
+    ##
     TMPFILE="$WORKDIR/_tmp011.txt" ; 
     ffprobe -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$x" 2>/dev/null > "$TMPFILE" ;
     duration_in_secs="$(cat $TMPFILE | cut -d . -f1)" ;
@@ -139,8 +148,9 @@ for x in $(fd -e mp3 -e MP3 --search-path="$(pwd)" | sort -V) ; do
     info ">> ORIGINAL FILE => $x" ; 
     success ">> ORIGINAL FILE BASENAME => $(basename $x)" ; 
     success ">> MP3 song duration in hours mins seconds => $song_duration" ;
+    echo "$get_bookname // $get_serial_number_of_book"
     ##
-    echo "<tr> <td>$count</td> <td>$song_duration</td> <td>$MP3_FILE_BASENAME</td> </tr>"  >>  "$OUTPUT_HTML" ; 
+    echo "<tr> <td>$count</td> <td>$song_duration</td> <td>$get_bookname</td> <td>$get_bookname_txtmd</td> <td>$MP3_FILE_BASENAME</td> </tr>"  >>  "$OUTPUT_HTML" ; 
 done
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
