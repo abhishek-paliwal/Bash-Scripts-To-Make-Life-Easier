@@ -107,7 +107,8 @@ algolia_search_for_this_phrase_mggk
 yt1_download_audio
 yt2_download_video
 ffmpeg_convert_webm_videos_to_mp4
-mggk_search_ONEDRIVE_FILES) ;
+mggk_search_ONEDRIVE_FILES
+h001_run_this_to_create_image_captions_in_pwd) ;
 
 
 ##
