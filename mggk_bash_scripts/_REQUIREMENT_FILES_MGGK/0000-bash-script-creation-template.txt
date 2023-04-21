@@ -35,19 +35,21 @@ if [ "$1" == "--help" ] ; then usage ; fi
 FUNC_SOURCE_SCRIPTS () {
     ####
     source "$REPO_SCRIPTS_MINI/00200a_source_script_to_print_fancy_divider.sh" ;
-    echo ">> This enables => 'palidivider' command, which prints a fancy divider on cli." ; 
+    # This enables => 'palidivider' command, which prints a fancy divider on cli 
+    # Eg. palidivider "THIS IS A TEST STRING." "$palihline | $palialine | $palibline | $palimline | $palipline | $palixline"
     ####
     source "$REPO_SCRIPTS_MINI/00200b_source_script_to_delete_chosen_files_and_dirs.sh" ; 
-    echo ">> This enables => 'palidelete, palitrash-put, palitrash-empty, palitrash-list' commands, which move files into a _trashed_directory instead of deleting completely." ; 
+    # This enables => 'palidelete, palitrash-put, palitrash-empty, palitrash-list' commands, which move files into a _trashed_directory instead of deleting completely 
     ####
     ####################### ADDING COLOR TO OUTPUT ON CLI ##########################
-    echo "Currently sourcing the bash color script, which outputs chosen texts in various colors ..." ;
     source $REPO_SCRIPTS/2000_vendor_programs/color-logger.sh
-    info "This enables use of keywords for coloring, such as: debug, info, error, success, warn, highlight." ;
-    debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.sh -h"
+    # echo "Currently sourcing the bash color script, which outputs chosen texts in various colors ..." ;
+    # info "This enables use of keywords for coloring, such as: debug, info, error, success, warn, highlight." ;
+    # debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.sh -h"
     ##############################################################################
 }
 FUNC_SOURCE_SCRIPTS ; 
+palidivider ; 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ##------------------------------------------------------------------------------
