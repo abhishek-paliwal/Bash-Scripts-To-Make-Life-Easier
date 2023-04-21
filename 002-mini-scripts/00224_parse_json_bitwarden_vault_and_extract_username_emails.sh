@@ -28,7 +28,13 @@ tmpfile1="$WORKDIR/_tmp01_bitwarden.txt" ;
 tmpfile2="$WORKDIR/_tmp02_bitwarden.txt" ; 
 tmpfile3="$WORKDIR/_tmp03_bitwarden.txt" ; 
 email_list_from_dotfiles_repo="$REPO_DOTFILES/_00_common_files/email_id_list.txt" ;  
-
+################################################################################
+# exit if json file does not exist
+if [ ! -f $WORKDIR/bitwarden_export*.json ]; then
+    error ">> ERROR: bitwarden_export*.json FILE DOES NOT EXIST IN $WORKDIR" ; 
+    exit 1
+fi
+################################################################################
 # create tmp output file
 palidivider "IMPORTANT NOTE: MAKE SURE THAT bitwarden_export*.json FILE EXISTS IN $WORKDIR" ;
 jq '.items[].login.username' $WORKDIR/bitwarden_export*.json | ag 'loveuvw.xyz|stockfotoage.com|mggkanu.com' | sd '"' '' |sort > $tmpfile1
@@ -38,8 +44,7 @@ cat $tmpfile1 $email_list_from_dotfiles_repo | grep -iv '##' > $tmpfile2
 sort $tmpfile2 > $tmpfile3
 # show output
 #cat $tmpfile
-
-####
+################################################################################
 # show output with domain names first
 palidivider "OUTPUT LISTING DOMAIN NAMES FIRST (COUNT // EMAIL_ID)" "$palixline" ;
 # show when was this email list updated
