@@ -17,9 +17,19 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-BASE_FOLDER=`pwd`
+BASE_FOLDER=$(pwd);
 EDITED_IMAGE_FOLDER="$BASE_FOLDER/edited";
 ORIGINAL_IMAGE_FOLDER="$BASE_FOLDER/original";
+
+echo "============================================================";
+echo ">> Important note: Make sure that these directories exist, $EDITED_IMAGE_FOLDER and $ORIGINAL_IMAGE_FOLDER" ; 
+echo "============================================================";
+
+# exit if directory doesn't exist
+if [ ! -d "$EDITED_IMAGE_FOLDER" ]; then
+  echo "Directory $EDITED_IMAGE_FOLDER DOES NOT exist. Exiting the script.";
+  exit 1;
+fi
 
 echo '==================='
 echo "CURRENT WORKING DIRECTORY: " $BASE_FOLDER ##check the present working directory
