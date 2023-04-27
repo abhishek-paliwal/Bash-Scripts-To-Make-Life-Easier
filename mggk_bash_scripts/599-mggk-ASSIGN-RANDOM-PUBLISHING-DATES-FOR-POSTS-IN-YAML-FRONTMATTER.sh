@@ -4,7 +4,8 @@ THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 ################################################################################
 ## VARIABLE SETTING
-SHIFT_BY_NUMDAYS="396" ; ## 396 DAYS, ABOUT 13 MONTHS
+#SHIFT_BY_NUMDAYS="396" ; ## 396 DAYS, ABOUT 13 MONTHS
+SHIFT_BY_NUMDAYS="90" ; ## 90 DAYS, ABOUT 3 MONTHS
 SUFFIX_STRING="d"; # d for days, w for weeks, m for months, y for years
 DATE_SHIFT_BY_NUMDAYS="$SHIFT_BY_NUMDAYS$SUFFIX_STRING" ;
 ################################################################################
@@ -221,9 +222,9 @@ function func_MAIN_get_dates_from_frontmatter_and_replace_date () {
         ##################
         ## IMPORTANT NOTE: Choose only one option from below (uncomment the desired one)
         #### option#1: calculate radom date
-        #ASSIGNED_DATE_FORMATTED="$(func_calculate_randomly_assigned_date_30days_ago)" ;
+        ASSIGNED_DATE_FORMATTED="$(func_calculate_randomly_assigned_date_30days_ago)" ;
         #### option#2: calculate exact date relative to original frontmatter date
-        ASSIGNED_DATE_FORMATTED="$(func_calculate_exact_date_1year_ago_from_frontmatter_date)" ;
+        #ASSIGNED_DATE_FORMATTED="$(func_calculate_exact_date_1year_ago_from_frontmatter_date)" ;
         ##################
         echo "$ASSIGNED_DATE_FORMATTED = ASSIGNED DATE FINAL (AFTER MODIFIED H:M:S)" >> $TMP_OUTPUT_FILE ;
         ## Actual date replacement in original md file
