@@ -143,6 +143,7 @@ for x in $(fd -e mp3 -e MP3 --search-path="$(pwd)" | sort -V) ; do
     TMPFILE="$WORKDIR/_tmp011.txt" ; 
     ffprobe -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$x" 2>/dev/null > "$TMPFILE" ;
     duration_in_secs="$(cat $TMPFILE | cut -d . -f1)" ;
+    echo ">> DURATION IN SECONDS = $duration_in_secs"    ;
     song_duration=$(gdate -d@${duration_in_secs} -u +%Hh-%Mm-%Ss) ;
     warn ">> Current file => $count of $NUMFILES_FOUND ..." ; 
     info ">> ORIGINAL FILE => $x" ; 
