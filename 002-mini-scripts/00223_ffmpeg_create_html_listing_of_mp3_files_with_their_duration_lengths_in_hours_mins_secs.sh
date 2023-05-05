@@ -155,7 +155,7 @@ for x in $(fd -e mp3 -e MP3 --search-path="$(pwd)" | sort -V) ; do
     success ">> MP3 song duration in hours mins seconds => $song_duration" ;
     echo "$get_bookname // $get_serial_number_of_book"
     ##
-    audio_stream_text="<audio controls src='$MP3_FILE_RELATIVE_PATH'><a href='$MP3_FILE_RELATIVE_PATH'>Download audio</a></audio>" ; 
+    audio_stream_text="<audio controls='controls' preload='none' src='$MP3_FILE_RELATIVE_PATH'><a href='$MP3_FILE_RELATIVE_PATH'>Download audio</a></audio>" ; 
     echo "<tr> <td>$count</td> <td>$song_duration</td> <td>$get_bookname</td> <td>$get_bookname_txtmd</td> <td>$audio_stream_text</td> <td>$MP3_FILE_BASENAME</td> </tr>"  >>  "$OUTPUT_HTML" ; 
 done
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
