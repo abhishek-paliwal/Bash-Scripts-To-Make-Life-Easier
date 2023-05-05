@@ -91,6 +91,7 @@ DATATABLE_HEADER="<table class='table table-striped' id='mytable' class='display
             <th>FILE DURATION</th>
             <th>AUDIO_NAME</th>
             <th>AUDIO_NAME_FROMFILE</th>
+            <th>AUDIO_STREAM</th>
             <th>MP3_FILE_BASENAME</th>
         </tr>
     </thead>
@@ -134,6 +135,8 @@ for x in $(fd -e mp3 -e MP3 --search-path="$(pwd)" | sort -V) ; do
     echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
     MP3_FILE_BASENAME="$(basename $x)" ; 
     MP3_FILE_BASENAME_SANS_EXTENSION="$(basename -s .mp3 $x)" ;
+    path_to_replace="$(pwd)/awgp" ; 
+    MP3_FILE_RELATIVE_PATH="${x/$path_to_replace/.}";
     ##
     get_serial_number_of_book=$(echo "$MP3_FILE_BASENAME" | awk -F '_XX_' '{print $1}' | sd ' ' '') ;
     ## Use CSV_AWGP environment variable
@@ -147,11 +150,13 @@ for x in $(fd -e mp3 -e MP3 --search-path="$(pwd)" | sort -V) ; do
     song_duration=$(gdate -d@${duration_in_secs} -u +%Hh-%Mm-%Ss) ;
     warn ">> Current file => $count of $NUMFILES_FOUND ..." ; 
     info ">> ORIGINAL FILE => $x" ; 
+    info ">> MP3_FILE_RELATIVE_PATH => $MP3_FILE_RELATIVE_PATH" ; 
     success ">> ORIGINAL FILE BASENAME => $(basename $x)" ; 
     success ">> MP3 song duration in hours mins seconds => $song_duration" ;
     echo "$get_bookname // $get_serial_number_of_book"
     ##
-    echo "<tr> <td>$count</td> <td>$song_duration</td> <td>$get_bookname</td> <td>$get_bookname_txtmd</td> <td>$MP3_FILE_BASENAME</td> </tr>"  >>  "$OUTPUT_HTML" ; 
+    audio_stream_text="<audio controls src='$MP3_FILE_RELATIVE_PATH'><a href='$MP3_FILE_RELATIVE_PATH'>Download audio</a></audio>" ; 
+    echo "<tr> <td>$count</td> <td>$song_duration</td> <td>$get_bookname</td> <td>$get_bookname_txtmd</td> <td>$audio_stream_text</td> <td>$MP3_FILE_BASENAME</td> </tr>"  >>  "$OUTPUT_HTML" ; 
 done
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -184,6 +189,11 @@ palidivider "Copying output HTML file to Dropbox folder" ;
 DROPBOX_FILEPATH="$DIR_DROPBOX_SCRIPTS_OUTPUT/_AWGP_gayatri_pariwar_outputs/$(basename $OUTPUT_HTML)" ;
 cp "$OUTPUT_HTML" "$DROPBOX_FILEPATH" ;
 warn ">>>> MESSAGE // OUTPUT HTML FILE COPIED TO => $DROPBOX_FILEPATH" ;
+## ADDITIONALLY COPY IT TO awgp directory (DIR_Y/awgp/)
+EXTRA_COPYPATH="$DIR_Y/awgp/index_books.html" ; 
+cp "$OUTPUT_HTML" "$DIR_Y/awgp/index_books.html" ;
+warn ">>>> MESSAGE // OUTPUT HTML FILE COPIED TO => $EXTRA_COPYPATH" ;
+
 ##------------------------------------------------------------------------------
 
 ################################################################################
