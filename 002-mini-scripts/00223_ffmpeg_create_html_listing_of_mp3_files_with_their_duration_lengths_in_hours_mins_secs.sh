@@ -195,7 +195,7 @@ cp "$OUTPUT_HTML" "$DIR_Y/awgp/index_books.html" ;
 warn ">>>> MESSAGE // OUTPUT HTML FILE COPIED TO => $EXTRA_COPYPATH" ;
 
 ## FINALLY RUN THIS COMMAND
-echo ">> FINALLY RUN THIS COMMAND: rclone sync ./awgp/ dreamobjects:public-palibucket/awgp/" | lolcat ; 
+echo ">> FINALLY RUN THIS COMMAND: rclone sync -P ./awgp/ dreamobjects:public-palibucket/awgp/" | lolcat ; 
 
 ##------------------------------------------------------------------------------
 
