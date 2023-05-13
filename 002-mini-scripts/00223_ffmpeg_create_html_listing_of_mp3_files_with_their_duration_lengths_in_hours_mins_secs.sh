@@ -118,7 +118,7 @@ DATATABLE_FOOTER="</tbody></table>"
 echo "$HTML_BOOTSTRAP_HEADER" > $OUTPUT_HTML ; ## Initializing HTML output
 echo "<h1>HTML OUTPUT - AWGP MP3 FILES LISTING WITH DURATION</h1>" >> $OUTPUT_HTML ;
 echo "<p>Page last updated: $(date)" >> $OUTPUT_HTML ;
-echo "<br>Page updated by script: $THIS_SCRIPT_NAME</p><hr>" >> $OUTPUT_HTML ;
+echo "<br>Page updated by script: ${THIS_SCRIPT_NAME//\_/ }</p><hr>" >> $OUTPUT_HTML ;
 ##
 NUMFILES_FOUND="$(fd -e mp3 -e MP3 --search-path="$(pwd)" | sort -V | wc -l)" ;
 echo "<h2>$NUMFILES_FOUND = Number of MP3 files found</h2>" >> $OUTPUT_HTML ;
