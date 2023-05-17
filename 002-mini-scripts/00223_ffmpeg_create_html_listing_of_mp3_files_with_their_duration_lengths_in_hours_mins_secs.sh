@@ -123,6 +123,7 @@ echo "$HTML_BOOTSTRAP_HEADER" > $OUTPUT_HTML ; ## Initializing HTML output
 echo "<h1>HTML OUTPUT - AWGP MP3 FILES LISTING WITH DURATION</h1>" >> $OUTPUT_HTML ;
 echo "<p>Page last updated: $(date)" >> $OUTPUT_HTML ;
 echo "<br>Page updated by script: ${THIS_SCRIPT_NAME//\_/ }</p><hr>" >> $OUTPUT_HTML ;
+echo "<p><a href='index_books.csv'>SOURCE CSV FILE</a></p><hr>" >> $OUTPUT_HTML ;
 ##
 NUMFILES_FOUND="$(fd -e mp3 -e MP3 --search-path="$(pwd)" | sort -V | wc -l)" ;
 echo "<h2>$NUMFILES_FOUND = Number of MP3 files found</h2>" >> $OUTPUT_HTML ;
@@ -224,7 +225,7 @@ FUNC_COPY_FILES_TO_DROPBOX_DIR "$OUTPUT_CSV" ;
 
 
 ## FINALLY RUN THIS COMMAND
-echo ">> FINALLY RUN THIS COMMAND with DIR_Y as pwd : rclone sync -P ./awgp/ dreamobjects:public-palibucket/awgp/" | lolcat ; 
+echo ">> FINALLY RUN THIS COMMAND with DIR_Y as pwd : fd --search-path=\"$DIR_Y/awgp\" -e txt -e pdf -e md -x rm {} ; rclone sync -P ./awgp/ dreamobjects:public-palibucket/awgp/" | lolcat ; 
 
 ##------------------------------------------------------------------------------
 
