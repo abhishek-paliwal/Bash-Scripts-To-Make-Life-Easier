@@ -45,7 +45,9 @@ OUTPUT_TXT="$WORKDIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 OUTPUT_CSV="$WORKDIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.csv" ;
 ##
 TMPFILE_CSV="$WORKDIR/_tmp_csv.csv" ; 
+TMPFILE_HTML="$WORKDIR/_tmp_html.html" ; 
 echo > $TMPFILE_CSV ## initializing file
+echo > $TMPFILE_HTML ## initializing file
 echo ;
 ##############################################################################
 
@@ -91,7 +93,6 @@ HTML_BOOTSTRAP_FOOTER="</div><!-- Option 1: Bootstrap Bundle with Popper -->
 DATATABLE_HEADER="<table class='table table-striped' id='mytable' class='display' style='width:100%'>
     <thead>
         <tr>
-            <th>S.No.</th>
             <th>FILE_DURATION</th>
             <th>AUDIO_NAME</th>
             <th>AUDIO_NAME_FROMFILE</th>
@@ -164,13 +165,14 @@ for x in $(fd -e mp3 -e MP3 --search-path="$(pwd)" | sort -V) ; do
     echo "$get_bookname // $get_serial_number_of_book"
     ##
     audio_stream_text="<audio controls='controls' preload='none' src='$MP3_FILE_RELATIVE_PATH'><a href='$MP3_FILE_RELATIVE_PATH'>Download audio</a></audio>" ; 
-    echo "<tr> <td>$count</td> <td>$song_duration</td> <td>$get_bookname</td> <td>$get_bookname_txtmd</td> <td>$audio_stream_text</td> <td>$MP3_FILE_BASENAME</td> </tr>"  >>  "$OUTPUT_HTML" ; 
+    echo "<tr> <td>$song_duration</td> <td>$get_bookname</td> <td>$get_bookname_txtmd</td> <td>$audio_stream_text</td> <td>$MP3_FILE_BASENAME</td> </tr>"  >>  "$TMPFILE_HTML" ; 
     ##
     echo "$song_duration;$get_bookname;$get_bookname_txtmd;$audio_stream_text;$MP3_FILE_BASENAME"  >>  "$TMPFILE_CSV" ; 
 done
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ##
+sort "$TMPFILE_HTML" >> $OUTPUT_HTML ;  ## sort by first column ( = mp3 duration)
 echo "$DATATABLE_FOOTER"  >> $OUTPUT_HTML ;
 echo "$HTML_BOOTSTRAP_FOOTER" >> $OUTPUT_HTML ;
 
@@ -201,15 +203,25 @@ success ">>>> SUCCESS // SUMMARY: OUTPUT TXT FILE CREATED AT => $OUTPUT_TXT" ;
 echo "################################################################################" ;
 
 ##------------------------------------------------------------------------------
-## FINALLY COPY THE OUTPUT HTML FILE TO THE DESIRED LOCATION
-palidivider "Copying output HTML file to Dropbox folder" ;
-DROPBOX_FILEPATH="$DIR_DROPBOX_SCRIPTS_OUTPUT/_AWGP_gayatri_pariwar_outputs/$(basename $OUTPUT_HTML)" ;
-cp "$OUTPUT_HTML" "$DROPBOX_FILEPATH" ;
-warn ">>>> MESSAGE // OUTPUT HTML FILE COPIED TO => $DROPBOX_FILEPATH" ;
-## ADDITIONALLY COPY IT TO awgp directory (DIR_Y/awgp/)
-EXTRA_COPYPATH="$DIR_Y/awgp/index_books.html" ; 
-cp "$OUTPUT_HTML" "$DIR_Y/awgp/index_books.html" ;
-warn ">>>> MESSAGE // OUTPUT HTML FILE COPIED TO => $EXTRA_COPYPATH" ;
+## FINALLY COPY THE OUTPUT HTML + CSV FILE TO THE DESIRED LOCATION
+palidivider "Copying output HTML + CSV file to Dropbox folder" ;
+##########
+function FUNC_COPY_FILES_TO_DROPBOX_DIR () {
+    inFile="$1" ; 
+    DROPBOX_FILEPATH="$DIR_DROPBOX_SCRIPTS_OUTPUT/_AWGP_gayatri_pariwar_outputs/$(basename $inFile)" ;
+    cp "$inFile" "$DROPBOX_FILEPATH" ;
+    warn ">>>> MESSAGE // OUTPUT FILE COPIED TO => $DROPBOX_FILEPATH" ;
+    ## ADDITIONALLY COPY IT TO awgp directory (DIR_Y/awgp/)
+    fileExtension=${inFile##*.}
+    EXTRA_COPYPATH="$DIR_Y/awgp/index_books.$fileExtension" ; 
+    cp "$inFile" "$EXTRA_COPYPATH" ;
+    warn ">>>> MESSAGE // OUTPUT FILE ALSO COPIED TO => $EXTRA_COPYPATH" ;
+}
+##
+FUNC_COPY_FILES_TO_DROPBOX_DIR "$OUTPUT_HTML" ;
+FUNC_COPY_FILES_TO_DROPBOX_DIR "$OUTPUT_CSV" ;  
+##########
+
 
 ## FINALLY RUN THIS COMMAND
 echo ">> FINALLY RUN THIS COMMAND with DIR_Y as pwd : rclone sync -P ./awgp/ dreamobjects:public-palibucket/awgp/" | lolcat ; 
