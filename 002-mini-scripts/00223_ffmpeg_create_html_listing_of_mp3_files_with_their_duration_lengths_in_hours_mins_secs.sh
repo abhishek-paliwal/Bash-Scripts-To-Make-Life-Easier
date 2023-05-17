@@ -42,6 +42,7 @@ read -p "Press Enter key if OKAY ..." ;
 ##############################################################################
 OUTPUT_HTML="$WORKDIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.html" ;
 OUTPUT_TXT="$WORKDIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+OUTPUT_CSV="$WORKDIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.csv" ;
 echo ;
 ##############################################################################
 
@@ -88,7 +89,7 @@ DATATABLE_HEADER="<table class='table table-striped' id='mytable' class='display
     <thead>
         <tr>
             <th>S.No.</th>
-            <th>FILE DURATION</th>
+            <th>FILE_DURATION</th>
             <th>AUDIO_NAME</th>
             <th>AUDIO_NAME_FROMFILE</th>
             <th>AUDIO_STREAM</th>
@@ -96,6 +97,8 @@ DATATABLE_HEADER="<table class='table table-striped' id='mytable' class='display
         </tr>
     </thead>
     <tbody>"
+
+CSV_HEADER="FILE_DURATION;S.No.;AUDIO_NAME;AUDIO_NAME_FROMFILE;AUDIO_STREAM;MP3_FILE_BASENAME" ;   
 
 
 DATATABLE_CONTENT_ROWS="<tr>
@@ -128,6 +131,11 @@ echo "<hr>" >> $OUTPUT_HTML ;
 echo "$DATATABLE_HEADER"  >> $OUTPUT_HTML ;
 #echo "$DATATABLE_CONTENT_ROWS"  >> $OUTPUT_HTML ;
 
+##################
+## CREATING CSV
+##################
+echo "$CSV_HEADER"  > $OUTPUT_CSV ; ## Initializing CSV output
+
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 count=0 ;
 for x in $(fd -e mp3 -e MP3 --search-path="$(pwd)" | sort -V) ; do  
@@ -157,6 +165,8 @@ for x in $(fd -e mp3 -e MP3 --search-path="$(pwd)" | sort -V) ; do
     ##
     audio_stream_text="<audio controls='controls' preload='none' src='$MP3_FILE_RELATIVE_PATH'><a href='$MP3_FILE_RELATIVE_PATH'>Download audio</a></audio>" ; 
     echo "<tr> <td>$count</td> <td>$song_duration</td> <td>$get_bookname</td> <td>$get_bookname_txtmd</td> <td>$audio_stream_text</td> <td>$MP3_FILE_BASENAME</td> </tr>"  >>  "$OUTPUT_HTML" ; 
+    ##
+    echo "$song_duration;$count;$get_bookname;$get_bookname_txtmd;$audio_stream_text;$MP3_FILE_BASENAME"  >>  "$OUTPUT_CSV" ; 
 done
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
