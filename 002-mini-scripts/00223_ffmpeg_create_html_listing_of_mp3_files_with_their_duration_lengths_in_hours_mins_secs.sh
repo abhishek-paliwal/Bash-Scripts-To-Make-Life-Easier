@@ -43,6 +43,9 @@ read -p "Press Enter key if OKAY ..." ;
 OUTPUT_HTML="$WORKDIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.html" ;
 OUTPUT_TXT="$WORKDIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 OUTPUT_CSV="$WORKDIR/OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION.csv" ;
+##
+TMPFILE_CSV="$WORKDIR/_tmp_csv.csv" ; 
+echo > $TMPFILE_CSV ## initializing file
 echo ;
 ##############################################################################
 
@@ -97,9 +100,6 @@ DATATABLE_HEADER="<table class='table table-striped' id='mytable' class='display
         </tr>
     </thead>
     <tbody>"
-
-CSV_HEADER="FILE_DURATION;S.No.;AUDIO_NAME;AUDIO_NAME_FROMFILE;AUDIO_STREAM;MP3_FILE_BASENAME" ;   
-
 
 DATATABLE_CONTENT_ROWS="<tr>
             <td>1</td>
@@ -166,13 +166,20 @@ for x in $(fd -e mp3 -e MP3 --search-path="$(pwd)" | sort -V) ; do
     audio_stream_text="<audio controls='controls' preload='none' src='$MP3_FILE_RELATIVE_PATH'><a href='$MP3_FILE_RELATIVE_PATH'>Download audio</a></audio>" ; 
     echo "<tr> <td>$count</td> <td>$song_duration</td> <td>$get_bookname</td> <td>$get_bookname_txtmd</td> <td>$audio_stream_text</td> <td>$MP3_FILE_BASENAME</td> </tr>"  >>  "$OUTPUT_HTML" ; 
     ##
-    echo "$song_duration;$count;$get_bookname;$get_bookname_txtmd;$audio_stream_text;$MP3_FILE_BASENAME"  >>  "$OUTPUT_CSV" ; 
+    echo "$song_duration;$get_bookname;$get_bookname_txtmd;$audio_stream_text;$MP3_FILE_BASENAME"  >>  "$TMPFILE_CSV" ; 
 done
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ##
 echo "$DATATABLE_FOOTER"  >> $OUTPUT_HTML ;
 echo "$HTML_BOOTSTRAP_FOOTER" >> $OUTPUT_HTML ;
+
+##################
+## CREATING CSV
+##################
+CSV_HEADER="FILE_DURATION;AUDIO_NAME;AUDIO_NAME_FROMFILE;AUDIO_STREAM;MP3_FILE_BASENAME" ;   
+echo "$CSV_HEADER" | grep -iv '^$' > $OUTPUT_CSV ; ## Initializing CSV output
+sort "$TMPFILE_CSV" | grep -iv '^$' >> $OUTPUT_CSV ; ## sort by first column ( = mp3 duration)
 ##################################################################################
 ##################################################################################
 
