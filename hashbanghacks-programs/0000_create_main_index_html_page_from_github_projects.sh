@@ -93,7 +93,7 @@ HTML_LOGO_HEADER="<body>
 </nav>
 
 <div class='m-3 text-center'>
-<img class='logo' src='https://www.hashbanghacks.tech/images/logo-hashbanghacks.png' alt='logo-website' width='250' height='75'>
+<img class='logo' src='./images/logo-hashbanghacks.png' alt='logo-website' width='250' height='75'>
 </div>
 <hr>
 
