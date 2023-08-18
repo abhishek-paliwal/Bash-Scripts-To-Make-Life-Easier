@@ -67,6 +67,8 @@ function func_convert_csv_to_html_table () {
     echo ">> CURRENT HTML OUTPUT FILE => $outFileHTML" ;
     ##
     echo "$bootstrap_header" > $outFileHTML ;
+    echo "<h2>CSV FILE = $(basename $inFileCSV)</h2>" >> $outFileHTML ;
+
     echo "<table class='table table-striped table-hover'>" >> $outFileHTML ;
     while read INPUT ; do
         echo "<tr><td>${INPUT//$csvDelimiter/</td><td>}</td></tr>" >> $outFileHTML ;
