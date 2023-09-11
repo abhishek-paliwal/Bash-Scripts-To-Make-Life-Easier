@@ -22,8 +22,8 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-HUGO_CONTENT_DIR="$DIR_CONCEPRO/content"
-FILE_OUTPUT_SITESTATS="$DIR_CONCEPRO/static/sitestats.html"
+HUGO_CONTENT_DIR="$REPO_CONCEPRO/content"
+FILE_OUTPUT_SITESTATS="$REPO_CONCEPRO/static/sitestats.html"
 
 ##------------------ DO NOT CHANGE ANYTHING BELOW ------------------------------
 ## OUTPUT FILE CREATED AT (+ initializing the output file):
