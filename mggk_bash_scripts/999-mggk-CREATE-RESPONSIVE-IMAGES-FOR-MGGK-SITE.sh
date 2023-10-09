@@ -175,6 +175,14 @@ FUNC_create_responsive_images "$RESPONSIVE_IMAGES_ROOTDIR" "$tmpA2" "tmpA" ;
 echo; echo ">> PRINTING WORD COUNTS FOR ALL FILES IN WORKDIR ..." ;
 wc $WORKDIR/* ;
 
+##------------------------------------------------------------------------------
+## NOW FINALLY CREATE WEBP VERSIONS OF ALL IMAGES
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+echo ">> CREATING WEBP IMAGE VERSIONS ..." ; 
+bash $REPO_SCRIPTS_MGGK/999-mggk-CREATE-RESPONSIVE-IMAGES-FOR-MGGK-SITE-WEBP.sh ;
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+##------------------------------------------------------------------------------
+
 ##+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## PRINTING THE FULL UPDATED LIST OF FILES IN MGGK CDN DIRECTORY TO SEE FOR ANY CHANGES
 echo; echo ">> PRINTING THE FULL UPDATED LIST OF FILES IN MGGK CDN DIRECTORY TO SEE IF ANY CHANGES ..." ;
