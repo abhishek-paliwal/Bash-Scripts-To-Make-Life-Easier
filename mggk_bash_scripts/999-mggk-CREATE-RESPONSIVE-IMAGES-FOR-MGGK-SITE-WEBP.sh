@@ -45,9 +45,6 @@ function FUNC2_WEBP_CREATE_ORIGINAL_WEBP_IMAGES_FROM_ORIGINAL_JPG_PNG () {
     for filename_sans_extn in $(cat $INFILE) ; do 
         echo ; 
         fd -HIt f "${filename_sans_extn}" --search-path="$INDIR" -x cwebp -short -progress {} -o "$dir2make/${file%.*}.webp" ;
-        #current_file="$INDIR/${filename_sans_extn}.webp" ; 
-        #file=$(basename $current_file) ; 
-        #cwebp -short -progress "$current_file" -o "$dir2make/${dir2make}-${file%.*}.webp" ; 
     done
     ####
 }
@@ -85,7 +82,7 @@ function FUNC3_WEBP_RESIZE_ORIGINAL_WEBP_IMAGES_TO_VARIOUS_SIZES () {
 FUNC_PRINTDIVIDER ; 
 FUNC1_WEBP_COMPARE_AND_COPY_IMAGES_TO_WEBP_DIRECTORY ;
 FUNC_PRINTDIVIDER ; 
-FUNC2_WEBP_CREATE_ORIGINAL_WEBP_IMAGES_FROM_ORIGINAL_JPG_PNG ; 
+#FUNC2_WEBP_CREATE_ORIGINAL_WEBP_IMAGES_FROM_ORIGINAL_JPG_PNG ; 
 FUNC_PRINTDIVIDER ; 
 FUNC3_WEBP_RESIZE_ORIGINAL_WEBP_IMAGES_TO_VARIOUS_SIZES ; 
 FUNC_PRINTDIVIDER ; 
