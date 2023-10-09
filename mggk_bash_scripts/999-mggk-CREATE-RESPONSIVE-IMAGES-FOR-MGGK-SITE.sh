@@ -178,9 +178,16 @@ wc $WORKDIR/* ;
 ##+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## PRINTING THE FULL UPDATED LIST OF FILES IN MGGK CDN DIRECTORY TO SEE FOR ANY CHANGES
 echo; echo ">> PRINTING THE FULL UPDATED LIST OF FILES IN MGGK CDN DIRECTORY TO SEE IF ANY CHANGES ..." ;
+##
 DIR_CDN="$REPO_CDN/cdn.mygingergarlickitchen.com" ; 
+##
+DIR_CDN_IMAGES="$REPO_CDN/cdn.mygingergarlickitchen.com/images" ; 
 echo "## File last updated: $(date)" > $DIR_CDN/summary_file_list_latest.txt ;
-tree -h --charset=ascii "$DIR_CDN"  >> $DIR_CDN/summary_file_list_latest.txt ; 
+tree -h --charset=ascii "$DIR_CDN_IMAGES"  >> $DIR_CDN/summary_file_list_latest.txt ; 
+## for webp
+DIR_CDN_WEBP="$REPO_CDN/cdn.mygingergarlickitchen.com/images_webp" ; 
+echo "## File last updated: $(date)" > $DIR_CDN/summary_file_list_latest_webp.txt ;
+tree -h --charset=ascii "$DIR_CDN_WEBP"  >> $DIR_CDN/summary_file_list_latest_webp.txt ; 
 ##+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ################################################################################
