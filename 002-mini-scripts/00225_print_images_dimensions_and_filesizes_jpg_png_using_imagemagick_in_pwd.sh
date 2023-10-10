@@ -1,5 +1,5 @@
 #!/bin/bash
-## THIS PROGRAMS PRINT ALL IMAGES DIMENSIONS (sorted) USING IMAGEMAGICK - PNG, JPG, png, jpg.
+## THIS PROGRAMS PRINT ALL IMAGES DIMENSIONS (sorted) USING IMAGEMAGICK - PNG, JPG, png, jpg, webp.
 
 ##------------------------------------------------------------------------------
 WORKDIR="$DIR_Y" ; 
@@ -12,7 +12,7 @@ echo | tee $tmpfile0 $tmpfile1 $tmpfile2 ;
 echo "## FILE SIZE => SORTED FROM SMALLER TO LARGER" | tee -a $tmpfile0 $tmpfile1 $tmpfile2 ; 
 echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" | tee -a $tmpfile0 $tmpfile1 $tmpfile2 ; 
 
-for x in $(fd -e jpg -e png -e jpeg -e gif -e JPG -e PNG -e GIF --search-path="$(pwd)") ; do 
+for x in $(fd -e jpg -e png -e jpeg -e gif -e JPG -e PNG -e GIF -e webp -e WEBP--search-path="$(pwd)") ; do 
     dimensions=$(identify -format "%wx%h\n" "$x")  ;  
     filesize=$(du -skh "$x")  ;  
     echo "$dimensions $filesize" >> $tmpfile0 ; 
