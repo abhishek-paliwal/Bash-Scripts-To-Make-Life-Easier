@@ -69,7 +69,7 @@ function FUNC3_WEBP_RESIZE_ORIGINAL_WEBP_IMAGES_TO_VARIOUS_SIZES () {
             current_file="$INDIR/${filename_sans_extn}.webp" ; 
             file=$(basename $current_file) ; 
             # Example command: cwebp input_file -o output_file -resize 600 0 ; ## 0 is needed to resize to 600px wide keeping aspect ratio intact.
-            cwebp -short -progress "$current_file" -o "$dir2make/${dir}px-${file%.*}.webp" -resize "$dir" 0 ; 
+            cwebp -quiet "$current_file" -o "$dir2make/${dir}px-${file%.*}.webp" -resize "$dir" 0 ; 
         done
         ####
     done
@@ -82,7 +82,11 @@ function FUNC3_WEBP_RESIZE_ORIGINAL_WEBP_IMAGES_TO_VARIOUS_SIZES () {
 FUNC_PRINTDIVIDER ; 
 FUNC1_WEBP_COMPARE_AND_COPY_IMAGES_TO_WEBP_DIRECTORY ;
 FUNC_PRINTDIVIDER ; 
-#FUNC2_WEBP_CREATE_ORIGINAL_WEBP_IMAGES_FROM_ORIGINAL_JPG_PNG ; 
+FUNC2_WEBP_CREATE_ORIGINAL_WEBP_IMAGES_FROM_ORIGINAL_JPG_PNG ; 
 FUNC_PRINTDIVIDER ; 
 FUNC3_WEBP_RESIZE_ORIGINAL_WEBP_IMAGES_TO_VARIOUS_SIZES ; 
+FUNC_PRINTDIVIDER ; 
+
+FUNC_PRINTDIVIDER ; 
+echo ">> WEBP PROGRAM RUN FINISHED AT: $(date)" ; 
 FUNC_PRINTDIVIDER ; 
