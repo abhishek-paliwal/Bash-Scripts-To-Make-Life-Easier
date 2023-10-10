@@ -17,5 +17,6 @@ echo ;
 figlet -t -f cybermedium "Enter password again" | lolcat ;
 #rsync -azq --delete $REPO_CDN/$CDN_MGGK_IMAGES/ $DREAMHOST_USER_MGGK@$DREAMHOST_SERVER:/home/$DREAMHOST_USER_MGGK/$CDN_MGGK_IMAGES/ ; 
 rsync -azq $REPO_CDN/$CDN_MGGK_IMAGES/ $DREAMHOST_USER_MGGK@$DREAMHOST_SERVER:/home/$DREAMHOST_USER_MGGK/$CDN_MGGK_IMAGES/ ; 
+rsync -azq $REPO_CDN/$CDN_MGGK_IMAGES_WEBP/ $DREAMHOST_USER_MGGK@$DREAMHOST_SERVER:/home/$DREAMHOST_USER_MGGK/$CDN_MGGK_IMAGES_WEBP/ ; 
 echo ">>>> END: RSYNC ... <<<<" ; 
 figlet -t "Image upload done." ; 
