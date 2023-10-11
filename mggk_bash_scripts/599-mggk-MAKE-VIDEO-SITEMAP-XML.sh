@@ -53,22 +53,26 @@ echo;
 ############ PART 1 = FINDING MISSING YOUTUBE VIDEO COVER IMAGES AND DOWNLOADING THEM
 echo ">>>> PART 1 = FINDING MISSING YOUTUBE VIDEO COVER IMAGES AND DOWNLOADING THEM >>>>" ; echo; 
 ##################################################################################
+tmpfile1="$TMPDIR/_tmp_599_sorted_youtube_id_from_video_sitemap.txt" ; 
+tmpfile2="$TMPDIR/_tmp_599_sorted_youtube_covers_currently_present.txt" ; 
+tmpfile3="$TMPDIR/_tmp_599_final_images_to_download_from_youtube.txt" ; 
+
 ## GETTING ALL THE IMAGES FOR LIVE VIDEO SITEMAP
-#wget -qO- https://www.mygingergarlickitchen.com/video-sitemap.xml | grep '<video:thumbnail_loc>' | sed 's!<video:thumbnail_loc>https://www.mygingergarlickitchen.com/wp-content/youtube_video_cover_images/!!g' | sed 's!.jpg</video:thumbnail_loc>!!g' | tr -d "[:blank:]" | sort > $TMPDIR/_tmp_599_sorted_youtube_id_from_video_sitemap.txt
+#wget -qO- https://www.mygingergarlickitchen.com/video-sitemap.xml | grep '<video:thumbnail_loc>' | sed 's!<video:thumbnail_loc>https://www.mygingergarlickitchen.com/wp-content/youtube_video_cover_images/!!g' | sed 's!.jpg</video:thumbnail_loc>!!g' | tr -d "[:blank:]" | sort > $tmpfile1
 
 ## GETTING ALL YOUTUBE VIDEO IDs FROM ALL MARKDOWN FILES
-grep -irh 'youtube_video_id:' $HUGO_CONTENT_DIR | sed 's/youtube_video_id://g' | sed 's/"//g' | tr -d "[:blank:]" | sort > $TMPDIR/_tmp_599_sorted_youtube_id_from_video_sitemap.txt
+grep -irh 'youtube_video_id:' $HUGO_CONTENT_DIR | sed 's/youtube_video_id://g' | sed 's/"//g' | tr -d "[:blank:]" | grep -v 'YOUTUBE_ID' | sort > $tmpfile1
 
 ## GETTING ALL THE IMAGES FOR CURRENT YOUTUBE VIDEO COVER IMAGES PRESENT LOCALLY
-cat "$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/video-cover-images-current.txt" | sed 's/.jpg//g' | tr -d "[:blank:]" | sort > $TMPDIR/_tmp_599_sorted_youtube_covers_currently_present.txt
+cat "$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/video-cover-images-current.txt" | sed 's/.jpg//g' | tr -d "[:blank:]" | sort > $tmpfile2
 
 ## PRINTING ONLY THE DIFFERENCES BETWEEN THE TWO
-comm -23 $TMPDIR/_tmp_599_sorted_youtube_id_from_video_sitemap.txt $TMPDIR/_tmp_599_sorted_youtube_covers_currently_present.txt > $TMPDIR/_tmp_599_final_images_to_download_from_youtube.txt
+comm -23 tmpfile1 tmpfile2 > $tmpfile3
 
 ## WHICH IMAGES WILL BE DOWNLOADED 
 echo;echo ">>>> THESE IMAGES WILL BE DOWNLOADED (FOR THE FOLLOWING YOUTUBE VIDEO IDs):" ;
-cat "$TMPDIR/_tmp_599_final_images_to_download_from_youtube.txt" | sort | nl ;
-echo ">>>> Images to be downloaded = $(cat $TMPDIR/_tmp_599_final_images_to_download_from_youtube.txt | wc -l)" ;
+cat "$tmpfile3" | sort | nl ;
+echo ">>>> Images to be downloaded = $(cat tmpfile3 | wc -l)" ;
 echo; 
 ##################################################################################
 
@@ -99,7 +103,7 @@ do
     echo; echo ">>>> CURRENTLY READING = $line"; echo;
     ## CALLING THE FUNCTION TO DOWNLOAD ALL COVER IMAGES FROM YOUTUBE
     FUNCTION_DOWNLOAD_COVER_IMAGE_FROM_YOUTUBE "$line" ;
-done < "$TMPDIR/_tmp_599_final_images_to_download_from_youtube.txt"
+done < "$tmpfile3"
 ##------------------------------------------------------------------------------
 
 ##################################################################################
