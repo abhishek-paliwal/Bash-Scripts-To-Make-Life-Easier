@@ -44,7 +44,7 @@ function FUNC2_WEBP_CREATE_ORIGINAL_WEBP_IMAGES_FROM_ORIGINAL_JPG_PNG () {
     ####
     for filename_sans_extn in $(cat $INFILE) ; do 
         echo ; 
-        fd -HIt f "${filename_sans_extn}" --search-path="$INDIR" -x cwebp -short -progress {} -o "$dir2make/${file%.*}.webp" ;
+        fd -HIt f "${filename_sans_extn}" --search-path="$INDIR" -x cwebp -short -progress {} -o "$dir2make/${filename_sans_extn}.webp" ;
     done
     ####
 }
