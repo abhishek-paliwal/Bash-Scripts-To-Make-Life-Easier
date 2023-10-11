@@ -44,7 +44,9 @@ function FUNC2_WEBP_CREATE_ORIGINAL_WEBP_IMAGES_FROM_ORIGINAL_JPG_PNG () {
     ####
     for filename_sans_extn in $(cat $INFILE) ; do 
         echo ; 
-        fd -HIt f "${filename_sans_extn}" --search-path="$INDIR" -x cwebp -short -progress {} -o "$dir2make/${filename_sans_extn}.webp" ;
+        outfile_webp="$dir2make/${filename_sans_extn}.webp" ; 
+        fd -HIt f "${filename_sans_extn}" --search-path="$INDIR" -x cwebp -short {} -o "$outfile_webp" ;
+        echo ">> SUCCESS. CREATED:  $outfile_webp" ; 
     done
     ####
 }
@@ -67,9 +69,11 @@ function FUNC3_WEBP_RESIZE_ORIGINAL_WEBP_IMAGES_TO_VARIOUS_SIZES () {
         for filename_sans_extn in $(cat $INFILE) ; do 
             echo ; 
             current_file="$INDIR/${filename_sans_extn}.webp" ; 
-            file=$(basename $current_file) ; 
+            file=$(basename $current_file) ;
+            outfile_webp0="$dir2make/${dir}px-${file}.webp" ;  
             # Example command: cwebp input_file -o output_file -resize 600 0 ; ## 0 is needed to resize to 600px wide keeping aspect ratio intact.
-            cwebp -quiet "$current_file" -o "$dir2make/${dir}px-${file%.*}.webp" -resize "$dir" 0 ; 
+            cwebp -short "$current_file" -o "$outfile_webp0" -resize "$dir" 0 ; 
+            echo ">> SUCCESS. CREATED:  $outfile_webp0" ; 
         done
         ####
     done
