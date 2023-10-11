@@ -61,7 +61,7 @@ function FUNC_RESIZE_FILES_IF_SIZE_MORE_THAN_1200PX () {
                     cwebp -short "$file_path" -o "$NEWDIR_WEBP/$(basename $file_path)" -resize "$desired_width" 0 ; 
                 else
                     # For other image formats, use imagemagick
-                    convert "$file_path" -resize "$desired_width"x "$NEWDIR/$(basename $file_path)" ; 
+                    convert "$file_path" -quality 95 -resize "$desired_width"x "$NEWDIR/$(basename $file_path)" ; 
                 fi
                 ########
                 echo "Resized $file_path to $desired_width pixels wide." ; 
