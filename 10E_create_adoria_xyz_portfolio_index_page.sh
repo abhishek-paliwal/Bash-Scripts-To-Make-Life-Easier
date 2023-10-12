@@ -212,7 +212,7 @@ echo "</head><body>" >> $OUTPUT
 
 echo "<nav class='navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top'>
   <a class='navbar-brand' href='https://adoria.xyz'>
-  <img src='./drawings/0-Logos/Site-Logo-Transparent-1000Px-Lowres.png' style='width: 30px; '>
+  <img loading='lazy' src='./drawings/0-Logos/Site-Logo-Transparent-1000Px-Lowres.png' style='width: 30px; '>
   <span style='font-weight: 700; color: #F81894;'>adoria</span> | a personal portfolio
   </a>
 </nav>" >> $OUTPUT
@@ -224,7 +224,7 @@ echo "<div class='site-wrapper'>
 <div class='site-wrapper-inner'>
 
 <!-- HEADING DIV STARTS --> <div class='heading'>
-<!-- TOP LOGO --> <img src='./drawings/0-Logos/Site-Logo-Transparent-1000Px-Lowres.png' style='width: 300px; '>
+<!-- TOP LOGO --> <img loading='lazy' src='./drawings/0-Logos/Site-Logo-Transparent-1000Px-Lowres.png' style='width: 300px; '>
 <h1 class='heading'>Personal Portfolio of Adoria's Drawings<br>&bull;&bull;&bull;&bull;&bull;</h1>
 
 <h2 class='heading'><font color='#FFFF00'>Designed by</font> <a href='https://adoria.xyz'><font color='#50c878'>Adoria</font></a></h2>
@@ -273,9 +273,9 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort -nr`; do
 
 ## Printing the image dimensions for everything, except GIFs because they produce LOOOOONG outputs for all GIF frames. ##
     if [ "$filetype" != 'GIF' ]; then
-      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file$GTRACK_URL1'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: deeppink; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file$GTRACK_URL2'>Enlarge</a></strong></div></div>" >> $OUTPUT
+      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file$GTRACK_URL1'><img loading='lazy' src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><span class='thin'>$imagedimen</span><br><br><strong style='background-color: deeppink; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file$GTRACK_URL2'>Enlarge</a></strong></div></div>" >> $OUTPUT
     else
-      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file$GTRACK_URL1'><img src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: deeppink ; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file$GTRACK_URL2'>Enlarge</a></strong></div></div>" >> $OUTPUT
+      echo "<div class='grid-item'><div class='pali'><a href='$MAIN_IMAGES_FOLDER/$path/$file$GTRACK_URL1'><img loading='lazy' src='$MAIN_IMAGES_FOLDER/$path/$file' width='100%'></img><span class='thin'>$file</span></a><br><br><strong style='background-color: deeppink ; padding: 5px ; '><a style='color: white ;' href='$MAIN_IMAGES_FOLDER/$path/$file$GTRACK_URL2'>Enlarge</a></strong></div></div>" >> $OUTPUT
     fi
 
   done
