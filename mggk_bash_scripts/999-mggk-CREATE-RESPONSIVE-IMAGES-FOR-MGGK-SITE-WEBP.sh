@@ -70,7 +70,7 @@ function FUNC3_WEBP_RESIZE_ORIGINAL_WEBP_IMAGES_TO_VARIOUS_SIZES () {
             echo ; 
             current_file="$INDIR/${filename_sans_extn}.webp" ; 
             file=$(basename $current_file) ;
-            outfile_webp0="$dir2make/${dir}px-${file}.webp" ;  
+            outfile_webp0="$dir2make/${dir}px-${file}" ;  
             # Example command: cwebp input_file -o output_file -resize 600 0 ; ## 0 is needed to resize to 600px wide keeping aspect ratio intact.
             cwebp -short "$current_file" -o "$outfile_webp0" -resize "$dir" 0 ; 
             echo ">> SUCCESS. CREATED:  $outfile_webp0" ; 
