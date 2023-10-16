@@ -46,21 +46,21 @@ echo > $cdn_images_file ## initializing
 ##------------------------------------------------------------------------------
 function FUNC_create_CDN_images_listing () {
     ## function takes 3 arguments // <dir images> <cdn images path> <search keyword>
-    DIR_IMAGES="$1" ;
+    BASEDIR_CDN="$1" ; 
     cdn_imagesPath="$2" ; 
     myKeyword="$3" ;
     outFile="$cdn_images_file" ;
     echo > $outFile ## initializing
-    ## create listing for all possible image resolutions
-    fd "$myKeyword" -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sed "s|^|$cdn_imagesPath/800px/800px-|g" >> $outFile
-    fd "$myKeyword" -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sed "s|^|$cdn_imagesPath/675px/675px-|g" >> $outFile
-    fd "$myKeyword" -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sed "s|^|$cdn_imagesPath/550px/550px-|g" >> $outFile
-    fd "$myKeyword" -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sed "s|^|$cdn_imagesPath/425px/425px-|g" >> $outFile
-    fd "$myKeyword" -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sed "s|^|$cdn_imagesPath/350px/350px-|g" >> $outFile
-    fd "$myKeyword" -t f -e jpg -e png --search-path="$DIR_IMAGES" -x echo {/} | sed "s|^|$cdn_imagesPath/original/|g" >> $outFile
+
+    ## Get all images present in IMAGES CDN directory
+    replaceThis3="/home/ubuntu/GitHub/00-CDN-REPO/$BASEDIR_CDN" ;
+    replaceThis4="/Users/abhishek/GitHub/00-CDN-REPO/$BASEDIR_CDN" ;
+    replaceToThis="https://$BASEDIR_CDN" ;
+    fd "$myKeyword" -HIt f -e jpg -e png -e webp --search-path="$DIR_IMAGES_CDN" | sort -nr | sd "$replaceThis3" "$replaceToThis" | sd "$replaceThis4" "$replaceToThis" >> $outFile ;
+
     ##
     echo >> $outFile ; ## adding blank line
-    echo ">> DONE = CDN images listing for => $DIR_IMAGES" ;
+    echo ">> DONE = CDN images listing for => $DIR_IMAGES + $DIR_IMAGES_CDN " ;
 }
 ##------------------------------------------------------------------------------
 
@@ -71,6 +71,8 @@ case "$1" in
     leelasrecipes)
         CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_LEELASRECIPES
         DIR_IMAGES="$REPO_LEELA/static/" ;
+        DIR_IMAGES_CDN="$REPO_CDN/cdn.leelasrecipes.com/" ;
+        BASEDIR_CDN="cdn.leelasrecipes.com" ; 
         replaceThis1="/Users/abhishek/GitHub/2020-LEELA-RECIPES/static/" ; 
         replaceThis2="/home/ubuntu/GitHub/2020-LEELA-RECIPES/static/" ; 
         replaceTo="https://www.leelasrecipes.com/" ;
@@ -80,6 +82,8 @@ case "$1" in
     mggk)
         CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_MGGK
         DIR_IMAGES="$REPO_MGGK/static/wp-content/" ;
+        DIR_IMAGES_CDN="$REPO_CDN/cdn.mygingergarlickitchen.com/" ;
+        BASEDIR_CDN="cdn.mygingergarlickitchen.com" ; 
         replaceThis1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
         replaceThis2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
         replaceTo="https://www.mygingergarlickitchen.com/" ; 
@@ -89,14 +93,18 @@ case "$1" in
     *)
         CLOUDFLARE_ZONE_ID=$CLOUDFLARE_ZONE_ID_MGGK
         DIR_IMAGES="$REPO_MGGK/static/wp-content/" ;
+        DIR_IMAGES_CDN="$REPO_CDN/cdn.mygingergarlickitchen.com/" ;
+        BASEDIR_CDN="cdn.mygingergarlickitchen.com" ; 
         replaceThis1="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
         replaceThis2="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/" ; 
         replaceTo="https://www.mygingergarlickitchen.com/" ;
         ## add cdn block such as below for any repos which has cdn images
         cdn_imagesPath="https://cdn.mygingergarlickitchen.com/images" ; 
  esac
-echo ">> CHOSEN ZONE ID => $CLOUDFLARE_ZONE_ID" ; 
-echo ">> CHOSEN DIR FOR IMAGES => $DIR_IMAGES" ; 
+echo ">> CHOSEN ZONE ID             => $CLOUDFLARE_ZONE_ID" ; 
+echo ">> CHOSEN DIR FOR IMAGES      => $DIR_IMAGES" ; 
+echo ">> CHOSEN DIR FOR CDN IMAGES  => $DIR_IMAGES_CDN" ; 
+echo ">> CHOSEN DIR FOR CDN BASEDIR => $BASEDIR_CDN" ; 
 echo; 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -186,7 +194,7 @@ function step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls () {
 ################################################################################
 
 ## CALLING FUNCTIONS
-FUNC_create_CDN_images_listing "$DIR_IMAGES" "$cdn_imagesPath" "$myKeyword" ;
+FUNC_create_CDN_images_listing "$BASEDIR_CDN" "$cdn_imagesPath" "$myKeyword" ;
 step0_FUNC_cloudflare_search_image_paths_containing_keyword
 step1_FUNC_cloudflare_search_image_urls_containing_keyword ;
 step2_FUNC_cloudflare_create_html_page_with_keyword_urls ;
