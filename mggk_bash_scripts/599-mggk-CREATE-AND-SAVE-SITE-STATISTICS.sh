@@ -94,6 +94,7 @@ echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 echo ">> CREATING SUMMARY FILES TO BE USED BY CLOUDFLARE SCRIPTS ... (line counts below)" ;
 FilesUrlsWPcontent="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_FilesUrlsWPcontent.txt" ;
 ImagesUrlsWPcontentUploads="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_ImagesUrlsWPcontentUploads.csv" ;
+ImagesUrlsMGGKcdn="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_ImagesUrlsMGGKcdn.txt" ;
 AllValidUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidSiteUrls.txt" ;
 AllValidRecipesUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidRecipesUrls.txt" ;
 AllValidNONRecipesUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidNONRecipesUrls.txt" ;
@@ -103,10 +104,15 @@ replaceThis1="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
 replaceThis2="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
 replaceTo="https://www.mygingergarlickitchen.com" ;
 ## (Add -I flag so that fd also read filepaths present in .gitignore in the given directory)
-fd -I -t f --search-path=$REPO_MGGK/static/wp-content | sort -u | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" > $FilesUrlsWPcontent ;
+fd -HI -t f --search-path=$REPO_MGGK/static/wp-content | sort -u | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" > $FilesUrlsWPcontent ;
 ## Get all images present in wp-content/uploads/ directory
 echo "##URL" > $ImagesUrlsWPcontentUploads ; ## initialize csv file with column name
-fd -I -t f -e jpg -e png --search-path=$REPO_MGGK/static/wp-content/uploads | sort -nr | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" >> $ImagesUrlsWPcontentUploads ;
+fd -HI -t f -e jpg -e png -e webp --search-path=$REPO_MGGK/static/wp-content/uploads | sort -nr | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" >> $ImagesUrlsWPcontentUploads ;
+## Get all images present in MGGK CDN directory (REPO_CDN_MGGK)
+replaceThis3="/home/ubuntu/GitHub/00-CDN-REPO/cdn.mygingergarlickitchen.com" ;
+replaceThis4="/Users/abhishek/GitHub/00-CDN-REPO/cdn.mygingergarlickitchen.com" ;
+replaceToThis="https://cdn.mygingergarlickitchen.com" ;
+fd -HI t f -e jpg -e png -e webp --search-path=$REPO_CDN_MGGK | sort -nr | sd "$replaceThis3" "$replaceToThis" | sd "$replaceThis4" "$replaceToThis" > $ImagesUrlsMGGKcdn ;
 ####
 
 ## Get all mggk urls from current md files
