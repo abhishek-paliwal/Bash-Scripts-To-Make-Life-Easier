@@ -104,15 +104,15 @@ replaceThis1="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
 replaceThis2="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
 replaceTo="https://www.mygingergarlickitchen.com" ;
 ## (Add -I flag so that fd also read filepaths present in .gitignore in the given directory)
-fd -HI -t f --search-path=$REPO_MGGK/static/wp-content | sort -u | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" > $FilesUrlsWPcontent ;
+fd -HIt f --search-path=$REPO_MGGK/static/wp-content | sort -u | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" > $FilesUrlsWPcontent ;
 ## Get all images present in wp-content/uploads/ directory
 echo "##URL" > $ImagesUrlsWPcontentUploads ; ## initialize csv file with column name
-fd -HI -t f -e jpg -e png -e webp --search-path=$REPO_MGGK/static/wp-content/uploads | sort -nr | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" >> $ImagesUrlsWPcontentUploads ;
+fd -HIt f -e jpg -e png -e webp --search-path=$REPO_MGGK/static/wp-content/uploads | sort -nr | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" >> $ImagesUrlsWPcontentUploads ;
 ## Get all images present in MGGK CDN directory (REPO_CDN_MGGK)
 replaceThis3="/home/ubuntu/GitHub/00-CDN-REPO/cdn.mygingergarlickitchen.com" ;
 replaceThis4="/Users/abhishek/GitHub/00-CDN-REPO/cdn.mygingergarlickitchen.com" ;
 replaceToThis="https://cdn.mygingergarlickitchen.com" ;
-fd -HI t f -e jpg -e png -e webp --search-path=$REPO_CDN_MGGK | sort -nr | sd "$replaceThis3" "$replaceToThis" | sd "$replaceThis4" "$replaceToThis" > $ImagesUrlsMGGKcdn ;
+fd -HIt f -e jpg -e png -e webp --search-path=$REPO_CDN_MGGK | sort -nr | sd "$replaceThis3" "$replaceToThis" | sd "$replaceThis4" "$replaceToThis" > $ImagesUrlsMGGKcdn ;
 ####
 
 ## Get all mggk urls from current md files
@@ -140,6 +140,7 @@ cat $tmpfile011 | grep -i '/' | sort | uniq > $AllValidNONRecipesUrlsMGGK
 
 wc -l $FilesUrlsWPcontent ;
 wc -l $ImagesUrlsWPcontentUploads ;
+wc -l $ImagesUrlsMGGKcdn ;
 wc -l $AllValidUrlsMGGK ;
 wc -l $AllValidRecipesUrlsMGGK ;
 wc -l $AllValidNONRecipesUrlsMGGK ;
