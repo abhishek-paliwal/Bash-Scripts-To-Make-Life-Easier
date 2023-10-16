@@ -67,12 +67,12 @@ grep -irh 'youtube_video_id:' $HUGO_CONTENT_DIR | sed 's/youtube_video_id://g' |
 cat "$HOME/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/video-cover-images-current.txt" | sed 's/.jpg//g' | tr -d "[:blank:]" | sort > $tmpfile2
 
 ## PRINTING ONLY THE DIFFERENCES BETWEEN THE TWO
-comm -23 tmpfile1 tmpfile2 > $tmpfile3
+comm -23 $tmpfile1 $tmpfile2 > $tmpfile3
 
 ## WHICH IMAGES WILL BE DOWNLOADED 
 echo;echo ">>>> THESE IMAGES WILL BE DOWNLOADED (FOR THE FOLLOWING YOUTUBE VIDEO IDs):" ;
 cat "$tmpfile3" | sort | nl ;
-echo ">>>> Images to be downloaded = $(cat tmpfile3 | wc -l)" ;
+echo ">>>> Images to be downloaded = $(cat $tmpfile3 | wc -l)" ;
 echo; 
 ##################################################################################
 
