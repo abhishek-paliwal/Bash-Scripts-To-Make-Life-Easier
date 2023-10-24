@@ -142,10 +142,10 @@ cd $d
     echo; echo "  FILE-$counter // FILE FOUND = $f" ;
 
     ## NOW THE NEW FILE NAME WILL BE CALCULATED
-    #### NEW NAME PREFIX = date frontmatter variable value (colons removed)
-    #### NEW NAME SUFFIX = url frontmatter variable value (slashes removed)
-    new_prefix=$(grep -i '^date: ' $f | sed -e 's|date: ||g' -e 's|:||g' -e 's|+0000||g' -e 's|T|-T|g' ) ;
-    new_suffix=$(grep -i '^url: ' $f | sed -e 's|/||g' -e 's|url: ||g' ) ;
+    #### NEW NAME PREFIX = date frontmatter variable value (colons + spaces removed)
+    #### NEW NAME SUFFIX = url frontmatter variable value (slashes + spaces removed)
+    new_prefix=$(grep -i '^date: ' $f | sed -e 's|date: ||g' -e 's|:||g' -e 's|+0000||g' -e 's|T|-T|g' | sd ' ' '' ) ;
+    new_suffix=$(grep -i '^url: ' $f | sed -e 's|/||g' -e 's|url: ||g' | sd ' ' '' ) ;
 
     ## finalizing the new filename
     new_name="$new_prefix-$new_suffix.md" ;
