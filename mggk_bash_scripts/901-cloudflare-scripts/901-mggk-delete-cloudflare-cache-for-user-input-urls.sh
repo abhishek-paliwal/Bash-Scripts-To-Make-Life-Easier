@@ -119,6 +119,7 @@ echo "[Enter 1  (= one) if you want to delete cache for MGGK Homepage only: " ;
 echo "[Enter 2  (= two) if you want to delete cache for top 16 MGGK URLS only: " ;
 echo "[Enter 3  (= three) if you want to delete cache for existing URLs containing new link [user provided keyword url]: " ; 
 echo "[Enter 4  (= four) if you have multiple urls: " ; 
+echo "[Enter 5  (= five) if you want to delete cache for latest 50 MGGK URLS only: " ;
 echo "[Enter 99 if you want to delete cache for all urls in mggk sitemap.xml file: " ; 
 ##
 read myKeyword ; 
@@ -160,6 +161,11 @@ elif [ "$myKeyword" == "4" ]; then
     touch $step1File ; rm $step1File ;
     $EDITOR $step1File ; ## Opening file in default editor
     sleep 4; ## wait for 4 seconds
+elif [ "$myKeyword" == "5" ]; then
+    echo ">> The cache will be deleted for latest 50 posts from sitemap.xml ..." ;
+    curl -sk "$XML_SITEMAP" | ggrep -oP '<loc>\K.*?(?=<\/loc>)' | grep -iv 'categories' | head -50 > "$step1File" ;
+    echo ">> CACHE WILL BE DELETED FOR THESE URLs ..." ; 
+    cat $step1File ; 
 elif [ "$myKeyword" == "99" ]; then
     echo ">> The cache will be deleted for all current urls in SITEMAP.XML file [meaning about 1000 URLs ...]" ;
     echo ">> DO YOU WANT TO DELETE CLOUDFLARE CACHE, ENTER y OR n : " ;
