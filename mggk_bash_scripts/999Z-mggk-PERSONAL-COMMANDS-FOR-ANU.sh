@@ -108,7 +108,8 @@ yt1_download_audio
 yt2_download_video
 ffmpeg_convert_webm_videos_to_mp4
 mggk_search_ONEDRIVE_FILES
-h001_run_this_to_create_image_captions_in_pwd) ;
+h001_run_this_to_create_image_captions_in_pwd
+mggk_resize_to_1200px_and_reduce_size_for_larger_than_950KB_jpg_png_images_in_pwd_using_imagemagick) ;
 
 
 ##
@@ -269,7 +270,8 @@ pali_imagemagick_fixed_resize_images_by_width_or_height
 pali_imagemagick_create_10_random_images
 convert_images_to_1080x1920_padded_imagemagick
 convert_images_to_1920x1080_padded_imagemagick
-2000-python-image-resize)
+2000-python-image-resize
+mggk_resize_to_1200px_and_reduce_size_for_larger_than_950KB_jpg_png_images_in_pwd_using_imagemagick)
 
 ##
 DIGITALOCEAN_COMMANDS_ARRAY=(9995-digitalocean-delete-all-temporary-unnecessary-files
