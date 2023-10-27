@@ -231,9 +231,9 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
             <meta name='robots' content='noindex, nofollow'>
             <!-- Bootstrap CSS -->
             <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We' crossorigin='anonymous'>
-            <title>"""
+            """
 
-        htmlMidContent= "</title></head><body>"
+        htmlMidContent= "</head><body>"
 
         htmlFooter = """<!-- Optional JavaScript; choose one of the two! -->
             <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -244,7 +244,8 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         f.write(htmlHeader)
         ##
         headTitle = remove_unreadable_characters(TITLE)
-        f.write('PRINTED RECIPE - ' + headTitle)
+        f.write('<meta name="description" content="PRINTED RECIPE - ' + headTitle +'" />' ) ;
+        f.write('<title>PRINTED RECIPE - ' + headTitle + '</title>') ;
         ##
         f.write(htmlMidContent)   
 
