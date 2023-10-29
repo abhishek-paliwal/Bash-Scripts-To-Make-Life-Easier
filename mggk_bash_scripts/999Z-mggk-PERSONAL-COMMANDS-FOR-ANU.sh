@@ -270,9 +270,7 @@ pali_imagemagick_fixed_resize_images_by_width_or_height
 pali_imagemagick_create_10_random_images
 convert_images_to_1080x1920_padded_imagemagick
 convert_images_to_1920x1080_padded_imagemagick
-2000-python-image-resize
-mggk_resize_to_1200px_and_reduce_size_for_larger_than_950KB_jpg_png_images_in_pwd_using_imagemagick)
-
+2000-python-image-resize)
 ##
 DIGITALOCEAN_COMMANDS_ARRAY=(9995-digitalocean-delete-all-temporary-unnecessary-files
 9996-digitalocean-send-server-backups-to-dreamobjects
