@@ -109,7 +109,7 @@ yt2_download_video
 ffmpeg_convert_webm_videos_to_mp4
 mggk_search_ONEDRIVE_FILES
 h001_run_this_to_create_image_captions_in_pwd
-mggk_resize_to_1200px_and_reduce_size_for_larger_than_950KB_jpg_png_images_in_pwd_using_imagemagick) ;
+00227_mggk_resize_jpg_png_to_1200px_and_reduce_size_over_950KB_images_in_pwd_imagemagick) ;
 
 
 ##
