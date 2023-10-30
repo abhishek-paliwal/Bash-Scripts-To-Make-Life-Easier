@@ -212,11 +212,11 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
 ## Printing the image dimensions for everything, except GIFs because they produce LOOOOONG outputs for all GIF frames. ##
     if [ "$filetype" != 'GIF' ]; then
       echo "<div class='col-6 col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-2'>" >> $OUTPUT
-      echo "<div class='pali'><a href='$path/$file'><img loading='lazy' data-src='$path/$file' width='100%'></img><span class='thin'>$file</a></span><br><span class='thin'>$imagedimen</span></div>" >> $OUTPUT
+      echo "<div class='pali'><a href='$path/$file'><img loading='lazy' src='$path/$file' width='100%'></img><span class='thin'>$file</a></span><br><span class='thin'>$imagedimen</span></div>" >> $OUTPUT
       echo "</div>" >> $OUTPUT
     else
       echo "<div class='col-6 col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-2'>" >> $OUTPUT
-      echo "<div class='pali'><a href='$path/$file'><img loading='lazy' data-src='$path/$file' width='100%'></img><span class='thin'>$file</span></a></div>" >> $OUTPUT
+      echo "<div class='pali'><a href='$path/$file'><img loading='lazy' src='$path/$file' width='100%'></img><span class='thin'>$file</span></a></div>" >> $OUTPUT
       echo "</div>" >> $OUTPUT
     fi
 

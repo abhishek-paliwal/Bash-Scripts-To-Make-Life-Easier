@@ -118,7 +118,7 @@ echo "<h2>1. Grid Elements With Equal Width</h2>"  >> $filenamex
 echo "<div class='grid'> <!-- LAZY LOADING - equal width GRID BEGINS -->"  >> $filenamex
 for x in `ls *.{jpg,png,PNG,JPG} | sort -n -k1.$sortnumber`
 	do
-		echo "<a href='$x'><img class='lazy' data-src='$x' align='top'></img></a>" >> $filenamex
+		echo "<a href='$x'><img loading='lazy' src='$x' align='top'></img></a>" >> $filenamex
 	done;
 echo "</div> <!-- LAZY LOADING - equal width GRID ENDS --<hr>" >> $filenamex
 ###############################################
