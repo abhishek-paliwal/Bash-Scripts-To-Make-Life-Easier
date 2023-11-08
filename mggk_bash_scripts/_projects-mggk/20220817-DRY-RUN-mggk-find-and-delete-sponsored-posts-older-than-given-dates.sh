@@ -46,7 +46,9 @@ TMPFILE3="$WORKDIR/_tmpSpon3.txt" ;
 
 ################################################################################
 ## Finding the first published dates for the posts other than DONT_DELETE_POSTS_WITH_THESE_DATES
-DONT_DELETE_POSTS_WITH_THESE_DATES="(2022-|2021-|2020-12|2020-11|2020-10|2020-09)" ; ## Change this accordingly as you please
+DONT_DELETE_POSTS_WITH_THESE_DATES="(2024-|2023-|2022-|2021-12|2021-11|2021-10)" ; ## Change this accordingly as you please
+echo ">> Everything other than these posts will not be deleted ... $DONT_DELETE_POSTS_WITH_THESE_DATES (change the settings in this original program = $THIS_SCRIPT_NAME)" ; 
+
 ##
 echo; echo "################################################################################" ;  
 echo ">> FINDING THE FIRST PUBLISHED DATES FOR THE POSTS OTHER THAN GIVEN DATES ..." ; 
