@@ -25,7 +25,6 @@ if [ "$1" == "--help" ] ; then usage ; fi
 ##################################################################################
 
 echo ">> Now creating index for all food photography images." ;
-say "Now creating index for all food photography images." ;
 
 echo "#################################################" #Blank line
 
