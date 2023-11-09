@@ -33,47 +33,51 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## FUNCTION DEFINITION
-function calculate_sum_of_digits() {
-    ## This function needs a command line long integer, such as 123456 ;
-    Num=$1 ;
-    # store the sum of digits
+function calculate_sum_of_digits_of_array() {
+    # Initialize sum to 0
     sum=0
-    # use while loop to caclulate the sum
-    while [ $Num -gt 0 ]
-    do   
-        k=$(( $Num % 10 ))  # get Remainder  
-        Num=$(( $Num / 10 )) # get next digit
-        sum=$(( $sum + $k ))     # calculate sum of digits 
-    done
-    echo "$sum" ;
+    # Iterate through the array and add each number to the sum
+    for num in "${my_array[@]}"; do  sum=$((sum + num)) ; done
+    # Print the sum
+    echo "$sum" ; 
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ####
-echo "Enter the images count (eg: 3231232313, etc), separated by NO spaces ..." ; 
-read my_string
-#my_string="3231232313" ; ## Example
-##
-echo "MY STRING IS => $my_string" ;
+echo "Enter the images count (eg: 323123, OR with comma, eg: 11,12,13,21) ..." ; 
+read my_string_raw
 ## Deleting any invisible spaces ...
-my_string=$(echo $my_string | sed 's/ //g') ;
+my_string=$(echo $my_string_raw | sed 's/ //g') ;
+
+
+## CREATE ARRAY DEPENDING UPON WHETHER INPUT HAS COMMAS IN BETWEEN NUMBERS OR NOT
+if [[ $my_string == *","* ]]; then
+  echo "The string contains a COMMA. Array will be calculated accordingly..." ; 
+  ## Replace commas with spaces and store the result in an array
+  my_array=(${my_string//,/ }) ; 
+else
+  echo "The string DOES NOT contain a COMMA. Array will be calculated accordingly..." ; 
+  ## grep matches every character in the string and ...
+  ## ... prints it on a new line, resulting in an array
+  my_array=($(echo "${my_string}" | grep -o .)) ; 
+fi
+
+## PRINTING
+echo "MY STRING IS      => $my_string" ;
+echo "MY ARRAY ELEMENTS => ${my_array[@]}" ;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## PRINTING SOME CALCULATIONS ON CLI
-len_string=$(echo "${#my_string} - 1" | bc ) ; 
-num_recipesteps=$(echo "$len_string +1" | bc ) ; 
+num_recipesteps=$(echo "${#my_array[@]}" | bc ) ; 
+echo; 
 echo "$num_recipesteps => Length of string (meaning number of recipe steps)" ;
+echo; 
 ##
-num_stepsImages=$(calculate_sum_of_digits $my_string) ; ## get from the function
+num_stepsImages=$(calculate_sum_of_digits_of_array) ; ## get from the function
 num_original_images=$(fd -t f -e png -e jpg -e jpeg -e PNG -e JPG | wc -l) ;
 echo "$num_stepsImages => Sum of digits (meaning calculated number of total images)" ;
 echo "$num_original_images => Original images found" ;
 ####
-## Split the string and store characters in an array 
-for j in $(seq 0 $len_string) ; do 
-    my_array[$j]=${my_string:$j:1} ;
-done
-echo "MY ARRAY ELEMENTS => ${my_array[@]}" ;
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ####
