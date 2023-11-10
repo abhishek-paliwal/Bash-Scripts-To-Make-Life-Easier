@@ -4,16 +4,21 @@
 WORKDIR="$DIR_Y" ; 
 tmpfile0="$WORKDIR/_tmp00226_images_dimensions_and_filesizes_listing.txt" ; 
 tmpfile1="$WORKDIR/_tmp00226_images_filepaths_listing.txt" ; 
+NEWDIR="$WORKDIR/_resized_1200px"; 
+NEWDIR_WEBP="$WORKDIR/_resized_1200px_webp"; 
+mkdir -p "$NEWDIR" "$NEWDIR_WEBP" ; 
+
 
 ##------------------------------------------------------------------------------
 function FUNC_PRINT_IMAGE_DIMENSIONS () {
+    dirImages="$1" ; 
     ##
     ## initializing tmpfiles
     echo | tee $tmpfile0 $tmpfile1  ; 
     echo "## DISPLAYING DIMENSIONS => SORTED FROM SMALLER TO LARGER" | tee -a $tmpfile0  ; 
     echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" | tee -a $tmpfile0 ; 
     ####
-    for x in $(fd -e jpg -e png -e jpeg -e gif -e webp -e JPG -e PNG -e GIF -e WEBP --search-path="$(pwd)") ; do 
+    for x in $(fd -e jpg -e png -e jpeg -e gif -e webp -e JPG -e PNG -e GIF -e WEBP --search-path="$dirImages") ; do 
         dimensions=$(identify -format "%wx%h\n" "$x")  ;  
         filesize=$(du -skh "$x")  ;  
         echo "$dimensions $filesize" >> $tmpfile0 ; 
@@ -29,9 +34,6 @@ function FUNC_PRINT_IMAGE_DIMENSIONS () {
 #######
 function FUNC_RESIZE_FILES_IF_SIZE_MORE_THAN_1200PX () {
     INFILE="$tmpfile1" ; 
-    NEWDIR="$WORKDIR/_resized_1200px"; 
-    NEWDIR_WEBP="$WORKDIR/_resized_1200px_webp"; 
-    mkdir -p "$NEWDIR" "$NEWDIR_WEBP" ; 
     echo ">> Now, resizing ... please wait ..." ; 
     desired_width=1200 ; 
     count=0;
@@ -73,9 +75,12 @@ function FUNC_RESIZE_FILES_IF_SIZE_MORE_THAN_1200PX () {
 ##------------------------------------------------------------------------------
 
 echo ">> DISPLAYING DIMENSIONS (BEFORE RESIZING)" ; 
-FUNC_PRINT_IMAGE_DIMENSIONS ;
+FUNC_PRINT_IMAGE_DIMENSIONS "$(pwd)" ;
 
 ## RESIZING
 FUNC_RESIZE_FILES_IF_SIZE_MORE_THAN_1200PX ; 
-echo ">> DISPLAYING DIMENSIONS (AFTER RESIZING)" ; 
-FUNC_PRINT_IMAGE_DIMENSIONS ;
+##
+echo ">> DISPLAYING DIMENSIONS (AFTER RESIZING) // FOR jpg/png/jpeg" ; 
+FUNC_PRINT_IMAGE_DIMENSIONS "$NEWDIR" ;
+echo ">> DISPLAYING DIMENSIONS (AFTER RESIZING) // FOR webp" ; 
+FUNC_PRINT_IMAGE_DIMENSIONS "$NEWDIR_WEBP" ;
