@@ -12,6 +12,7 @@ THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
 CURRENTDIR="$(pwd)" ; 
 TMPCSV="$WORKDIR/mp3_durations.csv" ; 
+echo "DURATION,MP3_FILEPATH" > $TMPCSV ; ## initializing columns in csv file
 mkdir -p $WORKDIR ; ## create dir if not exists
 echo "##########################################" ; 
 echo "## CURRENT DIRECTORY = $CURRENTDIR" ;
@@ -30,14 +31,16 @@ function FUNC_PRINT_MP3_DURATION_IN_PWD () {
     seconds_tmp=$(echo "$duration % 60" | bc) ; 
     seconds=$(echo "$seconds_tmp / 1" | bc) ;  ## rounding 
     # Print duration
-    echo "${hours}h_${minutes}m_${seconds}s,$file" ; 
+    echo "${hours}h_${minutes}m_${seconds}s,$file" >>  $TMPCSV ; 
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## RUN FOR ALL MP3 FILES 
 for mp3file in $(fd -e mp3 --search-path="$(pwd)") ; do 
-    FUNC_PRINT_MP3_DURATION_IN_PWD "$mp3file"  >>  $TMPCSV
+    FUNC_PRINT_MP3_DURATION_IN_PWD "$mp3file"  
 done 
 ##
-echo ">> CSV file generated. Now printing it => $TMPCSV" ; 
+echo ; echo ; 
+echo ">> CSV file generated. Now printing it ( $TMPCSV )" ; 
+echo ; echo ; 
 cat $TMPCSV ; 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
