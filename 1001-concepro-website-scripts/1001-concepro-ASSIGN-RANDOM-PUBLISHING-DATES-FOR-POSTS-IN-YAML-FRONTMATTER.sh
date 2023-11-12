@@ -49,16 +49,16 @@ grep -i '/blog/_index' $TMPFILE1 >> $TMPFILE1_CUSTOM ; # APPEND REST OF LINES
 grep -iv '/blog/' $TMPFILE1 >> $TMPFILE1_CUSTOM ; # APPEND REST OF LINES
 echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
 echo ">> LISTING ALL MDFILES WITH DATES BEFORE 6 MONTHS AGO ..."
-cat $TMPFILE1_CUSTOM | nl ; 
+cat "$TMPFILE1_CUSTOM" | nl ; 
 echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-## IF NO MD FILES ARE FOUND, ADD SOME BLOG POSTS TO IT.
+## IF NO MD FILES ARE FOUND, ADD SOME BLOG POSTS FILE PATHS TO IT.
 if [ -s "$TMPFILE1_CUSTOM" ]; then
     echo "TMPFILE1_CUSTOM = File is NOT BLANK."
 else
-    echo "TMPFILE1_CUSTOM = File is BLANK. 4 oldest blog posts paths will be added to it. "  ;
-    for x in $(fd -e md --search-path="$ROOTDIR/blog") ; do v1=$(grep -i 'date:' "$x") ; echo "$v1,$x"; done | sort | awk -F ',' '{print $2}' | head -4 >>  $TMPFILE1_CUSTOM ; 
+    echo "TMPFILE1_CUSTOM = File is BLANK. 2 oldest blog posts paths will be added to it. "  ;
+    for x in $(fd -e md --search-path="$ROOTDIR/blog") ; do v1=$(grep -i 'date:' "$x") ; echo "$v1,$x"; done | sort | awk -F ',' '{print $2}' | head -2 >>  $TMPFILE1_CUSTOM ; 
 fi
 ##
 echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
