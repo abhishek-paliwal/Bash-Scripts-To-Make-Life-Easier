@@ -52,6 +52,21 @@ echo ">> LISTING ALL MDFILES WITH DATES BEFORE 6 MONTHS AGO ..."
 cat $TMPFILE1_CUSTOM | nl ; 
 echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+## IF NO MD FILES ARE FOUND, ADD SOME BLOG POSTS TO IT.
+if [ -s "$TMPFILE1_CUSTOM" ]; then
+    echo "TMPFILE1_CUSTOM = File is NOT BLANK."
+else
+    echo "TMPFILE1_CUSTOM = File is BLANK. 4 oldest blog posts paths will be added to it. "  ;
+    for x in $(fd -e md --search-path="$ROOTDIR/blog") ; do v1=$(grep -i 'date:' "$x") ; echo "$v1,$x"; done | sort | awk -F ',' '{print $2}' | head -4 >>  $TMPFILE1_CUSTOM ; 
+fi
+##
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
+echo ">> LISTING ALL MDFILES WITH DATES BEFORE 6 MONTHS AGO ..."
+cat $TMPFILE1_CUSTOM | nl ; 
+echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 ## LIST LAST 26 FRIDAYS, (ABOUT IN LAST 6 MONTHS)
 for i in {1..26}; do gdate -d "last Friday -$(($i-1)) week" +%Y-%m-%d ; done | sort -r > $TMPFILE2 ; 
 echo "##-----------------------------------------------------" ; 
@@ -77,6 +92,6 @@ for myfile in $(cat $TMPFILE1_CUSTOM) ; do
     echo "    NEW DATE = ${newdate}" ;  
     # replace old date in the original file
     echo "    REPLACING OLD DATE IN MDFILE ..." ; 
-    sed -i "s|${olddate}|${newdate}|g" "$myfile" ; 
+    gsed -i "s|${olddate}|${newdate}|g" "$myfile" ; 
 done 
 
