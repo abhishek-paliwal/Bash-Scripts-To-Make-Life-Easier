@@ -108,7 +108,7 @@ yt1_download_audio
 yt2_download_video
 ffmpeg_convert_webm_videos_to_mp4
 mggk_search_ONEDRIVE_FILES
-GENERATE_IMAGE_CAPTIONS
+GENERATE_IMAGE_CAPTIONS_USING_AI
 00227_mggk_resize_jpg_png_to_1200px_and_reduce_size_over_950KB_images_in_pwd_imagemagick) ;
 
 
