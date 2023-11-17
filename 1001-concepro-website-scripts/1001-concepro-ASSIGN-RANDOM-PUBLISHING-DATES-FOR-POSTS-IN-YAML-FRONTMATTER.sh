@@ -92,6 +92,16 @@ for myfile in $(cat $TMPFILE1_CUSTOM) ; do
     echo "    NEW DATE = ${newdate}" ;  
     # replace old date in the original file
     echo "    REPLACING OLD DATE IN MDFILE ..." ; 
-    gsed -i "s|${olddate}|${newdate}|g" "$myfile" ; 
+    ####
+    os_name=$(uname -s) ;
+    if [ "$os_name" == "Linux" ]; then
+        echo "This is Linux." ;
+        sed -i "s|${olddate}|${newdate}|g" "$myfile" ; 
+    elif [ "$os_name" == "Darwin" ]; then
+        echo "This is macOS." ;
+        gsed -i "s|${olddate}|${newdate}|g" "$myfile" ; 
+    else
+        echo "Unsupported operating system: $os_name"
+    fi
 done 
 
