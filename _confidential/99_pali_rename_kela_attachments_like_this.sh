@@ -71,17 +71,21 @@ echo "##------------------------------------------------------------------------
 3.pdf,$durationPrefix-Nordea-Concepro.pdf 
 4.pdf,$durationPrefix-Spouse-Nordea.pdf 
 ##------------------------------------------------------------------------------ 
-a.pdf,$ago1month-Kotivakuutus.pdf 
-b.pdf,$ago1month-MAKSUT-Asunto-Oy-Merivesi.pdf 
-c.pdf,$ago1month-YTK-Invoice.pdf 
-d.pdf,$ago1month-Fortum-Invoice.pdf 
+a.pdf,$ago0month-Kotivakuutus.pdf 
+b.pdf,$ago0month-MAKSUT-Asunto-Oy-Merivesi.pdf 
+c.pdf,$ago0month-YTK-Invoice.pdf 
+d.pdf,$ago0month-Fortum-Invoice.pdf 
 ##------------------------------------------------------------------------------ 
 z1.md,$ago1month-Important-Information.md 
 z2.pdf,$ago1month-Important-Information.pdf 
 z3.png,$ago1month-Home-Loan-Interest.png 
+z4.jpg,$ago1month-Home-Loan-Interest.jpg 
 ##------------------------------------------------------------------------------ 
-x1.pdf,$dateToday-attachments-list.pdf 
-x2.pdf,$dateToday-personal-message.pdf" > $outFile1 ;
+k1.pdf,$dateToday-submitted-application.pdf 
+k2.pdf,$dateToday-personal-message.pdf
+k3.pdf,$dateToday-attachments-list.pdf 
+##------------------------------------------------------------------------------ 
+" > $outFile1 ;
 ## 
 ## Removing lines containing hash symbols
 cat $outFile1 | grep -iv '#' > $outFile2 ;
