@@ -1,6 +1,0 @@
-## Encrypt all files in these dirs
-/testdir/**  filter=git-crypt diff=git-crypt
-##
-##
-## Prevent gitattributes to encrypt using git-crypt
-.gitattributes !filter !diff
