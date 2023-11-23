@@ -76,11 +76,14 @@ if __name__ == "__main__":
             # Generate the full path for the image
             image_path = os.path.join(current_directory, image_filename)
 
+            # Load the image
+            image = cv2.imread(image_path)
+
             # Generate the path for saving the thresholded image
             save_thresholded_path = os.path.join(current_directory, f"_thresholded_{image_filename}")
 
             # Extract text from the single column with Finnish language and save the thresholded image
-            column_text_finnish = extract_text_from_single_column(image_path, language='fin', save_thresholded_path=save_thresholded_path)
+            column_text_finnish = extract_text_from_single_column(image, language='fin', save_thresholded_path=save_thresholded_path)
 
             # Print the extracted text
             print(f"Column Text (Finnish) for {image_filename}:")
@@ -94,3 +97,4 @@ if __name__ == "__main__":
                 text_file.write(column_text_finnish)
 
             print(f"Extracted text saved to: {text_file_path}")
+            
