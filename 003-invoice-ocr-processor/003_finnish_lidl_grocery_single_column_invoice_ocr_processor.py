@@ -1,0 +1,97 @@
+################################################################################
+# This Python program extracts text from a specified single column
+# in an invoice image (eg. lidl), preprocesses the image using thresholding for 
+# enhanced OCR, and optionally saves the thresholded image, with support 
+# for the Finnish language.
+####
+## Important Note: Make sure to crop the invoice(s) so that only the items and prices are visible.
+####
+# Usage: python3 THIS_PROGRAM_PATH ARG_1 // ARG_1 = INVOICE_image_path 
+####
+# Date: 2023-11-23
+# By: Pali 
+################################################################################
+
+import sys
+import os
+import cv2
+import pytesseract
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+def preprocess_image(image, save_thresholded_path=None):
+    """
+    Preprocess an image for OCR by applying thresholding to enhance text visibility.
+
+    Args:
+    - image (numpy.ndarray): Input image as a NumPy array.
+    - save_thresholded_path (str): Optional path to save the thresholded image. If None, the image is not saved.
+
+    Returns:
+    - thresh (numpy.ndarray): Thresholded image.
+    """
+    # Convert the image to grayscale
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+    # Apply thresholding to enhance text
+    _, thresh = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY_INV)
+
+    # Save the thresholded image if a path is provided
+    if save_thresholded_path:
+        cv2.imwrite(save_thresholded_path, thresh)
+
+    return thresh
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+def extract_text_from_single_column(image, language='fin', save_thresholded_path=None):
+    """
+    Extract text from a single column of an invoice image using OCR.
+
+    Args:
+    - image (numpy.ndarray): Input image as a NumPy array.
+    - language (str): Language for OCR (default is Finnish).
+    - save_thresholded_path (str): Optional path to save the thresholded image. If None, the image is not saved.
+
+    Returns:
+    - text (str): Extracted text from the image.
+    """
+    # Preprocess the image
+    preprocessed_image = preprocess_image(image, save_thresholded_path)
+
+    # Use Tesseract to extract text from the entire image with specified language
+    text = pytesseract.image_to_string(preprocessed_image, lang=language, config='--psm 6')
+
+    return text
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python script.py <image_path>")
+        sys.exit(1)
+
+    # Read the image path from the command line arguments
+    image_path = sys.argv[1]
+
+    # Load the image
+    image = cv2.imread(image_path)
+
+    # Extract the directory and filename from the image path
+    image_directory, image_filename = os.path.split(image_path)
+
+    # Generate the path for saving the thresholded image
+    save_thresholded_path = os.path.join(image_directory, f"_thresholded_{image_filename}")
+
+    # Extract text from the single column with Finnish language and save the thresholded image
+    column_text_finnish = extract_text_from_single_column(image, language='fin', save_thresholded_path=save_thresholded_path)
+
+    # Print the extracted text
+    print("Column Text (Finnish):")
+    print(column_text_finnish)
+
+    # Generate the path for saving the text file
+    text_file_path = os.path.join(image_directory, f"FIN_OCR_thresholded_{image_filename}.txt")
+
+    # Write the extracted text to the text file
+    with open(text_file_path, 'w', encoding='utf-8') as text_file:
+        text_file.write(column_text_finnish)
+
+    print(f"Extracted text saved to: {text_file_path}")
