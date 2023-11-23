@@ -64,34 +64,33 @@ def extract_text_from_single_column(image, language='fin', save_thresholded_path
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python script.py <image_path>")
-        sys.exit(1)
+    # Get the current working directory
+    current_directory = os.getcwd()
 
-    # Read the image path from the command line arguments
-    image_path = sys.argv[1]
+    # List all files in the current directory
+    image_files = [f for f in os.listdir(current_directory) if os.path.isfile(os.path.join(current_directory, f))]
 
-    # Load the image
-    image = cv2.imread(image_path)
+    for image_filename in image_files:
+        # Check if the file is an image (you may want to refine this check based on your specific image file types)
+        if image_filename.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp')):
+            # Generate the full path for the image
+            image_path = os.path.join(current_directory, image_filename)
 
-    # Extract the directory and filename from the image path
-    image_directory, image_filename = os.path.split(image_path)
+            # Generate the path for saving the thresholded image
+            save_thresholded_path = os.path.join(current_directory, f"_thresholded_{image_filename}")
 
-    # Generate the path for saving the thresholded image
-    save_thresholded_path = os.path.join(image_directory, f"_thresholded_{image_filename}")
+            # Extract text from the single column with Finnish language and save the thresholded image
+            column_text_finnish = extract_text_from_single_column(image_path, language='fin', save_thresholded_path=save_thresholded_path)
 
-    # Extract text from the single column with Finnish language and save the thresholded image
-    column_text_finnish = extract_text_from_single_column(image, language='fin', save_thresholded_path=save_thresholded_path)
+            # Print the extracted text
+            print(f"Column Text (Finnish) for {image_filename}:")
+            print(column_text_finnish)
 
-    # Print the extracted text
-    print("Column Text (Finnish):")
-    print(column_text_finnish)
+            # Generate the path for saving the text file
+            text_file_path = os.path.join(current_directory, f"FIN_OCR_{image_filename}.txt")
 
-    # Generate the path for saving the text file
-    text_file_path = os.path.join(image_directory, f"FIN_OCR_thresholded_{image_filename}.txt")
+            # Write the extracted text to the text file
+            with open(text_file_path, 'w', encoding='utf-8') as text_file:
+                text_file.write(column_text_finnish)
 
-    # Write the extracted text to the text file
-    with open(text_file_path, 'w', encoding='utf-8') as text_file:
-        text_file.write(column_text_finnish)
-
-    print(f"Extracted text saved to: {text_file_path}")
+            print(f"Extracted text saved to: {text_file_path}")
