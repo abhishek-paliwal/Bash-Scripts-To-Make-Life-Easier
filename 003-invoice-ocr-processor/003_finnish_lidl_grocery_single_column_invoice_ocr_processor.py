@@ -1,11 +1,12 @@
 ################################################################################
 # This Python program extracts text from a specified single column
-# in an invoice image (eg. lidl), preprocesses the image using thresholding for 
-# enhanced OCR, and optionally saves the thresholded image, with support 
+# in all images' invoices (eg. lidl) present in current directory, 
+# preprocesses them using thresholding for 
+# enhanced OCR, and saves the thresholded image and OCR text with support 
 # for the Finnish language.
-####
+#############################################
 ## Important Note: Make sure to crop the invoice(s) so that only the items and prices are visible.
-####
+#############################################
 # Usage: python3 THIS_PROGRAM_PATH ARG_1 // ARG_1 = INVOICE_image_path 
 ####
 # Date: 2023-11-23
@@ -97,4 +98,3 @@ if __name__ == "__main__":
                 text_file.write(column_text_finnish)
 
             print(f"Extracted text saved to: {text_file_path}")
-            
