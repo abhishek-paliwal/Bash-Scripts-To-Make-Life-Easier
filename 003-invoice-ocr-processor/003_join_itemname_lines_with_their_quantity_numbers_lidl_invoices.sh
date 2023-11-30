@@ -9,14 +9,13 @@
 ################################################################################
 
 ROOTDIR="$REPO_SCRIPTS/003-invoice-ocr-processor/lidl_invoices_cropped" ;
-ROOTDIR_OUTPUT="$REPO_SCRIPTS/003-invoice-ocr-processor/lidl_invoices_cropped/_final_sorted_combined_output" ;
+ROOTDIR_OUTPUT="$ROOTDIR/_final_sorted_combined_output" ;
 WORKDIR="$DIR_Y" ; 
 
 # Input and output file names
-input_file="$WORKDIR/COMBINED-LIDL-INVOICES-INPUT.txt" ; 
+input_file="$WORKDIR/combined-lidl-invoices-input.txt" ; 
+output_final="$WORKDIR/combined-lidl-invoices-output-sorted-numbered.txt" ; 
 tmpfile="$WORKDIR/_tmp003_1.txt" ;
-output_final="$WORKDIR/COMBINED-LIDL-INVOICES-OUTPUT-SORTED-NUMBERED.txt" ; 
-##
 echo > "$tmpfile" ## initialize file
 
 ##
