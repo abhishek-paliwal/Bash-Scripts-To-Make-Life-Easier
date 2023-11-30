@@ -43,7 +43,7 @@ function FUNC_PROCESS_INVOICES_IN_THIS_DIR () {
     # Print the last line (if any)
     echo "$current_line" >> "$tmpfile" ;
     #
-    sort "$tmpfile" | grep -iv '^$' | uniq -c | nl > "$output_final" ; 
+    sort -V "$tmpfile" | grep -iv '^$' | uniq -c | nl > "$output_final" ; 
     cat "$output_final" ; 
     #
     ## Finally Copy to root output directory
