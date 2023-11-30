@@ -17,8 +17,11 @@ input_file="$WORKDIR/COMBINED-LIDL-INVOICES-INPUT.txt" ;
 tmpfile="$WORKDIR/_tmp003_1.txt" ;
 output_final="$WORKDIR/COMBINED-LIDL-INVOICES-OUTPUT-SORTED-NUMBERED.txt" ; 
 ##
-cat "$ROOTDIR"/FIN_OCR* > "$input_file" ; # create input file combining all lidl invoices
 echo > "$tmpfile" ## initialize file
+
+##
+# create input file combining all lidl invoices
+cat "$ROOTDIR"/FIN_OCR* > "$input_file" ; 
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Initialize a variable to store the current line
@@ -40,7 +43,7 @@ done < "$input_file"
 # Print the last line (if any)
 echo "$current_line" >> "$tmpfile"
 
-sort "$tmpfile" | nl > "$output_final" ; 
+sort "$tmpfile" | grep -iv '^$' | uniq -c | nl > "$output_final" ; 
 cat "$output_final" ; 
 
 ## Finally Copy to root output directory
