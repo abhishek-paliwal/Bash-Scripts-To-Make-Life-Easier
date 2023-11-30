@@ -22,7 +22,7 @@ function FUNC_PROCESS_INVOICES_IN_THIS_DIR () {
     echo > "$tmpfile" ## initialize file
     #
     ##
-    # create input file combining all lidl invoices
+    # create input file combining all invoices
     cat "$ROOTDIR"/FIN_OCR* > "$input_file" ; 
     ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     # Initialize a variable to store the current line
@@ -54,3 +54,4 @@ function FUNC_PROCESS_INVOICES_IN_THIS_DIR () {
 
 ## Call function
 FUNC_PROCESS_INVOICES_IN_THIS_DIR "$REPO_SCRIPTS/003-invoice-ocr-processor/lidl_invoices_cropped" "lidl" ; 
+#FUNC_PROCESS_INVOICES_IN_THIS_DIR "$REPO_SCRIPTS/003-invoice-ocr-processor/indian_market_invoices_cropped" "indian_market" ; 
