@@ -55,4 +55,5 @@ function FUNC_PROCESS_INVOICES_IN_THIS_DIR () {
 ## Call function
 FUNC_PROCESS_INVOICES_IN_THIS_DIR "$REPO_SCRIPTS/003-invoice-ocr-processor/lidl_invoices_cropped" "lidl" ; 
 FUNC_PROCESS_INVOICES_IN_THIS_DIR "$REPO_SCRIPTS/003-invoice-ocr-processor/indian_market_invoices_cropped" "indian_market_grocery" ; 
+FUNC_PROCESS_INVOICES_IN_THIS_DIR "$REPO_SCRIPTS/003-invoice-ocr-processor/alepa_prisma_invoices_cropped" "alepa_prisma" ; 
 
