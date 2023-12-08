@@ -1,1858 +1,1895 @@
-     1	   1 Aerocell paristo E 9V 2,99 A
-     2	   1 Aerocell paristo micro AAA 1,49 A
-     3	   2 AguaPur keittiöliina 1,59 A
-     4	   1 Alennukset yhteensä 0,15
-     5	   1 Alennukset yhteensä 0,19
-     6	   1 Alennukset yhteensä 0,38
-     7	   1 Alennukset yhteensä 0,39
-     8	   1 Alennukset yhteensä 0,47
-     9	   1 Alennukset yhteensä 0,50
-    10	   1 Alennukset yhteensä 0,57
-    11	   1 Alennukset yhteensä 0,58
-    12	   1 Alennukset yhteensä 0,60
-    13	   1 Alennukset yhteensä 0,75
-    14	   1 Alennukset yhteensä 0,84
-    15	   1 Alennukset yhteensä 0,96
-    16	   1 Alennukset yhteensä 1,10
-    17	   1 Alennukset yhteensä 1,14
-    18	   1 Alennukset yhteensä 1,41
-    19	   1 Alennukset yhteensä 1,48
-    20	   1 Alennukset yhteensä 1,67
-    21	   1 Alennukset yhteensä 1,91
-    22	   1 Alennukset yhteensä 2,35
-    23	   2 Alennukset yhteensä 2,64
-    24	   1 Alennukset yhteensä 3,50
-    25	   1 Alennukset yhteensä 3,54
-    26	   1 Alennukset yhteensä 3,83
-    27	   1 Alennukset yhteensä 4,00
-    28	   1 Alennukset yhteensä 5,10
-    29	   1 Alennukset yhteensä 6,31
-    30	   1 Alennukset yhteensä 8,10
-    31	   1 Alennukset yhteensä 8,80
-    32	   1 Alennukset yhteensä 8,85
-    33	   1 Alennukset yhteensä 9,78
-    34	   1 Alennukset yhteensä 10,00
-    35	   1 Alennukset yhteensä 10,40
-    36	   8 Alesto Etelä-Afrikk. rusina 1,25 B
-    37	   3 Alesto Etelä-Afrikk. rusina 1,29 B
-    38	   6 Alesto Etelä-Afrikk. rusina 1,35 B
-    39	   3 Alesto Etelä-Afrikk. rusina 1,39 B
-    40	   1 Alesto Kuivatut viikunat 1,49 B
-    41	   1 Alesto Pistaasipähkinä 250g 3,98 B
-    42	  31 Alesto cashewpähkinä 3,50 B
-    43	   2 Alesto cashewpähkinä 3,79 B
-    44	   1 Alesto cashewpähkinä 7,00 B --------------- 2 x 3,50
-    45	   1 Alesto cashewpähkinä naturel 5,89 B
-    46	   1 Alesto cashewpähkinä naturel 8,49 B
-    47	   1 Alesto kalif. saksanpähk. 2,45 B
-    48	   5 Alesto kalif. saksanpähk. 2,49 B
-    49	   6 Alesto kalif. saksanpähk. 2,50 B
-    50	   1 Alesto kalif. saksanpähk. 2,99 B
-    51	   1 Alesto kalif. saksanpähk. 4,90 B --------------- 2 x 2,45
-    52	   1 Alesto kalif. saksanpähk. 4,98 B --------------- 2 x 2,49
-    53	   1 Alesto kalif. saksanpähk. 5,00 B --------------- 2 x 2,50
-    54	   4 Alesto karpalo-rusinasekoitu 1,49 B
-    55	   1 Alesto karpalo-rusinasekoitu 2,09 B
-    56	   1 Alesto kuivattu karpalo 1,49 B
-    57	   2 Alesto kuorrut. maapähk. chi 2,59 B
-    58	   2 Alesto pistaasipähkinä 250g 3,95 B
-    59	   1 Alesto pistaasipähkinä 250g 4,19 B
-    60	   1 Alesto pistaasipähkinä 500g 7,69 B
-    61	   1 Alesto pistaasipähkinä 500g 7,96 B
-    62	   1 Alesto pistaasipähk.suolaama 4,99 B
-    63	   2 Alesto pistaasipäh. suolaama 2,49 B
-    64	   1 Alesto suolapähkinä 0,99 B
-    65	   1 Alesto suolapähkinä 1,09 B
-    66	   1 Alesto suolapähkinä 1,79 B
-    67	   7 Alesto suolapähkinä 1,89 B
-    68	   1 Alesto suolattu cashewpäh. X 3,99 B
-    69	   1 Almondy Mantelikakku Daim 6,99 B
-    70	   1 Almondy Oreo kakku 5,99 B
-    71	   1 Alpenfest kreemikakku 3,99 B
-    72	   1 Alumiininen kasarif0352663 13,99 A
-    73	   1 Ananas irto 2,05 B --------------- 1,474 kg x 1,39 EUR/kg
-    74	   1 Annoona 1,56 B --------------- 0,260 kg x 5,99 EUR/kg
-    75	   1 Appelsiini 1,08 B --------------- 0,640 kg x 1,69 EUR/kg
-    76	   1 Appelsiini 2kg 1,89 B
-    77	   1 Appelsiini 2kg 1,95 B
-    78	   1 Appelsiini 2kg 2,29 B
-    79	   2 Appelsiini 2kg 2,49 B
-    80	   1 Appelsiini Shamouti irto 1,99 B --------------- 1,054 kg x 1,89 EUR/kg
-    81	   1 Appelsiini irto 0,99 B --------------- 0,588 kg x 1,69 EUR/kg
-    82	   1 Appelsiini irto 1,15 B --------------- 0,892 kg x 1,29 EUR/kg
-    83	   1 Arla Ingmariini 75% 3,39 B
-    84	   3 Arla Voi 2,69 B
-    85	   1 Arla Voi 2,85 B
-    86	   1 Arla Voi 3,49 B
-    87	   1 Arla Voi 3,59 B
-    88	   1 Aromata alumiinifolio 1,95 A
-    89	   1 Aromata alumiinifolio 2,68 A
-    90	   1 Aromata alumiinifolio 2,99 A
-    91	   1 Aromata kartonkilautanen 18c 0,99 A
-    92	   1 Aromata leivinarkki 1,05 A
-    93	   1 Aromata tuorekelmu 29cm x 75 2,17 A
-    94	   1 Aromata tuorekelmu 29cm x 75 2,33 A
-    95	   1 Aromata vahva alumiinifolio 1,49 A
-    96	   1 Aurinkokennovalaisinf8351849 5,99 A
-    97	   1 Avokado 1,75 B --------------- 0,250 kg x 6,99 EUR/kg
-    98	   1 Avokado 700g 2,39 B
-    99	   1 Avokado 700g 3,89 B
-   100	   1 Avokado irto 4,77 B --------------- 0,796 kg x 5,99 EUR/kg
-   101	   1 Banaani RFA 1,26 B --------------- 1,062 kg x 1,19 EUR/kg
-   102	   1 Banaani RFA 1,58 B --------------- 1,062 kg x 1,49 EUR/kg
-   103	   1 Banaani RFA 1,64 B --------------- 1,058 kg x 1,55 EUR/kg
-   104	   1 Banaani RFA 2,08 B --------------- 1,396 kg x 1,49 EUR/kg
-   105	   1 Banaani RFA 2,28 B --------------- 1,764 kg x 1,29 EUR/kg
-   106	   1 Banaani RFA 2,32 B --------------- 1,498 kg x 1,55 — EUR/kg
-   107	   1 Banaani RFA 2,35 B --------------- 1,516 kg x 1,55 EUR/kg
-   108	   1 Banaani Reilun kaupan 1,42 B --------------- 0,892 kg x 1,59 EUR/kg
-   109	   1 Banaani Reilun kaupan 1,84 B --------------- 1,054 kg x 1,75 EUR/kg
-   110	   1 Banaani Reilun kaupan 2,26 B --------------- 1,420 kg x 1,59 EUR/kg
-   111	   1 Banaani Reilun kaupan 2,48 B --------------- 1,416 kg x 1,75 EUR/kg
-   112	   1 Banaani Reilun kaupan 2,49 B --------------- 1,390 kg x 1,79 EUR/kg
-   113	   1 Banaani irto RFA 0,97 B --------------- 0,984 kg x 0,99 EUR/kg
-   114	   1 Banaani irto RFA 1,12 B --------------- 0,750 kg x 1,49 EUR/kg
-   115	   1 Banaani irto RFA 1,26 B --------------- 1,416 kg x 8,89 EUR/kg
-   116	   1 Banaani irto RFA 1,47 B --------------- 0,984 kg x 1,49 EUR/kg
-   117	   1 Banaani irto RFA 1,49 B --------------- 1,028 kg x 1,45 EUR/kg
-   118	   1 Banaani irto RFA 1,68 B --------------- 1,160 kg x 1,45 EUR/kg
-   119	   1 Banaani irto RFA 1,77 B --------------- 1,792 kg x 8,99 EUR/kg
-   120	   1 Banaani irto RFA 1,78 B --------------- 1,230 kg x 1,45 EUR/kg
-   121	   1 Banaani irto RFA 1,98 B --------------- 1,368 kg x 1,45 EUR/kg
-   122	   1 Banaani irto RFA 2,11 B --------------- 1,416 kg x 1,49 EUR/kg
-   123	   1 Banaani irto RFA 2,41 B --------------- 1,664 kg x 1,45 EUR/kg
-   124	   1 Banaani irto RFA 2,47 B --------------- 1,706 kg x 1,45 EUR/kg
-   125	   1 Banaani irto RFA 2,49 B --------------- 1,716 kg x 1,45 EUR/kg
-   126	   1 Banaani irto RFA 2,52 B --------------- 1,694 kg x 1,49 EUR/kg
-   127	   1 Banaani irto RFA 2,71 B --------------- 1,870 kg x 1,45 EUR/kg
-   128	   1 Banaani irto RFA 2,78 B --------------- 1,916 kg x 1,45 EUR/kg
-   129	   5 Baresa Paseerat.tomaat. yrt. 0,75 B
-   130	   1 Baresa artisokka öljyssä 2,25 B
-   131	   1 Baresa aurinkokuiv. tomaatti 1,09 B
-   132	   1 Baresa aurinkokuiv. tomaatti 1,25 B
-   133	   1 Baresa aurinkokuiv. tomaatti 2,25 B
-   134	   2 Baresa aurinkokuiv. tomaatti 2,35 B
-   135	   1 Baresa aurinkokuiv. tomaatti 4,70 B --------------- 2 x 2,35
-   136	   1 Baresa paseerattu tomaatti 0,79 B
-   137	   1 Baresa valkosipulinkynsiä 2,89 B
-   138	   1 Basilika 1,79 B
-   139	   1 Bataatti irto 1,31 B --------------- 8,452 kg x 2,89 EUR/kg
-   140	   1 Bataatti irto 1,40 B --------------- 0,742 kg x 1,89 EUR/kg
-   141	   1 Bataatti irto 2,87 B --------------- 1,154 kg x 2,49 EUR/kg
-   142	   1 Belbake Manteli jauhettu 1,69 B
-   143	   1 Belbake Manteli jauhettu 2,78 B --------------- 2 x 1,39
-   144	   1 Belbake Manteli jauhettu 3,38 B --------------- 2 x 1,69
-   145	   2 Belbake Manteli kokon. vaale 1,69 B
-   146	   1 Belbake Manteli kokon. vaale 3,38 B --------------- 2 x 1,69
-   147	   1 Belbake Manteli kuorittu 1,55 B
-   148	   1 Belbake Manteli viipal. vaal 1,69 B
-   149	   1 Belbake kaakaojauhe 1,59 B
-   150	   1 Belbake kaakaojauhe 1,65 B
-   151	   1 Belbake kaakaojauhe 1,79 B
-   152	   1 Belbake kokonainen manteli 1,99 B
-   153	   2 Belbake kokonainen manteli 2,09 B
-   154	  33 Belbake kokonainen manteli 2,49 B
-   155	   1 Belbake kokonainen manteli 2,99 B
-   156	   2 Belbake kookoshiutale 1,15 B
-   157	   1 Belbake kookoshiutale 1,19 B
-   158	   1 Belbake kookoshiutale 1,29 B
-   159	   2 Belbake kookoshiutale 1,39 B
-   160	   2 Belbake kookoshiutale 1,45 B
-   161	   1 Belbake koristerae Santa 1,99 B
-   162	   1 Belbake korppujauho 0,58 B
-   163	   1 Belbake kuivahiiva 6x7g 0,79 B
-   164	   3 Belbake leivinjauhe 0,59 B
-   165	   1 Belbake leivontakoris. marsi 1,99 B
-   166	   1 Belbake leivontasuklaa valko 1,49 B
-   167	   1 Belbake leivonta-aromi 2,39 B
-   168	   2 Belbake leivosaines m.suklaa 0,99 B
-   169	   2 Belbake leivosaines m.suklaa 1,29 B
-   170	   1 Belbake leivosaines t.suklaa 1,29 B
-   171	   1 Belbake maissitärkkelys 0,79 B
-   172	   1 Belbake maissitärkkelys 0,85 B
-   173	   1 Belbake mantelijauhe 1,69 B
-   174	   2 Belbake mantelijauhe 2,35 B
-   175	   2 Belbake mantelijauhe 2,49 B
-   176	   2 Belbake mantelijauhe 2,69 B
-   177	   1 Belbake mantelikrokantti 1,49 B
-   178	   1 Belbake mantelilastu 1,55 B
-   179	   2 Belbake mantelilastu 1,59 B
-   180	   1 Belbake mantelilastu 1,85 B
-   181	   1 Belbake ruokasooda 0,45 B
-   182	   1 Belbake ruokasooda 0,49 B
-   183	   3 Belbake ruokasooda 0,55 B
-   184	   1 Belbake ruokasooda 0,59 B
-   185	   1 Belbake ruokasooda 0,69 B
-   186	   8 Belbake rusina 0,75 B
-   187	   2 Belbake saksanpähkinä jauhet 2,29 B
-   188	   1 Belbake sokeri 0,69 B
-   189	   1 Belbake sokeri 1,39 B
-   190	   1 Belbake sokeroi.sitruunankuo 0,85 B
-   191	   1 Belbake sokeroi. hedelmäpala 1,98 B --------------- 2 x 0,99
-   192	   1 Belbake soker.appelsiininkuo 0,85 B
-   193	   1 Belbake taloussuklaa maito 2,98 B --------------- 2 x 1,49
-   194	   2 Belbake tomusokeri 0,42 B
-   195	   1 Belbake vuokaspray 2,69 B
-   196	   1 Belbake värikkäät kirsikat 0,99 B
-   197	   1 BellaromPikakah.hienoj .vah.R 4,65 B
-   198	   1 BellaromPikakah.hienoj.vah.R 4,25 B
-   199	   2 BellaromPikakah.hienoj.vah.R 4,45 B
-   200	   1 BellaromPikakah.hienoj.vah.R 4,65 B
-   201	   5 Bellarom pikakahvi vahva 3,99 B
-   202	   1 Bellarom pikakahvi vahva 4,65 B
-   203	   2 BellaroomPikakahviPakastekui 4,45 B
-   204	   1 BellaroomPikakahviPakastekui 4,59 B
-   205	   1 BellaroomPikakahviPakastekui 4,69 B
-   206	   1 Bio Belbake kookosjauho luom 1,99 B
-   207	   1 Boström gluteen. vadelmatort 4,09 B
-   208	   1 CakeAngels Carnival 2,79 B
-   209	   1 CakeAngels Sweetie Pie 2,79 B
-   210	   2 ChanteSel jodisuola 0,30 B
-   211	   3 ChanteSel jodisuola 0,32 B
-   212	   1 ChanteSel jodisuola 0,37 B
-   213	   1 ChanteSel jodisuola 0,39 B
-   214	   1 ChanteSel jodisuola 0,59 B
-   215	   1 ChefSelect patonki valkosipu 1,09 B
-   216	   1 ChefSelect patonki valkosipu 1,15 B
-   217	   1 ChefSelect patonki valkosipu 1,19 B
-   218	   2 ChefSelect patonki valkosipu 1,49 B
-   219	   1 ChefSelect patonki valkosipu 1,69 B
-   220	   1 ChefSelect patonki yrtti 1,09 B
-   221	   1 Chef Select hummus XXL 1,99 B
-   222	   1 Chilikastike extreme vahva 1,79 B
-   223	   1 Chili mix irto 1,68 B --------------- 8,112 kg x 14,99 EUR/kg
-   224	  14 Chili peperoni mix 100g 1,49 B
-   225	   1 ChocoNussa pähkinänougatlevi 1,70 B
-   226	   1 ChocoNussa pähkinänougatlevi 1,85 B
-   227	   1 Cien After Shave Balsam Mild 3,19 A
-   228	   1 Cien Anti-age kasvonaamio 0,99 A
-   229	   1 Cien Body Lotion Shower 2,99 A
-   230	   1 Cien Concealer dark 1,99 A
-   231	   1 Cien Granaattiomena BodyButt 2,99 A
-   232	   1 Cien Hilseshampoo Apple 1,99 A
-   233	   1 Cien Hilseshampoo Classic 1,99 A
-   234	   1 Cien Hilseshampoo Classic 2,19 A
-   235	   1 Cien Hilseshampoo Lemon 1,79 A
-   236	   3 Cien Kangasnaamio gran.omena 0,99 A
-   237	   1 Cien Kuivashampoo Brunette 2,09 A
-   238	   1 Cien Nature hoitoaine Argano 1,69 A
-   239	   1 Cien Nature hoitoaine Honey 1,49 A
-   240	   1 Cien Prof. keratin shampoo 1,99 A
-   241	   4 Cien Prof. korjaava hoitoain 1,69 A
-   242	   2 Cien Prof. spa hoitoaine 1,69 A
-   243	   1 Cien Ripsiväri volume black 1,99 A
-   244	   1 Cien Silmänymp.voide 010 2,99 A
-   245	   1 Cien Vartalogeeli Aloe Vera 2,99 A
-   246	   1 Cien Volume Mas./Eyelin. rus 4,99 A
-   247	   1 Cien huulivoide pearl 2,05 A
-   248	   1 Cien ihovoide Classic 2,65 A
-   249	   2 Cien ihovoide Classic 2,99 A
-   250	   1 Cien ihovoide Soft 2,79 A
-   251	   1 Cien ihovoide Soft 2,99 A
-   252	   1 Cien kasvoseerumi Cell. B. 4,55 A
-   253	   1 Cien kasvo-/vart.öljy 3,49 A
-   254	   1 Cien kasvo-/vart.öljy 3,99 A
-   255	   1 Cien kosteuttava kasvonaamio 0,99 A
-   256	   1 Cien kulmakynä ultra brown 1,19 A
-   257	   1 Cien kuoriva puhdistusgeeli 1,29 A
-   258	   1 Cien kynsilakka Berry Passio 1,99 A
-   259	   1 Cien meikkivoide natural san 3,69 A
-   260	   2 Cien nestesaippua mantelikuk 1,65 A
-   261	   2 Cien nestesaip. täyt. gran.o 1,65 A
-   262	   1 Cien nestesaip. täyt. gran.o 1,79 A
-   263	   1 Cien nestesaip. täyt. seljan 1,48 A
-   264	   1 Cien nestesaip. täyt. seljan 1,65 A
-   265	   1 Cien nestesaip. täyt. seljan 1,75 A
-   266	   1 Cien nestesaip. täyt. seljan 1,79 A
-   267	   1 Cien parranajogeeli Sensitiv 2,65 A
-   268	   1 Cien poskipuna Secret Lovers 2,79 A
-   269	   1 Cien puhdistava kasvonaamio 0,99 A
-   270	   1 Cien puuteri medium 2,79 A
-   271	   1 Cien saippua maito & hunaja 0,96 A
-   272	   1 Cien silmänrajauskynä musta 1,19 A
-   273	   1 Cien suihkugeeli Flower Spir 0,89 A
-   274	   1 Cien suihkugeeli Pure Fresh 0,89 A
-   275	   1 Cien suihkug. trop.sum. mint 1,99 A
-   276	   1 Cien suihkusaippua Soothing 1,19 A
-   277	   1 Cocktail-settit0367804 19,99 A
-   278	   1 Col.housut t.sin. 40357095 5,99 A
-   279	   1 Combino Tomaattikastike 1,15 B
-   280	   1 Combino farfalle 1,49 B
-   281	   1 Combino fusilli 0,64 B
-   282	   1 Combino kaurapasta 1,39 B
-   283	   1 Combino kaurapasta 1,59 B
-   284	   1 Combino luomu t.jyväp. Fusil 1,29 B
-   285	   1 Combino luomu t.jyväp. Penne 1,45 B
-   286	   1 Combino luomu t.jyväp. Penne 1,99 B
-   287	   1 Combino pastakastike arrabia 1,45 B
-   288	   1 Combino pastakastike arrabia 1,69 B
-   289	   1 Combino pastakastike oliivi 1,69 B
-   290	   1 Combino penne rigate 0,64 B
-   291	   1 Combino premiumpasta spaghet 0,99 B
-   292	   1 Combino spagetti 0,55 B
-   293	   1 Combino täysjyväspagetti 0,79 B
-   294	   1 Combino täysjyväspagetti 0,95 B
-   295	   1 Combino täysjyväspagetti 1,09 B
-   296	   2 ConfiserieFirenze mantelikak 3,99 B
-   297	   1 Crownfield Choco Shells XXL 3,49 B
-   298	   1 Crownfield Erikoismysli 3,95 B
-   299	   1 Crownfield Hedelmämysli 3,59 B
-   300	   1 Crownfield Hedelmämysli 3,95 B
-   301	   1 Crownfield Mix&Match pun.mar 0,99 B
-   302	   1 Crownfield erikoismysli 2,19 B
-   303	   3 Crownfield erikoismysli 2,95 B
-   304	   3 Crownfield erikoismysli 3,09 B
-   305	   1 Crownfield erikoismysli 3,15 B
-   306	   1 Crownfield granola pähkinä 3,19 B
-   307	   1 Crownfield neomurotyynyt 3,49 B
-   308	   5 Dan Sukker Fariinisokeri 1,35 B
-   309	   4 Dan Sukker Fariinisokeri 1,39 B
-   310	   2 Dan Sukker Fariinisokeri 1,45 B
-   311	   3 Dan Sukker taloussokeri 0,89 B
-   312	   1 Deluxe Premium Tiramisu 3,99 B
-   313	   1 Deluxe chiliöljy 1,49 B
-   314	   1 Deluxe chutney sipuli 1,69 B
-   315	   1 Deluxe mursk. chili öljyssä 2,49 B
-   316	   1 Deluxe pähkinäkori + särkijä 6,99 B
-   317	   1 Del Monte ananasmurska sok.1 1,63 B
-   318	   1 Dentalux hammastahna sensiti 0,99 A
-   319	   1 Dentalux hammastahna sensiti 1,29 A
-   320	   1 Dentalux hammastahna total 0,99 A
-   321	   1 Dentalux hammastahna total 1,29 A
-   322	   1 Dentalux hammastahna yrtti 0,79 A
-   323	   2 Dentalux hammastah. valkaise 0,99 A
-   324	   1 Dentalux hammastah. valkaise 1,19 A
-   325	   2 Dentalux hammastah. valkaise 1,29 A
-   326	   1 Dentalux hammasväliharja ult 2,19 A
-   327	   1 Dentalux suuvesi Care 1,45 A
-   328	   1 Dentalux suuvesi x-tra mint 1,05 A
-   329	   1 Dentalux suuvesi x-tra mint 1,29 A
-   330	   1 Desiline käsidesi 7,49 A
-   331	   1 Digitaalinen ajastinf0400107 3,99 A
-   332	   1 Dulano nakki, kuoreton 0,85 B
-   333	   1 Dulano ohut broilerileikkele 1,59 B
-   334	   1 Ehrmann Maitorahka 0,2% 0,89 B
-   335	   1 Elovena välip.keksi puol.kar 3,19 B
-   336	   1 El Teguito minipepperoni kel 0,69 B
-   337	   1 El Teguito minipepperoni kel 0,99 B
-   338	   1 Emotionali hedelmätikkari 1,49 B
-   339	   1 Eridanous halva kaakao 2,49 B
-   340	   1 Eridanous halva vanilja 2,49 B
-   341	   1 Eridanous tahini hunaja 2,99 B
-   342	   2 Fackelmann Leivontat40367133 2,49 A
-   343	   1 Fackelmann Leivontatt0389728 2,99 A
-   344	   5 Fairglobe ruskea sokeri 1,39 B
-   345	   2 Fairglobe ruskea sokeri 1,79 B
-   346	   5 Fairglobe ruskea sokeri 1,85 B
-   347	   1 Fairtrade Luomu cashewpähkin 3,79 B
-   348	   1 FamilyFresh AloeVera suihkus 1,69 A
-   349	   1 Favorina pääsiäissuklaasekoi 2,39 B
-   350	   1 Favorina pääsiäissuklaasekoi 2,49 B
-   351	   2 Favorina suklaakoristerae 1,99 B
-   352	   1 Favorina suklaakoristerae 2,49 B
-   353	   1 FazerKarlFazer Avec maitosuk 2,69 B
-   354	   1 FazerKarlFazer appels.krokan 1,89 B
-   355	   1 Fazer Dallaspulla 3,96 B --------------- 4 x 0,99
-   356	   1 Fazer Geisha Caramel&Sea sal 1,98 B
-   357	   1 Fazer Geisha suklaapatukka 0,55 B
-   358	   1 Fazer Paahto kaura 0,98 B
-   359	   1 Fazer Paahto kaura 1,15 B
-   360	   1 Fazer Present 11,55 B --------------- 3 x 3,85
-   361	   1 Fazer Puikula Täysjyvär.9kpl 1,99 B
-   362	   3 Fazer Puikula täysjyväruis 1,29 B
-   363	   2 Fazer Puikula täysjyväruis 1,55 B
-   364	   1 Fazer Real täysjyväruisleipä 1,99 B
-   365	   4 Felix Ketsuppi 1,89 B
-   366	   1 Ferrero Nutella 4,23 B
-   367	   1 FinCarr6 maitosuklaa 0,69 B
-   368	   1 FinCarr6 maitosuklaa 0,89 B
-   369	   2 FinCarr6 pähkinämaitosuklaa 0,99 B
-   370	   2 FinCarr6 tummasuklaa hasselp 0,79 B
-   371	   1 FinCarr6 tumma suklaa 0,69 B
-   372	   1 FinCarr6 tumma suklaa 0,89 B
-   373	   1 FinCarr6 tumma suklaa 2,67 B --------------- 3 x 0,89
-   374	   1 FinCarr6 valkoinen suklaa 0,49 B
-   375	   1 FinCarr6 valkoinen suklaa 0,89 B
-   376	   1 FinCarr6 valkoinen suklaa 1,78 B --------------- 2 x 0,89
-   377	   1 FinCarre6M.suk1.Suol.hun.mant 1,89 B
-   378	   2 FinCarre pähkinämaitosuklaa 1,38 B --------------- 2 x 0,69
-   379	   1 FinCarre tumma suklaa 2,97 B --------------- 3 x 0,99
-   380	   1 FinCarr& tummasuklaa hasselp 0,79 B
-   381	   1 FinCarr& valkoinen suklaa 0,89 B
-   382	   1 Findus Vegepuikot 1,48 B
-   383	   1 Finkbräu alkoholiton olut 1,20 B --------------- 3 x 0,40
-   384	   1 Finkbräu alkoholiton olut 1,48 B --------------- 4 x 0,37
-   385	   2 Finkbräu alkoholiton olut 1,60 B --------------- 4 x 0,40
-   386	   2 Finkbräu alkoholiton olut 1,76 B --------------- 4 x 0,44
-   387	   1 Finkbräu olut 2,8% 6-pack 4,02 A
-   388	   1 Fin Carr6 Maitos.Rus.&hassel 1,89 B
-   389	   2 Fin Carr6 maitosuklaa hassel 0,79 B
-   390	   1 Fin Carr6 maitosuklaa hassel 1,58 B --------------- 2 x 0,79
-   391	   2 Fin Carr6 maitosuklaa mantel 1,89 B
-   392	   1 Floralys Talouspaperi,kierrä 1,29 A
-   393	   1 Flora 60% normaalisuolainen 1,19 B
-   394	   1 Flora 60% normaalisuolainen 1,45 B
-   395	   3 Flora & Voi maukas merisuola 2,99 B
-   396	   1 Flora & Voi normaalisuolaine 1,95 B
-   397	   1 Flyingcoose sriracha makea 4,49 B
-   398	   2 Foodin luomu chia-siemen 7,45 B
-   399	   2 Foxtel ihmesieni 1,49 A
-   400	   1 Freshona LuomuPaseerattuTom. 0,95 B
-   401	   1 Freshona Luomu Omenas.makeut 0,99 B
-   402	   1 Freshona herne, pakaste 1,29 B
-   403	  14 Freshona herne, pakaste 1,49 B
-   404	   6 Freshona herne, pakaste 1,55 B
-   405	   4 Freshona herne, pakaste 1,65 B
-   406	   1 Freshona herne, pakaste 1,69 B
-   407	   2 Freshona herne, pakaste 1,75 B
-   408	   1 Freshona herne, pakaste 1,85 B
-   409	   2 Freshona herne, pakaste 1,99 B
-   410	   1 Freshona hienonnettu pinaatt 1,59 B
-   411	   1 Freshona hienonnettu pinaatt 1,85 B
-   412	  19 Freshona keittojuurekset 0,52 B
-   413	   1 Freshona keittojuurekset 0,59 B
-   414	   5 Freshona keittojuurekset 0,68 B
-   415	   4 Freshona keittokasvikset 0,73 B
-   416	   1 Freshona kookosmaito 1,19 B
-   417	   1 Freshona kookosmaito vähäras 1,25 B
-   418	   1 Freshona luomu kikherneet 0,79 B
-   419	   6 Freshona makea maissi 0,89 B
-   420	   4 Freshona makea maissi 0,95 B
-   421	   1 Freshona makea maissi 0,99 B
-   422	   1 Freshona makea maissi 1,09 B
-   423	   2 Freshona makea maissi 1,15 B
-   424	   1 Freshona makea maissi 1,39 B
-   425	   8 Freshona musta kivetön oliiv 0,89 B
-   426	   2 Freshona musta kivetön oliiv 0,95 B
-   427	   3 Freshona musta kivetön oliiv 1,09 B
-   428	   2 Freshona musta kivetön oliiv 1,15 B
-   429	   1 Freshona musta kivetön oliiv 1,25 B
-   430	   1 Freshona musta kivetön oliiv 1,39 B
-   431	   3 Freshona paseerattu tomaatti 0,57 B
-   432	   2 Freshona paseerattu tomaatti 0,59 B
-   433	   1 Freshona puutarhan vihann. 2,05 B
-   434	   1 Freshona vihreä papu 1,59 B
-   435	   1 Fusilli Tricolore 1,39 B
-   436	   1 Galiameloni 3,97 B --------------- 1,048 kg x 3,79 EUR/kg
-   437	   1 Galiameloni irto 1,65 B --------------- 0,872 kg x 1,89 EUR/kg
-   438	   1 Galiameloni irto 1,67 B --------------- 0,988 kg x 1,69 EUR/kg
-   439	   1 Galiameloni irto 2,19 B --------------- 1,298 kg x 1,69 EUR/kg
-   440	   1 Galiameloni irto 2,40 B --------------- 0,830 kg x 2,89 EUR/kg
-   441	   1 Galiameloni irto 2,88 B --------------- 1,448 kg x 1,99 EUR/kg
-   442	   1 Galiameloni irto 2,98 B --------------- 1,930 kg x 2,89 EUR/kg
-   443	   1 Galiameloni irto 2,99 B --------------- 1,034 kg x 2,89 EUR/kg
-   444	   1 Galiameloni irto 3,25 B --------------- 1,124 kg x 2,89 EUR/kg
-   445	   1 Galiameloni irto 3,47 B --------------- 1,162 kg x 2,99 EUR/kg
-   446	   1 Gelatelli j.-kastike, suklaa 1,89 B
-   447	   1 Gelatelli kasvirasvajäätelö 1,99 B
-   448	   3 GoldenSun basmatiriisi 2,25 B
-   449	   1 GoldenSun luomu bulgur 1,99 B
-   450	   1 GoldenSun luomu spelttivehnä 1,99 B
-   451	   1 GoldenSun riisi parboiled 1,19 B
-   452	   2 GoldenSun tumma pitkäjyv.rii 1,49 B
-   453	   2 Golden Sun Basmatiriisi 2,75 B
-   454	   1 Golden Sun Basmatiriisi 3,29 B
-   455	   1 Golden Sun Riisi 1,75 B
-   456	   1 Goody Corn Flakes 0,98 B
-   457	   1 Goody Corn Flakes 1,30 B
-   458	   2 Goody Corn Flakes 1,45 B
-   459	   1 Goody Corn Flakes 1,99 B
-   460	   1 Granaattiomena 1,15 B --------------- 0,236 kg x 4,89 EUR/kg
-   461	   1 Granaattiomena 1,17 B --------------- 0,292 kg x 3,99 EUR/kg
-   462	   1 Granaattiomena 1,28 B --------------- 0,320 kg x 3,99 EUR/kg
-   463	   1 Granaattiomena 1,28 B --------------- 0,400 kg x 3,19 EUR/kg
-   464	   1 Granaattiomena 2,05 B --------------- 0,686 kg x 2,99 EUR/kg
-   465	   1 Granaattiomena irto 1,00 B --------------- 0,232 kg x 4,29 EUR/kg
-   466	   1 Granaattiomena irto 1,12 B --------------- 0,230 kg x 4,89 EUR/kg
-   467	   1 Granaattiomena irto 1,46 B --------------- 0,488 kg x 2,99 EUR/kg
-   468	   1 Granaattiomena irto 1,76 B --------------- 0,590 kg x 2,99 EUR/kg
-   469	   1 Granaattiomena irto 1,94 B --------------- 0,648 kg x 2,99 EUR/kg
-   470	   1 Granaattiomena irto 2,02 B --------------- 0,674 kg x 2,99 EUR/kg
-   471	   1 Granaattiomena irto 2,04 B --------------- 0,584 kg x 3,49 EUR/kg
-   472	   1 Granaattiomena irto 2,83 B --------------- 8,568 kg x 4,99 EUR/kg
-   473	   1 Granaattiomena irto 3,40 B --------------- 0,568 kg x 5,99 EUR/kg
-   474	   1 Grillimaisteri kartonkipilli 0,99 A
-   475	   1 Grillimaisteri sipulirouhe 0,75 B
-   476	   1 Grillim. Raastesa. Coleslaw 1,99 B
-   477	   1 Grillipaprika Padron 200g 1,39 B
-   478	   1 Halloween pasta 1,69 B
-   479	   1 Halloween perunasn. sour cre 1,39 B
-   480	   1 Harvest Basket Ranskal. peru 1,99 B
-   481	   2 Harvest Basket ranskanperuna 1,19 B
-   482	   1 Harvest Basket ranskanperuna 1,25 B
-   483	   1 Hasselpähkinä paahdettu 2,99 B
-   484	   1 Hatherwood minttukuula 1,99 B
-   485	   1 Head&Shoulders AppleFresh 6,29 A
-   486	   2 Head&Shoulders Citrus Fresh 3,29 A
-   487	   1 Head&Shoulders Dry Scalp Car 3,29 A
-   488	   1 Heij.käsivar.tas./vyt0d376255 3,99 A
-   489	   1 Henkselikassi 0,87 A --------------- 3 x 0,29
-   490	   1 Henkselikassi, 80% Recycling 0,25 A
-   491	   2 Herkkusieni 250g 1,49 B
-   492	  12 Herkkusieni 250g 1,59 B
-   493	   5 Herkkusieni 250g 1,79 B
-   494	   1 Herkkusieni 250g 1,99 B
-   495	   3 Herkkusieni ruskea 250g 1,79 B
-   496	   1 Hiusharjaf0353058 2,49 A
-   497	   1 Hunajameloni irto 2,39 B --------------- 1,412 kg x 1,69 EUR/kg
-   498	   1 Hunajameloni irto 3,63 B --------------- 1,656 kg x 2,19 EUR/kg
-   499	   1 Huopatassusettiff0360343 1,49 A
-   500	   1 Höyrypesuri 3vff0353009 24,99 A
-   501	   1 Inkivääri luomu 1,83 B --------------- 0,238 kg x 7,69 EUR/kg
-   502	   1 Inkivääri luomu 1,92 B --------------- 0,256 kg x 7,49 EUR/kg
-   503	   1 Inkivääri luomu 1,96 B --------------- 0,262 kg x 7,49 EUR/kg
-   504	   1 Inkivääri luomu 2,18 B --------------- 0,284 kg x 7,69 EUR/kg
-   505	   1 Inkivääri luomu 2,47 B --------------- 0,434 kg x 5,69 EUR/kg
-   506	   1 Inkivääri luomu 2,78 B --------------- 0,352 kg x 7,89 EUR/kg
-   507	   1 Italiamo Tiramisu 3,99 B
-   508	   1 Italiamo antipasti kuiv. tom 2,49 B
-   509	   1 Italiamo lasagne naudanliha 2,29 B
-   510	   1 Italiamo lasagne porsaanliha 2,29 B
-   511	   1 Italiamo pizza arrabiata 2,79 B
-   512	   1 Italiamo suklaa-vaniljajäät. 3,49 B
-   513	   4 Jauhoinen peruna 2kg 1,45 B
-   514	   2 Jauhoinen peruna 2kg 1,49 B
-   515	   1 Jetgum täysxylipurkka fruit 1,09 B
-   516	   1 Jetgum täysxylipurkka fruit 1,19 B
-   517	   4 Jouluaitta glögijuoma 1,15 B
-   518	   1 Jouluaitta glögijuoma 1,25 B
-   519	   1 Jouluaitta joulumakkara 3,19 B
-   520	   1 Jouluaitta lakt. torttutaiki 1,35 B
-   521	   1 Jouluaitta lakt. torttutaiki 1,75 B
-   522	   1 Jouluaitta piparitaikina lak 1,45 B
-   523	   2 Jouluaitta piparkakku 1,09 B
-   524	   1 Jouluaitta piparkakku 1,25 B
-   525	   1 Jouluasusteff0363392 2,99 A
-   526	   1 Jouluomena irto 1,78 B --------------- 1,818 kg x 8,98 EUR/kg
-   527	   1 Jouluomena irto 1,95 B --------------- 1,090 kg x 1,79 EUR/kg
-   528	   1 Jouluomena irto 3,17 B --------------- 1,624 kg x 1,95 EUR/kg
-   529	   2 J.D.Gross Arriba suklaa 85% 1,19 B
-   530	   2 J.D.Gross Arriba suklaa 85% 1,49 B
-   531	   1 J.D.Gross Arriba suklaa 85% 1,59 B
-   532	   1 J.D.Gross Arriba suklaa 85% 1,69 B
-   533	   1 J.D.Gross Valk.sukl.vad.karh 1,69 B
-   534	   1 J.D.Gross tumma suklaa app-m 1,19 B
-   535	   2 J.D.Gross tumma suklaa chili 2,38 B --------------- 2 x 1,19
-   536	   5 J.D.Gross tumma suklaa karam 1,19 B
-   537	   2 J.D.Gross tumma suklaa karam 1,29 B
-   538	   2 J.D.Gross tumma suklaa karam 1,49 B
-   539	   4 J.D.Gross tumma suklaa vadel 1,19 B
-   540	   2 J.D.Gross tumma suklaa vadel 1,29 B
-   541	   3 J.D.Gross tumma suklaa vadel 1,39 B
-   542	   2 J.D.Gross tumma suklaa vadel 1,69 B
-   543	   1 J.D.Gross tumma sukl. mansik 1,19 B
-   544	   1 J.D.Gross tumma sukl. pistaa 1,19 B
-   545	   1 J.D. Gross mous.sukl.has.päh 1,99 B
-   546	   2 J.D. Gross suklaa Amazonas 1,19 B
-   547	   1 J.D. Gross suklaa Ecuador 1,19 B
-   548	   2 J.D. Gross suklaa Ecuador 1,49 B
-   549	   1 J.D. Gross-Tumma suklaa 95% 1,79 B
-   550	   1 J.D. Gross-Tumma suklaa 95% 2,38 B --------------- 2 x 1,19
-   551	   1 Jääsalaattipussi 100g 0,69 B
-   552	   1 Jääsalaattipussi 100g 0,89 B
-   553	   3 Jääsalaattipussi 100g 1,19 B
-   554	   1 Jääsalaattipussi 100g 1,29 B
-   555	   1 Jääsalaattipussi 100g 1,39 B
-   556	   1 Jääsalaatti 1,19 B
-   557	   2 Jääsalaatti 1,29 B
-   558	   1 Kaki/Persimon 0,39 B --------------- 0,216 kg x 1,79 EUR/kg
-   559	   1 Kaki/Persimon irto 0,60 B --------------- 0,216 kg x 2,79 EUR/kg
-   560	   1 KanamestariKananpaistis.huna 3,99 B
-   561	   1 Kanamestari KananSisäf.fajit 5,29 B
-   562	   1 Kanamestari Kanan sisäf. yrt 5,79 B
-   563	   1 Kanamestari kanan filees.pip 2,45 B
-   564	   1 Kanamestari kanan filees. 2,45 B
-   565	   1 Kanamestari kanan filees. 2,99 B
-   566	   1 Kanamestari kanan o-lei. v.- 3,49 B
-   567	   1 Kanamestari paistil. pintanm. 4,89 B
-   568	   1 Kananugetit fileestä classic 3,99 B
-   569	   1 KaniaTimjamiZipLock -pussiss 0,89 B
-   570	  15 Kania Himalajan vuorisuola 1,99 B
-   571	   1 Kania Himalajan vuorisuola 2,29 B
-   572	   6 Kania Himalajan vuorisuola 2,59 B
-   573	   2 Kania Jauhettu juustokumina 0,79 B
-   574	   1 Kania Kaneli 1,29 B
-   575	   1 Kania Kaneli jauhettu 1,25 B
-   576	   1 Kania Kurkuma 1,29 B
-   577	   1 Kania Laakerinlehti 0,69 B
-   578	   2 Kania Luomuketsuppi 1,99 B
-   579	   1 Kania Maustekastike chili 1,79 B
-   580	   1 Kania Mayochup 1,99 B
-   581	   2 Kania Oregano 1,19 B
-   582	   4 Kania Oregano 1,29 B
-   583	   1 Kania chilimauste 2,29 B
-   584	   1 Kania chilimauste 2,59 B
-   585	   1 Kania curry 1,19 B
-   586	   2 Kania curry-nuudeli 1,26 B --------------- 3 x 0,42
-   587	   2 Kania herkkumajoneesi 1,63 B
-   588	   1 Kania herkkumajoneesi 1,66 B
-   589	   1 Kania herkkumajoneesi 2,29 B
-   590	   3 Kania kaneli 1,19 B
-   591	   1 Kania kardemumma 0,42 B
-   592	  10 Kania kardemumma 0,44 B
-   593	  12 Kania kardemumma 0,45 B
-   594	   5 Kania kardemumma 0,84 B --------------- 2 x 0,42
-   595	   4 Kania kardemumma 0,88 B --------------- 2 x 0,44
-   596	   4 Kania kardemumma 0,90 B --------------- 2 x 0,45
-   597	   1 Kania kardemumma 1,38 B --------------- 2 x 0,69
-   598	   5 Kania kokonainen mustapippur 0,92 B
-   599	   1 Kania kokonainen mustapippur 1,02 B
-   600	   1 Kania majoneesi paprika 1,89 B
-   601	   1 Kania majoneesi paprika 1,95 B
-   602	   1 Kania maustepippuri Zip lock 0,43 B
-   603	   2 Kania mustapippuri, jauhettu 1,29 B
-   604	   1 Kania mustapippuri, jauhettu 1,39 B
-   605	   2 Kania oregano 0,99 B
-   606	   6 Kania pizzamauste 0,39 B
-   607	   1 Kania pizzamauste 0,49 B
-   608	   1 Kania pizzamauste 0,59 B
-   609	   1 Kania premium majoneesi 1,67 B
-   610	   2 Kania rosmariini Zip lock 0,49 B
-   611	   1 Kania rosmariini Zip lock 0,98 B --------------- 2 x 0,49
-   612	   1 Kania salaatinkastike ranska 1,89 B
-   613	   4 Kania salaattimajoneesi 29% 1,65 B
-   614	   3 Kania salaattimajoneesi 29% 1,67 B
-   615	   2 Kania salaattimajoneesi 29% 1,75 B
-   616	   1 Kania suolamylly yrtti 2,59 B
-   617	   2 Kania tomaattiketsuppi 0,49 B
-   618	   1 Kania valkosipulirouhe 1,19 B
-   619	   2 Kania valkosipulirouhe 1,39 B
-   620	   1 Karlens grape long drink 2,01 A
-   621	   1 Karlens karpalo long drink 2,21 A
-   622	   1 KartanonMurea Kalkkunaleikke 3,35 B
-   623	   1 Kartanonsalaatti 1,29 B
-   624	   1 Kartanonsalaatti 1,39 B
-   625	   4 Kartanonsalaatti 1,49 B
-   626	   1 Kartanon kalkkunaleike 2,79 B
-   627	   1 Kartanon pepperoni 1,99 B
-   628	   1 Keraaminen vuokat0340037 5,99 A
-   629	   1 Keräkaali 1,09 B --------------- 0,952 kg x 1,15 EUR/kg
-   630	   1 Keräkaali irto 0,43 B --------------- 8,568 kg x 8,75 EUR/kg
-   631	   1 Keräkaali irto 0,66 B --------------- 0,778 kg x 0,85 EUR/kg
-   632	   1 Keräkaali irto 0,69 B --------------- 0,872 kg x 0,79 EUR/kg
-   633	   1 Keräkaali irto 0,70 B --------------- 0,736 kg x 0,95 EUR/kg
-   634	   1 Keräkaali irto 0,97 B --------------- 0,922 kg x 1,05 EUR/kg
-   635	   1 Keräkaali irto 1,07 B --------------- 1,122 kg x 0,95 EUR/kg
-   636	   1 Keräkaali irto 1,08 B --------------- 1,088 kg x 8,99 EUR/kg
-   637	   1 Keräkaali irto 1,27 B --------------- 1,070 kg x 1,19 EUR/kg
-   638	   1 Keräkaali luomu 2,52 B --------------- 0,842 kg x 2,99 EUR/kg
-   639	   1 Keski Paahtorinkeli karp.-si 1,79 B
-   640	   1 Kestokassi 1,99 A
-   641	   1 Kesäkassi salaatti&yrtti 3kp 3,29 B
-   642	   1 Kesäkurpitsa 0,88 B --------------- 0,680 kg x 1,29 EUR/kg
-   643	   1 Kesäkurpitsa 2,05 B --------------- 0,586 kg x 3,49 EUR/kg
-   644	   1 Kesäkurpitsa irto 0,63 B --------------- 0,354 kg x 1,79 EUR/kg
-   645	   1 Kesäkurpitsa irto 0,76 B --------------- 8,426 kg x 1,79 EUR/kg
-   646	   1 Kesäkurpitsa irto 0,97 B --------------- 0,512 kg x 1,89 EUR/kg
-   647	   1 Kesäkurpitsa irto 1,02 B --------------- 0,428 kg x 2,39 EUR/kg
-   648	   1 Kesäkurpitsa irto 1,04 B --------------- 0,484 kg x 2,15 EUR/kg
-   649	   1 Kesäkurpitsa irto 1,11 B --------------- 0,654 kg x 1,69 EUR/kg
-   650	   1 Kesäkurpitsa irto 1,31 B --------------- 0,550 kg x 2,39 EUR/kg
-   651	   1 Kesäkurpitsa irto 1,39 B --------------- 0,464 kg x 2,99 EUR/kg
-   652	   1 Kesäkurpitsa irto 1,48 B --------------- 0,572 kg x 2,59 EUR/kg
-   653	   1 Kesäkurpitsa irto 1,54 B --------------- 0,644 kg x 2,39 EUR/kg
-   654	   1 Kesäkurpitsa irto 1,66 B --------------- 8,462 kg x 3,59 EUR/kg
-   655	   1 Kesäkurpitsa irto 1,98 B --------------- 0,864 kg x 2,29 EUR/kg
-   656	   1 Kesäkurpitsa irto 2,21 B --------------- 0,792 kg x 2,79 EUR/kg
-   657	   1 Kesäperuna irto 0,57 B --------------- 1,034 kg x 8,55 EUR/kg
-   658	   1 Kesäperuna irto 0,85 B --------------- 1,086 kg x 8,78 EUR/kg
-   659	   1 Kesäperuna pesty 1,59 B --------------- 1,676 kg x 0,95 EUR/kg
-   660	   1 Kevytmaito 1,78 B --------------- 2 x 0,89
-   661	   2 Kevytmaito 2,67 B --------------- 3 x 0,89
-   662	   3 Kevytmaito 3,56 B --------------- 4 x 0,89
-   663	   2 Kevätsipulinippu 100g 1,99 B
-   664	   1 Kevätsipulinippu 100g 2,29 B
-   665	   1 Kevätsipulinippu 100g 2,39 B
-   666	   1 Kierrepulla appelsiini tuore 2,97 B --------------- 3 x 0,99
-   667	   1 Kierrepulla toffee-puolukka 2,97 B --------------- 3 x 0,99
-   668	   1 Kiivimarja 125g 2,19 B
-   669	   2 Kiivi 1kg 2,99 B
-   670	   2 Kiivi 500g 1,85 B
-   671	   1 Kiivi 500g 1,99 B
-   672	   1 Kiivi 500g 2,09 B
-   673	   1 Kiivi irto 0,84 B --------------- 0,242 kg x 3,49 EUR/kg
-   674	   1 Kiivi irto 2,31 B --------------- 0,580 kg x 3,99 EUR/kg
-   675	   1 Kirsikkatomaatti 250g 0,99 B
-   676	   1 Kirsikkatomaatti 250g 1,19 B
-   677	   1 Kirsikkatomaatti 250g 1,25 B
-   678	   1 Kirsikkatomaatti 250g 1,49 B
-   679	   1 Kirsikkatomaatti 250g ulkoma 0,95 B
-   680	   1 Kirsikka irto 1,37 B --------------- 0,198 kg x 6,90 EUR/kg
-   681	   1 Klementiini 1kg 0,99 B
-   682	   1 Klementiini 1kg 1,69 B
-   683	   1 Klementiini 1kg 2,19 B
-   684	   1 Klementiini irto 1,14 B --------------- 8,676 kg x 1,69 EUR/kg
-   685	   1 Klementiini irto 2,50 B --------------- 1,396 kg x 1,79 EUR/kg
-   686	   1 Knightsbridge piaparminttute 1,36 B
-   687	   1 Knorr kasvisliemikuutio 1,29 B
-   688	   1 Koiramäki yllätysmuna 0,85 B
-   689	   1 Kontaktimuovi40345460 1,99 A
-   690	   1 Korianteri 1,99 B
-   691	   1 Korianteri 3,98 B --------------- 2 x 1,99
-   692	   1 Korianteri ruukussa 1,19 B
-   693	  22 Korianteri ruukussa 1,39 B
-   694	   3 Korianteri ruukussa 1,45 B
-   695	   5 Korianteri ruukussa 1,49 B
-   696	   2 Korianteri ruukussa 2,78 B --------------- 2 x 1,39
-   697	   1 Korianteri ruukussa 2,90 B --------------- 2 x 1,45
-   698	   1 Korttimaksu 11,19
-   699	   1 Korttimaksu 40,35
-   700	   1 Korttimaksu 46,83
-   701	   1 Korttimaksu 63,86
-   702	   1 Korttimaksu 66,67
-   703	   1 Korttimaksu 71,14
-   704	   1 Korttimaksu 71,71
-   705	   1 Korttimaksu 76,02
-   706	   1 Korttimaksu 77,83
-   707	   1 Korttimaksu 80,27
-   708	   1 Korttimaksu 82,76
-   709	   1 Korttimaksu 83,38
-   710	   1 Korttimaksu 84,57
-   711	   1 Korttimaksu 86,98
-   712	   1 Korttimaksu 88,03
-   713	   1 Korttimaksu 88,82
-   714	   1 Korttimaksu 89,76
-   715	   1 Korttimaksu 89,95
-   716	   1 Korttimaksu 90,07
-   717	   1 Korttimaksu 91,09
-   718	   1 Korttimaksu 91,16
-   719	   1 Korttimaksu 94,94
-   720	   1 Korttimaksu 96,40
-   721	   1 Korttimaksu 96,58
-   722	   1 Korttimaksu 97,30
-   723	   1 Korttimaksu 97,74
-   724	   1 Korttimaksu 98,17
-   725	   1 Korttimaksu 104,09
-   726	   1 Korttimaksu 105,84
-   727	   1 Korttimaksu 108,78
-   728	   1 Korttimaksu 110,89
-   729	   1 Korttimaksu 111,67
-   730	   1 Korttimaksu 114,19
-   731	   1 Korttimaksu 116,55
-   732	   1 Korttimaksu 118,50
-   733	   1 Korttimaksu 118,93
-   734	   1 Korttimaksu 120,35
-   735	   1 Korttimaksu 122,67
-   736	   1 Korttimaksu 123,03
-   737	   1 Korttimaksu 123,56
-   738	   1 Korttimaksu 125,20
-   739	   1 Korttimaksu 127,04
-   740	   1 Korttimaksu 127,55
-   741	   1 Korttimaksu 131,66
-   742	   1 Korttimaksu 134,29
-   743	   1 Korttimaksu 134,80
-   744	   1 Korttimaksu 137,52
-   745	   1 Korttimaksu 138,07
-   746	   1 Korttimaksu 146,94
-   747	   1 Korttimaksu 163,40
-   748	   1 Korttimaksu 180,73
-   749	   1 Korttimaksu 185,19
-   750	   1 Korttimaksu 186,44
-   751	   1 Korvapuusti 0,97 B
-   752	   1 Korvapuusti 2,37 B --------------- 3 x 0,79
-   753	   1 Korvapuusti 3,88 B --------------- 4 x 0,97
-   754	   1 Kotimainen krysanteemi 2,59 A
-   755	   1 Kotimainen omena irto 6,22 B --------------- 1,560 kg x 3,99 EUR/kg
-   756	   1 Kotimainen tarhakrysanteemi 3,99 A
-   757	   1 Kotimainen viherkasvi 2,00 A
-   758	  10 Kot-Kot Vapaan kanan kananmu 1,45 B
-   759	   8 Kot-Kot Vapaan kanan kananmu 2,09 B
-   760	   1 Kot-Kot Vapaan kanan kananmu 2,55 B
-   761	   1 Kot-Kot Vapaan kanan kananmu 3,49 B
-   762	   2 Kot-Kot vapaan kanan kananmu 2,09 B
-   763	   3 Kot-Kot vapaan kanan kananmu 2,49 B
-   764	   1 Kukkakaali 1,90 B --------------- 0,530 kg x 3,59 EUR/kg
-   765	   1 Kukkakaali 3,70 B --------------- 1,030 kg x 3,59 EUR/kg
-   766	   1 Kukkakaali irto 1,31 B --------------- 0,488 kg x 2,69 EUR/kg
-   767	   1 Kukkakaali irto 1,61 B --------------- 0,558 kg x 2,89 EUR/kg
-   768	   1 Kukkakaali irto 1,83 B --------------- 0,680 kg x 2,69 EUR/kg
-   769	   1 Kukkakaali irto 1,87 B --------------- 0,648 kg x 2,89 EUR/kg
-   770	   1 Kukkakaali irto 2,16 B --------------- 0,638 kg x 3,39 EUR/kg
-   771	   1 Kukkakaali irto 2,18 B --------------- 0,624 kg x 3,49 EUR/kg
-   772	   1 Kukkakaali irto 2,41 B --------------- 0,966 kg x 2,49 EUR/kg
-   773	   1 Kukkakaali irto 2,42 B --------------- 0,978 kg x 2,49 EUR/kg
-   774	   1 Kukkakaali irto 2,64 B --------------- 1,226 kg x 2,15 EUR/kg
-   775	   1 Kukkakaali irto 2,65 B --------------- 0,986 kg x 2,69 EUR/kg
-   776	   1 Kukkakaali irto 2,77 B --------------- 0,958 kg x 2,89 EUR/kg
-   777	   1 Kukkakaali irto 3,05 B --------------- 0,928 kg x 3,29 EUR/kg
-   778	   1 Kukkakaali irto 3,20 B --------------- 0,974 kg x 3,29 EUR/kg
-   779	   1 Kukkakaali irto 3,32 B --------------- 0,980 kg x 3,39 EUR/kg
-   780	   1 Kukkakaali irto 3,97 B --------------- 1,208 kg x 3,29 EUR/kg
-   781	   1 Kuljanka punaherukkahyytelö 1,49 B
-   782	   6 Kultamuna VapaanKananKananmu 1,89 B
-   783	   2 Kultamuna vapaan kanan munal 2,59 B
-   784	   1 Kuntoilunauhasetti 340373955 7,99 A
-   785	   1 Kurkku Suomi 0,39 B --------------- 0,392 kg x 0,99 EUR/kg
-   786	   1 Kurkku Suomi 0,50 B --------------- 0,386 kg x 1,29 EUR/kg
-   787	   1 Kurkku Suomi 0,52 B --------------- 0,434 kg x 1,19 EUR/kg
-   788	   1 Kurkku Suomi 0,58 B --------------- 0,388 kg x 1,49 EUR/kg
-   789	   1 Kurkku Suomi 0,63 B --------------- 0,456 kg x 1,39 EUR/kg
-   790	   1 Kurkku Suomi 0,71 B --------------- 0,378 kg x 1,89 EUR/kg
-   791	   1 Kurkku Suomi 0,76 B --------------- 0,362 kg x 2,809 EUR/kg
-   792	   1 Kurkku Suomi 0,79 B --------------- 0,346 kg x 2,29 EUR/kg
-   793	   1 Kurkku Suomi 0,80 B --------------- 0,410 kg x 1,95 EUR/kg
-   794	   1 Kurkku Suomi 0,82 B --------------- 0,316 kg x 2,59 EUR/kg
-   795	   1 Kurkku Suomi 0,83 B --------------- 0,558 kg x 1,49 EUR/kg
-   796	   1 Kurkku Suomi 0,86 B --------------- 8,388 kg x 2,79 EUR/kg
-   797	   1 Kurkku Suomi 0,87 B --------------- 8,322 kg x 2,69 EUR/kg
-   798	   1 Kurkku Suomi 0,91 B --------------- 0,338 kg x 2,69 EUR/kg
-   799	   1 Kurkku Suomi 0,93 B --------------- 0,312 kg x 2,99 EUR/kg
-   800	   1 Kurkku Suomi 0,99 B --------------- 0,524 kg x 1,89 EUR/kg
-   801	   1 Kurkku Suomi 1,03 B --------------- 0,378 kg x 2,79 EUR/kg
-   802	   1 Kurkku Suomi 1,04 B --------------- 0,348 kg x 2,99 EUR/kg
-   803	   1 Kurkku Suomi 1,13 B --------------- 0,710 kg x 1,59 — EUR/kg
-   804	   1 Kurkku Suomi 1,15 B --------------- 0,552 kg x 2,89 EUR/kg
-   805	   1 Kurkku Suomi 1,16 B --------------- 0,352 kg x 3,29 EUR/kg
-   806	   1 Kurkku Suomi 1,22 B --------------- 0,372 kg x 3,29 EUR/kg
-   807	   1 Kurkku Suomi 1,22 B --------------- 0,582 kg x 2,89 EUR/kg
-   808	   1 Kurkku Suomi 1,22 B --------------- 0,614 kg x 1,99 EUR/kg
-   809	   1 Kurkku Suomi 1,32 B --------------- 0,662 kg x 1,99 EUR/kg
-   810	   1 Kurkku Suomi 1,38 B --------------- 0,374 kg x 3,69 EUR/kg
-   811	   1 Kurkku Suomi 1,40 B --------------- 0,742 kg x 1,89 EUR/kg
-   812	   1 Kurkku Suomi 1,42 B --------------- 8,366 kg x 3,89 EUR/kg
-   813	   1 Kurkku Suomi 1,48 B --------------- 8,412 kg x 3,59 EUR/kg
-   814	   1 Kurkku Suomi 1,52 B --------------- 0,508 kg x 2,99 EUR/kg
-   815	   1 Kurkku Suomi 1,59 B --------------- 0,728 kg x 2,19 EUR/kg
-   816	   1 Kurkku Suomi 1,77 B --------------- 0,634 kg x 2,79 EUR/kg
-   817	   1 Kurkku Suomi 1,95 B --------------- 1,224 kg x 1,59 EUR/kg
-   818	   1 Kurkku Suomi 1,98 B --------------- 0,620 kg x 3,19 EUR/kg
-   819	   1 Kurkku Suomi 2,04 B --------------- 0,682 kg x 2,99 EUR/kg
-   820	   1 Kurkku Suomi 2,10 B --------------- 0,448 kg x 4,69 EUR/kg
-   821	   1 Kurkku Suomi 2,17 B --------------- 0,660 kg x 3,29 EUR/kg
-   822	   1 Kurkku Suomi 2,28 B --------------- 8,716 kg x 3,19 EUR/kg
-   823	   1 Kurkku Suomi 2,52 B --------------- 0,872 kg x 2,89 EUR/kg
-   824	   1 Kurkku Suomi 2,57 B --------------- 0,806 kg x 3,19 EUR/kg
-   825	   1 Kurkku Suomi 2,58 B --------------- 0,682 kg x 3,79 EUR/kg
-   826	   1 Kurkku Suomi 2,62 B --------------- 0,822 kg x 3,19 EUR/kg
-   827	   1 Kurkku Suomi 3,06 B --------------- 0,638 kg x 4,79 EUR/kg
-   828	   1 Kurkku Suomi 3,34 B --------------- 0,728 kg x 4,59 EUR/kg
-   829	   1 Kurkku Suomi 3,72 B --------------- 0,776 kg x 4,79 EUR/kg
-   830	   1 Kurkku Suomi 3,83 B --------------- 8,852 kg x 4,49 EUR/kg
-   831	   1 Kurkku ulkomaa irto 1,35 B --------------- 0,398 kg x 3,39 EUR/kg
-   832	   1 Kurkku, Suomi 0,64 B --------------- 0,380 kg x 1,69 EUR/kg
-   833	   1 Kurkku, Suomi 0,90 B --------------- 0,336 kg x 2,69 EUR/kg
-   834	   1 Kurkku, Suomi 1,13 B --------------- 0,438 kg x 2,59 EUR/kg
-   835	   1 LPS Palasaippua laventeli 0,99 A
-   836	   1 LPS Palasaippua ruusu 0,99 A
-   837	   1 LU Bastogne 2,19 B
-   838	   1 Lahjapaperi 10 mt0338375 1,67 A
-   839	   1 LaitilanKanatarhaVap.K.kanan 2,59 B
-   840	   1 LaitilanKanatarhaVap.kananm. 2,59 B
-   841	   1 LaitilanKanatarhaVap.kananm. 3,29 B
-   842	   1 Lasten tietokirjaf0365224 3,99 C
-   843	   1 Led-filamenttilamppuf8330770 2,39 A
-   844	   1 Led-sisävalosar. 20L140366214 2,99 A
-   845	   1 Led-sisävalosar. 20140366214 2,99 A
-   846	   1 Lehtikaali 100g 1,49 B
-   847	   2 Lehtikaali 100g 1,99 B
-   848	   5 Lehtikaali 100g 2,49 B
-   849	   4 Lehtikaali 100g 2,69 B
-   850	   2 Lehtikaali 100g 2,85 B
-   851	   1 Lehtikaali 200g 1,69 B
-   852	   2 Lehtikaali 200g 1,89 B
-   853	   1 Lehtikaali 200g, Suomi 0,99 B
-   854	   2 Lehtikaali 200g, Suomi 2,19 B
-   855	   1 LeipäAitta Kaurapalat 9kpl 1,55 B
-   856	   1 LeipäAitta Kaurapalat 9kpl 1,65 B
-   857	   1 LeipäAitta Kaurapalat 9kpl 1,99 B
-   858	   1 LeipäAitta Pehm. kaurap. 8kp 1,65 B
-   859	   1 LeipäAitta Setsuuriviipaleet 1,89 B
-   860	   3 LeipäAitta Valkosipulisämpyl 1,79 B
-   861	   1 LeipäAitta juustosämpylät 5k 1,89 B
-   862	   1 LeipäAitta juustosämpylät 5k 2,49 B
-   863	   1 LeipäAitta kauraleipä viipal 1,79 B
-   864	   1 LeipäAitta kaurapalat 6 kpl 1,19 B
-   865	   1 LeipäAitta maalaissämpylät 2,09 B
-   866	   2 LeipäAitta maalaissämpylät 2,19 B
-   867	   1 LeipäAitta moniviljaleipä 2,19 B
-   868	   2 LeipäAitta ohrarieskapalat8k 1,39 B
-   869	   1 LeipäAitta pullaviipaleet 2,09 B
-   870	   3 LeipäAitta retkieväs 0,49 B
-   871	   2 LeipäAitta retkieväs 0,59 B
-   872	   1 LeipäAitta retkieväs 0,75 B
-   873	   1 LeipäAitta retkieväs 0,79 B
-   874	   1 LeipäAitta retkieväs 0,98 B --------------- 2 x 0,49
-   875	  16 LeipäAitta ruispalat 12 kpl 1,24 B
-   876	   1 LeipäAitta ruispalat 12 kpl 1,25 B
-   877	   1 Lidl-pantti 1,51 pullo 0,40 A
-   878	   1 Lidl-pantti PET 0,51 pullo 0,20 A
-   879	   1 Lihapasteija 1,65 B --------------- 3 x 0,55
-   880	   1 LordNelsonVihreä tee app.-in 0,85 B
-   881	   1 LordNelsonVihreä tee app.-in 0,89 B
-   882	   1 LordNelsonVihreä tee app.-in 0,95 B
-   883	   2 LordNelsonVihreä tee vanilja 0,89 B
-   884	   1 LordNelson Engl. Breakfast-t 1,29 B
-   885	   1 LordNelson Rooibos Mango Cha 0,99 B
-   886	   3 LordNelson Rooibos Mango Cha 1,79 B
-   887	   1 LordNelson rooibos toffee 1,19 B
-   888	   3 LordNelson vihreä tee 0,99 B
-   889	   9 LordNelson vihreä tee app-in 0,99 B
-   890	   2 LordNelson vihreä tee sitruu 0,99 B
-   891	   5 LordNelson vihreä tee vanilj 0,99 B
-   892	   1 Lord NelsonVihreäteesitruuna 1,35 B
-   893	   1 Lord NelsonVirheä tee natur 0,95 B
-   894	   2 Lord NelsonVirheä tee sitruu 0,89 B
-   895	   1 Lord NelsonVirheä tee sitruu 0,99 B
-   896	   1 Lord NelsonVirheä tee sitruu 1,09 B
-   897	   2 Lord Nelson Musta tee Masala 1,29 B
-   898	   1 Lord Nelson Musta tee Masala 1,39 B
-   899	   2 Lord Nelson Musta tee Masala 1,69 B
-   900	   1 Lord Nelson Musta tee.rap.va 1,29 B
-   901	   1 Lord Nelson luomu yrttitee J 1,79 B
-   902	   1 LovilioGranaPadano 12kk raas 2,99 B
-   903	   1 Lovilio Parmigiano lastu 2,89 B
-   904	   1 Lovilio Parmigiano lastu 2,99 B
-   905	   1 Lovilio mozzarella raaste 1,39 B
-   906	   1 Lovilio mozzarella raaste 1,79 B
-   907	   1 Lovilio puhvelimozzarella 4,58 B --------------- 2 x 2,29
-   908	   1 Lukkolajitelma40353744 4,99 A
-   909	   2 Lumene Klassikko kasvovesi 4,15 A
-   910	   1 Luomu Babypinaatti 100g 1,19 B
-   911	   2 Luomu Babypinaatti 100g 1,69 B
-   912	   1 Luomu appelsiini 1kg 1,49 B
-   913	   1 Luomu appelsiini 1kg 2,89 B
-   914	   1 Luomu inkivääri irto 0,44 B --------------- 0,096 kg x 4,59 EUR/kg
-   915	   1 Luomu inkivääri irto 0,76 B --------------- 8,134 kg x 5,69 EUR/kg
-   916	   1 Luomu inkivääri irto 0,77 B --------------- 0,136 kg x 5,69 EUR/kg
-   917	   1 Luomu inkivääri irto 0,80 B --------------- 8,140 kg x 5,69 EUR/kg
-   918	   1 Luomu inkivääri irto 0,84 B --------------- 0,184 kg x 4,59 EUR/kg
-   919	   1 Luomu inkivääri irto 0,86 B --------------- 8,152 kg x 5,69 EUR/kg
-   920	   1 Luomu inkivääri irto 0,90 B --------------- 0,196 kg x 4,59 EUR/kg
-   921	   1 Luomu inkivääri irto 0,93 B --------------- 0,198 kg x 4,69 EUR/kg
-   922	   1 Luomu inkivääri irto 0,95 B --------------- 0,202 kg x 4,69 EUR/kg
-   923	   1 Luomu inkivääri irto 0,97 B --------------- 0,178 kg x 5,69 EUR/kg
-   924	   1 Luomu inkivääri irto 0,98 B --------------- 8,210 kg x 4,69 EUR/kg
-   925	   1 Luomu inkivääri irto 0,99 B --------------- 0,174 kg x 5,69 EUR/kg
-   926	   1 Luomu inkivääri irto 1,05 B --------------- 0,214 kg x 4,89 EUR/kg
-   927	   1 Luomu inkivääri irto 1,06 B --------------- 0,186 kg x 5,69 EUR/kg
-   928	   1 Luomu inkivääri irto 1,07 B --------------- 0,228 kg x 4,69 EUR/kg
-   929	   1 Luomu inkivääri irto 1,14 B --------------- 0,244 kg x 4,69 EUR/kg
-   930	   1 Luomu inkivääri irto 1,19 B --------------- 0,254 kg x 4,69 EUR/kg
-   931	   2 Luomu inkivääri irto 1,29 B --------------- 0,226 kg x 5,69 EUR/kg
-   932	   1 Luomu inkivääri irto 1,31 B --------------- 0,230 kg x 5,69 EUR/kg
-   933	   1 Luomu inkivääri irto 1,45 B --------------- 0,254 kg x 5,69 EUR/kg
-   934	   1 Luomu inkivääri irto 1,49 B --------------- 0,324 kg x 4,59 EUR/kg
-   935	   1 Luomu inkivääri irto 1,51 B --------------- 0,322 kg x 4,69 EUR/kg
-   936	   1 Luomu inkivääri irto 1,55 B --------------- 0,272 kg x 5,69 EUR/kg
-   937	   1 Luomu inkivääri irto 1,64 B --------------- 0,288 kg x 5,69 EUR/kg
-   938	   1 Luomu inkivääri irto 1,66 B --------------- 0,292 kg x 5,69 EUR/kg
-   939	   1 Luomu inkivääri irto 1,86 B --------------- 0,396 kg x 4,69 EUR/kg
-   940	   1 Luomu inkivääri irto 1,93 B --------------- 0,340 kg x 5,69 EUR/kg
-   941	   1 Luomu inkivääri irto 2,53 B --------------- 0,444 kg x 5,69 EUR/kg
-   942	   1 Luomu keräkaali irto 2,21 B --------------- 0,888 kg x 2,49 EUR/kg
-   943	   2 Luomu kesäkurpitsa 500g 1,59 B
-   944	   1 Luomu kesäkurpitsa 500g 1,89 B
-   945	   1 Luomu kesäkurpitsa 500g 3,49 B
-   946	   1 Luomu kiivi 500g 2,69 B
-   947	   1 Luomu klementiini 500g 1,99 B
-   948	   1 Luomu korianteri 1,99 B
-   949	   1 Luomu korianteri 3,98 B --------------- 2 x 1,99
-   950	   1 Luomu kurkuma 80g 1,49 B
-   951	   1 Luomu kurkuma 80g 1,69 B
-   952	   1 Luomu luumukirsikkatom. 250g 2,49 B
-   953	   1 Luomu minivesimeloni irto 4,43 B --------------- 2,226 kg x 1,99 EUR/kg
-   954	   1 Luomu minivesimeloni irto 6,18 B --------------- 2,482 kg x 2,49 EUR/kg
-   955	   1 Luomu paprika mix 400g 1,99 B
-   956	   2 Luomu paprika mix 400g 2,99 B
-   957	   1 Luomu paprika mix 400g 3,49 B
-   958	   1 Luomu punajuuri 500g 1,29 B
-   959	   1 Luomu rucola 100g 1,99 B
-   960	   1 Luomu salaatti mix 100g 1,29 B
-   961	   1 Luomu salaatti mix 100g 1,99 B
-   962	   1 Luomu sipuli 500g 1,19 B
-   963	   2 Luomu taateli 400g 2,99 B
-   964	   1 Luomu taateli 400g 3,39 B
-   965	   1 Luomu valkosipuli irto 1,91 B --------------- 0,212 kg x 8,99 EUR/kg
-   966	   1 Luomu varhaisperuna 1kg 1,69 B
-   967	   1 Luomu vuonankaali 100g 1,89 B
-   968	   2 Luomu vuonankaali 100g 1,99 B
-   969	   1 Luumukirsikkatomaatti 250g 1,05 B
-   970	   2 Luumukirsikkatomaatti 250g 1,25 B
-   971	   1 Luumukirsikkatomaatti 500g 2,09 B
-   972	   1 Luumukirsikkatomaatti 500g 2,39 B
-   973	   1 Luumu tumma 500g 1,99 B
-   974	   1 L Alushousut 5 kpl 140356731 7,99 A
-   975	   1 L Lasket.hans. mus./40393087 17,98 A --------------- 2 x 8,99
-   976	   1 L Monitoimihuivi pinff0359369 4,99 A
-   977	   1 L Pyjama Patrol 134/40342913 7,99 A
-   978	   1 L -Concealer / Peitepuikko SK 1,99 A
-   979	   1 L-Perlenbacher Alk.ton.Radl. 2,00 B --------------- 2 x 1,00
-   980	   1 L-Perlenbacher Alk.ton.Radl. 3,00 B --------------- 3 x 1,00
-   981	   3 L-Santa Maria Kookosmaito 1,65 B
-   982	   1 L-Santa Maria Kookosmaito 1,79 B
-   983	   1 MCENNEDY Kakku cookie 2,99 B
-   984	   1 MCENNEDY nougatkeksi 1,19 B
-   985	   1 MCENNEDY sitruunakakku 2,99 B
-   986	   1 MCENNEDY vaahterasiirappi 3,39 B
-   987	   1 MCENNEDY vaahterasiirappi 3,95 B
-   988	   1 MCENNEDY vaahterasiirappi 3,99 B
-   989	   1 Magnum Double Choc. Hazeln. 3,78 B --------------- 2 x 1,89
-   990	   1 MaitreJean-Pierre Sukl.brios 2,39 B
-   991	   2 Mandariini 750g 1,69 B
-   992	   1 Mandariini 750g 1,79 B
-   993	   2 Mandariini 750g 1,99 B
-   994	   1 Mango 2,60 B --------------- 0,868 kg x 2,99 EUR/kg
-   995	   1 Mango 4,84 B --------------- 1,942 kg x 2,49 EUR/kg
-   996	   1 Mango irto 1,26 B --------------- 0,526 kg x 2,39 EUR/kg
-   997	   1 Mango irto 1,34 B --------------- 0,560 kg x 2,39 EUR/kg
-   998	   1 Mango irto 2,38 B --------------- 0,886 kg x 2,69 EUR/kg
-   999	   1 Mango irto 2,40 B --------------- 0,894 kg x 2,69 EUR/kg
-  1000	   1 Mango irto 2,42 B --------------- 0,866 kg x 2,79 EUR/kg
-  1001	   1 Mango irto 2,62 B --------------- 0,908 kg x 2,89 EUR/kg
-  1002	   1 Mango irto 2,64 B --------------- 0,988 kg x 2,69 EUR/kg
-  1003	   1 Mansikkajogurtti 0,95 B
-  1004	   1 Mansikka 400g 1,99 B
-  1005	   1 Mansikka 400g 2,29 B
-  1006	   2 Mansikka 400g 2,49 B
-  1007	   2 Mansikka 400g 2,89 B
-  1008	   2 Mansikka 400g 2,99 B
-  1009	   1 Mansikka 400g 3,39 B
-  1010	   1 Mansikka 400g 3,89 B
-  1011	   1 Mansikka 900g 6,99 B
-  1012	   1 Mansikka 900g 7,99 B
-  1013	   1 Mansikka, pakaste 2,45 B
-  1014	   1 Mansikka, pakaste 2,79 B
-  1015	   1 Margariini rasia 60% 0,27 B
-  1016	   1 Maribel Mansikkahillo ekstra 1,65 B
-  1017	   1 Maribel Mansikka-vaniljahill 2,49 B
-  1018	   1 Maribel Vadelmahillo ekstra 2,75 B
-  1019	   4 Maribel kesäkukkahunaja 3,59 B
-  1020	   1 Maribel kuningatarhillo 1,99 B
-  1021	   1 Maribel maapähkinävoi 3,39 B
-  1022	   1 Maribel mansikkahillo 50% 1,49 B
-  1023	   1 Maribel mehiläishoit. hunaja 3,05 B
-  1024	   8 Maribel metsähunaja 3,59 B
-  1025	   1 Maribel metsähunaja 3,79 B
-  1026	   1 Maribel metsähunaja 4,49 B
-  1027	   1 Maribel vadelmamar.paistonke 1,49 B
-  1028	   2 Marie-täysjyväkeksi 0,99 B
-  1029	   1 Matisse meloni irto 4,06 B --------------- 1,700 kg x 2,39 EUR/kg
-  1030	   1 MeineKäsereiSaksapähkinäjuus 3,71 B --------------- 0,162 kg x 22,98 EUR/kg
-  1031	   1 Mikrokuitupyyhet09342024 4,79 A
-  1032	   1 MilbonaSelectionBrie de Nang 2,93 B --------------- 0,113 kg x 25,90 EUR/kg
-  1033	   1 Milbona Goudaviipaleet 2,98 B
-  1034	   2 Milbona Goudaviipaleet 3,29 B
-  1035	   1 Milbona Goudaviipaleet 3,99 B
-  1036	   1 Milbona Goudaviipaleet 4,25 B
-  1037	   1 Milbona Goudaviipaleet 4,65 B
-  1038	   1 Milbona Pizzaraaste 2,75 B
-  1039	   1 Milbona Sulatejuustoviip.moz 1,99 B
-  1040	   1 Milbona cheddarviipal. 1,19 B
-  1041	   1 Milbona edamviipaleet 3,29 B
-  1042	   1 Milbona edamviipaleet 3,99 B
-  1043	   1 Milbona edamviipaleet 4,25 B
-  1044	   2 Milbona emmentalviipaleet 2,98 B
-  1045	   1 Milbona emmentalviipaleet 3,29 B
-  1046	   1 Milbona emmentalviipaleet 4,25 B
-  1047	   1 Milbona emmentalviipaleet 4,99 B
-  1048	   1 Milbona goudaviipaleet 2,98 B
-  1049	   1 Milbona hedelmäjogurtti 8 kp 2,49 B
-  1050	   1 Milbona kermavaahto 1,89 B
-  1051	  11 Milbona kreikkal. jogurtti 2 2,59 B
-  1052	   3 Milbona kreikkal. jogurtti 2 2,69 B
-  1053	   1 Milbona kreikkal. jogurtti 2 2,79 B
-  1054	   2 Milbona kreikkal. jogurtti 2 2,99 B
-  1055	   5 Milbona kreikkal. jogurtti 2 3,09 B
-  1056	   2 Milbona kreikkal. jogurtti 2 3,29 B
-  1057	   7 Milbona kreikkal. jogurtti 2 3,39 B
-  1058	   6 Milbona kreikk. jogurtti 10% 2,59 B
-  1059	   1 Milbona lakt. kreik. jogurtt 1,69 B
-  1060	   1 Milbona maasdamerSpe.Delacre 1,99 B
-  1061	   2 Milbona maasdamerviipaleet 2,98 B
-  1062	   1 Milbona maasdamer light 1,59 B
-  1063	   1 Milbona maitorahka 4,3% 0,89 B
-  1064	   1 Milbona mansikkarahka 1,29 B
-  1065	   5 Milbona maustamaton jogurtti 0,89 B
-  1066	   1 Milbona rasvaton maitorahka 0,95 B
-  1067	   3 Milbona rasvaton maitorahka 1,49 B
-  1068	   1 Milbona rasvaton maitorahka 1,59 B
-  1069	   7 Milbona salaattijuusto 1,85 B
-  1070	   4 Milbona salaattijuusto 1,99 B
-  1071	   1 Milbona sulatejuustoviipalee 1,29 B
-  1072	   1 Milbona tilsiterviipaleet 4,75 B
-  1073	   1 Milbona tilsiterviipaleet 4,89 B
-  1074	   2 Milbona tuorejuusto Natur 1,25 B
-  1075	   1 Milbona tuorejuusto Natur 1,35 B
-  1076	   1 Milbona tuorejuusto Natur 1,49 B
-  1077	   1 Milbona tuorejuusto Natur 2,70 B --------------- 2 x 1,35
-  1078	   1 Milbona tuorejuusto Natur 13 1,49 B
-  1079	   1 Milbona tuorejuusto valkosip 1,49 B
-  1080	   1 Milbona tuorej. aur.kuiv. to 1,39 B
-  1081	   1 Milbona vispikerma 30% 0,79 B
-  1082	   1 Milbona vispikerma 30% 1,78 B --------------- 2 x 0,89
-  1083	   1 Milbona vispikerma 30% 2,67 B --------------- 3 x 0,89
-  1084	   1 Minipaprika Mix 350g 2,99 B
-  1085	   1 Minivesimeloni 1,95 B --------------- 0,892 kg x 2,19 EUR/kg
-  1086	   1 Minivesimeloni 2,37 B --------------- 1,082 kg x 2,19 EUR/kg
-  1087	   1 Minivesimeloni irto 2,28 B --------------- 1,168 kg x 1,95 EUR/kg
-  1088	   1 Minivesimeloni irto 2,66 B --------------- 1,336 kg x 1,99 EUR/kg
-  1089	   1 Minivesimeloni luomu 3,41 B --------------- 1,316 kg x 2,59 — EUR/kg
-  1090	   1 Minivesimeloni luomu 3,63 B --------------- 1,826 kg x 1,99 EUR/kg
-  1091	   4 Minttu ruukussa 1,39 B
-  1092	   1 MisterChocMinisuklaap.Pähkin 1,79 B
-  1093	   1 MisterChoc keksi-toffeesukla 0,29 B
-  1094	   1 MisterChoc suklaayllätysmuna 1,58 B --------------- 2 x 0,79
-  1095	   1 Mister Choc suklaabanaanit 2,55 B
-  1096	   1 Mister Choc suklaasekoitus 3,49 B
-  1097	   1 Mistral Duffle-laukkff0334422 15,99 A
-  1098	   1 Mix-salaatti ruukussa 0,99 B
-  1099	   1 Mondos kondomi, juomu 2,29 A
-  1100	   1 Mondos kondomi, ohut 2,29 A
-  1101	   1 Mr Popgun mikropopcorn 0,79 B
-  1102	   1 Munakoiso 1,96 B --------------- 0,504 kg x 3,89 EUR/kg
-  1103	   1 Munakoiso irto 2,79 B --------------- 0,756 kg x 3,69 EUR/kg
-  1104	   1 Munakoiso irto 3,52 B --------------- 0,954 kg x 3,69 EUR/kg
-  1105	   1 Munkkirinkeli 3,16 B --------------- 4 x 0,79
-  1106	   5 Myllykivi kaurahiutale 0,75 B
-  1107	   1 Myllykivi kaurahiutale 2,37 B --------------- 3 x 0,79
-  1108	   5 Myllykivi mannasuurimo 0,89 B
-  1109	   3 Myllykivi mannasuurimo 0,95 B
-  1110	   1 Myllykivi mannasuurimo 0,99 B
-  1111	   2 Myllykivi mannasuurimo 1,09 B
-  1112	   2 Myllykivi mannasuurimo 1,19 B
-  1113	   1 Myllykivi mannasuurimo 1,35 B
-  1114	   1 Myllykivi mannasuurimo 1,39 B
-  1115	   2 Myllykivi näkkileipä ruis 1,69 B
-  1116	   1 Myllykivi näkkileipä täysjyv 1,55 B
-  1117	   5 Myllykivi pikakaurahiutale 0,44 B
-  1118	   1 Myllykivi pikakaurahiutale 0,49 B
-  1119	   4 Myllykivi pikakaurahiutale 0,55 B
-  1120	   2 Myllykivi pikakaurahiutale 0,89 B
-  1121	   3 Myllyn Paras Raketti spagett 0,38 B
-  1122	   1 Myllyn Paras Rieskatortilla 1,29 B
-  1123	   1 Myllyn Paras lehtitaikina 1,59 B
-  1124	   1 Myllyn Paras makaroni 0,39 B
-  1125	   1 Myllyn Paras piirakkat. make 1,89 B
-  1126	   3 Myllyn Paras tumma makaroni 0,33 B
-  1127	   3 Myllyn Paras tumma makaroni 0,45 B
-  1128	   1 Myskikurpitsa irto 2,42 B --------------- 1,216 kg x 1,99 EUR/kg
-  1129	   1 My Best Veggie luomutofu sav 1,25 B
-  1130	   1 My Best Veggie papu-soijapih 1,99 B
-  1131	   1 M Bokserit musta/vihf0348670 5,99 A
-  1132	   1 M Collegetakki mustaff0325264 11,99 A
-  1133	   1 M kylpytakki t.har. 40369810 19,99 A
-  1134	   1 Nakkicroissant 2,97 B --------------- 3 x 0,99
-  1135	   1 Nakkicroissant 4,76 B --------------- 4 x 1,19
-  1136	   1 Nappiparistoti0353986 3,49 A
-  1137	   1 Nescafe Gold pikakahvi 8,69 B
-  1138	   1 Nesguik kaakaojuomajauhe 2,29 B
-  1139	   1 NonFoodffd0880198 2,49 A
-  1140	   1 N Clogsit roosa 36/3140334587 5,99 A
-  1141	   1 N Muotoil. sukkah. hf0311759 2,99 A
-  1142	   1 N Neuletakki XS sinif0318358 6,99 A
-  1143	   1 N Neuletakki harmaa 40368683 7,99 A
-  1144	   1 N Varvassandaalit 3640332312 2,49 A
-  1145	   1 N jeggingsit tummansf0357216 9,99 A
-  1146	   1 N lämpösuk.h./-leg. 40392252 4,99 A
-  1147	   1 N urh.rin.liiv. Levef0357343 7,99 A
-  1148	   1 OceanSea fileekalapuikot 1,99 B
-  1149	   1 Omenasiideri 4,7% 1,86 A
-  1150	   1 Omena 1,19 B --------------- 1,032 kg x 1,15 EUR/kg
-  1151	   1 Omena 1,20 B --------------- 1,098 kg x 1,09 — EUR/kg
-  1152	   1 Omena 1,24 B --------------- 1,262 kg x 0,98 EUR/kg
-  1153	   1 Omena 1,65 B --------------- 1,436 kg x 1,15 EUR/kg
-  1154	   1 Omena Pink Lady 1kg 2,49 B
-  1155	   1 Omena irto 0,78 B --------------- 0,818 kg x 0,95 EUR/kg
-  1156	   1 Omena irto 1,18 B --------------- 1,242 kg x 8,95 EUR/kg
-  1157	   1 Omena irto 1,19 B --------------- 1,206 kg x 8,99 EUR/kg
-  1158	   1 Omena irto 1,29 B --------------- 1,314 kg x 0,98 EUR/kg
-  1159	   1 Omena irto 1,43 B --------------- 1,506 kg x 8,95 EUR/kg
-  1160	   2 Omena punainen 2kg, hedelm. 2,99 B
-  1161	   1 Omena punainen 2kg, hedelm. 3,39 B
-  1162	   1 Omena punainen 2kg, hedelm. 3,49 B
-  1163	   1 Omena pun. 1kg makean hapoka 2,49 B
-  1164	   1 Omena pun. 2kg, makean hapok 2,49 B
-  1165	   1 Omena pun. irto hedelm. make 1,68 B --------------- 0,806 kg x 2,89 EUR/kg
-  1166	   1 Omena pun. irto hedelm. make 2,17 B --------------- 1,098 kg x 1,99 EUR/kg
-  1167	   1 Omena pun. irto hedelm. make 2,62 B --------------- 1,548 kg x 1,69 EUR/kg
-  1168	   1 Omena pun. irto hedelm. make 2,89 B --------------- 1,384 kg x 2,09 EUR/kg
-  1169	   1 Omena pun. irto hedelm. make 3,02 B --------------- 1,596 kg x 1,89 EUR/kg
-  1170	   1 Omena pun. irto hedelm. make 3,06 B --------------- 1,536 kg x 1,99 EUR/kg
-  1171	   1 Omena pun. irto hedelm. make 3,17 B --------------- 1,628 kg x 1,95 EUR/kg
-  1172	   1 Omena pun. irto hedelm. make 4,31 B --------------- 2,166 kg x 1,99 EUR/kg
-  1173	   1 Omena pun. irto hedelm. make 4,80 B --------------- 2,412 kg x 1,99 EUR/kg
-  1174	   1 Omena pun. irto, hedelm. mak 2,27 B --------------- 1,202 kg x 1,89 EUR/kg
-  1175	   1 Omena vihreä hedelm. makea 3,63 B --------------- 1,300 kg x 2,79 EUR/kg
-  1176	   1 Omena vihr. hed. mak. irto 2,57 B --------------- 1,292 kg x 1,99 EUR/kg
-  1177	   1 Omena vihr. hed. mak. irto 3,16 B --------------- 1,586 kg x 1,99 EUR/kg
-  1178	   1 Omena vihr. irto hedel. make 0,87 B --------------- 0,438 kg x 1,99 EUR/kg
-  1179	   1 Omena vihr. irto hedel. make 1,84 B --------------- 0,926 kg x 1,99 EUR/kg
-  1180	   1 Omena vihr. irto hedel. make 2,75 B --------------- 1,382 kg x 1,99 EUR/kg
-  1181	   1 Omena vihr. irto hedel. make 3,34 B --------------- 1,676 kg x 1,99 EUR/kg
-  1182	   1 Omena vihr. irto hedel. make 3,47 B --------------- 1,746 kg x 1,99 EUR/kg
-  1183	   1 Oppi ja ilo Tekemiskf0396906 9,99 A
-  1184	   1 Oreo Original täytekeksi 1,59 B
-  1185	   1 Oreo Original täytekeksi 3,18 B --------------- 2 x 1,59
-  1186	   1 OululainenPullavaMan-rap.pit 2,79 B
-  1187	   1 OululainenPullava kuning.pit 1,99 B
-  1188	   1 OululainenPullava kuning.pit 2,79 B
-  1189	   2 OululainenPullava kuning.pit 3,29 B
-  1190	   2 Oululainen Pullava Uuniomena 2,79 B
-  1191	   1 Oululainen Reilu Ruis 1,65 B
-  1192	   4 Oululainen Reilu täysjyvä 1,90 B
-  1193	   1 Paistinpannu ruost.t0337208 14,99 A
-  1194	   1 Palace suklaakonvehti 2,99 B
-  1195	   1 Palasokeri 0,63 B
-  1196	   1 Panasonic Alkaline Power AAA 2,99 A
-  1197	   1 Panda Lumiukko valk.suklaako 2,99 B
-  1198	   1 Panda Suomi karpalokonvehti 2,49 B
-  1199	   1 Panttipalautus -0,20 A
-  1200	   1 Panttipalautus -0,45 A
-  1201	   1 Panttipalautus -0,60 A
-  1202	   1 Panttipalautus -0,80 A
-  1203	   1 Panttipalautus -1,50 A
-  1204	   1 Panttipalautus -2,00 A
-  1205	   1 Panttipullo 0,51 PET 0,20 A
-  1206	   1 Pantti 0,15e tölkki 0,45 A --------------- 3 x 0,15
-  1207	   3 Pantti 0,15e tölkki 0,60 A --------------- 4 x 0,15
-  1208	   3 Pantti 0,51 tölkki 0,15 A
-  1209	   1 Pantti 0,51 tölkki 0,30 A --------------- 2 x 0,15
-  1210	   1 Pantti 0,51 tölkki 0,45 A --------------- 3 x 0,15
-  1211	   2 Pantti 0,331 tölkki 0,60 A --------------- 4 x 0,15
-  1212	   1 Pantti 6x0,331 tölkki 0,90 A
-  1213	   1 Papaija irto 5,61 B --------------- 0,936 kg x 5,99 EUR/kg
-  1214	   1 Paperikassi 0,29 A
-  1215	   2 Paprika Mix 500g 1,49 B
-  1216	   1 Paprika Mix 500g 1,79 B
-  1217	   1 Paprika Mix 500g 2,09 B
-  1218	   1 Paprika Mix 500g 2,19 B
-  1219	   2 Paprika Mix 500g 2,29 B
-  1220	   1 Paprika Mix 500g 2,49 B
-  1221	   1 Paprika Mix 500g 2,69 B
-  1222	   1 Paprika punainen 1,27 B --------------- 0,318 kg x 3,99 EUR/kg
-  1223	   1 Paprika punainen 1,52 B --------------- 0,436 kg x 3,49 EUR/kg
-  1224	   1 Paprika punainen 1,63 B --------------- 0,466 kg x 3,49 EUR/kg
-  1225	   1 Paprika punainen 2,26 B --------------- 0,648 kg x 3,49 EUR/kg
-  1226	   1 Paprika punainen 2,35 B --------------- 0,604 kg x 3,89 EUR/kg
-  1227	   1 Paprika punainen 2,86 B --------------- 0,358 kg x 7,99 EUR/kg
-  1228	   1 Paprika punainen 2,86 B --------------- 0,574 kg x 4,99 EUR/kg
-  1229	   1 Paprika punainen 3,74 B --------------- 0,576 kg x 6,49 EUR/kg
-  1230	   1 Paprika punainen irto 0,58 B --------------- 0,166 kg x 3,49 EUR/kg
-  1231	   1 Paprika punainen irto 0,62 B --------------- 0,250 kg x 2,49 EUR/kg
-  1232	   1 Paprika punainen irto 0,74 B --------------- 0,266 kg x 2,79 EUR/kg
-  1233	   1 Paprika punainen irto 0,74 B --------------- 0,374 kg x 1,99 EUR/kg
-  1234	   1 Paprika punainen irto 0,80 B --------------- 0,278 kg x 2,89 EUR/kg
-  1235	   1 Paprika punainen irto 0,84 B --------------- 0,254 kg x 3,29 EUR/kg
-  1236	   1 Paprika punainen irto 1,01 B --------------- 0,280 kg x 3,59 EUR/kg
-  1237	   1 Paprika punainen irto 1,41 B --------------- 0,470 kg x 2,99 EUR/kg
-  1238	   1 Paprika punainen irto 1,42 B --------------- 0,476 kg x 2,99 EUR/kg
-  1239	   1 Paprika punainen irto 1,44 B --------------- 0,438 kg x 3,29 EUR/kg
-  1240	   1 Paprika punainen irto 1,45 B --------------- 8,582 kg x 2,89 EUR/kg
-  1241	   1 Paprika punainen irto 1,46 B --------------- 0,506 kg x 2,89 EUR/kg
-  1242	   1 Paprika punainen irto 1,48 B --------------- 0,260 kg x 5,69 EUR/kg
-  1243	   1 Paprika punainen irto 1,51 B --------------- 0,460 kg x 3,29 EUR/kg
-  1244	   1 Paprika punainen irto 1,54 B --------------- 0,532 kg x 2,89 EUR/kg
-  1245	   1 Paprika punainen irto 1,59 B --------------- 0,482 kg x 3,29 EUR/kg
-  1246	   1 Paprika punainen irto 1,63 B --------------- 0,468 kg x 3,49 EUR/kg
-  1247	   1 Paprika punainen irto 1,74 B --------------- 0,514 kg x 3,39 EUR/kg
-  1248	   1 Paprika punainen irto 1,78 B --------------- 0,312 kg x 5,69 EUR/kg
-  1249	   1 Paprika punainen irto 1,83 B --------------- 0,482 kg x 3,79 EUR/kg
-  1250	   1 Paprika punainen irto 1,86 B --------------- 0,534 kg x 3,49 EUR/kg
-  1251	   1 Paprika punainen irto 1,87 B --------------- 0,482 kg x 3,89 EUR/kg
-  1252	   1 Parsakaali 300g 1,39 B
-  1253	   1 Par .käyt .suola-/pip.40353031 9,99 A
-  1254	   1 Passionhedelmäviineri 0,65 B
-  1255	   1 Pattex Liimaf0373731 1,99 A
-  1256	   1 Pensasmustikka 125g 1,89 B
-  1257	   1 Pensasmustikka 250g 3,19 B
-  1258	   1 Pensasmustikka 250g 3,29 B
-  1259	   1 Pensasmustikka 400g 3,49 B
-  1260	   1 Pensasmustikka 400g 4,99 B
-  1261	   2 PerheleipuriSalonen aamia.mo 2,09 B
-  1262	   1 PerheleipuriSalonen aamia.mo 4,18 B --------------- 2 x 2,09
-  1263	   2 Persikka 500g 1,19 B
-  1264	   2 Persikka 500g 1,39 B
-  1265	   3 Persikka 500g 1,49 B
-  1266	   1 Persikka 500g 1,59 B
-  1267	   2 Peruna Iso Jauhoinen 1kg 0,89 B
-  1268	   1 Peruna yleis 0,87 B --------------- 1,022 kg x 0,85 EUR/kg
-  1269	   1 Peruna yleis 1,56 B --------------- 1,834 kg x 0,85 EUR/kg
-  1270	   1 Philadelphia maustamaton 1,79 B
-  1271	   1 Piian & rengin salaatti 100g 1,79 B
-  1272	   1 Pinaatti 150g 2,49 B
-  1273	   2 Pinaatti 500g 3,49 B
-  1274	   1 Pinaatti 500g 3,99 B
-  1275	   1 Piparimunkki 1,47 B --------------- 3 x 8,49
-  1276	   2 PohjolanMeijeriLakt.Ruokaker 0,49 B
-  1277	   1 PohjolanMeijeriLakt.Ruokaker 0,55 B
-  1278	   4 PohjolanMeijeriLakt.Ruokaker 0,59 B
-  1279	   1 PohjolanMeijerilLakt.Ruokaker 0,59 B
-  1280	   1 PohjolanMeijerilakt.Ruokaker 0,49 B
-  1281	   3 PohjolanMeijeri Kevyt&Paksu 0,39 B
-  1282	   3 PohjolanMeijeri Kevyt&Paksu 0,42 B
-  1283	   1 PohjolanMeijeri lakt. ruokak 0,36 B
-  1284	   4 PohjolanMeijeri lakt. ruokak 0,38 B
-  1285	   1 PohjolanMeijeri lakt. ruokak 0,49 B
-  1286	   3 PohjolanMeijeri lakt. vispik 0,85 B
-  1287	   1 PohjolanMeijeri lakt. vispik 2,38 B --------------- 2 x 1,19
-  1288	   1 PohjolanMeijeri lakt. voi 2,89 B
-  1289	   3 PohjolanMeijeri lakt. voi 3,59 B
-  1290	   1 PohjolanMeijeri lak.1.jog.ma 1,99 B
-  1291	   2 PohjolanMeijeri lak.1.jog.si 1,99 B
-  1292	   1 PohjolanMeijeri voim.suol. v 2,79 B
-  1293	  12 PohjolanMeijeri voi 2,69 B
-  1294	   1 PohjolanMeijeri voi 3,15 B
-  1295	   2 PohjolanMeijeri voi 3,29 B
-  1296	   1 PohjolanMeijeri voi 3,39 B
-  1297	   1 PohjolanMeijeri voi 3,49 B
-  1298	   1 PohjolanMeijeri voi 3,99 B
-  1299	   1 Pohjolan Meijeri Vilmariini 1,99 B
-  1300	   3 Pohjolan Meijeri kevytmaito 0,69 B
-  1301	   3 Pohjolan Meijeri kevytmaito 0,72 B
-  1302	   1 Pohjolan Meijeri kevytmaito 0,85 B
-  1303	   3 Pohjolan Meijeri kevytmaito 0,95 B
-  1304	   5 Pohjolan Meijeri kevytmaito 1,38 B --------------- 2 x 0,69
-  1305	   3 Pohjolan Meijeri kevytmaito 1,44 B --------------- 2 x 0,72
-  1306	   2 Pohjolan Meijeri kevytmaito 1,90 B --------------- 2 x 0,95
-  1307	   1 Pohjolan Meijeri kevytmaito 2,07 B --------------- 3 x 0,69
-  1308	   2 Pohjolan Meijeri kevytmaito 2,16 B --------------- 3 x 0,72
-  1309	   1 Pohjolan Meijeri kevytmaito 2,76 B --------------- 4 x 0,69
-  1310	   1 Pohjolan Meijeri kevytmaito 2,85 B --------------- 3 x 0,95
-  1311	   1 Pohjolan Meijeri kevytmaito 2,88 B --------------- 4 x 0,72
-  1312	   5 Pohjolan Meijeri kevytmaito 3,45 B --------------- 5 x 0,69
-  1313	   2 Pohjolan Meijeri kevytmaito 3,80 B --------------- 4 x 0,95
-  1314	   1 Pohjolan Meijeri täysmaito 0,89 B
-  1315	   1 Pohjolan Meijeri täysmaito 1,19 B
-  1316	   5 Pohjolan Meijeri täysmaito 1,78 B --------------- 2 x 0,89
-  1317	   1 Pohjolan Meijeri täysmaito 2,38 B --------------- 2 x 1,19
-  1318	   3 Pohjolan Meijeri täysmaito 2,67 B --------------- 3 x 0,89
-  1319	   1 Polar Spring lähdevesi 0,29 B
-  1320	   2 Porkkana 1kg 0,79 B
-  1321	   1 Porkkana 1kg 0,95 B
-  1322	   1 Porkkana 1kg 0,97 B
-  1323	   5 Porkkana 1kg 0,99 B
-  1324	   2 Porkkana 1kg 1,05 B
-  1325	   1 Porkkana 1kg 1,09 B
-  1326	   3 Porkkana 1kg 1,15 B
-  1327	   2 Porkkana 1kg 1,19 B
-  1328	   1 Porkkana 1kg 1,25 B
-  1329	   3 Porkkana 1kg 1,29 B
-  1330	   4 Porkkana 1kg 1,39 B
-  1331	   1 Porkkana 1kg 1,49 B
-  1332	   1 Porkkana 1kg 1,59 B
-  1333	   1 Porkkana 1kg 1,69 B
-  1334	   1 Porkkana 1kg 1,99 B
-  1335	   2 Porkkana 1kg, ulkom. 1,59 B
-  1336	   1 Porkkana irto 0,89 B --------------- 0,910 kg x 0,98 EUR/kg
-  1337	   1 Porkkana irto 0,99 B --------------- 0,764 kg x 1,29 EUR/kg
-  1338	   1 Porkkana irto 1,36 B --------------- 1,090 kg x 1,25 EUR/kg
-  1339	   1 Porkkana irto 1,47 B --------------- 1,504 kg x 8,98 EUR/kg
-  1340	   1 Porkkana irto 1,67 B --------------- 1,684 kg x 8,99 EUR/kg
-  1341	   1 Primadonna luomu oliiviöljy 4,49 B
-  1342	   4 Primadonna oliiviöljy 11 5,49 B
-  1343	   6 Primadonna oliiviöljy 11 5,99 B
-  1344	   1 Primadonna oliiviöljy 11 6,29 B
-  1345	   1 Primadonna oliiviöljy 11 6,49 B
-  1346	   1 Primadonna oliiviöljy 11 6,99 B
-  1347	   1 Primadonna oliiviöljy 750ml 4,19 B
-  1348	   2 Primadonna oliiviöljy 750ml 4,39 B
-  1349	   1 Primadonna oliiviöljy 750ml 4,69 B
-  1350	   1 Primadonna oliiviöljy 750ml 5,49 B
-  1351	   2 Primadonna oliiviöljy 750ml 5,95 B
-  1352	   1 Primadonna oliiviöljy 750ml 6,49 B
-  1353	   1 Primadonna oliiviöljy 750ml 7,99 B
-  1354	   1 Pringles Sour Cream & Onion 1,85 B
-  1355	   2 Punajuuri 1kg 0,99 B
-  1356	   1 Punajuuri 1kg 1,05 B
-  1357	   1 Punajuuri 1kg 1,15 B
-  1358	   1 Punajuuri 1kg 1,19 B
-  1359	   1 Punajuuri 1kg 1,39 B
-  1360	   2 Punajuuri 1kg 1,49 B
-  1361	   2 Punajuuri 1kg 1,59 B
-  1362	   1 Punajuuri 1kg 1,99 B
-  1363	   1 Punakaali irto 1,14 B --------------- 8,716 kg x 1,59 EUR/kg
-  1364	   1 Punakaali irto 1,25 B --------------- 0,784 kg x 1,59 EUR/kg
-  1365	   1 Punakaali irto 1,35 B --------------- 0,870 kg x 1,55 EUR/kg
-  1366	   4 Punasipuli 1kg 1,49 B
-  1367	   1 Punasipuli 1kg 1,95 B
-  1368	   1 Punasipuli 1,84 B --------------- 1,086 kg x 1,69 EUR/kg
-  1369	   1 Punasipuli 1,89 B --------------- 1,118 kg x 1,69 EUR/kg
-  1370	   1 Punasipuli 2,75 B --------------- 1,254 kg x 2,19 — EUR/kg
-  1371	   4 Punasipuli 500g 0,85 B
-  1372	   3 Punasipuli 500g 0,88 B
-  1373	  11 Punasipuli 500g 0,89 B
-  1374	   2 Punasipuli 500g 0,94 B
-  1375	   1 Punasipuli 500g 0,95 B
-  1376	   2 Punasipuli 500g 0,99 B
-  1377	   1 Punasipuli 500g 1,05 B
-  1378	   3 Punasipuli 500g 1,18 B --------------- 2 x 0,59
-  1379	   3 Punasipuli 500g 1,70 B --------------- 2 x 0,85
-  1380	   3 Punasipuli 500g 1,78 B --------------- 2 x 0,89
-  1381	   3 Punasipuli 500g 1,90 B --------------- 2 x 0,95
-  1382	   1 Punasipuli irto 2,62 B --------------- 1,756 kg x 1,49 EUR/kg
-  1383	   2 Purio jätekassi 251 30 kpl 1,15 A
-  1384	   5 Purio jätekassi 251 30 kpl 1,17 A
-  1385	   3 Purio jätekassi 251 30 kpl 1,30 A
-  1386	   3 Purio jätekassi 251 30 kpl 1,38 A
-  1387	   1 Purio jätekassi 251 30 kpl 1,39 A
-  1388	   1 Purio roskapussi 301 1,79 A
-  1389	   1 Pägen Gifflar kanelipulla 1,69 B
-  1390	   1 Pägen Gifflar kanelipulla 3,38 B --------------- 2 x 1,69
-  1391	   1 Päärynä 1kg 1,29 B
-  1392	   1 Päärynä irto 0,71 B --------------- 8,422 kg x 1,69 EUR/kg
-  1393	   1 Päärynä irto 0,73 B --------------- 0,434 kg x 1,69 EUR/kg
-  1394	   1 Päärynä irto 0,79 B --------------- 0,398 kg x 1,99 EUR/kg
-  1395	   1 Päärynä irto 0,90 B --------------- 0,476 kg x 1,89 EUR/kg
-  1396	   1 Päärynä irto 0,90 B --------------- 8,534 kg x 1,69 EUR/kg
-  1397	   1 Päärynä irto 0,93 B --------------- 0,490 kg x 1,89 EUR/kg
-  1398	   1 Päärynä irto 0,98 B --------------- 0,558 kg x 1,75 EUR/kg
-  1399	   1 Päärynä irto 1,05 B --------------- 0,504 kg x 2,89 EUR/kg
-  1400	   1 Päärynä irto 1,05 B --------------- 0,528 kg x 1,99 EUR/kg
-  1401	   1 Päärynä irto 1,17 B --------------- 0,698 kg x 1,69 EUR/kg
-  1402	   1 Päärynä irto 1,29 B --------------- 0,738 kg x 1,75 EUR/kg
-  1403	   1 Päärynä premium irto 2,44 B --------------- 0,700 kg x 3,49 EUR/kg
-  1404	   1 Päärynä punainen irto 2,45 B --------------- 0,820 kg x 2,99 EUR/kg
-  1405	   1 Raejuusto 1% 2,69 B
-  1406	   1 Rahkatasku 2,67 B --------------- 3 x 0,89
-  1407	   1 Rahkatasku 2,67 B --------------- 3 x 8,89
-  1408	   2 Rahkatasku 2,97 B --------------- 3 x 0,99
-  1409	   1 Rantamatto 998 x 180 10348110 5,99 A
-  1410	   1 Rasiakorianteri 20g 1,99 B
-  1411	   1 Reilun kaupan banaani irto 1,01 B --------------- 0,678 kg x 1,49 EUR/kg
-  1412	   1 Reilun kaupan banaani irto 1,35 B --------------- 0,906 kg x 1,49 EUR/kg
-  1413	   1 Reilun kaupan banaani irto 1,46 B --------------- 0,944 kg x 1,55 EUR/kg
-  1414	   1 Reilun kaupan banaani irto 1,98 B --------------- 1,332 kg x 1,49 EUR/kg
-  1415	   1 Reilun kaupan banaani irto 2,13 B --------------- 1,338 kg x 1,59 EUR/kg
-  1416	   1 Reilun kaupan banaani irto 2,19 B --------------- 1,378 kg x 1,59 EUR/kg
-  1417	   1 Reilun kaupan banaani irto 2,39 B --------------- 1,500 kg x 1,59 EUR/kg
-  1418	   1 Reilun kaupan banaani irto 2,43 B --------------- 1,568 kg x 1,55 EUR/kg
-  1419	   1 Reilun kaupan banaani irto 2,43 B --------------- 1,632 kg x 1,49 EUR/kg
-  1420	   1 Reilun kaupan banaani irto 2,48 B --------------- 1,666 kg x 1,49 EUR/kg
-  1421	   1 Reilun kaupan limetti 0,23 B --------------- 0,078 kg x 2,99 EUR/kg
-  1422	   1 Reilun k. luomu ban. 1,41 B --------------- 0,786 kg x 1,79 EUR/kg
-  1423	   1 Reilun k. luomu ban. 1,70 B --------------- 0,970 kg x 1,75 EUR/kg
-  1424	   1 Reilun k. luomu ban. 2,27 B --------------- 1,296 kg x 1,75 EUR/kg
-  1425	   1 Reilun k. luomu ban. 2,47 B --------------- 1,414 kg x 1,75 EUR/kg
-  1426	   1 Reilun k. luomu ban. 2,82 B --------------- 1,574 kg x 1,79 EUR/kg
-  1427	   1 Reilun k. luomu ban. 2,99 B --------------- 1,708 kg x 1,75 EUR/kg
-  1428	   1 Reilun k. luomu ban. 3,16 B --------------- 1,804 kg x 1,75 EUR/kg
-  1429	   1 Reilun k. luomu ban. 3,23 B --------------- 1,846 kg x 1,75 EUR/kg
-  1430	   1 Reilun k. luomu ban. 3,49 B --------------- 1,994 kg x 1,75 EUR/kg
-  1431	   1 Reilun k. luomu ban. 3,78 B --------------- 2,160 kg x 1,75 EUR/kg
-  1432	   1 Reilun k. luomu ban. 4,29 B --------------- 2,452 kg x 1,75 EUR/kg
-  1433	   6 Retiisi 250g 0,99 B
-  1434	   2 Retiisi 250g 1,29 B
-  1435	   1 Retiisi 250g 8,99 B
-  1436	   1 Rexona Suihkugeeli OrchidFre 2,49 A
-  1437	   1 Riitan Herkku Mustikkapiirak 2,49 B
-  1438	   1 Rosmariini ruukussa 3,49 B
-  1439	   1 Rosten Kier.pulla täytepu.6k 2,79 B
-  1440	   1 Rosten Piimäsämpylä 5 kpl 1,99 B
-  1441	   1 Rosten Porkkana-perunaleipä 2,45 B
-  1442	   1 Rosten Porkkana-perunaleipä 2,55 B
-  1443	   1 Ruukkulehtipersilja 1,39 B
-  1444	   1 Ruukkulehtipersilja 1,45 B
-  1445	   1 Ruukkuminttu 1,29 B
-  1446	   3 Ruukkuminttu 1,35 B
-  1447	   1 Ruukkuminttu 1,45 B
-  1448	   3 Ruukkuminttu 1,49 B
-  1449	   1 Ruukkupersilja 1,05 B
-  1450	   1 Ruustinnan salaatti 1,79 B
-  1451	   1 R&B sukkahousut 15 DEN, koko 1,59 A
-  1452	   1 Salaatti mix ruukussa 0,99 B
-  1453	   1 Salico Salaattis.frisee 2,09 B
-  1454	   1 Salonen Mustikkapitko 3,95 B
-  1455	   1 Saltura Himalajan suola hien 1,99 B
-  1456	   1 Santa Maria Kookoskerma 1,79 B
-  1457	   1 Santa Maria Kookosmaito 1,59 B
-  1458	   1 Santa Maria Tortilla Large 2,35 B
-  1459	   1 Sarastusvaloherätyskf0386103 20,00 A
-  1460	   1 Sateenvarjo 3vff0354495 3,99 A
-  1461	   1 Satsuma 1,5kg 1,99 B
-  1462	   1 Saumakynä/puupint. k0353562 1,99 A
-  1463	   1 Schwarzkopf Deep Black 6,49 A
-  1464	   1 Sensiplast laastari Sensitiv 0,69 A
-  1465	   1 Siempre normaali side 1,85 A
-  1466	   1 Siempre norm.siivekkeetön si 0,95 A
-  1467	   1 Siempre norm. siivekkeet. si 1,05 A
-  1468	   4 Siempre pitkä siivekkeel. si 0,95 A
-  1469	   2 Siempre siivekkeellinen side 0,95 A
-  1470	   3 Siempre siivekkeellinen side 1,09 A
-  1471	   1 Silik. kuvioleivontaf0316819 2,99 A
-  1472	   1 Sipulinippu 0,95 B
-  1473	   1 Sipulinippu 1,19 B
-  1474	   1 Sipulinippu 1,29 B
-  1475	   1 Sipulinippu 1,39 B
-  1476	   2 Sipuli 1kg 1,09 B
-  1477	   5 Sipuli 1kg 1,19 B
-  1478	   2 Sipuli 1kg 1,25 B
-  1479	   7 Sipuli 1kg 1,29 B
-  1480	   5 Sipuli 1kg 1,39 B
-  1481	   1 Sipuli 1kg 1,45 B
-  1482	   1 Sipuli 1kg 1,49 B
-  1483	   1 Sipuli 1kg 1,59 B
-  1484	   1 Sipuli 1kg 1,69 B
-  1485	   3 Sipuli 1kg 2,18 B --------------- 2 x 1,09
-  1486	   7 Sipuli 1kg 2,38 B --------------- 2 x 1,19
-  1487	   1 Sipuli 1kg 2,50 B --------------- 2 x 1,25
-  1488	   4 Sipuli 1kg 2,58 B --------------- 2 x 1,29
-  1489	   6 Sipuli 1kg 2,78 B --------------- 2 x 1,39
-  1490	   1 Sipuli 1kg 3,18 B --------------- 2 x 1,59
-  1491	   1 Sipuli 1,49 B --------------- 1,506 kg x 0,99 — EUR/kg
-  1492	   2 Sipuli 500g 0,59 B
-  1493	   1 Sipuli Suomi 2,77 B --------------- 1,990 kg x 1,39 EUR/kg
-  1494	   1 Sipuli irto, Suomi 1,33 B --------------- 1,160 kg x 1,15 EUR/kg
-  1495	   1 Siti cola 0,59 B
-  1496	   1 Sitruuna 500g 0,79 B
-  1497	   1 Sitruuna 500g 0,89 B
-  1498	   3 Sitruuna 500g 0,99 B
-  1499	   4 Sitruuna 500g 1,05 B
-  1500	   6 Sitruuna 500g 1,09 B
-  1501	  13 Sitruuna 500g 1,19 B
-  1502	   1 Sitruuna 500g 1,25 B
-  1503	   4 Sitruuna 500g 1,29 B
-  1504	   4 Sitruuna 500g 1,39 B
-  1505	   1 Sitruuna 500g 1,49 B
-  1506	   1 Sitruuna 500g 1,98 B --------------- 2 x 0,99
-  1507	   1 SnackDayPerunalas.Sourcr .&On 1,29 B
-  1508	   1 SnackDay perunalastut paprik 1,69 B
-  1509	   2 SnackDay perunalastu Onion 1,39 B
-  1510	   1 SnackDay perunalastu Onion 1,45 B
-  1511	   1 SnackDay perunalastu Onion 1,75 B
-  1512	   1 SnackDay salsadippi 0,89 B
-  1513	   2 SnackDay tortillawraps6x25cm 1,09 B
-  1514	   1 SnackDay tortillawraps 8kpl 0,99 B
-  1515	   1 SnackDay tulinen salsadippi 1,25 B
-  1516	   1 SnackDay t.chips Sweet Chili 1,13 B
-  1517	   1 Snack day perunalastu sour.o 1,49 B
-  1518	   2 Sokeriherne 150g 2,49 B
-  1519	   2 Sokeri 0,69 B
-  1520	   1 Sokeri 0,79 B
-  1521	   1 Sokeri 0,99 B
-  1522	   2 Solevita Appelsiini-Mangonek 1,49 B
-  1523	   2 Solevita Mangosose 1,29 B
-  1524	   1 Solevita karpalo-rypälejuoma 1,49 B
-  1525	   1 Solevita limetäysmehu 0,79 B
-  1526	   1 Solevita limetäysmehu 0,85 B
-  1527	   2 Solevita metsämarjakeitto 1,49 B
-  1528	   1 Solevita monihedelmätäysmehu 2,39 B
-  1529	   1 Solevita mustikkakeitto 2,09 B
-  1530	   2 Solevita persikkanektari 1,69 B
-  1531	   1 Solevita päärynäjuoma 0,99 B
-  1532	   1 Solevita päärynänektari 1,65 B
-  1533	   1 Solevita sekajuoma 1,05 B
-  1534	   7 Solevita sitruunatäysmehu 0,79 B
-  1535	   2 Solevita sitruunatäysmehu 0,85 B
-  1536	   3 Solevita tropiikin hedelmäme 1,79 B
-  1537	   1 Sondey Farmer Cookies mustik 1,35 B
-  1538	   1 Sondey Kaakaotäytekeksi 1,65 B
-  1539	   1 Sondey Marie-keksi 0,98 B
-  1540	   2 Sondey Marie-keksi 1,30 B
-  1541	   1 Sondey Neo Keksit Vanilja Ve 2,98 B --------------- 2 x 1,49
-  1542	   2 Sondey Neo kaakaokeksi 1,19 B
-  1543	   1 Sondey Neo keksit Vaniljatäy 2,18 B --------------- 2 x 1,09
-  1544	   2 Sondey Oaties kaurakeksi 0,99 B
-  1545	   1 Sondey Oaties kaurakeksi 1,29 B
-  1546	   1 Sondey Oaties kaurakeksi 1,49 B
-  1547	   1 Sondey UFO's-täytekeksi 1,85 B
-  1548	   1 Sondey appelsiinitäytekeksi 0,98 B
-  1549	  10 Sondey digestive-keksi 0,59 B
-  1550	   1 Sondey digestive-keksi 0,69 B
-  1551	   1 Sondey digestive-keksi 0,75 B
-  1552	   2 Sondey digestive-keksi 0,89 B
-  1553	   1 Sondey pikkuleipä vanilja 1,65 B
-  1554	   1 Sondey piparkakku 1,59 B
-  1555	   6 Sondey suklaakeksi 1,12 B
-  1556	   1 Sondey suklaakeksi 1,29 B
-  1557	   1 Sondey välipalakeksi jog.-ma 1,49 B
-  1558	   1 Sugarland vaahtokarkit 1,46 B
-  1559	   1 Suihkugeeli iso lootus 1,99 A
-  1560	   1 Suippopaprika punainen 500g 2,89 B
-  1561	   1 Suklaalevy maapähkinäsuklaa 0,49 B
-  1562	   1 Suklaalevy tummasuklaa 0,49 B
-  1563	   3 Suklaalevy tummasuklaa 0,98 B --------------- 2 x 0,49
-  1564	   1 Suklaalevy valkosuklaa 1,38 B --------------- 2 x 0,69
-  1565	   1 Suomalainen jauhoinen peruna 1,59 B
-  1566	   1 Suomalainen jauhoinen peruna 1,69 B
-  1567	   1 Suomalainen jääsalaatti 0,89 B
-  1568	   1 Suomalainen jääsalaatti 0,99 B
-  1569	   1 Suomalainen jääsalaatti 1,25 B
-  1570	   2 Suomalainen jääsalaatti 1,29 B
-  1571	   1 Suomalainen jääsalaatti 1,45 B
-  1572	   2 Suomalainen jääsalaatti 1,79 B
-  1573	   1 Suomalainen jääsalaatti 1,88 B --------------- 2 x 0,94
-  1574	   1 Suomalainen jääsalaatti 2,58 B --------------- 2 x 1,29
-  1575	   4 Suomalainen lehtikaali 1,89 B
-  1576	   2 Suomalainen lehtikaali 2,49 B
-  1577	   1 Suomalainen lehtikaali 2,89 B
-  1578	   1 Sushi Box Kyoto 3,99 B
-  1579	   1 Suuri tuoksukynttiläf0427127 3,99 A
-  1580	   4 Syöntikypsä Mango 650g 3,49 B
-  1581	   1 Syöntikypsä Mango 650g 3,99 B
-  1582	   1 Säilytyskoteloff0336952 3,99 A
-  1583	   1 Södergärden mantelikakku 3,99 B
-  1584	   1 Södergärden mantelikak. sukl 3,19 B
-  1585	   2 TUC Original 0,99 B
-  1586	   1 TUC Original suolakeksi 2,69 B
-  1587	   1 TUC Sour Cream&Onion 0,99 B
-  1588	   1 TUC Sweet Chili 8,99 B
-  1589	   1 Taateli 400g 2,19 B
-  1590	   1 Taateli 400g 2,49 B
-  1591	  17 Taateli 400g 2,69 B
-  1592	   1 Taateli 600g 3,49 B
-  1593	   9 Taateli 600g 3,99 B
-  1594	   1 Taffel Broadway 2,49 B
-  1595	   5 Taffel Broadway-dippi 0,57 B
-  1596	   2 Taffel Juustosnacks 2,08 B
-  1597	   1 Taffel Mikropopcorn 1,99 B
-  1598	   1 Tarrakirjaf0368487 3,99 A
-  1599	   1 Tastino Hot Dog-sämpylä 0,79 B
-  1600	   1 Terttukirsikkatomaatti 500g 1,49 B
-  1601	   1 Terttutomaatti 2,17 B --------------- 1,088 kg x 1,99 EUR/kg
-  1602	   1 Terttutomaatti 2,49 B --------------- 1,086 kg x 2,29 EUR/kg
-  1603	   1 Terttutomaatti 2,85 B --------------- 1,434 kg x 1,99 — EUR/kg
-  1604	   1 Terttutomaatti 3,06 B --------------- 1,336 kg x 2,29 EUR/kg
-  1605	   1 Terttutomaatti 3,08 B --------------- 0,882 kg x 3,49 EUR/kg
-  1606	   1 Terttutomaatti 3,21 B --------------- 1,400 kg x 2,29 EUR/kg
-  1607	   1 Terttutomaatti 5,20 B --------------- 1,408 kg x 3,69 EUR/kg
-  1608	   1 Terttutomaatti 5,33 B --------------- 1,526 kg x 3,49 EUR/kg
-  1609	   1 Terttutomaatti 5,35 B --------------- 1,340 kg x 3,99 EUR/kg
-  1610	   1 Terttutomaatti irto 1,55 B --------------- 0,818 kg x 1,89 EUR/kg
-  1611	   1 Terttutomaatti irto 1,59 B --------------- 1,068 kg x 1,49 EUR/kg
-  1612	   1 Terttutomaatti irto 1,91 B --------------- 1,008 kg x 1,89 EUR/kg
-  1613	   1 Terttutomaatti irto 2,04 B --------------- 1,082 kg x 1,89 EUR/kg
-  1614	   1 Terttutomaatti irto 2,07 B --------------- 0,998 kg x 2,09 EUR/kg
-  1615	   1 Terttutomaatti irto 2,07 B --------------- 1,096 kg x 1,89 EUR/kg
-  1616	   1 Terttutomaatti irto 2,12 B --------------- 1,422 kg x 1,49 EUR/kg
-  1617	   1 Terttutomaatti irto 2,19 B --------------- 1,222 kg x 1,79 EUR/kg
-  1618	   1 Terttutomaatti irto 2,29 B --------------- 1,536 kg x 1,49 EUR/kg
-  1619	   1 Terttutomaatti irto 2,37 B --------------- 0,880 kg x 2,69 EUR/kg
-  1620	   1 Terttutomaatti irto 2,42 B --------------- 1,056 kg x 2,29 EUR/kg
-  1621	   1 Terttutomaatti irto 2,49 B --------------- 1,158 kg x 2,15 EUR/kg
-  1622	   1 Terttutomaatti irto 2,63 B --------------- 1,150 kg x 2,29 EUR/kg
-  1623	   1 Terttutomaatti irto 2,66 B --------------- 0,898 kg x 2,99 EUR/kg
-  1624	   1 Terttutomaatti irto 2,78 B --------------- 1,330 kg x 2,09 EUR/kg
-  1625	   1 Terttutomaatti irto 2,93 B --------------- 1,470 kg x 1,99 EUR/kg
-  1626	   1 Terttutomaatti irto 2,97 B --------------- 1,422 kg x 2,09 EUR/kg
-  1627	   1 Terttutomaatti irto 3,01 B --------------- 1,088 kg x 2,99 EUR/kg
-  1628	   1 Terttutomaatti irto 3,01 B --------------- 1,442 kg x 2,09 EUR/kg
-  1629	   1 Terttutomaatti irto 3,14 B --------------- 1,578 kg x 1,99 EUR/kg
-  1630	   1 Terttutomaatti irto 3,24 B --------------- 1,628 kg x 1,99 EUR/kg
-  1631	   1 Terttutomaatti irto 3,33 B --------------- 1,128 kg x 2,95 EUR/kg
-  1632	   1 Terttutomaatti irto 3,47 B --------------- 1,662 kg x 2,09 EUR/kg
-  1633	   1 Terttutomaatti irto 3,64 B --------------- 1,216 kg x 2,99 EUR/kg
-  1634	   1 Terttutomaatti irto 3,80 B --------------- 1,316 kg x 2,89 EUR/kg
-  1635	   1 Terttutomaatti irto 3,80 B --------------- 1,466 kg x 2,59 EUR/kg
-  1636	   1 Terttutomaatti irto 3,83 B --------------- 1,326 kg x 2,89 EUR/kg
-  1637	   1 Terttutomaatti irto 4,17 B --------------- 1,394 kg x 2,99 EUR/kg
-  1638	   1 Terttutomaatti irto 4,20 B --------------- 1,406 kg x 2,99 EUR/kg
-  1639	   1 Terttutomaatti irto 4,28 B --------------- 1,430 kg x 2,99 EUR/kg
-  1640	   1 Terttutomaatti irto 4,52 B --------------- 1,512 kg x 2,99 EUR/kg
-  1641	   1 Terttutomaatti irto 4,54 B --------------- 1,688 kg x 2,69 EUR/kg
-  1642	   1 Terttutomaatti irto 4,66 B --------------- 1,578 kg x 2,95 EUR/kg
-  1643	   1 Terttutomaatti irto 4,68 B --------------- 1,588 kg x 2,95 EUR/kg
-  1644	   1 Terttutomaatti irto 4,99 B --------------- 1,726 kg x 2,89 EUR/kg
-  1645	   1 Terttutomaatti irto 5,09 B --------------- 2,224 kg x 2,29 EUR/kg
-  1646	   2 Tomaattiketsuppi 1,39 B
-  1647	   3 Tomaattiketsuppi 1,49 B
-  1648	   1 Tomaatti Suomi 2,11 B --------------- 0,392 kg x 5,39 EUR/kg
-  1649	   1 Tomaatti irto 2,27 B --------------- 1,140 kg x 1,99 EUR/kg
-  1650	   1 Tomaatti irto 2,38 B --------------- 1,198 kg x 1,99 EUR/kg
-  1651	   1 Tomaatti irto 2,98 B --------------- 8,996 kg x 2,99 EUR/kg
-  1652	   1 Tomaatti-mozzarella 1,49 B
-  1653	   1 TrattoriaAlfredo Pizza Meat 1,89 B
-  1654	   1 TrattoriaAlfredo pizza 4form 4,19 B
-  1655	   7 TrattoriaAlfredo pizza Margh 3,29 B
-  1656	   2 TrattoriaAlfredo pizza Margh 3,89 B
-  1657	   1 TrattoriaAlfredo pizza Margh 5,99 B
-  1658	   1 TrattoriaAlfredo pizza mozza 8,70 B --------------- 2 x 4,35
-  1659	   1 Trube joulupitko 2,49 B
-  1660	   1 Tuore maissi irto 3,77 B --------------- 0,946 kg x 3,99 EUR/kg
-  1661	   1 Tuore maissi irto 4,95 B --------------- 0,992 kg x 4,99 EUR/kg
-  1662	   1 Tupla Winter Cinnamon 1,15 B
-  1663	   1 Turun Sinappia mieto 1,69 B
-  1664	   1 Työkäsineet musta/put0370289 2,99 A --------------- 3M Kaksipuoleinen taff0395941 2,99 A
-  1665	   1 T Shortsit pink. 1460349466 3,19 A
-  1666	   1 USB-pistorasia-adaptf0297323 11,99 A
-  1667	   1 Uuniperuna 1kg 1,39 B
-  1668	   2 Vaasan Iso Grahampaahtoleipä 1,95 B
-  1669	   1 Vaasan Kaurasydän 1,89 B
-  1670	   3 Vaasan Taika ruisviipaleet 1,89 B
-  1671	  11 Vaasan Taika ruisviipaleet 1,98 B
-  1672	   2 Vaasan Taika ruisviipaleet 2,09 B
-  1673	   9 Vaasan Taika ruisviipaleet 2,25 B
-  1674	   4 Vaasan Taika täysjyväkauravi 1,89 B
-  1675	   2 Vaasan Taika täysjyväkauravi 1,98 B
-  1676	   1 Vaasan Taika täysjyväkauravi 2,09 B
-  1677	   2 Vaasan Taika täysjyväkauravi 2,25 B
-  1678	   1 Vaasan kauratyynyt 0,99 B
-  1679	   2 Vaasan ruispalat 6kpl 0,95 B
-  1680	   1 Vadelma-lehtitaikinaleivos 1,58 B --------------- 2 x 0,79
-  1681	   1 Valio Mansikkakeitto sokerit 2,45 B
-  1682	   1 Valio Mansikkakeitto sokerit 4,90 B --------------- 2 x 2,45
-  1683	   1 Valkosipuliletti 500g 3,99 B
-  1684	  22 Valkosipuli 200g 0,99 B
-  1685	   8 Valkosipuli 200g 1,09 B
-  1686	   2 Valkosipuli 200g 1,15 B
-  1687	   4 Valkosipuli 200g 1,29 B
-  1688	   2 Valkosipuli 200g 1,49 B
-  1689	   1 Valkosipuli 200g 1,98 B --------------- 2 x 0,99
-  1690	   1 Valkosipuli 200g 2,18 B --------------- 2 x 1,09
-  1691	   1 Valkosipuli 200g 2,30 B --------------- 2 x 1,15
-  1692	   2 ValleySpire cheddarraaste 1,49 B
-  1693	   1 Valley Spire Cheddar vintage 2,99 B
-  1694	   1 Vampyyrin karkkihampaat 1,49 B
-  1695	   1 Vanajan Jyväsade-keksi 1,39 B
-  1696	   2 Vaniljakermajäätelö 1,29 B
-  1697	   1 Varhaiskaali irto 1,47 B --------------- 0,868 kg x 1,69 EUR/kg
-  1698	   1 Varhaisperuna pesty 1,84 B --------------- 1,748 kg x 1,05 — EUR/kg
-  1699	   1 Vehnäpatonki 1,09 B
-  1700	   1 Vemondo kookos-riisijuoma 1,69 B
-  1701	   3 Vemondo luomutofu natur 1,35 B
-  1702	   8 Vemondo luomutofu natur 2,70 B --------------- 2 x 1,35
-  1703	   1 Vesimeloni irto 4,88 B --------------- 2,724 kg x 1,79 EUR/kg
-  1704	   2 Viinirypäle tumma 500g 1,69 B
-  1705	   1 Viinirypäle tumma 500g 1,89 B
-  1706	   1 Viinirypäle tumma 500g 1,99 B
-  1707	   2 Viinirypäle tumma 500g 2,09 B
-  1708	   2 Viinirypäle tumma 500g 2,19 B
-  1709	   1 Viinirypäle tumma 500g 2,29 B
-  1710	   3 Viinirypäle tumma 500g 2,39 B
-  1711	   2 Viinirypäle tumma 500g 2,45 B
-  1712	   5 Viinirypäle tumma 500g 2,49 B
-  1713	   4 Viinirypäle tumma 500g 2,69 B
-  1714	   3 Viinirypäle tumma 500g 2,79 B
-  1715	   4 Viinirypäle tumma 500g 2,89 B
-  1716	   3 Viinirypäle tumma 500g 2,99 B
-  1717	   1 Viinirypäle vihreä 500g 1,69 B
-  1718	   1 Viinirypäle vihreä 500g 1,89 B
-  1719	   3 Viinirypäle vihreä 500g 2,09 B
-  1720	   1 Viinirypäle vihreä 500g 2,15 B
-  1721	   1 Viinirypäle vihreä 500g 2,79 B
-  1722	   1 Viinirypäle vih.500g 1,89 B
-  1723	   1 VitaDor leivontamargariini 0,95 B
-  1724	   1 VitaDor leivontamargariini 1,29 B
-  1725	   5 VitaDor maapähkinävoi 2,99 B
-  1726	   2 VitaDor maapähkinävoi 3,19 B
-  1727	   1 VitaDor margariini 40% 0,48 B
-  1728	   1 VitaDor margariini 60% 0,55 B
-  1729	   1 VitaDor margariini 60% 0,99 B
-  1730	   3 VitaDor rapsiöljy 1,49 B
-  1731	   1 VitaDor rapsiöljy 1,69 B
-  1732	   2 VitaDor rapsiöljy 2,89 B
-  1733	   1 VitaDor rapsiöljy 3,05 B
-  1734	   1 Vitasia Madras 1,69 B
-  1735	   1 Vitasia chilikastike 1,19 B
-  1736	   1 Vitasia kuorit. seesaminsiem 0,89 B
-  1737	   1 Vitasia soijakastike 1,19 B
-  1738	   1 Vitasia soijakastike 1,29 B
-  1739	   1 Vitasia soijakastike 1,39 B
-  1740	   1 Vitasia soijakastike 1,49 B
-  1741	   1 Vitasia soijakastike 1,85 B
-  1742	   3 Vitasia soijakastike 1,89 B
-  1743	   1 Vita D'or auringonkukkaöljy 1,75 B
-  1744	   1 Vita D'or auringonkukkaöljy 1,85 B
-  1745	   1 Vita D'or auringonkukkaöljy 2,09 B
-  1746	   1 Vita D'or auringonkukkaöljy 3,99 B
-  1747	   1 Voicroissant 27% 0,55 B
-  1748	   1 Voicroissant 27% 0,78 B --------------- 2 x 0,39
-  1749	   1 W5 Ilmanraikastin kukka Rose 2,69 A
-  1750	   1 W5 Puhdistusliina Blue 2,99 A
-  1751	   1 W5 sieniliina 1,49 A
-  1752	   1 W5 talouskäsine värikäs S 1,35 A
-  1753	   1 WC-Kukka Sininen huuhtelu 1,69 A
-  1754	   2 WSAl1l-in-1Konetiskitab.Origi 2,84 A
-  1755	   1 WS All-in-1 Konetiskitab.Ori 3,99 A
-  1756	   1 WS Astianpes. AloeVera&Kurkk 0,89 A
-  1757	   1 WS Puhdistusliina Blue 2,69 A
-  1758	   1 WS Puhdistusliina Blue 2,99 A
-  1759	   1 WS WC raikastin Flower 1,30 A
-  1760	   1 WS WC raikastin Flower 1,69 A
-  1761	   2 WS WC raikastin Lemon 1,30 A
-  1762	   1 WS WC raikastin Ocean 1,30 A
-  1763	   1 WS Yleispuhdistussuihke 1,19 A
-  1764	   1 WS astiaharja 1,15 A
-  1765	   1 WS kengän kiilloke väritön 1,99 A
-  1766	   4 WS konetiskiainetabl. ei fos 2,89 A
-  1767	   1 WS konetiskiainetabl. ei fos 2,99 A
-  1768	   1 WS konetiskiainetabl. ei fos 3,15 A
-  1769	   2 WS konetiskiainetabl. ei fos 3,29 A
-  1770	   1 WS konetiskiainetabl. ei fos 3,69 A
-  1771	   1 WS puhdistusliina Blue 2,99 A
-  1772	   1 WS puhdistusliina Lemon 2,29 A
-  1773	   1 WS puhdistusliina Lemon 2,69 A
-  1774	   1 WS puhdistusliina Lemon 2,99 A
-  1775	   1 WS puhdistusspray 1,99 A
-  1776	   1 WS pölyhuiska 1,99 A
-  1777	   2 WS talouskäsine värikäs S 1,45 A
-  1778	   1 WS yleismikrok.liina 3kpl 1,49 A
-  1779	   1 Yhteensä 11,19
-  1780	   1 Yhteensä 40,35
-  1781	   1 Yhteensä 46,83
-  1782	   1 Yhteensä 63,86
-  1783	   1 Yhteensä 71,14
-  1784	   1 Yhteensä 71,71
-  1785	   1 Yhteensä 76,02
-  1786	   1 Yhteensä 77,83
-  1787	   1 Yhteensä 82,76
-  1788	   1 Yhteensä 83,38
-  1789	   1 Yhteensä 86,98
-  1790	   1 Yhteensä 88,03
-  1791	   1 Yhteensä 88,82
-  1792	   1 Yhteensä 89,76
-  1793	   1 Yhteensä 90,07
-  1794	   1 Yhteensä 91,09
-  1795	   1 Yhteensä 91,16
-  1796	   1 Yhteensä 94,94
-  1797	   1 Yhteensä 96,40
-  1798	   1 Yhteensä 96,58
-  1799	   1 Yhteensä 97,30
-  1800	   1 Yhteensä 97,74
-  1801	   1 Yhteensä 105,84
-  1802	   1 Yhteensä 108,78
-  1803	   1 Yhteensä 110,50
-  1804	   1 Yhteensä 110,89
-  1805	   1 Yhteensä 111,67
-  1806	   1 Yhteensä 114,19
-  1807	   1 Yhteensä 116,55
-  1808	   1 Yhteensä 118, 93
-  1809	   1 Yhteensä 120,35
-  1810	   1 Yhteensä 122,67
-  1811	   1 Yhteensä 123,03
-  1812	   1 Yhteensä 123,56
-  1813	   1 Yhteensä 125,20
-  1814	   1 Yhteensä 127,04
-  1815	   1 Yhteensä 127,55
-  1816	   1 Yhteensä 131,66
-  1817	   1 Yhteensä 134,29
-  1818	   1 Yhteensä 134,80
-  1819	   1 Yhteensä 137,52
-  1820	   1 Yhteensä 138,07 Na
-  1821	   1 Yhteensä 146,94
-  1822	   1 Yhteensä 163,40
-  1823	   1 Yhteensä 180,73
-  1824	   1 Yhteensä 184,09
-  1825	   1 Yhteensä 185,19
-  1826	   1 Yhteensä 186,44
-  1827	   1 Yhteensä == 84,57
-  1828	   1 Yhteensä == 86,27
-  1829	   1 Yhteensä == 08170
-  1830	   1 Yhteensä === 66,67
-  1831	   1 Yhteensä === 89,95
-  1832	   1 Yleiskansi 3v0334401 5,99 A
-  1833	   1 Yleisperuna 1,20 B --------------- 1,348 kg x 0,89 EUR/kg
-  1834	   1 Yleisperuna 1,53 B --------------- 1,734 kg x 0,88 EUR/kg
-  1835	   1 Yleisperuna irto 0,44 B --------------- 0,642 kg x 0,69 EUR/kg
-  1836	   1 Yleisperuna irto 0,45 B --------------- 8,716 kg x 8,63 EUR/kg
-  1837	   1 Yleisperuna irto 0,48 B --------------- 0,744 kg x 8,65 EUR/kg
-  1838	   1 Yleisperuna irto 0,58 B --------------- 0,914 kg x 0,63 EUR/kg
-  1839	   1 Yleisperuna irto 0,60 B --------------- 1,232 kg x 8,49 EUR/kg
-  1840	   1 Yleisperuna irto 0,61 B --------------- 0,934 kg x 0,65 EUR/kg
-  1841	   1 Yleisperuna irto 0,61 B --------------- 1,038 kg x 8,59 EUR/kg
-  1842	   1 Yleisperuna irto 0,62 B --------------- 1,052 kg x 8,59 EUR/kg
-  1843	   1 Yleisperuna irto 0,65 B --------------- 1,002 kg x 8,65 EUR/kg
-  1844	   1 Yleisperuna irto 0,65 B --------------- 1,004 kg x 8,65 EUR/kg
-  1845	   1 Yleisperuna irto 0,68 B --------------- 1,048 kg x 0,65 EUR/kg
-  1846	   1 Yleisperuna irto 0,73 B --------------- 1,244 kg x 0,59 EUR/kg
-  1847	   1 Yleisperuna irto 0,75 B --------------- 1,160 kg x 8,65 EUR/kg
-  1848	   1 Yleisperuna irto 0,76 B --------------- 1,296 kg x 8,59 EUR/kg
-  1849	   1 Yleisperuna irto 0,83 B --------------- 1,402 kg x 8,59 EUR/kg
-  1850	   1 Yleisperuna irto 0,84 B --------------- 1,424 kg x 8,59 EUR/kg
-  1851	   1 Yleisperuna irto 0,85 B --------------- 1,002 kg x 8,85 EUR/kg
-  1852	   1 Yleisperuna irto 0,86 B --------------- 1,016 kg x 0,85 EUR/kg
-  1853	   1 Yleisperuna irto 0,88 B --------------- 1,392 kg x 8,63 EUR/kg
-  1854	   1 Yleisperuna irto 0,97 B --------------- 1,146 kg x 0,85 EUR/kg
-  1855	   1 Yleisperuna irto 0,98 B --------------- 1,660 kg x 8,59 EUR/kg
-  1856	   1 Yleisperuna irto 1,01 B --------------- 1,604 kg x 8,63 EUR/kg
-  1857	   1 Yleisperuna irto 1,05 B --------------- 1,240 kg x 0,85 EUR/kg
-  1858	   1 Yleisperuna irto 1,16 B --------------- 1,782 kg x 0,65 EUR/kg
+     1	      1 Aerocell paristo E 9V 2,99 A
+     2	      1 Aerocell paristo micro AAA 1,49 A
+     3	      2 AguaPur keittiöliina 1,59 A
+     4	      1 Alennukset yhteensä 0,15
+     5	      1 Alennukset yhteensä 0,19
+     6	      1 Alennukset yhteensä 0,38
+     7	      1 Alennukset yhteensä 0,39
+     8	      1 Alennukset yhteensä 0,47
+     9	      1 Alennukset yhteensä 0,50
+    10	      1 Alennukset yhteensä 0,57
+    11	      1 Alennukset yhteensä 0,58
+    12	      1 Alennukset yhteensä 0,60
+    13	      1 Alennukset yhteensä 0,75
+    14	      1 Alennukset yhteensä 0,84
+    15	      1 Alennukset yhteensä 0,96
+    16	      1 Alennukset yhteensä 1,10
+    17	      1 Alennukset yhteensä 1,14
+    18	      1 Alennukset yhteensä 1,41
+    19	      1 Alennukset yhteensä 1,48
+    20	      1 Alennukset yhteensä 1,67
+    21	      1 Alennukset yhteensä 1,91
+    22	      1 Alennukset yhteensä 2,35
+    23	      2 Alennukset yhteensä 2,64
+    24	      1 Alennukset yhteensä 3,50
+    25	      1 Alennukset yhteensä 3,54
+    26	      1 Alennukset yhteensä 3,83
+    27	      1 Alennukset yhteensä 4,00
+    28	      1 Alennukset yhteensä 5,10
+    29	      1 Alennukset yhteensä 6,31
+    30	      1 Alennukset yhteensä 8,10
+    31	      1 Alennukset yhteensä 8,80
+    32	      1 Alennukset yhteensä 8,85
+    33	      1 Alennukset yhteensä 9,78
+    34	      1 Alennukset yhteensä 10,00
+    35	      1 Alennukset yhteensä 10,40
+    36	      8 Alesto Etelä-Afrikk. rusina 1,25 B
+    37	      3 Alesto Etelä-Afrikk. rusina 1,29 B
+    38	      6 Alesto Etelä-Afrikk. rusina 1,35 B
+    39	      3 Alesto Etelä-Afrikk. rusina 1,39 B
+    40	      1 Alesto Kuivatut viikunat 1,49 B
+    41	      1 Alesto Pistaasipähkinä 250g 3,98 B
+    42	     31 Alesto cashewpähkinä 3,50 B
+    43	      2 Alesto cashewpähkinä 3,79 B
+    44	      1 Alesto cashewpähkinä 7,00 B --------------- 2 x 3,50
+    45	      1 Alesto cashewpähkinä naturel 5,89 B
+    46	      1 Alesto cashewpähkinä naturel 8,49 B
+    47	      1 Alesto kalif. saksanpähk. 2,45 B
+    48	      6 Alesto kalif. saksanpähk. 2,49 B
+    49	      6 Alesto kalif. saksanpähk. 2,50 B
+    50	      1 Alesto kalif. saksanpähk. 2,99 B
+    51	      1 Alesto kalif. saksanpähk. 4,90 B --------------- 2 x 2,45
+    52	      1 Alesto kalif. saksanpähk. 4,98 B --------------- 2 x 2,49
+    53	      1 Alesto kalif. saksanpähk. 5,00 B --------------- 2 x 2,50
+    54	      4 Alesto karpalo-rusinasekoitu 1,49 B
+    55	      2 Alesto karpalo-rusinasekoitu 2,09 B
+    56	      1 Alesto kuivattu karpalo 1,49 B
+    57	      1 Alesto kuivattu karpalo 2,09 B
+    58	      2 Alesto kuorrut. maapähk. chi 2,59 B
+    59	      2 Alesto pistaasipähkinä 250g 3,95 B
+    60	      1 Alesto pistaasipähkinä 250g 4,19 B
+    61	      1 Alesto pistaasipähkinä 500g 7,69 B
+    62	      1 Alesto pistaasipähkinä 500g 7,96 B
+    63	      1 Alesto pistaasipähk.suolaama 4,99 B
+    64	      2 Alesto pistaasipäh. suolaama 2,49 B
+    65	      1 Alesto suolapähkinä 0,99 B
+    66	      1 Alesto suolapähkinä 1,09 B
+    67	      2 Alesto suolapähkinä 1,79 B
+    68	      7 Alesto suolapähkinä 1,89 B
+    69	      1 Alesto suolattu cashewpäh. X 3,99 B
+    70	      1 Almondy Mantelikakku Daim 6,99 B
+    71	      1 Almondy Oreo kakku 5,99 B
+    72	      1 Alpenfest kreemikakku 3,99 B
+    73	      1 Alumiininen kasarif0352663 13,99 A
+    74	      1 Ananas irto 2,05 B --------------- 1,474 kg x 1,39 EUR/kg
+    75	      1 Annoona 1,56 B --------------- 0,260 kg x 5,99 EUR/kg
+    76	      1 Appelsiini 1,08 B --------------- 0,640 kg x 1,69 EUR/kg
+    77	      1 Appelsiini 2kg 1,89 B
+    78	      1 Appelsiini 2kg 1,95 B
+    79	      1 Appelsiini 2kg 2,29 B
+    80	      2 Appelsiini 2kg 2,49 B
+    81	      1 Appelsiini Shamouti irto 1,99 B --------------- 1,054 kg x 1,89 EUR/kg
+    82	      1 Appelsiini irto 0,99 B --------------- 0,588 kg x 1,69 EUR/kg
+    83	      1 Appelsiini irto 1,15 B --------------- 0,892 kg x 1,29 EUR/kg
+    84	      1 Arla Ingmariini 75% 3,39 B
+    85	      3 Arla Voi 2,69 B
+    86	      1 Arla Voi 2,85 B
+    87	      1 Arla Voi 3,49 B
+    88	      1 Arla Voi 3,59 B
+    89	      1 Aromata alumiinifolio 1,95 A
+    90	      1 Aromata alumiinifolio 2,68 A
+    91	      1 Aromata alumiinifolio 2,99 A
+    92	      1 Aromata kartonkilautanen 18c 0,99 A
+    93	      1 Aromata leivinarkki 1,05 A
+    94	      1 Aromata tuorekelmu 29cm x 75 2,17 A
+    95	      1 Aromata tuorekelmu 29cm x 75 2,33 A
+    96	      1 Aromata vahva alumiinifolio 1,49 A
+    97	      1 Aurinkokennovalaisinf8351849 5,99 A
+    98	      1 Avokado 1,75 B --------------- 0,250 kg x 6,99 EUR/kg
+    99	      1 Avokado 700g 2,39 B
+   100	      1 Avokado 700g 3,89 B
+   101	      1 Avokado irto 4,77 B --------------- 0,796 kg x 5,99 EUR/kg
+   102	      1 Banaani RFA 1,26 B --------------- 1,062 kg x 1,19 EUR/kg
+   103	      1 Banaani RFA 1,58 B --------------- 1,062 kg x 1,49 EUR/kg
+   104	      1 Banaani RFA 1,64 B --------------- 1,058 kg x 1,55 EUR/kg
+   105	      1 Banaani RFA 2,08 B --------------- 1,396 kg x 1,49 EUR/kg
+   106	      1 Banaani RFA 2,28 B --------------- 1,764 kg x 1,29 EUR/kg
+   107	      1 Banaani RFA 2,32 B --------------- 1,498 kg x 1,55 — EUR/kg
+   108	      1 Banaani RFA 2,35 B --------------- 1,516 kg x 1,55 EUR/kg
+   109	      1 Banaani Reilun kaupan 1,42 B --------------- 0,892 kg x 1,59 EUR/kg
+   110	      1 Banaani Reilun kaupan 1,65 B --------------- 0,940 kg x 1,75 — EUR/kg
+   111	      1 Banaani Reilun kaupan 1,84 B --------------- 1,054 kg x 1,75 EUR/kg
+   112	      1 Banaani Reilun kaupan 2,26 B --------------- 1,420 kg x 1,59 EUR/kg
+   113	      1 Banaani Reilun kaupan 2,48 B --------------- 1,416 kg x 1,75 EUR/kg
+   114	      1 Banaani Reilun kaupan 2,49 B --------------- 1,390 kg x 1,79 EUR/kg
+   115	      1 Banaani irto RFA 0,97 B --------------- 0,984 kg x 0,99 EUR/kg
+   116	      1 Banaani irto RFA 1,12 B --------------- 0,750 kg x 1,49 EUR/kg
+   117	      1 Banaani irto RFA 1,26 B --------------- 1,416 kg x 8,89 EUR/kg
+   118	      1 Banaani irto RFA 1,47 B --------------- 0,984 kg x 1,49 EUR/kg
+   119	      1 Banaani irto RFA 1,49 B --------------- 1,028 kg x 1,45 EUR/kg
+   120	      1 Banaani irto RFA 1,68 B --------------- 1,160 kg x 1,45 EUR/kg
+   121	      1 Banaani irto RFA 1,77 B --------------- 1,792 kg x 8,99 EUR/kg
+   122	      1 Banaani irto RFA 1,78 B --------------- 1,230 kg x 1,45 EUR/kg
+   123	      1 Banaani irto RFA 1,98 B --------------- 1,368 kg x 1,45 EUR/kg
+   124	      1 Banaani irto RFA 2,11 B --------------- 1,416 kg x 1,49 EUR/kg
+   125	      1 Banaani irto RFA 2,41 B --------------- 1,664 kg x 1,45 EUR/kg
+   126	      1 Banaani irto RFA 2,47 B --------------- 1,706 kg x 1,45 EUR/kg
+   127	      1 Banaani irto RFA 2,49 B --------------- 1,716 kg x 1,45 EUR/kg
+   128	      1 Banaani irto RFA 2,52 B --------------- 1,694 kg x 1,49 EUR/kg
+   129	      1 Banaani irto RFA 2,71 B --------------- 1,870 kg x 1,45 EUR/kg
+   130	      1 Banaani irto RFA 2,78 B --------------- 1,916 kg x 1,45 EUR/kg
+   131	      5 Baresa Paseerat.tomaat. yrt. 0,75 B
+   132	      1 Baresa artisokka öljyssä 2,25 B
+   133	      1 Baresa aurinkokuiv. tomaatti 1,09 B
+   134	      1 Baresa aurinkokuiv. tomaatti 1,25 B
+   135	      1 Baresa aurinkokuiv. tomaatti 2,25 B
+   136	      2 Baresa aurinkokuiv. tomaatti 2,35 B
+   137	      1 Baresa aurinkokuiv. tomaatti 4,70 B --------------- 2 x 2,35
+   138	      1 Baresa paseerattu tomaatti 0,79 B
+   139	      1 Baresa valkosipulinkynsiä 2,89 B
+   140	      1 Basilika 1,79 B
+   141	      1 Bataatti 1,60 B --------------- 0,944 kg x 1,69 — EUR/kg
+   142	      1 Bataatti irto 1,31 B --------------- 8,452 kg x 2,89 EUR/kg
+   143	      1 Bataatti irto 1,40 B --------------- 0,742 kg x 1,89 EUR/kg
+   144	      1 Bataatti irto 2,87 B --------------- 1,154 kg x 2,49 EUR/kg
+   145	      1 Belbake Manteli jauhettu 1,69 B
+   146	      1 Belbake Manteli jauhettu 2,78 B --------------- 2 x 1,39
+   147	      1 Belbake Manteli jauhettu 3,38 B --------------- 2 x 1,69
+   148	      2 Belbake Manteli kokon. vaale 1,69 B
+   149	      1 Belbake Manteli kokon. vaale 3,38 B --------------- 2 x 1,69
+   150	      1 Belbake Manteli kuorittu 1,55 B
+   151	      1 Belbake Manteli viipal. vaal 1,69 B
+   152	      1 Belbake kaakaojauhe 1,59 B
+   153	      1 Belbake kaakaojauhe 1,65 B
+   154	      1 Belbake kaakaojauhe 1,79 B
+   155	      1 Belbake kokonainen manteli 1,99 B
+   156	      2 Belbake kokonainen manteli 2,09 B
+   157	     33 Belbake kokonainen manteli 2,49 B
+   158	      1 Belbake kokonainen manteli 2,99 B
+   159	      2 Belbake kookoshiutale 1,15 B
+   160	      1 Belbake kookoshiutale 1,19 B
+   161	      1 Belbake kookoshiutale 1,29 B
+   162	      2 Belbake kookoshiutale 1,39 B
+   163	      2 Belbake kookoshiutale 1,45 B
+   164	      1 Belbake koristerae Santa 1,99 B
+   165	      1 Belbake korppujauho 0,58 B
+   166	      1 Belbake kuivahiiva 6x7g 0,79 B
+   167	      3 Belbake leivinjauhe 0,59 B
+   168	      1 Belbake leivontakoris. marsi 1,99 B
+   169	      1 Belbake leivontasuklaa valko 1,49 B
+   170	      1 Belbake leivonta-aromi 2,39 B
+   171	      2 Belbake leivosaines m.suklaa 0,99 B
+   172	      2 Belbake leivosaines m.suklaa 1,29 B
+   173	      1 Belbake leivosaines t.suklaa 1,29 B
+   174	      1 Belbake maissitärkkelys 0,79 B
+   175	      1 Belbake maissitärkkelys 0,85 B
+   176	      1 Belbake mantelijauhe 1,69 B
+   177	      2 Belbake mantelijauhe 2,35 B
+   178	      2 Belbake mantelijauhe 2,49 B
+   179	      2 Belbake mantelijauhe 2,69 B
+   180	      1 Belbake mantelikrokantti 1,49 B
+   181	      1 Belbake mantelilastu 1,55 B
+   182	      2 Belbake mantelilastu 1,59 B
+   183	      1 Belbake mantelilastu 1,85 B
+   184	      1 Belbake ruokasooda 0,45 B
+   185	      1 Belbake ruokasooda 0,49 B
+   186	      3 Belbake ruokasooda 0,55 B
+   187	      1 Belbake ruokasooda 0,59 B
+   188	      2 Belbake ruokasooda 0,69 B
+   189	      8 Belbake rusina 0,75 B
+   190	      2 Belbake saksanpähkinä jauhet 2,29 B
+   191	      1 Belbake sokeri 0,69 B
+   192	      1 Belbake sokeri 1,39 B
+   193	      1 Belbake sokeroi.sitruunankuo 0,85 B
+   194	      1 Belbake sokeroi. hedelmäpala 1,98 B --------------- 2 x 0,99
+   195	      1 Belbake soker.appelsiininkuo 0,85 B
+   196	      1 Belbake taloussuklaa maito 2,98 B --------------- 2 x 1,49
+   197	      2 Belbake tomusokeri 0,42 B
+   198	      1 Belbake vuokaspray 2,69 B
+   199	      1 Belbake värikkäät kirsikat 0,99 B
+   200	      1 BellaromPikakah.hienoj .vah.R 4,65 B
+   201	      1 BellaromPikakah.hienoj.vah.R 4,25 B
+   202	      2 BellaromPikakah.hienoj.vah.R 4,45 B
+   203	      1 BellaromPikakah.hienoj.vah.R 4,65 B
+   204	      5 Bellarom pikakahvi vahva 3,99 B
+   205	      1 Bellarom pikakahvi vahva 4,65 B
+   206	      2 BellaroomPikakahviPakastekui 4,45 B
+   207	      1 BellaroomPikakahviPakastekui 4,59 B
+   208	      1 BellaroomPikakahviPakastekui 4,69 B
+   209	      1 Bio Belbake kookosjauho luom 1,99 B
+   210	      1 Boström gluteen. vadelmatort 4,09 B
+   211	      1 CakeAngels Carnival 2,79 B
+   212	      1 CakeAngels Sweetie Pie 2,79 B
+   213	      2 ChanteSel jodisuola 0,30 B
+   214	      3 ChanteSel jodisuola 0,32 B
+   215	      1 ChanteSel jodisuola 0,37 B
+   216	      1 ChanteSel jodisuola 0,39 B
+   217	      1 ChanteSel jodisuola 0,59 B
+   218	      1 ChefSelect patonki valkosipu 1,09 B
+   219	      1 ChefSelect patonki valkosipu 1,15 B
+   220	      1 ChefSelect patonki valkosipu 1,19 B
+   221	      2 ChefSelect patonki valkosipu 1,49 B
+   222	      1 ChefSelect patonki valkosipu 1,69 B
+   223	      1 ChefSelect patonki yrtti 1,09 B
+   224	      1 Chef Select hummus XXL 1,99 B
+   225	      1 Chilikastike extreme vahva 1,79 B
+   226	      1 Chili mix irto 1,68 B --------------- 8,112 kg x 14,99 EUR/kg
+   227	     14 Chili peperoni mix 100g 1,49 B
+   228	      1 ChocoNussa pähkinänougatlevi 1,70 B
+   229	      1 ChocoNussa pähkinänougatlevi 1,85 B
+   230	      1 Cien After Shave Balsam Mild 3,19 A
+   231	      1 Cien Anti-age kasvonaamio 0,99 A
+   232	      1 Cien Body Lotion Shower 2,99 A
+   233	      1 Cien Concealer dark 1,99 A
+   234	      1 Cien Granaattiomena BodyButt 2,99 A
+   235	      1 Cien Hilseshampoo Apple 1,99 A
+   236	      1 Cien Hilseshampoo Classic 1,99 A
+   237	      1 Cien Hilseshampoo Classic 2,19 A
+   238	      1 Cien Hilseshampoo Lemon 1,79 A
+   239	      3 Cien Kangasnaamio gran.omena 0,99 A
+   240	      1 Cien Kuivashampoo Brunette 2,09 A
+   241	      1 Cien Nature hoitoaine Argano 1,69 A
+   242	      1 Cien Nature hoitoaine Honey 1,49 A
+   243	      1 Cien Prof. keratin shampoo 1,99 A
+   244	      4 Cien Prof. korjaava hoitoain 1,69 A
+   245	      2 Cien Prof. spa hoitoaine 1,69 A
+   246	      1 Cien Ripsiväri volume black 1,99 A
+   247	      1 Cien Silmänymp.voide 010 2,99 A
+   248	      1 Cien Vartalogeeli Aloe Vera 2,99 A
+   249	      1 Cien Volume Mas./Eyelin. rus 4,99 A
+   250	      1 Cien huulivoide pearl 2,05 A
+   251	      1 Cien ihovoide Classic 2,65 A
+   252	      2 Cien ihovoide Classic 2,99 A
+   253	      1 Cien ihovoide Soft 2,79 A
+   254	      1 Cien ihovoide Soft 2,99 A
+   255	      1 Cien kasvoseerumi Cell. B. 4,55 A
+   256	      1 Cien kasvo-/vart.öljy 3,49 A
+   257	      1 Cien kasvo-/vart.öljy 3,99 A
+   258	      1 Cien kosteuttava kasvonaamio 0,99 A
+   259	      1 Cien kulmakynä ultra brown 1,19 A
+   260	      1 Cien kuoriva puhdistusgeeli 1,29 A
+   261	      1 Cien kynsilakka Berry Passio 1,99 A
+   262	      1 Cien meikkivoide natural san 3,69 A
+   263	      2 Cien nestesaippua mantelikuk 1,65 A
+   264	      2 Cien nestesaip. täyt. gran.o 1,65 A
+   265	      1 Cien nestesaip. täyt. gran.o 1,79 A
+   266	      1 Cien nestesaip. täyt. seljan 1,48 A
+   267	      1 Cien nestesaip. täyt. seljan 1,65 A
+   268	      1 Cien nestesaip. täyt. seljan 1,75 A
+   269	      1 Cien nestesaip. täyt. seljan 1,79 A
+   270	      1 Cien parranajogeeli Sensitiv 2,65 A
+   271	      1 Cien poskipuna Secret Lovers 2,79 A
+   272	      1 Cien puhdistava kasvonaamio 0,99 A
+   273	      1 Cien puuteri medium 2,79 A
+   274	      1 Cien saippua maito & hunaja 0,96 A
+   275	      1 Cien silmänrajauskynä musta 1,19 A
+   276	      1 Cien suihkugeeli Flower Spir 0,89 A
+   277	      1 Cien suihkugeeli Pure Fresh 0,89 A
+   278	      1 Cien suihkug. trop.sum. mint 1,99 A
+   279	      1 Cien suihkusaippua Soothing 1,19 A
+   280	      1 Cocktail-settit0367804 19,99 A
+   281	      1 Col.housut t.sin. 40357095 5,99 A
+   282	      1 Combino Riisinuudeli 1,89 B
+   283	      1 Combino Tomaattikastike 1,15 B
+   284	      1 Combino farfalle 1,49 B
+   285	      1 Combino fusilli 0,64 B
+   286	      1 Combino kaurapasta 1,39 B
+   287	      1 Combino kaurapasta 1,59 B
+   288	      1 Combino luomu t.jyväp. Fusil 1,29 B
+   289	      1 Combino luomu t.jyväp. Penne 1,45 B
+   290	      1 Combino luomu t.jyväp. Penne 1,99 B
+   291	      1 Combino pastakastike arrabia 1,45 B
+   292	      1 Combino pastakastike arrabia 1,69 B
+   293	      1 Combino pastakastike oliivi 1,69 B
+   294	      1 Combino penne rigate 0,64 B
+   295	      1 Combino penne rigate 1,29 B
+   296	      1 Combino premiumpasta spaghet 0,99 B
+   297	      1 Combino spagetti 0,55 B
+   298	      1 Combino täysjyväspagetti 0,79 B
+   299	      1 Combino täysjyväspagetti 0,95 B
+   300	      1 Combino täysjyväspagetti 1,09 B
+   301	      2 ConfiserieFirenze mantelikak 3,99 B
+   302	      1 Crownfield Choco Shells XXL 3,49 B
+   303	      1 Crownfield Erikoismysli 3,95 B
+   304	      1 Crownfield Hedelmämysli 3,59 B
+   305	      1 Crownfield Hedelmämysli 3,95 B
+   306	      1 Crownfield Mix&Match pun.mar 0,99 B
+   307	      1 Crownfield erikoismysli 2,19 B
+   308	      3 Crownfield erikoismysli 2,95 B
+   309	      3 Crownfield erikoismysli 3,09 B
+   310	      1 Crownfield erikoismysli 3,15 B
+   311	      1 Crownfield granola pähkinä 3,19 B
+   312	      1 Crownfield neomurotyynyt 3,49 B
+   313	      5 Dan Sukker Fariinisokeri 1,35 B
+   314	      4 Dan Sukker Fariinisokeri 1,39 B
+   315	      2 Dan Sukker Fariinisokeri 1,45 B
+   316	      3 Dan Sukker taloussokeri 0,89 B
+   317	      1 Deluxe Premium Tiramisu 3,99 B
+   318	      1 Deluxe chiliöljy 1,49 B
+   319	      1 Deluxe chutney sipuli 1,69 B
+   320	      1 Deluxe mursk. chili öljyssä 2,49 B
+   321	      1 Deluxe pähkinäkori + särkijä 6,99 B
+   322	      1 Del Monte ananasmurska sok.1 1,63 B
+   323	      1 Dentalux hammastahna sensiti 0,99 A
+   324	      1 Dentalux hammastahna sensiti 1,29 A
+   325	      1 Dentalux hammastahna total 0,99 A
+   326	      1 Dentalux hammastahna total 1,29 A
+   327	      1 Dentalux hammastahna yrtti 0,79 A
+   328	      2 Dentalux hammastah. valkaise 0,99 A
+   329	      1 Dentalux hammastah. valkaise 1,19 A
+   330	      3 Dentalux hammastah. valkaise 1,29 A
+   331	      1 Dentalux hammasväliharja ult 2,19 A
+   332	      1 Dentalux suuvesi Care 1,45 A
+   333	      1 Dentalux suuvesi x-tra mint 1,05 A
+   334	      1 Dentalux suuvesi x-tra mint 1,29 A
+   335	      1 Desiline käsidesi 7,49 A
+   336	      1 Digitaalinen ajastinf0400107 3,99 A
+   337	      1 Dulano nakki, kuoreton 0,85 B
+   338	      1 Dulano ohut broilerileikkele 1,59 B
+   339	      1 Ehrmann Maitorahka 0,2% 0,89 B
+   340	      1 Elovena välip.keksi puol.kar 3,19 B
+   341	      1 El Teguito minipepperoni kel 0,69 B
+   342	      1 El Teguito minipepperoni kel 0,99 B
+   343	      1 Emotionali hedelmätikkari 1,49 B
+   344	      1 Eridanous halva kaakao 2,49 B
+   345	      1 Eridanous halva vanilja 2,49 B
+   346	      1 Eridanous tahini hunaja 2,99 B
+   347	      2 Fackelmann Leivontat40367133 2,49 A
+   348	      1 Fackelmann Leivontatt0389728 2,99 A
+   349	      5 Fairglobe ruskea sokeri 1,39 B
+   350	      2 Fairglobe ruskea sokeri 1,79 B
+   351	      5 Fairglobe ruskea sokeri 1,85 B
+   352	      1 Fairtrade Luomu cashewpähkin 3,79 B
+   353	      1 FamilyFresh AloeVera suihkus 1,69 A
+   354	      1 Favorina pääsiäissuklaasekoi 2,39 B
+   355	      1 Favorina pääsiäissuklaasekoi 2,49 B
+   356	      2 Favorina suklaakoristerae 1,99 B
+   357	      1 Favorina suklaakoristerae 2,49 B
+   358	      1 FazerKarlFazer Avec maitosuk 2,69 B
+   359	      1 FazerKarlFazer appels.krokan 1,89 B
+   360	      1 Fazer Dallaspulla 3,96 B --------------- 4 x 0,99
+   361	      1 Fazer Geisha Caramel&Sea sal 1,98 B
+   362	      1 Fazer Geisha suklaapatukka 0,55 B
+   363	      1 Fazer Paahto Lempeä kaura 1,85 B
+   364	      1 Fazer Paahto kaura 0,98 B
+   365	      1 Fazer Paahto kaura 1,15 B
+   366	      1 Fazer Present 11,55 B --------------- 3 x 3,85
+   367	      1 Fazer Puikula Täysjyvär.9kpl 1,99 B
+   368	      3 Fazer Puikula täysjyväruis 1,29 B
+   369	      3 Fazer Puikula täysjyväruis 1,55 B
+   370	      1 Fazer Real täysjyväruisleipä 1,99 B
+   371	      4 Felix Ketsuppi 1,89 B
+   372	      1 Ferrero Nutella 4,23 B
+   373	      1 FinCarr6 maitosuklaa 0,69 B
+   374	      1 FinCarr6 maitosuklaa 0,89 B
+   375	      2 FinCarr6 pähkinämaitosuklaa 0,99 B
+   376	      2 FinCarr6 tummasuklaa hasselp 0,79 B
+   377	      1 FinCarr6 tumma suklaa 0,69 B
+   378	      1 FinCarr6 tumma suklaa 0,89 B
+   379	      1 FinCarr6 tumma suklaa 2,67 B --------------- 3 x 0,89
+   380	      1 FinCarr6 valkoinen suklaa 0,49 B
+   381	      1 FinCarr6 valkoinen suklaa 0,89 B
+   382	      1 FinCarr6 valkoinen suklaa 1,78 B --------------- 2 x 0,89
+   383	      1 FinCarre6M.suk1.Suol.hun.mant 1,89 B
+   384	      2 FinCarre pähkinämaitosuklaa 1,38 B --------------- 2 x 0,69
+   385	      1 FinCarre tumma suklaa 2,97 B --------------- 3 x 0,99
+   386	      1 FinCarr& maitosuklaa 1,90 B --------------- 2 x 0,95
+   387	      1 FinCarr& tummasuklaa hasselp 0,79 B
+   388	      1 FinCarr& valkoinen suklaa 0,89 B
+   389	      1 FinCarr& valkosuklaa 2,97 B --------------- 3 x 0,99
+   390	      1 Findus Vegepuikot 1,48 B
+   391	      1 Finkbräu alkoholiton olut 1,20 B --------------- 3 x 0,40
+   392	      1 Finkbräu alkoholiton olut 1,48 B --------------- 4 x 0,37
+   393	      2 Finkbräu alkoholiton olut 1,60 B --------------- 4 x 0,40
+   394	      2 Finkbräu alkoholiton olut 1,76 B --------------- 4 x 0,44
+   395	      1 Finkbräu olut 2,8% 6-pack 4,02 A
+   396	      1 Fin Carr6 Maitos.Rus.&hassel 1,89 B
+   397	      1 Fin Carr6 Maitos.Rus.&hassel 2,19 B
+   398	      2 Fin Carr6 maitosuklaa hassel 0,79 B
+   399	      1 Fin Carr6 maitosuklaa hassel 1,58 B --------------- 2 x 0,79
+   400	      2 Fin Carr6 maitosuklaa mantel 1,89 B
+   401	      1 Fin Carr& maitosuklaa 46% 2,09 B
+   402	      1 Floralys Talouspaperi,kierrä 1,29 A
+   403	      1 Flora 60% normaalisuolainen 1,19 B
+   404	      1 Flora 60% normaalisuolainen 1,45 B
+   405	      3 Flora & Voi maukas merisuola 2,99 B
+   406	      1 Flora & Voi normaalisuolaine 1,95 B
+   407	      1 Flyingcoose sriracha makea 4,49 B
+   408	      2 Foodin luomu chia-siemen 7,45 B
+   409	      2 Foxtel ihmesieni 1,49 A
+   410	      1 Freshona LuomuPaseerattuTom. 0,95 B
+   411	      1 Freshona Luomu Omenas.makeut 0,99 B
+   412	      1 Freshona herne, pakaste 1,29 B
+   413	     14 Freshona herne, pakaste 1,49 B
+   414	      6 Freshona herne, pakaste 1,55 B
+   415	      1 Freshona herne, pakaste 1,59 B
+   416	      4 Freshona herne, pakaste 1,65 B
+   417	      1 Freshona herne, pakaste 1,69 B
+   418	      2 Freshona herne, pakaste 1,75 B
+   419	      1 Freshona herne, pakaste 1,85 B
+   420	      2 Freshona herne, pakaste 1,99 B
+   421	      1 Freshona hienonnettu pinaatt 1,59 B
+   422	      1 Freshona hienonnettu pinaatt 1,69 B
+   423	      1 Freshona hienonnettu pinaatt 1,85 B
+   424	     19 Freshona keittojuurekset 0,52 B
+   425	      1 Freshona keittojuurekset 0,59 B
+   426	      5 Freshona keittojuurekset 0,68 B
+   427	      5 Freshona keittokasvikset 0,73 B
+   428	      1 Freshona kookosmaito 1,19 B
+   429	      1 Freshona kookosmaito vähäras 1,25 B
+   430	      2 Freshona luomu kikherneet 0,79 B
+   431	      6 Freshona makea maissi 0,89 B
+   432	      4 Freshona makea maissi 0,95 B
+   433	      1 Freshona makea maissi 0,99 B
+   434	      1 Freshona makea maissi 1,09 B
+   435	      2 Freshona makea maissi 1,15 B
+   436	      1 Freshona makea maissi 1,19 B
+   437	      1 Freshona makea maissi 1,39 B
+   438	      8 Freshona musta kivetön oliiv 0,89 B
+   439	      2 Freshona musta kivetön oliiv 0,95 B
+   440	      3 Freshona musta kivetön oliiv 1,09 B
+   441	      2 Freshona musta kivetön oliiv 1,15 B
+   442	      1 Freshona musta kivetön oliiv 1,25 B
+   443	      1 Freshona musta kivetön oliiv 1,39 B
+   444	      3 Freshona paseerattu tomaatti 0,57 B
+   445	      2 Freshona paseerattu tomaatti 0,59 B
+   446	      1 Freshona pepperoni tulinen 1,29 B
+   447	      1 Freshona puutarhan vihann. 2,05 B
+   448	      1 Freshona vihreä papu 1,59 B
+   449	      1 Fusilli Tricolore 1,39 B
+   450	      1 Galiameloni 3,97 B --------------- 1,048 kg x 3,79 EUR/kg
+   451	      1 Galiameloni irto 1,65 B --------------- 0,872 kg x 1,89 EUR/kg
+   452	      1 Galiameloni irto 1,67 B --------------- 0,988 kg x 1,69 EUR/kg
+   453	      1 Galiameloni irto 2,19 B --------------- 1,298 kg x 1,69 EUR/kg
+   454	      1 Galiameloni irto 2,40 B --------------- 0,830 kg x 2,89 EUR/kg
+   455	      1 Galiameloni irto 2,88 B --------------- 1,448 kg x 1,99 EUR/kg
+   456	      1 Galiameloni irto 2,98 B --------------- 1,930 kg x 2,89 EUR/kg
+   457	      1 Galiameloni irto 2,99 B --------------- 1,034 kg x 2,89 EUR/kg
+   458	      1 Galiameloni irto 3,25 B --------------- 1,124 kg x 2,89 EUR/kg
+   459	      1 Galiameloni irto 3,47 B --------------- 1,162 kg x 2,99 EUR/kg
+   460	      1 Gelatelli j.-kastike, suklaa 1,89 B
+   461	      1 Gelatelli kasvirasvajäätelö 1,99 B
+   462	      3 GoldenSun basmatiriisi 2,25 B
+   463	      1 GoldenSun luomu bulgur 1,99 B
+   464	      1 GoldenSun luomu spelttivehnä 1,99 B
+   465	      1 GoldenSun riisi parboiled 1,19 B
+   466	      2 GoldenSun tumma pitkäjyv.rii 1,49 B
+   467	      2 Golden Sun Basmatiriisi 2,75 B
+   468	      1 Golden Sun Basmatiriisi 3,29 B
+   469	      1 Golden Sun Riisi 1,75 B
+   470	      1 Goody Corn Flakes 0,98 B
+   471	      1 Goody Corn Flakes 1,30 B
+   472	      2 Goody Corn Flakes 1,45 B
+   473	      1 Goody Corn Flakes 1,99 B
+   474	      1 Go-Tan Sriracha Chilikastike 4,69 B
+   475	      1 Granaattiomena 1,15 B --------------- 0,236 kg x 4,89 EUR/kg
+   476	      1 Granaattiomena 1,17 B --------------- 0,292 kg x 3,99 EUR/kg
+   477	      1 Granaattiomena 1,28 B --------------- 0,320 kg x 3,99 EUR/kg
+   478	      1 Granaattiomena 1,28 B --------------- 0,400 kg x 3,19 EUR/kg
+   479	      1 Granaattiomena 2,05 B --------------- 0,686 kg x 2,99 EUR/kg
+   480	      1 Granaattiomena irto 1,00 B --------------- 0,232 kg x 4,29 EUR/kg
+   481	      1 Granaattiomena irto 1,12 B --------------- 0,230 kg x 4,89 EUR/kg
+   482	      1 Granaattiomena irto 1,46 B --------------- 0,488 kg x 2,99 EUR/kg
+   483	      1 Granaattiomena irto 1,76 B --------------- 0,590 kg x 2,99 EUR/kg
+   484	      1 Granaattiomena irto 1,94 B --------------- 0,648 kg x 2,99 EUR/kg
+   485	      1 Granaattiomena irto 2,02 B --------------- 0,674 kg x 2,99 EUR/kg
+   486	      1 Granaattiomena irto 2,04 B --------------- 0,584 kg x 3,49 EUR/kg
+   487	      1 Granaattiomena irto 2,83 B --------------- 8,568 kg x 4,99 EUR/kg
+   488	      1 Granaattiomena irto 3,40 B --------------- 0,568 kg x 5,99 EUR/kg
+   489	      1 Grillimaisteri kartonkipilli 0,99 A
+   490	      1 Grillimaisteri sipulirouhe 0,75 B
+   491	      1 Grillim. Raastesa. Coleslaw 1,99 B
+   492	      1 Grillipaprika Padron 200g 1,39 B
+   493	      1 Halloween pasta 1,69 B
+   494	      1 Halloween perunasn. sour cre 1,39 B
+   495	      1 Harvest Basket Ranskal. peru 1,99 B
+   496	      2 Harvest Basket ranskanperuna 1,19 B
+   497	      1 Harvest Basket ranskanperuna 1,25 B
+   498	      1 Hasselpähkinä paahdettu 2,99 B
+   499	      1 Hatherwood minttukuula 1,99 B
+   500	      1 Head&Shoulders AppleFresh 6,29 A
+   501	      2 Head&Shoulders Citrus Fresh 3,29 A
+   502	      1 Head&Shoulders Dry Scalp Car 3,29 A
+   503	      1 Heij.käsivar.tas./vyt0d376255 3,99 A
+   504	      1 Heinz tomaattiketsuppi 3,49 B
+   505	      1 Henkselikassi 0,87 A --------------- 3 x 0,29
+   506	      1 Henkselikassi, 80% Recycling 0,25 A
+   507	      2 Herkkusieni 250g 1,49 B
+   508	     12 Herkkusieni 250g 1,59 B
+   509	      6 Herkkusieni 250g 1,79 B
+   510	      1 Herkkusieni 250g 1,99 B
+   511	      3 Herkkusieni ruskea 250g 1,79 B
+   512	      1 Hiusharjaf0353058 2,49 A
+   513	      1 Hunajameloni irto 2,39 B --------------- 1,412 kg x 1,69 EUR/kg
+   514	      1 Hunajameloni irto 3,63 B --------------- 1,656 kg x 2,19 EUR/kg
+   515	      1 Huopatassusettiff0360343 1,49 A
+   516	      1 Höyrypesuri 3vff0353009 24,99 A
+   517	      1 Inkivääri luomu 0,94 B --------------- 0,122 kg x 7,69 — EUR/kg
+   518	      1 Inkivääri luomu 1,83 B --------------- 0,238 kg x 7,69 EUR/kg
+   519	      1 Inkivääri luomu 1,92 B --------------- 0,256 kg x 7,49 EUR/kg
+   520	      1 Inkivääri luomu 1,96 B --------------- 0,262 kg x 7,49 EUR/kg
+   521	      1 Inkivääri luomu 2,18 B --------------- 0,284 kg x 7,69 EUR/kg
+   522	      1 Inkivääri luomu 2,47 B --------------- 0,434 kg x 5,69 EUR/kg
+   523	      1 Inkivääri luomu 2,78 B --------------- 0,352 kg x 7,89 EUR/kg
+   524	      1 Italiamo Tiramisu 3,99 B
+   525	      1 Italiamo antipasti kuiv. tom 2,49 B
+   526	      1 Italiamo lasagne naudanliha 2,29 B
+   527	      1 Italiamo lasagne porsaanliha 2,29 B
+   528	      1 Italiamo pizza arrabiata 2,79 B
+   529	      1 Italiamo suklaa-vaniljajäät. 3,49 B
+   530	      4 Jauhoinen peruna 2kg 1,45 B
+   531	      2 Jauhoinen peruna 2kg 1,49 B
+   532	      1 Jetgum täysxylipurkka fruit 1,09 B
+   533	      1 Jetgum täysxylipurkka fruit 1,19 B
+   534	      4 Jouluaitta glögijuoma 1,15 B
+   535	      1 Jouluaitta glögijuoma 1,25 B
+   536	      1 Jouluaitta joulumakkara 3,19 B
+   537	      1 Jouluaitta lakt. torttutaiki 1,35 B
+   538	      1 Jouluaitta lakt. torttutaiki 1,75 B
+   539	      1 Jouluaitta piparitaikina lak 1,45 B
+   540	      2 Jouluaitta piparkakku 1,09 B
+   541	      1 Jouluaitta piparkakku 1,25 B
+   542	      1 Jouluasusteff0363392 2,99 A
+   543	      1 Jouluomena irto 1,78 B --------------- 1,818 kg x 8,98 EUR/kg
+   544	      1 Jouluomena irto 1,95 B --------------- 1,090 kg x 1,79 EUR/kg
+   545	      1 Jouluomena irto 3,17 B --------------- 1,624 kg x 1,95 EUR/kg
+   546	      2 J.D.Gross Arriba suklaa 85% 1,19 B
+   547	      2 J.D.Gross Arriba suklaa 85% 1,49 B
+   548	      1 J.D.Gross Arriba suklaa 85% 1,59 B
+   549	      1 J.D.Gross Arriba suklaa 85% 1,69 B
+   550	      1 J.D.Gross Valk.sukl.vad.karh 1,69 B
+   551	      1 J.D.Gross tumma suklaa app-m 1,19 B
+   552	      2 J.D.Gross tumma suklaa chili 2,38 B --------------- 2 x 1,19
+   553	      5 J.D.Gross tumma suklaa karam 1,19 B
+   554	      2 J.D.Gross tumma suklaa karam 1,29 B
+   555	      2 J.D.Gross tumma suklaa karam 1,49 B
+   556	      4 J.D.Gross tumma suklaa vadel 1,19 B
+   557	      2 J.D.Gross tumma suklaa vadel 1,29 B
+   558	      3 J.D.Gross tumma suklaa vadel 1,39 B
+   559	      2 J.D.Gross tumma suklaa vadel 1,69 B
+   560	      1 J.D.Gross tumma sukl. mansik 1,19 B
+   561	      1 J.D.Gross tumma sukl. pistaa 1,19 B
+   562	      1 J.D. Gross mous.sukl.has.päh 1,99 B
+   563	      2 J.D. Gross suklaa Amazonas 1,19 B
+   564	      1 J.D. Gross suklaa Ecuador 1,19 B
+   565	      2 J.D. Gross suklaa Ecuador 1,49 B
+   566	      1 J.D. Gross-Tumma suklaa 95% 1,79 B
+   567	      1 J.D. Gross-Tumma suklaa 95% 2,38 B --------------- 2 x 1,19
+   568	      1 Jääsalaattipussi 100g 0,69 B
+   569	      1 Jääsalaattipussi 100g 0,89 B
+   570	      3 Jääsalaattipussi 100g 1,19 B
+   571	      1 Jääsalaattipussi 100g 1,29 B
+   572	      1 Jääsalaattipussi 100g 1,39 B
+   573	      1 Jääsalaatti 1,19 B
+   574	      2 Jääsalaatti 1,29 B
+   575	      1 Kaki/Persimon 0,39 B --------------- 0,216 kg x 1,79 EUR/kg
+   576	      1 Kaki/Persimon irto 0,60 B --------------- 0,216 kg x 2,79 EUR/kg
+   577	      1 KanamestariKananpaistis.huna 3,99 B
+   578	      1 Kanamestari KananSisäf.fajit 5,29 B
+   579	      1 Kanamestari Kanan sisäf. yrt 5,79 B
+   580	      1 Kanamestari kanan filees.pip 2,45 B
+   581	      1 Kanamestari kanan filees. 2,45 B
+   582	      1 Kanamestari kanan filees. 2,99 B
+   583	      1 Kanamestari kanan o-lei. v.- 3,49 B
+   584	      1 Kanamestari paistil. pintam. 4,89 B
+   585	      1 Kanamestari paistil. pintanm. 4,89 B
+   586	      1 Kananugetit fileestä classic 3,99 B
+   587	      1 KaniaTimjamiZipLock -pussiss 0,89 B
+   588	     15 Kania Himalajan vuorisuola 1,99 B
+   589	      1 Kania Himalajan vuorisuola 2,29 B
+   590	      6 Kania Himalajan vuorisuola 2,59 B
+   591	      2 Kania Jauhettu juustokumina 0,79 B
+   592	      1 Kania Kaneli 1,29 B
+   593	      1 Kania Kaneli jauhettu 1,25 B
+   594	      1 Kania Kurkuma 1,29 B
+   595	      1 Kania Laakerinlehti 0,69 B
+   596	      2 Kania Luomuketsuppi 1,99 B
+   597	      1 Kania Maustekastike chili 1,79 B
+   598	      1 Kania Mayochup 1,99 B
+   599	      2 Kania Oregano 1,19 B
+   600	      4 Kania Oregano 1,29 B
+   601	      1 Kania chilimauste 2,29 B
+   602	      1 Kania chilimauste 2,59 B
+   603	      1 Kania curry 1,19 B
+   604	      2 Kania curry-nuudeli 1,26 B --------------- 3 x 0,42
+   605	      3 Kania herkkumajoneesi 1,63 B
+   606	      1 Kania herkkumajoneesi 1,66 B
+   607	      1 Kania herkkumajoneesi 2,29 B
+   608	      3 Kania kaneli 1,19 B
+   609	      1 Kania kardemumma 0,42 B
+   610	     10 Kania kardemumma 0,44 B
+   611	     12 Kania kardemumma 0,45 B
+   612	      6 Kania kardemumma 0,84 B --------------- 2 x 0,42
+   613	      4 Kania kardemumma 0,88 B --------------- 2 x 0,44
+   614	      4 Kania kardemumma 0,90 B --------------- 2 x 0,45
+   615	      1 Kania kardemumma 1,38 B --------------- 2 x 0,69
+   616	      5 Kania kokonainen mustapippur 0,92 B
+   617	      1 Kania kokonainen mustapippur 1,02 B
+   618	      1 Kania majoneesi paprika 1,89 B
+   619	      1 Kania majoneesi paprika 1,95 B
+   620	      1 Kania maustepippuri Zip lock 0,43 B
+   621	      2 Kania mustapippuri, jauhettu 1,29 B
+   622	      2 Kania mustapippuri, jauhettu 1,39 B
+   623	      2 Kania oregano 0,99 B
+   624	      6 Kania pizzamauste 0,39 B
+   625	      1 Kania pizzamauste 0,49 B
+   626	      1 Kania pizzamauste 0,59 B
+   627	      1 Kania premium majoneesi 1,67 B
+   628	      2 Kania rosmariini Zip lock 0,49 B
+   629	      1 Kania rosmariini Zip lock 0,98 B --------------- 2 x 0,49
+   630	      1 Kania salaatinkastike ranska 1,89 B
+   631	      4 Kania salaattimajoneesi 29% 1,65 B
+   632	      3 Kania salaattimajoneesi 29% 1,67 B
+   633	      2 Kania salaattimajoneesi 29% 1,75 B
+   634	      1 Kania suolamylly yrtti 2,59 B
+   635	      2 Kania tomaattiketsuppi 0,49 B
+   636	      1 Kania valkosipulirouhe 1,19 B
+   637	      2 Kania valkosipulirouhe 1,39 B
+   638	      1 Karlens grape long drink 2,01 A
+   639	      1 Karlens karpalo long drink 2,21 A
+   640	      1 KartanonMurea Kalkkunaleikke 3,35 B
+   641	      1 Kartanonsalaatti 1,29 B
+   642	      1 Kartanonsalaatti 1,39 B
+   643	      4 Kartanonsalaatti 1,49 B
+   644	      1 Kartanon kalkkunaleike 2,79 B
+   645	      1 Kartanon pepperoni 1,99 B
+   646	      1 Keraaminen vuokat0340037 5,99 A
+   647	      1 Keräkaali 0,86 B --------------- 0,908 kg x 0,95 — EUR/kg
+   648	      1 Keräkaali 1,09 B --------------- 0,952 kg x 1,15 EUR/kg
+   649	      1 Keräkaali irto 0,43 B --------------- 8,568 kg x 8,75 EUR/kg
+   650	      1 Keräkaali irto 0,66 B --------------- 0,778 kg x 0,85 EUR/kg
+   651	      1 Keräkaali irto 0,69 B --------------- 0,872 kg x 0,79 EUR/kg
+   652	      1 Keräkaali irto 0,70 B --------------- 0,736 kg x 0,95 EUR/kg
+   653	      1 Keräkaali irto 0,97 B --------------- 0,922 kg x 1,05 EUR/kg
+   654	      1 Keräkaali irto 1,07 B --------------- 1,122 kg x 0,95 EUR/kg
+   655	      1 Keräkaali irto 1,08 B --------------- 1,088 kg x 8,99 EUR/kg
+   656	      1 Keräkaali irto 1,27 B --------------- 1,070 kg x 1,19 EUR/kg
+   657	      1 Keräkaali luomu 2,52 B --------------- 0,842 kg x 2,99 EUR/kg
+   658	      1 Keski Paahtorinkeli karp.-si 1,79 B
+   659	      1 Kestokassi 1,99 A
+   660	      1 Kesäkassi salaatti&yrtti 3kp 3,29 B
+   661	      1 Kesäkurpitsa 0,88 B --------------- 0,680 kg x 1,29 EUR/kg
+   662	      1 Kesäkurpitsa 1,76 B --------------- 0,610 kg x 2,89 = EUR/kg
+   663	      1 Kesäkurpitsa 2,05 B --------------- 0,586 kg x 3,49 EUR/kg
+   664	      1 Kesäkurpitsa irto 0,63 B --------------- 0,354 kg x 1,79 EUR/kg
+   665	      1 Kesäkurpitsa irto 0,76 B --------------- 8,426 kg x 1,79 EUR/kg
+   666	      1 Kesäkurpitsa irto 0,97 B --------------- 0,512 kg x 1,89 EUR/kg
+   667	      1 Kesäkurpitsa irto 1,02 B --------------- 0,428 kg x 2,39 EUR/kg
+   668	      1 Kesäkurpitsa irto 1,04 B --------------- 0,484 kg x 2,15 EUR/kg
+   669	      1 Kesäkurpitsa irto 1,11 B --------------- 0,654 kg x 1,69 EUR/kg
+   670	      1 Kesäkurpitsa irto 1,31 B --------------- 0,550 kg x 2,39 EUR/kg
+   671	      1 Kesäkurpitsa irto 1,39 B --------------- 0,464 kg x 2,99 EUR/kg
+   672	      1 Kesäkurpitsa irto 1,48 B --------------- 0,572 kg x 2,59 EUR/kg
+   673	      1 Kesäkurpitsa irto 1,54 B --------------- 0,644 kg x 2,39 EUR/kg
+   674	      1 Kesäkurpitsa irto 1,66 B --------------- 8,462 kg x 3,59 EUR/kg
+   675	      1 Kesäkurpitsa irto 1,98 B --------------- 0,864 kg x 2,29 EUR/kg
+   676	      1 Kesäkurpitsa irto 2,21 B --------------- 0,792 kg x 2,79 EUR/kg
+   677	      1 Kesäperuna irto 0,57 B --------------- 1,034 kg x 8,55 EUR/kg
+   678	      1 Kesäperuna irto 0,85 B --------------- 1,086 kg x 8,78 EUR/kg
+   679	      1 Kesäperuna pesty 1,59 B --------------- 1,676 kg x 0,95 EUR/kg
+   680	      1 Kevytmaito 1,78 B --------------- 2 x 0,89
+   681	      2 Kevytmaito 2,67 B --------------- 3 x 0,89
+   682	      4 Kevytmaito 3,56 B --------------- 4 x 0,89
+   683	      2 Kevätsipulinippu 100g 1,99 B
+   684	      1 Kevätsipulinippu 100g 2,29 B
+   685	      1 Kevätsipulinippu 100g 2,39 B
+   686	      1 Kierrepulla appelsiini tuore 2,97 B --------------- 3 x 0,99
+   687	      1 Kierrepulla toffee-puolukka 2,97 B --------------- 3 x 0,99
+   688	      1 Kiivimarja 125g 2,19 B
+   689	      2 Kiivi 1kg 2,99 B
+   690	      2 Kiivi 500g 1,85 B
+   691	      1 Kiivi 500g 1,99 B
+   692	      1 Kiivi 500g 2,09 B
+   693	      1 Kiivi irto 0,84 B --------------- 0,242 kg x 3,49 EUR/kg
+   694	      1 Kiivi irto 2,31 B --------------- 0,580 kg x 3,99 EUR/kg
+   695	      1 Kirsikkatomaatti 250g 0,99 B
+   696	      1 Kirsikkatomaatti 250g 1,19 B
+   697	      1 Kirsikkatomaatti 250g 1,25 B
+   698	      1 Kirsikkatomaatti 250g 1,49 B
+   699	      1 Kirsikkatomaatti 250g ulkoma 0,95 B
+   700	      1 Kirsikka irto 1,37 B --------------- 0,198 kg x 6,90 EUR/kg
+   701	      1 Klementiini 1kg 0,99 B
+   702	      1 Klementiini 1kg 1,69 B
+   703	      1 Klementiini 1kg 1,89 B
+   704	      1 Klementiini 1kg 2,19 B
+   705	      1 Klementiini irto 1,14 B --------------- 8,676 kg x 1,69 EUR/kg
+   706	      1 Klementiini irto 2,50 B --------------- 1,396 kg x 1,79 EUR/kg
+   707	      1 Knightsbridge piaparminttute 1,36 B
+   708	      1 Knorr kasvisliemikuutio 1,29 B
+   709	      1 Koiramäki yllätysmuna 0,85 B
+   710	      1 Kontaktimuovi40345460 1,99 A
+   711	      1 Korianteri 1,99 B
+   712	      1 Korianteri 3,98 B --------------- 2 x 1,99
+   713	      1 Korianteri ruukussa 1,19 B
+   714	     22 Korianteri ruukussa 1,39 B
+   715	      3 Korianteri ruukussa 1,45 B
+   716	      6 Korianteri ruukussa 1,49 B
+   717	      2 Korianteri ruukussa 2,78 B --------------- 2 x 1,39
+   718	      1 Korianteri ruukussa 2,90 B --------------- 2 x 1,45
+   719	      1 Korttimaksu 11,19
+   720	      1 Korttimaksu 40,35
+   721	      1 Korttimaksu 46,83
+   722	      1 Korttimaksu 63,86
+   723	      1 Korttimaksu 66,67
+   724	      1 Korttimaksu 71,14
+   725	      1 Korttimaksu 71,71
+   726	      1 Korttimaksu 76,02
+   727	      1 Korttimaksu 77,83
+   728	      1 Korttimaksu 80,27
+   729	      1 Korttimaksu 82,76
+   730	      1 Korttimaksu 83,38
+   731	      1 Korttimaksu 84,57
+   732	      1 Korttimaksu 86,98
+   733	      1 Korttimaksu 88,03
+   734	      1 Korttimaksu 88,82
+   735	      1 Korttimaksu 89,76
+   736	      1 Korttimaksu 89,95
+   737	      1 Korttimaksu 90,07
+   738	      1 Korttimaksu 91,09
+   739	      1 Korttimaksu 91,16
+   740	      1 Korttimaksu 94,94
+   741	      1 Korttimaksu 96,40
+   742	      1 Korttimaksu 96,58
+   743	      1 Korttimaksu 97,30
+   744	      1 Korttimaksu 97,74
+   745	      1 Korttimaksu 98,17
+   746	      1 Korttimaksu 104,09
+   747	      1 Korttimaksu 105,84
+   748	      1 Korttimaksu 108,78
+   749	      1 Korttimaksu 110,89
+   750	      1 Korttimaksu 111,67
+   751	      1 Korttimaksu 114,19
+   752	      1 Korttimaksu 116,55
+   753	      1 Korttimaksu 118,50
+   754	      1 Korttimaksu 118,93
+   755	      1 Korttimaksu 120,35
+   756	      1 Korttimaksu 122,67
+   757	      1 Korttimaksu 123,03
+   758	      1 Korttimaksu 123,56
+   759	      1 Korttimaksu 125,20
+   760	      1 Korttimaksu 127,04
+   761	      1 Korttimaksu 127,55
+   762	      1 Korttimaksu 131,66
+   763	      1 Korttimaksu 134,29
+   764	      1 Korttimaksu 134,80
+   765	      1 Korttimaksu 137,52
+   766	      1 Korttimaksu 138,07
+   767	      1 Korttimaksu 146,94
+   768	      1 Korttimaksu 163,40
+   769	      1 Korttimaksu 180,73
+   770	      1 Korttimaksu 185,19
+   771	      1 Korttimaksu 186,44
+   772	      1 Korttimaksu 34979
+   773	      1 Korvapuusti 0,97 B
+   774	      1 Korvapuusti 2,37 B --------------- 3 x 0,79
+   775	      1 Korvapuusti 3,88 B --------------- 4 x 0,97
+   776	      1 Kotimainen krysanteemi 2,59 A
+   777	      1 Kotimainen omena irto 6,22 B --------------- 1,560 kg x 3,99 EUR/kg
+   778	      1 Kotimainen tarhakrysanteemi 3,99 A
+   779	      1 Kotimainen viherkasvi 2,00 A
+   780	     10 Kot-Kot Vapaan kanan kananmu 1,45 B
+   781	      8 Kot-Kot Vapaan kanan kananmu 2,09 B
+   782	      1 Kot-Kot Vapaan kanan kananmu 2,55 B
+   783	      1 Kot-Kot Vapaan kanan kananmu 3,49 B
+   784	      2 Kot-Kot vapaan kanan kananmu 2,09 B
+   785	      3 Kot-Kot vapaan kanan kananmu 2,49 B
+   786	      1 Kukkakaali 1,90 B --------------- 0,530 kg x 3,59 EUR/kg
+   787	      1 Kukkakaali 3,39 B --------------- 0,944 kg x 3,59 — EUR/kg
+   788	      1 Kukkakaali 3,70 B --------------- 1,030 kg x 3,59 EUR/kg
+   789	      1 Kukkakaali irto 1,31 B --------------- 0,488 kg x 2,69 EUR/kg
+   790	      1 Kukkakaali irto 1,61 B --------------- 0,558 kg x 2,89 EUR/kg
+   791	      1 Kukkakaali irto 1,83 B --------------- 0,680 kg x 2,69 EUR/kg
+   792	      1 Kukkakaali irto 1,87 B --------------- 0,648 kg x 2,89 EUR/kg
+   793	      1 Kukkakaali irto 2,16 B --------------- 0,638 kg x 3,39 EUR/kg
+   794	      1 Kukkakaali irto 2,18 B --------------- 0,624 kg x 3,49 EUR/kg
+   795	      1 Kukkakaali irto 2,41 B --------------- 0,966 kg x 2,49 EUR/kg
+   796	      1 Kukkakaali irto 2,42 B --------------- 0,978 kg x 2,49 EUR/kg
+   797	      1 Kukkakaali irto 2,64 B --------------- 1,226 kg x 2,15 EUR/kg
+   798	      1 Kukkakaali irto 2,65 B --------------- 0,986 kg x 2,69 EUR/kg
+   799	      1 Kukkakaali irto 2,77 B --------------- 0,958 kg x 2,89 EUR/kg
+   800	      1 Kukkakaali irto 3,05 B --------------- 0,928 kg x 3,29 EUR/kg
+   801	      1 Kukkakaali irto 3,20 B --------------- 0,974 kg x 3,29 EUR/kg
+   802	      1 Kukkakaali irto 3,32 B --------------- 0,980 kg x 3,39 EUR/kg
+   803	      1 Kukkakaali irto 3,97 B --------------- 1,208 kg x 3,29 EUR/kg
+   804	      1 Kuljanka punaherukkahyytelö 1,49 B
+   805	      6 Kultamuna VapaanKananKananmu 1,89 B
+   806	      2 Kultamuna vapaan kanan munal 2,59 B
+   807	      1 Kuntoilunauhasetti 340373955 7,99 A
+   808	      1 Kurkku Suomi 0,39 B --------------- 0,392 kg x 0,99 EUR/kg
+   809	      1 Kurkku Suomi 0,50 B --------------- 0,386 kg x 1,29 EUR/kg
+   810	      1 Kurkku Suomi 0,52 B --------------- 0,434 kg x 1,19 EUR/kg
+   811	      1 Kurkku Suomi 0,58 B --------------- 0,388 kg x 1,49 EUR/kg
+   812	      1 Kurkku Suomi 0,63 B --------------- 0,456 kg x 1,39 EUR/kg
+   813	      1 Kurkku Suomi 0,71 B --------------- 0,378 kg x 1,89 EUR/kg
+   814	      1 Kurkku Suomi 0,76 B --------------- 0,362 kg x 2,809 EUR/kg
+   815	      1 Kurkku Suomi 0,79 B --------------- 0,346 kg x 2,29 EUR/kg
+   816	      1 Kurkku Suomi 0,80 B --------------- 0,410 kg x 1,95 EUR/kg
+   817	      1 Kurkku Suomi 0,82 B --------------- 0,316 kg x 2,59 EUR/kg
+   818	      1 Kurkku Suomi 0,83 B --------------- 0,558 kg x 1,49 EUR/kg
+   819	      1 Kurkku Suomi 0,86 B --------------- 8,388 kg x 2,79 EUR/kg
+   820	      1 Kurkku Suomi 0,87 B --------------- 8,322 kg x 2,69 EUR/kg
+   821	      1 Kurkku Suomi 0,91 B --------------- 0,338 kg x 2,69 EUR/kg
+   822	      1 Kurkku Suomi 0,93 B --------------- 0,312 kg x 2,99 EUR/kg
+   823	      1 Kurkku Suomi 0,99 B --------------- 0,524 kg x 1,89 EUR/kg
+   824	      1 Kurkku Suomi 1,03 B --------------- 0,378 kg x 2,79 EUR/kg
+   825	      1 Kurkku Suomi 1,04 B --------------- 0,348 kg x 2,99 EUR/kg
+   826	      1 Kurkku Suomi 1,13 B --------------- 0,710 kg x 1,59 — EUR/kg
+   827	      1 Kurkku Suomi 1,15 B --------------- 0,552 kg x 2,89 EUR/kg
+   828	      1 Kurkku Suomi 1,16 B --------------- 0,352 kg x 3,29 EUR/kg
+   829	      1 Kurkku Suomi 1,22 B --------------- 0,372 kg x 3,29 EUR/kg
+   830	      1 Kurkku Suomi 1,22 B --------------- 0,582 kg x 2,89 EUR/kg
+   831	      1 Kurkku Suomi 1,22 B --------------- 0,614 kg x 1,99 EUR/kg
+   832	      1 Kurkku Suomi 1,32 B --------------- 0,662 kg x 1,99 EUR/kg
+   833	      1 Kurkku Suomi 1,38 B --------------- 0,374 kg x 3,69 EUR/kg
+   834	      1 Kurkku Suomi 1,40 B --------------- 0,742 kg x 1,89 EUR/kg
+   835	      1 Kurkku Suomi 1,42 B --------------- 8,366 kg x 3,89 EUR/kg
+   836	      1 Kurkku Suomi 1,48 B --------------- 8,412 kg x 3,59 EUR/kg
+   837	      1 Kurkku Suomi 1,52 B --------------- 0,508 kg x 2,99 EUR/kg
+   838	      1 Kurkku Suomi 1,54 B --------------- 0,386 kg x 3,99 — EUR/kg
+   839	      1 Kurkku Suomi 1,59 B --------------- 0,728 kg x 2,19 EUR/kg
+   840	      1 Kurkku Suomi 1,77 B --------------- 0,634 kg x 2,79 EUR/kg
+   841	      1 Kurkku Suomi 1,95 B --------------- 1,224 kg x 1,59 EUR/kg
+   842	      1 Kurkku Suomi 1,98 B --------------- 0,620 kg x 3,19 EUR/kg
+   843	      1 Kurkku Suomi 2,04 B --------------- 0,682 kg x 2,99 EUR/kg
+   844	      1 Kurkku Suomi 2,10 B --------------- 0,448 kg x 4,69 EUR/kg
+   845	      1 Kurkku Suomi 2,17 B --------------- 0,660 kg x 3,29 EUR/kg
+   846	      1 Kurkku Suomi 2,28 B --------------- 8,716 kg x 3,19 EUR/kg
+   847	      1 Kurkku Suomi 2,52 B --------------- 0,872 kg x 2,89 EUR/kg
+   848	      1 Kurkku Suomi 2,57 B --------------- 0,806 kg x 3,19 EUR/kg
+   849	      1 Kurkku Suomi 2,58 B --------------- 0,682 kg x 3,79 EUR/kg
+   850	      1 Kurkku Suomi 2,62 B --------------- 0,822 kg x 3,19 EUR/kg
+   851	      1 Kurkku Suomi 2,93 B --------------- 0,734 kg x 3,99 — EUR/kg
+   852	      1 Kurkku Suomi 3,06 B --------------- 0,638 kg x 4,79 EUR/kg
+   853	      1 Kurkku Suomi 3,34 B --------------- 0,728 kg x 4,59 EUR/kg
+   854	      1 Kurkku Suomi 3,72 B --------------- 0,776 kg x 4,79 EUR/kg
+   855	      1 Kurkku Suomi 3,83 B --------------- 8,852 kg x 4,49 EUR/kg
+   856	      1 Kurkku ulkomaa irto 1,35 B --------------- 0,398 kg x 3,39 EUR/kg
+   857	      1 Kurkku, Suomi 0,64 B --------------- 0,380 kg x 1,69 EUR/kg
+   858	      1 Kurkku, Suomi 0,90 B --------------- 0,336 kg x 2,69 EUR/kg
+   859	      1 Kurkku, Suomi 1,13 B --------------- 0,438 kg x 2,59 EUR/kg
+   860	      1 LPS Palasaippua laventeli 0,99 A
+   861	      1 LPS Palasaippua ruusu 0,99 A
+   862	      1 LU Bastogne 2,19 B
+   863	      1 Lahjapaperi 10 mt0338375 1,67 A
+   864	      1 LaitilanKanatarhaVap.K.kanan 2,59 B
+   865	      1 LaitilanKanatarhaVap.kananm. 2,59 B
+   866	      1 LaitilanKanatarhaVap.kananm. 3,29 B
+   867	      1 Lasten tietokirjaf0365224 3,99 C
+   868	      1 Led-filamenttilamppuf8330770 2,39 A
+   869	      1 Led-sisävalosar. 20L140366214 2,99 A
+   870	      1 Led-sisävalosar. 20140366214 2,99 A
+   871	      1 Lehtikaali 100g 1,49 B
+   872	      2 Lehtikaali 100g 1,99 B
+   873	      5 Lehtikaali 100g 2,49 B
+   874	      4 Lehtikaali 100g 2,69 B
+   875	      2 Lehtikaali 100g 2,85 B
+   876	      1 Lehtikaali 200g 1,69 B
+   877	      2 Lehtikaali 200g 1,89 B
+   878	      1 Lehtikaali 200g, Suomi 0,99 B
+   879	      2 Lehtikaali 200g, Suomi 2,19 B
+   880	      1 LeipäAitta Kaurapalat 9kpl 1,55 B
+   881	      1 LeipäAitta Kaurapalat 9kpl 1,65 B
+   882	      1 LeipäAitta Kaurapalat 9kpl 1,99 B
+   883	      1 LeipäAitta Pehm. kaurap. 8kp 1,65 B
+   884	      1 LeipäAitta Setsuuriviipaleet 1,89 B
+   885	      3 LeipäAitta Valkosipulisämpyl 1,79 B
+   886	      1 LeipäAitta juustosämpylät 5k 1,89 B
+   887	      1 LeipäAitta juustosämpylät 5k 2,49 B
+   888	      1 LeipäAitta kauraleipä viipal 1,79 B
+   889	      1 LeipäAitta kaurapalat 6 kpl 1,19 B
+   890	      1 LeipäAitta maalaissämpylät 2,09 B
+   891	      2 LeipäAitta maalaissämpylät 2,19 B
+   892	      1 LeipäAitta moniviljaleipä 2,19 B
+   893	      2 LeipäAitta ohrarieskapalat8k 1,39 B
+   894	      1 LeipäAitta pullaviipaleet 2,09 B
+   895	      3 LeipäAitta retkieväs 0,49 B
+   896	      2 LeipäAitta retkieväs 0,59 B
+   897	      1 LeipäAitta retkieväs 0,75 B
+   898	      1 LeipäAitta retkieväs 0,79 B
+   899	      1 LeipäAitta retkieväs 0,98 B --------------- 2 x 0,49
+   900	     16 LeipäAitta ruispalat 12 kpl 1,24 B
+   901	      1 LeipäAitta ruispalat 12 kpl 1,25 B
+   902	      1 Lidl-pantti 1,51 pullo 0,40 A
+   903	      1 Lidl-pantti PET 0,51 pullo 0,20 A
+   904	      1 Lihapasteija 1,65 B --------------- 3 x 0,55
+   905	      1 LordNelsonVihreä tee app.-in 0,85 B
+   906	      1 LordNelsonVihreä tee app.-in 0,89 B
+   907	      1 LordNelsonVihreä tee app.-in 0,95 B
+   908	      2 LordNelsonVihreä tee vanilja 0,89 B
+   909	      1 LordNelson Engl. Breakfast-t 1,29 B
+   910	      1 LordNelson Rooibos Mango Cha 0,99 B
+   911	      3 LordNelson Rooibos Mango Cha 1,79 B
+   912	      1 LordNelson rooibos toffee 1,19 B
+   913	      3 LordNelson vihreä tee 0,99 B
+   914	      9 LordNelson vihreä tee app-in 0,99 B
+   915	      2 LordNelson vihreä tee sitruu 0,99 B
+   916	      5 LordNelson vihreä tee vanilj 0,99 B
+   917	      1 Lord NelsonVihreäteesitruuna 1,35 B
+   918	      1 Lord NelsonVirheä tee natur 0,95 B
+   919	      2 Lord NelsonVirheä tee sitruu 0,89 B
+   920	      1 Lord NelsonVirheä tee sitruu 0,99 B
+   921	      1 Lord NelsonVirheä tee sitruu 1,09 B
+   922	      2 Lord Nelson Musta tee Masala 1,29 B
+   923	      1 Lord Nelson Musta tee Masala 1,39 B
+   924	      2 Lord Nelson Musta tee Masala 1,69 B
+   925	      1 Lord Nelson Musta tee.rap.va 1,29 B
+   926	      1 Lord Nelson luomu yrttitee J 1,79 B
+   927	      1 LovilioGranaPadano 12kk raas 2,99 B
+   928	      1 Lovilio Parmigiano lastu 2,89 B
+   929	      1 Lovilio Parmigiano lastu 2,99 B
+   930	      1 Lovilio mozzarella raaste 1,39 B
+   931	      1 Lovilio mozzarella raaste 1,79 B
+   932	      1 Lovilio puhvelimozzarella 4,58 B --------------- 2 x 2,29
+   933	      1 Lukkolajitelma40353744 4,99 A
+   934	      2 Lumene Klassikko kasvovesi 4,15 A
+   935	      1 Luomu Babypinaatti 100g 1,19 B
+   936	      2 Luomu Babypinaatti 100g 1,69 B
+   937	      1 Luomu appelsiini 1kg 1,49 B
+   938	      1 Luomu appelsiini 1kg 2,89 B
+   939	      1 Luomu inkivääri irto 0,44 B --------------- 0,096 kg x 4,59 EUR/kg
+   940	      1 Luomu inkivääri irto 0,76 B --------------- 8,134 kg x 5,69 EUR/kg
+   941	      1 Luomu inkivääri irto 0,77 B --------------- 0,136 kg x 5,69 EUR/kg
+   942	      1 Luomu inkivääri irto 0,80 B --------------- 8,140 kg x 5,69 EUR/kg
+   943	      1 Luomu inkivääri irto 0,84 B --------------- 0,184 kg x 4,59 EUR/kg
+   944	      1 Luomu inkivääri irto 0,86 B --------------- 8,152 kg x 5,69 EUR/kg
+   945	      1 Luomu inkivääri irto 0,90 B --------------- 0,196 kg x 4,59 EUR/kg
+   946	      1 Luomu inkivääri irto 0,93 B --------------- 0,198 kg x 4,69 EUR/kg
+   947	      1 Luomu inkivääri irto 0,95 B --------------- 0,202 kg x 4,69 EUR/kg
+   948	      1 Luomu inkivääri irto 0,97 B --------------- 0,178 kg x 5,69 EUR/kg
+   949	      1 Luomu inkivääri irto 0,98 B --------------- 8,210 kg x 4,69 EUR/kg
+   950	      1 Luomu inkivääri irto 0,99 B --------------- 0,174 kg x 5,69 EUR/kg
+   951	      1 Luomu inkivääri irto 1,05 B --------------- 0,214 kg x 4,89 EUR/kg
+   952	      1 Luomu inkivääri irto 1,06 B --------------- 0,186 kg x 5,69 EUR/kg
+   953	      1 Luomu inkivääri irto 1,07 B --------------- 0,228 kg x 4,69 EUR/kg
+   954	      1 Luomu inkivääri irto 1,14 B --------------- 0,244 kg x 4,69 EUR/kg
+   955	      1 Luomu inkivääri irto 1,19 B --------------- 0,254 kg x 4,69 EUR/kg
+   956	      2 Luomu inkivääri irto 1,29 B --------------- 0,226 kg x 5,69 EUR/kg
+   957	      1 Luomu inkivääri irto 1,31 B --------------- 0,230 kg x 5,69 EUR/kg
+   958	      1 Luomu inkivääri irto 1,45 B --------------- 0,254 kg x 5,69 EUR/kg
+   959	      1 Luomu inkivääri irto 1,49 B --------------- 0,324 kg x 4,59 EUR/kg
+   960	      1 Luomu inkivääri irto 1,51 B --------------- 0,322 kg x 4,69 EUR/kg
+   961	      1 Luomu inkivääri irto 1,55 B --------------- 0,272 kg x 5,69 EUR/kg
+   962	      1 Luomu inkivääri irto 1,64 B --------------- 0,288 kg x 5,69 EUR/kg
+   963	      1 Luomu inkivääri irto 1,66 B --------------- 0,292 kg x 5,69 EUR/kg
+   964	      1 Luomu inkivääri irto 1,86 B --------------- 0,396 kg x 4,69 EUR/kg
+   965	      1 Luomu inkivääri irto 1,93 B --------------- 0,340 kg x 5,69 EUR/kg
+   966	      1 Luomu inkivääri irto 2,53 B --------------- 0,444 kg x 5,69 EUR/kg
+   967	      1 Luomu keräkaali irto 2,21 B --------------- 0,888 kg x 2,49 EUR/kg
+   968	      2 Luomu kesäkurpitsa 500g 1,59 B
+   969	      1 Luomu kesäkurpitsa 500g 1,89 B
+   970	      1 Luomu kesäkurpitsa 500g 3,49 B
+   971	      1 Luomu kiivi 500g 2,69 B
+   972	      1 Luomu kiivi 500g 3,29 B
+   973	      1 Luomu klementiini 500g 1,99 B
+   974	      1 Luomu korianteri 1,99 B
+   975	      1 Luomu korianteri 3,98 B --------------- 2 x 1,99
+   976	      1 Luomu kurkuma 80g 1,49 B
+   977	      1 Luomu kurkuma 80g 1,69 B
+   978	      1 Luomu luumukirsikkatom. 250g 2,49 B
+   979	      1 Luomu minivesimeloni irto 4,43 B --------------- 2,226 kg x 1,99 EUR/kg
+   980	      1 Luomu minivesimeloni irto 6,18 B --------------- 2,482 kg x 2,49 EUR/kg
+   981	      1 Luomu paprika mix 400g 1,99 B
+   982	      2 Luomu paprika mix 400g 2,99 B
+   983	      1 Luomu paprika mix 400g 3,49 B
+   984	      1 Luomu punajuuri 500g 1,29 B
+   985	      2 Luomu rucola 100g 1,99 B
+   986	      1 Luomu salaatti mix 100g 1,29 B
+   987	      1 Luomu salaatti mix 100g 1,99 B
+   988	      1 Luomu sipuli 500g 1,19 B
+   989	      2 Luomu taateli 400g 2,99 B
+   990	      1 Luomu taateli 400g 3,39 B
+   991	      1 Luomu valkosipuli irto 1,91 B --------------- 0,212 kg x 8,99 EUR/kg
+   992	      1 Luomu varhaisperuna 1kg 1,69 B
+   993	      1 Luomu vuonankaali 100g 1,89 B
+   994	      2 Luomu vuonankaali 100g 1,99 B
+   995	      1 Luumukirsikkatomaatti 250g 1,05 B
+   996	      2 Luumukirsikkatomaatti 250g 1,25 B
+   997	      1 Luumukirsikkatomaatti 500g 2,09 B
+   998	      1 Luumukirsikkatomaatti 500g 2,39 B
+   999	      1 Luumu tumma 500g 1,99 B
+  1000	      1 L Alushousut 5 kpl 140356731 7,99 A
+  1001	      1 L Lasket.hans. mus./40393087 17,98 A --------------- 2 x 8,99
+  1002	      1 L Monitoimihuivi pinff0359369 4,99 A
+  1003	      1 L Pyjama Patrol 134/40342913 7,99 A
+  1004	      1 L -Concealer / Peitepuikko SK 1,99 A
+  1005	      1 L-Perlenbacher Alk.ton.Radl. 2,00 B --------------- 2 x 1,00
+  1006	      1 L-Perlenbacher Alk.ton.Radl. 3,00 B --------------- 3 x 1,00
+  1007	      3 L-Santa Maria Kookosmaito 1,65 B
+  1008	      1 L-Santa Maria Kookosmaito 1,79 B
+  1009	      1 MCENNEDY Kakku cookie 2,99 B
+  1010	      1 MCENNEDY nougatkeksi 1,19 B
+  1011	      1 MCENNEDY sitruunakakku 2,99 B
+  1012	      1 MCENNEDY vaahterasiirappi 3,39 B
+  1013	      1 MCENNEDY vaahterasiirappi 3,95 B
+  1014	      1 MCENNEDY vaahterasiirappi 3,99 B
+  1015	      1 Magnum Double Choc. Hazeln. 3,78 B --------------- 2 x 1,89
+  1016	      1 MaitreJean-Pierre Sukl.brios 2,39 B
+  1017	      2 Mandariini 750g 1,69 B
+  1018	      1 Mandariini 750g 1,79 B
+  1019	      2 Mandariini 750g 1,99 B
+  1020	      1 Mango 2,60 B --------------- 0,868 kg x 2,99 EUR/kg
+  1021	      1 Mango 4,84 B --------------- 1,942 kg x 2,49 EUR/kg
+  1022	      1 Mango irto 1,26 B --------------- 0,526 kg x 2,39 EUR/kg
+  1023	      1 Mango irto 1,34 B --------------- 0,560 kg x 2,39 EUR/kg
+  1024	      1 Mango irto 2,38 B --------------- 0,886 kg x 2,69 EUR/kg
+  1025	      1 Mango irto 2,40 B --------------- 0,894 kg x 2,69 EUR/kg
+  1026	      1 Mango irto 2,42 B --------------- 0,866 kg x 2,79 EUR/kg
+  1027	      1 Mango irto 2,62 B --------------- 0,908 kg x 2,89 EUR/kg
+  1028	      1 Mango irto 2,64 B --------------- 0,988 kg x 2,69 EUR/kg
+  1029	      1 Mansikkajogurtti 0,95 B
+  1030	      1 Mansikka 400g 1,99 B
+  1031	      1 Mansikka 400g 2,29 B
+  1032	      2 Mansikka 400g 2,49 B
+  1033	      2 Mansikka 400g 2,89 B
+  1034	      2 Mansikka 400g 2,99 B
+  1035	      1 Mansikka 400g 3,39 B
+  1036	      1 Mansikka 400g 3,89 B
+  1037	      1 Mansikka 900g 6,99 B
+  1038	      1 Mansikka 900g 7,99 B
+  1039	      1 Mansikka, pakaste 2,45 B
+  1040	      1 Mansikka, pakaste 2,79 B
+  1041	      1 Margariini rasia 60% 0,27 B
+  1042	      1 Maribel Mansikkahillo ekstra 1,65 B
+  1043	      1 Maribel Mansikka-vaniljahill 2,49 B
+  1044	      1 Maribel Vadelmahillo ekstra 2,75 B
+  1045	      4 Maribel kesäkukkahunaja 3,59 B
+  1046	      1 Maribel kuningatarhillo 1,99 B
+  1047	      1 Maribel maapähkinävoi 3,39 B
+  1048	      1 Maribel mansikkahillo 50% 1,49 B
+  1049	      1 Maribel mehiläishoit. hunaja 3,05 B
+  1050	      8 Maribel metsähunaja 3,59 B
+  1051	      1 Maribel metsähunaja 3,79 B
+  1052	      1 Maribel metsähunaja 4,49 B
+  1053	      1 Maribel vadelmamar.paistonke 1,49 B
+  1054	      2 Marie-täysjyväkeksi 0,99 B
+  1055	      1 Matisse meloni irto 4,06 B --------------- 1,700 kg x 2,39 EUR/kg
+  1056	      1 MeineKäsereiSaksapähkinäjuus 3,71 B --------------- 0,162 kg x 22,98 EUR/kg
+  1057	      1 Mikrokuitupyyhet09342024 4,79 A
+  1058	      1 MilbonaSelectionBrie de Nang 2,93 B --------------- 0,113 kg x 25,90 EUR/kg
+  1059	      1 Milbona Goudaviipaleet 2,98 B
+  1060	      2 Milbona Goudaviipaleet 3,29 B
+  1061	      1 Milbona Goudaviipaleet 3,99 B
+  1062	      1 Milbona Goudaviipaleet 4,25 B
+  1063	      1 Milbona Goudaviipaleet 4,65 B
+  1064	      1 Milbona Pizzaraaste 2,75 B
+  1065	      1 Milbona Sulatejuustoviip.moz 1,99 B
+  1066	      1 Milbona cheddarviipal. 1,19 B
+  1067	      1 Milbona edamviipaleet 3,29 B
+  1068	      2 Milbona edamviipaleet 3,99 B
+  1069	      1 Milbona edamviipaleet 4,25 B
+  1070	      2 Milbona emmentalviipaleet 2,98 B
+  1071	      1 Milbona emmentalviipaleet 3,29 B
+  1072	      1 Milbona emmentalviipaleet 4,25 B
+  1073	      1 Milbona emmentalviipaleet 4,99 B
+  1074	      1 Milbona goudaviipaleet 2,98 B
+  1075	      1 Milbona hedelmäjogurtti 8 kp 2,49 B
+  1076	      1 Milbona kermavaahto 1,89 B
+  1077	     11 Milbona kreikkal. jogurtti 2 2,59 B
+  1078	      3 Milbona kreikkal. jogurtti 2 2,69 B
+  1079	      1 Milbona kreikkal. jogurtti 2 2,79 B
+  1080	      2 Milbona kreikkal. jogurtti 2 2,99 B
+  1081	      5 Milbona kreikkal. jogurtti 2 3,09 B
+  1082	      2 Milbona kreikkal. jogurtti 2 3,29 B
+  1083	      8 Milbona kreikkal. jogurtti 2 3,39 B
+  1084	      6 Milbona kreikk. jogurtti 10% 2,59 B
+  1085	      1 Milbona lakt. kreik. jogurtt 1,69 B
+  1086	      1 Milbona maasdamerSpe.Delacre 1,99 B
+  1087	      2 Milbona maasdamerviipaleet 2,98 B
+  1088	      1 Milbona maasdamer light 1,59 B
+  1089	      1 Milbona maitorahka 4,3% 0,89 B
+  1090	      1 Milbona mansikkarahka 1,29 B
+  1091	      5 Milbona maustamaton jogurtti 0,89 B
+  1092	      1 Milbona rasvaton maitorahka 0,95 B
+  1093	      4 Milbona rasvaton maitorahka 1,49 B
+  1094	      1 Milbona rasvaton maitorahka 1,59 B
+  1095	      8 Milbona salaattijuusto 1,85 B
+  1096	      4 Milbona salaattijuusto 1,99 B
+  1097	      1 Milbona sulatejuustoviipalee 1,29 B
+  1098	      1 Milbona tilsiterviipaleet 4,75 B
+  1099	      1 Milbona tilsiterviipaleet 4,89 B
+  1100	      2 Milbona tuorejuusto Natur 1,25 B
+  1101	      1 Milbona tuorejuusto Natur 1,35 B
+  1102	      1 Milbona tuorejuusto Natur 1,49 B
+  1103	      1 Milbona tuorejuusto Natur 2,70 B --------------- 2 x 1,35
+  1104	      1 Milbona tuorejuusto Natur 13 1,49 B
+  1105	      1 Milbona tuorejuusto valkosip 1,49 B
+  1106	      1 Milbona tuorej. aur.kuiv. to 1,39 B
+  1107	      1 Milbona vispikerma 30% 0,79 B
+  1108	      1 Milbona vispikerma 30% 1,78 B --------------- 2 x 0,89
+  1109	      1 Milbona vispikerma 30% 2,67 B --------------- 3 x 0,89
+  1110	      1 Minipaprika Mix 350g 2,99 B
+  1111	      1 Minivesimeloni 1,95 B --------------- 0,892 kg x 2,19 EUR/kg
+  1112	      1 Minivesimeloni 2,37 B --------------- 1,082 kg x 2,19 EUR/kg
+  1113	      1 Minivesimeloni irto 2,28 B --------------- 1,168 kg x 1,95 EUR/kg
+  1114	      1 Minivesimeloni irto 2,66 B --------------- 1,336 kg x 1,99 EUR/kg
+  1115	      1 Minivesimeloni luomu 3,41 B --------------- 1,316 kg x 2,59 — EUR/kg
+  1116	      1 Minivesimeloni luomu 3,63 B --------------- 1,826 kg x 1,99 EUR/kg
+  1117	      4 Minttu ruukussa 1,39 B
+  1118	      1 MisterChocMinisuklaap.Pähkin 1,79 B
+  1119	      1 MisterChoc keksi-toffeesukla 0,29 B
+  1120	      1 MisterChoc suklaayllätysmuna 1,58 B --------------- 2 x 0,79
+  1121	      1 Mister Choc suklaabanaanit 2,55 B
+  1122	      1 Mister Choc suklaasekoitus 3,49 B
+  1123	      1 Mistral Duffle-laukkff0334422 15,99 A
+  1124	      1 Mix-salaatti ruukussa 0,99 B
+  1125	      1 Mondos kondomi, juomu 2,29 A
+  1126	      1 Mondos kondomi, ohut 2,29 A
+  1127	      1 Mr Popgun mikropopcorn 0,79 B
+  1128	      1 Munakoiso 1,96 B --------------- 0,504 kg x 3,89 EUR/kg
+  1129	      1 Munakoiso irto 2,79 B --------------- 0,756 kg x 3,69 EUR/kg
+  1130	      1 Munakoiso irto 3,52 B --------------- 0,954 kg x 3,69 EUR/kg
+  1131	      1 Munkkirinkeli 3,16 B --------------- 4 x 0,79
+  1132	      5 Myllykivi kaurahiutale 0,75 B
+  1133	      1 Myllykivi kaurahiutale 2,37 B --------------- 3 x 0,79
+  1134	      5 Myllykivi mannasuurimo 0,89 B
+  1135	      3 Myllykivi mannasuurimo 0,95 B
+  1136	      1 Myllykivi mannasuurimo 0,99 B
+  1137	      2 Myllykivi mannasuurimo 1,09 B
+  1138	      2 Myllykivi mannasuurimo 1,19 B
+  1139	      1 Myllykivi mannasuurimo 1,35 B
+  1140	      1 Myllykivi mannasuurimo 1,39 B
+  1141	      2 Myllykivi näkkileipä ruis 1,69 B
+  1142	      1 Myllykivi näkkileipä täysjyv 1,55 B
+  1143	      5 Myllykivi pikakaurahiutale 0,44 B
+  1144	      1 Myllykivi pikakaurahiutale 0,49 B
+  1145	      4 Myllykivi pikakaurahiutale 0,55 B
+  1146	      2 Myllykivi pikakaurahiutale 0,89 B
+  1147	      3 Myllyn Paras Raketti spagett 0,38 B
+  1148	      1 Myllyn Paras Rieskatortilla 1,29 B
+  1149	      1 Myllyn Paras lehtitaikina 1,59 B
+  1150	      1 Myllyn Paras makaroni 0,39 B
+  1151	      1 Myllyn Paras piirakkat. make 1,89 B
+  1152	      3 Myllyn Paras tumma makaroni 0,33 B
+  1153	      3 Myllyn Paras tumma makaroni 0,45 B
+  1154	      1 Myskikurpitsa irto 2,42 B --------------- 1,216 kg x 1,99 EUR/kg
+  1155	      1 My Best Veggie luomutofu sav 1,25 B
+  1156	      1 My Best Veggie papu-soijapih 1,99 B
+  1157	      1 M Bokserit musta/vihf0348670 5,99 A
+  1158	      1 M Collegetakki mustaff0325264 11,99 A
+  1159	      1 M kylpytakki t.har. 40369810 19,99 A
+  1160	      1 Nakkicroissant 2,97 B --------------- 3 x 0,99
+  1161	      1 Nakkicroissant 4,76 B --------------- 4 x 1,19
+  1162	      1 Nappiparistoti0353986 3,49 A
+  1163	      1 Nescafe Gold pikakahvi 8,69 B
+  1164	      1 Nesguik kaakaojuomajauhe 2,29 B
+  1165	      1 NonFoodffd0880198 2,49 A
+  1166	      1 N Clogsit roosa 36/3140334587 5,99 A
+  1167	      1 N Muotoil. sukkah. hf0311759 2,99 A
+  1168	      1 N Neuletakki XS sinif0318358 6,99 A
+  1169	      1 N Neuletakki harmaa 40368683 7,99 A
+  1170	      1 N Varvassandaalit 3640332312 2,49 A
+  1171	      1 N alushousut hips. pf0363402 5,99 A
+  1172	      1 N jeggingsit tummansf0357216 9,99 A
+  1173	      1 N lämpösuk.h./-leg. 40392252 4,99 A
+  1174	      1 N urh.rin.liiv. Levef0357343 7,99 A
+  1175	      1 OceanSea fileekalapuikot 1,99 B
+  1176	      1 Omenasiideri 4,7% 1,86 A
+  1177	      1 Omena 1,19 B --------------- 1,032 kg x 1,15 EUR/kg
+  1178	      1 Omena 1,20 B --------------- 1,098 kg x 1,09 — EUR/kg
+  1179	      1 Omena 1,24 B --------------- 1,262 kg x 0,98 EUR/kg
+  1180	      1 Omena 1,65 B --------------- 1,436 kg x 1,15 EUR/kg
+  1181	      1 Omena Pink Lady 1kg 2,49 B
+  1182	      1 Omena irto 0,78 B --------------- 0,818 kg x 0,95 EUR/kg
+  1183	      1 Omena irto 1,18 B --------------- 1,242 kg x 8,95 EUR/kg
+  1184	      1 Omena irto 1,19 B --------------- 1,206 kg x 8,99 EUR/kg
+  1185	      1 Omena irto 1,29 B --------------- 1,314 kg x 0,98 EUR/kg
+  1186	      1 Omena irto 1,43 B --------------- 1,506 kg x 8,95 EUR/kg
+  1187	      2 Omena punainen 2kg, hedelm. 2,99 B
+  1188	      1 Omena punainen 2kg, hedelm. 3,39 B
+  1189	      1 Omena punainen 2kg, hedelm. 3,49 B
+  1190	      1 Omena pun. 1kg makean hapoka 2,49 B
+  1191	      1 Omena pun. 2kg, makean hapok 2,49 B
+  1192	      1 Omena pun. irto hedelm. make 1,68 B --------------- 0,806 kg x 2,89 EUR/kg
+  1193	      1 Omena pun. irto hedelm. make 2,17 B --------------- 1,098 kg x 1,99 EUR/kg
+  1194	      1 Omena pun. irto hedelm. make 2,62 B --------------- 1,548 kg x 1,69 EUR/kg
+  1195	      1 Omena pun. irto hedelm. make 2,89 B --------------- 1,384 kg x 2,09 EUR/kg
+  1196	      1 Omena pun. irto hedelm. make 3,02 B --------------- 1,596 kg x 1,89 EUR/kg
+  1197	      1 Omena pun. irto hedelm. make 3,06 B --------------- 1,536 kg x 1,99 EUR/kg
+  1198	      1 Omena pun. irto hedelm. make 3,17 B --------------- 1,628 kg x 1,95 EUR/kg
+  1199	      1 Omena pun. irto hedelm. make 4,31 B --------------- 2,166 kg x 1,99 EUR/kg
+  1200	      1 Omena pun. irto hedelm. make 4,80 B --------------- 2,412 kg x 1,99 EUR/kg
+  1201	      1 Omena pun. irto, hedelm. mak 2,27 B --------------- 1,202 kg x 1,89 EUR/kg
+  1202	      1 Omena vihreä hedelm. makea 3,63 B --------------- 1,300 kg x 2,79 EUR/kg
+  1203	      1 Omena vihr. hed. mak. irto 2,57 B --------------- 1,292 kg x 1,99 EUR/kg
+  1204	      1 Omena vihr. hed. mak. irto 3,16 B --------------- 1,586 kg x 1,99 EUR/kg
+  1205	      1 Omena vihr. irto hedel. make 0,87 B --------------- 0,438 kg x 1,99 EUR/kg
+  1206	      1 Omena vihr. irto hedel. make 1,84 B --------------- 0,926 kg x 1,99 EUR/kg
+  1207	      1 Omena vihr. irto hedel. make 2,75 B --------------- 1,382 kg x 1,99 EUR/kg
+  1208	      1 Omena vihr. irto hedel. make 3,34 B --------------- 1,676 kg x 1,99 EUR/kg
+  1209	      1 Omena vihr. irto hedel. make 3,47 B --------------- 1,746 kg x 1,99 EUR/kg
+  1210	      1 Oppi ja ilo Tekemiskf0396906 9,99 A
+  1211	      1 Oreo Original täytekeksi 1,59 B
+  1212	      1 Oreo Original täytekeksi 3,18 B --------------- 2 x 1,59
+  1213	      1 OululainenPullavaMan-rap.pit 2,79 B
+  1214	      1 OululainenPullava kuning.pit 1,99 B
+  1215	      1 OululainenPullava kuning.pit 2,79 B
+  1216	      2 OululainenPullava kuning.pit 3,29 B
+  1217	      2 Oululainen Pullava Uuniomena 2,79 B
+  1218	      1 Oululainen Reilu Ruis 1,65 B
+  1219	      4 Oululainen Reilu täysjyvä 1,90 B
+  1220	      1 Paistinpannu ruost.t0337208 14,99 A
+  1221	      1 Palace suklaakonvehti 2,99 B
+  1222	      1 Palasokeri 0,63 B
+  1223	      1 Panasonic Alkaline Power AAA 2,99 A
+  1224	      1 Panda Lumiukko valk.suklaako 2,99 B
+  1225	      1 Panda Suomi karpalokonvehti 2,49 B
+  1226	      1 Panttipalautus -0,20 A
+  1227	      1 Panttipalautus -0,45 A
+  1228	      1 Panttipalautus -0,60 A
+  1229	      1 Panttipalautus -0,75 A
+  1230	      1 Panttipalautus -0,80 A
+  1231	      1 Panttipalautus -1,50 A
+  1232	      1 Panttipalautus -2,00 A
+  1233	      1 Panttipullo 0,51 PET 0,20 A
+  1234	      1 Pantti 0,15e tölkki 0,45 A --------------- 3 x 0,15
+  1235	      3 Pantti 0,15e tölkki 0,60 A --------------- 4 x 0,15
+  1236	      3 Pantti 0,51 tölkki 0,15 A
+  1237	      1 Pantti 0,51 tölkki 0,30 A --------------- 2 x 0,15
+  1238	      1 Pantti 0,51 tölkki 0,45 A --------------- 3 x 0,15
+  1239	      2 Pantti 0,331 tölkki 0,60 A --------------- 4 x 0,15
+  1240	      1 Pantti 6x0,331 tölkki 0,90 A
+  1241	      1 Papaija irto 5,61 B --------------- 0,936 kg x 5,99 EUR/kg
+  1242	      1 Paperikassi 0,29 A
+  1243	      2 Paprika Mix 500g 1,49 B
+  1244	      1 Paprika Mix 500g 1,79 B
+  1245	      1 Paprika Mix 500g 2,09 B
+  1246	      1 Paprika Mix 500g 2,19 B
+  1247	      2 Paprika Mix 500g 2,29 B
+  1248	      1 Paprika Mix 500g 2,49 B
+  1249	      1 Paprika Mix 500g 2,69 B
+  1250	      1 Paprika mix 500g 2,49 B
+  1251	      1 Paprika punainen 1,27 B --------------- 0,318 kg x 3,99 EUR/kg
+  1252	      1 Paprika punainen 1,52 B --------------- 0,436 kg x 3,49 EUR/kg
+  1253	      1 Paprika punainen 1,63 B --------------- 0,466 kg x 3,49 EUR/kg
+  1254	      1 Paprika punainen 2,26 B --------------- 0,648 kg x 3,49 EUR/kg
+  1255	      1 Paprika punainen 2,35 B --------------- 0,604 kg x 3,89 EUR/kg
+  1256	      1 Paprika punainen 2,86 B --------------- 0,358 kg x 7,99 EUR/kg
+  1257	      1 Paprika punainen 2,86 B --------------- 0,574 kg x 4,99 EUR/kg
+  1258	      1 Paprika punainen 3,74 B --------------- 0,576 kg x 6,49 EUR/kg
+  1259	      1 Paprika punainen irto 0,58 B --------------- 0,166 kg x 3,49 EUR/kg
+  1260	      1 Paprika punainen irto 0,62 B --------------- 0,250 kg x 2,49 EUR/kg
+  1261	      1 Paprika punainen irto 0,74 B --------------- 0,266 kg x 2,79 EUR/kg
+  1262	      1 Paprika punainen irto 0,74 B --------------- 0,374 kg x 1,99 EUR/kg
+  1263	      1 Paprika punainen irto 0,80 B --------------- 0,278 kg x 2,89 EUR/kg
+  1264	      1 Paprika punainen irto 0,84 B --------------- 0,254 kg x 3,29 EUR/kg
+  1265	      1 Paprika punainen irto 1,01 B --------------- 0,280 kg x 3,59 EUR/kg
+  1266	      1 Paprika punainen irto 1,41 B --------------- 0,470 kg x 2,99 EUR/kg
+  1267	      1 Paprika punainen irto 1,42 B --------------- 0,476 kg x 2,99 EUR/kg
+  1268	      1 Paprika punainen irto 1,44 B --------------- 0,438 kg x 3,29 EUR/kg
+  1269	      1 Paprika punainen irto 1,45 B --------------- 8,582 kg x 2,89 EUR/kg
+  1270	      1 Paprika punainen irto 1,46 B --------------- 0,506 kg x 2,89 EUR/kg
+  1271	      1 Paprika punainen irto 1,48 B --------------- 0,260 kg x 5,69 EUR/kg
+  1272	      1 Paprika punainen irto 1,51 B --------------- 0,460 kg x 3,29 EUR/kg
+  1273	      1 Paprika punainen irto 1,54 B --------------- 0,532 kg x 2,89 EUR/kg
+  1274	      1 Paprika punainen irto 1,59 B --------------- 0,482 kg x 3,29 EUR/kg
+  1275	      1 Paprika punainen irto 1,63 B --------------- 0,468 kg x 3,49 EUR/kg
+  1276	      1 Paprika punainen irto 1,74 B --------------- 0,514 kg x 3,39 EUR/kg
+  1277	      1 Paprika punainen irto 1,78 B --------------- 0,312 kg x 5,69 EUR/kg
+  1278	      1 Paprika punainen irto 1,83 B --------------- 0,482 kg x 3,79 EUR/kg
+  1279	      1 Paprika punainen irto 1,86 B --------------- 0,534 kg x 3,49 EUR/kg
+  1280	      1 Paprika punainen irto 1,87 B --------------- 0,482 kg x 3,89 EUR/kg
+  1281	      1 Parsakaali 300g 1,39 B
+  1282	      1 Parsakaali 500g 1,59 B
+  1283	      1 Par .käyt .suola-/pip.40353031 9,99 A
+  1284	      1 Passionhedelmäviineri 0,65 B
+  1285	      1 Pattex Liimaf0373731 1,99 A
+  1286	      1 Pensasmustikka 125g 1,89 B
+  1287	      1 Pensasmustikka 250g 3,19 B
+  1288	      1 Pensasmustikka 250g 3,29 B
+  1289	      1 Pensasmustikka 400g 3,49 B
+  1290	      1 Pensasmustikka 400g 4,99 B
+  1291	      2 PerheleipuriSalonen aamia.mo 2,09 B
+  1292	      1 PerheleipuriSalonen aamia.mo 4,18 B --------------- 2 x 2,09
+  1293	      2 Persikka 500g 1,19 B
+  1294	      2 Persikka 500g 1,39 B
+  1295	      3 Persikka 500g 1,49 B
+  1296	      1 Persikka 500g 1,59 B
+  1297	      2 Peruna Iso Jauhoinen 1kg 0,89 B
+  1298	      1 Peruna yleis 0,87 B --------------- 1,022 kg x 0,85 EUR/kg
+  1299	      1 Peruna yleis 1,33 B --------------- 1,562 kg x 0,85 = EUR/kg
+  1300	      1 Peruna yleis 1,56 B --------------- 1,834 kg x 0,85 EUR/kg
+  1301	      1 Philadelphia maustamaton 1,79 B
+  1302	      1 Piian & rengin salaatti 100g 1,79 B
+  1303	      1 Pinaatti 150g 2,49 B
+  1304	      3 Pinaatti 500g 3,49 B
+  1305	      1 Pinaatti 500g 3,99 B
+  1306	      1 Piparimunkki 1,47 B --------------- 3 x 8,49
+  1307	      2 PohjolanMeijeriLakt.Ruokaker 0,49 B
+  1308	      1 PohjolanMeijeriLakt.Ruokaker 0,55 B
+  1309	      4 PohjolanMeijeriLakt.Ruokaker 0,59 B
+  1310	      1 PohjolanMeijerilLakt.Ruokaker 0,59 B
+  1311	      1 PohjolanMeijerilakt.Ruokaker 0,49 B
+  1312	      1 PohjolanMeijerilakt.Ruokaker 0,59 B
+  1313	      3 PohjolanMeijeri Kevyt&Paksu 0,39 B
+  1314	      3 PohjolanMeijeri Kevyt&Paksu 0,42 B
+  1315	      1 PohjolanMeijeri k.-kerma35%5 2,49 B
+  1316	      1 PohjolanMeijeri lakt. ruokak 0,36 B
+  1317	      4 PohjolanMeijeri lakt. ruokak 0,38 B
+  1318	      1 PohjolanMeijeri lakt. ruokak 0,49 B
+  1319	      3 PohjolanMeijeri lakt. vispik 0,85 B
+  1320	      1 PohjolanMeijeri lakt. vispik 2,38 B --------------- 2 x 1,19
+  1321	      1 PohjolanMeijeri lakt. voi 2,89 B
+  1322	      3 PohjolanMeijeri lakt. voi 3,59 B
+  1323	      1 PohjolanMeijeri lak.1.jog.ma 1,99 B
+  1324	      2 PohjolanMeijeri lak.1.jog.si 1,99 B
+  1325	      1 PohjolanMeijeri voim.suol. v 2,79 B
+  1326	     12 PohjolanMeijeri voi 2,69 B
+  1327	      1 PohjolanMeijeri voi 3,15 B
+  1328	      3 PohjolanMeijeri voi 3,29 B
+  1329	      1 PohjolanMeijeri voi 3,39 B
+  1330	      1 PohjolanMeijeri voi 3,49 B
+  1331	      1 PohjolanMeijeri voi 3,99 B
+  1332	      1 Pohjolan Meijeri Vilmariini 1,99 B
+  1333	      3 Pohjolan Meijeri kevytmaito 0,69 B
+  1334	      3 Pohjolan Meijeri kevytmaito 0,72 B
+  1335	      1 Pohjolan Meijeri kevytmaito 0,85 B
+  1336	      3 Pohjolan Meijeri kevytmaito 0,95 B
+  1337	      5 Pohjolan Meijeri kevytmaito 1,38 B --------------- 2 x 0,69
+  1338	      3 Pohjolan Meijeri kevytmaito 1,44 B --------------- 2 x 0,72
+  1339	      2 Pohjolan Meijeri kevytmaito 1,90 B --------------- 2 x 0,95
+  1340	      1 Pohjolan Meijeri kevytmaito 2,07 B --------------- 3 x 0,69
+  1341	      2 Pohjolan Meijeri kevytmaito 2,16 B --------------- 3 x 0,72
+  1342	      1 Pohjolan Meijeri kevytmaito 2,76 B --------------- 4 x 0,69
+  1343	      1 Pohjolan Meijeri kevytmaito 2,85 B --------------- 3 x 0,95
+  1344	      1 Pohjolan Meijeri kevytmaito 2,88 B --------------- 4 x 0,72
+  1345	      5 Pohjolan Meijeri kevytmaito 3,45 B --------------- 5 x 0,69
+  1346	      2 Pohjolan Meijeri kevytmaito 3,80 B --------------- 4 x 0,95
+  1347	      1 Pohjolan Meijeri täysmaito 0,89 B
+  1348	      1 Pohjolan Meijeri täysmaito 1,19 B
+  1349	      5 Pohjolan Meijeri täysmaito 1,78 B --------------- 2 x 0,89
+  1350	      1 Pohjolan Meijeri täysmaito 2,38 B --------------- 2 x 1,19
+  1351	      3 Pohjolan Meijeri täysmaito 2,67 B --------------- 3 x 0,89
+  1352	      1 Polar Spring lähdevesi 0,29 B
+  1353	      2 Porkkana 1kg 0,79 B
+  1354	      1 Porkkana 1kg 0,95 B
+  1355	      1 Porkkana 1kg 0,97 B
+  1356	      5 Porkkana 1kg 0,99 B
+  1357	      2 Porkkana 1kg 1,05 B
+  1358	      1 Porkkana 1kg 1,09 B
+  1359	      3 Porkkana 1kg 1,15 B
+  1360	      2 Porkkana 1kg 1,19 B
+  1361	      1 Porkkana 1kg 1,25 B
+  1362	      3 Porkkana 1kg 1,29 B
+  1363	      4 Porkkana 1kg 1,39 B
+  1364	      1 Porkkana 1kg 1,49 B
+  1365	      1 Porkkana 1kg 1,59 B
+  1366	      1 Porkkana 1kg 1,69 B
+  1367	      1 Porkkana 1kg 1,99 B
+  1368	      1 Porkkana 1kg 2,38 B --------------- 2 x 1,19
+  1369	      2 Porkkana 1kg, ulkom. 1,59 B
+  1370	      1 Porkkana irto 0,89 B --------------- 0,910 kg x 0,98 EUR/kg
+  1371	      1 Porkkana irto 0,99 B --------------- 0,764 kg x 1,29 EUR/kg
+  1372	      1 Porkkana irto 1,36 B --------------- 1,090 kg x 1,25 EUR/kg
+  1373	      1 Porkkana irto 1,47 B --------------- 1,504 kg x 8,98 EUR/kg
+  1374	      1 Porkkana irto 1,67 B --------------- 1,684 kg x 8,99 EUR/kg
+  1375	      1 Primadonna luomu oliiviöljy 4,49 B
+  1376	      4 Primadonna oliiviöljy 11 5,49 B
+  1377	      6 Primadonna oliiviöljy 11 5,99 B
+  1378	      1 Primadonna oliiviöljy 11 6,29 B
+  1379	      1 Primadonna oliiviöljy 11 6,49 B
+  1380	      1 Primadonna oliiviöljy 11 6,99 B
+  1381	      1 Primadonna oliiviöljy 750ml 4,19 B
+  1382	      2 Primadonna oliiviöljy 750ml 4,39 B
+  1383	      1 Primadonna oliiviöljy 750ml 4,69 B
+  1384	      1 Primadonna oliiviöljy 750ml 5,49 B
+  1385	      2 Primadonna oliiviöljy 750ml 5,95 B
+  1386	      1 Primadonna oliiviöljy 750ml 6,49 B
+  1387	      1 Primadonna oliiviöljy 750ml 7,99 B
+  1388	      1 Pringles Sour Cream & Onion 1,85 B
+  1389	      2 Punajuuri 1kg 0,99 B
+  1390	      1 Punajuuri 1kg 1,05 B
+  1391	      1 Punajuuri 1kg 1,15 B
+  1392	      2 Punajuuri 1kg 1,19 B
+  1393	      1 Punajuuri 1kg 1,39 B
+  1394	      2 Punajuuri 1kg 1,49 B
+  1395	      2 Punajuuri 1kg 1,59 B
+  1396	      1 Punajuuri 1kg 1,99 B
+  1397	      1 Punakaali irto 1,14 B --------------- 8,716 kg x 1,59 EUR/kg
+  1398	      1 Punakaali irto 1,25 B --------------- 0,784 kg x 1,59 EUR/kg
+  1399	      1 Punakaali irto 1,35 B --------------- 0,870 kg x 1,55 EUR/kg
+  1400	      4 Punasipuli 1kg 1,49 B
+  1401	      1 Punasipuli 1kg 1,95 B
+  1402	      1 Punasipuli 1,84 B --------------- 1,086 kg x 1,69 EUR/kg
+  1403	      1 Punasipuli 1,89 B --------------- 1,118 kg x 1,69 EUR/kg
+  1404	      1 Punasipuli 2,75 B --------------- 1,254 kg x 2,19 — EUR/kg
+  1405	      4 Punasipuli 500g 0,85 B
+  1406	      3 Punasipuli 500g 0,88 B
+  1407	     11 Punasipuli 500g 0,89 B
+  1408	      2 Punasipuli 500g 0,94 B
+  1409	      1 Punasipuli 500g 0,95 B
+  1410	      2 Punasipuli 500g 0,99 B
+  1411	      1 Punasipuli 500g 1,05 B
+  1412	      3 Punasipuli 500g 1,18 B --------------- 2 x 0,59
+  1413	      4 Punasipuli 500g 1,70 B --------------- 2 x 0,85
+  1414	      3 Punasipuli 500g 1,78 B --------------- 2 x 0,89
+  1415	      3 Punasipuli 500g 1,90 B --------------- 2 x 0,95
+  1416	      1 Punasipuli irto 2,62 B --------------- 1,756 kg x 1,49 EUR/kg
+  1417	      2 Purio jätekassi 251 30 kpl 1,15 A
+  1418	      5 Purio jätekassi 251 30 kpl 1,17 A
+  1419	      3 Purio jätekassi 251 30 kpl 1,30 A
+  1420	      3 Purio jätekassi 251 30 kpl 1,38 A
+  1421	      1 Purio jätekassi 251 30 kpl 1,39 A
+  1422	      1 Purio roskapussi 301 1,79 A
+  1423	      1 Pägen Gifflar kanelipulla 1,69 B
+  1424	      1 Pägen Gifflar kanelipulla 3,38 B --------------- 2 x 1,69
+  1425	      1 Päärynä 1kg 1,29 B
+  1426	      1 Päärynä irto 0,71 B --------------- 8,422 kg x 1,69 EUR/kg
+  1427	      1 Päärynä irto 0,73 B --------------- 0,434 kg x 1,69 EUR/kg
+  1428	      1 Päärynä irto 0,79 B --------------- 0,398 kg x 1,99 EUR/kg
+  1429	      1 Päärynä irto 0,90 B --------------- 0,476 kg x 1,89 EUR/kg
+  1430	      1 Päärynä irto 0,90 B --------------- 8,534 kg x 1,69 EUR/kg
+  1431	      1 Päärynä irto 0,93 B --------------- 0,490 kg x 1,89 EUR/kg
+  1432	      1 Päärynä irto 0,98 B --------------- 0,558 kg x 1,75 EUR/kg
+  1433	      1 Päärynä irto 1,05 B --------------- 0,504 kg x 2,89 EUR/kg
+  1434	      1 Päärynä irto 1,05 B --------------- 0,528 kg x 1,99 EUR/kg
+  1435	      1 Päärynä irto 1,17 B --------------- 0,698 kg x 1,69 EUR/kg
+  1436	      1 Päärynä irto 1,29 B --------------- 0,738 kg x 1,75 EUR/kg
+  1437	      1 Päärynä premium irto 2,44 B --------------- 0,700 kg x 3,49 EUR/kg
+  1438	      1 Päärynä punainen irto 2,45 B --------------- 0,820 kg x 2,99 EUR/kg
+  1439	      1 Raejuusto 1% 2,69 B
+  1440	      1 Rahkatasku 2,67 B --------------- 3 x 0,89
+  1441	      1 Rahkatasku 2,67 B --------------- 3 x 8,89
+  1442	      2 Rahkatasku 2,97 B --------------- 3 x 0,99
+  1443	      1 Rantamatto 998 x 180 10348110 5,99 A
+  1444	      1 Rasiakorianteri 20g 1,99 B
+  1445	      1 Reilun kaupan banaani irto 1,01 B --------------- 0,678 kg x 1,49 EUR/kg
+  1446	      1 Reilun kaupan banaani irto 1,35 B --------------- 0,906 kg x 1,49 EUR/kg
+  1447	      1 Reilun kaupan banaani irto 1,46 B --------------- 0,944 kg x 1,55 EUR/kg
+  1448	      1 Reilun kaupan banaani irto 1,98 B --------------- 1,332 kg x 1,49 EUR/kg
+  1449	      1 Reilun kaupan banaani irto 2,13 B --------------- 1,338 kg x 1,59 EUR/kg
+  1450	      1 Reilun kaupan banaani irto 2,19 B --------------- 1,378 kg x 1,59 EUR/kg
+  1451	      1 Reilun kaupan banaani irto 2,39 B --------------- 1,500 kg x 1,59 EUR/kg
+  1452	      1 Reilun kaupan banaani irto 2,43 B --------------- 1,568 kg x 1,55 EUR/kg
+  1453	      1 Reilun kaupan banaani irto 2,43 B --------------- 1,632 kg x 1,49 EUR/kg
+  1454	      1 Reilun kaupan banaani irto 2,48 B --------------- 1,666 kg x 1,49 EUR/kg
+  1455	      1 Reilun kaupan limetti 0,23 B --------------- 0,078 kg x 2,99 EUR/kg
+  1456	      1 Reilun k. luomu ban. 1,41 B --------------- 0,786 kg x 1,79 EUR/kg
+  1457	      1 Reilun k. luomu ban. 1,70 B --------------- 0,970 kg x 1,75 EUR/kg
+  1458	      1 Reilun k. luomu ban. 2,27 B --------------- 1,296 kg x 1,75 EUR/kg
+  1459	      1 Reilun k. luomu ban. 2,47 B --------------- 1,414 kg x 1,75 EUR/kg
+  1460	      1 Reilun k. luomu ban. 2,82 B --------------- 1,574 kg x 1,79 EUR/kg
+  1461	      1 Reilun k. luomu ban. 2,99 B --------------- 1,708 kg x 1,75 EUR/kg
+  1462	      1 Reilun k. luomu ban. 3,16 B --------------- 1,804 kg x 1,75 EUR/kg
+  1463	      1 Reilun k. luomu ban. 3,23 B --------------- 1,846 kg x 1,75 EUR/kg
+  1464	      1 Reilun k. luomu ban. 3,49 B --------------- 1,994 kg x 1,75 EUR/kg
+  1465	      1 Reilun k. luomu ban. 3,78 B --------------- 2,160 kg x 1,75 EUR/kg
+  1466	      1 Reilun k. luomu ban. 4,29 B --------------- 2,452 kg x 1,75 EUR/kg
+  1467	      6 Retiisi 250g 0,99 B
+  1468	      2 Retiisi 250g 1,29 B
+  1469	      1 Retiisi 250g 8,99 B
+  1470	      1 Rexona Suihkugeeli OrchidFre 2,49 A
+  1471	      1 Riitan Herkku Mustikkapiirak 2,49 B
+  1472	      1 Rosmariini ruukussa 3,49 B
+  1473	      1 Rosten Kier.pulla täytepu.6k 2,79 B
+  1474	      1 Rosten Piimäsämpylä 5 kpl 1,99 B
+  1475	      1 Rosten Porkkana-perunaleipä 2,45 B
+  1476	      1 Rosten Porkkana-perunaleipä 2,55 B
+  1477	      1 Ruukkulehtipersilja 1,39 B
+  1478	      1 Ruukkulehtipersilja 1,45 B
+  1479	      1 Ruukkuminttu 1,29 B
+  1480	      3 Ruukkuminttu 1,35 B
+  1481	      1 Ruukkuminttu 1,45 B
+  1482	      3 Ruukkuminttu 1,49 B
+  1483	      1 Ruukkupersilja 1,05 B
+  1484	      1 Ruustinnan salaatti 1,79 B
+  1485	      1 R&B sukkahousut 15 DEN, koko 1,59 A
+  1486	      1 Salaatti mix ruukussa 0,99 B
+  1487	      1 Salico Salaattis.frisee 2,09 B
+  1488	      1 Salonen Mustikkapitko 3,95 B
+  1489	      1 Saltura Himalajan suola hien 1,99 B
+  1490	      2 Santa Maria Kookoskerma 1,79 B
+  1491	      1 Santa Maria Kookosmaito 1,59 B
+  1492	      1 Santa Maria Tortilla Large 2,35 B
+  1493	      1 Sarastusvaloherätyskf0386103 20,00 A
+  1494	      1 Sateenvarjo 3vff0354495 3,99 A
+  1495	      1 Satsuma 1,5kg 1,99 B
+  1496	      1 Saumakynä/puupint. k0353562 1,99 A
+  1497	      1 Schwarzkopf Deep Black 6,49 A
+  1498	      1 Sensiplast laastari Sensitiv 0,69 A
+  1499	      1 Siempre normaali side 1,85 A
+  1500	      1 Siempre norm.siivekkeetön si 0,95 A
+  1501	      1 Siempre norm. siivekkeet. si 1,05 A
+  1502	      4 Siempre pitkä siivekkeel. si 0,95 A
+  1503	      2 Siempre siivekkeellinen side 0,95 A
+  1504	      3 Siempre siivekkeellinen side 1,09 A
+  1505	      1 Silik. kuvioleivontaf0316819 2,99 A
+  1506	      1 Sipulinippu 0,95 B
+  1507	      1 Sipulinippu 1,19 B
+  1508	      1 Sipulinippu 1,29 B
+  1509	      1 Sipulinippu 1,39 B
+  1510	      2 Sipuli 1kg 1,09 B
+  1511	      5 Sipuli 1kg 1,19 B
+  1512	      2 Sipuli 1kg 1,25 B
+  1513	      7 Sipuli 1kg 1,29 B
+  1514	      5 Sipuli 1kg 1,39 B
+  1515	      1 Sipuli 1kg 1,45 B
+  1516	      1 Sipuli 1kg 1,49 B
+  1517	      1 Sipuli 1kg 1,59 B
+  1518	      1 Sipuli 1kg 1,69 B
+  1519	      3 Sipuli 1kg 2,18 B --------------- 2 x 1,09
+  1520	      7 Sipuli 1kg 2,38 B --------------- 2 x 1,19
+  1521	      1 Sipuli 1kg 2,50 B --------------- 2 x 1,25
+  1522	      4 Sipuli 1kg 2,58 B --------------- 2 x 1,29
+  1523	      7 Sipuli 1kg 2,78 B --------------- 2 x 1,39
+  1524	      1 Sipuli 1kg 3,18 B --------------- 2 x 1,59
+  1525	      1 Sipuli 1,49 B --------------- 1,506 kg x 0,99 — EUR/kg
+  1526	      2 Sipuli 500g 0,59 B
+  1527	      1 Sipuli Suomi 2,77 B --------------- 1,990 kg x 1,39 EUR/kg
+  1528	      1 Sipuli irto, Suomi 1,33 B --------------- 1,160 kg x 1,15 EUR/kg
+  1529	      1 Siti cola 0,59 B
+  1530	      1 Sitruuna 500g 0,79 B
+  1531	      1 Sitruuna 500g 0,89 B
+  1532	      3 Sitruuna 500g 0,99 B
+  1533	      4 Sitruuna 500g 1,05 B
+  1534	      6 Sitruuna 500g 1,09 B
+  1535	     13 Sitruuna 500g 1,19 B
+  1536	      1 Sitruuna 500g 1,25 B
+  1537	      4 Sitruuna 500g 1,29 B
+  1538	      4 Sitruuna 500g 1,39 B
+  1539	      1 Sitruuna 500g 1,49 B
+  1540	      1 Sitruuna 500g 1,98 B --------------- 2 x 0,99
+  1541	      1 SnackDayPerunalas.Sourcr .&On 1,29 B
+  1542	      1 SnackDay perunalastut paprik 1,69 B
+  1543	      2 SnackDay perunalastu Onion 1,39 B
+  1544	      1 SnackDay perunalastu Onion 1,45 B
+  1545	      1 SnackDay perunalastu Onion 1,75 B
+  1546	      1 SnackDay salsadippi 0,89 B
+  1547	      2 SnackDay tortillawraps6x25cm 1,09 B
+  1548	      1 SnackDay tortillawraps 8kpl 0,99 B
+  1549	      1 SnackDay tulinen salsadippi 1,25 B
+  1550	      1 SnackDay t.chips Sweet Chili 1,13 B
+  1551	      1 Snack Day Cream Cracker 0,71 B
+  1552	      1 Snack day perunalastu sour.o 1,49 B
+  1553	      2 Sokeriherne 150g 2,49 B
+  1554	      2 Sokeri 0,69 B
+  1555	      1 Sokeri 0,79 B
+  1556	      1 Sokeri 0,99 B
+  1557	      2 Solevita Appelsiini-Mangonek 1,49 B
+  1558	      2 Solevita Mangosose 1,29 B
+  1559	      1 Solevita karpalo-rypälejuoma 1,49 B
+  1560	      1 Solevita limetäysmehu 0,79 B
+  1561	      1 Solevita limetäysmehu 0,85 B
+  1562	      2 Solevita metsämarjakeitto 1,49 B
+  1563	      1 Solevita monihedelmätäysmehu 2,39 B
+  1564	      1 Solevita mustikkakeitto 2,09 B
+  1565	      2 Solevita persikkanektari 1,69 B
+  1566	      1 Solevita päärynäjuoma 0,99 B
+  1567	      1 Solevita päärynänektari 1,65 B
+  1568	      1 Solevita sekajuoma 1,05 B
+  1569	      7 Solevita sitruunatäysmehu 0,79 B
+  1570	      2 Solevita sitruunatäysmehu 0,85 B
+  1571	      3 Solevita tropiikin hedelmäme 1,79 B
+  1572	      1 Sondey Farmer Cookies mustik 1,35 B
+  1573	      1 Sondey Kaakaotäytekeksi 1,65 B
+  1574	      1 Sondey Marie-keksi 0,98 B
+  1575	      2 Sondey Marie-keksi 1,30 B
+  1576	      1 Sondey Neo Keksit Vanilja Ve 2,98 B --------------- 2 x 1,49
+  1577	      2 Sondey Neo kaakaokeksi 1,19 B
+  1578	      1 Sondey Neo keksit Vaniljatäy 2,18 B --------------- 2 x 1,09
+  1579	      2 Sondey Oaties kaurakeksi 0,99 B
+  1580	      1 Sondey Oaties kaurakeksi 1,29 B
+  1581	      1 Sondey Oaties kaurakeksi 1,49 B
+  1582	      1 Sondey UFO's-täytekeksi 1,85 B
+  1583	      1 Sondey appelsiinitäytekeksi 0,98 B
+  1584	     10 Sondey digestive-keksi 0,59 B
+  1585	      1 Sondey digestive-keksi 0,69 B
+  1586	      1 Sondey digestive-keksi 0,75 B
+  1587	      2 Sondey digestive-keksi 0,89 B
+  1588	      1 Sondey pikkuleipä vanilja 1,65 B
+  1589	      1 Sondey piparkakku 1,59 B
+  1590	      6 Sondey suklaakeksi 1,12 B
+  1591	      1 Sondey suklaakeksi 1,29 B
+  1592	      1 Sondey välipalakeksi jog.-ma 1,49 B
+  1593	      1 Sugarland vaahtokarkit 1,46 B
+  1594	      1 Suihkugeeli iso lootus 1,99 A
+  1595	      1 Suippopaprika punainen 500g 2,89 B
+  1596	      1 Suklaalevy maapähkinäsuklaa 0,49 B
+  1597	      1 Suklaalevy tummasuklaa 0,49 B
+  1598	      3 Suklaalevy tummasuklaa 0,98 B --------------- 2 x 0,49
+  1599	      1 Suklaalevy valkosuklaa 1,38 B --------------- 2 x 0,69
+  1600	      1 Suomalainen jauhoinen peruna 1,59 B
+  1601	      1 Suomalainen jauhoinen peruna 1,69 B
+  1602	      1 Suomalainen jääsalaatti 0,89 B
+  1603	      1 Suomalainen jääsalaatti 0,99 B
+  1604	      2 Suomalainen jääsalaatti 1,25 B
+  1605	      2 Suomalainen jääsalaatti 1,29 B
+  1606	      1 Suomalainen jääsalaatti 1,45 B
+  1607	      2 Suomalainen jääsalaatti 1,79 B
+  1608	      1 Suomalainen jääsalaatti 1,88 B --------------- 2 x 0,94
+  1609	      1 Suomalainen jääsalaatti 2,58 B --------------- 2 x 1,29
+  1610	      4 Suomalainen lehtikaali 1,89 B
+  1611	      3 Suomalainen lehtikaali 2,49 B
+  1612	      1 Suomalainen lehtikaali 2,89 B
+  1613	      1 Sushi Box Kyoto 3,99 B
+  1614	      1 Suuri tuoksukynttiläf0427127 3,99 A
+  1615	      4 Syöntikypsä Mango 650g 3,49 B
+  1616	      1 Syöntikypsä Mango 650g 3,99 B
+  1617	      1 Säilytyskoteloff0336952 3,99 A
+  1618	      1 Södergärden mantelikakku 3,99 B
+  1619	      1 Södergärden mantelikak. sukl 3,19 B
+  1620	      2 TUC Original 0,99 B
+  1621	      1 TUC Original suolakeksi 2,69 B
+  1622	      1 TUC Sour Cream&Onion 0,99 B
+  1623	      1 TUC Sweet Chili 8,99 B
+  1624	      1 Taateli 400g 2,19 B
+  1625	      1 Taateli 400g 2,49 B
+  1626	     17 Taateli 400g 2,69 B
+  1627	      1 Taateli 600g 3,49 B
+  1628	     10 Taateli 600g 3,99 B
+  1629	      1 Taffel Broadway 2,49 B
+  1630	      5 Taffel Broadway-dippi 0,57 B
+  1631	      2 Taffel Juustosnacks 2,08 B
+  1632	      1 Taffel Mikropopcorn 1,99 B
+  1633	      1 Tarrakirjaf0368487 3,99 A
+  1634	      1 Tastino Hot Dog-sämpylä 0,79 B
+  1635	      1 Terttukirsikkatomaatti 500g 1,49 B
+  1636	      1 Terttutomaatti 2,17 B --------------- 1,088 kg x 1,99 EUR/kg
+  1637	      1 Terttutomaatti 2,49 B --------------- 1,086 kg x 2,29 EUR/kg
+  1638	      1 Terttutomaatti 2,85 B --------------- 1,434 kg x 1,99 — EUR/kg
+  1639	      1 Terttutomaatti 3,06 B --------------- 1,336 kg x 2,29 EUR/kg
+  1640	      1 Terttutomaatti 3,08 B --------------- 0,882 kg x 3,49 EUR/kg
+  1641	      1 Terttutomaatti 3,21 B --------------- 1,400 kg x 2,29 EUR/kg
+  1642	      1 Terttutomaatti 5,20 B --------------- 1,408 kg x 3,69 EUR/kg
+  1643	      1 Terttutomaatti 5,33 B --------------- 1,526 kg x 3,49 EUR/kg
+  1644	      1 Terttutomaatti 5,35 B --------------- 1,340 kg x 3,99 EUR/kg
+  1645	      1 Terttutomaatti irto 1,55 B --------------- 0,818 kg x 1,89 EUR/kg
+  1646	      1 Terttutomaatti irto 1,59 B --------------- 1,068 kg x 1,49 EUR/kg
+  1647	      1 Terttutomaatti irto 1,91 B --------------- 1,008 kg x 1,89 EUR/kg
+  1648	      1 Terttutomaatti irto 2,04 B --------------- 1,082 kg x 1,89 EUR/kg
+  1649	      1 Terttutomaatti irto 2,07 B --------------- 0,998 kg x 2,09 EUR/kg
+  1650	      1 Terttutomaatti irto 2,07 B --------------- 1,096 kg x 1,89 EUR/kg
+  1651	      1 Terttutomaatti irto 2,12 B --------------- 1,422 kg x 1,49 EUR/kg
+  1652	      1 Terttutomaatti irto 2,19 B --------------- 1,222 kg x 1,79 EUR/kg
+  1653	      1 Terttutomaatti irto 2,29 B --------------- 1,536 kg x 1,49 EUR/kg
+  1654	      1 Terttutomaatti irto 2,37 B --------------- 0,880 kg x 2,69 EUR/kg
+  1655	      1 Terttutomaatti irto 2,42 B --------------- 1,056 kg x 2,29 EUR/kg
+  1656	      1 Terttutomaatti irto 2,49 B --------------- 1,158 kg x 2,15 EUR/kg
+  1657	      1 Terttutomaatti irto 2,63 B --------------- 1,150 kg x 2,29 EUR/kg
+  1658	      1 Terttutomaatti irto 2,66 B --------------- 0,898 kg x 2,99 EUR/kg
+  1659	      1 Terttutomaatti irto 2,78 B --------------- 1,330 kg x 2,09 EUR/kg
+  1660	      1 Terttutomaatti irto 2,93 B --------------- 1,470 kg x 1,99 EUR/kg
+  1661	      1 Terttutomaatti irto 2,97 B --------------- 1,422 kg x 2,09 EUR/kg
+  1662	      1 Terttutomaatti irto 3,01 B --------------- 1,088 kg x 2,99 EUR/kg
+  1663	      1 Terttutomaatti irto 3,01 B --------------- 1,442 kg x 2,09 EUR/kg
+  1664	      1 Terttutomaatti irto 3,14 B --------------- 1,578 kg x 1,99 EUR/kg
+  1665	      1 Terttutomaatti irto 3,24 B --------------- 1,628 kg x 1,99 EUR/kg
+  1666	      1 Terttutomaatti irto 3,33 B --------------- 1,128 kg x 2,95 EUR/kg
+  1667	      1 Terttutomaatti irto 3,47 B --------------- 1,662 kg x 2,09 EUR/kg
+  1668	      1 Terttutomaatti irto 3,64 B --------------- 1,216 kg x 2,99 EUR/kg
+  1669	      1 Terttutomaatti irto 3,80 B --------------- 1,316 kg x 2,89 EUR/kg
+  1670	      1 Terttutomaatti irto 3,80 B --------------- 1,466 kg x 2,59 EUR/kg
+  1671	      1 Terttutomaatti irto 3,83 B --------------- 1,326 kg x 2,89 EUR/kg
+  1672	      1 Terttutomaatti irto 4,17 B --------------- 1,394 kg x 2,99 EUR/kg
+  1673	      1 Terttutomaatti irto 4,20 B --------------- 1,406 kg x 2,99 EUR/kg
+  1674	      1 Terttutomaatti irto 4,28 B --------------- 1,430 kg x 2,99 EUR/kg
+  1675	      1 Terttutomaatti irto 4,52 B --------------- 1,512 kg x 2,99 EUR/kg
+  1676	      1 Terttutomaatti irto 4,54 B --------------- 1,688 kg x 2,69 EUR/kg
+  1677	      1 Terttutomaatti irto 4,66 B --------------- 1,578 kg x 2,95 EUR/kg
+  1678	      1 Terttutomaatti irto 4,68 B --------------- 1,588 kg x 2,95 EUR/kg
+  1679	      1 Terttutomaatti irto 4,99 B --------------- 1,726 kg x 2,89 EUR/kg
+  1680	      1 Terttutomaatti irto 5,09 B --------------- 2,224 kg x 2,29 EUR/kg
+  1681	      2 Tomaattiketsuppi 1,39 B
+  1682	      3 Tomaattiketsuppi 1,49 B
+  1683	      1 Tomaatti Suomi 2,11 B --------------- 0,392 kg x 5,39 EUR/kg
+  1684	      1 Tomaatti irto 2,27 B --------------- 1,140 kg x 1,99 EUR/kg
+  1685	      1 Tomaatti irto 2,38 B --------------- 1,198 kg x 1,99 EUR/kg
+  1686	      1 Tomaatti irto 2,98 B --------------- 8,996 kg x 2,99 EUR/kg
+  1687	      1 Tomaatti-mozzarella 1,49 B
+  1688	      1 TrattoriaAlfredo Pizza Meat 1,89 B
+  1689	      1 TrattoriaAlfredo pizza 4form 4,19 B
+  1690	      7 TrattoriaAlfredo pizza Margh 3,29 B
+  1691	      2 TrattoriaAlfredo pizza Margh 3,89 B
+  1692	      1 TrattoriaAlfredo pizza Margh 5,99 B
+  1693	      1 TrattoriaAlfredo pizza mozza 8,70 B --------------- 2 x 4,35
+  1694	      1 Trube joulupitko 2,49 B
+  1695	      1 Trube joulupitko 3,29 B
+  1696	      1 Tuore maissi irto 3,77 B --------------- 0,946 kg x 3,99 EUR/kg
+  1697	      1 Tuore maissi irto 4,95 B --------------- 0,992 kg x 4,99 EUR/kg
+  1698	      1 Tupla Winter Cinnamon 1,15 B
+  1699	      1 Turun Sinappia mieto 1,69 B
+  1700	      1 Työkäsineet musta/put0370289 2,99 A --------------- 3M Kaksipuoleinen taff0395941 2,99 A
+  1701	      1 T Shortsit pink. 1460349466 3,19 A
+  1702	      1 USB-pistorasia-adaptf0297323 11,99 A
+  1703	      1 Uuniperuna 1kg 1,39 B
+  1704	      2 Vaasan Iso Grahampaahtoleipä 1,95 B
+  1705	      1 Vaasan Kaurasydän 1,89 B
+  1706	      3 Vaasan Taika ruisviipaleet 1,89 B
+  1707	     11 Vaasan Taika ruisviipaleet 1,98 B
+  1708	      2 Vaasan Taika ruisviipaleet 2,09 B
+  1709	     10 Vaasan Taika ruisviipaleet 2,25 B
+  1710	      4 Vaasan Taika täysjyväkauravi 1,89 B
+  1711	      2 Vaasan Taika täysjyväkauravi 1,98 B
+  1712	      1 Vaasan Taika täysjyväkauravi 2,09 B
+  1713	      2 Vaasan Taika täysjyväkauravi 2,25 B
+  1714	      1 Vaasan kauratyynyt 0,99 B
+  1715	      2 Vaasan ruispalat 6kpl 0,95 B
+  1716	      1 Vadelma-lehtitaikinaleivos 1,58 B --------------- 2 x 0,79
+  1717	      1 Valio Mansikkakeitto sokerit 2,45 B
+  1718	      1 Valio Mansikkakeitto sokerit 4,90 B --------------- 2 x 2,45
+  1719	      1 Valkosipuliletti 500g 3,99 B
+  1720	     22 Valkosipuli 200g 0,99 B
+  1721	      8 Valkosipuli 200g 1,09 B
+  1722	      2 Valkosipuli 200g 1,15 B
+  1723	      5 Valkosipuli 200g 1,29 B
+  1724	      2 Valkosipuli 200g 1,49 B
+  1725	      1 Valkosipuli 200g 1,98 B --------------- 2 x 0,99
+  1726	      1 Valkosipuli 200g 2,18 B --------------- 2 x 1,09
+  1727	      1 Valkosipuli 200g 2,30 B --------------- 2 x 1,15
+  1728	      2 ValleySpire cheddarraaste 1,49 B
+  1729	      1 Valley Spire Cheddar vintage 2,99 B
+  1730	      1 Vampyyrin karkkihampaat 1,49 B
+  1731	      1 Vanajan Jyväsade-keksi 1,39 B
+  1732	      2 Vaniljakermajäätelö 1,29 B
+  1733	      1 Varhaiskaali irto 1,47 B --------------- 0,868 kg x 1,69 EUR/kg
+  1734	      1 Varhaisperuna pesty 1,84 B --------------- 1,748 kg x 1,05 — EUR/kg
+  1735	      1 Vehnäpatonki 1,09 B
+  1736	      1 Vemondo kookos-riisijuoma 1,69 B
+  1737	      4 Vemondo luomutofu natur 1,35 B
+  1738	      8 Vemondo luomutofu natur 2,70 B --------------- 2 x 1,35
+  1739	      1 Vesimeloni irto 4,88 B --------------- 2,724 kg x 1,79 EUR/kg
+  1740	      2 Viinirypäle tumma 500g 1,69 B
+  1741	      1 Viinirypäle tumma 500g 1,89 B
+  1742	      1 Viinirypäle tumma 500g 1,99 B
+  1743	      2 Viinirypäle tumma 500g 2,09 B
+  1744	      2 Viinirypäle tumma 500g 2,19 B
+  1745	      1 Viinirypäle tumma 500g 2,29 B
+  1746	      3 Viinirypäle tumma 500g 2,39 B
+  1747	      2 Viinirypäle tumma 500g 2,45 B
+  1748	      5 Viinirypäle tumma 500g 2,49 B
+  1749	      4 Viinirypäle tumma 500g 2,69 B
+  1750	      3 Viinirypäle tumma 500g 2,79 B
+  1751	      4 Viinirypäle tumma 500g 2,89 B
+  1752	      4 Viinirypäle tumma 500g 2,99 B
+  1753	      1 Viinirypäle vihreä 500g 1,69 B
+  1754	      1 Viinirypäle vihreä 500g 1,89 B
+  1755	      3 Viinirypäle vihreä 500g 2,09 B
+  1756	      1 Viinirypäle vihreä 500g 2,15 B
+  1757	      1 Viinirypäle vihreä 500g 2,79 B
+  1758	      1 Viinirypäle vih.500g 1,89 B
+  1759	      1 VitaDor leivontamargariini 0,95 B
+  1760	      1 VitaDor leivontamargariini 1,29 B
+  1761	      5 VitaDor maapähkinävoi 2,99 B
+  1762	      2 VitaDor maapähkinävoi 3,19 B
+  1763	      1 VitaDor margariini 40% 0,48 B
+  1764	      1 VitaDor margariini 60% 0,55 B
+  1765	      1 VitaDor margariini 60% 0,99 B
+  1766	      3 VitaDor rapsiöljy 1,49 B
+  1767	      1 VitaDor rapsiöljy 1,69 B
+  1768	      2 VitaDor rapsiöljy 2,89 B
+  1769	      1 VitaDor rapsiöljy 3,05 B
+  1770	      1 Vitasia Madras 1,69 B
+  1771	      1 Vitasia chilikastike 1,19 B
+  1772	      1 Vitasia kuorit. seesaminsiem 0,89 B
+  1773	      1 Vitasia soijakastike 1,19 B
+  1774	      1 Vitasia soijakastike 1,29 B
+  1775	      1 Vitasia soijakastike 1,39 B
+  1776	      1 Vitasia soijakastike 1,49 B
+  1777	      1 Vitasia soijakastike 1,85 B
+  1778	      3 Vitasia soijakastike 1,89 B
+  1779	      1 Vita D'or auringonkukkaöljy 1,75 B
+  1780	      1 Vita D'or auringonkukkaöljy 1,85 B
+  1781	      1 Vita D'or auringonkukkaöljy 2,09 B
+  1782	      1 Vita D'or auringonkukkaöljy 3,99 B
+  1783	      1 Voicroissant 27% 0,55 B
+  1784	      1 Voicroissant 27% 0,78 B --------------- 2 x 0,39
+  1785	      1 W5 Ilmanraikastin kukka Rose 2,69 A
+  1786	      1 W5 Puhdistusliina Blue 2,99 A
+  1787	      1 W5 sieniliina 1,49 A
+  1788	      1 W5 talouskäsine värikäs S 1,35 A
+  1789	      2 WC-Kukka Sininen huuhtelu 1,69 A
+  1790	      2 WSAl1l-in-1Konetiskitab.Origi 2,84 A
+  1791	      1 WS All-in-1 Konetiskitab.Ori 3,99 A
+  1792	      1 WS Astianpes. AloeVera&Kurkk 0,89 A
+  1793	      1 WS Puhdistusliina Blue 2,69 A
+  1794	      1 WS Puhdistusliina Blue 2,99 A
+  1795	      1 WS WC raikastin Flower 1,30 A
+  1796	      1 WS WC raikastin Flower 1,69 A
+  1797	      2 WS WC raikastin Lemon 1,30 A
+  1798	      1 WS WC raikastin Ocean 1,30 A
+  1799	      1 WS Yleispuhdistussuihke 1,19 A
+  1800	      1 WS astiaharja 1,15 A
+  1801	      1 WS kengän kiilloke väritön 1,99 A
+  1802	      4 WS konetiskiainetabl. ei fos 2,89 A
+  1803	      1 WS konetiskiainetabl. ei fos 2,99 A
+  1804	      1 WS konetiskiainetabl. ei fos 3,15 A
+  1805	      2 WS konetiskiainetabl. ei fos 3,29 A
+  1806	      1 WS konetiskiainetabl. ei fos 3,69 A
+  1807	      1 WS puhdistusliina Blue 2,99 A
+  1808	      1 WS puhdistusliina Lemon 2,29 A
+  1809	      1 WS puhdistusliina Lemon 2,69 A
+  1810	      1 WS puhdistusliina Lemon 2,99 A
+  1811	      1 WS puhdistusspray 1,99 A
+  1812	      1 WS pölyhuiska 1,99 A
+  1813	      2 WS talouskäsine värikäs S 1,45 A
+  1814	      1 WS yleismikrok.liina 3kpl 1,49 A
+  1815	      1 Yhteensä 11,19
+  1816	      1 Yhteensä 40,35
+  1817	      1 Yhteensä 46,83
+  1818	      1 Yhteensä 63,86
+  1819	      1 Yhteensä 71,14
+  1820	      1 Yhteensä 71,71
+  1821	      1 Yhteensä 76,02
+  1822	      1 Yhteensä 77,83
+  1823	      1 Yhteensä 82,76
+  1824	      1 Yhteensä 83,38
+  1825	      1 Yhteensä 86,98
+  1826	      1 Yhteensä 88,03
+  1827	      1 Yhteensä 88,82
+  1828	      1 Yhteensä 89,76
+  1829	      1 Yhteensä 90,07
+  1830	      1 Yhteensä 91,09
+  1831	      1 Yhteensä 91,16
+  1832	      1 Yhteensä 94,94
+  1833	      1 Yhteensä 96,40
+  1834	      1 Yhteensä 96,58
+  1835	      1 Yhteensä 97,30
+  1836	      1 Yhteensä 97,74
+  1837	      1 Yhteensä 105,84
+  1838	      1 Yhteensä 108,78
+  1839	      1 Yhteensä 110,50
+  1840	      1 Yhteensä 110,89
+  1841	      1 Yhteensä 111,67
+  1842	      1 Yhteensä 114,19
+  1843	      1 Yhteensä 116,55
+  1844	      1 Yhteensä 118, 93
+  1845	      1 Yhteensä 120,35
+  1846	      1 Yhteensä 122,67
+  1847	      1 Yhteensä 123,03
+  1848	      1 Yhteensä 123,56
+  1849	      1 Yhteensä 125,20
+  1850	      1 Yhteensä 127,04
+  1851	      1 Yhteensä 127,55
+  1852	      1 Yhteensä 131,66
+  1853	      1 Yhteensä 134,29
+  1854	      1 Yhteensä 134,72 MN
+  1855	      1 Yhteensä 134,80
+  1856	      1 Yhteensä 137,52
+  1857	      1 Yhteensä 138,07 Na
+  1858	      1 Yhteensä 146,94
+  1859	      1 Yhteensä 163,40
+  1860	      1 Yhteensä 180,73
+  1861	      1 Yhteensä 184,09
+  1862	      1 Yhteensä 185,19
+  1863	      1 Yhteensä 186,44
+  1864	      1 Yhteensä == 84,57
+  1865	      1 Yhteensä == 86,27
+  1866	      1 Yhteensä == 08170
+  1867	      1 Yhteensä === 66,67
+  1868	      1 Yhteensä === 89,95
+  1869	      1 Yleiskansi 3v0334401 5,99 A
+  1870	      1 Yleisperuna 1,20 B --------------- 1,348 kg x 0,89 EUR/kg
+  1871	      1 Yleisperuna 1,53 B --------------- 1,734 kg x 0,88 EUR/kg
+  1872	      1 Yleisperuna irto 0,44 B --------------- 0,642 kg x 0,69 EUR/kg
+  1873	      1 Yleisperuna irto 0,45 B --------------- 8,716 kg x 8,63 EUR/kg
+  1874	      1 Yleisperuna irto 0,48 B --------------- 0,744 kg x 8,65 EUR/kg
+  1875	      1 Yleisperuna irto 0,58 B --------------- 0,914 kg x 0,63 EUR/kg
+  1876	      1 Yleisperuna irto 0,60 B --------------- 1,232 kg x 8,49 EUR/kg
+  1877	      1 Yleisperuna irto 0,61 B --------------- 0,934 kg x 0,65 EUR/kg
+  1878	      1 Yleisperuna irto 0,61 B --------------- 1,038 kg x 8,59 EUR/kg
+  1879	      1 Yleisperuna irto 0,62 B --------------- 1,052 kg x 8,59 EUR/kg
+  1880	      1 Yleisperuna irto 0,65 B --------------- 1,002 kg x 8,65 EUR/kg
+  1881	      1 Yleisperuna irto 0,65 B --------------- 1,004 kg x 8,65 EUR/kg
+  1882	      1 Yleisperuna irto 0,68 B --------------- 1,048 kg x 0,65 EUR/kg
+  1883	      1 Yleisperuna irto 0,73 B --------------- 1,244 kg x 0,59 EUR/kg
+  1884	      1 Yleisperuna irto 0,75 B --------------- 1,160 kg x 8,65 EUR/kg
+  1885	      1 Yleisperuna irto 0,76 B --------------- 1,296 kg x 8,59 EUR/kg
+  1886	      1 Yleisperuna irto 0,83 B --------------- 1,402 kg x 8,59 EUR/kg
+  1887	      1 Yleisperuna irto 0,84 B --------------- 1,424 kg x 8,59 EUR/kg
+  1888	      1 Yleisperuna irto 0,85 B --------------- 1,002 kg x 8,85 EUR/kg
+  1889	      1 Yleisperuna irto 0,86 B --------------- 1,016 kg x 0,85 EUR/kg
+  1890	      1 Yleisperuna irto 0,88 B --------------- 1,392 kg x 8,63 EUR/kg
+  1891	      1 Yleisperuna irto 0,97 B --------------- 1,146 kg x 0,85 EUR/kg
+  1892	      1 Yleisperuna irto 0,98 B --------------- 1,660 kg x 8,59 EUR/kg
+  1893	      1 Yleisperuna irto 1,01 B --------------- 1,604 kg x 8,63 EUR/kg
+  1894	      1 Yleisperuna irto 1,05 B --------------- 1,240 kg x 0,85 EUR/kg
+  1895	      1 Yleisperuna irto 1,16 B --------------- 1,782 kg x 0,65 EUR/kg
