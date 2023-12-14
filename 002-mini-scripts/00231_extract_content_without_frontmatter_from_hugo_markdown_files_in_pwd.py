@@ -42,7 +42,7 @@ def write_all_outputs(content,frontmatter):
     with open(output_frontmatter, 'w') as f:
         for key, value in frontmatter.items():
             print_keyvalue = str(key) + ' = ' + str(value) ;  
-            f.write(print_keyvalue)
+            f.write(print_keyvalue + '\n')
 ##############################################################
 
 print_all(content,frontmatter) ; 
