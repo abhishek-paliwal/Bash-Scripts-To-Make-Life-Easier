@@ -2,7 +2,7 @@ Fazer Paahto Lempeä kaura 1,85 B
 Fazer Puikula täysjyväruis 1,55 B
 N alushousut hips. pf0363402 5,99 A
 Go-Tan Sriracha Chilikastike 4,69 B
-Kanamestari paistil. pintam. 4,89 B
+Kanamestari paistil. pintanm. 4,89 B
 Taateli 600g 3,99 B
 Milbona edamviipaleet 3,99 B
 Kevytmaito 3,56 B
@@ -26,9 +26,9 @@ Paprika mix 500g 2,49 B
 PohjolanMeijeri k.-kerma35%5 2,49 B
 Alesto kalif. saksanpähk. 2,49 B
 Suomalainen lehtikaali 2,49 B
-Fin Carr6 Maitos.Rus.&hassel 2,19 B
+Fin Carr& Maitos.Rus.&hassel 2,19 B
 Porkkana 1kg 2,38 B
-2 x 1,19
+2x 1,19
 Vaasan Taika ruisviipaleet 2,25 B
 Combino Riisinuudeli 1,89 B
 Alesto kuivattu karpalo 2,09 B
@@ -80,7 +80,7 @@ Inkivääri luomu 0,94 B
 Kania kardemumma 0,84 B
 2 x 0,42
 Belbake ruokasooda 0,69 B
-PohjolanMeijerilakt.Ruokaker 0,59 B
+PohjolanMeijeriLakt.Ruokaker 0,59 B
 Panttipalautus -0,75 A
 Yhteensä 134,72 MN
-Korttimaksu 34979
+Korttimaksu 134,72 -

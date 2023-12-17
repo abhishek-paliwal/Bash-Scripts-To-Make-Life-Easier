@@ -1,192 +1,192 @@
-     1	      1 AASHIR ATTA €18.90
-     2	      2 AJWAIN SEEDS €2.50
-     3	      1 ALL N ONE €2.49
-     4	      1 AMCHUR POWDR €2.45
-     5	      1 AMCHUR POWDR €4.40 2X 61/ 2.20
-     6	      1 ANARDANA 100 €2.90
-     7	      1 ASHIRBAD ATTA €18.90
-     8	      1 ASHIRVAD 10K €21.90
-     9	      1 ASHIRVAD ATTA 10Kg €28.95
-    10	      1 ASHIRVAD atta 10K €31.90
-    11	      1 BAJRI FLOUR €4.90
-    12	      1 BAY LEAVES €2.50
-    13	      1 BLACK EYE beans €8.99
-    14	      1 BLACK EYE €7.90
-    15	      1 BLACK EYE €7.99
-    16	      1 BLACK SALT €1.25
-    17	      2 BLACK SALT €2.50
-    18	      1 BLACK SALT €2.50 ==== 2X 01/ 1.25
-    19	      1 BLK EYE BEAN €9. 10
-    20	      2 BOONDI €2.45
-    21	      1 CHANA DALL €4. 20
-    22	      2 CHANA DALL €8.25
-    23	      1 CHANA DAL €7.50
-    24	      2 CHANA MASALA €2.50
-    25	      1 CHICK PEA2KG €7.50
-    26	      1 CHICK PEAS 2KG €5.95
-    27	      2 CHICK PEAS €4.20
-    28	      1 CHICK PEAS €4.40 ==== 2X e1/ 2.20
-    29	      1 CHICK PEAS €7.40 2X 01/ 3.70
-    30	      1 CHICK PEAS €8.40 === 2x e1/ 4.20
-    31	      1 CHILLIES €1.31
-    32	      2 CHILLI POWDER €4.50
-    33	      1 CHILLI POWDR €3.80 ==== 2X e1/ 1.90
-    34	      1 CHILLI POWOR €3.80 ==== 2X 1.90
-    35	      1 CHILLI €2.52
-    36	      1 CHILLI €2.70
-    37	      1 CHILLI €2.83
-    38	      1 CHILLI €2.94
-    39	      1 CHILLI €3.04
-    40	      1 CHILLI €3.33
-    41	      1 CHILLI €3.43
-    42	      1 CHUNKY CHAT €2.50
-    43	      1 CH ATTA 10KG €29.75
-    44	      1 CLOVES 50g €2.99
-    45	      2 CORIANDER 400 €4.50
-    46	      1 CORIANDER  €2.00
-    47	      1 CORIANDER €1.92
-    48	      1 CORIANDER €2.04
-    49	      1 CORIANDER €2.80
-    50	      1 CORIANDER €3.34
-    51	      1 CORIANDER €4.00
-    52	      1 CORIANDER €4.20
-    53	      1 CORIANOER €3.05
-    54	      1 CURREY LEAVE €2.75
-    55	      1 CURREY LEAVE €11.00 4X e1/ 2.75
-    56	      1 Chillies 0,228X 11,00	€2.51
-    57	      1 Coriander 0,180x 16,00	€2.88
-    58	      1 Daawat Extra Long Basmati Rice	€20.95
-    59	      1 EDIBLE GUM €4.40 2X 01/ 2.20
-    60	      1 EE CHANA DALL 1KG €3.50
-    61	      1 E E BLACK EYE BEANS 1KG €4.50
-    62	      1 E.E KEWRA WATER 190ML €1.95
-    63	      1 E.E MOTH WHOLE 1KG €4.50
-    64	      1 E.E MUSTARD OIL 250 ml €2.20
-    65	      1 E.E ROSE WATER 190ML €1.95
-    66	      1 E.E.CRUSHED CHILLI 75G €1.95
-    67	      1 FALAK VERMICELLI 150G €1.00
-    68	      1 FENNEL SEEDS €3.95
-    69	      1 FFALAK EXTRE €15.60
-    70	      1 FINE: SEV €2.45
-    71	      1 Fortune Chakki Aata 10kg	€23.95
-    72	      1 GARAM MASALA €1.90
-    73	      1 GARAM MASALA €2.99
-    74	      1 GOL GAPPA €4.50
-    75	      1 GRAM FLOUR 2KG €4.95
-    76	      3 GRAM FLOUR €5.80
-    77	      1 GRAM FLOUR €5.90
-    78	      1 GRAM FLOUR €6.20
-    79	      1 GROCERY Mango pickle €3.50
-    80	      1 GROCERY atta €29.90
-    81	      1 GROCERY kitchen king €2.25
-    82	      1 GROCERY mango pickle €3.50
-    83	      1 GROCERY mango pickle €3.75
-    84	      2 GROCERY misc €1.99
-    85	      1 GROCERY moong dal silk €8.90
-    86	      1 GROCERY urid dal = 61.00
-    87	      1 Ganesh Nylon Sev 200gm	€2.5
-    88	      1 HEERA KALA CHANA 2KG €5.95
-    89	      1 HRS Soan Papdi 500g	€6.95
-    90	      1 Heera Cumin (Jeera) Whole	€6.95
-    91	      1 Heera Phool Makhana 100g 2,000x4,75	€8.5
-    92	      1 Heera Tamarind	€1.95
-    93	      1 Heera chilli powder extr	€5.95
-    94	      1 INDUS MUNG BEANS 2KG €7.95
-    95	      1 INDUS URID WHOLE (Black) €6.95
-    96	      1 IRS Gramflour 2kg	€7.75
-    97	      1 JAGGERY G00R €6.95
-    98	      1 JAGGERY €3.25
-    99	      1 JEERA WHOLE €3.99
-   100	      1 KALONJEE €1.75
-   101	      1 KASURI METHI €3.00 ==== 2X e1/ 1.50
-   102	      1 KASURI METHI €10.00 4X 01/ 2.50
-   103	      1 KEWRA WATER €1.75
-   104	      1 KIDNEY BEANS €5.50
-   105	      1 KIDNEY BEANS €8.50
-   106	      1 LEAVES €3.84
-   107	      2 MANGO PICKLE €3.60
-   108	      1 MANGO PICKLE €4.10
-   109	      1 MANGO €4.91
-   110	      1 MDH Chana Masala	€2.5
-   111	      1 MDH Kashmiri Mirch 100g	€2.85
-   112	      1 MDH Kitchen King 100g	€2.25
-   113	      2 MEDIUM POWA €4.50
-   114	      1 MEDIUM POWA €10.90 ==== 2X 5.45
-   115	      1 MEDIUM POWA €10.90 ==== 2X 61/ 5.45
-   116	      1 MELON SEEDS €2.20
-   117	      1 MELON SEEDS €2. 20
-   118	      1 METHI LEAVES €2.50
-   119	      1 METHI LEAVES €5.00 ==== 2X 01/ 2.50
-   120	      1 METHI LEAVES €5.00 ==== 2X 2.50
-   121	      1 METHI LEAVES €5.00 ==== 2X e1/ 2.50
-   122	      1 MINT €2.44
-   123	      1 MISC.14% €3.95
-   124	      1 MOONG CHILKA €8.90
-   125	      1 MOONG CHILKA €9.70 ==== 2X e1/ 4.85
-   126	      1 MOONG DALL €8.90
-   127	      1 MOONG WHOLE €7.90
-   128	      2 MOONG WHOLE €7.99
-   129	      1 Medium Poha 1kg 2,000x3,95	€7.9
-   130	      1 Mint 0,104X 16,00	€1.66
-   131	      1 OKRA €3.63
-   132	      1 OKRA €4,34
-   133	      1 OKRA €4.27
-   134	      1 OKRA €4.63
-   135	      1 OKRA €4.75
-   136	      1 OKRA €4.98
-   137	      1 Okra 0,506x8,95	€4.53
-   138	      1 PAN MAIZ AMARILLO 1KG €2.95
-   139	      1 PAPADUMS €2.00
-   140	      2 PAPAD JEERA €2.20
-   141	      1 PAPAD PLAIN €2.20
-   142	      1 PHOOL MAKHAN €11.70 ==== 3X e1/ 3.90
-   143	      1 PILLSBURY CHAKKI ATTA 5Kg €9.95
-   144	      1 POPPY SEEDS €2.90
-   145	      1 Pachranga Mixed Pickle	€5.25
-   146	      1 Paneer 0,492x 13,50	€6.64
-   147	      1 RED KIDNEY BEANS 2KG €8.95
-   148	      1 RICE FLOUR €6.20
-   149	      1 ROASTED CHANA €3.45
-   150	      1 ROOH AFJA €6.25
-   151	      1 Schani Black Eye Beans 1kg 2,000x4,25	€8.5
-   152	      1 Schani Chana Daal 2 kg 	€6.95
-   153	      1 Schani Kabuli Chana 2kg	€7.75
-   154	      1 Schani Kasoori Methi 100 2,000x 2,75	€5.5
-   155	      1 Schani Red Kidney Beans	€4.5
-   156	      1 Schani Toor Daal 2 kg 	€7.95
-   157	      1 TOOR DALL 1K = €5.50
-   158	      1 TOOR DAL 2K8 €8.90
-   159	      2 TOOR DAL 2Kg €8.90
-   160	      1 TOOR DAL 2Kg €9.90
-   161	      1 TOOR DAL 2Kg €9. 90
-   162	      1 TOOR DAL 268 €9.90
-   163	      1 TRS Haldi Powder 100g 2,000x2,00	€4.00
-   164	      1 TRS Jaggery Goor	€2.85
-   165	      1 TUKMARIA €2.60
-   166	      1 TURMERIC POWDER €1.80
-   167	      1 TURMERIC POW €1.80
-   168	      1 TURMERIC POW €4.25
-   169	      1 URID CHILKA €5.10 ==== 2X e1/ 2.55
-   170	      1 URID DALL €4.99
-   171	      1 URID DALL €8.00 ==== 2X 01/ 4.00
-   172	      1 URID DALL €8.90
-   173	      1 URID WHOLE €4.25
-   174	      1 Uphaar Masoor Daal 1kg	€3.95
-   175	      1 Uphaar Moong split 1kg 2,000 x 4,50	€9.00
-   176	      1 VANDEVI COMP €1.90
-   177	      1 VEETEE MEGA RICE €22.50
-   178	      1 VEETEE MEGA €15. 90
-   179	      2 VEETEE MEGA €22.50
-   180	      1 VEETEE MEGA € 15. 90
-   181	      1 VELTEE MEGA rice €22.50
-   182	      1 VERMICELLI €1.60
-   183	      1 VERMICELLI €3.10
-   184	      1 YHTEENSÄ €82.45
-   185	      1 YHTEENSÄ €110.73
-   186	      1 YHTEENSÄ €120.95
-   187	      1 YHTEENSÄ €130.68
-   188	      1 YHTEENSÄ €140.00
-   189	      1 YHTEENSÄ €140.30
-   190	      1 YHTEENSÄ €154.31
-   191	      1 YHTEENSÄ €176.37
-   192	      1 YHTEENSÄ €185.37
+     1	   1 AASHIR ATTA €18.90
+     2	   2 AJWAIN SEEDS €2.50
+     3	   1 ALL N ONE €2.49
+     4	   1 AMCHUR POWDR €2.45
+     5	   1 AMCHUR POWDR €4.40 2X 61/ 2.20
+     6	   1 ANARDANA 100 €2.90
+     7	   1 ASHIRBAD ATTA €18.90
+     8	   1 ASHIRVAD 10K €21.90
+     9	   1 ASHIRVAD ATTA 10Kg €28.95
+    10	   1 ASHIRVAD atta 10K €31.90
+    11	   1 BAJRI FLOUR €4.90
+    12	   1 BAY LEAVES €2.50
+    13	   1 BLACK EYE beans €8.99
+    14	   1 BLACK EYE €7.90
+    15	   1 BLACK EYE €7.99
+    16	   1 BLACK SALT €1.25
+    17	   2 BLACK SALT €2.50
+    18	   1 BLACK SALT €2.50 ==== 2X 01/ 1.25
+    19	   1 BLK EYE BEAN €9. 10
+    20	   2 BOONDI €2.45
+    21	   1 CHANA DALL €4. 20
+    22	   2 CHANA DALL €8.25
+    23	   1 CHANA DAL €7.50
+    24	   2 CHANA MASALA €2.50
+    25	   1 CHICK PEA2KG €7.50
+    26	   1 CHICK PEAS 2KG €5.95
+    27	   2 CHICK PEAS €4.20
+    28	   1 CHICK PEAS €4.40 ==== 2X e1/ 2.20
+    29	   1 CHICK PEAS €7.40 2X 01/ 3.70
+    30	   1 CHICK PEAS €8.40 === 2x e1/ 4.20
+    31	   1 CHILLIES €1.31
+    32	   2 CHILLI POWDER €4.50
+    33	   1 CHILLI POWDR €3.80 ==== 2X e1/ 1.90
+    34	   1 CHILLI POWOR €3.80 ==== 2X 1.90
+    35	   1 CHILLI €2.52
+    36	   1 CHILLI €2.70
+    37	   1 CHILLI €2.83
+    38	   1 CHILLI €2.94
+    39	   1 CHILLI €3.04
+    40	   1 CHILLI €3.33
+    41	   1 CHILLI €3.43
+    42	   1 CHUNKY CHAT €2.50
+    43	   1 CH ATTA 10KG €29.75
+    44	   1 CLOVES 50g €2.99
+    45	   2 CORIANDER 400 €4.50
+    46	   1 CORIANDER  €2.00
+    47	   1 CORIANDER €1.92
+    48	   1 CORIANDER €2.04
+    49	   1 CORIANDER €2.80
+    50	   1 CORIANDER €3.34
+    51	   1 CORIANDER €4.00
+    52	   1 CORIANDER €4.20
+    53	   1 CORIANOER €3.05
+    54	   1 CURREY LEAVE €2.75
+    55	   1 CURREY LEAVE €11.00 4X e1/ 2.75
+    56	   1 Chillies 0,228X 11,00	€2.51
+    57	   1 Coriander 0,180x 16,00	€2.88
+    58	   1 Daawat Extra Long Basmati Rice	€20.95
+    59	   1 EDIBLE GUM €4.40 2X 01/ 2.20
+    60	   1 EE CHANA DALL 1KG €3.50
+    61	   1 E E BLACK EYE BEANS 1KG €4.50
+    62	   1 E.E KEWRA WATER 190ML €1.95
+    63	   1 E.E MOTH WHOLE 1KG €4.50
+    64	   1 E.E MUSTARD OIL 250 ml €2.20
+    65	   1 E.E ROSE WATER 190ML €1.95
+    66	   1 E.E.CRUSHED CHILLI 75G €1.95
+    67	   1 FALAK VERMICELLI 150G €1.00
+    68	   1 FENNEL SEEDS €3.95
+    69	   1 FFALAK EXTRE €15.60
+    70	   1 FINE: SEV €2.45
+    71	   1 Fortune Chakki Aata 10kg	€23.95
+    72	   1 GARAM MASALA €1.90
+    73	   1 GARAM MASALA €2.99
+    74	   1 GOL GAPPA €4.50
+    75	   1 GRAM FLOUR 2KG €4.95
+    76	   3 GRAM FLOUR €5.80
+    77	   1 GRAM FLOUR €5.90
+    78	   1 GRAM FLOUR €6.20
+    79	   1 GROCERY Mango pickle €3.50
+    80	   1 GROCERY atta €29.90
+    81	   1 GROCERY kitchen king €2.25
+    82	   1 GROCERY mango pickle €3.50
+    83	   1 GROCERY mango pickle €3.75
+    84	   2 GROCERY misc €1.99
+    85	   1 GROCERY moong dal silk €8.90
+    86	   1 GROCERY urid dal = 61.00
+    87	   1 Ganesh Nylon Sev 200gm	€2.5
+    88	   1 HEERA KALA CHANA 2KG €5.95
+    89	   1 HRS Soan Papdi 500g	€6.95
+    90	   1 Heera Cumin (Jeera) Whole	€6.95
+    91	   1 Heera Phool Makhana 100g 2,000x4,75	€8.5
+    92	   1 Heera Tamarind	€1.95
+    93	   1 Heera chilli powder extr	€5.95
+    94	   1 INDUS MUNG BEANS 2KG €7.95
+    95	   1 INDUS URID WHOLE (Black) €6.95
+    96	   1 IRS Gramflour 2kg	€7.75
+    97	   1 JAGGERY G00R €6.95
+    98	   1 JAGGERY €3.25
+    99	   1 JEERA WHOLE €3.99
+   100	   1 KALONJEE €1.75
+   101	   1 KASURI METHI €3.00 ==== 2X e1/ 1.50
+   102	   1 KASURI METHI €10.00 4X 01/ 2.50
+   103	   1 KEWRA WATER €1.75
+   104	   1 KIDNEY BEANS €5.50
+   105	   1 KIDNEY BEANS €8.50
+   106	   1 LEAVES €3.84
+   107	   2 MANGO PICKLE €3.60
+   108	   1 MANGO PICKLE €4.10
+   109	   1 MANGO €4.91
+   110	   1 MDH Chana Masala	€2.5
+   111	   1 MDH Kashmiri Mirch 100g	€2.85
+   112	   1 MDH Kitchen King 100g	€2.25
+   113	   2 MEDIUM POWA €4.50
+   114	   1 MEDIUM POWA €10.90 ==== 2X 5.45
+   115	   1 MEDIUM POWA €10.90 ==== 2X 61/ 5.45
+   116	   1 MELON SEEDS €2.20
+   117	   1 MELON SEEDS €2. 20
+   118	   1 METHI LEAVES €2.50
+   119	   1 METHI LEAVES €5.00 ==== 2X 01/ 2.50
+   120	   1 METHI LEAVES €5.00 ==== 2X 2.50
+   121	   1 METHI LEAVES €5.00 ==== 2X e1/ 2.50
+   122	   1 MINT €2.44
+   123	   1 MISC.14% €3.95
+   124	   1 MOONG CHILKA €8.90
+   125	   1 MOONG CHILKA €9.70 ==== 2X e1/ 4.85
+   126	   1 MOONG DALL €8.90
+   127	   1 MOONG WHOLE €7.90
+   128	   2 MOONG WHOLE €7.99
+   129	   1 Medium Poha 1kg 2,000x3,95	€7.9
+   130	   1 Mint 0,104X 16,00	€1.66
+   131	   1 OKRA €3.63
+   132	   1 OKRA €4,34
+   133	   1 OKRA €4.27
+   134	   1 OKRA €4.63
+   135	   1 OKRA €4.75
+   136	   1 OKRA €4.98
+   137	   1 Okra 0,506x8,95	€4.53
+   138	   1 PAN MAIZ AMARILLO 1KG €2.95
+   139	   1 PAPADUMS €2.00
+   140	   2 PAPAD JEERA €2.20
+   141	   1 PAPAD PLAIN €2.20
+   142	   1 PHOOL MAKHAN €11.70 ==== 3X e1/ 3.90
+   143	   1 PILLSBURY CHAKKI ATTA 5Kg €9.95
+   144	   1 POPPY SEEDS €2.90
+   145	   1 Pachranga Mixed Pickle	€5.25
+   146	   1 Paneer 0,492x 13,50	€6.64
+   147	   1 RED KIDNEY BEANS 2KG €8.95
+   148	   1 RICE FLOUR €6.20
+   149	   1 ROASTED CHANA €3.45
+   150	   1 ROOH AFJA €6.25
+   151	   1 Schani Black Eye Beans 1kg 2,000x4,25	€8.5
+   152	   1 Schani Chana Daal 2 kg 	€6.95
+   153	   1 Schani Kabuli Chana 2kg	€7.75
+   154	   1 Schani Kasoori Methi 100 2,000x 2,75	€5.5
+   155	   1 Schani Red Kidney Beans	€4.5
+   156	   1 Schani Toor Daal 2 kg 	€7.95
+   157	   1 TOOR DALL 1K = €5.50
+   158	   1 TOOR DAL 2K8 €8.90
+   159	   2 TOOR DAL 2Kg €8.90
+   160	   1 TOOR DAL 2Kg €9.90
+   161	   1 TOOR DAL 2Kg €9. 90
+   162	   1 TOOR DAL 268 €9.90
+   163	   1 TRS Haldi Powder 100g 2,000x2,00	€4.00
+   164	   1 TRS Jaggery Goor	€2.85
+   165	   1 TUKMARIA €2.60
+   166	   1 TURMERIC POWDER €1.80
+   167	   1 TURMERIC POW €1.80
+   168	   1 TURMERIC POW €4.25
+   169	   1 URID CHILKA €5.10 ==== 2X e1/ 2.55
+   170	   1 URID DALL €4.99
+   171	   1 URID DALL €8.00 ==== 2X 01/ 4.00
+   172	   1 URID DALL €8.90
+   173	   1 URID WHOLE €4.25
+   174	   1 Uphaar Masoor Daal 1kg	€3.95
+   175	   1 Uphaar Moong split 1kg 2,000 x 4,50	€9.00
+   176	   1 VANDEVI COMP €1.90
+   177	   1 VEETEE MEGA RICE €22.50
+   178	   1 VEETEE MEGA €15. 90
+   179	   2 VEETEE MEGA €22.50
+   180	   1 VEETEE MEGA € 15. 90
+   181	   1 VELTEE MEGA rice €22.50
+   182	   1 VERMICELLI €1.60
+   183	   1 VERMICELLI €3.10
+   184	   1 YHTEENSÄ €82.45
+   185	   1 YHTEENSÄ €110.73
+   186	   1 YHTEENSÄ €120.95
+   187	   1 YHTEENSÄ €130.68
+   188	   1 YHTEENSÄ €140.00
+   189	   1 YHTEENSÄ €140.30
+   190	   1 YHTEENSÄ €154.31
+   191	   1 YHTEENSÄ €176.37
+   192	   1 YHTEENSÄ €185.37
