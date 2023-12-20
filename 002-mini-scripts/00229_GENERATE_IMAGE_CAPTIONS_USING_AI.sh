@@ -1,5 +1,15 @@
 #/bin/bash
 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+start_time=$(date +%s) ;
+FUNC_SOURCE_SCRIPTS () {
+    source "$REPO_SCRIPTS_MINI/00200a_source_script_to_print_fancy_divider.sh" ;
+}
+FUNC_SOURCE_SCRIPTS ; 
+palidivider "START_TIME = $start_time" ; 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 ############ BEGIN: EXPANDING ALIASES ON NON-INTERATIVE SHELL SCRIPTS ########
 source $HOME/.bash_aliases ## source this the first
 shopt -s expand_aliases ## for BASH: This has to be done, else, aliases are not expanded in scripts.
@@ -55,3 +65,7 @@ case $choice in
 esac
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+end_time=$(date +%s) ; 
+command_duration=$((end_time - start_time)) ; 
+#echo "Total program duration: ${command_duration} seconds" ; 
+palidivider "Program took ${command_duration} seconds"; 
