@@ -94,6 +94,7 @@ echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 echo ">> CREATING SUMMARY FILES TO BE USED BY CLOUDFLARE SCRIPTS ... (line counts below)" ;
 FilesUrlsWPcontent="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_FilesUrlsWPcontent.txt" ;
 ImagesUrlsWPcontentUploads="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_ImagesUrlsWPcontentUploads.csv" ;
+ImagesUrlsWPcontentUploads_WEBP="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_ImagesUrlsWPcontentUploads_WEBP.txt" ;
 ImagesUrlsMGGKcdn="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_ImagesUrlsMGGKcdn.txt" ;
 AllValidUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidSiteUrls.txt" ;
 AllValidRecipesUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidRecipesUrls.txt" ;
@@ -137,9 +138,14 @@ done
 ## only list those urls with atleast one forward-slash
 cat $tmpfile011 | grep -i '/' | sort | uniq > $AllValidNONRecipesUrlsMGGK
 ####
+####
+#### Get all filepaths inside wp-content directory and convert jpg to webp extension. Finally, converting them to valid MGGK CDN urls
+fd -HIt f -e jpg --search-path="$REPO_MGGK/static/wp-content/uploads" -x echo {/} | sd '.jpg' '.webp' | sd '^' 'https://cdn.mygingergarlickitchen.com/images_webp/original/'  | grep -i '.webp$' | sort > $ImagesUrlsWPcontentUploads_WEBP ;
+####
 
 wc -l $FilesUrlsWPcontent ;
 wc -l $ImagesUrlsWPcontentUploads ;
+wc -l $ImagesUrlsWPcontentUploads_WEBP ;
 wc -l $ImagesUrlsMGGKcdn ;
 wc -l $AllValidUrlsMGGK ;
 wc -l $AllValidRecipesUrlsMGGK ;

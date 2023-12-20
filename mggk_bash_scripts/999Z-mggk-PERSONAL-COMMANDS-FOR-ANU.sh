@@ -159,7 +159,8 @@ convert_images_to_1080x1920_padded_imagemagick
 9999_mggk_create_mggk_and_localhost_hyperlinks_from_all_mdfiles_in_pwd
 yoast-calculate-all-inbound-outbound-links-counts
 yoast_find_paragraph_word_counts
-mggk_WEEKLY_SUMMARY_RUN) ;
+mggk_WEEKLY_SUMMARY_RUN
+00232_mggk_download_N_random_images_from_MGGK_website) ;
 
 ##
 PALI_COMMANDS_ARRAY=(palinotes_makesite_hugo
