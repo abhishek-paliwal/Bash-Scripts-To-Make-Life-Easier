@@ -29,11 +29,13 @@ if [[ "$chosen_N" =~ ^[0-9]+$ ]]; then
     echo "You entered a valid numeric value: $chosen_N // ($chosen_N + $chosen_N) jpg + webp images will be downloaded". ;
     echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
     ## Download
-    wget -P $WORKDIR/ "$images_wpcontent_url" ;
-    wget -P $WORKDIR/ "$images_webp_url" ;
+    wget -q --show-progress -P $WORKDIR/ "$images_wpcontent_url" ;
+    wget -q --show-progress -P $WORKDIR/ "$images_webp_url" ;
     ## Shuffle the rows in file and then download the chosen N
-    shuf --head-count="$chosen_N" "$WORKDIR/$(basename $images_wpcontent_url)" | xargs wget -P "$WORKDIR"
-    shuf --head-count="$chosen_N" "$WORKDIR/$(basename $images_webp_url)" | xargs wget -P "$WORKDIR"
+    shuf --head-count="$chosen_N" "$WORKDIR/$(basename $images_wpcontent_url)" | xargs wget -q --show-progress -P "$WORKDIR"
+    shuf --head-count="$chosen_N" "$WORKDIR/$(basename $images_webp_url)" | xargs wget -q --show-progress -P "$WORKDIR"
 else
     echo "Invalid input. Please enter a numeric value." ;
 fi
+
+
