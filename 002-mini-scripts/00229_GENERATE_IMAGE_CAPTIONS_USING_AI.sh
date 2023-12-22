@@ -1,12 +1,12 @@
 #/bin/bash
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-start_time=$(date +%s) ;
+start_time_secs=$(date +%s) ;
 FUNC_SOURCE_SCRIPTS () {
     source "$REPO_SCRIPTS_MINI/00200a_source_script_to_print_fancy_divider.sh" ;
 }
 FUNC_SOURCE_SCRIPTS ; 
-palidivider "START_TIME = $start_time" ; 
+palidivider "START_TIME = $(date)" ; 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -51,7 +51,8 @@ case $choice in
         eval googlecloud_create_image_captions_from_vertexai_vision ;
         ;;
     5)
-        echo "You chose Option 5."
+        echo "You chose Option 5." ; 
+        figlet 'USA VPN on ?' ; 
         eval googlecloud_use_gemini_pro_models_with_text_and_images_captions ;
         ;;
     99)
@@ -65,7 +66,7 @@ case $choice in
 esac
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-end_time=$(date +%s) ; 
-command_duration=$((end_time - start_time)) ; 
+end_time_secs=$(date +%s) ; 
+command_duration=$((end_time_secs - start_time_secs)) ; 
 #echo "Total program duration: ${command_duration} seconds" ; 
-palidivider "Program took ${command_duration} seconds"; 
+palidivider "End time = $(date). Program took ${command_duration} seconds"; 
