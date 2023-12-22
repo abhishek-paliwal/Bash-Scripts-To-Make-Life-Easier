@@ -1,4 +1,13 @@
 #!/bin/bash
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+start_time_secs=$(date +%s) ;
+FUNC_SOURCE_SCRIPTS () {
+    source "$REPO_SCRIPTS_MINI/00200a_source_script_to_print_fancy_divider.sh" ;
+}
+FUNC_SOURCE_SCRIPTS ;
+palidivider "START_TIME = $(date)" ;
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 
@@ -330,3 +339,9 @@ then
   eval ${MY_COMMANDS_ARRAY[$WHICH_COMMAND_TO_RUN]} ;
 fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+end_time_secs=$(date +%s) ;
+command_duration=$((end_time_secs - start_time_secs)) ;
+#echo "Total program duration: ${command_duration} seconds" ;
+palidivider "End time = $(date). Program took ${command_duration} seconds";
