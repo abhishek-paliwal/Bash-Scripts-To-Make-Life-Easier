@@ -103,7 +103,7 @@ function FUNC_create_responsive_images () {
             imagePath_basename=$(basename $imagePath) ;
             outputImage="$resizeDir/$imageRes-$imagePath_basename" ;
             mkdir -p $resizeDir ;
-            convert "$line" -resize "$resizeDimen" -quality 80 "$outputImage" ;
+            convert "$line" -resize "$resizeDimen" -quality 85 "$outputImage" ;
         ####           
         done
     ####
