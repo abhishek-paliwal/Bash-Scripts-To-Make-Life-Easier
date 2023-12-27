@@ -210,7 +210,8 @@ convert-all-csv-files-in-pwd-to-html-tables-bootstrap
 mggk_WEEKLY_SUMMARY_RUN
 gits_all
 dotfiles_copy
-create_listing_of_mggk_ONEDRIVE_FILES) ;
+create_listing_of_mggk_ONEDRIVE_FILES
+00_only_run_this_to_prepare_final_concatenated_csv_for_data_analysis_mggk) ;
 
 ##
 LEELA_COMMANDS_ARRAY=(leelasrecipes_makesite_hugo
