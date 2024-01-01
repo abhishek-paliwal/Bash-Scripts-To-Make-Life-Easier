@@ -3,7 +3,8 @@ THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 ##############################################################################
 ## SETTING VARIABLES
-WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
+#WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
+WORKDIR="$DIR_GITHUB/TMP0/2024_mggk_project_captions/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ; 
 mkdir -p $WORKDIR ; ## create dir if not exists
 echo "##########################################" ; 
 echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
@@ -39,7 +40,7 @@ function FUNC_step2_read_md_filepaths_and_get_imagepaths (){
         echo ">> CURRENT FILE ($count) = $filepath" ; 
         replaceThis="https://www.mygingergarlickitchen.com/wp-content/uploads/" ; 
         replaceTo="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/wp-content/uploads/" ; 
-        grep -irh '!\[.*jpg' "$filepath" | grep -io 'http.*\.jpg' | sed "s|$replaceThis|$replaceTo|ig" > "$OUTFILE" ;
+        grep -irh '!\[.*jpg' "$filepath" | grep -io 'http.*\.jpg' | sed "s|$replaceThis|$replaceTo|ig" | sort -V | uniq > "$OUTFILE" ;
         ###### 
         ## get images
         echo "      >> Copying $(wc $OUTFILE) images to $OUTDIR " ; 
@@ -48,6 +49,17 @@ function FUNC_step2_read_md_filepaths_and_get_imagepaths (){
     done 
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+function FUNC_step3_get_captions_for_images_in_each_subdir (){
+    INDIR="$WORKDIR" ; 
+    figlet ">> Activating venv3" ; 
+    source "$REPO_PYTHONPROGRAMS/my_python_virtual_environments/venv3/bin/activate" ; 
+    for subdir in $(fd -HItd -d1 --search-path="$INDIR") ; do
+        $REPO_PYTHONPROGRAMS/my_python_virtual_environments/venv3/bin/python3 "$REPO_CLOUD"/huggingface_co/h002_create_image_captions_from_inference_api.py "$subdir" ; 
+    done    
+}
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-FUNC_step1_get_md_filepaths
-FUNC_step2_read_md_filepaths_and_get_imagepaths
+#FUNC_step1_get_md_filepaths ; 
+#FUNC_step2_read_md_filepaths_and_get_imagepaths ; 
+FUNC_step3_get_captions_for_images_in_each_subdir ; 
