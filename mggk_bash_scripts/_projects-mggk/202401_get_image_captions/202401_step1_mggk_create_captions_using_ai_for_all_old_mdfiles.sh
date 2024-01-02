@@ -4,7 +4,7 @@ THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 ##############################################################################
 ## SETTING VARIABLES
 #WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
-WORKDIR="$DIR_GITHUB/TMP0/2024_mggk_project_captions/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ; 
+WORKDIR="$DIR_GITHUB/TMP0/2024_mggk_project_captions/_outputs" ; 
 mkdir -p $WORKDIR ; ## create dir if not exists
 echo "##########################################" ; 
 echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
