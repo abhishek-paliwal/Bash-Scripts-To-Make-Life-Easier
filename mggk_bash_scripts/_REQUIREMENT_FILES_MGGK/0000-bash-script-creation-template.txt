@@ -47,6 +47,7 @@ FUNC_SOURCE_SCRIPTS () {
     # info "This enables use of keywords for coloring, such as: debug, info, error, success, warn, highlight." ;
     # debug "Read it's help by running: >> bash $DIR_GITHUB/Bash-Scripts-To-Make-Life-Easier/2000_vendor_programs/color-logger.sh -h"
     ##############################################################################
+    palidivider "Running $FUNCNAME" ;
 }
 FUNC_SOURCE_SCRIPTS ; 
 palidivider ; 
@@ -54,6 +55,7 @@ palidivider ;
 
 ##------------------------------------------------------------------------------
 function FUNC_ONLY_RUN_FOR_THIS_USER () {
+    palidivider "Running $FUNCNAME" ;
     ## ## Only run this program for this user
     echo "IMPORTANT NOTE: This script only runs on MAC OS." ; 
     if [ "$USER" == "abhishek" ] ; then
@@ -69,6 +71,7 @@ FUNC_ONLY_RUN_FOR_THIS_USER
 ##------------------------------------------------------------------------------
 ## ASSIGN COMPUTER HOSTNAME SPECIFIC VARIABLES
 function FUNC_check_hostname_and_assign_proper_variables () {
+    palidivider "Running $FUNCNAME" ;
     HOSTNAME=$(uname -n) ;
     ## Possible hostnames are: 
     #### AP-MBP.local // LAPTOP-F0AJ6LBG // ubuntu1804-digitalocean-bangalore-droplet
