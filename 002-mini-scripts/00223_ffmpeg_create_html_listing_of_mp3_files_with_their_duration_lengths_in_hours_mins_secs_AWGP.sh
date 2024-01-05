@@ -225,7 +225,7 @@ FUNC_COPY_FILES_TO_DROPBOX_DIR "$OUTPUT_CSV" ;
 
 
 ## FINALLY RUN THIS COMMAND
-echo ">> FINALLY RUN THIS COMMAND with DIR_Y as pwd : fd --search-path=\"$DIR_Y/awgp\" -e txt -e pdf -e md -x rm {} ; rclone sync -P ./awgp/ dreamobjects:public-palibucket/awgp/" | lolcat ; 
+echo ">> FINALLY RUN THIS COMMAND MANUALLY with DIR_Y as pwd : fd --search-path=\"$DIR_Y/awgp\" -e txt -e pdf -e md -x rm {} ; rclone sync -P ./awgp/ dreamobjects:public-palibucket/awgp/" | lolcat ; 
 
 ##------------------------------------------------------------------------------
 
