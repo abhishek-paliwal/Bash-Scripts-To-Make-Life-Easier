@@ -340,8 +340,23 @@ then
 fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+##------------------------------------------------------------------------------
+## ASSIGN COMPUTER HOSTNAME SPECIFIC VARIABLES
+function FUNC_display_end_msg () {
+    palidivider "Running $FUNCNAME" ;
+    HOSTNAME=$(uname) ;
+    ## Possible hostnames are: 
+    #### AP-MBP.local // LAPTOP-F0AJ6LBG // ubuntu1804-digitalocean-bangalore-droplet
+    ## 
+    figlet ">> DONE" ; 
+    ## Also say if MAC OS
+    if [ "$(uname)" == "Darwin" ] ; then say 'done' ; fi
+}
+FUNC_display_end_msg ; 
+##------------------------------------------------------------------------------
 
 end_time_secs=$(date +%s) ;
 command_duration=$((end_time_secs - start_time_secs)) ;
 #echo "Total program duration: ${command_duration} seconds" ;
 palidivider "End time = $(date). Program took ${command_duration} seconds";
+
