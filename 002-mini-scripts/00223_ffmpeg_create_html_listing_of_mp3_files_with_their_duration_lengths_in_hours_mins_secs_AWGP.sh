@@ -1,5 +1,5 @@
 #!/bin/bash
-## CREATE HTML LISTING OF MP3 FILES WITH THEIR DURATION IN HOURS MINUTES SECONDS
+## CREATE HTML LISTING OF ANY MP3 FILES (OR AWGP MP# FILES) WITH THEIR DURATION IN HOURS MINUTES SECONDS
 ##############################################################################
 THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
