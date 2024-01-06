@@ -5,6 +5,22 @@ THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Check for the valid base_directory where this progam need to run in. Exit otherwise.
+FUNC_EXIT_IF_DIR_INVALID () {
+    MYPWD=$(pwd) ; 
+    ROOTDIR_BASENAME="$(basename $MYPWD)" ; 
+    if [ "$ROOTDIR_BASENAME" = "mp3_527x_sync_with_bucket" ]; then
+        echo "SUCCESS: Current directory is valid => mp3_527x_sync_with_bucket" ; 
+        TXTFILES_DIRPATH_RELATIVE_TO_PWD="../txtfiles_ready_for_markdown_527x" ; 
+    else
+        echo "FAILURE: Current directory is NOT valid. Make sure that current directory basename is => mp3_527x_sync_with_bucket" ; 
+        exit 1 ; 
+    fi
+}
+FUNC_EXIT_IF_DIR_INVALID  ;
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 FUNC_SOURCE_SCRIPTS () {
     ####
     source "$REPO_SCRIPTS_MINI/00200a_source_script_to_print_fancy_divider.sh" ;
@@ -145,13 +161,13 @@ for x in $(fd -e mp3 -e MP3 --search-path="$(pwd)" | sort -V) ; do
     echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
     MP3_FILE_BASENAME="$(basename $x)" ; 
     MP3_FILE_BASENAME_SANS_EXTENSION="$(basename -s .mp3 $x)" ;
-    path_to_replace="$(pwd)/awgp" ; 
+    path_to_replace="$(pwd)" ; 
     MP3_FILE_RELATIVE_PATH="${x/$path_to_replace/.}";
     ##
     get_serial_number_of_book=$(echo "$MP3_FILE_BASENAME" | awk -F '_XX_' '{print $1}' | sd ' ' '') ;
     ## Use CSV_AWGP environment variable
     get_bookname=$(grep -i "${get_serial_number_of_book};" $CSV_AWGP | awk -F ';' '{print $3}' | head -1)  ; 
-    get_bookname_txtmd=$( fd -e txt -e md "$MP3_FILE_BASENAME_SANS_EXTENSION" -x head -1 {} )  ; 
+    get_bookname_txtmd=$( fd -e txt "$MP3_FILE_BASENAME_SANS_EXTENSION" --search-path="$TXTFILES_DIRPATH_RELATIVE_TO_PWD" -x head -1 {} )  ; 
     ##
     TMPFILE="$WORKDIR/_tmp011.txt" ; 
     ffprobe -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$x" 2>/dev/null > "$TMPFILE" ;
@@ -163,7 +179,7 @@ for x in $(fd -e mp3 -e MP3 --search-path="$(pwd)" | sort -V) ; do
     info ">> MP3_FILE_RELATIVE_PATH => $MP3_FILE_RELATIVE_PATH" ; 
     success ">> ORIGINAL FILE BASENAME => $(basename $x)" ; 
     success ">> MP3 song duration in hours mins seconds => $song_duration" ;
-    echo "$get_bookname // $get_serial_number_of_book"
+    echo "$get_bookname // $get_bookname_txtmd // $get_serial_number_of_book" ; 
     ##
     audio_stream_text="<audio controls='controls' preload='none' src='$MP3_FILE_RELATIVE_PATH'><a href='$MP3_FILE_RELATIVE_PATH'>Download audio</a></audio>" ; 
     echo "<tr> <td>$song_duration</td> <td>$get_bookname</td> <td>$get_bookname_txtmd</td> <td>$audio_stream_text</td> <td>$MP3_FILE_BASENAME</td> </tr>"  >>  "$TMPFILE_HTML" ; 
@@ -212,9 +228,9 @@ function FUNC_COPY_FILES_TO_DROPBOX_DIR () {
     DROPBOX_FILEPATH="$DIR_DROPBOX_SCRIPTS_OUTPUT/_AWGP_gayatri_pariwar_outputs/$(basename $inFile)" ;
     cp "$inFile" "$DROPBOX_FILEPATH" ;
     warn ">>>> MESSAGE // OUTPUT FILE COPIED TO => $DROPBOX_FILEPATH" ;
-    ## ADDITIONALLY COPY IT TO awgp directory (DIR_Y/awgp/)
+    ## ADDITIONALLY COPY IT TO awgp directory (MYPWD)
     fileExtension=${inFile##*.}
-    EXTRA_COPYPATH="$DIR_Y/awgp/index_books.$fileExtension" ; 
+    EXTRA_COPYPATH="$MYPWD/index_books.$fileExtension" ; 
     cp "$inFile" "$EXTRA_COPYPATH" ;
     warn ">>>> MESSAGE // OUTPUT FILE ALSO COPIED TO => $EXTRA_COPYPATH" ;
 }
@@ -225,7 +241,7 @@ FUNC_COPY_FILES_TO_DROPBOX_DIR "$OUTPUT_CSV" ;
 
 
 ## FINALLY RUN THIS COMMAND
-echo ">> FINALLY RUN THIS COMMAND MANUALLY with DIR_Y as pwd : fd --search-path=\"$DIR_Y/awgp\" -e txt -e pdf -e md -x rm {} ; rclone sync -P ./awgp/ dreamobjects:public-palibucket/awgp/" | lolcat ; 
+echo ">> FINALLY RUN THIS COMMAND MANUALLY with DIR_Y as pwd : rclone sync -P ./ r2cloudflare:cdn-abhishekpali-us/awgp-gayatri-books-mp3/" | lolcat ; 
 
 ##------------------------------------------------------------------------------
 
