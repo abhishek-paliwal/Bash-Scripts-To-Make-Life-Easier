@@ -12,4 +12,7 @@ if [ $(($done_percent % 10)) -eq 0 ] ; then
 else
     printf "%s" "." ; 
 fi 
+##
+## Show progress using pipeviewer command
+echo "$1/$2" | pv -p  ;  
 ################################################################################
