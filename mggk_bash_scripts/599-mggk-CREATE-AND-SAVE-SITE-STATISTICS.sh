@@ -1,6 +1,7 @@
 #!/bin/bash
 THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
+figlet "Statistics" ; 
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
@@ -48,13 +49,13 @@ echo "##------------------------------------------------------------------------
 ## BEGIN: CREATING COLLECTION OF IMPORTANT DETAILS FOR ALL MD FILES IN ONE FILE
 ##################################################################################
 echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
-echo ">> CREATING COLLECTION OF IMPORTANT DETAILS FOR ALL MD FILES IN ONE FILE ..." ;
+echo ">> CREATING COLLECTION OF IMPORTANT DETAILS FOR ALL MD FILES IN ONE FILE ..." | lolcat ; echo ; 
 ##
 outFileCSV="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_collection_important_details_AllMDFiles.csv" ;
 echo "count;mdfilepath;url_value;seo_title_value;title_value" > $outFileCSV ; 
 ####
 count=0;
-total_files="$(fd -I -t f -e md --search-path=$REPO_MGGK/content | wc -l)" ;
+total_files="$(fd -I -t f -e md --search-path=$REPO_MGGK/content | wc -l | sd ' ' '')" ;
 #
 for mdfile in $(fd -I -t f -e md --search-path="$REPO_MGGK/content") ; do 
     ((count++));
@@ -69,11 +70,13 @@ for mdfile in $(fd -I -t f -e md --search-path="$REPO_MGGK/content") ; do
     title_value=$(grep -irh '^title:' $mdfile | sd 'title:' '' | sd '"' ''| sd ';' '') ;
     url_value=$(grep -irh '^url:' $mdfile  | sd "url:" "$mggk_baseurl" | sd '"' ''| sd ' ' '') ;
     ##
-    echo "$count;$mdfilepath;$url_value;$seo_title_value;$title_value" >> $outFileCSV ;
+    echo "$count;$mdfilepath;$url_value;$seo_title_value;$title_value" >> $outFileCSV ; 
     ##
     ## SHOWING CURRENT PROGRESS IN PERCENTAGE
-    $REPO_SCRIPTS/002-mini-scripts/00210-show-current-state-progress-bar-in-percentage-for-programs.sh "$count" "$total_files" ;
-done
+    #$REPO_SCRIPTS/002-mini-scripts/00210-show-current-state-progress-bar-in-percentage-for-programs.sh "$count" "$total_files" ;
+    echo $count ; ## this line is needed for pipeviewer command for -l option
+done | pv -p -t -l -s $total_files >/dev/null
+##
 echo; echo ;
 ####
 ## CREATING JSON FROM ABOVE CSV FILE (which has 5 comma-separated fields)
@@ -91,7 +94,7 @@ echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ##################################################################################
 ##################################################################################
 ## CREATING SUMMARY FILES TO BE USED BY CLOUDFLARE SCRIPTS
-echo ">> CREATING SUMMARY FILES TO BE USED BY CLOUDFLARE SCRIPTS ... (line counts below)" ;
+echo ">> CREATING SUMMARY FILES TO BE USED BY CLOUDFLARE SCRIPTS ..." ;
 FilesUrlsWPcontent="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_FilesUrlsWPcontent.txt" ;
 ImagesUrlsWPcontentUploads="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_ImagesUrlsWPcontentUploads.csv" ;
 ImagesUrlsWPcontentUploads_WEBP="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_ImagesUrlsWPcontentUploads_WEBP.txt" ;
@@ -100,49 +103,55 @@ AllValidUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidSi
 AllValidRecipesUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidRecipesUrls.txt" ;
 AllValidNONRecipesUrlsMGGK="$DIR_DROPBOX_SCRIPTS_OUTPUT/mggk_summary_cloudflare_AllValidNONRecipesUrls.txt" ;
 ##
-#### Get all filepaths inside wp-content directory and converting them to valid MGGK urls
-replaceThis1="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
-replaceThis2="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
-replaceTo="https://www.mygingergarlickitchen.com" ;
-## (Add -I flag so that fd also read filepaths present in .gitignore in the given directory)
-fd -HIt f --search-path=$REPO_MGGK/static/wp-content | sort -u | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" > $FilesUrlsWPcontent ;
-## Get all images present in wp-content/uploads/ directory
-echo "##URL" > $ImagesUrlsWPcontentUploads ; ## initialize csv file with column name
-fd -HIt f -e jpg -e png -e webp --search-path=$REPO_MGGK/static/wp-content/uploads | sort -nr | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" >> $ImagesUrlsWPcontentUploads ;
-## Get all images present in MGGK CDN directory (REPO_CDN_MGGK)
-replaceThis3="/home/ubuntu/GitHub/00-CDN-REPO/cdn.mygingergarlickitchen.com" ;
-replaceThis4="/Users/abhishek/GitHub/00-CDN-REPO/cdn.mygingergarlickitchen.com" ;
-replaceToThis="https://cdn.mygingergarlickitchen.com" ;
-fd -HIt f -e jpg -e png -e webp --search-path=$REPO_CDN_MGGK | sort -nr | sd "$replaceThis3" "$replaceToThis" | sd "$replaceThis4" "$replaceToThis" > $ImagesUrlsMGGKcdn ;
-####
+function FUNC_CREATE_SUMMARY_FILES_FOR_CLOUDFLARE () {
+    #### Get all filepaths inside wp-content directory and converting them to valid MGGK urls
+    replaceThis1="/home/ubuntu/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
+    replaceThis2="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ;
+    replaceTo="https://www.mygingergarlickitchen.com" ;
+    ## (Add -I flag so that fd also read filepaths present in .gitignore in the given directory)
+    fd -HIt f --search-path=$REPO_MGGK/static/wp-content | sort -u | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" > $FilesUrlsWPcontent ;
+    ## Get all images present in wp-content/uploads/ directory
+    echo "##URL" > $ImagesUrlsWPcontentUploads ; ## initialize csv file with column name
+    fd -HIt f -e jpg -e png -e webp --search-path=$REPO_MGGK/static/wp-content/uploads | sort -nr | sd "$replaceThis1" "$replaceTo" | sd "$replaceThis2" "$replaceTo" >> $ImagesUrlsWPcontentUploads ;
+    ## Get all images present in MGGK CDN directory (REPO_CDN_MGGK)
+    replaceThis3="/home/ubuntu/GitHub/00-CDN-REPO/cdn.mygingergarlickitchen.com" ;
+    replaceThis4="/Users/abhishek/GitHub/00-CDN-REPO/cdn.mygingergarlickitchen.com" ;
+    replaceToThis="https://cdn.mygingergarlickitchen.com" ;
+    fd -HIt f -e jpg -e png -e webp --search-path=$REPO_CDN_MGGK | sort -nr | sd "$replaceThis3" "$replaceToThis" | sd "$replaceThis4" "$replaceToThis" > $ImagesUrlsMGGKcdn ;
+    ####
 
-## Get all mggk urls from current md files
-ack -ih 'url:' $REPO_MGGK/content/ | sd 'url:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com'  | sort | uniq > $AllValidUrlsMGGK ;
-####
-## Get all valid mggk recipe urls from current md files (HINT: containing preptime keyword)
-tmpfile010="$WORKDIR/_tmp010.txt" ;
-echo > $tmpfile010 ;
-for x in $(grep -irl 'preptime' $REPO_MGGK/content/) ; do 
+    ## Get all mggk urls from current md files
+    ack -ih 'url:' $REPO_MGGK/content/ | sd 'url:' '' | sd ' ' '' | sd '"' '' | sd '^' 'https://www.mygingergarlickitchen.com'  | sort | uniq > $AllValidUrlsMGGK ;
+    ####
+    ## Get all valid mggk recipe urls from current md files (HINT: containing preptime keyword)
+    tmpfile010="$WORKDIR/_tmp010.txt" ;
+    echo > $tmpfile010 ;
+    for x in $(grep -irl 'preptime' $REPO_MGGK/content/) ; do 
     grep -irh "^url: " $x | sd "url:" "" | sd " " "" | sd '"' '' | sed 's|^|https://www.mygingergarlickitchen.com|g' >> $tmpfile010
-done
-## only list those urls with atleast one forward-slash
-cat $tmpfile010 | grep -i '/' | sort | uniq > $AllValidRecipesUrlsMGGK
-####
-####
-## Get all valid mggk NON recipe urls from current md files (HINT: dont containing preptime keyword)
-tmpfile011="$WORKDIR/_tmp011.txt" ;
-echo > $tmpfile011 ;
-for x in $(grep -irL 'preptime' $REPO_MGGK/content/) ; do 
+    done
+    ## only list those urls with atleast one forward-slash
+    cat $tmpfile010 | grep -i '/' | sort | uniq > $AllValidRecipesUrlsMGGK
+    ####
+    ####
+    ## Get all valid mggk NON recipe urls from current md files (HINT: dont containing preptime keyword)
+    tmpfile011="$WORKDIR/_tmp011.txt" ;
+    echo > $tmpfile011 ;
+    for x in $(grep -irL 'preptime' $REPO_MGGK/content/) ; do 
     grep -irh "^url: " $x | sd "url:" "" | sd " " "" | sd '"' '' | sed 's|^|https://www.mygingergarlickitchen.com|g' >> $tmpfile011
-done
-## only list those urls with atleast one forward-slash
-cat $tmpfile011 | grep -i '/' | sort | uniq > $AllValidNONRecipesUrlsMGGK
-####
-####
-#### Get all filepaths inside wp-content directory and convert jpg to webp extension. Finally, converting them to valid MGGK CDN urls
-fd -HIt f -e jpg --search-path="$REPO_MGGK/static/wp-content/uploads" -x echo {/} | sd '.jpg' '.webp' | sd '^' 'https://cdn.mygingergarlickitchen.com/images_webp/original/'  | grep -i '.webp$' | sort > $ImagesUrlsWPcontentUploads_WEBP ;
-####
-
+    done
+    ## only list those urls with atleast one forward-slash
+    cat $tmpfile011 | grep -i '/' | sort | uniq > $AllValidNONRecipesUrlsMGGK
+    ####
+    ####
+    #### Get all filepaths inside wp-content directory and convert jpg to webp extension. Finally, converting them to valid MGGK CDN urls
+    fd -HIt f -e jpg --search-path="$REPO_MGGK/static/wp-content/uploads" -x echo {/} | sd '.jpg' '.webp' | sd '^' 'https://cdn.mygingergarlickitchen.com/images_webp/original/'  | grep -i '.webp$' | sort > $ImagesUrlsWPcontentUploads_WEBP ;
+    ####
+}
+## FUNCTION CALL
+echo ">> COMMAND PROGRESS ... (takes about 30 seconds) ..." | lolcat ; 
+FUNC_CREATE_SUMMARY_FILES_FOR_CLOUDFLARE | pv -t ; 
+##
+echo ">> LINE COUNTS BELOW ..." ; 
 wc -l $FilesUrlsWPcontent ;
 wc -l $ImagesUrlsWPcontentUploads ;
 wc -l $ImagesUrlsWPcontentUploads_WEBP ;
@@ -150,6 +159,7 @@ wc -l $ImagesUrlsMGGKcdn ;
 wc -l $AllValidUrlsMGGK ;
 wc -l $AllValidRecipesUrlsMGGK ;
 wc -l $AllValidNONRecipesUrlsMGGK ;
+
 ##################################################################################
 ##################################################################################
 
