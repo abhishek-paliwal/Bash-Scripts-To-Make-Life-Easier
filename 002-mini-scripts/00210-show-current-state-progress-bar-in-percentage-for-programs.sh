@@ -7,8 +7,9 @@ total_count="$2";
 ## SHOWING CURRENT PROGRESS IN PERCENTAGE
 done_percent=$(( ($current_count*100)/$total_count )) ;
 if [ $(($done_percent % 10)) -eq 0 ] ; then
-    printf "%s%s" "${done_percent}%" "..." ;
+    echo ; 
+    printf "%s%s" "${done_percent}% " "..." ; 
 else
-    printf "%s" "." ;
+    printf "%s" "." ; 
 fi 
 ################################################################################
