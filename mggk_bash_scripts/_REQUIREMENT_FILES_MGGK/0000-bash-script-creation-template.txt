@@ -101,10 +101,13 @@ echo "##########################################" ;
 ##------------------------------------------------------------------------------
 ## STANDARD OUTPUTS AND STANDARD ERRORS REDIRECT FILES 
 STD_OUTPUT_AND_ERROR="$WORKDIR/_tmp_std_output_and_error_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
+STD_OUTPUT="$WORKDIR/_tmp_std_output_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 STD_ERROR="$WORKDIR/_tmp_std_error_$THIS_SCRIPT_NAME_SANS_EXTENSION.txt" ;
 ####
-## Redirect both stdout and stderr to the same file: my_command &> $STD_OUTPUT_AND_ERROR
-## Redirect stderr to a file: my_command 2> $STD_ERROR
+## Redirect both stdout and stderr to the same file: my_command &> "$STD_OUTPUT_AND_ERROR"
+## Redirect both stdout and stderr in a single command: my_command > "$STD_OUTPUT" 2> "$STD_ERROR"
+## Redirect stdout to a file: my_command > "$STD_OUTPUT"
+## Redirect stderr to a file: my_command 2> "$STD_ERROR"
 ##------------------------------------------------------------------------------
 
 ####
