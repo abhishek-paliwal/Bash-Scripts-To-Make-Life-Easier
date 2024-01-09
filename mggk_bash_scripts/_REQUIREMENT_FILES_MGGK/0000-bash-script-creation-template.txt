@@ -247,16 +247,34 @@ cat $time_taken
 ################################################################################
 ## BLOCK TO GIVE USER SOME OPTIONS TO RUN 
 ################################################################################
+function FUNC_STEP99_RUN_ALL_FUNCS_SEQUENTIALLY(){
+    palidivider ">> Running function: ${FUNCNAME[0]}" ;
+    FUNC1 ;
+    FUNC2 ;
+    FUNC_STEP6_COPY_FINAL_FILE_TO_DROPBOX_DIR  ;
+}
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 while true
 do
-        echo "1. Update the system "
-        echo "2. Upgrade the system "
-        echo "3. Exit prompt"
+        echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+        echo ">> WHICH FUNTION DO YOU WANT TO RUN?" ;
+        echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+        echo "1. Run FUNC1" ;
+        echo "2. Run FUNC2" ;
+        echo "98. Run FUNC_STEP99_RUN_ALL_FUNCS_SEQUENTIALLY (verbose)" ;
+        echo "99. Run FUNC_STEP99_RUN_ALL_FUNCS_SEQUENTIALLY (silent)" ;
+        echo "0. Exit prompt" ;
+        echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;
+        echo ">> ENTER YOUR CHOICE: " ;
    read Input
    case "$Input" in
-        1) exec sudo apt update ;;
-        2) exec sudo apt upgrade  ;;
-        3) break
+        1) FUNC1 ;;
+        2) FUNC2  ;;
+        98) FUNC_STEP99_RUN_ALL_FUNCS_SEQUENTIALLY ;;
+        99) figlet "Run verbose if errors." ;
+            FUNC_STEP99_RUN_ALL_FUNCS_SEQUENTIALLY | pv -tp > "$STD_OUTPUT" ;
+            ;;
+        0) break
    esac
 done
 ################################################################################
