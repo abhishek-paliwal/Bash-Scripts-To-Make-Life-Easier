@@ -251,7 +251,6 @@ function FUNC_STEP99_RUN_ALL_FUNCS_SEQUENTIALLY(){
     palidivider ">> Running function: ${FUNCNAME[0]}" ;
     FUNC1 ;
     FUNC2 ;
-    FUNC_STEP6_COPY_FINAL_FILE_TO_DROPBOX_DIR  ;
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 while true
