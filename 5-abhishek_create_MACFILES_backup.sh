@@ -76,7 +76,7 @@ done
 ## SINCE THE FOLLOWING DIRS HAVE SO MANY FILES, WHICH MAKES SYNCING TIME-CONSUMING, WE WILL
 ## MAKE A SINGLE TAR.GZ ARCHIVE FROM THOSE DIRECTORIES. ADD AS MANY DIRECTORIES AS YOU LIKE.
 echo ">>>> Currently making a tar.gz archive from muliple directories ..." ;
-tar -czvf $DIR_ZIPS/MULTIPLE_DIRECTORIES_BACKUP.tar.gz "$HOME/.oh-my-zsh/custom" "$HOME/.ssh" "$HOME/.config/ranger" "$HOME/.config/rclone" 
+tar -czvf $DIR_ZIPS/MULTIPLE_DIRECTORIES_BACKUP.tar.gz "$HOME/.ssh" "$HOME/.config" "$HOME/.aws"  
 
 echo "BASH + ZSH Profiles + CONFIG_DIRS ....................... BACKUP DONE!"
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -95,11 +95,13 @@ FUNC_BACKUP_GITHUB_DIR () {
 ##################################################################################
 echo; echo ">>>> BACKING UP THE INSTALLED APPS LIST FOR VARIOUS PACKAGE MANAGERS (homebrew, node, gem, python, etc.)" ; echo ;
 info ">> Brew bundle dump ... running" ;
-brew bundle dump --force --file="$DIR_PACKAGES/BREW_INSTALLS_FILENAME.TXT"
+brew bundle dump --force --file="$DIR_PACKAGES/BREW_INSTALLS_FILENAME.TXT" ; 
 info ">> Pip3 freeze ... running" ;
-pip3 freeze > "$DIR_PACKAGES/PIP3_INSTALLED_requirements.txt"
+pip3 freeze > "$DIR_PACKAGES/PIP3_INSTALLED_requirements.txt" ; 
 info ">> NPM package listing ... running" ;
-npm -g ls --long --depth=0 > "$DIR_PACKAGES/NODE_NPM_GLOBALLY_INSTALLED_MODULES.txt"
+npm -g ls --long --depth=0 > "$DIR_PACKAGES/NODE_NPM_GLOBALLY_INSTALLED_MODULES.txt" ; 
+info ">> Pyenv Versioins and virtual environments listing ..." ; 
+pyenv versions > "$DIR_PACKAGES/PYENV_VERSION_AND_VENVS.txt" ; 
 success ">>>> ALL PACKAGE LISTINGS BACKUPS CREATED." ; echo ; 
 
 ##################################################################################

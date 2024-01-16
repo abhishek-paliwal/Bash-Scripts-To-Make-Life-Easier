@@ -50,11 +50,11 @@ function FUNC_get_backup_from_digitalocean_server () {
 ##############################################################################
 
 ####### only run this bash script to make ALL the indexes and backups on PALI's Macbook #########
-BASEPATH="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier";
+BASEPATH="$REPO_SCRIPTS";
 
 #### BACKUPS of our MACs ####
 echo "creating backup of MACFILES + Important DOTFILES in Onedrive......"
-bash $BASEPATH/5-abhishek_create_MACFILES_backup.sh
+bash "$REPO_SCRIPTS/5-abhishek_create_MACFILES_backup.sh" ; 
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ########## KEEP THIS BLOCK AT THE END TO BACKUP ALL FILES TO SERVERS ############
@@ -117,5 +117,5 @@ else
 fi
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-figlet "Good 2 go ..." | lolcat ; 
+figlet ">> DONE." | lolcat ; 
 ########################## SCRIPT ENDS ########################
