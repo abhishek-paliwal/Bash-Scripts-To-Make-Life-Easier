@@ -46,7 +46,7 @@ TMPFILE3="$WORKDIR/_tmpSpon3.txt" ;
 
 ################################################################################
 ## Finding the first published dates for the posts other than DONT_DELETE_POSTS_WITH_THESE_DATES
-DONT_DELETE_POSTS_WITH_THESE_DATES="(2024-|2023-|2022-|2021-12|2021-11|2021-10)" ; ## Change this accordingly as you please
+DONT_DELETE_POSTS_WITH_THESE_DATES="(2024-|2023-|2022-|2021-12)" ; ## Change this accordingly as you please
 echo ">> Everything other than these posts will not be deleted ... $DONT_DELETE_POSTS_WITH_THESE_DATES (change the settings in this original program = $THIS_SCRIPT_NAME)" ; 
 
 ##
@@ -54,6 +54,7 @@ echo; echo "####################################################################
 echo ">> FINDING THE FIRST PUBLISHED DATES FOR THE POSTS OTHER THAN GIVEN DATES ..." ; 
 rm $TMPFILE1 ; ## remove if already exists
 ## Loop through all the posts which are not to be kept forever
+echo ">> Don't select those file where, keep_this_post_forever = yes" ; 
 for x in $(grep -irL 'keep_this_post_forever: yes' $INDIR/*.md) ; do 
     ## echo $x ; 
     ack 'first_published_on' $x | grep -ivE "$DONT_DELETE_POSTS_WITH_THESE_DATES" >> $TMPFILE1 ; 
