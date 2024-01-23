@@ -127,9 +127,9 @@ for this_image in $(ls $IMAGEDIR/) ;
 do 
     echo "Reading this image ($COUNT of $TOTAL_IMAGES) => $this_image"; 
     ## Calling the function with its parameters
-    CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS "$this_image" "1x1" "800x800" ;
-    CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS "$this_image" "4x3" "800x600" ;
-    CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS "$this_image" "16x9" "800x450" ;
+    CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS "$this_image" "1x1" "1200x1200" ;
+    CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS "$this_image" "4x3" "1200x800" ;
+    CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS "$this_image" "16x9" "1200x675" ;
     
     ## Updating the running counter
     COUNT=$((COUNT+1))
