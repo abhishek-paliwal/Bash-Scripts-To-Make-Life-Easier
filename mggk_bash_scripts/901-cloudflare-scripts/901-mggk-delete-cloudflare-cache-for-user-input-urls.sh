@@ -195,6 +195,7 @@ if [ "$CacheDelete" == "y" ]; then
     inFile_base=$(basename $inFile) ; 
     ## Add these urls => Delete cache for these two urls everytime ...
     echo "** Adding sitemap.xml + index.xml urls to the delete list ...**" ;
+    echo "https://www.mygingergarlickitchen.com/" >> $inFile ;
     echo "https://www.mygingergarlickitchen.com/index.xml" >> $inFile ;
     echo "https://www.mygingergarlickitchen.com/sitemap.xml" >> $inFile ;
     ##
