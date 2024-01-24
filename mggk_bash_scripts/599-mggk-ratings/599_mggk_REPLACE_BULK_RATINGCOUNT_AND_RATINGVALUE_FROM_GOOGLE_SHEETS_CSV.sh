@@ -1,8 +1,7 @@
 #!/bin/bash
 ################################################################################
 THIS_SCRIPT_NAME="$(basename $0)" ;
-REQUIREMENTS_FILE_DIR="$REPO_SCRIPTS_MGGK/599-mggk-ratings" ;
-REQUIREMENTS_FILE="$REQUIREMENTS_FILE_DIR/599_MGGK_RATING_REQUIREMENT_FILE_CSV_FROM_GOOGLE_SHEETS.csv" ;
+REQUIREMENTS_FILE="$REPO_SCRIPTS_MGGK/599-mggk-ratings/599_MGGK_RATING_REQUIREMENT_FILE_CSV_FROM_GOOGLE_SHEETS.csv" ;
 ##
 SUMMARY_DIR="$DIR_GITHUB/2019-HUGO-MGGK-WEBSITE-OFFICIAL/_mggk_summary_files" ;
 SUMMARY_FILE="$SUMMARY_DIR/_mggk_summary_rating_last_updated.txt" ;
