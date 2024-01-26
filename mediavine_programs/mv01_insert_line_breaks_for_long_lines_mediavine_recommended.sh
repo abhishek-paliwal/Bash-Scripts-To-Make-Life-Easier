@@ -3,10 +3,13 @@ THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 
 ## SETTING VARIABLES
-ROOTDIR="$REPO_MGGK/content" ;  # use this dir for reading files with frontmatter
+ROOTDIR="$REPO_MGGK/content/allrecipes/top-20" ;  # use this dir for reading files with frontmatter
 WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
+DIR_OUTPUT_MDFILES_PARA_SHORTENED="$WORKDIR/_OUTPUT_MDFILES_PARAGRAPH_SHORTENED"
 ##
 mkdir -p "$WORKDIR" ; ## create dirs if not present
+mkdir -p "$DIR_OUTPUT_MDFILES_PARA_SHORTENED" ; 
+## 
 echo "##########################################" ; 
 echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
 echo "##########################################" ; 
@@ -75,11 +78,13 @@ function FUNC_PROCESS_AND_SHORTEN_EACH_LINE_IN_THIS_MDFILE () {
 
 function FUNC_STEP1 () {
     ## STEP1 = RUN EXTERNAL PROGRAM TO SEPARATE FRONTMATTER AND CONTENT FROM ALL MDFILES
+    echo "Running STEP1 = RUN EXTERNAL PROGRAM TO SEPARATE FRONTMATTER AND CONTENT FROM ALL MDFILES ..." ; 
     bash "$REPO_SCRIPTS_MINI/00234_mggk_extract_and_save_frontmatter_and_content_as_txtfiles_from_mggk_hugo_markdown_files.sh" | pv -pt > /dev/null ; 
 }
 
 function FUNC_STEP2 () {
-    ## STEP2 = CALL FUNCTION FOR EACH MDFILE AND PROCESS
+    ## STEP2 = CALL FUNCTION FOR EACH MDFILE AND PROCESS IT
+    echo "Running STEP2 = CALL FUNCTION FOR EACH MDFILE AND PROCESS IT ..." ; 
     ##
     STEP1_OUTDIR="$DIR_Y/_OUTPUT_00234_mggk_extract_and_save_frontmatter_and_content_as_txtfiles_from_mggk_hugo_markdown_files" ; 
     DIR_FILES_FRONTMATTER="$STEP1_OUTDIR/_TMP_FRONTMATTER/" ; 
@@ -100,6 +105,9 @@ function FUNC_STEP2 () {
         echo >> "$TMPFILE_FINAL0" ;  
         cat "$TMPFILE_FINAL0" > "$TMPFILE_FINAL1" ; ## clean output by deleting repeated empty lines
         icdiff "$mdfile" "$TMPFILE_FINAL1" ; 
+        ##
+        ## Finally copy the output file to proper directory, and rename according to original mdfile.
+        cp "$TMPFILE_FINAL1" "$DIR_OUTPUT_MDFILES_PARA_SHORTENED/$BASE_MDFILE" ;
     done
 }
 ##------------------------------------------------------------------------------
