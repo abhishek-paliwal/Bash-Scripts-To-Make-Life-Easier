@@ -138,7 +138,7 @@ elif [ "$myKeyword" == "1" ]; then
     echo "$mggk_homepage" > $step1File ;
 elif [ "$myKeyword" == "2" ]; then
     echo ">> The cache will be deleted for top 16 MGGK URLS only ..." ;
-    grep -irh 'url: ' $REPO_MGGK/content/allrecipes/top-16/ | sd 'url: ' 'https://www.mygingergarlickitchen.com' > $step1File ; 
+    grep -irh 'url: ' $REPO_MGGK/content/allrecipes/top-20/ | sd 'url: ' 'https://www.mygingergarlickitchen.com' > $step1File ; 
     echo ">> CACHE WILL BE DELETED FOR THESE URLs ..." ; 
     cat $step1File ; 
 elif [ "$myKeyword" == "3" ]; then
