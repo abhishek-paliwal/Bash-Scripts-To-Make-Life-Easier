@@ -23,19 +23,29 @@ function FUNC_PROCESS_AND_SHORTEN_EACH_LINE_IN_THIS_MDFILE () {
     max_line_length=300 ; 
 
     # Read all lines from the file into an array named 'lines'
-    IFS=$'\n' read -d '' -r -a lines < "$file_path"
+    IFS=$'\n' read -r -d '' -a lines < "$file_path"
+
+    TMPFILE_LINES_ALL="$WORKDIR/_lines_all.txt"  ;
+    TMPFILE_LONGLINES_ALL="$WORKDIR/_longlines_all.txt"  ;
+    TMPFILE_LONGLINES_VALID="$WORKDIR/_longlines_valid_only.txt"  ;
+
+    echo > "$TMPFILE_LINES_ALL" ;
+    echo > "$TMPFILE_LONGLINES_ALL" ;
+    echo > "$TMPFILE_LONGLINES_VALID" ; 
 
     # Iterate over the lines
     for ((i=0; i<${#lines[@]}; i++)); do
     ############
         currentLine="${lines[i]}"
-        #echo "Line $((i+1)): $currentLine"
+        echo "Line $((i+1)): $currentLine" >> "$TMPFILE_LINES_ALL" ;
         # Break the line at the first full stop if it exceeds the maximum line length
         #echo "${#currentLine} : ${currentLine}"
         if [[ ${#currentLine} -ge ${max_line_length} ]]; then
+            echo ">> long line = $currentLine" >> "$TMPFILE_LONGLINES_ALL"  ; 
             #####
             # Check if the line does not contain a URL and does not contain a hashtag sign (bcoz some lines end with hashtags)
             if [[ "$currentLine" != *http*  && "$currentLine" != *#* ]] ; then
+                echo ">> long line = $currentLine" >> "$TMPFILE_LONGLINES_VALID"  ; 
                 currentLine_part1=$(echo $currentLine | cut -d '.' -f1-3  | sd '^ ' '') ;  ## field 1-3
                 currentLine_part2=$(echo $currentLine | cut -d '.' -f4-6  | sd '^ ' '') ;  ## field 4-6
                 currentLine_part3=$(echo $currentLine | cut -d '.' -f7-9  | sd '^ ' '' ) ;  ## field 7-9
@@ -89,7 +99,8 @@ function FUNC_STEP2 () {
     DIR_FILES_FRONTMATTER="$STEP1_OUTDIR/_TMP_FRONTMATTER/" ; 
     DIR_FILES_CONTENT="$STEP1_OUTDIR/_TMP_CONTENT/" ;
     ##
-    for mdfile in $(fd -HItf -e md --search-path="$ROOTDIR" | sort -r | grep -iv '_index' | head -3) ; do
+    ## IMPORTANT NOTE: DURING TESTING, USE HEAD -5 OR SOMETHING. REMOVE IT AT PRODUCTION TIME.
+    for mdfile in $(fd -HItf -e md --search-path="$ROOTDIR" | sort -r | grep -iv '_index' | head -5) ; do
         BASE_MDFILE=$(basename "$mdfile") ; 
         FRONTMATTER_FILE=$(fd -HItf $BASE_MDFILE --search-path="$DIR_FILES_FRONTMATTER") ; 
         CONTENT_FILE=$(fd -HItf $BASE_MDFILE --search-path="$DIR_FILES_CONTENT") ; 
