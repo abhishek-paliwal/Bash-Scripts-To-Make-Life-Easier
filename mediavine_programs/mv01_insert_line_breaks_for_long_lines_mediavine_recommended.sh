@@ -22,9 +22,6 @@ function FUNC_PROCESS_AND_SHORTEN_EACH_LINE_IN_THIS_MDFILE () {
     # Set the maximum line length as characters
     max_line_length=300 ; 
 
-    # Set the regular expression to match URLs
-    url_regex='(https?://[^\s]+)' ; 
-
     # Read all lines from the file into an array named 'lines'
     IFS=$'\n' read -d '' -r -a lines < "$file_path"
 
@@ -38,7 +35,7 @@ function FUNC_PROCESS_AND_SHORTEN_EACH_LINE_IN_THIS_MDFILE () {
         if [[ ${#currentLine} -ge ${max_line_length} ]]; then
             #####
             # Check if the line does not contain a URL and does not contain a hashtag sign (bcoz some lines end with hashtags)
-            if [[ ! $currentLine =~ $url_regex && "$currentLine" != *#* ]] ; then
+            if [[ "$currentLine" != *http*  && "$currentLine" != *#* ]] ; then
                 currentLine_part1=$(echo $currentLine | cut -d '.' -f1-3  | sd '^ ' '') ;  ## field 1-3
                 currentLine_part2=$(echo $currentLine | cut -d '.' -f4-6  | sd '^ ' '') ;  ## field 4-6
                 currentLine_part3=$(echo $currentLine | cut -d '.' -f7-9  | sd '^ ' '' ) ;  ## field 7-9
@@ -61,12 +58,14 @@ function FUNC_PROCESS_AND_SHORTEN_EACH_LINE_IN_THIS_MDFILE () {
                 cat "$tmpfile01" | sd '\.\.' '.' | sd '^\.$' '' | sd '\?\.' '?' | sd '!\.' '!' > "$tmpfile02" ; 
                 cat -s "$tmpfile02"  ; 
             else
-                echo ; echo "$currentLine" ;
+                echo ; 
+                echo "$currentLine" ;
             fi 
             ######
         else 
             #echo "OLD: ${#currentLine} : $currentLine" ; 
-            echo ; echo "$currentLine" ; 
+            echo ; 
+            echo "$currentLine" ; 
         fi
     ############
     done
@@ -104,6 +103,10 @@ function FUNC_STEP2 () {
         cat "$FRONTMATTER_FILE" "$TMPFILE_CONTENT_NEW" > "$TMPFILE_FINAL0" ; 
         echo >> "$TMPFILE_FINAL0" ;  
         cat "$TMPFILE_FINAL0" > "$TMPFILE_FINAL1" ; ## clean output by deleting repeated empty lines
+        echo ;
+        echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
+        echo ">> Running ICDIFF (left = $mdfile // right = $TMPFILE_FINAL1)" ; 
+        echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
         icdiff "$mdfile" "$TMPFILE_FINAL1" ; 
         ##
         ## Finally copy the output file to proper directory, and rename according to original mdfile.
@@ -112,5 +115,5 @@ function FUNC_STEP2 () {
 }
 ##------------------------------------------------------------------------------
 
-FUNC_STEP1
+#FUNC_STEP1
 FUNC_STEP2
