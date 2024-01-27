@@ -64,8 +64,8 @@ function FUNC_PROCESS_AND_SHORTEN_EACH_LINE_IN_THIS_MDFILE () {
                 echo >> "$tmpfile01" ;
                 echo "${currentLine_partRemaining}" >> "$tmpfile01" ; 
                 ##
-                ## remove consecutive empty lines and concatenate to a file
-                cat "$tmpfile01" | sd '\.\.' '.' | sd '^\.$' '' | sd '\?\.' '?' | sd '!\.' '!' > "$tmpfile02" ; 
+                ## remove consecutive empty lines and fix some multiple full stops, and concatenate to a file
+                cat "$tmpfile01" | sd '\s+\.' '.' | sd '\.+' '.' | sd '^\.$' '' | sd '\?\.' '?' | sd '!\.' '!' > "$tmpfile02" ; 
                 cat -s "$tmpfile02"  ; 
             else
                 echo ; 
@@ -126,5 +126,5 @@ function FUNC_STEP2 () {
 }
 ##------------------------------------------------------------------------------
 
-#FUNC_STEP1
+FUNC_STEP1
 FUNC_STEP2
