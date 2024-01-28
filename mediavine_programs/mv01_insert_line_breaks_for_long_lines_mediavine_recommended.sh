@@ -3,7 +3,7 @@ THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 
 ## SETTING VARIABLES
-ROOTDIR="$REPO_MGGK/content/allrecipes/top-20" ;  # use this dir for reading files with frontmatter
+ROOTDIR="$REPO_MGGK/content/allrecipes/001-020" ;  # use this dir for reading files with frontmatter
 WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
 DIR_OUTPUT_MDFILES_PARA_SHORTENED="$WORKDIR/_OUTPUT_MDFILES_PARAGRAPH_SHORTENED"
 ##

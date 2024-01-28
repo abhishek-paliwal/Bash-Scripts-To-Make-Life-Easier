@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo ">> This programs work is done. It will exit now. " ; 
+exit 1 ; 
+
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## CREATING SCRIPT USAGE FUNCION AND CALLING IT VIA '--help'
 usage()
@@ -36,7 +39,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 #CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-201-300" ;
 #CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-301-400" ;
 #CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-401-500" ;
-CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-501-END" ;
+#CONTENT_DIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/top-501-END" ;
 
 PWD="$HOME_WINDOWS/Desktop/Y" ;
 ##################################################################################

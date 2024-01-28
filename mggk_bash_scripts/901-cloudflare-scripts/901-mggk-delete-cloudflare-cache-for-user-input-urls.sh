@@ -116,7 +116,7 @@ function step5_FUNC_cloudflare_find_cache_hit_status_for_keyword_urls () {
 ##------------------------------------------------------------------------------
 echo "[Enter 0  (= zero) if you have a single url (with http/https): " ; 
 echo "[Enter 1  (= one) if you want to delete cache for MGGK Homepage only: " ; 
-echo "[Enter 2  (= two) if you want to delete cache for top 16 MGGK URLS only: " ;
+echo "[Enter 2  (= two) if you want to delete cache for top 20 MGGK URLS only: " ;
 echo "[Enter 3  (= three) if you want to delete cache for existing URLs containing new link [user provided keyword url]: " ; 
 echo "[Enter 4  (= four) if you have multiple urls: " ; 
 echo "[Enter 5  (= five) if you want to delete cache for latest 50 MGGK URLS only: " ;
@@ -137,8 +137,8 @@ elif [ "$myKeyword" == "1" ]; then
     mggk_homepage="https://www.mygingergarlickitchen.com/"
     echo "$mggk_homepage" > $step1File ;
 elif [ "$myKeyword" == "2" ]; then
-    echo ">> The cache will be deleted for top 16 MGGK URLS only ..." ;
-    grep -irh 'url: ' $REPO_MGGK/content/allrecipes/top-20/ | sd 'url: ' 'https://www.mygingergarlickitchen.com' > $step1File ; 
+    echo ">> The cache will be deleted for top 20 MGGK URLS only ..." ;
+    grep -irh 'url: ' $REPO_MGGK/content/allrecipes/001-020/ | sd 'url: ' 'https://www.mygingergarlickitchen.com' > $step1File ; 
     echo ">> CACHE WILL BE DELETED FOR THESE URLs ..." ; 
     cat $step1File ; 
 elif [ "$myKeyword" == "3" ]; then
