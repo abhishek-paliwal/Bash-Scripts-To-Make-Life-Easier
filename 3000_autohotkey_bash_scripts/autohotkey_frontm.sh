@@ -227,9 +227,6 @@ FRONTMATTER_FOOTER="---
 
 <!--more-->
 
-{{< mggk-button-block-for-recipe-here-link >}}
-
-
 {{< mggk-hugo-google-ad-1 >}}
 
 {{< mggk-hugo-google-ad-2 >}}
