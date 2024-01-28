@@ -20,7 +20,7 @@ function FUNC_PROCESS_AND_SHORTEN_EACH_LINE_IN_THIS_MDFILE () {
     file_path="$1" ; 
 
     # Set the maximum line length as characters
-    max_line_length=300 ; 
+    max_line_length=280 ; 
 
     # Read all lines from the file into an array named 'lines'
     IFS=$'\n' read -r -d '' -a lines < "$file_path"
@@ -46,10 +46,10 @@ function FUNC_PROCESS_AND_SHORTEN_EACH_LINE_IN_THIS_MDFILE () {
             # Check if the line does not contain a URL and does not contain a hashtag sign (bcoz some lines end with hashtags)
             if [[ "$currentLine" != *http*  && "$currentLine" != *#* ]] ; then
                 echo ">> long line = $currentLine" >> "$TMPFILE_LONGLINES_VALID"  ; 
-                currentLine_part1=$(echo $currentLine | cut -d '.' -f1-3  | sd '^ ' '') ;  ## field 1-3
-                currentLine_part2=$(echo $currentLine | cut -d '.' -f4-6  | sd '^ ' '') ;  ## field 4-6
-                currentLine_part3=$(echo $currentLine | cut -d '.' -f7-9  | sd '^ ' '' ) ;  ## field 7-9
-                currentLine_partRemaining=$(echo $currentLine | cut -d '.' -f9-  | sd '^ ' '' ) ;  ## field 9 onewards
+                currentLine_part1=$(echo $currentLine | cut -d '.' -f1-2  | sd '^ ' '') ;  ## field 1-2
+                currentLine_part2=$(echo $currentLine | cut -d '.' -f3-4  | sd '^ ' '') ;  ## field 3-4
+                currentLine_part3=$(echo $currentLine | cut -d '.' -f5-6  | sd '^ ' '' ) ;  ## field 5-6
+                currentLine_partRemaining=$(echo $currentLine | cut -d '.' -f7-  | sd '^ ' '' ) ;  ## field 7 onwards
                 ##
                 tmpfile01="$WORKDIR/_tmpfile01.txt" ; 
                 tmpfile02="$WORKDIR/_tmpfile02.txt" ; 
