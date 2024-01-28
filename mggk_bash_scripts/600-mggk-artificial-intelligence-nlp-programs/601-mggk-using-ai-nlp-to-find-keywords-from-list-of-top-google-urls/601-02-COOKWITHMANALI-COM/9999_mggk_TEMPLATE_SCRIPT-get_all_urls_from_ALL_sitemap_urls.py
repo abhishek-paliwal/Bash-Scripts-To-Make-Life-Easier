@@ -53,7 +53,7 @@ OUTPUT_CSV_FILE = '_OUTPUT_9999_SITEMAP_ALL_URLS.csv'
 ################################################################################
 
 ## COOKWITHMANALI.COM SITEMAPS (uncomment if running the following)
-sitemap_urls = ['https://www.cookwithmanali.com/post-sitemap.xml', 'https://www.cookwithmanali.com/page-sitemap.xml']
+sitemap_urls = ['https://www.cookwithmanali.com/post-sitemap.xml', 'https://www.cookwithmanali.com/post-sitemap2.xml', 'https://www.cookwithmanali.com/page-sitemap.xml']
 
 ################################################################################
 xmlDict = {} ## initializing an empty dictionary

@@ -40,7 +40,8 @@ else:
 ##################################################################################
 ## IMPORTING MODULES
 from bs4 import BeautifulSoup
-import requests
+from bs4 import BeautifulSoup
+import urllib.request
 ################################################################################
 ################################################################################
 OUTPUT_CSV_FILE = '_OUTPUT_9999_SITEMAP_ALL_URLS.csv'
@@ -51,17 +52,19 @@ OUTPUT_CSV_FILE = '_OUTPUT_9999_SITEMAP_ALL_URLS.csv'
 ################################################################################
 
 ## VEGRECIPESOFINDIA.COM SITEMAPS (uncomment if running the following)
-sitemap_urls = [ 'https://www.vegrecipesofindia.com/post-sitemap1.xml', 'https://www.vegrecipesofindia.com/post-sitemap2.xml', 'https://www.vegrecipesofindia.com/page-sitemap.xml' ]
+sitemap_urls = ['https://www.vegrecipesofindia.com/post-sitemap.xml','https://www.vegrecipesofindia.com/post-sitemap2.xml','https://www.vegrecipesofindia.com/page-sitemap.xml']
 
 ################################################################################
 xmlDict = {} ## initializing an empty dictionary
 ####################
 ####################
 def get_all_urls_from_sitemaps(URL):
-    #r = requests.get("https://www.vegrecipesofindia.com/post-sitemap1.xml")
-    r = requests.get(URL)
+    hdr = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A'}
 
-    xml = r.text
+    url=URL.strip() ## removes all unnecessary character in line (leading and trailing)
+    req = urllib.request.Request(url,headers=hdr)
+    xml = urllib.request.urlopen(req).read()
+    #print(xml)
 
     soup = BeautifulSoup(xml, features="lxml")
     sitemapTags = soup.find_all("url")
