@@ -94,7 +94,7 @@ COUNT=0 ;
 for mdfile in $(find $SEARCHDIR -type f -name "*.md")
 do
     (( COUNT++ )) ;
-    echo ">> Currently making search engline links for file => $COUNT " ; 
+    echo ">> Currently making search engine links for file => $COUNT " ; 
     ##
     ## Getting Post URL + Title
     mytitle=$( grep -irh '^title:' $mdfile | sed 's/title://g' | sed 's/"//g' | sed "s+'++g" ) ;
