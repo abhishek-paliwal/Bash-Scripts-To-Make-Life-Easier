@@ -17,7 +17,8 @@ echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
 echo "##########################################" ; 
 
 ################################################################################
-ROOTDIR="$REPO_MGGK/content/allrecipes" ; 
+#ROOTDIR="$REPO_MGGK/content/allrecipes" ; 
+ROOTDIR="$REPO_MGGK/content" ; 
 ROOTDIR_IMAGES="$REPO_MGGK/static" ;
 ##
 TMPDIR_MV02="$WORKDIR/__TMPDIR_MV02" ;
@@ -34,7 +35,7 @@ function FUNC_STEP1_CREATE_CSV_FILE_WITH_IMAGES_DIMENSIONS () {
         ((count++)) ; 
         echo ">> Running $count (=> $mdfile)" ; 
         tmpfile0="$DIR_Y/_tmpfile0.txt" ;
-        tmpfile1="$TMPDIR/_tmpfile_${count}.txt" ; 
+        tmpfile1="$TMPDIR_MV02/_tmpfile_${count}.txt" ; 
 
         ## find all images in this mdfile
         grep -i '.jpg' $mdfile | sd '.jpg' '.jpg\n' | sd 'src=' '\n' | sd '"' '' | sd ' ' '' |sd 'https://www.mygingergarlickitchen.com' '' | grep -i '.jpg' > $tmpfile0 ;
