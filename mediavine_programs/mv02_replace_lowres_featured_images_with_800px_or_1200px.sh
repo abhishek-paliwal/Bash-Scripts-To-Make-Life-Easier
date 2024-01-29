@@ -18,7 +18,10 @@ echo "##########################################" ;
 
 ################################################################################
 ROOTDIR="$REPO_MGGK/content/allrecipes" ; 
-ROOTDIR_IMAGES="$REPO_MGGK/static" ; 
+ROOTDIR_IMAGES="$REPO_MGGK/static" ;
+##
+TMPDIR_MV02="$WORKDIR/__TMPDIR_MV02" ;
+mkdir -p "$TMPDIR_MV02" ;   
 
 ## Min width for featured images
 image_min_width=800;
@@ -31,7 +34,7 @@ function FUNC_STEP1_CREATE_CSV_FILE_WITH_IMAGES_DIMENSIONS () {
         ((count++)) ; 
         echo ">> Running $count (=> $mdfile)" ; 
         tmpfile0="$DIR_Y/_tmpfile0.txt" ;
-        tmpfile1="$WORKDIR/_tmpfile_${count}.txt" ; 
+        tmpfile1="$TMPDIR/_tmpfile_${count}.txt" ; 
 
         ## find all images in this mdfile
         grep -i '.jpg' $mdfile | sd '.jpg' '.jpg\n' | sd 'src=' '\n' | sd '"' '' | sd ' ' '' |sd 'https://www.mygingergarlickitchen.com' '' | grep -i '.jpg' > $tmpfile0 ;
@@ -66,12 +69,51 @@ function FUNC_STEP1_CREATE_CSV_FILE_WITH_IMAGES_DIMENSIONS () {
                 #echo "//// $image_path" ; 
                 echo "${dimensions},${image_path}" >> $TMPFILE_CSV ;   
             done < $tmpfile1
-            grep -iv '^$' $TMPFILE_CSV > $OUTFILE_CSV ; 
+            grep -iv '^$' $TMPFILE_CSV | sd '//' '' > $OUTFILE_CSV ; 
         fi 
     ######
     done
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+function FUNC_STEP2_REPLACE_FEATURED_IMAGE_IN_ORIGINAL_MDFILE () {
+    INDIR="$WORKDIR" ; 
+    TMPFILE0="$WORKDIR/_tmpdirFile.txt" ; 
+    for mydir in $(fd --search-path="$INDIR" -HItd 'ZZ_') ; do 
+    ######
+        echo "##------------------------------------------------------------------------------" ; 
+        mydir_dirname=$(dirname $mydir) ; 
+        base_mydir_dirname=$(basename $mydir_dirname) ; 
+        echo "BASE MYDIR DIRNAME = $base_mydir_dirname" ; 
+        ## FIND ORIGINAL MDFILE PATH
+        ORIG_MDFILE_FOUND=$(fd --search-path="$REPO_MGGK/content" -HItf "$base_mydir_dirname" ) ; 
+        echo ">> FILE = $ORIG_MDFILE_FOUND" ; 
+        ## FIND IMAGE FILE IN MYDIR
+        replacementImage=$(fd --search-path="$mydir" -e jpg | head -1) ; 
+        base_replacementImage=$(basename $replacementImage) ; 
+        ##
+        if [ -n "$base_replacementImage" ]; then
+            echo "Variable is not empty = $base_replacementImage" ; 
+            ##
+            CSV_FILEPATH="$(fd --search-path="$mydir_dirname" -HItf -e csv -e CSV)" ; 
+            filepath_replacementImage=$(grep -i "$base_replacementImage" $CSV_FILEPATH | head -1 | awk -F ',' '{print $2}') ; 
+            replaceThisPart="/Users/abhishek/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static" ; 
+            shortpath_replacementImage="${filepath_replacementImage//$replaceThisPart/}"
+            ##
+            echo "      >> REPLACEMENT IMAGE: $replacementImage" ; 
+            echo "      >> REPLACEMENT IMAGE FILEPATH:$filepath_replacementImage" ; 
+            echo "      >> REPLACEMENT IMAGE SHORTPATH:$shortpath_replacementImage" ; 
+            ##
+            ## FINALLY REPLACE IN ORIGINAL MDFILE
+            echo ">> REPLACING IN ORIGINAL MDFILE ..." ; 
+            sed -i '' "s|^featured_image.*|featured_image: ${shortpath_replacementImage}|" $ORIG_MDFILE_FOUND ; 
+            ##
+        else
+            echo "Variable is empty (SO NO CHANGES TO ORIGINAL MDFILE) = $base_replacementImage" ;    
+        fi
+    ######           
+    done  
+}
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 FUNC_STEP1_CREATE_CSV_FILE_WITH_IMAGES_DIMENSIONS ; 
+FUNC_STEP2_REPLACE_FEATURED_IMAGE_IN_ORIGINAL_MDFILE ; 
