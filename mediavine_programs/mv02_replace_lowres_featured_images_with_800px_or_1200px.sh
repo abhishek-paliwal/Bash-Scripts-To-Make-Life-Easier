@@ -17,7 +17,7 @@ echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
 echo "##########################################" ; 
 
 ################################################################################
-ROOTDIR="$REPO_MGGK/content/allrecipes" ; 
+ROOTDIR="$REPO_MGGK/content" ; 
 ROOTDIR_IMAGES="$REPO_MGGK/static" ;
 ##
 TMPDIR_MV02="$WORKDIR/__TMPDIR_MV02" ;
@@ -69,7 +69,7 @@ function FUNC_STEP1_CREATE_CSV_FILE_WITH_IMAGES_DIMENSIONS () {
                 #echo "//// $image_path" ; 
                 echo "${dimensions},${image_path}" >> $TMPFILE_CSV ;   
             done < $tmpfile1
-            grep -iv '^$' $TMPFILE_CSV | sd '//' '' > $OUTFILE_CSV ; 
+            grep -iv '^$' $TMPFILE_CSV | sd '//' '/' > $OUTFILE_CSV ; 
         fi 
     ######
     done
@@ -107,6 +107,9 @@ function FUNC_STEP2_REPLACE_FEATURED_IMAGE_IN_ORIGINAL_MDFILE () {
             echo ">> REPLACING IN ORIGINAL MDFILE ..." ; 
             sed -i '' "s|^featured_image.*|featured_image: ${shortpath_replacementImage}|" $ORIG_MDFILE_FOUND ; 
             ##
+            ## REPLACE THE FEATURED IMAGE IN THE ORIGINAL DIRECTORY
+            echo ">> REPLACING THE FEATURED IMAGE IN THE ORIGINAL DIRECTORY ..." ;
+            cp "$replacementImage" "$filepath_replacementImage" ;  
         else
             echo "Variable is empty (SO NO CHANGES TO ORIGINAL MDFILE) = $base_replacementImage" ;    
         fi
@@ -116,4 +119,4 @@ function FUNC_STEP2_REPLACE_FEATURED_IMAGE_IN_ORIGINAL_MDFILE () {
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 FUNC_STEP1_CREATE_CSV_FILE_WITH_IMAGES_DIMENSIONS ; 
-FUNC_STEP2_REPLACE_FEATURED_IMAGE_IN_ORIGINAL_MDFILE ; 
+#FUNC_STEP2_REPLACE_FEATURED_IMAGE_IN_ORIGINAL_MDFILE ; 
