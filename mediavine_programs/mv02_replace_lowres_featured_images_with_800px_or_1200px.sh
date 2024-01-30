@@ -17,7 +17,7 @@ echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
 echo "##########################################" ; 
 
 ################################################################################
-ROOTDIR="$REPO_MGGK/content" ; 
+ROOTDIR="$REPO_MGGK/content/blog/99_collections" ; 
 ROOTDIR_IMAGES="$REPO_MGGK/static" ;
 ##
 TMPDIR_MV02="$WORKDIR/__TMPDIR_MV02" ;
