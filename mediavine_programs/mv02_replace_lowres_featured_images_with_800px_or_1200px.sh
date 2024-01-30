@@ -1,4 +1,8 @@
 #!/bin/bash
+
+echo ">> It's work is done. Will exit now." ; 
+exit 1 ;
+
 THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 ################################################################################
@@ -17,7 +21,7 @@ echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
 echo "##########################################" ; 
 
 ################################################################################
-ROOTDIR="$REPO_MGGK/content/blog/99_collections" ; 
+ROOTDIR="$REPO_MGGK/content" ; 
 ROOTDIR_IMAGES="$REPO_MGGK/static" ;
 ##
 TMPDIR_MV02="$WORKDIR/__TMPDIR_MV02" ;
@@ -29,7 +33,7 @@ image_min_width=800;
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function FUNC_STEP1_CREATE_CSV_FILE_WITH_IMAGES_DIMENSIONS () {
     count=0 ; 
-    for mdfile in $(fd -HItf -e md --search-path="$ROOTDIR" | head -100000) ; do 
+    for mdfile in $(fd -HItf -e md --search-path="$ROOTDIR" ) ; do 
     ######
         ((count++)) ; 
         echo ">> Running $count (=> $mdfile)" ; 
@@ -119,4 +123,4 @@ function FUNC_STEP2_REPLACE_FEATURED_IMAGE_IN_ORIGINAL_MDFILE () {
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 FUNC_STEP1_CREATE_CSV_FILE_WITH_IMAGES_DIMENSIONS ; 
-#FUNC_STEP2_REPLACE_FEATURED_IMAGE_IN_ORIGINAL_MDFILE ; 
+FUNC_STEP2_REPLACE_FEATURED_IMAGE_IN_ORIGINAL_MDFILE ; 
