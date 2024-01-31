@@ -251,10 +251,8 @@ FRONTMATTER_FOOTER="---
 
 {{< mggk-INSERT-RECIPE-HTML-BLOCK >}}
 
-{{< mggk-YouMayAlsoLike-HTMLcode >}}
+{{< mggk-GET-RELATED-POSTS-FOR-THESE-URLS urls=\"https://www.mygingergarlickitchen.com/test-no-video/ https://www.mygingergarlickitchen.com/my-books/ https://www.mygingergarlickitchen.com/avocado-salad/\" >}}
 
-
-{{< /mggk-YouMayAlsoLike-HTMLcode >}}
 
 " ;
 
