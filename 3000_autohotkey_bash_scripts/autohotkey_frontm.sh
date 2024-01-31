@@ -227,6 +227,8 @@ FRONTMATTER_FOOTER="---
 
 <!--more-->
 
+{{< mggk-INSERT-COOKING-TIP-OF-THE-DAY-IN-POST >}}
+
 {{< mggk-hugo-google-ad-1 >}}
 
 {{< mggk-hugo-google-ad-2 >}}
