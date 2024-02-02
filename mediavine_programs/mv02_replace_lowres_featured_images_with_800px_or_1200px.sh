@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo ">> It's work is done. Will exit now." ; 
-exit 1 ;
+#echo ">> It's work is done. Will exit now." ; 
+#exit 1 ;
 
 THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
@@ -21,14 +21,14 @@ echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
 echo "##########################################" ; 
 
 ################################################################################
-ROOTDIR="$REPO_MGGK/content" ; 
+ROOTDIR="$REPO_MGGK/content/allrecipes" ; 
 ROOTDIR_IMAGES="$REPO_MGGK/static" ;
 ##
 TMPDIR_MV02="$WORKDIR/__TMPDIR_MV02" ;
 mkdir -p "$TMPDIR_MV02" ;   
 
 ## Min width for featured images
-image_min_width=800;
+image_min_width=1200;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function FUNC_STEP1_CREATE_CSV_FILE_WITH_IMAGES_DIMENSIONS () {
@@ -41,7 +41,7 @@ function FUNC_STEP1_CREATE_CSV_FILE_WITH_IMAGES_DIMENSIONS () {
         tmpfile1="$TMPDIR_MV02/_tmpfile_${count}.txt" ; 
 
         ## find all images in this mdfile
-        grep -i '.jpg' $mdfile | sd '.jpg' '.jpg\n' | sd 'src=' '\n' | sd '"' '' | sd ' ' '' |sd 'https://www.mygingergarlickitchen.com' '' | grep -i '.jpg' > $tmpfile0 ;
+        grep -i '.jpg' $mdfile | sd ' alt=' '\n' | grep -i 'wp-content' | sd '.jpg' '.jpg\n' | sd 'src=' '\n' | sd '"' '' | sd ' ' '' |sd 'https://www.mygingergarlickitchen.com' '' | grep -i '.jpg' > $tmpfile0 ;
         ## find only featured image
         featured_image_found=$(grep -i 'featured_image:' $mdfile | sd ' ' '' | sd 'featured_image:' '') ;
 
@@ -123,4 +123,6 @@ function FUNC_STEP2_REPLACE_FEATURED_IMAGE_IN_ORIGINAL_MDFILE () {
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 FUNC_STEP1_CREATE_CSV_FILE_WITH_IMAGES_DIMENSIONS ; 
-FUNC_STEP2_REPLACE_FEATURED_IMAGE_IN_ORIGINAL_MDFILE ; 
+#FUNC_STEP2_REPLACE_FEATURED_IMAGE_IN_ORIGINAL_MDFILE ; 
+
+# mydir_up="$DIR_Y/_upscaled" ; mkdir "$mydir" ; for x in $(fd -e csv) ; do head -1 $x ; done | awk -F ',' '{print $2}' | xargs -I{} cp {} "$mydir_up"
