@@ -55,8 +55,8 @@ echo "##------------------------------------------------------------------------
 IMAGEDIR="$PWD" ;
 WORKINGDIR="$HOME_WINDOWS/Desktop/Y"
 TMP_OUTPUT_DIR="$WORKINGDIR/_tmp_output_$THIS_SCRIPT_NAME_WITHOUT_EXTENSION" ;
-TMP_OUTPUT_DIR_FINAL="$WORKINGDIR/_tmp_final_COMPOSITE_output_$THIS_SCRIPT_NAME_WITHOUT_EXTENSION" ;
-TMP_OUTPUT_DIR_FINAL_CENTERCROPPED="$WORKINGDIR/_tmp_final_CENTERCROPPED_output_$THIS_SCRIPT_NAME_WITHOUT_EXTENSION" ;
+TMP_OUTPUT_DIR_FINAL="$WORKINGDIR/_tmp_final_composite_output_$THIS_SCRIPT_NAME_WITHOUT_EXTENSION" ;
+TMP_OUTPUT_DIR_FINAL_CENTERCROPPED="$WORKINGDIR/_tmp_final_CenterNorthSouth_CROPPED_output_$THIS_SCRIPT_NAME_WITHOUT_EXTENSION" ;
 
 ################################################################################
 echo ">>>> Following images found in $PWD. These Images will be read for further processing ..." ;
@@ -71,7 +71,7 @@ echo ">>>>>>>>>>>>>>>>> GOOD TO GO ... >>>>>>>>>>>>>>>>>>>>" ;
 
 ## Creating output directories
 echo ">>>> Creating temporary output directories ..." ;
-mkdir $TMP_OUTPUT_DIR $TMP_OUTPUT_DIR_FINAL $TMP_OUTPUT_DIR_FINAL_CENTERCROPPED ;
+mkdir -p $TMP_OUTPUT_DIR $TMP_OUTPUT_DIR_FINAL $TMP_OUTPUT_DIR_FINAL_CENTERCROPPED ;
 
 ##################################################################################
 ## DEFINING MAIN FUNCTION WHICH WILL DO ALL MAGIC
@@ -85,9 +85,6 @@ function CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS () {
     image_step0="$TMP_OUTPUT_DIR/$myimage"
     image_step1="$TMP_OUTPUT_DIR/blurred_$myimage"
     image_stepFinal="$TMP_OUTPUT_DIR_FINAL/$myratio-$myimage" 
-
-    image_stepCenterCropped_tmp="$TMP_OUTPUT_DIR_FINAL_CENTERCROPPED/_tmp_$myratio-$myimage"
-    image_stepCenterCropped="$TMP_OUTPUT_DIR_FINAL_CENTERCROPPED/$myratio-$myimage"
     
     ##------------------------------------------------------------------------------
     ## STEP 0 = creating a copy of original image to fit in given dimensions (unforced)
@@ -103,16 +100,25 @@ function CREATE_IMAGE_TO_GIVEN_RATIO_AND_DIMENSIONS () {
     magick composite -gravity center $image_step0 $image_step1 $image_stepFinal ;
 
     ##------------------------------------------------------------------------------
+    ## Create dirs for various crops
+    dir_center="$TMP_OUTPUT_DIR_FINAL_CENTERCROPPED/01_center" ; 
+    dir_north="$TMP_OUTPUT_DIR_FINAL_CENTERCROPPED/02_north" ; 
+    dir_south="$TMP_OUTPUT_DIR_FINAL_CENTERCROPPED/03_south" ;
+    mkdir -p "$dir_center" "$dir_north" "$dir_south" ;  
+
     ## EXTRA STEP = Resizing and Center cropping the image without compositing ##
     ## => In this step, big images will be made smaller, and smaller images will be enlarged ##
     ## => For that, smaller dimension will be considered always (notice the ^ sign) ##
-    convert $image_original -resize $mydimensions^ -gravity center -extent $mydimensions $image_stepCenterCropped
+    fullImageNameWithRatio="$myratio-$myimage" ;
+    convert $image_original -resize $mydimensions^ -gravity center -extent $mydimensions "$dir_center/$fullImageNameWithRatio" ;
+    convert $image_original -resize $mydimensions^ -gravity north -extent $mydimensions "$dir_north/$fullImageNameWithRatio" ;
+    convert $image_original -resize $mydimensions^ -gravity south -extent $mydimensions "$dir_south/$fullImageNameWithRatio" ; 
     ##------------------------------------------------------------------------------
 
     ## FINAL MESSAGE PRINTING ON CLI.
     echo "  // Image saved // Ratio = $myratio // Dimensions = $mydimensions" ;
     echo "  // Composite image saved = $(basename $image_stepFinal)" ;
-    echo "  // Center-Cropped image saved = $(basename $image_stepCenterCropped)" ;
+    echo "  // Center/North/South-Cropped images saved." ;
     #echo "  // Next step: Please move this new image to proper $myratio directory." ;
     echo;
 }
