@@ -92,7 +92,7 @@ function FUNC_create_responsive_images () {
     do
     ####
         ((count++)) ;
-        echo "Currently reading = $count of $total_lines" ;
+        echo "Currently reading = $count of $total_lines (= $line)" ;
         ####
         for i in "${myarray[@]}"; do
         ####
