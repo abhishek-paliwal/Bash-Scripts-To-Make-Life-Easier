@@ -33,9 +33,8 @@ function FUNC_PROCESS_EACH_MDFILE_FOR_EACH_CATEGORY_OR_TAG () {
         grep -irEl "^.*- $myCategoryOrTag" "$REPO_MGGK/content/allrecipes" > $tmpfile ; 
         while IFS="\n" read mdfilepath ; do 
             ## replace the formatted text in original (with various space levels)
+            sed -i '' "s/^ - *$myCategoryOrTag *$/ - $newCategoryOrTag/" "$mdfilepath" ;
             sed -i '' "s/^  - *$myCategoryOrTag *$/  - $newCategoryOrTag/" "$mdfilepath" ;
-            sed -i '' "s/^   - *$myCategoryOrTag *$/    - $newCategoryOrTag/" "$mdfilepath" ;
-            sed -i '' "s/^    - *$myCategoryOrTag *$/    - $newCategoryOrTag/" "$mdfilepath" ;
         done < $tmpfile
     done < "$file2use"
 }
