@@ -166,10 +166,18 @@ CLIPBOARD=$(cat "$REQUIREMENTS_FILE_BASENAME-recipename.txt" | sed 's/^$//g') ;
 URL=$(echo "$CLIPBOARD" | awk '{for (i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)} 1' | sed -e 's/[{}\,! ()\-]/_/g' | sed -e 's/__*/-/g' | tr 'A-Z' 'a-z')
 
 ## GETTING ALL RECIPE CATEGORIES AND CUISINES
-TMPFILE_RECIPECATEGORIES="$WORKDIR/_tmp_recipecageries_all.txt" ;
+TMPFILE_RECIPECATEGORIES="$WORKDIR/_tmp_recipecategories_all.txt" ;
 TMPFILE_RECIPECUISINES="$WORKDIR/_tmp_recipecuisines_all.txt" ;
 grep -irh 'recipecategory:' "$REPO_MGGK/content/allrecipes" | sort -u > "$TMPFILE_RECIPECATEGORIES" ; 
 grep -irh 'recipecuisine:' "$REPO_MGGK/content/allrecipes" | sort -u > "$TMPFILE_RECIPECUISINES" ; 
+
+## GETTING ALL EXISTING CATEGORIES AND TAGS
+MGGK_DATAFILE_FROM_ENVVAR="$CSV_MGGK_DATA" ; 
+TMPFILE_CATEGORIES="$WORKDIR/_tmp_categories_all.txt" ;
+TMPFILE_TAGS="$WORKDIR/_tmp_tags_all.txt" ;
+mlr --csv cut -f categories "$MGGK_DATAFILE_FROM_ENVVAR" | sd '"' '' | sd ',' '\n'  | tr '[:upper:]' '[:lower:]' | sort | uniq | sd '^' '  - ' > $TMPFILE_CATEGORIES
+mlr --csv cut -f tags "$MGGK_DATAFILE_FROM_ENVVAR" | sd '"' '' | sd ',' '\n'  | tr '[:upper:]' '[:lower:]' | sort | uniq | sd '^' '  - ' >  $TMPFILE_TAGS
+
 
 ##
 FRONTMATTER_HEADER="---
@@ -197,12 +205,12 @@ featured_image: /wp-content/uploads/$YEAR/$MONTH/YOUR-IMAGE.JPG
 recipe_code_image: /wp-content/uploads/$YEAR/$MONTH/YOUR-IMAGE.JPG
 
 categories:
-  - All-recipes
-  -
-  -
+  - 
+$(cat TMPFILE_CATEGORIES)
 
 tags:
-  -
+  - 
+$(cat TMPFILE_TAGS)
   -
 
 youtube_video_id: \"YOUTUBE_ID\"
