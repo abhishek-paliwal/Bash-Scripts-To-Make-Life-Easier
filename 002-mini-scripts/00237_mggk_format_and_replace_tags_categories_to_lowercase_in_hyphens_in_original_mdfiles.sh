@@ -23,16 +23,19 @@ function FUNC_PROCESS_EACH_MDFILE_FOR_EACH_CATEGORY_OR_TAG () {
     #IFS="\n" # Set IFS to comma
     while read myCategoryOrTag
     do
-        lowercase=${myCategoryOrTag,,} # Convert to lowercase
-        newCategoryOrTag=${lowercase// /-} # Replace spaces with hyphens
+        #lowercase=${myCategoryOrTag,,} # Convert to lowercase
+        #newCategoryOrTag=${lowercase// /-} # Replace spaces with hyphens
+        lowercase=$(echo "$myCategoryOrTag" | tr '[:upper:]' '[:lower:]') # Convert to lowercase
+        newCategoryOrTag=$(echo "$lowercase" | tr ' ' '-') # Replace spaces with hyphens
         ##
         # Find mdfiles and process each of the found files 
         tmpfile="$DIR_Y/mdfilelist.txt" ; 
         grep -irEl "^.*- $myCategoryOrTag" "$REPO_MGGK/content/allrecipes" > $tmpfile ; 
         while IFS="\n" read mdfilepath ; do 
-            ## replace the formatted text in original
-            sed -i "s/^  -\s*$myCategoryOrTag\s*$/  - $newCategoryOrTag/" "$mdfilepath" ;
-            sed -i "s/^    -\s*$myCategoryOrTag\s*$/    - $newCategoryOrTag/" "$mdfilepath" ;
+            ## replace the formatted text in original (with various space levels)
+            sed -i '' "s/^  - *$myCategoryOrTag *$/  - $newCategoryOrTag/" "$mdfilepath" ;
+            sed -i '' "s/^   - *$myCategoryOrTag *$/    - $newCategoryOrTag/" "$mdfilepath" ;
+            sed -i '' "s/^    - *$myCategoryOrTag *$/    - $newCategoryOrTag/" "$mdfilepath" ;
         done < $tmpfile
     done < "$file2use"
 }
