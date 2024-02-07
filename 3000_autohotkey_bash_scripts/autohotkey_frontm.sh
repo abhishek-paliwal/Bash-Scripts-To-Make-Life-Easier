@@ -23,6 +23,7 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 ##
 PWD="$DIR_Y" ;
+WORKDIR="$DIR_Y" ; 
 BASEDIR="$DIR_GITHUB/ZZ-HUGO-TEST/content/blog"
 cd $PWD ;
 echo ">>>> Current working directory is: $PWD" ;
@@ -164,7 +165,13 @@ CLIPBOARD=$(cat "$REQUIREMENTS_FILE_BASENAME-recipename.txt" | sed 's/^$//g') ;
 # Converting to all lowercase and removing all the strange characters with hyphens
 URL=$(echo "$CLIPBOARD" | awk '{for (i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)} 1' | sed -e 's/[{}\,! ()\-]/_/g' | sed -e 's/__*/-/g' | tr 'A-Z' 'a-z')
 
+## GETTING ALL RECIPE CATEGORIES AND CUISINES
+TMPFILE_RECIPECATEGORIES="$WORKDIR/_tmp_recipecageries_all.txt" ;
+TMPFILE_RECIPECUISINES="$WORKDIR/_tmp_recipecuisines_all.txt" ;
+grep -irh 'recipecategory:' "$REPO_MGGK/content/allrecipes" | sort -u > "$TMPFILE_RECIPECATEGORIES" ; 
+grep -irh 'recipecuisine:' "$REPO_MGGK/content/allrecipes" | sort -u > "$TMPFILE_RECIPECUISINES" ; 
 
+##
 FRONTMATTER_HEADER="---
 toc: true
 
@@ -207,12 +214,16 @@ cookTime: PTHM
 totalTime: PTHM
 
 recipeCategory: xyz
+$(cat $TMPFILE_RECIPECATEGORIES)
+
 recipeCuisine: xyz
+$(cat $TMPFILE_RECIPECUISINES)
+
 recipeYield: xyz xyz
 
 aggregateRating:
   ratingValue: 4.9
-  ratingCount: 4
+  ratingCount: 5
 
 nutrition:
   calories: xyz calories
