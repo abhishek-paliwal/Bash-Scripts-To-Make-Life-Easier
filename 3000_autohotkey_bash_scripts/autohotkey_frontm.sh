@@ -175,8 +175,8 @@ grep -irh 'recipecuisine:' "$REPO_MGGK/content/allrecipes" | sort -u > "$TMPFILE
 MGGK_DATAFILE_FROM_ENVVAR="$CSV_MGGK_DATA" ; 
 TMPFILE_CATEGORIES="$WORKDIR/_tmp_categories_all.txt" ;
 TMPFILE_TAGS="$WORKDIR/_tmp_tags_all.txt" ;
-mlr --csv cut -f categories "$MGGK_DATAFILE_FROM_ENVVAR" | sd '"' '' | sd ',' '\n'  | tr '[:upper:]' '[:lower:]' | sort | uniq | sd '^' '  - ' > $TMPFILE_CATEGORIES
-mlr --csv cut -f tags "$MGGK_DATAFILE_FROM_ENVVAR" | sd '"' '' | sd ',' '\n'  | tr '[:upper:]' '[:lower:]' | sort | uniq | sd '^' '  - ' >  $TMPFILE_TAGS
+mlr --csv cut -f categories "$MGGK_DATAFILE_FROM_ENVVAR" | sd '"' '' | sd ',' '\n'  | tr '[:upper:]' '[:lower:]' | sort | uniq | sd '^' '  - ' > "$TMPFILE_CATEGORIES" ; 
+mlr --csv cut -f tags "$MGGK_DATAFILE_FROM_ENVVAR" | sd '"' '' | sd ',' '\n'  | tr '[:upper:]' '[:lower:]' | sort | uniq | sd '^' '  - ' >  "$TMPFILE_TAGS" ; 
 
 
 ##
@@ -206,11 +206,11 @@ recipe_code_image: /wp-content/uploads/$YEAR/$MONTH/YOUR-IMAGE.JPG
 
 categories:
   - 
-$(cat TMPFILE_CATEGORIES)
+$(cat $TMPFILE_CATEGORIES)
 
 tags:
   - 
-$(cat TMPFILE_TAGS)
+$(cat $TMPFILE_TAGS)
   -
 
 youtube_video_id: \"YOUTUBE_ID\"
