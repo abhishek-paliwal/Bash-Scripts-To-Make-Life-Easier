@@ -8,7 +8,7 @@ THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 
 ## SETTING VARIABLES
-ROOTDIR="$REPO_MGGK/content/allrecipes/201-300" ;  # use this dir for reading files with frontmatter
+ROOTDIR="$REPO_MGGK/content/allrecipes/021-100" ;  # use this dir for reading files with frontmatter
 WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
 DIR_OUTPUT_MDFILES_PARA_SHORTENED="$WORKDIR/_OUTPUT_MDFILES_PARAGRAPH_SHORTENED"
 # Set the maximum line length as characters
@@ -106,7 +106,7 @@ function FUNC_STEP2_PROCESS_EACH_MDFILE_FOR_ALL_PARAGRAPHS_IN_CONTENT () {
         echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
         echo ">> Running ICDIFF (left = $mdfile // right = $TMPFILE_FINAL1)" ; 
         echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
-        icdiff "$mdfile" "$TMPFILE_FINAL1" ; 
+        #icdiff "$mdfile" "$TMPFILE_FINAL1" ; 
         ##
         ## Finally copy the output file to proper directory, and rename according to original mdfile.
         cp "$TMPFILE_FINAL1" "$DIR_OUTPUT_MDFILES_PARA_SHORTENED/$BASE_MDFILE" ;
