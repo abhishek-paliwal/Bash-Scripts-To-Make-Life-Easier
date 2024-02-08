@@ -1,8 +1,18 @@
-# Your large paragraph
-large_paragraph = """Chocolate Covered Kiwi, also known as Kiwi dipped in chocolate or Chocolate Dipped Kiwi, is a gratifying confection that effortlessly marries the goodness of fresh kiwifruit with the satisfaction of premium chocolate. This exquisite dessert has a stunning blend of flavors and textures. Summers are all about meeting friends and having get-togethers. But sometimes we all have guests who don’t drink any alcoholic beverages. Last week some of our friends joined us for dinner. Dinner parties usually start at 5.00 pm at my place. I know, I know, it’s too early for a dinner party. But we all chit-chat before dinner and have some good time. So even 5:00 pm feels late in that context! Agree? 🙂"""
+################################################################################
+## THIS PROGRAM BREAKS A LARGE PARAGRAPH INTO SMALLER CHUNKS OF SIZE N CHARACTERS.
+## THE VALUE OF N IS PROVIDED AS max_chars AS CLI ARGUMENT.
+################################################################################
+
+import sys
+
+# Your large paragraph (example)
+#large_paragraph = """Chocolate Covered Kiwi, also known as Kiwi dipped in chocolate or Chocolate Dipped Kiwi, is a gratifying confection that effortlessly marries the goodness of fresh kiwifruit with the satisfaction of premium chocolate. This exquisite dessert has a stunning blend of flavors and textures. Summers are all about meeting friends and having get-togethers. But sometimes we all have guests who don’t drink any alcoholic beverages. Last week some of our friends joined us for dinner. Dinner parties usually start at 5.00 pm at my place. I know, I know, it’s too early for a dinner party. But we all chit-chat before dinner and have some good time. So even 5:00 pm feels late in that context! Agree? 🙂"""
+
+large_paragraph = sys.argv[1] ; 
 
 # Set the maximum characters per chunk
-max_chars = 300
+#max_chars = 280
+max_chars = int(sys.argv[2]) ; ## convert to integer in case it's in string format
 
 # Function to break the paragraph into chunks
 def break_into_chunks(paragraph, max_chars):
@@ -28,4 +38,4 @@ chunks = break_into_chunks(large_paragraph, max_chars)
 for chunk in chunks:
     print('\n')
     print(chunk)
-    print(len(chunk))
+    #print(len(chunk))
