@@ -20,7 +20,7 @@ function FUNC_PROCESS_AND_SHORTEN_EACH_LINE_IN_THIS_MDFILE () {
     file_path="$1" ; 
 
     # Set the maximum line length as characters
-    max_line_length=280 ; 
+    max_line_length=300 ; 
 
     # Read all lines from the file into an array named 'lines'
     IFS=$'\n' read -r -d '' -a lines < "$file_path"
