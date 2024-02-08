@@ -162,7 +162,7 @@ elif [ "$myKeyword" == "4" ]; then
     sleep 4; ## wait for 4 seconds
 elif [ "$myKeyword" == "5" ]; then
     echo ">> The cache will be deleted for latest 50 posts from sitemap.xml ..." ;
-    curl -sk "$XML_SITEMAP" | ggrep -oP '<loc>\K.*?(?=<\/loc>)' | grep -iv 'categories' | head -50 > "$step1File" ;
+    curl -sk "$XML_SITEMAP" | grep -o '<loc>.*</loc>' | sed -E 's/<\/?loc>//g' | grep -iv 'categories' | head -50 > "$step1File" ;
     echo ">> CACHE WILL BE DELETED FOR THESE URLs ..." ; 
     cat $step1File ; 
 elif [ "$myKeyword" == "99" ]; then
