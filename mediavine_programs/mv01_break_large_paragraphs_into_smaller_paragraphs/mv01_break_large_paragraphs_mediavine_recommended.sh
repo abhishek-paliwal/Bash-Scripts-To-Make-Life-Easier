@@ -8,7 +8,7 @@ THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 
 ## SETTING VARIABLES
-ROOTDIR="$REPO_MGGK/content/allrecipes/000-latest-format" ;  # use this dir for reading files with frontmatter
+ROOTDIR="$REPO_MGGK/content/allrecipes/301-400" ;  # use this dir for reading files with frontmatter
 WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
 DIR_OUTPUT_MDFILES_PARA_SHORTENED="$WORKDIR/_OUTPUT_MDFILES_PARAGRAPH_SHORTENED"
 # Set the maximum line length as characters
@@ -128,5 +128,5 @@ function FUNC_STEP3_RUN_ICDIFF_FOR_THESE_2_FILES () {
 }
 ##------------------------------------------------------------------------------
 
-#FUNC_STEP1_SEPARATE_FRONTMATTER_AND_CONTENT_FROM_ALL_MDFILES ; 
+FUNC_STEP1_SEPARATE_FRONTMATTER_AND_CONTENT_FROM_ALL_MDFILES ; 
 FUNC_STEP2_PROCESS_EACH_MDFILE_FOR_ALL_PARAGRAPHS_IN_CONTENT ; 
