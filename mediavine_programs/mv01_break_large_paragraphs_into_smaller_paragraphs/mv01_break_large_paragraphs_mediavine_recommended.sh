@@ -8,7 +8,7 @@ THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 
 ## SETTING VARIABLES
-ROOTDIR="$REPO_MGGK/content/allrecipes/201-300" ;  # use this dir for reading files with frontmatter
+ROOTDIR="$REPO_MGGK/content/allrecipes/000-latest-format" ;  # use this dir for reading files with frontmatter
 WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
 DIR_OUTPUT_MDFILES_PARA_SHORTENED="$WORKDIR/_OUTPUT_MDFILES_PARAGRAPH_SHORTENED"
 # Set the maximum line length as characters
@@ -88,7 +88,12 @@ function FUNC_STEP2_PROCESS_EACH_MDFILE_FOR_ALL_PARAGRAPHS_IN_CONTENT () {
     DIR_FILES_CONTENT="$STEP1_OUTDIR/_TMP_CONTENT/" ;
     ##
     ## IMPORTANT NOTE: DURING TESTING, USE HEAD -5 OR SOMETHING. REMOVE IT AT PRODUCTION TIME.
+    mycount=0 ; 
     for mdfile in $(fd -HItf -e md --search-path="$ROOTDIR" | sort -r | grep -iv '_index' ) ; do
+        ((mycount++)) ; 
+        mytotal_files=$(fd -HItf -e md --search-path="$ROOTDIR" | sort -r | grep -iv '_index' | wc -l | tr -d ' ') ; 
+        echo ">> Current file = $mycount of $mytotal_files" ; 
+        ##
         BASE_MDFILE=$(basename "$mdfile") ; 
         FRONTMATTER_FILE=$(fd -HItf $BASE_MDFILE --search-path="$DIR_FILES_FRONTMATTER") ; 
         CONTENT_FILE=$(fd -HItf $BASE_MDFILE --search-path="$DIR_FILES_CONTENT") ; 
@@ -102,11 +107,8 @@ function FUNC_STEP2_PROCESS_EACH_MDFILE_FOR_ALL_PARAGRAPHS_IN_CONTENT () {
         cat "$FRONTMATTER_FILE" "$TMPFILE_CONTENT_NEW" > "$TMPFILE_FINAL0" ; 
         echo >> "$TMPFILE_FINAL0" ;  
         cat "$TMPFILE_FINAL0" > "$TMPFILE_FINAL1" ; ## clean output by deleting repeated empty lines
-        echo ;
-        echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
-        echo ">> Running ICDIFF (left = $mdfile // right = $TMPFILE_FINAL1)" ; 
-        echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
-        #icdiff "$mdfile" "$TMPFILE_FINAL1" ; 
+        ## RUN ICDIFF FUNCTION
+        #FUNC_STEP3_RUN_ICDIFF_FOR_THESE_2_FILES "$mdfile" "$TMPFILE_FINAL1" ;  
         ##
         ## Finally copy the output file to proper directory, and rename according to original mdfile.
         cp "$TMPFILE_FINAL1" "$DIR_OUTPUT_MDFILES_PARA_SHORTENED/$BASE_MDFILE" ;
@@ -115,6 +117,16 @@ function FUNC_STEP2_PROCESS_EACH_MDFILE_FOR_ALL_PARAGRAPHS_IN_CONTENT () {
     done
 }
 ##------------------------------------------------------------------------------
+function FUNC_STEP3_RUN_ICDIFF_FOR_THESE_2_FILES () {
+    INFILE1="$1" ; 
+    INFILE2="$2" ; 
+    echo ;
+    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
+    echo ">> Running ICDIFF (left = $mdfile // right = $TMPFILE_FINAL1)" ; 
+    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
+    icdiff "$INFILE1" "$INFILE2" ; 
+}
+##------------------------------------------------------------------------------
 
-FUNC_STEP1_SEPARATE_FRONTMATTER_AND_CONTENT_FROM_ALL_MDFILES ; 
+#FUNC_STEP1_SEPARATE_FRONTMATTER_AND_CONTENT_FROM_ALL_MDFILES ; 
 FUNC_STEP2_PROCESS_EACH_MDFILE_FOR_ALL_PARAGRAPHS_IN_CONTENT ; 
