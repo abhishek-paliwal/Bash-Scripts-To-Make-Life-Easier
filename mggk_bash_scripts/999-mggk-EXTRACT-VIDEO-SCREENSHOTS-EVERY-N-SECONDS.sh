@@ -64,8 +64,8 @@ ls -1 *.webm | nl
 ##
 function FUNCTION_step1_video_thumbnails_extraction () {
     echo; echo "RUNNING STEP 1 = Thumbnails extraction from Video ... " ; echo; 
-    for x in $(find $WORKDIR/ -type f \( -name '*.mp4' -o -name '*.mkv' -o -name '*.webm' -o -name '*.mov' \)) ; do 
-        x_name=$(echo $(basename $x) | sed 's+\.mkv++g' | sed 's+\.mp4++g' | sed 's+\.webm++g' | sed 's+\.mov++g'  ) ; 
+    for x in $(find $WORKDIR/ -type f \( -name '*.mp4' -o -name '*.mkv' -o -name '*.webm' -o -name '*.mov' -o -name '*.MOV' -o -name '*.MP4' -o -name '*.MKV' \)) ; do 
+        x_name=$(echo $(basename $x) | sed 's+\.mkv++ig' | sed 's+\.mp4++ig' | sed 's+\.webm++ig' | sed 's+\.mov++ig'  ) ; 
         echo "=> CURRENT FILE UNDER PROCESSING: $x_name" ;
         dir_thumbs="${x_name}-thumbs" ; 
         mkdir $dir_thumbs ; 
