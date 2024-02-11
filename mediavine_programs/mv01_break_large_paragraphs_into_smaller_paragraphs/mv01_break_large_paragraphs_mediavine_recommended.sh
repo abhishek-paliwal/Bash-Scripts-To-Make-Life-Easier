@@ -8,7 +8,7 @@ THIS_SCRIPT_NAME="$(basename $0)" ;
 THIS_SCRIPT_NAME_SANS_EXTENSION="$(echo $THIS_SCRIPT_NAME | sed 's/\.sh//g')" ;
 
 ## SETTING VARIABLES
-ROOTDIR="$REPO_MGGK/content/allrecipes/401-500" ;  # use this dir for reading files with frontmatter
+ROOTDIR="$REPO_MGGK/content" ;  # use this dir for reading files with frontmatter
 WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
 DIR_OUTPUT_MDFILES_PARA_SHORTENED="$WORKDIR/_OUTPUT_MDFILES_PARAGRAPH_SHORTENED"
 # Set the maximum line length as characters
@@ -89,9 +89,9 @@ function FUNC_STEP2_PROCESS_EACH_MDFILE_FOR_ALL_PARAGRAPHS_IN_CONTENT () {
     ##
     ## IMPORTANT NOTE: DURING TESTING, USE HEAD -5 OR SOMETHING. REMOVE IT AT PRODUCTION TIME.
     mycount=0 ; 
-    for mdfile in $(fd -HItf -e md --search-path="$ROOTDIR" | sort -r | grep -iv '_index' ) ; do
+    for mdfile in $(fd -HItf -e md --search-path="$ROOTDIR" | sort -r | grep -ivE '_index|privacy-policy' ) ; do
         ((mycount++)) ; 
-        mytotal_files=$(fd -HItf -e md --search-path="$ROOTDIR" | sort -r | grep -iv '_index' | wc -l | tr -d ' ') ; 
+        mytotal_files=$(fd -HItf -e md --search-path="$ROOTDIR" | sort -r | grep -ivE '_index|privacy-policy' | wc -l | tr -d ' ') ; 
         echo ">> Current file = $mycount of $mytotal_files" ; 
         ##
         BASE_MDFILE=$(basename "$mdfile") ; 
