@@ -162,6 +162,7 @@ while read -r line; do
     
     ## EXTRACTING NEEDED DETAILS FROM MD FILE THUS FOUND
     TITLE=$(grep -irh '^title: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed 's/title: //g' ) ;
+    TITLE_SANS_QUOTES=$(echo "$TITLE" | sed "s/'//ig" ) ; 
     META_DESCRIPTION=$(grep -irh '^yoast_description: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed 's/yoast_description: //g' ) ;
     URL=$(grep -irh '^url: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed "s+url: +$MGGK_BASEURL+g" ) ;
     IMAGE=$(grep -irh '^featured_image: ' $MDFILE_WITH_CHOSEN_URL | sed 's/"//g' | sed "s+featured_image: +$MGGK_BASEURL+g" ) ;
@@ -175,7 +176,7 @@ while read -r line; do
     ## PRINTING TO HTML
     echo "<h3 style='font-size:24px;'><a style='color: #cd1c62;' href='$URL'>$COUNT.) $TITLE</a></h3>" >> $OUTPUT_HTML_FILE;
     echo "<p style='font-size: 18px'; >$META_DESCRIPTION</p>" >> $OUTPUT_HTML_FILE ;
-    echo "<p style='font-size: 18px'; ><a href='$URL'><img src='$IMAGE' alt='$TITLE' width='400' height='600' /></a></p>" >> $OUTPUT_HTML_FILE;  
+    echo "<p style='font-size: 18px'; ><a href='$URL'><img src='$IMAGE' alt='$TITLE_SANS_QUOTES' width='400' height='600' /></a></p>" >> $OUTPUT_HTML_FILE;  
 
     echo "<div style='background-color: #cd1c62;
     border: 2px solid #cd1c62;
