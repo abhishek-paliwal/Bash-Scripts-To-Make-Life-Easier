@@ -252,17 +252,17 @@ FRONTMATTER_FOOTER="---
 
 {{< mggk-hugo-google-ad-2 >}}
 
-{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-1.jpg\" alt=\"Image of $CLIPBOARD\" >}}
+{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-recipe-1.jpg\" alt=\"Image of $CLIPBOARD\" >}}
 
-{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-2.jpg\" alt=\"Image of $CLIPBOARD\" >}}
+{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-recipe-2.jpg\" alt=\"Image of $CLIPBOARD\" >}}
 
-{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-3.jpg\" alt=\"Image of $CLIPBOARD\" >}}
+{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$UURL-recipe-3.jpg\" alt=\"Image of $CLIPBOARD\" >}}
 
-{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-4.jpg\" alt=\"Image of $CLIPBOARD\" >}}
+{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-recipe-4.jpg\" alt=\"Image of $CLIPBOARD\" >}}
 
-{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-5.jpg\" alt=\"Image of $CLIPBOARD\" >}}
+{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-recipe-5.jpg\" alt=\"Image of $CLIPBOARD\" >}}
 
-{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-6.jpg\" alt=\"Image of $CLIPBOARD\" >}}
+{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-recipe-6.jpg\" alt=\"Image of $CLIPBOARD\" >}}
 
 {{< mggk-INSERT-RECIPE-STEP-BY-STEP-IMAGES-BLOCK >}}
 
