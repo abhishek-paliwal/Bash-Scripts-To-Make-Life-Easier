@@ -86,6 +86,8 @@ grep -iE 'https|www' "$whichKeywordsFile" | tr -d ' ' > "$urlsToSearchFile"  ;
 ## IF the user input provided a url, use that, else use the urls found in keywords file.
 if [ -z "$competitorURL" ]; then
   echo "competitorURL is empty. URLS will be found from URLS file = $urlsToSearchFile (if any)" ;
+  palidivider "These URLS are found ... " ; 
+  cat $urlsToSearchFile ; 
   #### 
   count=0 ; 
   for thisUrl in $(cat "$urlsToSearchFile") ; do 
