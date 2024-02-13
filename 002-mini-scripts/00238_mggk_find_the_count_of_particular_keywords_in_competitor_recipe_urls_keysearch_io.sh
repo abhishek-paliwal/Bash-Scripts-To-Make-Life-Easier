@@ -60,7 +60,7 @@ read -p "Please enter your competitor URL for keywords count [OR, press ENTER ke
 echo "##------------------------------------------------------------------------------" ; 
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-function FUNC_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS () {
+function FUNC_STEP0_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS () {
     palidivider "Currently running = $CURRENT_URL_OR_FILE" ; 
     INFILE="$1" ;
     MYCOUNT="$2" ; 
@@ -87,81 +87,85 @@ function FUNC_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS () {
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-## Run for local file to check
-if [ -z "$Myfile2Check" ]; then
-    echo "Myfile2Check variable is empty." ;
-else
-    echo "Myfile2Check variable is NOT empty. This file will be used = $Myfile2Check" ;
-    FUNC_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS "$Myfile2Check" "50" "$(basename $Myfile2Check)" ; 
-fi 
+function FUNC_STEP1_RUN_FOR_LOCAL_FILE () {
+    ## Run for local file to check
+    if [ -z "$Myfile2Check" ]; then
+        echo "Myfile2Check variable is empty." ;
+    else
+        echo "Myfile2Check variable is NOT empty. This file will be used = $Myfile2Check" ;
+        FUNC_STEP0_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS "$Myfile2Check" "50" "$(basename $Myfile2Check)" ; 
+    fi 
+}
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-##------------------------------------------------------------------------------
+function FUNC_STEP2_RUN_FOR_MULTIPLE_URLS () {
+    ## RUN FOR URLS
+    ## Find any urls present in keywords file
+    grep -iE 'https|www' "$whichKeywordsFile" | tr -d ' ' > "$urlsToSearchFile"  ;
+    ## 
 
-## RUN FOR URLS
-## Find any urls present in keywords file
-grep -iE 'https|www' "$whichKeywordsFile" | tr -d ' ' > "$urlsToSearchFile"  ;
-## 
+    ## IF the user input provided a url, use that, else use the urls found in keywords file.
+    if [ -z "$competitorURL" ]; then
+    echo "competitorURL is empty. URLS will be found from URLS file = $urlsToSearchFile (if any)" ;
+    palidivider "These URLS are found ... " ; 
+    cat $urlsToSearchFile ; 
+    #### 
+    count=0 ; 
+    for thisUrl in $(cat "$urlsToSearchFile") ; do 
+        ((count++)) ; 
+        ## get that url data locally
+        downloadedHTMLfile="$curledFile-$count.html" ; 
+        curl -sk "$thisUrl" > "$downloadedHTMLfile"  ;
+        FUNC_STEP0_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS "$downloadedHTMLfile" "$count" "$thisUrl" ; 
+    done 
+    ####
+    ## Combine the html data of all file and run again
+    combinedHTMLfile="$curledFile-99-COMBINED.html" ;
+    fd --search-path="$WORKDIR" '_tmpcurlfile_00238' -e html -x cat {} > "$combinedHTMLfile" ; 
+    FUNC_STEP0_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS "$combinedHTMLfile" "99" "COMBINED-URLS" ;
+    ####
+    else
+    echo "competitorURL is not empty. Keywords will be extracted now." ;
+        ## get that url data locally
+        downloadedHTMLfile="$curledFile" ; 
+        curl -sk "$competitorURL" > "$downloadedHTMLfile"  ;
+        FUNC_STEP0_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS "$downloadedHTMLfile" "00" "$competitorURL" ; 
+    fi
+}
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-## IF the user input provided a url, use that, else use the urls found in keywords file.
-if [ -z "$competitorURL" ]; then
-  echo "competitorURL is empty. URLS will be found from URLS file = $urlsToSearchFile (if any)" ;
-  palidivider "These URLS are found ... " ; 
-  cat $urlsToSearchFile ; 
-  #### 
-  count=0 ; 
-  for thisUrl in $(cat "$urlsToSearchFile") ; do 
-    ((count++)) ; 
-    ## get that url data locally
-    downloadedHTMLfile="$curledFile-$count.html" ; 
-    curl -sk "$thisUrl" > "$downloadedHTMLfile"  ;
-    FUNC_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS "$downloadedHTMLfile" "$count" "$thisUrl" ; 
-  done 
-  ####
-  ## Combine the html data of all file and run again
-  combinedHTMLfile="$curledFile-99-COMBINED.html" ;
-  fd --search-path="$WORKDIR" '_tmpcurlfile_00238' -e html -x cat {} > "$combinedHTMLfile" ; 
-  FUNC_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS "$combinedHTMLfile" "99" "COMBINED-URLS" ;
-  ####
-else
-  echo "competitorURL is not empty. Keywords will be extracted now." ;
-    ## get that url data locally
-    downloadedHTMLfile="$curledFile" ; 
-    curl -sk "$competitorURL" > "$downloadedHTMLfile"  ;
-    FUNC_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS "$downloadedHTMLfile" "00" "$competitorURL" ; 
-fi
+function FUNC_STEP3_CREATE_FINAL_RESULTS_HTMLFILE () {
+    echo ">> DISPLAYING KEYWORD COUNTS SORTED ..." ;
+    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
+    resultsHTMLfile="$WORKDIR/_tmp_resultsHTMLFile.html" ; 
+    echo > $resultsHTMLfile ; ## initialize
+    echo "<pre>" >> $resultsHTMLfile ; 
+    ##
+    ## get final keywords counts for all urls
+    cat $finalKeywordsCountsFile | sort -nr >> $resultsHTMLfile ;
 
-################################################################################
+    ## get results from combined txt file
+    for myfile in $(fd --search-path="$WORKDIR" '_tmpfile00238_URL' -e txt | grep -i '_tmpfile00238_URL_99' | head -1) ; do 
+        ## exlude lines with 0 = zero count for keyword 
+        cat "$myfile" | grep -iv '	0 ='  >> "$resultsHTMLfile" ; ## non-zero count keywords
+        cat "$myfile" | grep -i '	0 ='   >> "$resultsHTMLfile" ; ## zero count keywords
+    done 
 
-echo ">> DISPLAYING KEYWORD COUNTS SORTED ..." ;
-echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ; 
-resultsHTMLfile="$WORKDIR/_tmp_resultsHTMLFile.html" ; 
-echo > $resultsHTMLfile ; ## initialize
-echo "<pre>" >> $resultsHTMLfile ; 
-##
-## get final keywords counts for all urls
-cat $finalKeywordsCountsFile | sort -nr >> $resultsHTMLfile ;
+    ## get results from other txt files
+    for myfile in $(fd --search-path="$WORKDIR" '_tmpfile00238_URL' -e txt | grep -iv '_tmpfile00238_URL_99' | sort -nr) ; do 
+        ## exlude lines with 0 = zero count for keyword 
+        cat "$myfile" | grep -iv '	0 ='  >> "$resultsHTMLfile" ; ## non-zero count keywords
+        #cat "$myfile" | grep -i '	0 ='  >> "$resultsHTMLfile" ; ## zero count keywords
+    done 
+    echo "</pre>" >> $resultsHTMLfile ; 
+    ##
+    echo ">> Opening Results HTML file in default browser..." ; 
+    open "$resultsHTMLfile" ; 
+    echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;  
+}
 
-## get results from combined txt file
-for myfile in $(fd --search-path="$WORKDIR" '_tmpfile00238_URL' -e txt | grep -i '_tmpfile00238_URL_99' | head -1) ; do 
-    ## exlude lines with 0 = zero count for keyword 
-    cat "$myfile" | grep -iv '	0 ='  >> "$resultsHTMLfile" ; ## non-zero count keywords
-    cat "$myfile" | grep -i '	0 ='   >> "$resultsHTMLfile" ; ## zero count keywords
-done 
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-## get results from other txt files
-for myfile in $(fd --search-path="$WORKDIR" '_tmpfile00238_URL' -e txt | grep -iv '_tmpfile00238_URL_99' | sort -nr) ; do 
-    ## exlude lines with 0 = zero count for keyword 
-    cat "$myfile" | grep -iv '	0 ='  >> "$resultsHTMLfile" ; ## non-zero count keywords
-    #cat "$myfile" | grep -i '	0 ='  >> "$resultsHTMLfile" ; ## zero count keywords
-done 
-echo "</pre>" >> $resultsHTMLfile ; 
-##
-echo ">> Opening Results HTML file in default browser..." ; 
-open "$resultsHTMLfile" ; 
-echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" ;  
-
-################################################################################
-################################################################################
 function FUNC_STEP99_FIND_DIFFERENCES_IN_MY_FILE_VS_TOTAL_FOUND_KEYWORDS_IN_ALL () {
     ## FUNCTION TO FIND DIFFERENCES BETWEEN WHAT KEYWORDS ARE PRESENT IN MY FILE VS ALL OTHERS.
     palidivider ">> RUNNING FUNCTION : $FUNCNAME" ;
@@ -172,8 +176,13 @@ function FUNC_STEP99_FIND_DIFFERENCES_IN_MY_FILE_VS_TOTAL_FOUND_KEYWORDS_IN_ALL 
     ##
     ## find differences using ICDIFF
     palidivider "leftFile = $diffFileMY // rightFile = $diffFileAllOthers" ; 
+    icdiff "$diffFileMY" "$diffFileAllOthers" ; 
 }
-## RUN IT
+##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+## RUN FUNCTIONS SEQUENTIALLY
+FUNC_STEP1_RUN_FOR_LOCAL_FILE ; 
+FUNC_STEP2_RUN_FOR_MULTIPLE_URLS ;
+FUNC_STEP3_CREATE_FINAL_RESULTS_HTMLFILE ; 
 FUNC_STEP99_FIND_DIFFERENCES_IN_MY_FILE_VS_TOTAL_FOUND_KEYWORDS_IN_ALL ; 
-################################################################################
-################################################################################
