@@ -23,9 +23,9 @@ FUNC_SOURCE_SCRIPTS ;
 palidivider ; 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
 ## SETTING VARIABLES
-WORKDIR="$DIR_Y/_OUTPUT_$THIS_SCRIPT_NAME_SANS_EXTENSION" ;
+DATEVAR=$(date +%Y%m%d-%H%M%S) ;
+WORKDIR="$DIR_Y/_OUTPUT_${THIS_SCRIPT_NAME_SANS_EXTENSION}-${DATEVAR}" ;
 mkdir -p $WORKDIR ; ## create dir if not exists
 echo "##########################################" ; 
 echo "## PRESENT WORKING DIRECTORY = $WORKDIR" ;
@@ -56,7 +56,7 @@ function FUNC_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS () {
     MYCOUNT="$2" ; 
     CURRENT_URL_OR_FILE="$3" ; 
     tmpfile0="$WORKDIR/_tmpfile0.txt" ;
-    tmpfile1="$WORKDIR/_tmpfile00238_URL_${MYCOUNT}.txt" ; 
+    resultsFileForThisURL="$WORKDIR/_tmpfile00238_URL_${MYCOUNT}.txt" ; 
     ##
     echo > "$tmpfile0" ; ## initialize
     ## read each keyword in that url data file
@@ -66,9 +66,10 @@ function FUNC_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS () {
     done < $whichKeywordsFile
     ##
     ## reverse sort numerically 
-    palidivider "CURRENT_URL_OR_FILE = $CURRENT_URL_OR_FILE" >> $tmpfile1 ; 
-    sort -nr "$tmpfile0" | nl >> $tmpfile1 ; 
+    palidivider "CURRENT_URL_OR_FILE = $CURRENT_URL_OR_FILE" >> $resultsFileForThisURL ; 
+    sort -nr "$tmpfile0" | nl >> $resultsFileForThisURL ; 
     ##
+    ## get counts for present and not-present keywords
     COUNT_KEYWORDS_NONZERO=$(grep -iv '^0 =' $tmpfile0 | wc -l | tr -d ' ' ) ; 
     COUNT_KEYWORDS_ZERO=$(grep -i '^0 =' $tmpfile0 | wc -l | tr -d ' ' ) ; 
     echo "$COUNT_KEYWORDS_NONZERO = TOTAL KEYWORDS PRESENT = $CURRENT_URL_OR_FILE " >> $finalKeywordsCountsFile ; 
@@ -117,15 +118,18 @@ echo "<pre>" >> $resultsHTMLfile ;
 ## get final keywords counts for all urls
 cat $finalKeywordsCountsFile | sort -nr >> $resultsHTMLfile ;
 
-## get results from combined file
-cat "$combinedHTMLfile" | grep -iv '^0 =' >> "$resultsHTMLfile" ; ## non-zero count keywords
-cat "$combinedHTMLfile" | grep -i '^0 =' >> "$resultsHTMLfile" ; ## zero count keywords
-
-## get results from other files
-for myfile in $(fd --search-path="$WORKDIR" '_tmpfile00238_URL' | grep -iv '99-COMBINED' |sort -nr) ; do 
+## get results from combined txt file
+for myfile in $(fd --search-path="$WORKDIR" '_tmpfile00238_URL' | grep -i '99-COMBINED' | head -1) ; do 
     ## exlude lines with 0 = zero count for keyword 
-    cat "$myfile" | grep -iv '^0 =' >> "$resultsHTMLfile" ; ## non-zero count keywords
-    #cat "$myfile" | grep -i '^0 =' >> "$resultsHTMLfile" ; ## zero count keywords
+    cat "$myfile" | grep -iv ' 0 ='  >> "$resultsHTMLfile" ; ## non-zero count keywords
+    cat "$myfile" | grep -i ' 0 ='   >> "$resultsHTMLfile" ; ## zero count keywords
+done 
+
+## get results from other txt files
+for myfile in $(fd --search-path="$WORKDIR" '_tmpfile00238_URL' | grep -iv '99-COMBINED' | sort -nr) ; do 
+    ## exlude lines with 0 = zero count for keyword 
+    cat "$myfile" | grep -iv ' 0 ='  >> "$resultsHTMLfile" ; ## non-zero count keywords
+    #cat "$myfile" | grep -i ' 0 ='  >> "$resultsHTMLfile" ; ## zero count keywords
 done 
 echo "</pre>" >> $resultsHTMLfile ; 
 ##
