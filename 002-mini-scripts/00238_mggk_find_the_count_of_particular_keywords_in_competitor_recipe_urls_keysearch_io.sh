@@ -40,13 +40,21 @@ finalKeywordsCountsFile="$WORKDIR/_tmpFinalKeywordsCounts_00238.txt" ;
 echo > $finalKeywordsCountsFile ; ## initialize
 ##
 
+## CHOOSE LIST OF KEYWORDS FILE
 echo "##------------------------------------------------------------------------------" ; 
-echo ">> Select which keywords file to use (txt, csv):" ; 
-TMPKeywordsFile=$(fd --search-path="$WORKDIR" --search-path="$DIR_Y" -e txt -e csv | fzf) ; 
+echo ">> Select file with LIST OF KEYWORDS (txt, csv, md):" ; 
+TMPKeywordsFile=$(fd --search-path="$WORKDIR" --search-path="$DIR_Y" -e txt -e csv -e md | fzf) ; 
 dos2unix "$TMPKeywordsFile" ;
-##
 ## take only valid lines + convert all text to lowercase + double spaces to single spaces + only unique lines
 grep -iv '^$' "$TMPKeywordsFile" | tr '[:upper:]' '[:lower:]' | sd '  ' ' ' | sort -u > "$whichKeywordsFile" ; 
+
+## CHOOSE CONTENT FILE TO CHECK IF KEYWORDS ARE PRESENT
+echo "##------------------------------------------------------------------------------" ; 
+echo ">> Select local file TO CHECK (txt, csv, md) [press ENTER if nothing to check locally]:" ; 
+Myfile2Check=$(fd --search-path="$WORKDIR" --search-path="$DIR_Y" -e txt -e csv -e md | fzf) ; 
+dos2unix "$Myfile2Check" ;
+
+
 echo "##------------------------------------------------------------------------------" ; 
 read -p "Please enter your competitor URL for keywords count [OR, press ENTER key if URLS are present in keywords file]: " competitorURL ; 
 echo "##------------------------------------------------------------------------------" ; 
@@ -62,7 +70,7 @@ function FUNC_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS () {
     ##
     echo > "$tmpfile0" ; ## initialize
     ## read each keyword in that url data file
-    while IFS="\n" read line; do 
+    while IFS=$'\n' read -r line ; do
         numTimes=$(grep -io "$line" "$INFILE" | wc -l | tr -d ' ') ; 
         echo "$numTimes = $line" >> $tmpfile0 ; 
     done < $whichKeywordsFile
@@ -79,6 +87,17 @@ function FUNC_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS () {
 }
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+## Run for local file to check
+if [ -z "$Myfile2Check" ]; then
+    echo "Myfile2Check variable is empty." ;
+else
+    echo "Myfile2Check variable is NOT empty. This file will be used = $Myfile2Check" ;
+    FUNC_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS "$Myfile2Check" "50" "$(basename $Myfile2Check)" ; 
+fi 
+
+##------------------------------------------------------------------------------
+
+## RUN FOR URLS
 ## Find any urls present in keywords file
 grep -iE 'https|www' "$whichKeywordsFile" | tr -d ' ' > "$urlsToSearchFile"  ;
 ## 
