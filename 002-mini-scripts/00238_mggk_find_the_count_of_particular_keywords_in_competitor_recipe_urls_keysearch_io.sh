@@ -44,7 +44,9 @@ echo "##------------------------------------------------------------------------
 echo ">> Select which keywords file to use (txt, csv):" ; 
 TMPKeywordsFile=$(fd --search-path="$WORKDIR" --search-path="$DIR_Y" -e txt -e csv | fzf) ; 
 dos2unix "$TMPKeywordsFile" ;
-grep -iv '^$' "$TMPKeywordsFile" > "$whichKeywordsFile" ; 
+##
+## take only valid lines + convert all text to lowercase + double spaces to single spaces + only unique lines
+grep -iv '^$' "$TMPKeywordsFile" | tr '[:upper:]' '[:lower:]' | sd '  ' ' ' | sort -u > "$whichKeywordsFile" ; 
 echo "##------------------------------------------------------------------------------" ; 
 read -p "Please enter your competitor URL for keywords count [OR, press ENTER key if URLS are present in keywords file]: " competitorURL ; 
 echo "##------------------------------------------------------------------------------" ; 
@@ -119,17 +121,17 @@ echo "<pre>" >> $resultsHTMLfile ;
 cat $finalKeywordsCountsFile | sort -nr >> $resultsHTMLfile ;
 
 ## get results from combined txt file
-for myfile in $(fd --search-path="$WORKDIR" '_tmpfile00238_URL' | grep -i '99-COMBINED' | head -1) ; do 
+for myfile in $(fd --search-path="$WORKDIR" '_tmpfile00238_URL' -e txt | grep -i '_tmpfile00238_URL_99' | head -1) ; do 
     ## exlude lines with 0 = zero count for keyword 
-    cat "$myfile" | grep -iv ' 0 ='  >> "$resultsHTMLfile" ; ## non-zero count keywords
-    cat "$myfile" | grep -i ' 0 ='   >> "$resultsHTMLfile" ; ## zero count keywords
+    cat "$myfile" | grep -iv '	0 ='  >> "$resultsHTMLfile" ; ## non-zero count keywords
+    cat "$myfile" | grep -i '	0 ='   >> "$resultsHTMLfile" ; ## zero count keywords
 done 
 
 ## get results from other txt files
-for myfile in $(fd --search-path="$WORKDIR" '_tmpfile00238_URL' | grep -iv '99-COMBINED' | sort -nr) ; do 
+for myfile in $(fd --search-path="$WORKDIR" '_tmpfile00238_URL' -e txt | grep -iv '_tmpfile00238_URL_99' | sort -nr) ; do 
     ## exlude lines with 0 = zero count for keyword 
-    cat "$myfile" | grep -iv ' 0 ='  >> "$resultsHTMLfile" ; ## non-zero count keywords
-    #cat "$myfile" | grep -i ' 0 ='  >> "$resultsHTMLfile" ; ## zero count keywords
+    cat "$myfile" | grep -iv '	0 ='  >> "$resultsHTMLfile" ; ## non-zero count keywords
+    #cat "$myfile" | grep -i '	0 ='  >> "$resultsHTMLfile" ; ## zero count keywords
 done 
 echo "</pre>" >> $resultsHTMLfile ; 
 ##
