@@ -171,8 +171,8 @@ function FUNC_STEP99_FIND_DIFFERENCES_IN_MY_FILE_VS_TOTAL_FOUND_KEYWORDS_IN_ALL 
     palidivider ">> RUNNING FUNCTION : $FUNCNAME" ;
     diffFileMY="$WORKDIR/_tmp_compare_diffFileMY.txt" ; 
     diffFileAllOthers="$WORKDIR/_tmp_compare_diffFileAllOthers.txt" ; 
-    grep -iv '\t0 =' "$WORKDIR/_tmpfile00238_URL_99.txt" | awk -F '=' '{print $NF}' | sd '^ ' '' | sort > "$diffFileMY" ; 
-    grep -iv '\t0 =' "$WORKDIR/_tmpfile00238_URL_50.txt" | awk -F '=' '{print $NF}' | sd '^ ' '' | sort > "$diffFileAllOthers" ; 
+    grep -iv '\t0 =' "$WORKDIR/_tmpfile00238_URL_50.txt" | awk -F '=' '{print $NF}' | sd '^ ' '' | sort > "$diffFileMY" ; 
+    grep -iv '\t0 =' "$WORKDIR/_tmpfile00238_URL_99.txt" | awk -F '=' '{print $NF}' | sd '^ ' '' | sort > "$diffFileAllOthers" ; 
     ##
     ## find differences using ICDIFF
     palidivider "leftFile = $diffFileMY // rightFile = $diffFileAllOthers" ; 
