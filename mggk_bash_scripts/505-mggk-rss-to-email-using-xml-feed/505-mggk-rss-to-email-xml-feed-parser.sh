@@ -31,8 +31,9 @@ echo ">>>> PWD is $PWD" ;
 
 ## DEFINE SOME VARIABLE FILENAMES
 OUTPUT_RSSFEED_FILE="_TMP_505_mggk-rssfeed.xml" ;
-OUTPUT_HTML_FILE="_TMP_505_tmp-output-rss.html"
-OUTPUT_HTML_FILE_FINAL="_TMP_505_FINAL_OUTPUT_HTML_FILE.html"
+OUTPUT_HTML_FILE="_TMP_505_tmp-output-rss.html" ; 
+OUTPUT_HTML_FILE_FINAL="_TMP_505_FINAL_OUTPUT_HTML_FILE.html" ; 
+WEBSITE_NAME="My Ginger Garlic Kitchen Healthy Recipes" ; 
 
 ###############################################################################
 ## USER INPUT IS ASKED
@@ -63,13 +64,13 @@ echo "<!doctype html>
 
     <!-- Bootstrap CSS -->
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' crossorigin='anonymous'>
-		<title>Latest delicious recipes from My Ginger Garlic Kitchen</title>
+		<title>Latest delicious recipes from $WEBSITE_NAME</title>
 	</head>
 	<body>
 	<div class='container'>" > $OUTPUT_HTML_FILE ;
 
 
-echo "<p>Hello [Name,fallback=]</p><p><strong>🍴Here are the latest recipes from <a href='https://www.mygingergarlickitchen.com/' target='_blank'>MyGingerGarlicKitchen Food Blog</a> and recipe videos from <a href='https://www.youtube.com/user/anupamabhishek/' target='_blank'>our youtube channel</a> directly to your inbox.</strong></p><p>Simply click the buttons below to watch the how-to videos and to download recipes.</p>
+echo "<p>Hello [Name,fallback=]</p><p><strong>🍴Here are the latest recipes from <a href='https://www.mygingergarlickitchen.com/' target='_blank'>$WEBSITE_NAME Food Blog</a> and recipe videos from <a href='https://www.youtube.com/user/anupamabhishek/' target='_blank'>our youtube channel</a> directly to your inbox.</strong></p><p>Simply click the buttons below to watch the how-to videos and to download recipes.</p>
 <p style='text-align: center; color: #cd1c62; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ; ## WRITING THE FIRST EMPTY LINE, THEN APPENDING LATER
 
 echo "<center>" >> $OUTPUT_HTML_FILE ;
