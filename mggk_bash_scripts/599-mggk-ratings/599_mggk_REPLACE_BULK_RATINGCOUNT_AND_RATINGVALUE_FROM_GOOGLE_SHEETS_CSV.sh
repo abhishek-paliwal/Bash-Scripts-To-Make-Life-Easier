@@ -98,7 +98,7 @@ echo "MY_MDFILENAME, COUNT, CSVURL, 90DAYS_PAGEVIEWS, EXISTING_CSVRATINGCOUNT, N
 ################################################################################
 ## CALCULATION VARIABLES (CHANGE AS NEEDED)
 NUM_DAYS_DATA_IN_REQUIREMENTS_CSVFILE="90" ;
-PERCENTAGE_OF_USERS_WHO_RATED="0.01" ; ## Let's say that 1% users provided rating out of total users
+PERCENTAGE_OF_USERS_WHO_RATED="0.001" ; ## Let's say that 1 in 1000 users provided rating out of total users
 ################################################################################
 
 ## GETTING COLUMN NAMES FROM CSV FILE:
@@ -145,8 +145,9 @@ REPLACE_ORIGINAL_RATINGCOUNT_RATINGVALUE_IN_THIS_MD_FILE_WITH_NEW_VALUES () {
   ################## RATING COUNT CALCULATIONS #######################
   echo;
   mdfile="$1" ;
-  EXISTING_RATINGCOUNT="$(grep -irh 'ratingCount: ' $mdfile | sed 's/ratingCount: //g')" ;
   NEW_RATINGCOUNT_TMP="$2" ;
+  EXISTING_RATINGCOUNT="$(grep -irh 'ratingCount: ' $mdfile | sed 's/ratingCount: //g' | sed 's/ //g')" ;
+  EXISTING_RATINGVALUE="$(grep -irh 'ratingValue: ' $mdfile | sed 's/ratingValue: //g' | sed 's/ //g')" ;
 
   ######################################
   ## RANDOM NUMBER GENERATION, GIVING EACH URL IN CSV FILE A 20% CHANCE TO
@@ -164,7 +165,11 @@ REPLACE_ORIGINAL_RATINGCOUNT_RATINGVALUE_IN_THIS_MD_FILE_WITH_NEW_VALUES () {
   
   NEW_RATINGCOUNT_INCREASED_BY=$(echo "scale=0; ($CALCULATING_RATINGCOUNT_INCREASED_BY)"  | bc ) ;
   NEW_RATINGCOUNT=$(echo "$EXISTING_RATINGCOUNT + $NEW_RATINGCOUNT_INCREASED_BY"  | bc ) ;
+  #DECREASE_BY_THISNUMBER=$((30 + RANDOM % (45 - 30 + 1))) ; ## A NUM BETWEEN 30 AND 45
+  #NEW_RATINGCOUNT_DECREASED_BY_PC=$(echo "$EXISTING_RATINGCOUNT*$DECREASE_BY_THISNUMBER/100" | bc ) ; ## SOME % decrease # 1 time only
+  #NEW_RATINGCOUNT=$(echo "$EXISTING_RATINGCOUNT - $NEW_RATINGCOUNT_DECREASED_BY_PC"  | bc ) ; ## for 1 time run only
 
+  ##
   echo "    mdfile => $mdfile" ;
   echo "    EXISTING_RATINGCOUNT => $EXISTING_RATINGCOUNT" ;
   echo "    NEW_RATINGCOUNT_INCREASED_BY => $NEW_RATINGCOUNT_INCREASED_BY" ;
@@ -183,11 +188,21 @@ REPLACE_ORIGINAL_RATINGCOUNT_RATINGVALUE_IN_THIS_MD_FILE_WITH_NEW_VALUES () {
   ##
   echo;
   ################## RATING VALUE CALCULATIONS #######################
-  EXISTING_RATINGVALUE="$(grep -irh 'ratingValue: ' $mdfile | sed 's/ratingValue: //g')" ;
   ##
-  ## Generating random raging value change factor, between 4.1 and 5.0
+  ## Generating random rating value change factor, between 4.1 and 5.0
   ## This will be the average rating given by new users for this url
-  NEW_RATINGVALUE_CHANGE_FACTOR=$( echo "scale=1; $(($RANDOM %10 + 41))/10" | bc ) ;
+  #NEW_RATINGVALUE_CHANGE_FACTOR=$( echo "scale=1; $(($RANDOM %10 + 41))/10" | bc ) ;
+
+  ## Randomly print one of the elements from the ratings array
+  # Define the array
+  values_arr=(4.8 4.9 5) ; 
+  # Select a random index between 0 and the last index of the array
+  index_arr=$(($RANDOM % ${#values_arr[@]}))
+  # Print the randomly selected element
+  NEW_RATINGVALUE_CHANGE_FACTOR=${values[$index_arr]} ; 
+  # If this variable is empty at this stage, then set it to a default value.
+  NEW_RATINGVALUE_CHANGE_FACTOR=${NEW_RATINGVALUE_CHANGE_FACTOR:-5}
+
   ##
   ## Only change ratingValue when there is a change in ratingCount
   if [ $NEW_RATINGCOUNT_INCREASED_BY != 0 ]; then
@@ -208,6 +223,13 @@ REPLACE_ORIGINAL_RATINGCOUNT_RATINGVALUE_IN_THIS_MD_FILE_WITH_NEW_VALUES () {
   ## Check the OS // MacOS (=Darwin) as well as Linux (=ubuntu)
   OS_NAME=$(uname) ;
   if [[ "$OS_NAME" == "Darwin" ]] ; then
+    ######
+    if [[ "$EXISTING_RATINGVALUE" -eq 5 ]] ; then
+      NEW_RATINGVALUE=5; ## for 1 time run only
+    else 
+      NEW_RATINGVALUE=4.9; ## for 1 time run only
+    fi  
+    ######
     sed -i .bak "s|ratingValue: .*$|ratingValue: $NEW_RATINGVALUE|" $mdfile ;
     rm $mdfile.bak ;
   else
@@ -227,7 +249,7 @@ REPLACE_ORIGINAL_RATINGCOUNT_RATINGVALUE_IN_THIS_MD_FILE_WITH_NEW_VALUES () {
 ## USER INPUT FOR THE TIME WHEN LAST TIME SITE WAS MADE
 echo; echo "##################################################################################" ;
 echo "####################### ENTER USER INPUT ####################################" ; echo; 
-say "Updating Rating Count and Rating Value ... How many days ago did you make the website last time (ENTER an integer, Or simply press ENTER key for no rating update) ... " ;
+#say "Updating Rating Count and Rating Value ... How many days ago did you make the website last time (ENTER an integer, Or simply press ENTER key for no rating update) ... " ;
 echo ">> Now updating Rating Count and Rating Value ..." ; echo;
 ##
 echo ">>> $(cat $SUMMARY_FILE | sed 's/RATING_LAST_UPDATED://g' | head -1) = [INFO // RATINGS LAST UPDATED ON]" ; 
@@ -256,7 +278,7 @@ while read line; do
     CSVRATINGCOUNT=$(echo "$line" | csvcut -c 2 | sed -e 's/"//g' -e 's/,//g') ## getting second_column
     CSVRATINGVALUE=$CSVRATINGCOUNT ;
 
-    MY_MDFILENAME=$(GET_MD_FILENAME_WITH_THIS_URL "$CSVURL")
+    MY_MDFILENAME=$(GET_MD_FILENAME_WITH_THIS_URL "$CSVURL" | grep -ivE '001-020|000-latest-format' ) ; ## exclude top20 and latest ones
     MY_MDFILENAME=$(echo "$MY_MDFILENAME" | tr -d '[:space:]') ; ## leading + trailing spaces removed.
 
     echo ;
