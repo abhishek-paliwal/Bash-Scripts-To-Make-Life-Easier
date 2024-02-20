@@ -189,19 +189,9 @@ REPLACE_ORIGINAL_RATINGCOUNT_RATINGVALUE_IN_THIS_MD_FILE_WITH_NEW_VALUES () {
   echo;
   ################## RATING VALUE CALCULATIONS #######################
   ##
-  ## Generating random rating value change factor, between 4.1 and 5.0
+  ## Generating random rating value change factor, possible values: 4.1 to 5
   ## This will be the average rating given by new users for this url
-  #NEW_RATINGVALUE_CHANGE_FACTOR=$( echo "scale=1; $(($RANDOM %10 + 41))/10" | bc ) ;
-
-  ## Randomly print one of the elements from the ratings array
-  # Define the array
-  values_arr=(4.8 4.9 5) ; 
-  # Select a random index between 0 and the last index of the array
-  index_arr=$(($RANDOM % ${#values_arr[@]}))
-  # Print the randomly selected element
-  NEW_RATINGVALUE_CHANGE_FACTOR=${values[$index_arr]} ; 
-  # If this variable is empty at this stage, then set it to a default value.
-  NEW_RATINGVALUE_CHANGE_FACTOR=${NEW_RATINGVALUE_CHANGE_FACTOR:-5}
+  NEW_RATINGVALUE_CHANGE_FACTOR=5 ;
 
   ##
   ## Only change ratingValue when there is a change in ratingCount
@@ -220,16 +210,16 @@ REPLACE_ORIGINAL_RATINGCOUNT_RATINGVALUE_IN_THIS_MD_FILE_WITH_NEW_VALUES () {
   ##
   echo "    >>>> Updating new ratingValue value ..." ;
   NEW_RATINGVALUE=$(echo $NEW_RATINGVALUE | tr -d [:space:]) ;
+  ###### don't modify rating if already 5
+  if [[ "$EXISTING_RATINGVALUE" -eq 5 ]] ; then
+    NEW_RATINGVALUE=5 ; 
+  else 
+    NEW_RATINGVALUE="$NEW_RATINGVALUE" ; 
+  fi  
+  ######
   ## Check the OS // MacOS (=Darwin) as well as Linux (=ubuntu)
   OS_NAME=$(uname) ;
   if [[ "$OS_NAME" == "Darwin" ]] ; then
-    ######
-    if [[ "$EXISTING_RATINGVALUE" -eq 5 ]] ; then
-      NEW_RATINGVALUE=5; ## for 1 time run only
-    else 
-      NEW_RATINGVALUE=4.9; ## for 1 time run only
-    fi  
-    ######
     sed -i .bak "s|ratingValue: .*$|ratingValue: $NEW_RATINGVALUE|" $mdfile ;
     rm $mdfile.bak ;
   else
@@ -278,7 +268,7 @@ while read line; do
     CSVRATINGCOUNT=$(echo "$line" | csvcut -c 2 | sed -e 's/"//g' -e 's/,//g') ## getting second_column
     CSVRATINGVALUE=$CSVRATINGCOUNT ;
 
-    MY_MDFILENAME=$(GET_MD_FILENAME_WITH_THIS_URL "$CSVURL" | grep -ivE '001-020|000-latest-format' ) ; ## exclude top20 and latest ones
+    MY_MDFILENAME=$(GET_MD_FILENAME_WITH_THIS_URL "$CSVURL" | grep -ivE '001-020' ) ; ## exclude top20 
     MY_MDFILENAME=$(echo "$MY_MDFILENAME" | tr -d '[:space:]') ; ## leading + trailing spaces removed.
 
     echo ;
