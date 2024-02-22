@@ -119,7 +119,8 @@ function FUNC_STEP2_RUN_FOR_MULTIPLE_URLS () {
         FUNC_STEP0_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS "$downloadedHTMLfile" "$count" "$thisUrl" ; 
         ##
         ## use beautiful soup to parse this url visible data using an external python program
-        parsedTXTfromHTML="$curledFile-parsedText-$count.txt" ;  ; 
+        baseURLpart=$(echo $thisUrl | awk -F '/' '{print $3}' ) ; 
+        parsedTXTfromHTML="$curledFile-parsedText-$count-$baseURLpart.txt" ;
         "$REPO_PYTHONPROGRAMS_VENV/venv3/bin/python3" "$REPO_SCRIPTS_MINI"/00239_extract_parse_visible_text_from_any_webpage_url_by_beautiful_soup.py "$thisUrl" > "$parsedTXTfromHTML" ; 
     done 
     ####
@@ -149,9 +150,10 @@ function FUNC_STEP3_CREATE_FINAL_RESULTS_HTMLFILE () {
     cat $finalKeywordsCountsFile | sort -nr >> $resultsHTMLfile ;
 
     ## PRINTING_WORDCOUNTS_IN_LOCAL_PARSED_URLS_HTML_FILES_AS_TXT
-    palidivider ">> PRINTING_WORDCOUNTS_IN_LOCAL_PARSED_URLS_HTML_FILES_AS_TXT" ;
+    palidivider ">> PRINTING_WORDCOUNTS_IN_LOCAL_PARSED_URLS_HTML_FILES_AS_TXT" >> "$resultsHTMLfile" ;
     for myfile in $(fd --search-path="$WORKDIR" 'parsedText' -e txt | sort -nr) ; do 
-        wc -w  "$myfile" >> "$resultsHTMLfile" ;
+        numWords=$(cat "$myfile" | wc -w) ; 
+        echo  "$numWords = $(basename $myfile)" >> "$resultsHTMLfile" ;
     done 
 
     ## get results from combined txt file
