@@ -117,6 +117,10 @@ function FUNC_STEP2_RUN_FOR_MULTIPLE_URLS () {
         downloadedHTMLfile="$curledFile-$count.html" ; 
         curl -sk "$thisUrl" > "$downloadedHTMLfile"  ;
         FUNC_STEP0_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS "$downloadedHTMLfile" "$count" "$thisUrl" ; 
+        ##
+        ## use beautiful soup to parse this url visible data using an external python program
+        parsedTXTfromHTML="$curledFile-parsedText-$count.txt" ;  ; 
+        "$REPO_PYTHONPROGRAMS_VENV/venv3/bin/python3" "$REPO_SCRIPTS_MINI"/00239_extract_parse_visible_text_from_any_webpage_url_by_beautiful_soup.py "$thisUrl" > "$parsedTXTfromHTML" ; 
     done 
     ####
     ## Combine the html data of all file and run again
@@ -143,6 +147,12 @@ function FUNC_STEP3_CREATE_FINAL_RESULTS_HTMLFILE () {
     ##
     ## get final keywords counts for all urls
     cat $finalKeywordsCountsFile | sort -nr >> $resultsHTMLfile ;
+
+    ## PRINTING_WORDCOUNTS_IN_LOCAL_PARSED_URLS_HTML_FILES_AS_TXT
+    palidivider ">> PRINTING_WORDCOUNTS_IN_LOCAL_PARSED_URLS_HTML_FILES_AS_TXT" ;
+    for myfile in $(fd --search-path="$WORKDIR" 'parsedText' -e txt | sort -nr) ; do 
+        wc -w  "$myfile" >> "$resultsHTMLfile" ;
+    done 
 
     ## get results from combined txt file
     for myfile in $(fd --search-path="$WORKDIR" '_tmpfile00238_URL' -e txt | grep -i '_tmpfile00238_URL_99' | head -1) ; do 
