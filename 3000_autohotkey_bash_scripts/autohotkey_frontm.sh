@@ -256,7 +256,7 @@ FRONTMATTER_FOOTER="---
 
 {{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-recipe-2.jpg\" alt=\"Image of $CLIPBOARD\" >}}
 
-{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$UURL-recipe-3.jpg\" alt=\"Image of $CLIPBOARD\" >}}
+{{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-recipe-3.jpg\" alt=\"Image of $CLIPBOARD\" >}}
 
 {{< figure src=\"https://www.mygingergarlickitchen.com/wp-content/uploads/$YEAR/$MONTH/$URL-recipe-4.jpg\" alt=\"Image of $CLIPBOARD\" >}}
 
