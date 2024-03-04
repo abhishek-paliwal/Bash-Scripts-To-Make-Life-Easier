@@ -119,7 +119,7 @@ function FUNC_STEP2_RUN_FOR_MULTIPLE_URLS () {
         FUNC_STEP0_GET_URL_DATA_AND_COUNT_GIVEN_KEYWORDS "$downloadedHTMLfile" "$count" "$thisUrl" ; 
         ##
         ## use beautiful soup to parse this url visible data using an external python program
-        baseURLpart=$(echo $thisUrl | awk -F '/' '{print $3}' ) ; 
+        baseURLpart=$(echo $thisUrl | awk -F '/' '{print $3 "-" $4 }' ) ; 
         parsedTXTfromHTML="$curledFile-parsedText-$count-$baseURLpart.txt" ;
         "$REPO_PYTHONPROGRAMS_VENV/venv3/bin/python3" "$REPO_SCRIPTS_MINI"/00239_extract_parse_visible_text_from_any_webpage_url_by_beautiful_soup.py "$thisUrl" > "$parsedTXTfromHTML" ; 
     done 
