@@ -71,7 +71,7 @@ echo "<!doctype html>
 
 
 echo "<p>Hello [Name,fallback=]</p><p><strong>🍴Here are the latest recipes from <a href='https://www.mygingergarlickitchen.com/' target='_blank'>$WEBSITE_NAME Food Blog</a> and recipe videos from <a href='https://www.youtube.com/user/anupamabhishek/' target='_blank'>our youtube channel</a> directly to your inbox.</strong></p><p>Simply click the buttons below to watch the how-to videos and to download recipes.</p>
-<p style='text-align: center; color: #cd1c62; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ; ## WRITING THE FIRST EMPTY LINE, THEN APPENDING LATER
+<p style='text-align: center; color: #8F903C; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ; ## WRITING THE FIRST EMPTY LINE, THEN APPENDING LATER
 
 echo "<center>" >> $OUTPUT_HTML_FILE ;
 
@@ -83,18 +83,18 @@ do
 	LINK=$( xmlstarlet sel -t -v "/rss/channel/item[$x]/link" $OUTPUT_RSSFEED_FILE ) ;
 	DESCRIPTION=$( xmlstarlet sel -t -v "/rss/channel/item[$x]/description" $OUTPUT_RSSFEED_FILE ) ;
 
-	echo "<h3><a style='color: #cd1c62;' href='$LINK'>$x.) $TITLE</a></h3>" >> $OUTPUT_HTML_FILE;
+	echo "<h3><a style='color: #8F903C;' href='$LINK'>$x.) $TITLE</a></h3>" >> $OUTPUT_HTML_FILE;
 	echo "<p>Published: $PUBDATE</p>" >> $OUTPUT_HTML_FILE ;
 	echo "<p>$DESCRIPTION</p>" >> $OUTPUT_HTML_FILE ;
-	echo "<div style='background-color: #cd1c62;
-	border: 2px solid #cd1c62;
+	echo "<div style='background-color: #8F903C;
+	border: 2px solid #8F903C;
 	padding: 10px;
 	color: white;
 	border-radius: 100px;
 	text-align: center;
 	display: inline-block;'>
 	<a style='color: white;' href='$LINK' target='_blank'>Read full post and watch video &rarr;</a></div>" >> $OUTPUT_HTML_FILE ;
-	echo "<p style='text-align: center; color: #cd1c62; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ;
+	echo "<p style='text-align: center; color: #8F903C; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ;
 
 	echo ; echo "Running for: item[$x] : $TITLE " ;
 	echo "DONE ... running for RSS XML NODE = item[$x]" ;
