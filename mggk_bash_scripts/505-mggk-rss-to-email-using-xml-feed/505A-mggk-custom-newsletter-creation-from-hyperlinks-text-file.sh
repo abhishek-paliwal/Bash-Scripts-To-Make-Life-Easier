@@ -115,7 +115,7 @@ cat $REQUIREMENTS_FILE_BASENAME-content.txt | grep -v '^$' | sed "s+^+<p style='
 echo "<p style='font-size: 18px;'>Best wishes,</p>
 <p style='font-size: 18px;'><img align='none' height='35' src='https://gallery.mailchimp.com/126a7c0d8271b7ec930c15e67/images/623b3f2b-7d5f-426d-857a-2c3175fdd285.png' style='width: 110px; height: 35px;'></p>" >> $OUTPUT_HTML_FILE ;
 
-echo "<p style='font-size: 18px; text-align: center; color: #cd1c62; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ;
+echo "<p style='font-size: 18px; text-align: center; color: #8F903C; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ;
 
 echo "<center>" >> $OUTPUT_HTML_FILE; 
 
@@ -174,12 +174,12 @@ while read -r line; do
     echo "IMAGE = $IMAGE " ;
 
     ## PRINTING TO HTML
-    echo "<h3 style='font-size:24px;'><a style='color: #cd1c62;' href='$URL'>$COUNT.) $TITLE</a></h3>" >> $OUTPUT_HTML_FILE;
+    echo "<h3 style='font-size:24px;'><a style='color: #8F903C;' href='$URL'>$COUNT.) $TITLE</a></h3>" >> $OUTPUT_HTML_FILE;
     echo "<p style='font-size: 18px'; >$META_DESCRIPTION</p>" >> $OUTPUT_HTML_FILE ;
     echo "<p style='font-size: 18px'; ><a href='$URL'><img src='$IMAGE' alt='$TITLE_SANS_QUOTES' width='400' height='600' /></a></p>" >> $OUTPUT_HTML_FILE;  
 
-    echo "<div style='background-color: #cd1c62;
-    border: 2px solid #cd1c62;
+    echo "<div style='background-color: #8F903C;
+    border: 2px solid #8F903C;
     padding: 10px;
     color: white;
     border-radius: 100px;
@@ -187,7 +187,7 @@ while read -r line; do
     display: inline-block;'>
     <a style='color: white;' href='$URL' target='_blank'>Check out full post &rarr;</a></div>" >> $OUTPUT_HTML_FILE ;
     
-    echo "<p style='font-size: 18px; text-align: center; color: #cd1c62; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ;
+    echo "<p style='font-size: 18px; text-align: center; color: #8F903C; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ;
 
     (( COUNT++ ))
 
