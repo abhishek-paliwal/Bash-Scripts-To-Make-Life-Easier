@@ -63,7 +63,7 @@ else:
 #######################################
 #ROOTDIR = MYHOME_WIN + "/Desktop/Y/recipes_demo/"
 #HTMLPRINTDIR = MYHOME_WIN + "/Desktop/X/"
-ROOTDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/"
+ROOTDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/content/allrecipes/"
 HTMLPRINTDIR = MYHOME + "/GitHub/2019-HUGO-MGGK-WEBSITE-OFFICIAL/static/PRINT-RECIPES/"
 ## printing all filenames found in ROOTDIR
 for filename in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
@@ -100,6 +100,7 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         ## CHECK WHETHER THIS FILE IS A RECIPE FILE
         ## WE'LL CHECK IF PREPTIME TAG IS PRESENT IN ALL YAML TAGS THUS FOUND
         if 'prepTime' not in str(sorted(post.keys())) :
+            print("##--------------------" + fname + "------------------##") ; 
             print('=> NOT A VALID RECIPE FILE ... Skipping this, and moving onto the next file ...')
             print() ;
             continue;
