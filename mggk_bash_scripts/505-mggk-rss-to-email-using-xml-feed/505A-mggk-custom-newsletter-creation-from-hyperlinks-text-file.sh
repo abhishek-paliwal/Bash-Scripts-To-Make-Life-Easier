@@ -146,7 +146,8 @@ function FUNCTION_OUTPUT_MDFILE_FULLPATH () {
 ########### USING THE TMP LINKS FILE AND FINDING CORRESPONDING MARKDOWN FILES #############
 ## NOW, FINDING THE MARKDOWN FILES WHICH HAVE THE LINES FROM THE ABOVE OUTPUT1 FILE
 echo ">>>> Beginning WHILE LOOP" ;
-echo "<div class='row'><div class='col-12'> <!--BEGIN: MAIN ROW+COLUMN -->" >> $OUTPUT_HTML_FILE ;
+echo "<!--BEGIN: MAIN ROW+COLUMN -->" >> $OUTPUT_HTML_FILE ;
+echo "<div class='row'><div class='col-12'>" >> $OUTPUT_HTML_FILE ;
 echo ""  >> $OUTPUT_HTML_FILE;
 
 COUNT=1;
@@ -193,7 +194,8 @@ while read -r line; do
 
 done < $LINKS_FILE_OUTPUT
 
-echo "</div></div> <!-- END: ALL CONTENT COLUMN+ROW -->"  >> $OUTPUT_HTML_FILE ;
+echo "</div></div>" >> $OUTPUT_HTML_FILE ;
+echo "<!-- END: ALL CONTENT COLUMN+ROW -->"  >> $OUTPUT_HTML_FILE ;
 ###############################################################################
 
 ################################################################################
