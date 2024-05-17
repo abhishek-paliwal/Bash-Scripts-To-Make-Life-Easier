@@ -43,24 +43,48 @@ if [ "$1" == "--help" ] ; then usage ; fi
 
 ##################################################################################
 
+
 ## CHECK WHETHER THE REQUIRED NEWSLETTER TEMPLATE FILE ALREADY EXISTS
 ## IF NOT, AUTOMATICALLY CREATE IT.
 if [ -f "$NEWSLETTER_TEMPLATE" ]; then
     echo ">> SUCCESS: NEWSLETTER TEMPLATE FILE EXISTS => $NEWSLETTER_TEMPLATE"
 else
+    #### USER INPUT:
+    echo; 
+    echo ">>>> PLEASE PROVIDE A SINGLE URL AS INPUT FOR NEWSLETTER, STARTING WITH https (or press ENTER key to continue) =>" ;
+    read SINGLE_URL_NL ;
+    echo;
+    ####
     echo ">> FAILURE: NEWSLETTER TEMPLATE FILE DOES NOT EXIST. IT HAS BEEN CREATED FOR YOU." ;
     echo ">>>> NEXT STEP: Edit this file with your TEXT CONTENT and LINKS, then run this program again. => $NEWSLETTER_TEMPLATE" ;
     ## CREATING AN EMPTY NEWSLETTER TEMPLATE TO BE FILLED IN
+    ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    ## -z (= test if variable is empty or does not exist), -n (=test if exists and var is not empty string)
+    if [ -z "$SINGLE_URL_NL" ]
+    then
+    ######
 echo "##begin_links
-https://www.mygingergarlickitchen.com/LINK-1/
-https://www.mygingergarlickitchen.com/LINK-2/
-https://www.mygingergarlickitchen.com/LINK-3/
+https://www.mygingergarlickitchen.com/MYLINK-1/
+https://www.mygingergarlickitchen.com/MYLINK-2/
 ##end_links
 ##begin_content
 CONTENT LINE 1
 CONTENT LINE 2
-CONTENT LINE 3
 ##end_content" > $NEWSLETTER_TEMPLATE ;
+    elif [ -n "$SINGLE_URL_NL" ]
+    then
+      echo ">>>> Variable value is valid and is not empty. " ;
+echo "##begin_links
+$SINGLE_URL_NL
+##end_links
+##begin_content
+CONTENT LINE 1
+CONTENT LINE 2
+##end_content" > $NEWSLETTER_TEMPLATE ;
+    ######
+    fi
+    ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
     ## EXIT THIS SCRIPT IN THIS CASE
     exit 1 ;
 fi
@@ -75,8 +99,9 @@ MD_FILENAME="$PWD/_TMP-$REQUIREMENTS_FILE_BASENAME.md";
 ##
 ## Using the power of sed to find all text between two phrases
 echo ">> Dumping all text found between the required headings" ;
-sed -n "/##begin_links/,/##end_links/p" $REQUIREMENTS_FILE | grep -v '#' > $REQUIREMENTS_FILE_BASENAME-links.txt
+sed -n "/##begin_links/,/##end_links/p" $REQUIREMENTS_FILE | grep -v '#' | grep -iv 'MYLINK' > $REQUIREMENTS_FILE_BASENAME-links.txt
 sed -n "/##begin_content/,/##end_content/p" $REQUIREMENTS_FILE | grep -v '#' > $REQUIREMENTS_FILE_BASENAME-content.txt
+
 ###############################################################################
 
 ########### CREATING THE TMP LINKS FILES #############
@@ -102,10 +127,13 @@ echo "<!doctype html>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <!-- Bootstrap CSS -->
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' crossorigin='anonymous'>
-		<title>Latest delicious recipes from My Ginger Garlic Kitchen</title>
+		<title>Latest recipes from My Ginger Garlic Kitchen Website</title>
 	</head>
 	<body>  
-  <div class='container'>" > $OUTPUT_HTML_FILE ; ## Initializing the HTML file
+  <div class='container'>
+  <center>
+  <div style='background: rgb(245,245,245); padding: 10px;'><a href='https://www.mygingergarlickitchen.com/' target='_blank'><img alt='Site Logo' decoding='async' loading='lazy' src='https://sendy.concepro.com/sendy/uploads/1715178149.png' style='width: 250px; height: 48px;' /></a></div>
+  </center>" > $OUTPUT_HTML_FILE ; ## Initializing the HTML file
 
   echo "<p style='font-size: 18px'; >Hello [Name,fallback=]</p>" >> $OUTPUT_HTML_FILE ;
 
@@ -186,7 +214,7 @@ while read -r line; do
     border-radius: 100px;
     text-align: center;
     display: inline-block;'>
-    <a style='color: white;' href='$URL' target='_blank'>Check out full post &rarr;</a></div>" >> $OUTPUT_HTML_FILE ;
+    <a style='color: white;' href='$URL' target='_blank'>Check out full recipe &rarr;</a></div>" >> $OUTPUT_HTML_FILE ;
     
     echo "<p style='font-size: 18px; text-align: center; color: #8F903C; '>&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;</p>" >> $OUTPUT_HTML_FILE ;
 
@@ -202,11 +230,17 @@ echo "<!-- END: ALL CONTENT COLUMN+ROW -->"  >> $OUTPUT_HTML_FILE ;
 
 
 echo "<hr>" >> $OUTPUT_HTML_FILE ;
+
 echo "<p><!-- Google Analytics Image -->
 <img src='http://www.google-analytics.com/collect?v=1&amp;tid=UA-48712319-2&amp;cid=mggkmailchimp&amp;t=event&amp;ec=dailyemailmailChimp&amp;ea=open&amp;el=dailyemailmailChimp&amp;cs=gmail-inbox&amp;cm=email&amp;cn=dailyemailmailChimp' style='border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;height: auto !important;'></p>" >> $OUTPUT_HTML_FILE ;
 
-echo "<webversion>View web version</webversion> // <unsubscribe>Unsubscribe</unsubscribe>" >> $OUTPUT_HTML_FILE ;
-echo "<p><a href='https://www.mygingergarlickitchen.com' target='_blank'><img src='https://www.mygingergarlickitchen.com/logos/mggk-new-logo-transparent-150px.png' width='100px' ;></img></a></p>" >> $OUTPUT_HTML_FILE ;
+echo "<p>Follow on Social Media for the Latest Recipes & Inspiration!</p>
+<p><a href='https://www.facebook.com/MyGingerGarlicKitchen' target='_blank'><img alt='Image of nl-facebook-48.png' src='https://sendy.concepro.com/sendy/uploads/1715178207.png' /></a> <a href='https://www.instagram.com/mygingergarlickitchen/' target='_blank'><img alt='Image of nl-instagram-48.png' src='https://sendy.concepro.com/sendy/uploads/1715178240.png' /></a> <a href='https://www.pinterest.com/anupamapaliwal/' target='_blank'><img alt='Image of nl-pinterest-48.png' src='https://sendy.concepro.com/sendy/uploads/1715178278.png' /></a> <a href='https://www.youtube.com/c/Mygingergarlickitchen' target='_blank'><img alt='Image of nl-youtube-48.png' src='https://sendy.concepro.com/sendy/uploads/1715178325.png' /></a></p>" >> $OUTPUT_HTML_FILE ;
+
+echo "<hr>
+<p><span style='font-size:11px;'><span style='font-family:Times New Roman;'>Thanks for subscribing to newsletter from <a href='https://www.mygingergarlickitchen.com/' target='_blank'>My Ginger Garlic Kitchen Healthy Recipes</a>.</span></span></p>
+<p><span style='font-size:11px;'><span style='font-family:Times New Roman;'>To make sure our emails don’t get lost, add us to your address book.</span></span></p>
+<p><span style='font-size:11px;'><span style='font-family:Times New Roman;'><webversion>View web version</webversion> | <unsubscribe>Unsubscribe</unsubscribe> </span></span></p>"  >> $OUTPUT_HTML_FILE ;
 
 echo "</center>" >> $OUTPUT_HTML_FILE ;
 
