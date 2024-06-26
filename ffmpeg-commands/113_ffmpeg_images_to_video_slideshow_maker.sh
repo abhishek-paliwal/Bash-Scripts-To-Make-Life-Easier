@@ -45,7 +45,7 @@ echo "=======> ALL FILENAMES + EXTENSIONS RENAMED TO LOWERCASE. <========== " ; 
 #MY_SONG_DIR="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC/royalty-free-music"
 
 echo "Select the Song directory =======>
-a) Desktop/_TMP_SONGS_
+a) DIR_Y/_tmp_songs
 b) bollywood-music
 c) royalty-free-music
 d) mggk-royalty-free-music-from-youtube
@@ -68,7 +68,7 @@ fi
 
 ## CASES
 case $song_dir in
-    a) MY_SONG_DIR="$HOME/Desktop/_TMP_SONGS_" ;;
+    a) MY_SONG_DIR="$DIR_Y/_tmp_songs" ;;
     b) MY_SONG_DIR="$MUSIC_PATH/bollywood-music" ;;
     c) MY_SONG_DIR="$MUSIC_PATH/royalty-free-music" ;;
     d) MY_SONG_DIR="$MUSIC_PATH/mggk-royalty-free-music-from-youtube" ;;
@@ -178,8 +178,8 @@ echo "FULL COVER TEXT: $FULL_COVER_TEXT" ;
 ## THIS FILE HAS TO BE PRESENT FOR FIRST TMP VIDEO (but first check, whether this computer is raspberry pi)
 FONT_TO_USE="Times New Roman.ttf" ## Default Font
 ## Changing the default font based upon which machine it's being run on.
-if [ "$USER" == "pi" ]; then FONT_TO_USE="/home/_AUDIOJUNGLE_MUSIC/ambroise-francois-regular.otf" ; FONTCOLOR="cyan" ; fi
-if [ "$USER" == "ubuntu" ]; then FONT_TO_USE="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/_fonts/Roboto_Slab/RobotoSlab-Regular.ttf" ; FONTCOLOR="lime" ; fi
+if [ "$USER" == "pi" ]; then FONT_TO_USE="/home/_AUDIOJUNGLE_MUSIC/ambroise-francois-regular.otf" ; FONTCOLOR="lime" ; fi
+if [ "$USER" == "ubuntu" ]; then FONT_TO_USE="$HOME/GitHub/Bash-Scripts-To-Make-Life-Easier/_fonts/Roboto_Slab/RobotoSlab-Regular.ttf" ; FONTCOLOR="cyan" ; fi
 if [ "$USER" == "abhishek" ]; then FONT_TO_USE="/Users/$USER/Library/Fonts/LeagueGothic-Regular.otf" ; FONTCOLOR="yellow" ; fi
 if [ "$USER" == "anu" ]; then FONT_TO_USE="/Users/$USER/Library/Fonts/Mission-Script.otf" ; FONTCOLOR="white" ; fi
 
