@@ -184,7 +184,7 @@ if [ "$USER" == "abhishek" ]; then FONT_TO_USE="/Users/$USER/Library/Fonts/Leagu
 if [ "$USER" == "anu" ]; then FONT_TO_USE="/Users/$USER/Library/Fonts/Mission-Script.otf" ; FONTCOLOR="white" ; fi
 
 ## Creating title slide
-convert -background '#00000085' -fill "$FONTCOLOR" -font "$FONT_TO_USE" -gravity center -size ${width}x360 caption:"$FULL_COVER_TEXT" $COVER_IMAGE +swap -gravity south -composite $NEW_COVER_IMAGE ;
+magick -background '#00000085' -fill "$FONTCOLOR" -font "$FONT_TO_USE" -gravity center -size ${width}x360 caption:"$FULL_COVER_TEXT" $COVER_IMAGE +swap -gravity south -composite $NEW_COVER_IMAGE ;
 
 echo "========> DONE: TEXT WRITTEN TO COVER IMAGE." ;
 rm $COVER_IMAGE ; #delete old and unnecessary cover image tmp file#
@@ -228,10 +228,10 @@ for pic in *.png ;
     ## Writing filename to the bottom-right of each PNG image
     PICNAME=`echo "$pic" | cut -d '.' -f1` ; ## removing file extension
 
-    convert $pic -fill white -undercolor '#111111' -pointsize 16 -gravity Southeast -annotate +0+5 "\  $PICNAME " $pic
+    magick $pic -fill white -undercolor '#111111' -pointsize 16 -gravity Southeast -annotate +0+5 "\  $PICNAME " $pic
     echo "PNG Image file stamped with file-name-number: $pic" ;
 
-    convert $pic -define png:color-type=2 $pic ;
+    magick $pic -define png:color-type=2 $pic ;
     echo "PNG Image converted to profile 2: $pic" ;
     done
 
