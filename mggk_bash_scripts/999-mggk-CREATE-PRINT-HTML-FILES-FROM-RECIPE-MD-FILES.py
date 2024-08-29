@@ -401,10 +401,10 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         <p>If you have any questions or suggestions about this recipe, please do contact us via this contact form or via the social channels: </p>
         <p>Website: <a href='https://www.mygingergarlickitchen.com'>www.mygingergarlickitchen.com</a> 
         // <a href="https://www.mygingergarlickitchen.com/contact/">Contact Form</a> 
-        // <a href="https://myginger.us/facebook">Facebook Page</a>
-        // <a href="https://myginger.us/youtube">Youtube Page</a>
-        // <a href="https://myginger.us/instagram">Instagram Page</a>
-        // <a href="https://myginger.us/pinterest">Pinterest Page</a>
+        // <a href="https://www.facebook.com/MyGingerGarlicKitchen">Facebook Page</a>
+        // <a href="https://www.youtube.com/c/Mygingergarlickitchen">Youtube Page</a>
+        // <a href="https://www.instagram.com/mygingergarlickitchen/">Instagram Page</a>
+        // <a href="https://www.pinterest.com/anupamapaliwal/">Pinterest Page</a>
         </p>
         </div>""" ;
         ##
