@@ -24,7 +24,7 @@ TMPFILE="$OUTDIR/9993-tmpfile1.txt" ;
 wget -O "$IMAGE_INPUT" "$URL_AURORA_IMAGE" ; 
 
 ## calling python program for cropping and ocr. Converting newlines to spaces
-$PYTHON3_VENV_PATH "$PROG_ROOTDIR/9993-02-digitalocean-crop-and-ocr-aurora-image.py" "$IMAGE_INPUT" "$IMAGE_CROPPED" "$TMPFILE" ; 
+$PYTHON3_VENV_PATH "$PROG_ROOTDIR/9993-02-digitalocean-crop-and-ocr-aurora-image.py" ;
 
 ## sending email (use aws full path)
 /home/linuxbrew/.linuxbrew/bin/aws ses send-email --from "$EMAIL_FROM" --to "$EMAIL_TO" --subject "AURORA - $(cat $TMPFILE) // $(date)" --text "Aurora numbers // $(cat $TMPFILE)" ;

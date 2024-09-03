@@ -10,11 +10,17 @@ from PIL import Image
 import pytesseract
 import cv2
 import sys
+import os
 
 ####
-image_path = sys.argv[1] ;
-image_path_cropped = sys.argv[2] ;
-output_txtfile = sys.argv[3] ;
+#image_path = sys.argv[1] ;
+#image_path_cropped = sys.argv[2] ;
+#output_txtfile = sys.argv[3] ;
+
+OUTDIR = "/home/ubuntu/Desktop/Y" ; 
+image_path = os.path.join(OUTDIR, '9993-digitalocean-map-latest-en.png') 
+image_path_cropped = os.path.join(OUTDIR, '9993-digitalocean-cropped_image_result.png')
+output_txtfile= os.path.join(OUTDIR, '9993-tmpfile1.txt' )
 
 ####
 def crop_and_ocr(image_path, x1, y1, x2, y2):
