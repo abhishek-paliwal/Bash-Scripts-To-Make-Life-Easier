@@ -21,6 +21,7 @@ IMAGE_CROPPED="$OUTDIR/9993-digitalocean-cropped_image_result.png" ;
 EMAIL_FROM="info@mygingergarlickitchen.com" ; 
 EMAIL_TO="js3ump94@duck.com" ; 
 TMPFILE="$OUTDIR/9993-tmpfile1.txt" ; 
+TMPFILE_BASE="$OUTDIR/9993-tmpfile1" ; 
 
 ## image downloading
 wget -O "$IMAGE_INPUT" "$URL_AURORA_IMAGE" ; 
@@ -34,7 +35,7 @@ convert "$IMAGE_INPUT" -crop 742x163+0+980 "$IMAGE_CROPPED" ;
 #$PYTHON3_VENV_PATH "$PROG_ROOTDIR/9993-02-digitalocean-crop-and-ocr-aurora-image.py" ;
 
 ## do the OCR in Finnish language
-/home/linuxbrew/.linuxbrew/bin/tesseract "$IMAGE_CROPPED" "$TMPFILE" -l fin 
+/home/linuxbrew/.linuxbrew/bin/tesseract "$IMAGE_CROPPED" "$TMPFILE_BASE" -l fin 
 
 ## sending email (use aws full path)
 /home/linuxbrew/.linuxbrew/bin/aws ses send-email --from "$EMAIL_FROM" --to "$EMAIL_TO" --subject "AURORA - $(cat $TMPFILE) // $(date)" --text "Aurora numbers // $(cat $TMPFILE)" ;
