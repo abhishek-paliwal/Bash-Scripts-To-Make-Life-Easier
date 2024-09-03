@@ -60,6 +60,7 @@ def crop_and_ocr(image_path, x1, y1, x2, y2):
 x1, y1 = 0, 980
 x2, y2 = 742, 1143
 
+## full-image size below
 #x1, y1 = 0, 0
 #x2, y2 = 742, 1329
 
@@ -67,7 +68,7 @@ extracted_text = crop_and_ocr(image_path, x1, y1, x2, y2)
 print(extracted_text)
 
 ## write results to an external text file
-with open(output_txtfile, "w") as f:
+with open('/home/ubuntu/Desktop/Y/9993-tmpfile1.txt', "w") as f:
     extracted_text = extracted_text.replace("\n", " ") ; 
     extracted_text = "".join(extracted_text.splitlines()) ; 
     f.write(extracted_text) ; 
