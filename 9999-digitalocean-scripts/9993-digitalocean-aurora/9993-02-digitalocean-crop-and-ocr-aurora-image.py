@@ -18,11 +18,11 @@ import os
 #output_txtfile = sys.argv[3] ;
 
 OUTDIR = "/home/ubuntu/Desktop/Y" ; 
-image_path = os.path.join(OUTDIR, '9993-digitalocean-map-latest-en.png') 
-image_path_cropped = os.path.join(OUTDIR, '9993-digitalocean-cropped_image_result.png')
-output_txtfile= os.path.join(OUTDIR, '9993-tmpfile1.txt' )
+image_path = os.path.join(OUTDIR, "9993-digitalocean-map-latest-en.png" ) 
+image_path_cropped = os.path.join(OUTDIR, "9993-digitalocean-cropped_image_result.png" )
+output_txtfile = os.path.join(OUTDIR, "9993-tmpfile1.txt" )
 
-####
+########
 def crop_and_ocr(image_path, x1, y1, x2, y2):
   """Crops an image and performs OCR on the cropped region.
 
@@ -56,7 +56,7 @@ def crop_and_ocr(image_path, x1, y1, x2, y2):
   text = pytesseract.image_to_string(cropped_image)
 
   return text
-####
+########
 
 x1, y1 = 0, 980
 x2, y2 = 742, 1143
@@ -65,10 +65,14 @@ x2, y2 = 742, 1143
 #x2, y2 = 742, 1329
 
 extracted_text = crop_and_ocr(image_path, x1, y1, x2, y2)
-print(extracted_text)
+#print(extracted_text)
 
 ## write results to an external text file
 with open(output_txtfile, "w") as f:
     extracted_text = extracted_text.replace("\n", " ") ; 
+    extracted_text = "".join(extracted_text.splitlines()) ; 
+    f.write(extracted_text) ; 
+
+with open('/home/ubuntu/Desktop/Y/99999999.txt', "w") as f:
     extracted_text = "".join(extracted_text.splitlines()) ; 
     f.write(extracted_text) ; 
