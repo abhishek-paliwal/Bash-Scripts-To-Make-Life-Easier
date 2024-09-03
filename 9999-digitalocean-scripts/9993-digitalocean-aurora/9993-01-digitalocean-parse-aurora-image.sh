@@ -18,7 +18,6 @@ IMAGE_INPUT="$OUTDIR/9993-digitalocean-map-latest-en.png" ;
 IMAGE_CROPPED="$OUTDIR/9993-digitalocean-cropped_image_result.png" ; 
 EMAIL_FROM="info@mygingergarlickitchen.com" ; 
 EMAIL_TO="js3ump94@duck.com" ; 
-
 TMPFILE="$OUTDIR/9993-tmpfile1.txt" ; 
 
 ## image downloading
