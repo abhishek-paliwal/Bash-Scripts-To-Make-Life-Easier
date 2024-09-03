@@ -29,7 +29,7 @@ wget -O "$IMAGE_INPUT" "$URL_AURORA_IMAGE" ;
 ## crop the image at following coordinates 
 ## x1, y1 = 0, 980
 ## x2, y2 = 742, 1143
-/home/linuxbrew/.linuxbrew/bin/convert "$IMAGE_INPUT" -crop 742x163+0+980 "$IMAGE_CROPPED" ; 
+/home/linuxbrew/.linuxbrew/bin/magick convert "$IMAGE_INPUT" -crop 742x163+0+980 "$IMAGE_CROPPED" ; 
 
 ## calling python program for cropping and ocr. Converting newlines to spaces
 #$PYTHON3_VENV_PATH "$PROG_ROOTDIR/9993-02-digitalocean-crop-and-ocr-aurora-image.py" ;
@@ -38,4 +38,5 @@ wget -O "$IMAGE_INPUT" "$URL_AURORA_IMAGE" ;
 /home/linuxbrew/.linuxbrew/bin/tesseract "$IMAGE_CROPPED" "$TMPFILE_BASE" -l fin 
 
 ## sending email (use aws full path)
-/home/linuxbrew/.linuxbrew/bin/aws ses send-email --from "$EMAIL_FROM" --to "$EMAIL_TO" --subject "AURORA - $(cat $TMPFILE) // $(date)" --text "Aurora numbers // $(cat $TMPFILE)" ;
+myTextMessage=$(cat $TMPFILE | tr '\n' ' ') ; 
+/home/linuxbrew/.linuxbrew/bin/aws ses send-email --from "$EMAIL_FROM" --to "$EMAIL_TO" --subject "AURORA - $myTextMessage // $(date)" --text "Aurora numbers // $myTextMessage" ;
