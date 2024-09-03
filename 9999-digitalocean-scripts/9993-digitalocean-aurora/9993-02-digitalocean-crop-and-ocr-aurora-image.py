@@ -14,6 +14,7 @@ import sys
 ####
 image_path = sys.argv[1] ;
 image_path_cropped = sys.argv[2] ;
+output_txtfile = sys.argv[3] ;
 
 ####
 def crop_and_ocr(image_path, x1, y1, x2, y2):
@@ -60,3 +61,7 @@ x2, y2 = 742, 1143
 extracted_text = crop_and_ocr(image_path, x1, y1, x2, y2)
 print(extracted_text)
 
+## write results to an external text file
+with open(output_txtfile, "w") as f:
+    extracted_text = f"{extracted_text}" ;
+    f.write(extracted_text) ; 
