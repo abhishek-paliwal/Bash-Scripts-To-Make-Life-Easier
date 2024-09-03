@@ -63,5 +63,6 @@ print(extracted_text)
 
 ## write results to an external text file
 with open(output_txtfile, "w") as f:
-    extracted_text = f"{extracted_text}" ;
+    extracted_text = extracted_text.replace("\n", "") ; 
+    extracted_text = "".join(extracted_text.splitlines()) ; 
     f.write(extracted_text) ; 
