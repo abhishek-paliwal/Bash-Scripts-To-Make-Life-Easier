@@ -25,8 +25,16 @@ TMPFILE="$OUTDIR/9993-tmpfile1.txt" ;
 ## image downloading
 wget -O "$IMAGE_INPUT" "$URL_AURORA_IMAGE" ; 
 
+## crop the image at following coordinates 
+## x1, y1 = 0, 980
+## x2, y2 = 742, 1143
+convert "$IMAGE_INPUT" -crop 742x163+0+980 "$IMAGE_CROPPED" ; 
+
 ## calling python program for cropping and ocr. Converting newlines to spaces
 #$PYTHON3_VENV_PATH "$PROG_ROOTDIR/9993-02-digitalocean-crop-and-ocr-aurora-image.py" ;
+
+## do the OCR in Finnish language
+/home/linuxbrew/.linuxbrew/bin/tesseract "$IMAGE_CROPPED" "$TMPFILE" -l fin 
 
 ## sending email (use aws full path)
 /home/linuxbrew/.linuxbrew/bin/aws ses send-email --from "$EMAIL_FROM" --to "$EMAIL_TO" --subject "AURORA - $(cat $TMPFILE) // $(date)" --text "Aurora numbers // $(cat $TMPFILE)" ;
