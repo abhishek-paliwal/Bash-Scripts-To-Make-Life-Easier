@@ -39,4 +39,4 @@ wget -O "$IMAGE_INPUT" "$URL_AURORA_IMAGE" ;
 
 ## sending email (use aws full path)
 myTextMessage=$(cat $TMPFILE | tr '\n' ' ') ; 
-/home/linuxbrew/.linuxbrew/bin/aws ses send-email --from "$EMAIL_FROM" --to "$EMAIL_TO" --subject "AURORA - $myTextMessage // $(date)" --text "Aurora numbers // $myTextMessage" ;
+/home/linuxbrew/.linuxbrew/bin/aws ses send-email --from "$EMAIL_FROM" --to "$EMAIL_TO" --subject "$myTextMessage (AURORA) $(date)" --text "Aurora numbers / $myTextMessage" ;
