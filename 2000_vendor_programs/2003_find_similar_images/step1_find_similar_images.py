@@ -60,5 +60,4 @@ def explore_directory(path: Path) -> None:
 
 
 if __name__ == "__main__":
-    print("IMPORTANT NOTE: Please put all your images in this directory => find_similar_images_in_this_directory")
     explore_directory(Path("find_similar_images_in_this_directory"))

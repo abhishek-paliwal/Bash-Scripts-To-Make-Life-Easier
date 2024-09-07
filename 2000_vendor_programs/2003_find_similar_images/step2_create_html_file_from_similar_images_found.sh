@@ -3,8 +3,9 @@
 ### RUN THIS BASH SCRIPT AFTER RUNNING STEP 1 PROGRAM
 
 # Create the HTML file
-step1_result_txtfile="_tmp_step1_result_file.txt" ; 
-html_file="_tmp_result_image_pairs.html"
+MYDIR_PROJECT="$REPO_SCRIPTS/2000_vendor_programs/2003_find_similar_images" ;
+step1_result_txtfile="$MYDIR_PROJECT/_tmp_step1_result_file.txt" ; 
+html_file="$MYDIR_PROJECT/_tmp_result_image_pairs.html"
 touch "$html_file"
 
 # Write the HTML header and table start
