@@ -1,0 +1,5 @@
+('find_similar_images_in_this_directory/example_image-5.jpg', 'find_similar_images_in_this_directory/example_image-6.jpg')
+('find_similar_images_in_this_directory/example_image-5.jpg', 'find_similar_images_in_this_directory/example_image-7.jpg')
+('find_similar_images_in_this_directory/example_image-1.jpg', 'find_similar_images_in_this_directory/example_image-2.jpg')
+('find_similar_images_in_this_directory/example_image-6.jpg', 'find_similar_images_in_this_directory/example_image-7.jpg')
+('find_similar_images_in_this_directory/example_image-3.jpg', 'find_similar_images_in_this_directory/example_image-4.jpg')
