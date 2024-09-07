@@ -61,7 +61,7 @@ then
   MUSIC_PATH="/home/_AUDIOJUNGLE_MUSIC" ;
 elif [ "$USER" == "ubuntu" ];
 then
-  MUSIC_PATH="/mnt/c/Users/abhip/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC" ;
+  MUSIC_PATH="$HOME_WINDOWS/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC" ;
 else
   MUSIC_PATH="$HOME/Dropbox/__MGGK-Dropbox-Files/mggk-dropbox-09-video/Royalty_Free_Music/_AUDIOJUNGLE_MUSIC" ;
 fi
