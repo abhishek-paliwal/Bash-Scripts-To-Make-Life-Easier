@@ -43,4 +43,5 @@ echo "</body></html>" >> "$html_file"
 
 ###################################################################
 echo ">> HTML image comparison file created at $html_file" ; 
+echo ">> Opening HTML file ..." ; 
 open "$html_file" ;
