@@ -18,7 +18,7 @@ MY_SITE="https://www.mygingergarlickitchen.com" ;
 DATEVAR="$(date +%Y%m%d)" ; 
 HTML_OUTPUT="$WORKDIR/$DATEVAR-linkchecker-out-mggk.html"
 ##
-/home/linuxbrew/.linuxbrew/bin/linkchecker --check-extern -F html/$HTML_OUTPUT -o failures "$MY_SITE" ;
+/usr/bin/linkchecker --check-extern -F html/$HTML_OUTPUT -o failures "$MY_SITE" ;
 ## Copying the created HTML output to the www accessible folder, then renaming the original
 cp $HTML_OUTPUT $DIR_WWW_OUT/ ; 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
