@@ -45,4 +45,4 @@ myTextMessage=$(cat $TMPFILE | tr '\n' ' ') ;
 
 ## sending message to telegram bot
 ## get variable values from environment variables
-curl -X POST -d "chat_id=${TELEGRAM_CHATID}" -d "text=${myTextMessage}" "https://api.telegram.org/bot${TELEGRAM_BOTTOKEN}/sendMessage"
+curl -X POST -d "chat_id=${TELEGRAM_CHATID}" -d "text=Aurora - ${myTextMessage} // $(date)" "https://api.telegram.org/bot${TELEGRAM_BOTTOKEN}/sendMessage"
