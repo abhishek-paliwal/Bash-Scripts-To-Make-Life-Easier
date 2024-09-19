@@ -46,6 +46,6 @@ myTextMessage=$(cat $TMPFILE | tr '\n' ' ') ;
 ## sending message to telegram bot
 ## get variable values from environment variables
 echo ">> Sending message to telegram bot ..." ; 
-curl -X POST -H "Content-Type:multipart/form-data" -F "chat_id=${TELEGRAM_CHATID}" -F text="Aurora1 - ${myTextMessage} // $(date)" "https://api.telegram.org/bot${TELEGRAM_BOTTOKEN}/sendMessage"
+curl -X POST -H "Content-Type:multipart/form-data" -F "chat_id=${TELEGRAM_CHATID}" -F text="Aurora - ${myTextMessage} // $(date)" "https://api.telegram.org/bot${TELEGRAM_BOTTOKEN}/sendMessage"
 ## also send a photo to telegram bot
 curl -X POST -H "Content-Type:multipart/form-data" -F chat_id=${TELEGRAM_CHATID} -F photo=@"${IMAGE_INPUT}" "https://api.telegram.org/bot${TELEGRAM_BOTTOKEN}/sendPhoto"
