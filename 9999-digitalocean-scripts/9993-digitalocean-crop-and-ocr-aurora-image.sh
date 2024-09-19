@@ -37,6 +37,12 @@ wget -O "$IMAGE_INPUT" "$URL_AURORA_IMAGE" ;
 ## do the OCR in Finnish language
 /home/linuxbrew/.linuxbrew/bin/tesseract "$IMAGE_CROPPED" "$TMPFILE_BASE" -l fin 
 
-## sending email (use aws full path)
+## create final message
 myTextMessage=$(cat $TMPFILE | tr '\n' ' ') ; 
+
+## sending email (use aws full path)
 /home/linuxbrew/.linuxbrew/bin/aws ses send-email --from "$EMAIL_FROM" --to "$EMAIL_TO" --subject "$myTextMessage (AURORA) $(date)" --text "Aurora numbers / $myTextMessage" ;
+
+## sending message to telegram bot
+## get variable values from environment variables
+curl -X POST -d "chat_id=${TELEGRAM_CHATID}" -d "text=${myTextMessage}" "https://api.telegram.org/bot${TELEGRAM_BOTTOKEN}/sendMessage"
