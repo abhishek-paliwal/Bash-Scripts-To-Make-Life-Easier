@@ -10,6 +10,10 @@
 ## BY: PALI 
 ################################################################################
 
+# List all environment variables and print to output
+source /home/ubuntu/.zshrc ; 
+env ; 
+
 OUTDIR="/home/ubuntu/Desktop/Y" ; 
 cd $OUTDIR ; 
 
@@ -51,4 +55,5 @@ echo;
 ## also send a photo to telegram bot
 echo; 
 /home/linuxbrew/.linuxbrew/bin/curl -X POST -H "Content-Type:multipart/form-data" -F chat_id=${TELEGRAM_CHATID} -F photo=@"${IMAGE_INPUT}" "https://api.telegram.org/bot${TELEGRAM_BOTTOKEN}/sendPhoto" 
-echo; 
+echo;
+
