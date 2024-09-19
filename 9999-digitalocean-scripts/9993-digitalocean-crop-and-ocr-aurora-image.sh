@@ -51,7 +51,8 @@ echo ">> Sending message to telegram bot ..." ;
 echo;
 /home/linuxbrew/.linuxbrew/bin/curl -X POST -H "Content-Type:multipart/form-data" -F "chat_id=${TELEGRAM_CHATID}" -F text="Aurora - ${myTextMessage} // $(date)" "https://api.telegram.org/bot${TELEGRAM_BOTTOKEN}/sendMessage"
 ## also send an image to telegram bot
-echo; 
+echo "===================="; 
 /home/linuxbrew/.linuxbrew/bin/curl -X POST -H "Content-Type:multipart/form-data" -F chat_id=${TELEGRAM_CHATID} -F photo=@"${IMAGE_INPUT}" "https://api.telegram.org/bot${TELEGRAM_BOTTOKEN}/sendPhoto" 
-echo;
+
+echo "===================="; 
 
