@@ -10,7 +10,8 @@
 ## BY: PALI 
 ################################################################################
 
-# List all environment variables and print to output
+## IMPORTANT NOTE: Source and list all environment variables and print to output so that ...
+## ... they can be used by this script
 source /home/ubuntu/.zshrc ; 
 env ; 
 
@@ -35,9 +36,6 @@ wget -O "$IMAGE_INPUT" "$URL_AURORA_IMAGE" ;
 ## x2, y2 = 742, 1143
 /home/linuxbrew/.linuxbrew/bin/magick "$IMAGE_INPUT" -crop 742x163+0+980 "$IMAGE_CROPPED" ; 
 
-## calling python program for cropping and ocr. Converting newlines to spaces
-#$PYTHON3_VENV_PATH "$PROG_ROOTDIR/9993-02-digitalocean-crop-and-ocr-aurora-image.py" ;
-
 ## do the OCR in Finnish language
 /home/linuxbrew/.linuxbrew/bin/tesseract "$IMAGE_CROPPED" "$TMPFILE_BASE" -l fin 
 
@@ -52,7 +50,7 @@ myTextMessage=$(cat $TMPFILE | tr '\n' ' ') ;
 echo ">> Sending message to telegram bot ..." ; 
 echo;
 /home/linuxbrew/.linuxbrew/bin/curl -X POST -H "Content-Type:multipart/form-data" -F "chat_id=${TELEGRAM_CHATID}" -F text="Aurora - ${myTextMessage} // $(date)" "https://api.telegram.org/bot${TELEGRAM_BOTTOKEN}/sendMessage"
-## also send a photo to telegram bot
+## also send an image to telegram bot
 echo; 
 /home/linuxbrew/.linuxbrew/bin/curl -X POST -H "Content-Type:multipart/form-data" -F chat_id=${TELEGRAM_CHATID} -F photo=@"${IMAGE_INPUT}" "https://api.telegram.org/bot${TELEGRAM_BOTTOKEN}/sendPhoto" 
 echo;
