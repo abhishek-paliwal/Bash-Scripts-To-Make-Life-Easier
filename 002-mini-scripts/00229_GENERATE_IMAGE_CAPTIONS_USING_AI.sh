@@ -18,6 +18,7 @@ echo "2. FAST (FREE)       = googlecloud_use_gemini_pro_models_with_text_and_ima
 echo "3. FAST (PAID)       = googlecloud_create_image_captions_from_vertexai_vision"
 #echo "4. FAST              = h003_create_image_captions_from_inference_api_from_someones_space"
 #echo "5. VERYSLOW (local)  = h001_run_this_to_create_image_captions_in_pwd_custom_dir"
+echo "6. FAST (PAID)       = openai02_only_run_this_to_generate_captions_via_api"
 echo "99. Quit"
 echo "+++++++++++++++++++++++++++++++++++++++" ; 
 
@@ -39,6 +40,10 @@ case $choice in
         ;;
     5)
         #eval h001_run_this_to_create_image_captions_in_pwd_custom_dir 
+        ;;
+    6)
+        figlet 'Python venv3 activated?' 
+        eval openai02_only_run_this_to_generate_captions_via_api
         ;;
     99)
         echo "Exiting the program."
