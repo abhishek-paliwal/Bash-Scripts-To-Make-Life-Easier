@@ -49,7 +49,7 @@ myTextMessage=$(cat $TMPFILE | tr '\n' ' ') ;
 ## get variable values from environment variables
 echo ">> Sending message to telegram bot ..." ; 
 echo;
-/home/linuxbrew/.linuxbrew/bin/curl -X POST -H "Content-Type:multipart/form-data" -F "chat_id=${TELEGRAM_CHATID}" -F text="${myTextMessage} -$(date +%H:%M:%S -%b%d)" "https://api.telegram.org/bot${TELEGRAM_BOTTOKEN}/sendMessage"
+/home/linuxbrew/.linuxbrew/bin/curl -X POST -H "Content-Type:multipart/form-data" -F "chat_id=${TELEGRAM_CHATID}" -F text="${myTextMessage} -$(date +%H:%M/%b%d)" "https://api.telegram.org/bot${TELEGRAM_BOTTOKEN}/sendMessage"
 ## also send an image to telegram bot
 echo "===================="; 
 /home/linuxbrew/.linuxbrew/bin/curl -X POST -H "Content-Type:multipart/form-data" -F chat_id=${TELEGRAM_CHATID} -F photo=@"${IMAGE_INPUT}" "https://api.telegram.org/bot${TELEGRAM_BOTTOKEN}/sendPhoto" 
