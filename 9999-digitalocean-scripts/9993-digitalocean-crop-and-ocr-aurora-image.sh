@@ -49,10 +49,11 @@ myNumber=$(echo "$myTextMessage" | grep -o -E '[0-9]+')
 #/home/linuxbrew/.linuxbrew/bin/aws ses send-email --from "$EMAIL_FROM" --to "$EMAIL_TO" --subject "$myTextMessage (AURORA) $(date)" --text "Aurora numbers / $myTextMessage" ;
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-## ONLY SEND THE MESSAGE WHEN THE NUMBER IS MORE THAN 99
-# Check if the number is greater than 99
-if [[ $myNumber -gt 99 ]]; then
-    echo "The Aurora number $myNumber is greater than 99."
+## ONLY SEND THE MESSAGE WHEN THE NUMBER IS MORE THAN A THRESHOLD
+myThreshold=50;
+# Check if the number is greater than THE THRESHOLD
+if [[ $myNumber -gt $myThreshold ]]; then
+    echo "The Aurora number $myNumber is greater than $myThreshold."
     ## sending message to telegram bot
     ## get variable values from environment variables
     echo ">> Sending message to telegram bot ..." ; 
@@ -63,7 +64,7 @@ if [[ $myNumber -gt 99 ]]; then
     /home/linuxbrew/.linuxbrew/bin/curl -X POST -H "Content-Type:multipart/form-data" -F chat_id=${TELEGRAM_CHATID} -F photo=@"${IMAGE_INPUT}" "https://api.telegram.org/bot${TELEGRAM_BOTTOKEN}/sendPhoto" ;
     echo "===================="; 
 else
-    echo "The Aurora number $myNumber is less than or equal to 99."
+    echo "The Aurora number $myNumber is less than or equal to $myThreshold."
 fi
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
