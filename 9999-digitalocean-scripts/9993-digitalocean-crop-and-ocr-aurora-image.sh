@@ -64,7 +64,9 @@ if [[ $myNumber -gt $myThreshold ]]; then
     /home/linuxbrew/.linuxbrew/bin/curl -X POST -H "Content-Type:multipart/form-data" -F chat_id=${TELEGRAM_CHATID} -F photo=@"${IMAGE_INPUT}" "https://api.telegram.org/bot${TELEGRAM_BOTTOKEN}/sendPhoto" ;
     echo "===================="; 
 else
-    echo "The Aurora number $myNumber is less than or equal to $myThreshold."
+    echo "The Aurora number $myNumber is less than or equal to $myThreshold." ;
+    # send a message 
+    /home/linuxbrew/.linuxbrew/bin/curl -X POST -H "Content-Type:multipart/form-data" -F "chat_id=${TELEGRAM_CHATID}" -F text="${myTextMessage} -$(date +%H:%M/%b%d)" "https://api.telegram.org/bot${TELEGRAM_BOTTOKEN}/sendMessage" ;
 fi
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
