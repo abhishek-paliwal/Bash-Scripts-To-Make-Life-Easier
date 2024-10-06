@@ -100,7 +100,7 @@ FUNCTION_DOWNLOAD_COVER_IMAGE_FROM_YOUTUBE () {
 ## DOWNLOADING EACH MISSING IMAGE FILE FROM YOUTUBE
 while IFS= read -r line
 do
-    echo; echo ">>>> CURRENTLY READING = $line"; echo;
+    echo; echo ">>>> Youtube cover download - CURRENTLY READING = $line"; echo;
     ## CALLING THE FUNCTION TO DOWNLOAD ALL COVER IMAGES FROM YOUTUBE
     FUNCTION_DOWNLOAD_COVER_IMAGE_FROM_YOUTUBE "$line" ;
 done < "$tmpfile3"
@@ -122,7 +122,7 @@ TOTAL_VALID_FILES=$(grep -irl 'youtube_video_id:' $HUGO_CONTENT_DIR/* | wc -l)
 COUNT=0;
 for mdfile in $(grep -irl 'youtube_video_id:' $HUGO_CONTENT_DIR/*) ; do
 	(( COUNT++ ))
-	echo ">> Currently processing File = $COUNT of $TOTAL_VALID_FILES" ;
+	echo ">> Video-sitemap - Currently processing File = $COUNT of $TOTAL_VALID_FILES" ;
 
 	## GETTING ALL VARIABLE VALUES + TRIMMING ALL LEADING + TRAILING WHITESPACES
 	video_title=$(grep -irh '^title:' $mdfile | sed -e 's/title: //g' -e 's/"//g' -e 's/&/and/g' | awk '{$1=$1;print}')
