@@ -269,7 +269,7 @@ else:
     f.write('\n  - recipeInstructionsTitle: List of Instructions') ;
     f.write('\n    recipeInstructionsList: ') ;
     ## Replacing prefix digits such as 1. .2 .3 .... 11. 12. etc, with newlines
-    recipeInstructionsNew = re.sub('\d{1,2}\.','\n', str(recipeInstructions) ) ;
+    recipeInstructionsNew = re.sub(r'\d{1,2}\.','\n', str(recipeInstructions) ) ;
     recipeInstructionsNew = recipeInstructionsNew.replace('1.','') ;   
     recipeInstructionsNew = recipeInstructionsNew.replace('<h4>','!!') ;
     recipeInstructionsNew = recipeInstructionsNew.replace('</h4>',' //') ;
@@ -289,7 +289,7 @@ notes_file = notes_file.strip() ;
 with open(notes_file) as fp:
    for line in fp:
        line = line.replace('"','') ;
-       line = re.sub('\d{1,2}\.','', str(line) ) ;
+       line = re.sub(r'\d{1,2}\.','', str(line) ) ;
        f.write('  - ' + line )
 #f.write('  - \"No notes.\"\n')
 

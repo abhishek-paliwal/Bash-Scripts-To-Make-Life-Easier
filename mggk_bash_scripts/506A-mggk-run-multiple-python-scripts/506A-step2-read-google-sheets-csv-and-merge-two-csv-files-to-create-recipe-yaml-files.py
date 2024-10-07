@@ -172,8 +172,8 @@ for x in range(0, COUNT_ROWS):
 
     ## FIXING EXTRA SPACES AND TABS IN KEYWORDS
     ## THEN, REMOVING UNNECESSARY COMMAS AT THE END OF LINE
-    KEYWORDS_REGEXED = re.sub("\s+", " ", KEYWORDS)
-    KEYWORDS_REGEXED = re.sub(",\s*$", " ", KEYWORDS_REGEXED)
+    KEYWORDS_REGEXED = re.sub(r"\s+", " ", KEYWORDS)
+    KEYWORDS_REGEXED = re.sub(r",\s*$", " ", KEYWORDS_REGEXED)
     ##########################################################################
 
     print( "Index " + str(x) + " // Line " + str(x+1) )
