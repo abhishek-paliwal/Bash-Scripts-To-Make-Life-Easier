@@ -361,6 +361,7 @@ FUNC_display_end_msg ;
 
 end_time_secs=$(date +%s) ;
 command_duration=$((end_time_secs - start_time_secs)) ;
+command_duration_minutes=$(echo "scale=2; $command_duration/60" | bc -l) ; 
 #echo "Total program duration: ${command_duration} seconds" ;
-palidivider "End time = $(date). Program took ${command_duration} seconds";
+palidivider "End time = $(date). Program took ${command_duration} secs (${command_duration_minutes} mins)";
 
