@@ -50,7 +50,7 @@ myNumber=$(echo "$myTextMessage" | grep -o -E '[0-9]+')
 
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## ONLY SEND THE MESSAGE WHEN THE NUMBER IS MORE THAN A THRESHOLD
-myThreshold=50;
+myThreshold=100;
 # Check if the number is greater than THE THRESHOLD
 if [[ $myNumber -gt $myThreshold ]]; then
     echo "The Aurora number $myNumber is greater than $myThreshold."
