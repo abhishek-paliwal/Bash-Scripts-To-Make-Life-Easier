@@ -201,6 +201,8 @@ if [ "$CacheDelete" == "y" ]; then
     echo "https://www.mygingergarlickitchen.com/sitemap.xml" >> $inFile ;
     echo "https://www.mygingergarlickitchen.com/categories/all-recipes/" >> $inFile ;
     echo "https://www.mygingergarlickitchen.com/instagram/" >> $inFile ;
+    echo "https://www.mygingergarlickitchen.com/fusejs/2-DATAFILE-FUSE-MGGK.json" >> $inFile ;
+    echo "https://www.mygingergarlickitchen.com/search/" >> $inFile ;
     ##
     echo ">> Splitting file (= $inFile_base ) into multiple files with 28 lines each ..." ;
     fd 'xa|xb|xc|xd|xe' -t f --search-path="$WORKDIR" -x rm {} ; ## Deleting already present x** files
