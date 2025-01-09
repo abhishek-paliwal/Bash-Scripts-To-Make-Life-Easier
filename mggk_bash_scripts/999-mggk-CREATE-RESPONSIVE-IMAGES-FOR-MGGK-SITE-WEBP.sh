@@ -45,9 +45,11 @@ function FUNC2_WEBP_CREATE_ORIGINAL_WEBP_IMAGES_FROM_ORIGINAL_JPG_PNG () {
     for filename_sans_extn in $(cat $INFILE) ; do 
         echo ; 
         outfile_webp="$dir2make/${filename_sans_extn}.webp" ; 
-        image_path_found=$(fd --search-path="$INDIR" -HItf -- "${filename_sans_extn}.jpg|${filename_sans_extn}.png" | head -1) ; 
+        image_path_found=$(fd --search-path="$INDIR" -HItf -- "^${filename_sans_extn}.jpg|^${filename_sans_extn}.png" | head -1) ; 
         cwebp -short "$image_path_found" -o "$outfile_webp" -q 85 ;
+        echo ">> JPG/PNG Image Path Found: $image_path_found" ;
         echo ">> SUCCESS. CREATED IMAGE IN $dir2make : $outfile_webp" ; 
+        echo "##++++++++++++++++++++++++++++++++" ; 
     done
     ####
 }
