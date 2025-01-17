@@ -253,7 +253,7 @@ for fname in glob.iglob(ROOTDIR + '**/*.md', recursive=True):
         ## print website logo
         logoImage = """<div class='container'>
 <a href='https://www.mygingergarlickitchen.com'>
-<img class='d-block mx-auto' src='https://www.mygingergarlickitchen.com/logos/mggk-new-logo-transparent-1000px.svg' alt='My Ginger Garlic Kitchen' width='100' height='81'></a>
+<img class='d-block mx-auto' src='https://www.mygingergarlickitchen.com/logos/2023-mggk-logo-1400x250px.svg' alt='My Ginger Garlic Kitchen Logo' width='256' height='45'></a>
 </div><div class='container'>"""
 
         #print tagline + RECIPE URL LINK:
