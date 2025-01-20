@@ -10,6 +10,7 @@ echo "##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ##
 echo ">>>> BEGIN: RSYNC ... <<<<" ; 
 figlet -f cybermedium "Enter password" | lolcat ;
+#rsync -azq --delete $REPO_MGGK/static/wp-content/ $DREAMHOST_USER_MGGK@$DREAMHOST_SERVER:/home/$DREAMHOST_USER_MGGK/mygingergarlickitchen.com/wp-content/ ; 
 rsync -azq $REPO_MGGK/static/wp-content/ $DREAMHOST_USER_MGGK@$DREAMHOST_SERVER:/home/$DREAMHOST_USER_MGGK/mygingergarlickitchen.com/wp-content/ ; 
 echo ; 
 ####
