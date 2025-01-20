@@ -29,7 +29,7 @@ palidivider () {
     ## \$3. character_line to use for the right side of the box
     ####################################
     local FUNCTION_NAME="$FUNCNAME" ;
-    local OUTDIR="$DIR_Y/_tmp_output_$FUNCTION_NAME" ; 
+    local OUTDIR="$DIR_X/_tmp_output_$FUNCTION_NAME" ; 
     mkdir -p "$OUTDIR" ;
     local tmpfile="$OUTDIR/_tmp1.txt" ;
     local maxlength=80 ; 
