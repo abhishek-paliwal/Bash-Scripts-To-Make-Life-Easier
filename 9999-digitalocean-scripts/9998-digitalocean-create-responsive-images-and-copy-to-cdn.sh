@@ -15,7 +15,7 @@ USAGE: $(basename $0)
     #### IMPORTANT: THIS SCRIPT SHOULD ONLY BE RUN ON DIGITAL OCEAN SERVER.
     ## This script reads all jpg images (only jpg) from given directories and creates 
     ## responsive images to be read by the srcset html image tags by the browser.
-    ## Example image resolutions include: 350px, 425px, 550px, 675px, 800px, etc.
+    ## Example image resolutions include: 350px, 675px, 800px, etc.
     #### NOTE: Needs the rclone cli program. (https://rclone.org/)
     #### Install by running > brew install rclone
     ################################################################################
@@ -97,7 +97,7 @@ function FUNC_create_responsive_images () {
 
     ## Read file line by line and create responsive image
     echo ">> Create responsive images ..." ;
-    myarray=(350px 425px 550px 675px 800px)
+    myarray=(350px 675px 800px)
     ##
     total_lines=$(cat $FINAL_FILE | wc -l ) ;
     count=0;

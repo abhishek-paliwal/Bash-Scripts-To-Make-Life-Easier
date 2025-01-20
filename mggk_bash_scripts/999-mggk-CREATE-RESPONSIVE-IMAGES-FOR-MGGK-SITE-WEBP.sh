@@ -58,7 +58,7 @@ function FUNC3_WEBP_RESIZE_ORIGINAL_WEBP_IMAGES_TO_VARIOUS_SIZES () {
     echo ">> RUNNING FUNCTION : $FUNCNAME" ;
     ## resizing webp images to various resolutions using 'cwebp' command
     # Declare an array with directory names
-    directories=("350" "425" "550" "675" "800") ; 
+    directories=("350" "675" "800") ; 
 
     # Loop through the array and create the directories
     for dir in "${directories[@]}"; do
