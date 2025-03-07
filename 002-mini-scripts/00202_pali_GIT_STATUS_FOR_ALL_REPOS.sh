@@ -21,4 +21,4 @@ done
 ##
 
 ## Printing text in big letters
-figlet -t "REPOS Updated" | lolcat ;
+figlet -t "REPOS Updated"  ;
